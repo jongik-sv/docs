@@ -81,10 +81,15 @@ Claude: [PPTX 언팩 → XML 수정 → 리팩]
 | "동국제강 양식으로" | `template` | 템플릿 기반 생성 |
 | "이 PPT 수정해줘" | `ooxml` | 기존 PPT 편집 |
 | "PPT 분석해줘" | `analysis` | 텍스트/구조 추출 |
-| "템플릿으로 등록해줘" | `template-analyze` | PPTX → YAML 변환 |
+| "콘텐츠 추출해줘" | `content-extract` | 슬라이드 레이아웃 추출 (v2.0 스키마) |
+| "문서 양식 추출해줘" | `document-extract` | 전체 문서 템플릿 등록 |
 | "이 이미지 스타일 추출해줘" | `style-extract` | LLM Vision으로 스타일 추출 → 자동 저장 |
 | "PPT 디자인 찾아줘" | `design-search` | 웹 디자인 검색 |
 | "템플릿 목록 보여줘" | `template-manage` | 템플릿 관리 |
+| "아이콘/이미지 저장해줘" | `asset-manage` | 에셋 관리 |
+| "썸네일 생성해줘" | `thumbnail` | 썸네일 그리드 생성 |
+
+> 📂 상세 가이드: [workflows/](workflows/) 폴더에서 각 워크플로우별 문서 참조
 
 ---
 
@@ -410,8 +415,14 @@ python scripts/rearrange.py input.pptx "1,3,2,4" output.pptx
 ### thumbnail.py - 썸네일 생성
 
 ```bash
-# 검증용 썸네일 생성
+# 그리드 썸네일 생성 (검증용)
 python scripts/thumbnail.py input.pptx output_dir/ --cols 4
+
+# 단일 슬라이드 썸네일 (1980x1080 PNG)
+python scripts/thumbnail.py input.pptx output/ --slides 5 --single
+
+# 여러 슬라이드 개별 추출
+python scripts/thumbnail.py input.pptx output/ --slides 1,3,5
 ```
 
 ### asset-manager.py - 에셋 관리
@@ -540,9 +551,23 @@ python scripts/slide-crawler.py "https://slideshare.net/..." --analyze-only
 ```
 .claude/skills/ppt-gen/
 ├── README.md              # 이 문서
-├── SKILL.md               # 스킬 정의 (Claude용)
-├── html2pptx.md           # HTML 생성 가이드
-├── ooxml.md               # OOXML 편집 가이드
+├── SKILL.md               # 스킬 정의 (엔트리포인트, ~80줄)
+├── GUIDE.md               # 학습 가이드
+├── html2pptx.md           # HTML 생성 상세 가이드
+├── ooxml.md               # OOXML 편집 상세 가이드
+│
+├── workflows/             # 워크플로우별 가이드 (NEW)
+│   ├── analysis.md        # PPT 분석/읽기
+│   ├── html2pptx.md       # 새 PPT 생성
+│   ├── ooxml.md           # 기존 PPT 편집
+│   ├── template.md        # 템플릿 기반 생성
+│   ├── content-extract.md # 콘텐츠 추출 (v2.0)
+│   ├── document-extract.md # 문서 양식 추출
+│   ├── style-extract.md   # 이미지 스타일 추출
+│   ├── design-search.md   # 디자인 검색
+│   ├── template-manage.md # 템플릿 관리
+│   ├── asset-manage.md    # 에셋 저장/검색
+│   └── thumbnail.md       # 썸네일 생성
 │
 ├── scripts/
 │   ├── html2pptx.js       # HTML → PPTX 변환
@@ -564,7 +589,8 @@ python scripts/slide-crawler.py "https://slideshare.net/..." --analyze-only
 ├── references/
 │   ├── custom-elements.md # HTML 요소 스키마
 │   ├── design-system.md   # 디자인 규칙
-│   └── color-palettes.md  # 컬러 팔레트
+│   ├── color-palettes.md  # 컬러 팔레트
+│   └── content-schema.md  # 콘텐츠 템플릿 v2.0 스키마
 │
 └── ooxml/
     └── scripts/           # OOXML 편집 스크립트
@@ -598,6 +624,16 @@ PPT 디자인 규칙:
 - **브랜드**: 동국그룹 (네이비 + 레드)
 - **범용**: 18개 팔레트 (Classic Blue, Teal & Coral, Bold Red 등)
 - **선택 가이드**: 산업별, 무드별 권장 팔레트
+
+### content-schema.md (v2.0)
+
+콘텐츠 템플릿 YAML 스키마:
+
+- **도형 정보**: type, geometry (x, y, cx, cy %), style, text
+- **시맨틱 색상**: primary, secondary, accent, background
+- **디자인 메타**: quality_score, design_intent (40개 카테고리)
+- **공간 관계**: gaps, spatial_relationships, groups
+- **필수**: thumbnail 경로
 
 ---
 

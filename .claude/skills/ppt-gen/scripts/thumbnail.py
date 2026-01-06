@@ -20,6 +20,7 @@ Grid limits by column count:
 
 Usage:
     python thumbnail.py input.pptx [output_prefix] [--cols N] [--outline-placeholders]
+    python thumbnail.py input.pptx output/ --slides 5 --single
 
 Examples:
     python thumbnail.py presentation.pptx
@@ -38,7 +39,20 @@ Examples:
 
     python thumbnail.py template.pptx analysis --outline-placeholders
     # Creates thumbnail grids with red outlines around text placeholders
+
+    python thumbnail.py input.pptx output/ --slides 5 --single
+    # Creates: output/slide-5.png (single slide at 1980x1080)
+    # Outputs:
+    #   Created single thumbnail:
+    #     - output/slide-5.png
+
+    python thumbnail.py input.pptx output/ --slides 1,3,5
+    # Creates: output/slide-1.png, output/slide-3.png, output/slide-5.png
 """
+
+# Single slide output constants
+SINGLE_WIDTH = 1980
+SINGLE_HEIGHT = 1080
 
 import argparse
 import subprocess
@@ -86,6 +100,16 @@ def main():
         action="store_true",
         help="Outline text placeholders with a colored border",
     )
+    parser.add_argument(
+        "--slides",
+        type=str,
+        help="Specific slide(s) to extract (0-based index). Use comma for multiple: --slides 5 or --slides 1,3,5",
+    )
+    parser.add_argument(
+        "--single",
+        action="store_true",
+        help="Output single slide image(s) instead of grid (1980x1080 PNG)",
+    )
 
     args = parser.parse_args()
 
@@ -100,7 +124,23 @@ def main():
         print(f"Error: Invalid PowerPoint file: {args.input}")
         sys.exit(1)
 
-    # Construct output path (always JPG)
+    # Parse slide indices if specified
+    slide_indices = None
+    if args.slides:
+        try:
+            slide_indices = [int(s.strip()) for s in args.slides.split(",")]
+        except ValueError:
+            print(f"Error: Invalid slide indices: {args.slides}")
+            sys.exit(1)
+
+    # Handle single slide mode
+    if args.single or slide_indices:
+        output_dir = Path(args.output_prefix)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        create_single_thumbnails(input_path, output_dir, slide_indices, args.single)
+        return
+
+    # Construct output path (always JPG for grid mode)
     output_path = Path(f"{args.output_prefix}.jpg")
 
     print(f"Processing: {args.input}")
@@ -154,6 +194,117 @@ def create_hidden_slide_placeholder(size):
     draw.line([(0, 0), size], fill="#CCCCCC", width=line_width)
     draw.line([(size[0], 0), (0, size[1])], fill="#CCCCCC", width=line_width)
     return img
+
+
+def create_single_thumbnails(pptx_path, output_dir, slide_indices=None, single_mode=False):
+    """Create single slide thumbnail(s) at high resolution.
+
+    Args:
+        pptx_path: Path to the PowerPoint file
+        output_dir: Output directory for thumbnails
+        slide_indices: List of slide indices (0-based) to extract. If None, extracts all.
+        single_mode: If True and slide_indices has one item, outputs single file
+    """
+    with tempfile.TemporaryDirectory() as temp_dir:
+        temp_dir = Path(temp_dir)
+
+        # Get total slide count and hidden slides
+        prs = Presentation(str(pptx_path))
+        total_slides = len(prs.slides)
+        hidden_slides = {
+            idx for idx, slide in enumerate(prs.slides)
+            if slide.element.get("show") == "0"
+        }
+
+        # Default to all slides if not specified
+        if slide_indices is None:
+            slide_indices = list(range(total_slides))
+
+        # Validate indices
+        valid_indices = [i for i in slide_indices if 0 <= i < total_slides]
+        if not valid_indices:
+            print(f"Error: No valid slide indices (total slides: {total_slides})")
+            sys.exit(1)
+
+        # Convert to PDF
+        pdf_path = temp_dir / f"{pptx_path.stem}.pdf"
+        print(f"Converting to PDF...")
+        result = subprocess.run(
+            [
+                "soffice",
+                "--headless",
+                "--convert-to",
+                "pdf",
+                "--outdir",
+                str(temp_dir),
+                str(pptx_path),
+            ],
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0 or not pdf_path.exists():
+            raise RuntimeError("PDF conversion failed")
+
+        # Calculate DPI for target resolution (1980x1080)
+        # Standard slide is 10" x 7.5" (16:9 aspect)
+        # DPI = pixels / inches → 1980 / 10 = 198 DPI
+        target_dpi = 198
+
+        # Convert PDF to images at high resolution
+        print(f"Converting to images at {target_dpi} DPI...")
+        result = subprocess.run(
+            ["pdftoppm", "-png", "-r", str(target_dpi), str(pdf_path), str(temp_dir / "slide")],
+            capture_output=True,
+            text=True,
+        )
+        if result.returncode != 0:
+            raise RuntimeError("Image conversion failed")
+
+        # Get visible slide images (pdftoppm skips hidden slides)
+        visible_images = sorted(temp_dir.glob("slide-*.png"))
+
+        # Map visible image index to actual slide index
+        visible_to_actual = {}
+        visible_idx = 0
+        for actual_idx in range(total_slides):
+            if actual_idx not in hidden_slides:
+                visible_to_actual[actual_idx] = visible_idx
+                visible_idx += 1
+
+        # Process requested slides
+        created_files = []
+        for slide_idx in valid_indices:
+            output_path = output_dir / f"slide-{slide_idx}.png"
+
+            if slide_idx in hidden_slides:
+                # Create placeholder for hidden slide
+                placeholder_img = create_hidden_slide_placeholder((SINGLE_WIDTH, SINGLE_HEIGHT))
+                placeholder_img.save(output_path, "PNG")
+                created_files.append(str(output_path))
+                print(f"  Created placeholder for hidden slide {slide_idx}")
+            else:
+                # Get the corresponding visible image
+                vis_idx = visible_to_actual.get(slide_idx)
+                if vis_idx is not None and vis_idx < len(visible_images):
+                    with Image.open(visible_images[vis_idx]) as img:
+                        # Resize to target dimensions
+                        img_resized = img.resize(
+                            (SINGLE_WIDTH, SINGLE_HEIGHT),
+                            Image.Resampling.LANCZOS
+                        )
+                        img_resized.save(output_path, "PNG")
+                        created_files.append(str(output_path))
+                        print(f"  Created: {output_path}")
+                else:
+                    print(f"  Warning: Could not find image for slide {slide_idx}")
+
+        # Print summary
+        if len(created_files) == 1:
+            print(f"Created single thumbnail:")
+        else:
+            print(f"Created {len(created_files)} thumbnail(s):")
+        for f in created_files:
+            print(f"  - {f}")
 
 
 def get_placeholder_regions(pptx_path):

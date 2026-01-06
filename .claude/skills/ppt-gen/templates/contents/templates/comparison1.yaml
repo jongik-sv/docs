@@ -1,32 +1,266 @@
-# 비교 (A vs B) 콘텐츠 템플릿
+# 비교 (A vs B) 콘텐츠 템플릿 v2.0
 # 두 가지 항목을 나란히 비교하는 2열 대칭 레이아웃
 
 content_template:
   id: comparison1
-  name: 비교 (A vs B) - 기본
-  description: "두 가지 항목을 나란히 비교하는 2열 대칭 레이아웃"
-  data_type: comparison
+  name: "비교 (A vs B) - 기본"
+  version: "2.0"
+  source: null  # 직접 작성한 템플릿
+  source_slide_index: null
+  extracted_at: "2026-01-06T15:00:00"
 
-# 레이아웃 구조
-structure:
-  type: two-column-symmetric
-  columns: 2
+# 디자인 메타데이터
+design_meta:
+  quality_score: 8.5
+  design_intent: comparison-2col
+  design_intents:
+    - comparison-2col
+    - grid-2col
+  visual_balance: symmetric
+  information_density: medium
 
-  left:
-    header: "Before / Option A / 현재"
-    content_type: list
-    items_max: 5
-    visual_marker: null  # 또는 specific icon
+# 캔버스 정보
+canvas:
+  reference_width: 1980
+  reference_height: 1080
+  aspect_ratio: "16:9"
 
-  right:
-    header: "After / Option B / 목표"
-    content_type: list
-    items_max: 5
-    visual_marker: null
+# 도형 배열
+shapes:
+  # 왼쪽 패널 배경
+  - id: "shape-left-bg"
+    name: "Left Panel Background"
+    type: rectangle
+    z_index: 0
+    geometry:
+      x: 0%
+      y: 0%
+      cx: 48%
+      cy: 100%
+    style:
+      fill:
+        type: solid
+        color: primary
+        opacity: 0.1
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 8
+    text:
+      has_text: false
 
-  # 선택적 요소
-  center_divider: true  # 중앙 구분선
-  header_highlight: true  # 헤더 강조
+  # 오른쪽 패널 배경
+  - id: "shape-right-bg"
+    name: "Right Panel Background"
+    type: rectangle
+    z_index: 0
+    geometry:
+      x: 52%
+      y: 0%
+      cx: 48%
+      cy: 100%
+    style:
+      fill:
+        type: solid
+        color: secondary
+        opacity: 0.1
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 8
+    text:
+      has_text: false
+
+  # 왼쪽 헤더
+  - id: "shape-left-header"
+    name: "Left Header"
+    type: textbox
+    z_index: 1
+    geometry:
+      x: 2%
+      y: 2%
+      cx: 44%
+      cy: 12%
+    style:
+      fill:
+        type: solid
+        color: primary
+        opacity: 1.0
+      stroke:
+        color: none
+        width: 0
+      rounded_corners: 4
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: center
+      font_size_ratio: 0.028
+      font_weight: bold
+      font_color: light
+
+  # 오른쪽 헤더
+  - id: "shape-right-header"
+    name: "Right Header"
+    type: textbox
+    z_index: 1
+    geometry:
+      x: 54%
+      y: 2%
+      cx: 44%
+      cy: 12%
+    style:
+      fill:
+        type: solid
+        color: secondary
+        opacity: 1.0
+      stroke:
+        color: none
+        width: 0
+      rounded_corners: 4
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: center
+      font_size_ratio: 0.028
+      font_weight: bold
+      font_color: light
+
+  # 왼쪽 콘텐츠 영역
+  - id: "shape-left-content"
+    name: "Left Content Area"
+    type: textbox
+    z_index: 1
+    geometry:
+      x: 4%
+      y: 18%
+      cx: 40%
+      cy: 78%
+    style:
+      fill:
+        type: none
+      stroke:
+        color: none
+        width: 0
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: left
+      font_size_ratio: 0.020
+      font_weight: normal
+      font_color: dark_text
+
+  # 오른쪽 콘텐츠 영역
+  - id: "shape-right-content"
+    name: "Right Content Area"
+    type: textbox
+    z_index: 1
+    geometry:
+      x: 56%
+      y: 18%
+      cx: 40%
+      cy: 78%
+    style:
+      fill:
+        type: none
+      stroke:
+        color: none
+        width: 0
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: left
+      font_size_ratio: 0.020
+      font_weight: normal
+      font_color: dark_text
+
+  # 중앙 구분선 (선택적)
+  - id: "shape-center-divider"
+    name: "Center Divider"
+    type: line
+    z_index: 2
+    geometry:
+      x: 50%
+      y: 5%
+      cx: 0%
+      cy: 90%
+    style:
+      stroke:
+        color: gray
+        width: 2
+      fill:
+        type: none
+
+# 여백 정보
+gaps:
+  global:
+    column_gap: 4%          # 두 패널 사이
+    row_gap: 4%             # 헤더와 콘텐츠 사이
+    item_gap: 2%            # 리스트 아이템 사이
+
+  between_shapes:
+    - from: "shape-left-bg"
+      to: "shape-right-bg"
+      direction: horizontal
+      gap: 4%
+
+    - from: "shape-left-header"
+      to: "shape-left-content"
+      direction: vertical
+      gap: 4%
+
+    - from: "shape-right-header"
+      to: "shape-right-content"
+      direction: vertical
+      gap: 4%
+
+# 공간 관계
+spatial_relationships:
+  # 좌우 패널 정렬
+  - from: "shape-left-bg"
+    to: "shape-right-bg"
+    relationship: adjacent-horizontal
+    gap: 4%
+    alignment: top
+
+  # 좌우 헤더 정렬
+  - shapes: ["shape-left-header", "shape-right-header"]
+    relationship: aligned-top
+
+  # 좌우 콘텐츠 정렬
+  - shapes: ["shape-left-content", "shape-right-content"]
+    relationship: aligned-top
+
+  # 대칭 구조
+  - shapes: ["shape-left-bg", "shape-right-bg"]
+    relationship: distributed-horizontal
+    total_gap: 4%
+
+# 그룹 정보
+groups:
+  - id: "group-left-panel"
+    members: ["shape-left-bg", "shape-left-header", "shape-left-content"]
+    bounding_box:
+      x: 0%
+      y: 0%
+      cx: 48%
+      cy: 100%
+    internal_gap: 4%
+
+  - id: "group-right-panel"
+    members: ["shape-right-bg", "shape-right-header", "shape-right-content"]
+    bounding_box:
+      x: 52%
+      y: 0%
+      cx: 48%
+      cy: 100%
+    internal_gap: 4%
+
+# 썸네일 (추출 시 자동 생성)
+thumbnail: thumbnails/comparison1.png
 
 # 사용 용도
 use_for:
@@ -52,26 +286,16 @@ keywords:
   - "As-Is"
   - "To-Be"
 
-# HTML 생성 가이드
-html_guide:
-  layout: |
-    <div class="comparison-container">
-      <div class="column left">
-        <h3 class="column-header">{left_header}</h3>
-        <ul>{left_items}</ul>
-      </div>
-      <div class="divider"></div>
-      <div class="column right">
-        <h3 class="column-header">{right_header}</h3>
-        <ul>{right_items}</ul>
-      </div>
-    </div>
-
-  style_notes:
-    - "두 열 너비 동일하게"
-    - "헤더에 대비되는 색상 사용 가능"
-    - "중앙 구분선 또는 화살표 배치"
-    - "항목 수 균형 맞추기 권장"
+# 데이터 구조 (콘텐츠 입력 가이드)
+data_structure:
+  left:
+    header: "Before / Option A / 현재"
+    content_type: list
+    items_max: 5
+  right:
+    header: "After / Option B / 목표"
+    content_type: list
+    items_max: 5
 
 # 예시 데이터
 example:
