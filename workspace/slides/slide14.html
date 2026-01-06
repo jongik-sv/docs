@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 12pt 30pt; border-bottom: 1pt solid #E5E5E5; }
+.main-title { color: #002452; font-size: 13pt; font-weight: bold; margin: 0; }
+.action-title { color: #333333; font-size: 12pt; margin: 6pt 0 0 0; line-height: 1.4; }
+.content { flex: 1; padding: 10pt 30pt; display: flex; flex-wrap: wrap; gap: 8pt; align-content: flex-start; }
+.security-card { width: 318pt; }
+.card-top { height: 3pt; background: #002452; border-radius: 2pt 2pt 0 0; }
+.card-body { background: #F8F9FA; padding: 8pt; border-radius: 0 0 4pt 4pt; }
+.card-header { display: flex; align-items: center; gap: 6pt; margin-bottom: 4pt; }
+.card-icon { width: 18pt; height: 18pt; background: #002452; border-radius: 3pt; display: flex; align-items: center; justify-content: center; }
+.icon-text { color: #FFFFFF; font-size: 9pt; font-weight: bold; margin: 0; }
+.card-title { color: #002452; font-size: 10pt; font-weight: bold; margin: 0; }
+.measures { margin-bottom: 4pt; }
+.measures ul { margin: 0; padding-left: 12pt; }
+.measures li { color: #333333; font-size: 9pt; margin: 1pt 0; }
+.scope-badge { display: inline-block; background: rgba(197,31,42,0.1); padding: 2pt 5pt; border-radius: 2pt; }
+.scope-text { color: #C51F2A; font-size: 8pt; margin: 0; }
+.footer { padding: 8pt 30pt; display: flex; justify-content: space-between; }
+.footer-text { color: #666666; font-size: 8pt; margin: 0; }
+.page-num { color: #002452; font-size: 8pt; font-weight: bold; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <p class="main-title">4. 품질·보안·위험 관리</p>
+  <p class="action-title">인적·물리·기술·PC 4개 영역의 보안 대책을 수립하여 정보 자산을 보호합니다.</p>
+</div>
+<div class="content">
+  <div class="security-card">
+    <div class="card-top"></div>
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-icon"><p class="icon-text">P</p></div>
+        <p class="card-title">인적 보안</p>
+      </div>
+      <div class="measures"><ul><li>보안서약서 징구</li><li>보안 교육 실시</li></ul></div>
+      <div class="scope-badge"><p class="scope-text">전 인원 대상</p></div>
+    </div>
+  </div>
+  <div class="security-card">
+    <div class="card-top"></div>
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-icon"><p class="icon-text">L</p></div>
+        <p class="card-title">물리 보안</p>
+      </div>
+      <div class="measures"><ul><li>통제구역 출입 관리</li><li>반입 장비 통제</li></ul></div>
+      <div class="scope-badge"><p class="scope-text">고객사 정책 준수</p></div>
+    </div>
+  </div>
+  <div class="security-card">
+    <div class="card-top"></div>
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-icon"><p class="icon-text">T</p></div>
+        <p class="card-title">기술 보안</p>
+      </div>
+      <div class="measures"><ul><li>소스코드 보안약점 진단</li><li>DB 암호화</li></ul></div>
+      <div class="scope-badge"><p class="scope-text">OWASP Top 10 점검</p></div>
+    </div>
+  </div>
+  <div class="security-card">
+    <div class="card-top"></div>
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-icon"><p class="icon-text">C</p></div>
+        <p class="card-title">PC 보안</p>
+      </div>
+      <div class="measures"><ul><li>백신 설치</li><li>화면보호기 설정, 매체제어</li></ul></div>
+      <div class="scope-badge"><p class="scope-text">DLP 솔루션 적용</p></div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <p class="footer-text">테크솔루션</p>
+  <p class="page-num">14</p>
+</div>
+</body>
+</html>

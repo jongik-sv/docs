@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트 물류관리 시스템 구축 수행계획서</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #1a1a2e;
+            padding: 20px;
+        }
+
+        .slide {
+            width: 960px;
+            height: 540px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* Layout 1: Cover */
+        .slide.cover {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        .slide.cover .gradient-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #C51F2A 0%, #002452 100%);
+        }
+
+        .slide.cover .big-k {
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 400px;
+            font-weight: 700;
+            color: rgba(0,36,82,0.03);
+            line-height: 1;
+        }
+
+        .slide.cover .content {
+            position: relative;
+            z-index: 1;
+            padding: 80px 60px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide.cover .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #002452;
+            line-height: 1.3;
+            margin-bottom: 24px;
+        }
+
+        .slide.cover .subtitle {
+            font-size: 16px;
+            color: #666666;
+        }
+
+        /* Layout 2: TOC */
+        .slide.toc {
+            display: flex;
+        }
+
+        .slide.toc .left {
+            flex: 1;
+            padding: 60px;
+        }
+
+        .slide.toc .right {
+            width: 200px;
+            background: linear-gradient(180deg, #002452 0%, #001a3d 100%);
+        }
+
+        .slide.toc .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #002452;
+            margin-bottom: 40px;
+        }
+
+        .slide.toc .toc-item {
+            display: flex;
+            align-items: baseline;
+            padding: 16px 0;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .slide.toc .toc-item:first-child {
+            background: linear-gradient(90deg, rgba(197,31,42,0.1) 0%, transparent 100%);
+            margin: 0 -20px;
+            padding: 16px 20px;
+            border-radius: 4px;
+        }
+
+        .slide.toc .toc-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #C51F2A;
+            width: 60px;
+        }
+
+        .slide.toc .toc-title {
+            flex: 1;
+            font-size: 16px;
+            color: #333333;
+        }
+
+        .slide.toc .toc-pages {
+            font-size: 14px;
+            color: #888888;
+        }
+
+        /* Layout 3/4: Content slides */
+        .slide.content {
+            padding: 0;
+        }
+
+        .slide.content .header {
+            padding: 16px 40px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .slide.content .main-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #002452;
+        }
+
+        .slide.content .action-title {
+            padding: 20px 40px;
+            font-size: 15px;
+            color: #333333;
+            line-height: 1.6;
+            background: #fafbfc;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .slide.content .body {
+            padding: 24px 40px;
+            height: calc(100% - 140px);
+            overflow: hidden;
+        }
+
+        .slide.content .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 8px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            color: #888888;
+        }
+
+        /* KPI Cards */
+        .kpi-cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            padding-top: 40px;
+        }
+
+        .kpi-card {
+            flex: 1;
+            max-width: 200px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid #E0E0E0;
+        }
+
+        .kpi-card .accent-bar {
+            height: 4px;
+        }
+
+        .kpi-card .card-content {
+            padding: 20px;
+        }
+
+        .kpi-card .label {
+            font-size: 11px;
+            color: #666666;
+            margin-bottom: 8px;
+        }
+
+        .kpi-card .value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 4px;
+        }
+
+        .kpi-card .sub-value {
+            font-size: 10px;
+            color: #888888;
+        }
+
+        /* Icon Box Grid */
+        .icon-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .icon-box {
+            flex: 1;
+            min-width: 200px;
+            max-width: 280px;
+            background: white;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: flex;
+            border: 1px solid #E0E0E0;
+            border-left: 4px solid;
+        }
+
+        .icon-box .box-content {
+            padding: 20px;
+        }
+
+        .icon-box .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .icon-box .title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #002452;
+            margin-bottom: 8px;
+        }
+
+        .icon-box .desc {
+            font-size: 11px;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+        /* Before/After Comparison */
+        .comparison {
+            display: flex;
+            gap: 30px;
+            align-items: stretch;
+            padding: 20px;
+        }
+
+        .comparison .section {
+            flex: 1;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .comparison .before {
+            background: #fff5f5;
+            border: 2px solid #E74C3C;
+        }
+
+        .comparison .after {
+            background: #f0fff4;
+            border: 2px solid #2E7D32;
+        }
+
+        .comparison .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .comparison .before .section-title {
+            color: #E74C3C;
+        }
+
+        .comparison .after .section-title {
+            color: #2E7D32;
+        }
+
+        .comparison .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 12px;
+            font-size: 12px;
+        }
+
+        .comparison .arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            flex-shrink: 0;
+        }
+
+        .comparison .arrow .material-icons-outlined {
+            font-size: 40px;
+            color: #002452;
+        }
+
+        .comparison .metrics {
+            display: flex;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .comparison .metric {
+            flex: 1;
+            background: #F8F9FA;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .comparison .metric .label {
+            font-size: 10px;
+            color: #666666;
+        }
+
+        .comparison .metric .value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2E7D32;
+        }
+
+        /* Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+
+        .data-table th {
+            background: #002452;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        .data-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .data-table tr:nth-child(even) td {
+            background: #F8F9FA;
+        }
+
+        /* Process Flow */
+        .process-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 20px;
+        }
+
+        .process-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .process-node .node {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .process-node .node-label {
+            font-size: 10px;
+            color: #666666;
+            max-width: 100px;
+        }
+
+        .process-arrow {
+            color: #E0E0E0;
+            font-size: 24px;
+        }
+
+        /* Architecture Diagram */
+        .architecture {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 20px;
+        }
+
+        .arch-layer {
+            border: 2px solid;
+            border-radius: 8px;
+            padding: 16px;
+            background: white;
+        }
+
+        .arch-layer .layer-name {
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .arch-layer .layer-items {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .arch-layer .layer-item {
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        /* Org Chart */
+        .org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .org-level {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .org-node {
+            padding: 12px 20px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .org-node .role {
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .org-node .name {
+            font-size: 10px;
+            opacity: 0.9;
+        }
+
+        /* Gantt Timeline */
+        .gantt {
+            padding: 20px;
+        }
+
+        .gantt-header {
+            display: flex;
+            margin-left: 100px;
+            margin-bottom: 8px;
+        }
+
+        .gantt-month {
+            flex: 1;
+            text-align: center;
+            font-size: 9px;
+            color: #666666;
+            padding: 4px;
+            background: #F8F9FA;
+        }
+
+        .gantt-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .gantt-label {
+            width: 100px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .gantt-bar-container {
+            flex: 1;
+            display: flex;
+            height: 24px;
+            position: relative;
+        }
+
+        .gantt-bar {
+            position: absolute;
+            height: 100%;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 9px;
+            font-weight: 500;
+        }
+
+        /* Risk Matrix */
+        .risk-section {
+            display: flex;
+            gap: 30px;
+            padding: 10px;
+        }
+
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 30px repeat(3, 60px);
+            grid-template-rows: repeat(3, 50px) 30px;
+            gap: 2px;
+        }
+
+        .risk-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        .risk-cell.low { background: #c8e6c9; }
+        .risk-cell.medium { background: #fff9c4; }
+        .risk-cell.high { background: #ffe0b2; }
+        .risk-cell.critical { background: #ffcdd2; }
+
+        .risk-marker {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #E74C3C;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            font-weight: 700;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Dual Section */
+        .dual-section {
+            display: flex;
+            gap: 24px;
+            padding: 10px;
+        }
+
+        .dual-section .section {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .dual-section .section-header {
+            padding: 16px 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dual-section .section-body {
+            padding: 16px 20px;
+        }
+
+        .dual-section .item {
+            margin-bottom: 12px;
+        }
+
+        .dual-section .item-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #333333;
+            margin-bottom: 4px;
+        }
+
+        .dual-section .item-desc {
+            font-size: 10px;
+            color: #666666;
+        }
+
+        /* Bullet list */
+        .bullet-list {
+            padding: 10px 0;
+        }
+
+        .bullet-list .level-1 {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .bullet-list .level-1::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: #002452;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .bullet-list .level-1 span {
+            font-size: 14px;
+            font-weight: 700;
+            color: #333333;
+        }
+
+        .bullet-list .level-2 {
+            margin-left: 24px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #666666;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .bullet-list .level-2::before {
+            content: '•';
+            margin-right: 8px;
+            color: #888888;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .slide {
+                box-shadow: none;
+                margin: 0;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide cover">
+        <div class="gradient-bar"></div>
+        <div class="big-k">K</div>
+        <div class="content">
+            <div class="title">스마트 물류관리 시스템 구축<br>수행계획서</div>
+            <div class="subtitle">(주)테크솔루션 I 2025.01.03</div>
+        </div>
+    </div>
+
+    <div class="slide toc">
+        <div class="left">
+            <div class="section-title">Contents</div>
+            
+            <div class="toc-item">
+                <div class="toc-number">01</div>
+                <div class="toc-title">프로젝트 개요</div>
+                <div class="toc-pages">03-05</div>
+            </div>
+
+            <div class="toc-item">
+                <div class="toc-number">02</div>
+                <div class="toc-title">추진 전략 및 기술 아키텍처</div>
+                <div class="toc-pages">06-07</div>
+            </div>
+
+            <div class="toc-item">
+                <div class="toc-number">03</div>
+                <div class="toc-title">프로젝트 조직 및 일정</div>
+                <div class="toc-pages">08-11</div>
+            </div>
+
+            <div class="toc-item">
+                <div class="toc-number">04</div>
+                <div class="toc-title">품질·보안·위험 관리</div>
+                <div class="toc-pages">12-15</div>
+            </div>
+
+            <div class="toc-item">
+                <div class="toc-number">05</div>
+                <div class="toc-title">의사소통 및 협조 요청</div>
+                <div class="toc-pages">16-17</div>
+            </div>
+
+        </div>
+        <div class="right"></div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">1. 프로젝트 개요</div>
+        </div>
+        <div class="action-title">글로벌물류의 차세대 스마트 물류관리 시스템 구축 프로젝트입니다.</div>
+        <div class="body">
+            <div class="kpi-cards">
+            <div class="kpi-card">
+                <div class="accent-bar" style="background: #002452;"></div>
+                <div class="card-content">
+                    <div class="label">발주기관</div>
+                    <div class="value">(주)글로벌물류</div>
+                    <div class="sub-value">국내 Top 5 물류기업</div>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="accent-bar" style="background: #4B6580;"></div>
+                <div class="card-content">
+                    <div class="label">수행사</div>
+                    <div class="value">(주)테크솔루션</div>
+                    <div class="sub-value">SI 전문기업</div>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="accent-bar" style="background: #E9B86E;"></div>
+                <div class="card-content">
+                    <div class="label">계약금액</div>
+                    <div class="value">15억원</div>
+                    <div class="sub-value">VAT 별도</div>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="accent-bar" style="background: #2E7D32;"></div>
+                <div class="card-content">
+                    <div class="label">계약기간</div>
+                    <div class="value">12개월</div>
+                    <div class="sub-value">2025.01 ~ 2025.12</div>
+                </div>
+            </div>
+</div>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">3</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">1. 프로젝트 개요</div>
+        </div>
+        <div class="action-title">레거시 시스템의 한계를 극복하고 AI 기반 스마트 물류 시스템으로 전환합니다.</div>
+        <div class="body">
+            
+        <div class="comparison">
+            <div class="section before">
+                <div class="section-title">현황 (As-Is)</div>
+                <div class="item"><span class="material-icons-outlined" style="font-size:16px;color:#E74C3C;">warning</span> 10년 이상 운영된 레거시 시스템</div><div class="item"><span class="material-icons-outlined" style="font-size:16px;color:#E74C3C;">speed</span> 처리 속도 저하로 물동량 대응 한계</div><div class="item"><span class="material-icons-outlined" style="font-size:16px;color:#E74C3C;">inventory_2</span> 실시간 재고 파악 불가</div><div class="item"><span class="material-icons-outlined" style="font-size:16px;color:#E74C3C;">link_off</span> 타 시스템 연동 한계</div>
+            </div>
+            <div class="arrow">
+                <span class="material-icons-outlined">arrow_forward</span>
+            </div>
+            <div class="section after">
+                <div class="section-title">목표 (To-Be)</div>
+                <div class="item"><span class="material-icons-outlined" style="font-size:16px;color:#2E7D32;">smart_toy</span> AI 기반 물류 최적화</div><div class="item"><span class="material-icons-outlined" style="font-size:16px;color:#2E7D32;">gps_fixed</span> 실시간 재고/배송 추적</div><div class="item"><span class="material-icons-outlined" style="font-size:16px;color:#2E7D32;">cloud</span> 클라우드 기반 확장성 확보</div><div class="item"><span class="material-icons-outlined" style="font-size:16px;color:#2E7D32;">integration_instructions</span> 통합 API 연동 체계</div>
+            </div>
+        </div>
+        <div class="comparison"><div class="metrics" style="width:100%;"><div class="metric"><div class="label">물류 처리 효율</div><div class="value">+30% (향상)</div></div><div class="metric"><div class="label">재고 정확도</div><div class="value">99.5% (달성)</div></div><div class="metric"><div class="label">운영 비용</div><div class="value">-20% (절감)</div></div></div></div>
+
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">4</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">1. 프로젝트 개요</div>
+        </div>
+        <div class="action-title">WMS, TMS, OMS, Dashboard 4개 핵심 시스템을 구축합니다.</div>
+        <div class="body">
+            <div class="architecture">
+            <div class="arch-layer" style="border-color: #002452;">
+                <div class="layer-name" style="color: #002452;">사용자 인터페이스</div>
+                <div class="layer-items"><div class="layer-item" style="border-color: #002452;">통합 Dashboard</div><div class="layer-item" style="border-color: #002452;">모바일 앱</div></div>
+            </div>
+
+            <div class="arch-layer" style="border-color: #4B6580;">
+                <div class="layer-name" style="color: #4B6580;">핵심 시스템</div>
+                <div class="layer-items"><div class="layer-item" style="border-color: #4B6580;">WMS</div><div class="layer-item" style="border-color: #4B6580;">TMS</div><div class="layer-item" style="border-color: #4B6580;">OMS</div></div>
+            </div>
+
+            <div class="arch-layer" style="border-color: #B7D0D4;">
+                <div class="layer-name" style="color: #B7D0D4;">외부 연동</div>
+                <div class="layer-items"><div class="layer-item" style="border-color: #B7D0D4;">ERP 인터페이스</div><div class="layer-item" style="border-color: #B7D0D4;">회계 시스템 I/F</div><div class="layer-item" style="border-color: #B7D0D4;">HR 시스템 I/F</div></div>
+            </div>
+</div>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">5</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">2. 추진 전략 및 기술 아키텍처</div>
+        </div>
+        <div class="action-title">안정적 전환과 혁신적 기능 구현의 균형을 추구하는 Agile-Waterfall 하이브리드 방법론을 적용합니다.</div>
+        <div class="body">
+            <div class="icon-grid">
+            <div class="icon-box" style="border-left-color: #002452;">
+                <div class="box-content">
+                    <div class="icon material-icons-outlined" style="color: #002452;">stacked_line_chart</div>
+                    <div class="title">단계적 전환 전략</div>
+                    <div class="desc">Big Bang 방식이 아닌<br>모듈별 순차 전환으로<br>리스크 최소화</div>
+                </div>
+            </div>
+
+            <div class="icon-box" style="border-left-color: #4B6580;">
+                <div class="box-content">
+                    <div class="icon material-icons-outlined" style="color: #4B6580;">loop</div>
+                    <div class="title">애자일 기반 개발</div>
+                    <div class="desc">2주 단위 스프린트로<br>빠른 피드백과<br>유연한 대응</div>
+                </div>
+            </div>
+
+            <div class="icon-box" style="border-left-color: #E9B86E;">
+                <div class="box-content">
+                    <div class="icon material-icons-outlined" style="color: #E9B86E;">groups</div>
+                    <div class="title">현업 밀착 협업</div>
+                    <div class="desc">주 2회 현업 리뷰를 통한<br>요구사항 정합성 확보</div>
+                </div>
+            </div>
+</div><div class="process-flow">
+            <div class="process-node">
+                <div class="node" style="background: #002452;">분석</div>
+                <div class="node-label">요구사항, 현행분석</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #4B6580;">설계</div>
+                <div class="node-label">아키텍처/UI/DB</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #2E7D32;">개발</div>
+                <div class="node-label">기능구현, 단위테스트</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #E9B86E;">테스트/이행</div>
+                <div class="node-label">통합/인수테스트, 전환</div>
+            </div>
+</div>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">6</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">2. 추진 전략 및 기술 아키텍처</div>
+        </div>
+        <div class="action-title">Vue.js, Spring Boot, AWS 기반의 클라우드 네이티브 MSA 아키텍처를 적용합니다.</div>
+        <div class="body">
+            <table class="data-table"><thead><tr><th>영역</th><th>기술/제품</th><th>버전</th><th>라이선스</th><th>비고</th></tr></thead><tbody><tr><td>Frontend</td><td>Vue.js 3, TypeScript</td><td>3.4</td><td>MIT</td><td>SPA 구조</td></tr><tr><td>Backend</td><td>Spring Boot, Java</td><td>3.2 / 17</td><td>Apache 2.0</td><td>MSA 구조</td></tr><tr><td>Database</td><td>PostgreSQL, Redis</td><td>16 / 7</td><td>PostgreSQL / BSD</td><td>RDBMS + Cache</td></tr><tr><td>Infra</td><td>AWS (EKS, RDS, S3)</td><td>-</td><td>Commercial</td><td>클라우드 네이티브</td></tr><tr><td>AI/ML</td><td>Python, TensorFlow</td><td>3.11 / 2.15</td><td>PSF / Apache 2.0</td><td>수요예측, 경로최적화</td></tr></tbody></table>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">7</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">3. 프로젝트 조직 및 일정</div>
+        </div>
+        <div class="action-title">발주기관과 수행사 간 명확한 역할 분담으로 프로젝트를 성공적으로 수행합니다.</div>
+        <div class="body">
+            <div class="org-chart"><div class="org-level">
+            <div class="org-node" style="background: #002452;">
+                <div class="role">프로젝트 스폰서</div>
+                <div class="name">박지성 사업본부장</div>
+            </div>
+</div><div class="org-level">
+            <div class="org-node" style="background: #002452;">
+                <div class="role">발주기관 PM</div>
+                <div class="name">정민호 부장</div>
+            </div>
+
+            <div class="org-node" style="background: #C51F2A;">
+                <div class="role">수행사 PM</div>
+                <div class="name">김철수 차장</div>
+            </div>
+</div><div class="org-level">
+            <div class="org-node" style="background: #4B6580;">
+                <div class="role">PMO</div>
+                <div class="name">이영희 과장</div>
+            </div>
+
+            <div class="org-node" style="background: #4B6580;">
+                <div class="role">AA</div>
+                <div class="name">박준형 책임</div>
+            </div>
+
+            <div class="org-node" style="background: #4B6580;">
+                <div class="role">개발리더</div>
+                <div class="name">최수진 선임</div>
+            </div>
+
+            <div class="org-node" style="background: #4B6580;">
+                <div class="role">QA</div>
+                <div class="name">한미영 대리</div>
+            </div>
+
+            <div class="org-node" style="background: #4B6580;">
+                <div class="role">DBA</div>
+                <div class="name">오현우 대리</div>
+            </div>
+</div></div>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">8</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">3. 프로젝트 조직 및 일정</div>
+        </div>
+        <div class="action-title">총 8명, 78MM 규모의 전문 인력을 투입하여 프로젝트를 수행합니다.</div>
+        <div class="body">
+            <table class="data-table"><thead><tr><th>구분</th><th>분야</th><th>등급</th><th>성명</th><th>투입기간</th></tr></thead><tbody><tr><td>PM</td><td>관리</td><td>특급</td><td>김철수</td><td>12개월</td></tr><tr><td>AA</td><td>설계</td><td>특급</td><td>박준형</td><td>10개월</td></tr><tr><td>PL</td><td>개발</td><td>고급</td><td>최수진</td><td>12개월</td></tr><tr><td>Dev</td><td>Backend</td><td>고급</td><td>임동현</td><td>10개월</td></tr><tr><td>Dev</td><td>Frontend</td><td>중급</td><td>강서연</td><td>10개월</td></tr><tr><td>Dev</td><td>Backend</td><td>중급</td><td>윤재호</td><td>10개월</td></tr><tr><td>DBA</td><td>DB</td><td>고급</td><td>오현우</td><td>8개월</td></tr><tr><td>QA</td><td>테스트</td><td>중급</td><td>한미영</td><td>6개월</td></tr></tbody></table><div class="kpi-cards">
+            <div class="kpi-card">
+                <div class="accent-bar" style="background: #002452;"></div>
+                <div class="card-content">
+                    <div class="label">투입 인원</div>
+                    <div class="value">8명</div>
+                    <div class="sub-value"></div>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="accent-bar" style="background: #4B6580;"></div>
+                <div class="card-content">
+                    <div class="label">총 공수</div>
+                    <div class="value">78MM</div>
+                    <div class="sub-value"></div>
+                </div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="accent-bar" style="background: #E9B86E;"></div>
+                <div class="card-content">
+                    <div class="label">특급 인력</div>
+                    <div class="value">2명</div>
+                    <div class="sub-value">PM, AA</div>
+                </div>
+            </div>
+</div>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">9</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">3. 프로젝트 조직 및 일정</div>
+        </div>
+        <div class="action-title">2025년 1월 착수부터 12월 안정화까지 6단계로 체계적으로 추진합니다.</div>
+        <div class="body">
+            
+        <div class="gantt">
+            <div class="gantt-header"><div class="gantt-month">1월</div><div class="gantt-month">2월</div><div class="gantt-month">3월</div><div class="gantt-month">4월</div><div class="gantt-month">5월</div><div class="gantt-month">6월</div><div class="gantt-month">7월</div><div class="gantt-month">8월</div><div class="gantt-month">9월</div><div class="gantt-month">10월</div><div class="gantt-month">11월</div><div class="gantt-month">12월</div></div>
+            
+            <div class="gantt-row">
+                <div class="gantt-label">착수</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar" style="background: #002452; left: 0.0%; width: 8.333333333333334%;">
+                        4주
+                    </div>
+                </div>
+            </div>
+
+            <div class="gantt-row">
+                <div class="gantt-label">분석</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar" style="background: #4B6580; left: 8.333333333333334%; width: 16.666666666666668%;">
+                        8주
+                    </div>
+                </div>
+            </div>
+
+            <div class="gantt-row">
+                <div class="gantt-label">설계</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar" style="background: #2E7D32; left: 25.0%; width: 16.666666666666668%;">
+                        8주
+                    </div>
+                </div>
+            </div>
+
+            <div class="gantt-row">
+                <div class="gantt-label">개발</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar" style="background: #E9B86E; left: 41.666666666666664%; width: 33.333333333333336%;">
+                        16주
+                    </div>
+                </div>
+            </div>
+
+            <div class="gantt-row">
+                <div class="gantt-label">테스트</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar" style="background: #D55633; left: 75.0%; width: 16.666666666666668%;">
+                        6주
+                    </div>
+                </div>
+            </div>
+
+            <div class="gantt-row">
+                <div class="gantt-label">이행/안정화</div>
+                <div class="gantt-bar-container">
+                    <div class="gantt-bar" style="background: #C51F2A; left: 83.33333333333333%; width: 16.666666666666668%;">
+                        6주
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">10</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">3. 프로젝트 조직 및 일정</div>
+        </div>
+        <div class="action-title">6개 핵심 마일스톤을 통해 프로젝트 진행 상황을 체계적으로 관리합니다.</div>
+        <div class="body">
+            <div class="process-flow">
+            <div class="process-node">
+                <div class="node" style="background: #002452;">M1</div>
+                <div class="node-label">착수보고<br>2025-01-10</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #4B6580;">M2</div>
+                <div class="node-label">요구사항 확정<br>2025-03-31</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #2E7D32;">M3</div>
+                <div class="node-label">설계 완료<br>2025-05-31</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #E9B86E;">M4</div>
+                <div class="node-label">개발 완료<br>2025-09-30</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #D55633;">M5</div>
+                <div class="node-label">테스트 완료<br>2025-11-15</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #C51F2A;">M6</div>
+                <div class="node-label">시스템 오픈<br>2025-12-01</div>
+            </div>
+</div><table class="data-table"><thead><tr><th>마일스톤</th><th>예정일</th><th>주요 산출물</th></tr></thead><tbody><tr><td>M1 착수보고</td><td>2025-01-10</td><td>수행계획서</td></tr><tr><td>M2 요구사항 확정</td><td>2025-03-31</td><td>요구사항정의서</td></tr><tr><td>M3 설계 완료</td><td>2025-05-31</td><td>설계서 일체</td></tr><tr><td>M4 개발 완료</td><td>2025-09-30</td><td>소스코드</td></tr><tr><td>M5 테스트 완료</td><td>2025-11-15</td><td>테스트결과서</td></tr><tr><td>M6 시스템 오픈</td><td>2025-12-01</td><td>오픈보고서</td></tr></tbody></table>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">11</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">4. 품질·보안·위험 관리</div>
+        </div>
+        <div class="action-title">단계별 산출물 관리와 품질 보증 활동을 통해 프로젝트 품질을 확보합니다.</div>
+        <div class="body">
+            <table class="data-table"><thead><tr><th>단계</th><th>산출물명</th><th>담당</th><th>작성시기</th><th>승인</th></tr></thead><tbody><tr><td>착수</td><td>착수보고서</td><td>PM</td><td>착수 시</td><td>스폰서</td></tr><tr><td>착수</td><td>수행계획서</td><td>PM</td><td>착수 시</td><td>스폰서</td></tr><tr><td>분석</td><td>요구사항정의서</td><td>PL</td><td>분석 완료</td><td>발주PM</td></tr><tr><td>분석</td><td>현행시스템분석서</td><td>PL</td><td>분석 완료</td><td>발주PM</td></tr><tr><td>설계</td><td>아키텍처설계서</td><td>AA</td><td>설계 완료</td><td>발주PM</td></tr><tr><td>설계</td><td>데이터베이스설계서</td><td>DBA</td><td>설계 완료</td><td>발주PM</td></tr><tr><td>개발</td><td>소스코드</td><td>개발팀</td><td>개발 완료</td><td>PL</td></tr><tr><td>테스트</td><td>통합테스트결과서</td><td>QA</td><td>테스트 완료</td><td>PM</td></tr><tr><td>이행</td><td>운영자매뉴얼</td><td>PL</td><td>이행 전</td><td>발주PM</td></tr><tr><td>완료</td><td>완료보고서</td><td>PM</td><td>종료 시</td><td>스폰서</td></tr></tbody></table>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">12</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">4. 품질·보안·위험 관리</div>
+        </div>
+        <div class="action-title">다층적 품질 보증 활동과 엄격한 보안 관리 체계를 적용합니다.</div>
+        <div class="body">
+            <div class="dual-section">
+            <div class="section">
+                <div class="section-header" style="background: #002452;">
+                    <span class="material-icons-outlined">verified</span>
+                    품질 보증 활동
+                </div>
+                <div class="section-body"><div class="item">
+                    <div class="item-title">산출물 검토</div>
+                    <div class="item-desc">단계별 발주 담당자 검토 및 승인</div>
+                </div><div class="item">
+                    <div class="item-title">코드 리뷰</div>
+                    <div class="item-desc">GitHub PR 필수, 2인 이상 승인</div>
+                </div><div class="item">
+                    <div class="item-title">정적 분석</div>
+                    <div class="item-desc">SonarQube 품질 게이트 적용</div>
+                </div><div class="item">
+                    <div class="item-title">테스트</div>
+                    <div class="item-desc">시나리오 기반 통합/인수 테스트</div>
+                </div></div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" style="background: #C51F2A;">
+                    <span class="material-icons-outlined">security</span>
+                    보안 관리 계획
+                </div>
+                <div class="section-body"><div class="item">
+                    <div class="item-title">인적 보안</div>
+                    <div class="item-desc">보안서약서, 보안 교육 실시</div>
+                </div><div class="item">
+                    <div class="item-title">물리 보안</div>
+                    <div class="item-desc">통제구역 출입, 반입 장비 통제</div>
+                </div><div class="item">
+                    <div class="item-title">기술 보안</div>
+                    <div class="item-desc">OWASP Top 10, DB 암호화</div>
+                </div><div class="item">
+                    <div class="item-title">PC 보안</div>
+                    <div class="item-desc">백신, 화면보호기, DLP 적용</div>
+                </div></div>
+            </div>
+</div>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">13</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">4. 품질·보안·위험 관리</div>
+        </div>
+        <div class="action-title">5대 핵심 위험을 식별하고 선제적 대응 방안을 수립합니다.</div>
+        <div class="body">
+            
+        <div class="risk-section">
+            <div>
+                <div style="font-size:10px;color:#666666;margin-bottom:8px;text-align:center;">영향도 ↑</div>
+                <div class="risk-matrix">
+                    <div></div><div class="risk-cell high"><div class="risk-marker">R4</div></div><div class="risk-cell critical"><div class="risk-marker">R2</div><div class="risk-marker">R5</div></div><div class="risk-cell critical"><div class="risk-marker">R1</div></div><div class="risk-cell medium"></div><div class="risk-cell high"><div class="risk-marker">R3</div></div><div class="risk-cell critical"></div><div class="risk-cell low"></div><div class="risk-cell medium"></div><div class="risk-cell high"></div>
+                    <div></div>
+                    <div style="font-size:9px;text-align:center;">하</div>
+                    <div style="font-size:9px;text-align:center;">중</div>
+                    <div style="font-size:9px;text-align:center;">상</div>
+                </div>
+                <div style="font-size:10px;color:#666666;text-align:right;margin-top:4px;">발생확률 →</div>
+            </div>
+            <div style="flex:1;"><table class="data-table"><thead><tr><th>ID</th><th>위험 요소</th><th>영향도</th><th>발생확률</th><th>대응 방안</th></tr></thead><tbody><tr><td>R1</td><td>요구사항 변경</td><td>상</td><td>상</td><td>CCB 통제, 영향도 분석</td></tr><tr><td>R2</td><td>일정 지연</td><td>상</td><td>중</td><td>주간 진척관리, CP 모니터링</td></tr><tr><td>R3</td><td>기술적 난제</td><td>중</td><td>중</td><td>PoC 선행, 전문가 자문</td></tr><tr><td>R4</td><td>인력 이탈</td><td>상</td><td>하</td><td>대체 인력 풀, 문서화 강화</td></tr><tr><td>R5</td><td>데이터 마이그레이션</td><td>상</td><td>중</td><td>사전 검증, 롤백 계획</td></tr></tbody></table></div>
+        </div>
+<table class="data-table"><thead><tr><th>ID</th><th>위험 요소</th><th>영향도</th><th>발생확률</th><th>대응 방안</th><th>담당</th></tr></thead><tbody><tr><td>R1</td><td>요구사항 변경</td><td>상</td><td>상</td><td>CCB 통제, 영향도 분석 필수</td><td>PM</td></tr><tr><td>R2</td><td>일정 지연</td><td>상</td><td>중</td><td>주간 진척관리, CP 집중 모니터링</td><td>PM</td></tr><tr><td>R3</td><td>기술적 난제</td><td>중</td><td>중</td><td>PoC 선행, 외부 전문가 자문</td><td>AA</td></tr><tr><td>R4</td><td>인력 이탈</td><td>상</td><td>하</td><td>대체 인력 풀 확보, 기술 문서화</td><td>PM</td></tr><tr><td>R5</td><td>데이터 마이그레이션</td><td>상</td><td>중</td><td>사전 검증, 롤백 계획 수립</td><td>DBA</td></tr></tbody></table>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">14</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">4. 품질·보안·위험 관리</div>
+        </div>
+        <div class="action-title">변경 요청부터 이행까지 4단계 변경 통제 절차를 운영합니다.</div>
+        <div class="body">
+            <div class="process-flow">
+            <div class="process-node">
+                <div class="node" style="background: #002452;">1. 변경 요청</div>
+                <div class="node-label">변경요청서(CR) 접수<br>Jira 티켓 등록</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #4B6580;">2. 영향도 분석</div>
+                <div class="node-label">일정/비용/품질<br>영향 분석 (3일 내)</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #E9B86E;">3. 승인/반려</div>
+                <div class="node-label">협의체(CCB)<br>의사결정 (주 1회)</div>
+            </div>
+<div class="process-arrow material-icons-outlined">arrow_forward</div>
+            <div class="process-node">
+                <div class="node" style="background: #2E7D32;">4. 변경 이행</div>
+                <div class="node-label">승인된 변경사항 반영<br>산출물 현행화</div>
+            </div>
+</div>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">15</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">5. 의사소통 및 협조 요청</div>
+        </div>
+        <div class="action-title">일일/주간/월간 보고 체계와 스프린트 리뷰를 통해 원활한 커뮤니케이션을 유지합니다.</div>
+        <div class="body">
+            <table class="data-table"><thead><tr><th>유형</th><th>주기</th><th>참석 대상</th><th>주요 내용</th></tr></thead><tbody><tr><td>일일 스탠드업</td><td>매일 09:30</td><td>개발팀</td><td>진행 현황, 블로커 공유</td></tr><tr><td>주간보고</td><td>매주 금 14:00</td><td>PM, 발주PM</td><td>주간 실적/계획, 이슈 공유</td></tr><tr><td>월간보고</td><td>매월 말</td><td>경영진</td><td>마일스톤 점검, 리스크 보고</td></tr><tr><td>스프린트 리뷰</td><td>격주 금</td><td>전체</td><td>데모, 피드백 수렴</td></tr></tbody></table><div class="icon-grid">
+            <div class="icon-box" style="border-left-color: #002452;">
+                <div class="box-content">
+                    <div class="icon material-icons-outlined" style="color: #002452;">groups_3</div>
+                    <div class="title">일일</div>
+                    <div class="desc">개발팀 스탠드업</div>
+                </div>
+            </div>
+
+            <div class="icon-box" style="border-left-color: #4B6580;">
+                <div class="box-content">
+                    <div class="icon material-icons-outlined" style="color: #4B6580;">summarize</div>
+                    <div class="title">주간</div>
+                    <div class="desc">PM 진행 보고</div>
+                </div>
+            </div>
+
+            <div class="icon-box" style="border-left-color: #E9B86E;">
+                <div class="box-content">
+                    <div class="icon material-icons-outlined" style="color: #E9B86E;">assessment</div>
+                    <div class="title">월간</div>
+                    <div class="desc">경영진 보고</div>
+                </div>
+            </div>
+
+            <div class="icon-box" style="border-left-color: #2E7D32;">
+                <div class="box-content">
+                    <div class="icon material-icons-outlined" style="color: #2E7D32;">reviews</div>
+                    <div class="title">격주</div>
+                    <div class="desc">스프린트 리뷰</div>
+                </div>
+            </div>
+</div>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">16</div>
+        </div>
+    </div>
+
+    <div class="slide content">
+        <div class="header">
+            <div class="main-title">5. 의사소통 및 협조 요청</div>
+        </div>
+        <div class="action-title">프로젝트 성공을 위해 발주기관의 적극적인 협조를 요청드립니다.</div>
+        <div class="body">
+            <div class="bullet-list"><div class="level-1"><span>프로젝트 환경 지원</span></div><div class="level-2">프로젝트 룸 (10석 규모), 네트워크(VPN), 출입증 발급 - 착수 시</div><div class="level-1"><span>데이터 및 인프라 지원</span></div><div class="level-2">테스트용 샘플 데이터 제공 (개인정보 비식별화 필수) - 설계/개발 단계</div><div class="level-2">AWS 계정 및 권한 부여 (개발/스테이징/운영 환경) - 착수 시</div><div class="level-1"><span>현업 참여 지원</span></div><div class="level-2">요구사항 인터뷰 참여 - 분석 단계</div><div class="level-2">UAT(사용자 인수 테스트) 지원 - 테스트 단계</div></div>
+        </div>
+        <div class="footer">
+            <div class="logo">TECH SOLUTION</div>
+            <div class="slide-number">17</div>
+        </div>
+    </div>
+
+    <script>
+        // Add slide numbers
+        document.querySelectorAll('.slide').forEach((slide, index) => {
+            const footer = slide.querySelector('.footer .slide-number');
+            if (footer) {
+                footer.textContent = index + 1;
+            }
+        });
+    </script>
+</body>
+</html>

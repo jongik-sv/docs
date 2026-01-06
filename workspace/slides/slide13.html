@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 12pt 30pt; border-bottom: 1pt solid #E5E5E5; }
+.main-title { color: #002452; font-size: 13pt; font-weight: bold; margin: 0; }
+.action-title { color: #333333; font-size: 12pt; margin: 6pt 0 0 0; line-height: 1.4; }
+.content { flex: 1; padding: 12pt 30pt; }
+.quality-list { }
+.quality-item { margin-bottom: 10pt; }
+.item-header { display: flex; align-items: center; gap: 8pt; margin-bottom: 4pt; }
+.item-number {
+  width: 20pt; height: 20pt; background: #002452;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+}
+.item-num-text { color: #FFFFFF; font-size: 10pt; font-weight: bold; margin: 0; }
+.item-title { color: #002452; font-size: 11pt; font-weight: bold; margin: 0; }
+.item-detail { color: #333333; font-size: 10pt; margin: 0 0 0 28pt; }
+.item-sub-wrap { margin: 3pt 0 0 28pt; padding-left: 10pt; border-left: 2pt solid #E5E5E5; }
+.item-sub { color: #666666; font-size: 9pt; margin: 0; }
+.footer { padding: 8pt 30pt; display: flex; justify-content: space-between; }
+.footer-text { color: #666666; font-size: 8pt; margin: 0; }
+.page-num { color: #002452; font-size: 8pt; font-weight: bold; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <p class="main-title">4. 품질·보안·위험 관리</p>
+  <p class="action-title">4단계 품질 보증 활동으로 산출물과 코드 품질을 체계적으로 관리합니다.</p>
+</div>
+<div class="content">
+  <div class="quality-list">
+    <div class="quality-item">
+      <div class="item-header">
+        <div class="item-number"><p class="item-num-text">1</p></div>
+        <p class="item-title">산출물 검토</p>
+      </div>
+      <p class="item-detail">단계별 말, 발주 담당자 검토 및 승인</p>
+      <div class="item-sub-wrap"><p class="item-sub">PM/PL 주관, 검토 체크리스트 활용</p></div>
+    </div>
+    <div class="quality-item">
+      <div class="item-header">
+        <div class="item-number"><p class="item-num-text">2</p></div>
+        <p class="item-title">코드 리뷰</p>
+      </div>
+      <p class="item-detail">개발 기간 중, GitHub PR 필수, 2인 이상 승인</p>
+      <div class="item-sub-wrap"><p class="item-sub">개발리더 주관, 코딩 컨벤션 준수 확인</p></div>
+    </div>
+    <div class="quality-item">
+      <div class="item-header">
+        <div class="item-number"><p class="item-num-text">3</p></div>
+        <p class="item-title">정적 분석</p>
+      </div>
+      <p class="item-detail">개발 기간 중, SonarQube 품질 게이트 적용</p>
+      <div class="item-sub-wrap"><p class="item-sub">QA 주관, 보안 취약점 및 코드 스멜 검출</p></div>
+    </div>
+    <div class="quality-item">
+      <div class="item-header">
+        <div class="item-number"><p class="item-num-text">4</p></div>
+        <p class="item-title">테스트</p>
+      </div>
+      <p class="item-detail">통합/인수 단계, 시나리오 기반 테스트</p>
+      <div class="item-sub-wrap"><p class="item-sub">QA/현업 공동 수행, 결함 추적 관리</p></div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <p class="footer-text">테크솔루션</p>
+  <p class="page-num">13</p>
+</div>
+</body>
+</html>

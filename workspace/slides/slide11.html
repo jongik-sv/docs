@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 16pt 30pt; border-bottom: 1pt solid #E5E5E5; }
+.main-title { color: #002452; font-size: 14pt; font-weight: bold; margin: 0; }
+.action-title { color: #333333; font-size: 13pt; margin: 8pt 0 0 0; line-height: 1.4; }
+.content { flex: 1; padding: 16pt 30pt; }
+.gantt-header { display: flex; margin-bottom: 8pt; }
+.gantt-label-col { width: 90pt; }
+.gantt-timeline { flex: 1; display: flex; }
+.month-cell { flex: 1; text-align: center; background: #F5F5F5; border-right: 1pt solid #E5E5E5; padding: 4pt 0; }
+.month-cell:last-child { border-right: none; }
+.month-text { color: #666666; font-size: 9pt; margin: 0; }
+.gantt-row { display: flex; margin-bottom: 4pt; height: 32pt; align-items: center; }
+.phase-label { width: 90pt; }
+.phase-name { color: #002452; font-size: 11pt; font-weight: bold; margin: 0; }
+.gantt-bar-area { flex: 1; display: flex; position: relative; height: 24pt; }
+.gantt-bar {
+  position: absolute; height: 100%; border-radius: 4pt;
+  display: flex; align-items: center; justify-content: center;
+}
+.bar-text { color: #FFFFFF; font-size: 9pt; font-weight: bold; margin: 0; }
+.footer { padding: 10pt 30pt; display: flex; justify-content: space-between; border-top: 1pt solid #E5E5E5; }
+.footer-text { color: #666666; font-size: 9pt; margin: 0; }
+.page-num { color: #002452; font-size: 9pt; font-weight: bold; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <p class="main-title">3. 프로젝트 조직 및 일정</p>
+  <p class="action-title">착수부터 안정화까지 6개 단계, 12개월간의 마스터 일정을 수립했습니다.</p>
+</div>
+<div class="content">
+  <div class="gantt-header">
+    <div class="gantt-label-col"></div>
+    <div class="gantt-timeline">
+      <div class="month-cell"><p class="month-text">1월</p></div>
+      <div class="month-cell"><p class="month-text">2월</p></div>
+      <div class="month-cell"><p class="month-text">3월</p></div>
+      <div class="month-cell"><p class="month-text">4월</p></div>
+      <div class="month-cell"><p class="month-text">5월</p></div>
+      <div class="month-cell"><p class="month-text">6월</p></div>
+      <div class="month-cell"><p class="month-text">7월</p></div>
+      <div class="month-cell"><p class="month-text">8월</p></div>
+      <div class="month-cell"><p class="month-text">9월</p></div>
+      <div class="month-cell"><p class="month-text">10월</p></div>
+      <div class="month-cell"><p class="month-text">11월</p></div>
+      <div class="month-cell"><p class="month-text">12월</p></div>
+    </div>
+  </div>
+  <div class="gantt-row">
+    <div class="phase-label"><p class="phase-name">착수</p></div>
+    <div class="gantt-bar-area">
+      <div class="gantt-bar" style="left: 0%; width: 8.3%; background: #002452;"><p class="bar-text">4주</p></div>
+    </div>
+  </div>
+  <div class="gantt-row">
+    <div class="phase-label"><p class="phase-name">분석</p></div>
+    <div class="gantt-bar-area">
+      <div class="gantt-bar" style="left: 8.3%; width: 16.7%; background: #4B6580;"><p class="bar-text">8주</p></div>
+    </div>
+  </div>
+  <div class="gantt-row">
+    <div class="phase-label"><p class="phase-name">설계</p></div>
+    <div class="gantt-bar-area">
+      <div class="gantt-bar" style="left: 25%; width: 16.7%; background: #4B6580;"><p class="bar-text">8주</p></div>
+    </div>
+  </div>
+  <div class="gantt-row">
+    <div class="phase-label"><p class="phase-name">개발</p></div>
+    <div class="gantt-bar-area">
+      <div class="gantt-bar" style="left: 41.7%; width: 33.3%; background: #C51F2A;"><p class="bar-text">16주</p></div>
+    </div>
+  </div>
+  <div class="gantt-row">
+    <div class="phase-label"><p class="phase-name">테스트</p></div>
+    <div class="gantt-bar-area">
+      <div class="gantt-bar" style="left: 75%; width: 12.5%; background: #4B6580;"><p class="bar-text">6주</p></div>
+    </div>
+  </div>
+  <div class="gantt-row">
+    <div class="phase-label"><p class="phase-name">이행/안정화</p></div>
+    <div class="gantt-bar-area">
+      <div class="gantt-bar" style="left: 87.5%; width: 12.5%; background: #2E7D32;"><p class="bar-text">6주</p></div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <p class="footer-text">테크솔루션</p>
+  <p class="page-num">11</p>
+</div>
+</body>
+</html>

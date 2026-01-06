@@ -1,0 +1,1361 @@
+{
+  "presentation": {
+    "title": "orchay 소개",
+    "author": "개발팀",
+    "date": "2025.01",
+    "theme": {
+      "colors": {
+        "primary": "#002452",
+        "accent": "#C51F2A",
+        "success": "#2E7D32",
+        "gold": "#E9B86E",
+        "dark": "#262626",
+        "gray": "#757575",
+        "blue_gray": "#4B6580",
+        "light_cyan": "#B7D0D4",
+        "background": "#FFFFFF"
+      },
+      "fonts": {
+        "title": "본고딕 Bold",
+        "body": "본고딕 Regular",
+        "fallback": "Noto Sans KR"
+      }
+    },
+    "slides": [
+      {
+        "slide_number": 1,
+        "layout_id": 1,
+        "type": "title",
+        "placeholders": {
+          "title": "orchay",
+          "subtitle": "orchestration + okay\n\nWezTerm 기반 AI 개발 자동화 스케줄러"
+        },
+        "design_prompt": {
+          "concept": "동국제강 브랜드 표지 - 상단 그라데이션 적용",
+          "background": {
+            "type": "gradient_header",
+            "gradient": "linear-gradient(90deg, #C51F2A, #002452)",
+            "header_height": "15%"
+          },
+          "typography": {
+            "title": "72pt, Bold, #002452, center",
+            "subtitle": "24pt, Regular, #757575, center"
+          }
+        }
+      },
+      {
+        "slide_number": 2,
+        "layout_id": 4,
+        "type": "problem",
+        "placeholders": {
+          "main_title": "문제 정의",
+          "action_title": "AI 코딩 어시스턴트, 왜 아직도 한 번에 하나씩?"
+        },
+        "custom_elements": [
+          {
+            "type": "pain_point_cards",
+            "data": {
+              "columns": 2,
+              "rows": 2,
+              "cards": [
+                {
+                  "icon": "looks_one",
+                  "title": "단일 작업",
+                  "desc": "한 번에 하나의 Task만 처리 가능",
+                  "color": "#C51F2A"
+                },
+                {
+                  "icon": "touch_app",
+                  "title": "수동 관리",
+                  "desc": "개발자가 직접 Task를 할당하고 모니터링",
+                  "color": "#D55633"
+                },
+                {
+                  "icon": "psychology_alt",
+                  "title": "컨텍스트 손실",
+                  "desc": "Task 전환 시 이전 작업 맥락 유실",
+                  "color": "#E9B86E"
+                },
+                {
+                  "icon": "hourglass_empty",
+                  "title": "비효율성",
+                  "desc": "대기 시간 동안 다른 작업 불가",
+                  "color": "#4B6580"
+                }
+              ]
+            }
+          },
+          {
+            "type": "quote_block",
+            "data": {
+              "text": "여러 AI Worker에게 Task를 자동으로 분배하고\n진행 상황을 모니터링하는 오케스트레이터",
+              "style": "highlight",
+              "icon": "lightbulb",
+              "position": "bottom_center"
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Pain Point Cards - 문제점을 시각적으로 강조",
+          "layout": {
+            "grid": "2x2 카드 그리드, 상단 60%",
+            "quote_position": "하단 40%, 중앙 정렬"
+          },
+          "card_style": {
+            "background": "#FFF5F5 (연한 빨강 배경)",
+            "border": "좌측 4px accent bar",
+            "border_radius": "8px",
+            "shadow": "0 2px 8px rgba(0,0,0,0.08)"
+          },
+          "icon_style": {
+            "size": "40px",
+            "color": "각 카드별 지정 컬러"
+          }
+        }
+      },
+      {
+        "slide_number": 3,
+        "layout_id": 4,
+        "type": "introduction",
+        "placeholders": {
+          "main_title": "orchay 소개",
+          "action_title": "WBS(Work Breakdown Structure) 기반 Task 스케줄러로 AI 개발을 자동화합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "icon_box_grid",
+            "data": {
+              "columns": 4,
+              "items": [
+                {
+                  "icon": "description",
+                  "title": "WBS 파싱",
+                  "desc": "wbs.yaml 파일에서\nTask 목록 추출",
+                  "accent_color": "#002452"
+                },
+                {
+                  "icon": "share",
+                  "title": "자동 분배",
+                  "desc": "여러 Claude Code\nWorker에 분배",
+                  "accent_color": "#C51F2A"
+                },
+                {
+                  "icon": "monitoring",
+                  "title": "실시간 모니터링",
+                  "desc": "진행 상황\n실시간 추적",
+                  "accent_color": "#4B6580"
+                },
+                {
+                  "icon": "autorenew",
+                  "title": "자동 워크플로우",
+                  "desc": "상태 전이\n자동 실행",
+                  "accent_color": "#E9B86E"
+                }
+              ]
+            }
+          },
+          {
+            "type": "comparison_table",
+            "data": {
+              "headers": ["구분", "기존 방식", "orchay 방식"],
+              "rows": [
+                ["동시 작업", "1명이 1개 Task", "N명이 N개 Task 병렬 처리"],
+                ["Task 할당", "수동 Task 할당", "자동 Task 분배"],
+                ["상태 관리", "수동 상태 관리", "자동 워크플로우 실행"]
+              ],
+              "highlight_column": 2
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Feature Overview - 핵심 가치 4개 + 비교표",
+          "layout": {
+            "top": "icon_box_grid (55%)",
+            "bottom": "comparison_table (40%)"
+          },
+          "card_style": {
+            "background": "#FFFFFF",
+            "border": "좌측 4px accent bar (각 카드별 색상)",
+            "shadow": "0 4px 12px rgba(0,0,0,0.08)"
+          },
+          "table_style": {
+            "header_bg": "#002452",
+            "header_text": "#FFFFFF",
+            "highlight_bg": "#F0F7FF",
+            "border": "1px solid #B6B6B6"
+          }
+        }
+      },
+      {
+        "slide_number": 4,
+        "layout_id": 4,
+        "type": "architecture",
+        "placeholders": {
+          "main_title": "작동 원리",
+          "action_title": "WBS 파일에서 Task를 추출하여 여러 AI Worker에게 자동으로 분배합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "process_flow",
+            "data": {
+              "direction": "horizontal",
+              "nodes": [
+                {
+                  "id": 1,
+                  "icon": "description",
+                  "label": "wbs.yaml",
+                  "sublabel": "Task 정의",
+                  "color": "#002452",
+                  "shape": "rounded_rect"
+                },
+                {
+                  "id": 2,
+                  "icon": "hub",
+                  "label": "orchay",
+                  "sublabel": "스케줄러",
+                  "color": "#C51F2A",
+                  "shape": "rounded_rect"
+                },
+                {
+                  "id": 3,
+                  "icon": "groups",
+                  "label": "Claude Workers",
+                  "sublabel": "AI 실행",
+                  "color": "#4B6580",
+                  "shape": "rounded_rect"
+                }
+              ],
+              "connectors": [
+                {"from": 1, "to": 2, "label": "파싱 & 필터링"},
+                {"from": 2, "to": 3, "label": "명령 전송"}
+              ],
+              "annotation": "/wf:start TSK-01-01"
+            }
+          },
+          {
+            "type": "terminal_mockup",
+            "data": {
+              "title": "WezTerm Layout",
+              "layout": "split_vertical",
+              "panes": [
+                {
+                  "id": "scheduler",
+                  "label": "Scheduler",
+                  "sublabel": "(0)",
+                  "width": "35%",
+                  "color": "#002452"
+                },
+                {
+                  "id": "worker1",
+                  "label": "Worker 1",
+                  "width": "21.6%",
+                  "color": "#4B6580"
+                },
+                {
+                  "id": "worker2",
+                  "label": "Worker 2",
+                  "width": "21.6%",
+                  "color": "#4B6580"
+                },
+                {
+                  "id": "worker3",
+                  "label": "Worker 3",
+                  "width": "21.6%",
+                  "color": "#4B6580"
+                }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "System Flow + Terminal Mockup - 두 개의 시각 요소",
+          "layout": {
+            "top": "process_flow (50%)",
+            "bottom": "terminal_mockup (45%)"
+          },
+          "flow_style": {
+            "node_size": "120px x 80px",
+            "node_bg": "white with colored left border",
+            "connector": "dashed arrow with label"
+          },
+          "terminal_style": {
+            "frame": "dark gray (#262626) with traffic lights",
+            "pane_border": "1px solid #B6B6B6",
+            "label_style": "center aligned, white on colored bg"
+          }
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "Clean horizontal process flow diagram with 3 rounded rectangle nodes, connected by dashed arrows with labels above, flat design style, navy blue and red accent colors, white background, icons inside each node, professional enterprise software look",
+            "style": "flat design, technical diagram",
+            "size": "1200x300"
+          }
+        }
+      },
+      {
+        "slide_number": 5,
+        "layout_id": 4,
+        "type": "features",
+        "placeholders": {
+          "main_title": "핵심 기능",
+          "action_title": "WBS 파싱부터 Worker 상태 감지까지, 자동화된 Task 관리를 제공합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "numbered_feature_cards",
+            "data": {
+              "layout": "vertical_left",
+              "width": "55%",
+              "items": [
+                {
+                  "number": "01",
+                  "title": "WBS 파싱 & 모니터링",
+                  "bullets": [
+                    "YAML 형식의 wbs.yaml 파일 실시간 감시",
+                    "Task 정보 자동 추출 (ID, 상태, 우선순위, 의존성)",
+                    "파일 변경 시 즉시 반영"
+                  ],
+                  "color": "#002452"
+                },
+                {
+                  "number": "02",
+                  "title": "지능형 Task 분배",
+                  "bullets": [
+                    "우선순위 기반: critical > high > medium > low",
+                    "의존성 검사: 선행 Task 완료 여부 확인",
+                    "상태 기반 필터링: 실행 가능 Task만 선별"
+                  ],
+                  "color": "#C51F2A"
+                },
+                {
+                  "number": "03",
+                  "title": "Worker 상태 감지",
+                  "bullets": [
+                    "idle, busy, done, paused, error 5가지 상태",
+                    "실시간 상태 모니터링",
+                    "자동 Task 재할당"
+                  ],
+                  "color": "#4B6580"
+                }
+              ]
+            }
+          },
+          {
+            "type": "status_table",
+            "data": {
+              "title": "Worker 상태",
+              "position": "right",
+              "width": "40%",
+              "headers": ["상태", "의미"],
+              "rows": [
+                {"status": "idle", "icon": "pause_circle", "color": "#4B6580", "desc": "작업 대기 중 (새 Task 할당 가능)"},
+                {"status": "busy", "icon": "play_circle", "color": "#002452", "desc": "작업 실행 중"},
+                {"status": "done", "icon": "check_circle", "color": "#2E7D32", "desc": "작업 완료 (신호 수신)"},
+                {"status": "paused", "icon": "schedule", "color": "#E9B86E", "desc": "일시 정지 (rate limit 등)"},
+                {"status": "error", "icon": "error", "color": "#C51F2A", "desc": "오류 발생"}
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Feature Cards + Status Reference - 좌우 분할 레이아웃",
+          "layout": {
+            "left": "numbered_feature_cards (55%)",
+            "right": "status_table (40%)",
+            "gap": "5%"
+          },
+          "card_style": {
+            "number": "56pt, Bold, accent color, left",
+            "title": "20pt, Bold, #262626",
+            "bullets": "16pt, Regular, #757575"
+          },
+          "table_style": {
+            "icon_size": "24px",
+            "status_badge": "pill shape with background color"
+          }
+        }
+      },
+      {
+        "slide_number": 6,
+        "layout_id": 4,
+        "type": "commands",
+        "placeholders": {
+          "main_title": "워크플로우 명령어 시스템",
+          "action_title": "Slash 명령어 기반으로 설계부터 완료까지 전체 워크플로우를 자동화합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "command_table",
+            "data": {
+              "headers": ["단계", "명령어", "역할"],
+              "groups": [
+                {
+                  "group_name": "설계",
+                  "group_color": "#002452",
+                  "rows": [
+                    {"/wf:start": "PRD 분석 → 설계 문서 생성"},
+                    {"/wf:review": "3개 관점 병렬 리뷰 (아키텍처/보안/품질)"},
+                    {"/wf:apply": "리뷰 지적사항 선택적 적용"}
+                  ]
+                },
+                {
+                  "group_name": "구현",
+                  "group_color": "#C51F2A",
+                  "rows": [
+                    {"/wf:build": "TDD 기반 구현 (Backend/Frontend 병렬)"},
+                    {"/wf:audit": "코드 리뷰 (품질/보안/성능 병렬 검증)"},
+                    {"/wf:patch": "코드 리뷰 지적사항 반영"}
+                  ]
+                },
+                {
+                  "group_name": "검증",
+                  "group_color": "#4B6580",
+                  "rows": [
+                    {"/wf:verify": "통합테스트 실행 및 검증"},
+                    {"/wf:test": "TDD + E2E 테스트 실행"}
+                  ]
+                },
+                {
+                  "group_name": "완료",
+                  "group_color": "#2E7D32",
+                  "rows": [
+                    {"/wf:done": "매뉴얼 생성, 품질 메트릭"}
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "type": "code_block",
+            "data": {
+              "title": "계층 입력 지원",
+              "language": "bash",
+              "code": "/wf:start TSK-01-01      # 단일 Task\n/wf:start ACT-01-01      # Activity 내 모든 Task 병렬\n/wf:start WP-01          # Work Package 내 모든 Task 병렬",
+              "position": "bottom_right",
+              "width": "45%"
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Command Reference Table - 단계별 색상 구분",
+          "layout": {
+            "table": "좌측 60%, 전체 높이",
+            "code_block": "우측 하단 35%"
+          },
+          "table_style": {
+            "group_header": "좌측 4px bar + 배경색 10% opacity",
+            "command_cell": "monospace font, Bold",
+            "role_cell": "Regular, #262626"
+          },
+          "code_style": {
+            "background": "#F5F5F5",
+            "border_radius": "8px",
+            "font": "monospace, 14pt"
+          }
+        }
+      },
+      {
+        "slide_number": 7,
+        "layout_id": 4,
+        "type": "workflow_detail",
+        "placeholders": {
+          "main_title": "설계 단계 명령어",
+          "action_title": "/wf:review는 3개 관점에서 병렬 품질 검증을, /wf:apply는 맥락 기반 선택적 적용을 수행합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "parallel_card_grid",
+            "data": {
+              "title": "/wf:review - 설계 리뷰",
+              "columns": 3,
+              "connection": "bidirectional_arrows",
+              "cards": [
+                {
+                  "icon": "architecture",
+                  "title": "architecture-review",
+                  "items": ["SOLID 원칙", "확장성 검토"],
+                  "color": "#002452"
+                },
+                {
+                  "icon": "security",
+                  "title": "security-review",
+                  "items": ["OWASP 검증", "인증/인가"],
+                  "color": "#C51F2A"
+                },
+                {
+                  "icon": "verified",
+                  "title": "quality-review",
+                  "items": ["완전성 검사", "추적성 확인"],
+                  "color": "#4B6580"
+                }
+              ],
+              "output": "021-design-review-{llm}-{n}.md"
+            }
+          },
+          {
+            "type": "decision_matrix",
+            "data": {
+              "title": "/wf:apply - 설계 리뷰 반영",
+              "subtitle": "맥락 기반 선택적 적용 (무조건 적용 금지)",
+              "headers": ["판단", "조건", "처리"],
+              "rows": [
+                {"icon": "check_circle", "judgment": "적용", "condition": "시스템&Task 적합", "action": "그대로 반영", "color": "#2E7D32"},
+                {"icon": "edit_note", "judgment": "조정", "condition": "취지 유효, 맞춤 필요", "action": "수정하여 반영", "color": "#E9B86E"},
+                {"icon": "pause_circle", "judgment": "보류", "condition": "범위 초과, 부적합", "action": "미반영 (사유 기록)", "color": "#757575"}
+              ],
+              "footer": "우선순위: P1 100% 필수, P2 80% 이상 권장"
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Parallel Review Cards + Decision Matrix",
+          "layout": {
+            "top": "parallel_card_grid (55%)",
+            "bottom": "decision_matrix (40%)"
+          },
+          "card_style": {
+            "background": "#FFFFFF",
+            "border": "2px solid (card color)",
+            "border_radius": "12px",
+            "shadow": "0 4px 16px rgba(0,0,0,0.1)"
+          },
+          "connection_style": {
+            "type": "bidirectional arrows between cards",
+            "color": "#B6B6B6",
+            "label": "병렬 실행"
+          },
+          "matrix_style": {
+            "icon_column": "colored circle with icon",
+            "judgment_column": "Bold, colored text"
+          }
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "Three connected cards in horizontal layout with bidirectional arrows between them, each card has an icon at top, title below, and 2 bullet points, flat design, navy blue green and red colors, white background, clean professional style",
+            "style": "flat design, infographic",
+            "size": "1200x400"
+          }
+        }
+      },
+      {
+        "slide_number": 8,
+        "layout_id": 4,
+        "type": "workflow_detail",
+        "placeholders": {
+          "main_title": "구현 단계 명령어",
+          "action_title": "/wf:audit로 3개 관점 코드 검증 후, /wf:patch로 지적사항을 반영합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "parallel_card_grid",
+            "data": {
+              "title": "/wf:audit - 코드 리뷰",
+              "columns": 3,
+              "connection": "bidirectional_arrows",
+              "cards": [
+                {
+                  "icon": "code",
+                  "title": "quality-audit",
+                  "items": ["SOLID 원칙", "중복 제거", "복잡도"],
+                  "color": "#002452"
+                },
+                {
+                  "icon": "shield",
+                  "title": "security-audit",
+                  "items": ["인젝션 방지", "인증 검증", "암호화"],
+                  "color": "#C51F2A"
+                },
+                {
+                  "icon": "speed",
+                  "title": "performance-audit",
+                  "items": ["쿼리 최적화", "캐싱 전략"],
+                  "color": "#4B6580"
+                }
+              ],
+              "output": "031-code-review-{llm}-{n}.md"
+            }
+          },
+          {
+            "type": "priority_table",
+            "data": {
+              "title": "/wf:patch - 우선순위별 적용",
+              "headers": ["우선순위", "분류", "적용 원칙"],
+              "rows": [
+                {"priority": "P1", "class": "Must Fix", "rule": "보안 취약점, 치명적 버그", "color": "#C51F2A"},
+                {"priority": "P2", "class": "Should Fix", "rule": "성능 이슈, 코드 품질", "color": "#E9B86E"},
+                {"priority": "P3", "class": "Nice to Have", "rule": "코딩 스타일, 문서화", "color": "#4B6580"}
+              ],
+              "footer": "테스트-수정 루프: 최대 5회 자동 반복"
+            }
+          },
+          {
+            "type": "circular_flow",
+            "data": {
+              "title": "반복 리뷰-패치 사이클",
+              "nodes": [
+                {"label": "[im] 구현", "color": "#002452"},
+                {"label": "/wf:audit", "color": "#C51F2A"},
+                {"label": "리뷰 문서", "color": "#4B6580"},
+                {"label": "/wf:patch", "color": "#E9B86E"},
+                {"label": "코드 수정", "color": "#2E7D32"}
+              ],
+              "loop_note": "품질 만족까지 반복"
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Audit Cards + Priority Table + Cycle Diagram",
+          "layout": {
+            "top_left": "parallel_card_grid (60%, 50%)",
+            "top_right": "circular_flow (35%, 50%)",
+            "bottom": "priority_table (100%, 45%)"
+          },
+          "circular_flow_style": {
+            "type": "circular with arrows",
+            "node_size": "60px diameter",
+            "center_text": "품질 만족까지"
+          }
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "Circular flow diagram with 5 nodes arranged in a circle, arrows connecting each node clockwise, center text reads 'repeat until quality', flat design, navy blue red and gold colors, white background",
+            "style": "flat design, cycle diagram",
+            "size": "400x400"
+          }
+        }
+      },
+      {
+        "slide_number": 9,
+        "layout_id": 4,
+        "type": "artifacts",
+        "placeholders": {
+          "main_title": "워크플로우 산출물",
+          "action_title": "각 단계별로 표준화된 문서가 자동 생성되며, 완료 신호 프로토콜로 다음 단계를 트리거합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "artifact_table",
+            "data": {
+              "headers": ["단계", "명령어", "생성 문서"],
+              "rows": [
+                {"stage": "설계 시작", "command": "/wf:start", "artifact": "010-design.md", "color": "#002452"},
+                {"stage": "설계 리뷰", "command": "/wf:review", "artifact": "021-design-review-{llm}-{n}.md", "color": "#002452"},
+                {"stage": "리뷰 반영", "command": "/wf:apply", "artifact": "설계 문서 수정, \"(적용완료)\"", "color": "#002452"},
+                {"stage": "구현", "command": "/wf:build", "artifact": "030-implementation.md", "color": "#C51F2A"},
+                {"stage": "코드 리뷰", "command": "/wf:audit", "artifact": "031-code-review-{llm}-{n}.md", "color": "#C51F2A"},
+                {"stage": "패치", "command": "/wf:patch", "artifact": "코드 수정, \"(적용완료)\"", "color": "#C51F2A"},
+                {"stage": "검증", "command": "/wf:verify", "artifact": "통합테스트 결과", "color": "#4B6580"},
+                {"stage": "테스트", "command": "/wf:test", "artifact": "070-*-test-results.md", "color": "#4B6580"},
+                {"stage": "완료", "command": "/wf:done", "artifact": "080-manual.md", "color": "#2E7D32"}
+              ]
+            }
+          },
+          {
+            "type": "code_block",
+            "data": {
+              "title": "완료 신호 프로토콜",
+              "language": "text",
+              "code": "ORCHAY_DONE:{project}/{task-id}:{command}:{status}\n\n예: ORCHAY_DONE:orchay/TSK-01-01:build:success\n예: ORCHAY_DONE:orchay/TSK-02-03:test:error:커버리지 미달",
+              "note": "orchay 스케줄러가 이 신호를 감지하여 다음 단계를 자동 실행",
+              "position": "right",
+              "width": "45%"
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Artifact Reference + Signal Protocol",
+          "layout": {
+            "left": "artifact_table (50%)",
+            "right": "code_block (45%)"
+          },
+          "table_style": {
+            "stage_column": "좌측 4px colored bar",
+            "command_column": "monospace, Bold, #002452",
+            "artifact_column": "monospace, Regular"
+          },
+          "code_style": {
+            "background": "#262626",
+            "text": "#FFFFFF",
+            "highlight": "#E9B86E for placeholders"
+          }
+        }
+      },
+      {
+        "slide_number": 10,
+        "layout_id": 4,
+        "type": "modes",
+        "placeholders": {
+          "main_title": "실행 모드",
+          "action_title": "프로젝트 특성에 따라 4가지 실행 모드 중 선택하여 워크플로우를 조절할 수 있습니다."
+        },
+        "custom_elements": [
+          {
+            "type": "mode_table",
+            "data": {
+              "headers": ["모드", "워크플로우 범위", "종료 상태", "의존성"],
+              "rows": [
+                {"mode": "design", "scope": "start → review → apply", "end": "[dd] 상세설계", "deps": "무시", "color": "#002452"},
+                {"mode": "quick", "scope": "start → approve → build → done", "end": "[xx] 완료", "deps": "검사", "color": "#2E7D32"},
+                {"mode": "develop", "scope": "전체 (리뷰/테스트 포함)", "end": "[im] 구현", "deps": "검사", "color": "#C51F2A"},
+                {"mode": "force", "scope": "quick과 동일", "end": "[xx] 완료", "deps": "무시", "color": "#E9B86E"}
+              ]
+            }
+          },
+          {
+            "type": "state_flow",
+            "data": {
+              "title": "상태 전이 다이어그램",
+              "states": [
+                {"label": "[ ] Todo", "color": "#757575"},
+                {"label": "[dd] 상세설계", "color": "#002452", "transition": "start"},
+                {"label": "[ap] 승인", "color": "#4B6580", "transition": "approve"},
+                {"label": "[im] 구현", "color": "#C51F2A", "transition": "build"},
+                {"label": "[vf] 검증", "color": "#E9B86E", "transition": "verify"},
+                {"label": "[xx] 완료", "color": "#2E7D32", "transition": "done"}
+              ],
+              "direction": "horizontal"
+            }
+          },
+          {
+            "type": "category_table",
+            "data": {
+              "title": "카테고리별 워크플로우",
+              "headers": ["카테고리", "설명", "구현 명령"],
+              "rows": [
+                {"category": "development", "desc": "신규 기능 개발", "command": "build"},
+                {"category": "defect", "desc": "버그 수정", "command": "fix"},
+                {"category": "infrastructure", "desc": "인프라/리팩토링", "command": "build"}
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Mode Reference + State Flow Diagram",
+          "layout": {
+            "top": "mode_table (35%)",
+            "middle": "state_flow (35%)",
+            "bottom": "category_table (25%)"
+          },
+          "state_flow_style": {
+            "node": "rounded pill shape, colored background, white text",
+            "arrow": "solid line with transition label below",
+            "size": "100px x 40px per state"
+          }
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "Horizontal state flow diagram with 6 pill-shaped badges connected by arrows, each badge has different color (gray navy blue red gold green), transition labels below arrows (start approve build verify done), clean flat design, white background",
+            "style": "flat design, state diagram",
+            "size": "1200x200"
+          }
+        }
+      },
+      {
+        "slide_number": 11,
+        "layout_id": 4,
+        "type": "planning",
+        "placeholders": {
+          "main_title": "기획 명령어 (/plan:*)",
+          "action_title": "PRD 문서를 분석하여 YAML 형식의 WBS를 자동 생성합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "code_block",
+            "data": {
+              "title": "WBS 자동 생성",
+              "language": "bash",
+              "code": "/plan:wbs .orchay/projects/myapp/prd.md\n/plan:wbs .orchay/projects/myapp/prd.md --scale large",
+              "position": "top_left",
+              "width": "45%"
+            }
+          },
+          {
+            "type": "yaml_structure",
+            "data": {
+              "title": "WBS YAML 구조",
+              "content": {
+                "project": {
+                  "id": "my-project",
+                  "name": "프로젝트 이름",
+                  "version": "0.1.0"
+                },
+                "workPackages": [
+                  {
+                    "id": "WP-01",
+                    "title": "핵심 기능",
+                    "tasks": [
+                      {
+                        "id": "TSK-01-01",
+                        "title": "로그인 구현",
+                        "category": "development",
+                        "status": "[ ]",
+                        "priority": "high"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "position": "top_right",
+              "width": "50%"
+            }
+          },
+          {
+            "type": "hierarchy_table",
+            "data": {
+              "title": "계층 구조 자동 결정",
+              "headers": ["기준", "4단계 (WP→ACT→TSK)", "3단계 (WP→TSK)"],
+              "rows": [
+                {"criteria": "예상 기간", "four": "12개월+", "three": "12개월 미만"},
+                {"criteria": "팀 규모", "four": "10명+", "three": "10명 미만"},
+                {"criteria": "Task 수", "four": "50개+", "three": "50개 미만"}
+              ],
+              "position": "bottom",
+              "width": "100%"
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Planning Commands + YAML Structure + Decision Table",
+          "layout": {
+            "top_left": "code_block (45%, 40%)",
+            "top_right": "yaml_structure (50%, 55%)",
+            "bottom": "hierarchy_table (100%, 35%)"
+          },
+          "yaml_style": {
+            "background": "#F8F9FA",
+            "syntax_highlight": "key: #002452, value: #C51F2A, string: #2E7D32"
+          }
+        }
+      },
+      {
+        "slide_number": 12,
+        "layout_id": 4,
+        "type": "architecture",
+        "placeholders": {
+          "main_title": "아키텍처",
+          "action_title": "Python 기반의 모듈화된 구조로, WezTerm과 Claude Code를 연동합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "tree_diagram",
+            "data": {
+              "title": "시스템 구성",
+              "root": {
+                "name": "orchay/",
+                "icon": "folder",
+                "color": "#002452"
+              },
+              "children": [
+                {"name": "main.py", "desc": "오케스트레이터 (메인 루프)", "icon": "code", "color": "#C51F2A"},
+                {"name": "scheduler.py", "desc": "Task 필터링 & 분배 로직", "icon": "code", "color": "#C51F2A"},
+                {"name": "wbs_parser.py", "desc": "WBS 파일 파싱 & 감시", "icon": "code", "color": "#C51F2A"},
+                {"name": "worker.py", "desc": "Worker 상태 감지", "icon": "code", "color": "#C51F2A"},
+                {
+                  "name": "models/",
+                  "icon": "folder",
+                  "color": "#4B6580",
+                  "desc": "Pydantic 데이터 모델"
+                },
+                {
+                  "name": "utils/",
+                  "icon": "folder",
+                  "color": "#4B6580",
+                  "children": [
+                    {"name": "wezterm.py", "desc": "WezTerm CLI 래퍼", "icon": "code"}
+                  ]
+                }
+              ],
+              "commands": {
+                "name": ".claude/commands/",
+                "icon": "folder",
+                "color": "#E9B86E",
+                "children": [
+                  {
+                    "name": "wf/",
+                    "desc": "워크플로우 명령어",
+                    "children": ["start.md", "build.md", "..."]
+                  },
+                  {
+                    "name": "plan/",
+                    "desc": "기획 명령어",
+                    "children": ["wbs.md"]
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "tech_stack_table",
+            "data": {
+              "title": "기술 스택",
+              "headers": ["구성 요소", "기술"],
+              "rows": [
+                {"component": "터미널", "tech": "WezTerm (멀티 pane 지원)", "icon": "terminal"},
+                {"component": "AI Worker", "tech": "Claude Code", "icon": "smart_toy"},
+                {"component": "언어", "tech": "Python 3.10+", "icon": "code"},
+                {"component": "TUI", "tech": "Textual + Rich", "icon": "dashboard"},
+                {"component": "파일 감시", "tech": "watchdog", "icon": "visibility"}
+              ],
+              "position": "right",
+              "width": "35%"
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Directory Tree + Tech Stack",
+          "layout": {
+            "left": "tree_diagram (60%)",
+            "right": "tech_stack_table (35%)"
+          },
+          "tree_style": {
+            "connector": "L-shaped lines",
+            "folder_icon": "colored folder icon",
+            "file_icon": "code file icon",
+            "indent": "24px per level"
+          },
+          "table_style": {
+            "icon_column": "24px icon",
+            "tech_column": "Bold, #262626"
+          }
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "File tree diagram showing project structure with folder icons and file icons, L-shaped connecting lines, folder names in navy blue, files in dark gray, clean flat design style, white background",
+            "style": "flat design, file tree",
+            "size": "600x500"
+          }
+        }
+      },
+      {
+        "slide_number": 13,
+        "layout_id": 4,
+        "type": "usage",
+        "placeholders": {
+          "main_title": "사용법",
+          "action_title": "프로젝트 폴더에서 간단한 명령어로 실행하고, TUI 대시보드로 모니터링합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "code_block",
+            "data": {
+              "title": "기본 실행",
+              "language": "bash",
+              "code": "# 프로젝트 폴더에서 실행\ncd {프로젝트 루트}\norchay [프로젝트명] [옵션]\n\n# 예시\norchay my_project           # 기본 실행\norchay my_project -w 5      # Worker 5개\norchay my_project -m design # 설계 모드",
+              "position": "left",
+              "width": "45%"
+            }
+          },
+          {
+            "type": "terminal_mockup",
+            "data": {
+              "title": "orchay - Task Scheduler v0.1.0",
+              "style": "dark_theme",
+              "content": {
+                "header": {
+                  "wbs": "/project/wbs.yaml",
+                  "mode": "quick",
+                  "workers": 3,
+                  "tasks": 9
+                },
+                "section_title": "Worker Status",
+                "table": {
+                  "headers": ["ID", "Pane", "State", "Task"],
+                  "rows": [
+                    {"id": "1", "pane": "0", "state": "busy", "task": "TSK-02-01", "state_color": "#C51F2A"},
+                    {"id": "2", "pane": "2", "state": "idle", "task": "-", "state_color": "#4B6580"},
+                    {"id": "3", "pane": "1", "state": "idle", "task": "-", "state_color": "#4B6580"}
+                  ],
+                  "border_style": "single"
+                },
+                "footer": "Queue: 5 pending, 1 running, 3 done"
+              },
+              "position": "right",
+              "width": "50%"
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Command Examples + TUI Mockup",
+          "layout": {
+            "left": "code_block (45%)",
+            "right": "terminal_mockup (50%)"
+          },
+          "terminal_style": {
+            "frame": "#262626 with macOS traffic lights (red/yellow/green)",
+            "background": "#1E1E1E",
+            "text": "#FFFFFF",
+            "title_bar": "#333333",
+            "table_border": "#4B6580",
+            "state_busy": "#C51F2A background",
+            "state_idle": "#4B6580 background"
+          }
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "Dark terminal window mockup with macOS style traffic lights, showing a TUI dashboard with header info and a bordered table, ascii-style table borders, dark background with white text, state badges in colors",
+            "style": "terminal mockup, TUI",
+            "size": "700x500"
+          }
+        }
+      },
+      {
+        "slide_number": 14,
+        "layout_id": 4,
+        "type": "installation",
+        "placeholders": {
+          "main_title": "설치 방법",
+          "action_title": "WezTerm과 Claude Code가 설치되어 있다면, 3가지 방법 중 선택하여 설치할 수 있습니다."
+        },
+        "custom_elements": [
+          {
+            "type": "requirement_table",
+            "data": {
+              "title": "사전 요구사항",
+              "headers": ["도구", "용도", "필수"],
+              "rows": [
+                {"tool": "WezTerm", "purpose": "멀티 pane 터미널", "required": true, "icon": "terminal"},
+                {"tool": "Claude Code", "purpose": "AI Worker", "required": true, "icon": "smart_toy"}
+              ],
+              "position": "top",
+              "width": "100%"
+            }
+          },
+          {
+            "type": "installation_cards",
+            "data": {
+              "columns": 3,
+              "cards": [
+                {
+                  "number": "1",
+                  "title": "실행 파일 (권장)",
+                  "icon": "download",
+                  "code": "# GitHub Releases에서 다운로드\n# Linux: orchay-linux-x64.tar.gz\n# Windows: orchay-windows-x64.zip\n# macOS: orchay-macos-x64.tar.gz",
+                  "badge": "Recommended",
+                  "color": "#2E7D32"
+                },
+                {
+                  "number": "2",
+                  "title": "pipx",
+                  "icon": "package",
+                  "code": "pipx install orchay",
+                  "color": "#002452"
+                },
+                {
+                  "number": "3",
+                  "title": "pip",
+                  "icon": "code",
+                  "code": "pip install orchay",
+                  "color": "#4B6580"
+                }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Requirements + Installation Options",
+          "layout": {
+            "top": "requirement_table (25%)",
+            "bottom": "installation_cards (70%)"
+          },
+          "requirement_style": {
+            "required_icon": "check_circle in green",
+            "tool_icon": "24px, colored"
+          },
+          "card_style": {
+            "background": "#FFFFFF",
+            "border": "top 4px colored bar",
+            "code_bg": "#F5F5F5",
+            "badge": "pill shape, green background for recommended"
+          }
+        }
+      },
+      {
+        "slide_number": 15,
+        "layout_id": 4,
+        "type": "benefits",
+        "placeholders": {
+          "main_title": "효과 및 기대 가치",
+          "action_title": "orchay 도입으로 개발 생산성을 획기적으로 향상시킬 수 있습니다."
+        },
+        "custom_elements": [
+          {
+            "type": "comparison_chart",
+            "data": {
+              "title": "개발 생산성 향상",
+              "type": "horizontal_bar",
+              "metrics": [
+                {
+                  "label": "동시 작업 Task",
+                  "before": {"value": 1, "label": "1개"},
+                  "after": {"value": 5, "label": "N개 (Worker 수)"},
+                  "improvement": "5x"
+                },
+                {
+                  "label": "Task 할당",
+                  "before": {"value": 2, "label": "수동"},
+                  "after": {"value": 5, "label": "자동"},
+                  "improvement": "자동화"
+                },
+                {
+                  "label": "진행 모니터링",
+                  "before": {"value": 2, "label": "수동 확인"},
+                  "after": {"value": 5, "label": "실시간 대시보드"},
+                  "improvement": "실시간"
+                },
+                {
+                  "label": "워크플로우",
+                  "before": {"value": 2, "label": "수동 전환"},
+                  "after": {"value": 5, "label": "자동 실행"},
+                  "improvement": "자동화"
+                }
+              ],
+              "colors": {
+                "before": "#B6B6B6",
+                "after": "#002452"
+              }
+            }
+          },
+          {
+            "type": "scenario_cards",
+            "data": {
+              "title": "적용 시나리오",
+              "columns": 2,
+              "cards": [
+                {
+                  "icon": "rocket_launch",
+                  "title": "대규모 기능 개발",
+                  "desc": "여러 Task 병렬 처리",
+                  "color": "#002452"
+                },
+                {
+                  "icon": "sync_alt",
+                  "title": "마이그레이션 작업",
+                  "desc": "반복적인 Task 자동화",
+                  "color": "#C51F2A"
+                },
+                {
+                  "icon": "rate_review",
+                  "title": "코드 리뷰/리팩토링",
+                  "desc": "체계적인 워크플로우 적용",
+                  "color": "#4B6580"
+                },
+                {
+                  "icon": "bug_report",
+                  "title": "테스트 자동화",
+                  "desc": "구현 후 자동 테스트 실행",
+                  "color": "#2E7D32"
+                }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Before/After Comparison + Use Cases",
+          "layout": {
+            "top": "comparison_chart (55%)",
+            "bottom": "scenario_cards (40%)"
+          },
+          "chart_style": {
+            "bar_height": "32px",
+            "before_bar": "gray, left aligned",
+            "after_bar": "navy, left aligned",
+            "improvement_badge": "pill, green background"
+          },
+          "card_style": {
+            "icon_size": "48px",
+            "icon_bg": "10% opacity of card color"
+          }
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "Horizontal bar chart comparing before and after metrics, gray bars for before and navy blue bars for after, improvement badges on right side showing multipliers and labels, clean flat design, white background",
+            "style": "flat design, comparison chart",
+            "size": "1000x300"
+          }
+        }
+      },
+      {
+        "slide_number": 16,
+        "layout_id": 4,
+        "type": "roadmap",
+        "placeholders": {
+          "main_title": "향후 개발 예정 기능",
+          "action_title": "Git Worktree 통합으로 완전한 병렬 개발 환경을 구축할 예정입니다."
+        },
+        "custom_elements": [
+          {
+            "type": "feature_highlight",
+            "data": {
+              "title": "Git Worktree 통합 (핵심 기능)",
+              "icon": "account_tree",
+              "problem": "여러 Worker가 동일 브랜치에서 작업 시 충돌 발생",
+              "solution": "각 Worker별 독립 worktree 자동 생성",
+              "benefits": [
+                "브랜치 충돌 없는 완전 병렬 개발",
+                "Task별 독립적인 커밋 히스토리",
+                "자동 브랜치 생성/정리"
+              ]
+            }
+          },
+          {
+            "type": "tree_diagram",
+            "data": {
+              "title": "Worktree 구조",
+              "root": {
+                "name": "project/",
+                "icon": "folder",
+                "color": "#002452"
+              },
+              "children": [
+                {"name": ".git/", "desc": "공유 Git 저장소", "icon": "folder_shared", "color": "#757575"},
+                {"name": "worktree-worker-1/", "desc": "TSK-01-01 브랜치", "icon": "folder", "color": "#002452", "badge": "Worker 1"},
+                {"name": "worktree-worker-2/", "desc": "TSK-01-02 브랜치", "icon": "folder", "color": "#C51F2A", "badge": "Worker 2"},
+                {"name": "worktree-worker-3/", "desc": "TSK-02-01 브랜치", "icon": "folder", "color": "#4B6580", "badge": "Worker 3"}
+              ]
+            }
+          },
+          {
+            "type": "roadmap_table",
+            "data": {
+              "title": "추가 예정 기능",
+              "headers": ["우선순위", "기능", "설명"],
+              "rows": [
+                {"priority": "높음", "feature": "동적 Worker 스케일링", "desc": "부하에 따른 Worker 자동 추가/제거", "color": "#C51F2A"},
+                {"priority": "높음", "feature": "의존성 위상정렬", "desc": "Task 실행 순서 자동 최적화", "color": "#C51F2A"},
+                {"priority": "높음", "feature": "순환 의존성 감지", "desc": "잘못된 의존성 조기 발견", "color": "#C51F2A"},
+                {"priority": "중간", "feature": "다중 LLM 지원", "desc": "Claude, GPT, Gemini 혼합 사용", "color": "#E9B86E"},
+                {"priority": "중간", "feature": "Rate Limit 동적 조정", "desc": "제공자별 제한 자동 관리", "color": "#E9B86E"},
+                {"priority": "낮음", "feature": "성능 메트릭 대시보드", "desc": "토큰 사용량, 응답 시간 시각화", "color": "#4B6580"}
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Feature Highlight + Roadmap Table",
+          "layout": {
+            "top_left": "feature_highlight (55%, 45%)",
+            "top_right": "tree_diagram (40%, 45%)",
+            "bottom": "roadmap_table (100%, 50%)"
+          },
+          "highlight_style": {
+            "icon_size": "64px",
+            "icon_bg": "#002452 10% opacity",
+            "problem_box": "red border left",
+            "solution_box": "green border left"
+          },
+          "tree_style": {
+            "badge": "pill shape, worker color"
+          },
+          "table_style": {
+            "priority_high": "#C51F2A pill",
+            "priority_medium": "#E9B86E pill",
+            "priority_low": "#4B6580 pill"
+          }
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "File tree diagram showing git worktree structure with 4 folders, each worker folder has a colored badge label, L-shaped connecting lines, clean flat design, navy blue red and gray colors, white background",
+            "style": "flat design, file tree",
+            "size": "500x300"
+          }
+        }
+      },
+      {
+        "slide_number": 17,
+        "layout_id": 4,
+        "type": "closing",
+        "placeholders": {
+          "main_title": "마무리",
+          "action_title": "AI 코딩 어시스턴트를 위한 Task 오케스트레이터"
+        },
+        "custom_elements": [
+          {
+            "type": "summary_cards",
+            "data": {
+              "columns": 4,
+              "cards": [
+                {
+                  "icon": "description",
+                  "title": "WBS 기반",
+                  "desc": "Task 자동 분배",
+                  "color": "#002452"
+                },
+                {
+                  "icon": "groups",
+                  "title": "다중 Worker",
+                  "desc": "병렬 실행",
+                  "color": "#C51F2A"
+                },
+                {
+                  "icon": "autorenew",
+                  "title": "워크플로우",
+                  "desc": "기반 자동화",
+                  "color": "#4B6580"
+                },
+                {
+                  "icon": "monitoring",
+                  "title": "실시간",
+                  "desc": "모니터링 & 관리",
+                  "color": "#2E7D32"
+                }
+              ]
+            }
+          },
+          {
+            "type": "link_buttons",
+            "data": {
+              "buttons": [
+                {
+                  "icon": "code",
+                  "label": "GitHub",
+                  "url": "github.com/jongik-sv/orchay",
+                  "color": "#262626"
+                },
+                {
+                  "icon": "package",
+                  "label": "PyPI",
+                  "url": "pypi.org/project/orchay",
+                  "color": "#002452"
+                }
+              ]
+            }
+          },
+          {
+            "type": "qna_block",
+            "data": {
+              "title": "Q&A",
+              "subtitle": "질문이 있으신가요?",
+              "icon": "help_outline",
+              "style": "centered"
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Summary Cards + Links + Q&A",
+          "layout": {
+            "top": "summary_cards (35%)",
+            "middle": "link_buttons (20%)",
+            "bottom": "qna_block (40%)"
+          },
+          "card_style": {
+            "icon_size": "48px",
+            "icon_bg": "colored circle",
+            "title": "Bold, 18pt",
+            "desc": "Regular, 14pt, gray"
+          },
+          "button_style": {
+            "shape": "rounded pill",
+            "icon_left": true,
+            "hover": "darken 10%"
+          },
+          "qna_style": {
+            "icon_size": "96px",
+            "icon_color": "#002452",
+            "title": "Bold, 36pt",
+            "subtitle": "Regular, 20pt, gray"
+          }
+        }
+      }
+    ]
+  }
+}

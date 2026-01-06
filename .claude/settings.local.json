@@ -14,7 +14,7 @@
       "command": "cmd",
       "args": [
         "/c",
-        "npx",        
+        "npx",
         "-y",
         "@upstash/context7-mcp"
       ]
@@ -31,5 +31,8 @@
         "--access-token=sbp_0d964d692332b36db8a4970782b76f83ae9853ac"
       ]
     }
+  },
+  "enabledPlugins": {
+    "sentry@claude-plugins-official": true
   }
 }

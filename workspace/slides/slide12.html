@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 16pt 30pt; border-bottom: 1pt solid #E5E5E5; }
+.main-title { color: #002452; font-size: 14pt; font-weight: bold; margin: 0; }
+.action-title { color: #333333; font-size: 13pt; margin: 8pt 0 0 0; line-height: 1.4; }
+.content { flex: 1; padding: 24pt 30pt; display: flex; flex-direction: column; justify-content: center; }
+.timeline { display: flex; align-items: flex-start; position: relative; padding-top: 20pt; }
+.timeline-line { position: absolute; top: 32pt; left: 30pt; right: 30pt; height: 4pt; background: #E5E5E5; }
+.milestone { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; }
+.milestone-point {
+  width: 20pt; height: 20pt; background: #002452; border-radius: 50%;
+  border: 3pt solid #FFFFFF; box-shadow: 0 2pt 6pt rgba(0,0,0,0.15);
+  z-index: 1;
+}
+.milestone-card {
+  margin-top: 12pt; background: #FFFFFF; border: 1pt solid #E5E5E5;
+  border-radius: 6pt; padding: 10pt; text-align: center; width: 90pt;
+  box-shadow: 0 2pt 6pt rgba(0,0,0,0.06);
+}
+.milestone-id { color: #002452; font-size: 12pt; font-weight: bold; margin: 0; }
+.milestone-name { color: #333333; font-size: 10pt; margin: 4pt 0; }
+.milestone-date { color: #C51F2A; font-size: 9pt; margin: 0; }
+.milestone-del { color: #666666; font-size: 8pt; margin: 4pt 0 0 0; }
+.footer { padding: 10pt 30pt; display: flex; justify-content: space-between; border-top: 1pt solid #E5E5E5; }
+.footer-text { color: #666666; font-size: 9pt; margin: 0; }
+.page-num { color: #002452; font-size: 9pt; font-weight: bold; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <p class="main-title">3. 프로젝트 조직 및 일정</p>
+  <p class="action-title">6개 주요 마일스톤을 통해 프로젝트 진행 상황을 체계적으로 관리합니다.</p>
+</div>
+<div class="content">
+  <div class="timeline">
+    <div class="timeline-line"></div>
+    <div class="milestone">
+      <div class="milestone-point"></div>
+      <div class="milestone-card">
+        <p class="milestone-id">M1</p>
+        <p class="milestone-name">착수보고</p>
+        <p class="milestone-date">2025.01.10</p>
+        <p class="milestone-del">수행계획서</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-point"></div>
+      <div class="milestone-card">
+        <p class="milestone-id">M2</p>
+        <p class="milestone-name">요구사항 확정</p>
+        <p class="milestone-date">2025.03.31</p>
+        <p class="milestone-del">요구사항정의서</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-point"></div>
+      <div class="milestone-card">
+        <p class="milestone-id">M3</p>
+        <p class="milestone-name">설계 완료</p>
+        <p class="milestone-date">2025.05.31</p>
+        <p class="milestone-del">설계서 일체</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-point"></div>
+      <div class="milestone-card">
+        <p class="milestone-id">M4</p>
+        <p class="milestone-name">개발 완료</p>
+        <p class="milestone-date">2025.09.30</p>
+        <p class="milestone-del">소스코드</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-point"></div>
+      <div class="milestone-card">
+        <p class="milestone-id">M5</p>
+        <p class="milestone-name">통합테스트 완료</p>
+        <p class="milestone-date">2025.11.15</p>
+        <p class="milestone-del">테스트결과서</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="milestone-point"></div>
+      <div class="milestone-card">
+        <p class="milestone-id">M6</p>
+        <p class="milestone-name">시스템 오픈</p>
+        <p class="milestone-date">2025.12.01</p>
+        <p class="milestone-del">오픈보고서</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <p class="footer-text">테크솔루션</p>
+  <p class="page-num">12</p>
+</div>
+</body>
+</html>

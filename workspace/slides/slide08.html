@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 12pt 30pt; border-bottom: 1pt solid #E5E5E5; }
+.main-title { color: #002452; font-size: 13pt; font-weight: bold; margin: 0; }
+.action-title { color: #333333; font-size: 12pt; margin: 6pt 0 0 0; line-height: 1.4; }
+.content { flex: 1; padding: 12pt 30pt; display: flex; flex-direction: column; gap: 4pt; }
+.layer-row { display: flex; height: 44pt; }
+.layer-label { width: 90pt; background: #002452; display: flex; align-items: center; justify-content: center; border-radius: 4pt 0 0 4pt; }
+.layer-name { color: #FFFFFF; font-size: 11pt; font-weight: bold; margin: 0; }
+.layer-content { flex: 1; background: #F8F9FA; border: 1pt solid #E5E5E5; border-left: none; border-radius: 0 4pt 4pt 0; display: flex; align-items: center; padding: 0 12pt; gap: 12pt; }
+.tech-item { display: flex; align-items: center; gap: 6pt; }
+.tech-badge { padding: 3pt 8pt; border-radius: 3pt; }
+.tech-text { font-size: 10pt; font-weight: bold; margin: 0; }
+.tech-version { color: #666666; font-size: 9pt; margin: 0; }
+.layer-desc { color: #999999; font-size: 9pt; margin: 0; margin-left: auto; }
+.footer { padding: 8pt 30pt; display: flex; justify-content: space-between; }
+.footer-text { color: #666666; font-size: 8pt; margin: 0; }
+.page-num { color: #002452; font-size: 8pt; font-weight: bold; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <p class="main-title">2. 추진 전략 및 방법론</p>
+  <p class="action-title">Vue.js, Spring Boot, AWS 기반 클라우드 네이티브 MSA 아키텍처를 적용합니다.</p>
+</div>
+<div class="content">
+  <div class="layer-row">
+    <div class="layer-label"><p class="layer-name">Frontend</p></div>
+    <div class="layer-content">
+      <div class="tech-item"><div class="tech-badge" style="background:#42B883;"><p class="tech-text" style="color:#FFFFFF;">Vue.js 3</p></div><p class="tech-version">v3.4</p></div>
+      <div class="tech-item"><div class="tech-badge" style="background:#3178C6;"><p class="tech-text" style="color:#FFFFFF;">TypeScript</p></div></div>
+      <p class="layer-desc">SPA 구조</p>
+    </div>
+  </div>
+  <div class="layer-row">
+    <div class="layer-label"><p class="layer-name">Backend</p></div>
+    <div class="layer-content">
+      <div class="tech-item"><div class="tech-badge" style="background:#6DB33F;"><p class="tech-text" style="color:#FFFFFF;">Spring Boot</p></div><p class="tech-version">v3.2</p></div>
+      <div class="tech-item"><div class="tech-badge" style="background:#ED8B00;"><p class="tech-text" style="color:#FFFFFF;">Java 17</p></div></div>
+      <p class="layer-desc">MSA 구조</p>
+    </div>
+  </div>
+  <div class="layer-row">
+    <div class="layer-label"><p class="layer-name">Database</p></div>
+    <div class="layer-content">
+      <div class="tech-item"><div class="tech-badge" style="background:#336791;"><p class="tech-text" style="color:#FFFFFF;">PostgreSQL</p></div><p class="tech-version">v16</p></div>
+      <div class="tech-item"><div class="tech-badge" style="background:#DC382D;"><p class="tech-text" style="color:#FFFFFF;">Redis</p></div><p class="tech-version">v7</p></div>
+      <p class="layer-desc">RDBMS + Cache</p>
+    </div>
+  </div>
+  <div class="layer-row">
+    <div class="layer-label"><p class="layer-name">Infrastructure</p></div>
+    <div class="layer-content">
+      <div class="tech-item"><div class="tech-badge" style="background:#FF9900;"><p class="tech-text" style="color:#232F3E;">AWS EKS</p></div></div>
+      <div class="tech-item"><div class="tech-badge" style="background:#FF9900;"><p class="tech-text" style="color:#232F3E;">AWS RDS</p></div></div>
+      <div class="tech-item"><div class="tech-badge" style="background:#FF9900;"><p class="tech-text" style="color:#232F3E;">AWS S3</p></div></div>
+      <p class="layer-desc">클라우드 네이티브</p>
+    </div>
+  </div>
+  <div class="layer-row">
+    <div class="layer-label"><p class="layer-name">AI/ML</p></div>
+    <div class="layer-content">
+      <div class="tech-item"><div class="tech-badge" style="background:#3776AB;"><p class="tech-text" style="color:#FFFFFF;">Python</p></div><p class="tech-version">v3.11</p></div>
+      <div class="tech-item"><div class="tech-badge" style="background:#FF6F00;"><p class="tech-text" style="color:#FFFFFF;">TensorFlow</p></div><p class="tech-version">v2.15</p></div>
+      <p class="layer-desc">수요예측, 경로최적화</p>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <p class="footer-text">테크솔루션</p>
+  <p class="page-num">8</p>
+</div>
+</body>
+</html>

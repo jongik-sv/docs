@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 12pt 30pt; border-bottom: 1pt solid #E5E5E5; }
+.main-title { color: #002452; font-size: 13pt; font-weight: bold; margin: 0; }
+.action-title { color: #333333; font-size: 12pt; margin: 6pt 0 0 0; line-height: 1.4; }
+.content { flex: 1; padding: 10pt 30pt; }
+.risk-table { width: 100%; border-collapse: collapse; }
+.risk-table th {
+  background: #002452; color: #FFFFFF; font-size: 9pt; font-weight: bold;
+  padding: 8pt 6pt; text-align: left;
+}
+.risk-table td { padding: 6pt; font-size: 9pt; border-bottom: 1pt solid #E5E5E5; vertical-align: middle; }
+.risk-table tr:nth-child(even) { background: #F8F9FA; }
+.risk-name { color: #333333; font-weight: bold; margin: 0; font-size: 9pt; }
+.badge { display: inline-block; padding: 2pt 6pt; border-radius: 3pt; }
+.badge-high { background: #C51F2A; }
+.badge-mid { background: #E9B86E; }
+.badge-low { background: #B7D0D4; }
+.badge-text { font-size: 8pt; font-weight: bold; margin: 0; }
+.badge-high .badge-text { color: #FFFFFF; }
+.badge-mid .badge-text { color: #333333; }
+.badge-low .badge-text { color: #333333; }
+.response { color: #333333; margin: 0; font-size: 9pt; }
+.owner { color: #002452; font-weight: bold; margin: 0; font-size: 9pt; }
+.footer { padding: 8pt 30pt; display: flex; justify-content: space-between; }
+.footer-text { color: #666666; font-size: 8pt; margin: 0; }
+.page-num { color: #002452; font-size: 8pt; font-weight: bold; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <p class="main-title">4. 품질·보안·위험 관리</p>
+  <p class="action-title">5대 주요 위험을 식별하고, 담당자별 대응 방안을 사전에 수립했습니다.</p>
+</div>
+<div class="content">
+  <table class="risk-table">
+    <tr>
+      <th style="width: 22%;">위험 요소</th>
+      <th style="width: 10%;">영향도</th>
+      <th style="width: 10%;">발생확률</th>
+      <th style="width: 43%;">대응 방안</th>
+      <th style="width: 15%;">담당</th>
+    </tr>
+    <tr>
+      <td><p class="risk-name">요구사항 변경</p></td>
+      <td><div class="badge badge-high"><p class="badge-text">상</p></div></td>
+      <td><div class="badge badge-high"><p class="badge-text">상</p></div></td>
+      <td><p class="response">CCB 통한 통제, 영향도 분석 필수</p></td>
+      <td><p class="owner">PM</p></td>
+    </tr>
+    <tr>
+      <td><p class="risk-name">일정 지연</p></td>
+      <td><div class="badge badge-high"><p class="badge-text">상</p></div></td>
+      <td><div class="badge badge-mid"><p class="badge-text">중</p></div></td>
+      <td><p class="response">주간 진척관리, Critical Path 모니터링</p></td>
+      <td><p class="owner">PM</p></td>
+    </tr>
+    <tr>
+      <td><p class="risk-name">기술적 난제</p></td>
+      <td><div class="badge badge-mid"><p class="badge-text">중</p></div></td>
+      <td><div class="badge badge-mid"><p class="badge-text">중</p></div></td>
+      <td><p class="response">PoC 선행, 외부 전문가 자문</p></td>
+      <td><p class="owner">AA</p></td>
+    </tr>
+    <tr>
+      <td><p class="risk-name">인력 이탈</p></td>
+      <td><div class="badge badge-high"><p class="badge-text">상</p></div></td>
+      <td><div class="badge badge-low"><p class="badge-text">하</p></div></td>
+      <td><p class="response">대체 인력 풀 확보, 기술 문서화</p></td>
+      <td><p class="owner">PM</p></td>
+    </tr>
+    <tr>
+      <td><p class="risk-name">데이터 마이그레이션</p></td>
+      <td><div class="badge badge-high"><p class="badge-text">상</p></div></td>
+      <td><div class="badge badge-mid"><p class="badge-text">중</p></div></td>
+      <td><p class="response">사전 검증, 롤백 계획 수립</p></td>
+      <td><p class="owner">DBA</p></td>
+    </tr>
+  </table>
+</div>
+<div class="footer">
+  <p class="footer-text">테크솔루션</p>
+  <p class="page-num">15</p>
+</div>
+</body>
+</html>

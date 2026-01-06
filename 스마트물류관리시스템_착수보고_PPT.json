@@ -1,0 +1,1089 @@
+{
+  "presentation": {
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "author": "테크솔루션_김철수",
+    "date": "2025.01.10",
+    "target_audience": "발주기관 PM/담당자",
+    "purpose": "착수보고회",
+    "template": "PPT기본양식.pptx",
+    "total_slides": 18,
+    "slides": [
+      {
+        "slide_number": 1,
+        "layout_id": 1,
+        "slide_type": "title",
+        "placeholders": {
+          "title": "스마트 물류관리 시스템\n구축 프로젝트 수행계획서",
+          "subtitle": "(주)테크솔루션 I 2025.01.10"
+        }
+      },
+      {
+        "slide_number": 2,
+        "layout_id": 2,
+        "slide_type": "toc",
+        "placeholders": {
+          "toc_items": [
+            { "number": "01", "title": "프로젝트 개요", "pages": "03-05" },
+            { "number": "02", "title": "추진 전략 및 방법론", "pages": "06-08" },
+            { "number": "03", "title": "프로젝트 조직 및 일정", "pages": "09-12" },
+            { "number": "04", "title": "품질·보안·위험 관리", "pages": "13-16" },
+            { "number": "05", "title": "의사소통 및 협조 요청", "pages": "17-18" }
+          ]
+        }
+      },
+      {
+        "slide_number": 3,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "01. 프로젝트 개요",
+        "placeholders": {
+          "main_title": "1. 프로젝트 개요",
+          "action_title": "글로벌물류의 차세대 스마트 물류관리 시스템을 12개월간 15억 원 규모로 구축합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "info_table",
+            "data": {
+              "rows": [
+                { "label": "프로젝트명", "value": "스마트 물류관리 시스템 구축" },
+                { "label": "발주기관", "value": "(주)글로벌물류" },
+                { "label": "수행사", "value": "(주)테크솔루션" },
+                { "label": "계약금액", "value": "15억 원 (VAT 별도)" },
+                { "label": "계약기간", "value": "2025.01.06 ~ 2025.12.31 (12개월)" }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Executive Summary Card - 핵심 정보를 한눈에 전달",
+          "layout": {
+            "grid": "2열 테이블, Label 30% / Value 70%",
+            "spacing": "행 간격 16px, 패딩 20px",
+            "vertical_position": "Action Title 하단 32px, 중앙 정렬"
+          },
+          "card_style": {
+            "background": "#FFFFFF",
+            "border": "1px solid #E5E5E5",
+            "border_radius": "8px",
+            "shadow": "0 2px 8px rgba(0,0,0,0.06)"
+          },
+          "typography": {
+            "label": "본고딕 Medium, 14pt, #002452",
+            "value": "본고딕 Bold, 16pt, #333333"
+          },
+          "color_scheme": {
+            "primary": "#002452",
+            "accent": "#C51F2A",
+            "background": "#FFFFFF"
+          },
+          "visual_hierarchy": "Label(네이비) → Value(강조) 순으로 시선 유도"
+        }
+      },
+      {
+        "slide_number": 4,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "01. 프로젝트 개요",
+        "placeholders": {
+          "main_title": "1. 프로젝트 개요",
+          "action_title": "10년 노후 시스템의 한계를 극복하고 AI 기반 물류 최적화로 운영 효율 30%를 향상시킵니다."
+        },
+        "custom_elements": [
+          {
+            "type": "three_column_flow",
+            "data": {
+              "columns": [
+                {
+                  "header": "현황 및 문제점",
+                  "icon": "warning",
+                  "color": "#C51F2A",
+                  "items": [
+                    "10년 이상 레거시 시스템",
+                    "처리 속도 저하 심각",
+                    "실시간 재고 파악 불가",
+                    "타 시스템 연동 한계"
+                  ]
+                },
+                {
+                  "header": "추진 목표",
+                  "icon": "target",
+                  "color": "#002452",
+                  "items": [
+                    "AI 기반 물류 최적화",
+                    "실시간 재고/배송 추적",
+                    "클라우드 기반 확장성",
+                    "통합 모니터링 체계"
+                  ]
+                },
+                {
+                  "header": "기대 효과",
+                  "icon": "trending_up",
+                  "color": "#2E7D32",
+                  "items": [
+                    "물류 처리 효율 30%↑",
+                    "재고 정확도 99.5%",
+                    "운영 비용 20%↓",
+                    "고객 만족도 향상"
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Problem-Goal-Benefit Flow - 논리적 흐름 시각화",
+          "layout": {
+            "grid": "3열 균등 배치, 카드 간 화살표 연결",
+            "card_size": "width: 280px, height: auto",
+            "spacing": "카드 간 40px, 화살표 20px"
+          },
+          "card_style": {
+            "background": "각 컬럼별 연한 배경색 (5% opacity)",
+            "border": "상단 4px solid accent color",
+            "border_radius": "8px",
+            "shadow": "0 2px 8px rgba(0,0,0,0.06)"
+          },
+          "icon_style": {
+            "size": "40px",
+            "style": "Material Icons Rounded",
+            "color": "각 컬럼 accent 컬러",
+            "position": "헤더 좌측"
+          },
+          "typography": {
+            "header": "본고딕 Bold, 16pt, accent color",
+            "items": "본고딕 Regular, 13pt, #333333"
+          },
+          "color_scheme": {
+            "problem": "#C51F2A (레드)",
+            "goal": "#002452 (네이비)",
+            "benefit": "#2E7D32 (그린)"
+          },
+          "visual_hierarchy": "문제점(빨강) → 목표(파랑) → 기대효과(초록) 흐름"
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "Three connected rectangular cards with arrow connectors, left card with red warning theme showing problem icons, middle card with navy blue target theme, right card with green growth chart theme, flat design, white background, professional business style",
+            "style": "flat design, infographic, business presentation",
+            "size": "1920x600"
+          }
+        }
+      },
+      {
+        "slide_number": 5,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "01. 프로젝트 개요",
+        "placeholders": {
+          "main_title": "1. 프로젝트 개요",
+          "action_title": "WMS·TMS·OMS·Dashboard 4대 핵심 시스템을 신규 구축하고 기존 ERP와 연동합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "system_scope_diagram",
+            "data": {
+              "included": [
+                { "system": "WMS", "name": "창고관리시스템", "functions": "입출고, 재고, 피킹/패킹" },
+                { "system": "TMS", "name": "배송관리시스템", "functions": "배차, 경로최적화, 추적" },
+                { "system": "OMS", "name": "주문관리시스템", "functions": "주문접수, 할당, 정산" },
+                { "system": "Dashboard", "name": "통합모니터링", "functions": "실시간 현황, KPI, 리포트" }
+              ],
+              "excluded": [
+                { "system": "회계 시스템", "note": "인터페이스만" },
+                { "system": "HR 시스템", "note": "인터페이스만" },
+                { "system": "기존 ERP", "note": "인터페이스만" }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Scope Boundary Diagram - 포함/제외 범위 명확화",
+          "layout": {
+            "grid": "좌측 4개 시스템 박스 (2x2 그리드), 우측 제외 시스템 (점선 박스)",
+            "boundary_line": "점선으로 포함/제외 경계 표시",
+            "spacing": "시스템 박스 간 24px"
+          },
+          "card_style": {
+            "included": {
+              "background": "#FFFFFF",
+              "border": "2px solid #002452",
+              "border_radius": "8px"
+            },
+            "excluded": {
+              "background": "#F5F5F5",
+              "border": "2px dashed #999999",
+              "border_radius": "8px"
+            }
+          },
+          "icon_style": {
+            "size": "32px",
+            "style": "Material Icons Outlined",
+            "included_color": "#002452",
+            "excluded_color": "#999999"
+          },
+          "typography": {
+            "system_code": "본고딕 Bold, 18pt, #002452",
+            "system_name": "본고딕 Medium, 14pt, #333333",
+            "functions": "본고딕 Regular, 12pt, #666666"
+          },
+          "visual_hierarchy": "포함 범위(강조) → 제외 범위(희미) 대비"
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "System scope diagram with 4 solid bordered boxes on left (WMS, TMS, OMS, Dashboard) inside a dashed boundary, 3 grey dashed boxes on right outside boundary, connection lines between systems, navy blue and grey color scheme, clean infographic style",
+            "style": "flat design, system diagram, technical",
+            "size": "1920x800"
+          }
+        }
+      },
+      {
+        "slide_number": 6,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "02. 추진 전략 및 방법론",
+        "placeholders": {
+          "main_title": "2. 추진 전략 및 방법론",
+          "action_title": "안정적 전환과 혁신적 기능 구현의 균형을 핵심 가치로 3대 전략을 추진합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "strategy_cards",
+            "data": {
+              "strategies": [
+                {
+                  "number": "01",
+                  "title": "단계적 전환 전략",
+                  "description": "Big Bang 방식이 아닌 모듈별 순차 전환으로 리스크 최소화",
+                  "icon": "layers"
+                },
+                {
+                  "number": "02",
+                  "title": "애자일 기반 개발",
+                  "description": "2주 단위 스프린트로 빠른 피드백과 유연한 대응 체계 구축",
+                  "icon": "sync"
+                },
+                {
+                  "number": "03",
+                  "title": "현업 밀착 협업",
+                  "description": "주 2회 현업 리뷰를 통한 요구사항 정합성 확보 및 품질 보증",
+                  "icon": "group"
+                }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Strategy Pillars - 3대 전략 기둥 시각화",
+          "layout": {
+            "grid": "3열 균등 배치, 상단 숫자 배지",
+            "card_size": "width: 280px, height: 200px",
+            "vertical_position": "슬라이드 중앙"
+          },
+          "card_style": {
+            "background": "#FFFFFF",
+            "border": "좌측 4px solid accent (각각 다른 색)",
+            "border_radius": "0 8px 8px 0",
+            "shadow": "0 4px 12px rgba(0,0,0,0.08)"
+          },
+          "number_badge": {
+            "background": "accent color (gradient)",
+            "size": "48px circle",
+            "position": "카드 상단 중앙",
+            "font": "본고딕 Bold, 20pt, #FFFFFF"
+          },
+          "icon_style": {
+            "size": "36px",
+            "style": "Material Icons Rounded",
+            "color": "accent color",
+            "position": "배지 하단 8px"
+          },
+          "typography": {
+            "title": "본고딕 Bold, 16pt, #002452",
+            "description": "본고딕 Regular, 13pt, #666666, line-height: 160%"
+          },
+          "color_scheme": {
+            "strategy1": "#002452 (네이비)",
+            "strategy2": "#4B6580 (청회색)",
+            "strategy3": "#C51F2A (레드)"
+          },
+          "visual_hierarchy": "숫자 배지 → 제목 → 설명 순으로 시선 유도"
+        }
+      },
+      {
+        "slide_number": 7,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "02. 추진 전략 및 방법론",
+        "placeholders": {
+          "main_title": "2. 추진 전략 및 방법론",
+          "action_title": "Agile-Waterfall 하이브리드 방법론으로 대규모 SI 안정성과 애자일 유연성을 결합합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "process_flow",
+            "data": {
+              "phases": [
+                {
+                  "name": "분석",
+                  "activities": ["요구사항 정의", "현행 분석"],
+                  "deliverables": ["요구사항정의서", "AS-IS 분석서"]
+                },
+                {
+                  "name": "설계",
+                  "activities": ["아키텍처 설계", "UI/DB 설계"],
+                  "deliverables": ["설계서 일체"]
+                },
+                {
+                  "name": "개발",
+                  "activities": ["기능 구현", "단위 테스트"],
+                  "deliverables": ["소스코드", "테스트결과서"]
+                },
+                {
+                  "name": "테스트/이행",
+                  "activities": ["통합/인수 테스트", "시스템 전환"],
+                  "deliverables": ["테스트결과서", "이행계획서"]
+                }
+              ],
+              "methodology": "Agile-Waterfall 하이브리드"
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Methodology Process Flow - 단계별 활동 흐름 시각화",
+          "layout": {
+            "grid": "4열 수평 배치, 화살표 연결",
+            "phase_box_size": "width: 200px, height: auto",
+            "spacing": "박스 간 32px, 화살표 16px"
+          },
+          "card_style": {
+            "header": {
+              "background": "#002452",
+              "height": "48px",
+              "border_radius": "8px 8px 0 0"
+            },
+            "body": {
+              "background": "#FFFFFF",
+              "border": "1px solid #E5E5E5",
+              "border_radius": "0 0 8px 8px"
+            }
+          },
+          "arrow_style": {
+            "type": "chevron",
+            "color": "#4B6580",
+            "size": "24px"
+          },
+          "typography": {
+            "phase_name": "본고딕 Bold, 16pt, #FFFFFF",
+            "activities": "본고딕 Medium, 12pt, #333333",
+            "deliverables": "본고딕 Regular, 11pt, #666666"
+          },
+          "visual_hierarchy": "Phase 헤더 → 활동 → 산출물 순으로 계층화"
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "Horizontal process flow with 4 connected phases, each phase has navy blue header and white body, chevron arrows between phases, showing Analysis-Design-Development-Test progression, clean enterprise methodology diagram style",
+            "style": "flat design, process flow, business methodology",
+            "size": "1920x600"
+          }
+        }
+      },
+      {
+        "slide_number": 8,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "02. 추진 전략 및 방법론",
+        "placeholders": {
+          "main_title": "2. 추진 전략 및 방법론",
+          "action_title": "Vue.js, Spring Boot, AWS 기반 클라우드 네이티브 MSA 아키텍처를 적용합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "tech_stack_diagram",
+            "data": {
+              "layers": [
+                {
+                  "name": "Frontend",
+                  "technologies": [
+                    { "name": "Vue.js 3", "version": "3.4", "icon": "vuejs" },
+                    { "name": "TypeScript", "icon": "typescript" }
+                  ],
+                  "description": "SPA 구조"
+                },
+                {
+                  "name": "Backend",
+                  "technologies": [
+                    { "name": "Spring Boot", "version": "3.2", "icon": "spring" },
+                    { "name": "Java", "version": "17", "icon": "java" }
+                  ],
+                  "description": "MSA 구조"
+                },
+                {
+                  "name": "Database",
+                  "technologies": [
+                    { "name": "PostgreSQL", "version": "16", "icon": "postgresql" },
+                    { "name": "Redis", "version": "7", "icon": "redis" }
+                  ],
+                  "description": "RDBMS + Cache"
+                },
+                {
+                  "name": "Infrastructure",
+                  "technologies": [
+                    { "name": "AWS EKS", "icon": "aws" },
+                    { "name": "AWS RDS", "icon": "aws" },
+                    { "name": "AWS S3", "icon": "aws" }
+                  ],
+                  "description": "클라우드 네이티브"
+                },
+                {
+                  "name": "AI/ML",
+                  "technologies": [
+                    { "name": "Python", "version": "3.11", "icon": "python" },
+                    { "name": "TensorFlow", "version": "2.15", "icon": "tensorflow" }
+                  ],
+                  "description": "수요예측, 경로최적화"
+                }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Technology Stack Layers - 기술 스택 계층도",
+          "layout": {
+            "grid": "5행 수평 스택, 좌측 레이어명 + 우측 기술",
+            "layer_height": "80px",
+            "spacing": "레이어 간 8px"
+          },
+          "card_style": {
+            "layer_label": {
+              "background": "#002452",
+              "width": "140px",
+              "border_radius": "8px 0 0 8px"
+            },
+            "tech_area": {
+              "background": "#F8F9FA",
+              "border": "1px solid #E5E5E5",
+              "border_radius": "0 8px 8px 0"
+            }
+          },
+          "icon_style": {
+            "size": "32px",
+            "style": "기술 로고 (Simple Icons)",
+            "spacing": "아이콘 간 16px"
+          },
+          "typography": {
+            "layer_name": "본고딕 Bold, 14pt, #FFFFFF",
+            "tech_name": "본고딕 Medium, 13pt, #333333",
+            "version": "본고딕 Regular, 11pt, #666666"
+          },
+          "color_scheme": {
+            "frontend": "#42B883 (Vue green)",
+            "backend": "#6DB33F (Spring green)",
+            "database": "#336791 (PostgreSQL blue)",
+            "infra": "#FF9900 (AWS orange)",
+            "ai": "#FF6F00 (TensorFlow orange)"
+          },
+          "visual_hierarchy": "레이어명 → 기술 로고 → 버전 순으로 시선 유도"
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "5-tier horizontal technology stack diagram, left side with navy blue layer labels (Frontend, Backend, Database, Infra, AI/ML), right side with technology logos including Vue.js, Spring Boot, PostgreSQL, AWS, TensorFlow, clean enterprise architecture style, white background",
+            "style": "flat design, tech stack, architecture diagram",
+            "size": "1920x800"
+          }
+        }
+      },
+      {
+        "slide_number": 9,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "03. 프로젝트 조직 및 일정",
+        "placeholders": {
+          "main_title": "3. 프로젝트 조직 및 일정",
+          "action_title": "발주사-수행사 협업 체계로 총 8명의 전문 인력이 78MM를 투입합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "organization_chart",
+            "data": {
+              "client": {
+                "title": "발주기관",
+                "roles": [
+                  { "role": "프로젝트 PM", "name": "정민호 부장", "responsibility": "총괄 관리, 의사결정" }
+                ]
+              },
+              "vendor": {
+                "title": "수행사",
+                "roles": [
+                  { "role": "PM", "name": "김철수 차장", "grade": "특급", "responsibility": "수행 총괄, 품질/위험 관리" },
+                  { "role": "PMO", "name": "이영희 과장", "responsibility": "관리 지원, 품질 검토" },
+                  { "role": "AA", "name": "박준형 책임", "grade": "특급", "responsibility": "시스템 설계, 아키텍처" },
+                  { "role": "PL", "name": "최수진 선임", "grade": "고급", "responsibility": "개발 총괄, 기술 이슈" },
+                  { "role": "DBA", "name": "오현우 대리", "grade": "고급", "responsibility": "DB 설계 및 튜닝" },
+                  { "role": "QA", "name": "한미영 대리", "grade": "중급", "responsibility": "품질 관리, 테스트" }
+                ]
+              },
+              "summary": {
+                "total_members": "8명",
+                "total_mm": "78MM"
+              }
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Collaborative Organization Chart - 발주사-수행사 협업 조직도",
+          "layout": {
+            "grid": "상단 발주사 (1명), 하단 수행사 (계층 구조)",
+            "connection_line": "점선으로 협업 관계 표시",
+            "spacing": "역할 카드 간 16px"
+          },
+          "card_style": {
+            "client": {
+              "background": "#4B6580",
+              "border_radius": "8px"
+            },
+            "vendor_pm": {
+              "background": "#002452",
+              "border_radius": "8px"
+            },
+            "vendor_member": {
+              "background": "#FFFFFF",
+              "border": "1px solid #002452",
+              "border_radius": "8px"
+            }
+          },
+          "typography": {
+            "role": "본고딕 Bold, 12pt, accent color",
+            "name": "본고딕 Medium, 14pt, #333333",
+            "responsibility": "본고딕 Regular, 10pt, #666666"
+          },
+          "visual_hierarchy": "발주PM → 수행PM → 팀원 계층 구조"
+        }
+      },
+      {
+        "slide_number": 10,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "03. 프로젝트 조직 및 일정",
+        "placeholders": {
+          "main_title": "3. 프로젝트 조직 및 일정",
+          "action_title": "분야별 전문 인력 8명이 12개월간 총 78MM를 투입하여 프로젝트를 수행합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "resource_chart",
+            "data": {
+              "chart_type": "stacked_bar",
+              "members": [
+                { "name": "김철수", "role": "PM", "grade": "특급", "months": 12 },
+                { "name": "박준형", "role": "AA", "grade": "특급", "months": 10 },
+                { "name": "최수진", "role": "PL", "grade": "고급", "months": 12 },
+                { "name": "임동현", "role": "Backend", "grade": "고급", "months": 10 },
+                { "name": "강서연", "role": "Frontend", "grade": "중급", "months": 10 },
+                { "name": "윤재호", "role": "Backend", "grade": "중급", "months": 10 },
+                { "name": "오현우", "role": "DBA", "grade": "고급", "months": 8 },
+                { "name": "한미영", "role": "QA", "grade": "중급", "months": 6 }
+              ],
+              "total": { "members": 8, "mm": 78 }
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Resource Allocation Chart - 인력 투입 현황 시각화",
+          "layout": {
+            "grid": "좌측 인력 정보 + 우측 가로 바 차트",
+            "bar_height": "32px",
+            "spacing": "인력 간 8px"
+          },
+          "chart_style": {
+            "bar_colors": {
+              "특급": "#002452",
+              "고급": "#4B6580",
+              "중급": "#B7D0D4"
+            },
+            "background": "#F5F5F5",
+            "border_radius": "4px"
+          },
+          "typography": {
+            "name": "본고딕 Medium, 12pt, #333333",
+            "role": "본고딕 Regular, 11pt, #666666",
+            "months": "본고딕 Bold, 11pt, #002452"
+          },
+          "summary_box": {
+            "position": "우측 하단",
+            "background": "#002452",
+            "content": "총 8명 / 78MM"
+          }
+        }
+      },
+      {
+        "slide_number": 11,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "03. 프로젝트 조직 및 일정",
+        "placeholders": {
+          "main_title": "3. 프로젝트 조직 및 일정",
+          "action_title": "착수부터 안정화까지 6개 단계, 12개월간의 마스터 일정을 수립했습니다."
+        },
+        "custom_elements": [
+          {
+            "type": "gantt_chart",
+            "data": {
+              "phases": [
+                { "name": "착수", "start": "2025-01-06", "end": "2025-01-31", "weeks": 4, "color": "#002452" },
+                { "name": "분석", "start": "2025-02-01", "end": "2025-03-31", "weeks": 8, "color": "#4B6580" },
+                { "name": "설계", "start": "2025-04-01", "end": "2025-05-31", "weeks": 8, "color": "#4B6580" },
+                { "name": "개발", "start": "2025-06-01", "end": "2025-09-30", "weeks": 16, "color": "#C51F2A" },
+                { "name": "테스트", "start": "2025-10-01", "end": "2025-11-15", "weeks": 6, "color": "#4B6580" },
+                { "name": "이행/안정화", "start": "2025-11-16", "end": "2025-12-31", "weeks": 6, "color": "#2E7D32" }
+              ],
+              "timeline": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Gantt Timeline - 마스터 일정 간트 차트",
+          "layout": {
+            "grid": "좌측 단계명 + 우측 12개월 타임라인",
+            "bar_height": "40px",
+            "month_width": "균등 분할"
+          },
+          "chart_style": {
+            "bar_colors": {
+              "착수": "#002452",
+              "분석/설계": "#4B6580",
+              "개발": "#C51F2A",
+              "테스트": "#4B6580",
+              "이행": "#2E7D32"
+            },
+            "bar_border_radius": "4px",
+            "today_line": "빨간 점선 (현재 위치)"
+          },
+          "header_style": {
+            "background": "#F5F5F5",
+            "border_bottom": "1px solid #E5E5E5",
+            "month_font": "본고딕 Medium, 11pt, #666666"
+          },
+          "typography": {
+            "phase_name": "본고딕 Bold, 13pt, #002452",
+            "duration": "본고딕 Regular, 10pt, #FFFFFF (바 내부)"
+          }
+        },
+        "image_generation_prompt": {
+          "main_visual": {
+            "prompt": "Horizontal Gantt chart showing 6 project phases over 12 months, phase bars in different colors (navy, grey, red, green), month headers at top, phase names on left, clean enterprise project management style, white background",
+            "style": "flat design, Gantt chart, project timeline",
+            "size": "1920x600"
+          }
+        }
+      },
+      {
+        "slide_number": 12,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "03. 프로젝트 조직 및 일정",
+        "placeholders": {
+          "main_title": "3. 프로젝트 조직 및 일정",
+          "action_title": "6개 주요 마일스톤을 통해 프로젝트 진행 상황을 체계적으로 관리합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "milestone_timeline",
+            "data": {
+              "milestones": [
+                { "id": "M1", "name": "착수보고", "date": "2025-01-10", "deliverable": "수행계획서" },
+                { "id": "M2", "name": "요구사항 확정", "date": "2025-03-31", "deliverable": "요구사항정의서" },
+                { "id": "M3", "name": "설계 완료", "date": "2025-05-31", "deliverable": "설계서 일체" },
+                { "id": "M4", "name": "개발 완료", "date": "2025-09-30", "deliverable": "소스코드" },
+                { "id": "M5", "name": "통합테스트 완료", "date": "2025-11-15", "deliverable": "테스트결과서" },
+                { "id": "M6", "name": "시스템 오픈", "date": "2025-12-01", "deliverable": "오픈보고서" }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Milestone Timeline - 마일스톤 타임라인 시각화",
+          "layout": {
+            "grid": "수평 타임라인, 6개 마일스톤 포인트",
+            "timeline_height": "슬라이드 중앙",
+            "spacing": "마일스톤 간 균등 배치"
+          },
+          "milestone_style": {
+            "point": {
+              "size": "24px circle",
+              "background": "#002452",
+              "border": "4px solid #FFFFFF",
+              "shadow": "0 2px 8px rgba(0,0,0,0.15)"
+            },
+            "line": {
+              "height": "4px",
+              "color": "#E5E5E5",
+              "active_color": "#002452"
+            },
+            "label_card": {
+              "background": "#FFFFFF",
+              "border": "1px solid #E5E5E5",
+              "border_radius": "8px",
+              "shadow": "0 2px 8px rgba(0,0,0,0.06)"
+            }
+          },
+          "typography": {
+            "milestone_id": "본고딕 Bold, 14pt, #002452",
+            "milestone_name": "본고딕 Medium, 13pt, #333333",
+            "date": "본고딕 Regular, 11pt, #C51F2A",
+            "deliverable": "본고딕 Regular, 10pt, #666666"
+          },
+          "visual_hierarchy": "마일스톤 포인트 → 이름 → 날짜 → 산출물"
+        }
+      },
+      {
+        "slide_number": 13,
+        "layout_id": 3,
+        "slide_type": "content",
+        "section": "04. 품질·보안·위험 관리",
+        "placeholders": {
+          "main_title": "4. 품질·보안·위험 관리",
+          "action_title": "4단계 품질 보증 활동으로 산출물과 코드 품질을 체계적으로 관리합니다.",
+          "body": [
+            { "level": 1, "text": "산출물 검토: 단계별 말, 발주 담당자 검토 및 승인" },
+            { "level": 2, "text": "PM/PL 주관, 검토 체크리스트 활용" },
+            { "level": 1, "text": "코드 리뷰: 개발 기간 중, GitHub PR 필수, 2인 이상 승인" },
+            { "level": 2, "text": "개발리더 주관, 코딩 컨벤션 준수 확인" },
+            { "level": 1, "text": "정적 분석: 개발 기간 중, SonarQube 품질 게이트 적용" },
+            { "level": 2, "text": "QA 주관, 보안 취약점 및 코드 스멜 검출" },
+            { "level": 1, "text": "테스트: 통합/인수 단계, 시나리오 기반 테스트" },
+            { "level": 2, "text": "QA/현업 공동 수행, 결함 추적 관리" }
+          ]
+        }
+      },
+      {
+        "slide_number": 14,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "04. 품질·보안·위험 관리",
+        "placeholders": {
+          "main_title": "4. 품질·보안·위험 관리",
+          "action_title": "인적·물리·기술·PC 4개 영역의 보안 대책을 수립하여 정보 자산을 보호합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "security_matrix",
+            "data": {
+              "categories": [
+                {
+                  "name": "인적 보안",
+                  "icon": "person",
+                  "measures": ["보안서약서 징구", "보안 교육 실시"],
+                  "scope": "전 인원 대상"
+                },
+                {
+                  "name": "물리 보안",
+                  "icon": "lock",
+                  "measures": ["통제구역 출입 관리", "반입 장비 통제"],
+                  "scope": "고객사 정책 준수"
+                },
+                {
+                  "name": "기술 보안",
+                  "icon": "security",
+                  "measures": ["소스코드 보안약점 진단", "DB 암호화"],
+                  "scope": "OWASP Top 10 점검"
+                },
+                {
+                  "name": "PC 보안",
+                  "icon": "computer",
+                  "measures": ["백신 설치", "화면보호기 설정", "매체제어"],
+                  "scope": "DLP 솔루션 적용"
+                }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Security Quadrant - 4대 보안 영역 매트릭스",
+          "layout": {
+            "grid": "2x2 그리드, 균등 배치",
+            "card_size": "width: 400px, height: 160px",
+            "spacing": "카드 간 24px"
+          },
+          "card_style": {
+            "background": "#FFFFFF",
+            "border": "상단 4px solid accent",
+            "border_radius": "8px",
+            "shadow": "0 2px 8px rgba(0,0,0,0.06)"
+          },
+          "icon_style": {
+            "size": "40px",
+            "style": "Material Icons Outlined",
+            "color": "#002452",
+            "position": "좌측 상단"
+          },
+          "typography": {
+            "category": "본고딕 Bold, 15pt, #002452",
+            "measures": "본고딕 Regular, 12pt, #333333",
+            "scope": "본고딕 Regular, 11pt, #C51F2A"
+          }
+        }
+      },
+      {
+        "slide_number": 15,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "04. 품질·보안·위험 관리",
+        "placeholders": {
+          "main_title": "4. 품질·보안·위험 관리",
+          "action_title": "5대 주요 위험을 식별하고, 담당자별 대응 방안을 사전에 수립했습니다."
+        },
+        "custom_elements": [
+          {
+            "type": "risk_matrix",
+            "data": {
+              "risks": [
+                {
+                  "risk": "요구사항 변경",
+                  "impact": "상",
+                  "probability": "상",
+                  "response": "CCB 통한 통제, 영향도 분석 필수",
+                  "owner": "PM"
+                },
+                {
+                  "risk": "일정 지연",
+                  "impact": "상",
+                  "probability": "중",
+                  "response": "주간 진척관리, Critical Path 모니터링",
+                  "owner": "PM"
+                },
+                {
+                  "risk": "기술적 난제",
+                  "impact": "중",
+                  "probability": "중",
+                  "response": "PoC 선행, 외부 전문가 자문",
+                  "owner": "AA"
+                },
+                {
+                  "risk": "인력 이탈",
+                  "impact": "상",
+                  "probability": "하",
+                  "response": "대체 인력 풀 확보, 기술 문서화",
+                  "owner": "PM"
+                },
+                {
+                  "risk": "데이터 마이그레이션",
+                  "impact": "상",
+                  "probability": "중",
+                  "response": "사전 검증, 롤백 계획 수립",
+                  "owner": "DBA"
+                }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Risk Assessment Matrix - 위험 평가 매트릭스",
+          "layout": {
+            "grid": "5행 테이블, 헤더 포함",
+            "column_widths": ["25%", "10%", "10%", "40%", "15%"],
+            "row_height": "48px"
+          },
+          "table_style": {
+            "header": {
+              "background": "#002452",
+              "font_color": "#FFFFFF"
+            },
+            "row_odd": {
+              "background": "#FFFFFF"
+            },
+            "row_even": {
+              "background": "#F8F9FA"
+            },
+            "border": "1px solid #E5E5E5"
+          },
+          "badge_style": {
+            "상": { "background": "#C51F2A", "color": "#FFFFFF" },
+            "중": { "background": "#E9B86E", "color": "#333333" },
+            "하": { "background": "#B7D0D4", "color": "#333333" }
+          },
+          "typography": {
+            "header": "본고딕 Bold, 12pt, #FFFFFF",
+            "cell": "본고딕 Regular, 11pt, #333333",
+            "owner": "본고딕 Medium, 11pt, #002452"
+          }
+        }
+      },
+      {
+        "slide_number": 16,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "04. 품질·보안·위험 관리",
+        "placeholders": {
+          "main_title": "4. 품질·보안·위험 관리",
+          "action_title": "변경 요청부터 이행까지 4단계 변경 통제 절차를 준수합니다."
+        },
+        "custom_elements": [
+          {
+            "type": "change_control_flow",
+            "data": {
+              "steps": [
+                {
+                  "step": 1,
+                  "name": "변경 요청",
+                  "description": "변경요청서(CR) 접수",
+                  "tool": "Jira 티켓 등록",
+                  "icon": "edit"
+                },
+                {
+                  "step": 2,
+                  "name": "영향도 분석",
+                  "description": "일정/비용/품질 영향 분석",
+                  "tool": "3일 내 완료",
+                  "icon": "analytics"
+                },
+                {
+                  "step": 3,
+                  "name": "승인/반려",
+                  "description": "협의체(CCB) 의사결정",
+                  "tool": "주 1회 정기 회의",
+                  "icon": "check_circle"
+                },
+                {
+                  "step": 4,
+                  "name": "변경 이행",
+                  "description": "승인 사항 반영",
+                  "tool": "산출물 현행화",
+                  "icon": "rocket_launch"
+                }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Change Control Process - 변경 통제 프로세스 플로우",
+          "layout": {
+            "grid": "4단계 수평 플로우, 화살표 연결",
+            "step_size": "width: 200px, height: 140px",
+            "spacing": "단계 간 32px"
+          },
+          "card_style": {
+            "background": "#FFFFFF",
+            "border": "1px solid #E5E5E5",
+            "border_radius": "8px",
+            "shadow": "0 2px 8px rgba(0,0,0,0.06)"
+          },
+          "step_number": {
+            "background": "#002452",
+            "size": "32px circle",
+            "position": "카드 상단 중앙 -16px",
+            "font": "본고딕 Bold, 16pt, #FFFFFF"
+          },
+          "arrow_style": {
+            "type": "chevron_right",
+            "color": "#4B6580",
+            "size": "24px"
+          },
+          "icon_style": {
+            "size": "36px",
+            "color": "#002452",
+            "position": "카드 내부 상단"
+          },
+          "typography": {
+            "step_name": "본고딕 Bold, 14pt, #002452",
+            "description": "본고딕 Regular, 12pt, #333333",
+            "tool": "본고딕 Regular, 10pt, #C51F2A"
+          }
+        }
+      },
+      {
+        "slide_number": 17,
+        "layout_id": 3,
+        "slide_type": "content",
+        "section": "05. 의사소통 및 협조 요청",
+        "placeholders": {
+          "main_title": "5. 의사소통 및 협조 요청",
+          "action_title": "일일/주간/월간/스프린트 4가지 주기로 체계적인 보고 및 회의 체계를 운영합니다.",
+          "body": [
+            { "level": 1, "text": "일일 스탠드업: 매일 09:30, 개발팀 대상" },
+            { "level": 2, "text": "진행 현황 공유, 블로커 식별 및 해결" },
+            { "level": 1, "text": "주간보고: 매주 금 14:00, PM 및 발주PM" },
+            { "level": 2, "text": "주간 실적/계획, 이슈 및 리스크 공유" },
+            { "level": 1, "text": "월간보고: 매월 말, 경영진 보고" },
+            { "level": 2, "text": "마일스톤 점검, 주요 리스크 보고" },
+            { "level": 1, "text": "스프린트 리뷰: 격주 금, 전체 참석" },
+            { "level": 2, "text": "개발 결과물 데모, 피드백 수렴" }
+          ]
+        }
+      },
+      {
+        "slide_number": 18,
+        "layout_id": 4,
+        "slide_type": "content",
+        "section": "05. 의사소통 및 협조 요청",
+        "placeholders": {
+          "main_title": "5. 의사소통 및 협조 요청",
+          "action_title": "원활한 프로젝트 수행을 위해 발주기관의 다음 협조 사항을 요청드립니다."
+        },
+        "custom_elements": [
+          {
+            "type": "request_cards",
+            "data": {
+              "requests": [
+                {
+                  "category": "환경",
+                  "items": ["프로젝트 룸 (10석 규모)", "네트워크(VPN)", "출입증"],
+                  "timing": "착수 시",
+                  "icon": "meeting_room"
+                },
+                {
+                  "category": "데이터",
+                  "items": ["테스트용 샘플 데이터 제공"],
+                  "timing": "설계/개발",
+                  "note": "개인정보 비식별화 필수",
+                  "icon": "database"
+                },
+                {
+                  "category": "인프라",
+                  "items": ["AWS 계정 및 권한 부여", "개발/스테이징/운영 환경"],
+                  "timing": "착수 시",
+                  "icon": "cloud"
+                },
+                {
+                  "category": "참여",
+                  "items": ["요구사항 인터뷰", "UAT 지원"],
+                  "timing": "해당 단계",
+                  "note": "현업 담당자 협조",
+                  "icon": "groups"
+                }
+              ]
+            }
+          }
+        ],
+        "design_prompt": {
+          "concept": "Cooperation Request Cards - 협조 요청 사항 카드",
+          "layout": {
+            "grid": "2x2 그리드, 균등 배치",
+            "card_size": "width: 400px, height: 140px",
+            "spacing": "카드 간 24px"
+          },
+          "card_style": {
+            "background": "#F8F9FA",
+            "border": "좌측 4px solid #002452",
+            "border_radius": "0 8px 8px 0"
+          },
+          "icon_style": {
+            "size": "36px",
+            "style": "Material Icons Outlined",
+            "color": "#002452",
+            "position": "좌측"
+          },
+          "timing_badge": {
+            "background": "#C51F2A",
+            "color": "#FFFFFF",
+            "border_radius": "4px",
+            "padding": "4px 8px"
+          },
+          "typography": {
+            "category": "본고딕 Bold, 14pt, #002452",
+            "items": "본고딕 Regular, 12pt, #333333",
+            "note": "본고딕 Regular, 10pt, #C51F2A"
+          }
+        }
+      }
+    ]
+  }
+}

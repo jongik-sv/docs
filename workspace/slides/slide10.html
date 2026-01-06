@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 12pt 30pt; border-bottom: 1pt solid #E5E5E5; }
+.main-title { color: #002452; font-size: 13pt; font-weight: bold; margin: 0; }
+.action-title { color: #333333; font-size: 12pt; margin: 6pt 0 0 0; line-height: 1.4; }
+.content { flex: 1; padding: 10pt 30pt; }
+.chart-area { width: 100%; }
+.chart-row { display: flex; align-items: center; margin-bottom: 4pt; height: 24pt; }
+.member-info { width: 170pt; display: flex; align-items: center; gap: 6pt; }
+.member-name { color: #333333; font-size: 10pt; font-weight: bold; margin: 0; width: 55pt; }
+.member-role { color: #666666; font-size: 9pt; margin: 0; width: 55pt; }
+.member-grade { padding: 2pt 5pt; border-radius: 3pt; }
+.grade-special { background: #002452; }
+.grade-senior { background: #4B6580; }
+.grade-mid { background: #B7D0D4; }
+.grade-text { font-size: 8pt; margin: 0; }
+.grade-special .grade-text { color: #FFFFFF; }
+.grade-senior .grade-text { color: #FFFFFF; }
+.grade-mid .grade-text { color: #333333; }
+.bar-area { flex: 1; background: #F5F5F5; height: 18pt; border-radius: 4pt; position: relative; }
+.bar { height: 100%; border-radius: 4pt; display: flex; align-items: center; justify-content: flex-end; padding-right: 6pt; }
+.bar.special { background: #002452; }
+.bar.senior { background: #4B6580; }
+.bar.mid { background: #B7D0D4; }
+.bar-label { color: #FFFFFF; font-size: 8pt; font-weight: bold; margin: 0; }
+.bar.mid .bar-label { color: #333333; }
+.legend { display: flex; gap: 14pt; margin-top: 8pt; justify-content: center; }
+.legend-item { display: flex; align-items: center; gap: 5pt; }
+.legend-dot { width: 10pt; height: 10pt; border-radius: 2pt; }
+.legend-text { color: #666666; font-size: 9pt; margin: 0; }
+.footer { padding: 8pt 30pt; display: flex; justify-content: space-between; }
+.footer-text { color: #666666; font-size: 8pt; margin: 0; }
+.page-num { color: #002452; font-size: 8pt; font-weight: bold; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <p class="main-title">3. 프로젝트 조직 및 일정</p>
+  <p class="action-title">분야별 전문 인력 8명이 12개월간 총 78MM를 투입하여 프로젝트를 수행합니다.</p>
+</div>
+<div class="content">
+  <div class="chart-area">
+    <div class="chart-row">
+      <div class="member-info">
+        <p class="member-name">김철수</p>
+        <p class="member-role">PM</p>
+        <div class="member-grade grade-special"><p class="grade-text">특급</p></div>
+      </div>
+      <div class="bar-area"><div class="bar special" style="width: 100%;"><p class="bar-label">12개월</p></div></div>
+    </div>
+    <div class="chart-row">
+      <div class="member-info">
+        <p class="member-name">박준형</p>
+        <p class="member-role">AA</p>
+        <div class="member-grade grade-special"><p class="grade-text">특급</p></div>
+      </div>
+      <div class="bar-area"><div class="bar special" style="width: 83%;"><p class="bar-label">10개월</p></div></div>
+    </div>
+    <div class="chart-row">
+      <div class="member-info">
+        <p class="member-name">최수진</p>
+        <p class="member-role">PL</p>
+        <div class="member-grade grade-senior"><p class="grade-text">고급</p></div>
+      </div>
+      <div class="bar-area"><div class="bar senior" style="width: 100%;"><p class="bar-label">12개월</p></div></div>
+    </div>
+    <div class="chart-row">
+      <div class="member-info">
+        <p class="member-name">임동현</p>
+        <p class="member-role">Backend</p>
+        <div class="member-grade grade-senior"><p class="grade-text">고급</p></div>
+      </div>
+      <div class="bar-area"><div class="bar senior" style="width: 83%;"><p class="bar-label">10개월</p></div></div>
+    </div>
+    <div class="chart-row">
+      <div class="member-info">
+        <p class="member-name">강서연</p>
+        <p class="member-role">Frontend</p>
+        <div class="member-grade grade-mid"><p class="grade-text">중급</p></div>
+      </div>
+      <div class="bar-area"><div class="bar mid" style="width: 83%;"><p class="bar-label">10개월</p></div></div>
+    </div>
+    <div class="chart-row">
+      <div class="member-info">
+        <p class="member-name">윤재호</p>
+        <p class="member-role">Backend</p>
+        <div class="member-grade grade-mid"><p class="grade-text">중급</p></div>
+      </div>
+      <div class="bar-area"><div class="bar mid" style="width: 83%;"><p class="bar-label">10개월</p></div></div>
+    </div>
+    <div class="chart-row">
+      <div class="member-info">
+        <p class="member-name">오현우</p>
+        <p class="member-role">DBA</p>
+        <div class="member-grade grade-senior"><p class="grade-text">고급</p></div>
+      </div>
+      <div class="bar-area"><div class="bar senior" style="width: 67%;"><p class="bar-label">8개월</p></div></div>
+    </div>
+    <div class="chart-row">
+      <div class="member-info">
+        <p class="member-name">한미영</p>
+        <p class="member-role">QA</p>
+        <div class="member-grade grade-mid"><p class="grade-text">중급</p></div>
+      </div>
+      <div class="bar-area"><div class="bar mid" style="width: 50%;"><p class="bar-label">6개월</p></div></div>
+    </div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background: #002452;"></div><p class="legend-text">특급</p></div>
+    <div class="legend-item"><div class="legend-dot" style="background: #4B6580;"></div><p class="legend-text">고급</p></div>
+    <div class="legend-item"><div class="legend-dot" style="background: #B7D0D4;"></div><p class="legend-text">중급</p></div>
+  </div>
+</div>
+<div class="footer">
+  <p class="footer-text">테크솔루션</p>
+  <p class="page-num">10</p>
+</div>
+</body>
+</html>
