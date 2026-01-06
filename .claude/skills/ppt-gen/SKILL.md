@@ -22,6 +22,8 @@ AI 기반 PPT 자동 생성 서비스. 콘텐츠를 입력받아 전문가 수�
 | "이 이미지 스타일로" | style-extract | [Extracting styles](#extracting-style-from-images) |
 | "PPT 디자인 찾아줘" | design-search | [Searching designs](#searching-design-references) |
 | "템플릿 목록/삭제" | template-manage | [Managing templates](#managing-templates) |
+| "이 아이콘/이미지 저장해줘" | asset-save | [Saving assets](#saving-assets) |
+| "저장된 아이콘 찾아줘" | asset-search | [Searching assets](#searching-assets) |
 
 ## Overview
 
@@ -200,72 +202,156 @@ When edit slides in an existing PowerPoint presentation, you need to work with t
 
 When you need to create a presentation that follows an existing template's design, you'll need to duplicate and re-arrange template slides before then replacing placeholder context.
 
-### 2-Level Template System
+### 3-Type Template System
 
-템플릿은 2단계 구조로 관리됩니다:
+템플릿은 3가지 타입으로 관리됩니다:
 
-1. **문서 템플릿 (documents/)**: 회사/브랜드별 디자인 - 표지, 목차, 섹션 구분 포함
-2. **콘텐츠 템플릿 (contents/)**: 데이터 특성별 패턴 - 비교표, 타임라인, 통계 카드 등
+1. **문서 템플릿 (documents/)**: 그룹/회사별 폴더 - 공통 테마, 계열사별 에셋, 문서 양식
+2. **콘텐츠 템플릿 (contents/)**: 슬라이드 패턴 - 표지, 목차, 비교표, 타임라인 등
+3. **공용 에셋 (assets/)**: 이미지/아이콘 - 그룹/회사 무관한 공용 에셋
 
-**레지스트리 파일**: `templates/registry.yaml`에서 모든 템플릿 목록을 관리합니다.
+**레지스트리 파일**:
+- `templates/documents/{그룹}/registry.yaml`: 그룹별 양식 목록
+- `templates/contents/registry.yaml`: 콘텐츠 템플릿 관리
+- `templates/assets/registry.yaml`: 공용 에셋 관리
 
 #### 문서 템플릿 (documents/)
-회사별 PPT 디자인 (표지, 목차, 레이아웃):
+그룹/회사별 폴더 구조로 관리. **문서 양식 = 전체 PPT 구성** (표지+본문+마무리 포함):
+```
+documents/dongkuk/              # 그룹 폴더
+├── config.yaml                 # 그룹 공통 테마
+├── registry.yaml               # 양식 목록 및 설명
+├── assets/                     # 계열사별 에셋
+│   ├── dongkuk-steel/logo.png
+│   ├── dongkuk-cm/logo.png
+│   └── default/logo.png
+├── 제안서1.yaml                # 제안서 스타일 1 (전체 구성)
+├── 제안서2.yaml                # 제안서 스타일 2 (전체 구성)
+├── 보고서1.yaml                # 보고서 스타일 1 (전체 구성)
+└── 프로젝트계획서1.yaml         # 프로젝트계획서 스타일 1
+```
+
+**config.yaml** (그룹 공통 테마):
 ```yaml
-# templates/documents/dongkuk.yaml
-document_template:
+# documents/dongkuk/config.yaml
+group:
   id: dongkuk
-  name: 동국제강
-  company: 동국제강
-  source: .claude/includes/PPT기본양식.pptx
+  name: 동국그룹
 
 theme:
   colors:
-    primary: "#002452"    # 네이비
-    secondary: "#C51F2A"  # 레드
+    primary: "#002452"
+    secondary: "#C51F2A"
   fonts:
     title: "본고딕 Bold"
     body: "본고딕 Normal"
 
-layouts:
-  - index: 0
-    category: cover       # 표지
-  - index: 1
-    category: toc         # 목차
-  - index: 2
-    category: content_bullets
+companies:
+  - id: dongkuk-steel
+    name: 동국제강
+  - id: dongkuk-cm
+    name: 동국씨엠
+```
+
+**registry.yaml** (양식 목록 및 설명):
+```yaml
+# documents/dongkuk/registry.yaml
+templates:
+  - id: 제안서1
+    name: 제안서 (기본)
+    file: 제안서1.yaml
+    type: proposal
+    description: "표지 + 목차 + 본문(불릿) + 마무리 구성"
+
+  - id: 제안서2
+    name: 제안서 (이미지 중심)
+    file: 제안서2.yaml
+    type: proposal
+    description: "이미지 배경 표지 + 2열 본문 + 마무리 구성"
+
+  - id: 보고서1
+    name: 보고서 (기본)
+    file: 보고서1.yaml
+    type: report
+    description: "심플한 표지 + 데이터 중심 본문 구성"
 ```
 
 #### 콘텐츠 템플릿 (contents/)
-슬라이드 본문 콘텐츠 패턴 (표지/목차 제외):
+모든 슬라이드 콘텐츠 패턴 (표지, 목차, 본문 모두 포함). 같은 카테고리도 여러 스타일 존재:
+```
+contents/
+├── registry.yaml               # 콘텐츠 레지스트리
+├── templates/                  # 템플릿 파일들
+│   ├── cover1.yaml
+│   ├── cover2.yaml
+│   ├── toc1.yaml
+│   ├── timeline1.yaml
+│   ├── timeline2.yaml
+│   └── comparison1.yaml
+└── thumbnails/                 # 미리보기 이미지
+    ├── cover1.jpg
+    └── cover2.jpg
+```
+
+**템플릿 파일 예시:**
 ```yaml
-# templates/contents/comparison.yaml
+# contents/templates/comparison1.yaml
 content_template:
-  id: comparison
-  name: 비교 (A vs B)
+  id: comparison1
+  name: 비교 (A vs B) - 기본
   description: "두 가지 항목을 나란히 비교하는 2열 대칭 레이아웃"
 
 use_for:
   - "A vs B 비교"
   - "Before/After 변화"
-  - "현재 vs 목표"
 
 structure:
   type: two-column-symmetric
 ```
 
-**사용 가능한 템플릿** (registry.yaml 참조):
-- **문서**: `dongkuk` - 동국제강 (4:3, 5개 레이아웃)
-- **콘텐츠**: `comparison`, `timeline`, `stat-cards`, `process-flow`, `feature-grid`, `pros-cons`
+**사용 가능한 템플릿 카테고리**:
+- **문서**: `documents/{그룹}/` 폴더 구조 (dongkuk 등)
+- **콘텐츠**: `cover`, `toc`, `section`, `comparison`, `timeline`, `stat-cards`, `process-flow`, `feature-grid`, `pros-cons` (각각 1, 2, ... 번호로 여러 스타일 존재)
+
+#### 공용 에셋 (assets/)
+그룹/회사 무관한 공용 이미지/아이콘:
+```yaml
+# templates/assets/registry.yaml
+icons:
+  - id: chart-line
+    name: 라인 차트 아이콘
+    file: icons/chart-line.svg
+    source: generated        # generated | downloaded | brand
+    tags: ["chart", "data"]
+
+images:
+  - id: tech-background
+    name: 테크 배경
+    file: images/tech-bg.png
+    source: downloaded
+    tags: ["background", "tech"]
+```
+
+**회사 로고는** `documents/{그룹}/assets/{계열사}/` 에 저장
 
 #### LLM 템플릿 선택 프로세스
 
-1. `templates/registry.yaml` 로드
-2. 문서 템플릿: 사용자가 회사/브랜드 언급 시 해당 `documents/*.yaml` 선택
-3. 콘텐츠 템플릿: 데이터 특성에 맞는 `contents/*.yaml` 선택
+1. **문서 템플릿 선택**: 사용자가 회사/그룹 언급 시
+   - `documents/{그룹}/config.yaml` 로드 → 테마 적용
+   - `documents/{그룹}/registry.yaml` 로드 → 양식 목록 확인
+   - 계열사 지정 시 해당 에셋 선택 (`assets/{계열사}/`)
+   - 용도에 맞는 문서 양식 선택 (제안서1, 보고서1 등)
+
+2. **콘텐츠 템플릿 선택**: 데이터 특성에 맞는 패턴
+   - `contents/registry.yaml`에서 검색
    - `description` + `use_for` 목록으로 적합도 판단
-   - `keywords`로 키워드 매칭
-4. 문서 템플릿 스타일 + 콘텐츠 템플릿 구조 조합
+
+3. **조합**: 문서 테마 + 양식 + 계열사 에셋 + 콘텐츠 패턴
+
+**예시**: "동국제강 제안서" 요청 시
+- 테마: `dongkuk/config.yaml`
+- 양식: `dongkuk/registry.yaml`에서 제안서1 선택 → `dongkuk/제안서1.yaml` 로드
+- 로고: `dongkuk/assets/dongkuk-steel/logo.png`
 
 ### Workflow
 
@@ -594,13 +680,14 @@ PPTX 파일을 분석하여 템플릿으로 등록합니다. 문서 템플릿(�
    - 테마 파일 읽기: `ppt/theme/theme1.xml`에서 색상/폰트 추출
    - 슬라이드 레이아웃 분석: 각 슬라이드 카테고리 분류 (cover, toc, content_bullets 등)
 
-3. **YAML 메타데이터 생성**:
-   - `templates/documents/{template-id}.yaml` 파일 생성
-   - 추출된 테마, 레이아웃, 플레이스홀더 정보 포함
+3. **그룹 폴더 및 YAML 생성**:
+   - `templates/documents/{그룹}/` 폴더 생성 (없는 경우)
+   - `config.yaml` 생성 (테마 정보: 색상, 폰트)
+   - `{양식}.yaml` 파일 생성 (레이아웃, 플레이스홀더 정보)
 
 4. **레지스트리 업데이트**:
-   - `templates/registry.yaml`의 `documents` 섹션에 새 템플릿 추가
-   - 썸네일 경로, 생성일, 상태 정보 포함
+   - `templates/documents/{그룹}/registry.yaml`에 새 양식 추가
+   - 양식 ID, 이름, 파일 경로, 설명 포함
 
 5. **사용자 확인**:
    - 생성된 썸네일 표시
@@ -620,48 +707,110 @@ PPTX 파일을 분석하여 템플릿으로 등록합니다. 문서 템플릿(�
 
 ## Extracting style from images
 
-이미지에서 디자인 스타일을 추출하여 PPT 생성에 활용합니다. PPTX 파일 없이도 디자인 참조 가능.
+이미지에서 디자인 스타일을 추출하여 **자동으로 분류하고 저장**합니다. 스크립트 실행 없이 LLM Vision으로 직접 처리.
+
+### 트리거
+
+- "이 이미지 스타일 추출해줘"
+- "스타일 저장해줘"
+- "이 디자인 분석해서 저장해줘"
+- 이미지 첨부 + 스타일 관련 요청
 
 ### Workflow
 
-1. **이미지 분석** (LLM Vision):
-   - 이미지 파일 읽기 (Read tool 사용)
+1. **이미지 분석** (LLM Vision - Read tool):
+   - 이미지 파일 읽기
    - 분석 항목:
-     - 레이아웃 구조 (열 구성, 헤더/푸터)
-     - 색상 팔레트 추출 (primary, secondary, accent)
-     - 타이포그래피 스타일 (크기 비율, 정렬)
-     - 시각적 요소 (아이콘, 도형, 이미지 위치)
+     - 색상 팔레트 (Primary, Secondary, Accent, Background, Text)
+     - 레이아웃 구조 (열 구성, 헤더/푸터, 카드 등)
+     - 타이포그래피 스타일 (크기 비율, 정렬, 굵기)
+     - 무드/분위기 (전문적, 활기찬, 고급스러운 등)
 
-2. **스타일 가이드 생성**:
+2. **자동 분류** (color-palettes.md 참조):
+
+   | 감지 색상 | 무드 | ID 접두사 |
+   |----------|------|----------|
+   | 네이비/블루 | 전문적/신뢰 | classic-, corp- |
+   | 그린 | 자연/친환경 | nature-, eco- |
+   | 레드/오렌지 | 활기/에너지 | vibrant-, bold- |
+   | 퍼플 | 창의/혁신 | creative-, tech- |
+   | 블랙/골드 | 고급/프리미엄 | luxury-, premium- |
+   | 파스텔 | 부드러움/친근 | soft-, warm- |
+
+3. **자동 저장** (기존 3타입 구조):
+
+   **a) 색상/테마 → documents/{그룹}/config.yaml**
    ```yaml
-   style:
-     id: modern-blue
-     name: 모던 블루 스타일
-     source_type: image
+   # templates/documents/{mood}-{timestamp}/config.yaml
+   group:
+     id: classic-20260106
+     name: Classic Blue Style
+     source: extracted_image
 
    theme:
      colors:
-       primary: "#1E3A5F"      # 추정값
-       secondary: "#4A90D9"
-       accent: "#F5A623"
-     typography:
-       heading_style: "bold, large"
-       body_style: "regular, medium"
-
-   layout_patterns:
-     - type: "header-content"
-     - type: "two-column"
+       primary: "1E3A5F"      # # 제외
+       secondary: "4A90D9"
+       accent: "F5A623"
+       background: "FFFFFF"
+       text: "333333"
+     fonts:
+       title: Arial
+       body: Arial
    ```
 
-3. **PPT 생성에 적용**:
-   - 추출된 스타일 가이드를 html2pptx 워크플로우에 적용
-   - 색상, 레이아웃 패턴 반영
+   **b) 레이아웃 패턴 → contents/templates/{id}.yaml** (감지된 경우)
+   ```yaml
+   # templates/contents/templates/layout-{style}.yaml
+   template:
+     id: layout-classic-twocol
+     name: 2열 레이아웃 (Classic)
+     category: two-column
+     source: extracted
+
+   structure:
+     type: two-column
+     ratio: "40:60"
+   ```
+
+   **c) 원본 이미지 → assets/images/{id}.png**
+   - 이미지 파일 복사 (참조용)
+   - assets/registry.yaml에 등록
+
+4. **Registry 업데이트**:
+   - `documents/{그룹}/registry.yaml` 생성/업데이트
+   - `contents/registry.yaml` 업데이트 (레이아웃 감지 시)
+   - `assets/registry.yaml` 업데이트 (이미지 저장 시)
+
+5. **결과 보고**:
+   ```
+   스타일 추출 완료!
+
+   추출된 색상:
+   - Primary: #1E3A5F (네이비)
+   - Secondary: #4A90D9 (블루)
+   - Accent: #F5A623 (오렌지)
+
+   무드: 전문적/신뢰 (Classic Blue 계열)
+
+   저장 위치:
+   - 테마: templates/documents/classic-20260106/config.yaml
+   - 레이아웃: templates/contents/templates/layout-classic-twocol.yaml
+   - 이미지: templates/assets/images/ref-classic-20260106.png
+   ```
+
+### 파일명 규칙
+
+- 그룹 ID: `{mood}-{YYYYMMDD}` (예: classic-20260106)
+- 레이아웃 ID: `layout-{mood}-{pattern}` (예: layout-classic-twocol)
+- 이미지 ID: `ref-{mood}-{YYYYMMDD}` (예: ref-classic-20260106)
+- 사용자가 이름을 지정하면 해당 이름 사용
 
 ### 주의사항
 
-- 이미지 분석은 **추정값**입니다 (정확한 HEX 코드는 PPTX 분석 필요)
-- 폰트는 스타일만 파악 (bold, large 등), 정확한 폰트명은 알 수 없음
-- 디자인 참조용으로 활용, 정확한 템플릿 복제는 PPTX 분석 필요
+- 이미지 분석 색상은 **추정값**입니다
+- HEX 코드에서 **# 제외**하여 저장 (PowerPoint 호환)
+- 기존 그룹과 이름 충돌 시 timestamp로 구분
 
 ---
 
@@ -722,13 +871,13 @@ PPTX 파일을 분석하여 템플릿으로 등록합니다. 문서 템플릿(�
 ### 템플릿 상세 조회
 
 ```
-사용자: "dongkuk 템플릿 상세 보여줘"
+사용자: "동국 템플릿 상세 보여줘"
 ```
 
-1. `templates/documents/dongkuk.yaml` 읽기
-2. 테마 정보 (색상, 폰트) 표시
-3. 레이아웃 목록 및 용도 표시
-4. 썸네일 이미지 표시
+1. `templates/documents/dongkuk/config.yaml` 읽기 (테마 정보)
+2. `templates/documents/dongkuk/registry.yaml` 읽기 (양식 목록)
+3. 테마 정보 (색상, 폰트, 계열사) 표시
+4. 양식 목록 및 설명 표시
 
 ### 템플릿 삭제
 
@@ -764,3 +913,82 @@ PPTX 파일을 분석하여 템플릿으로 등록합니다. 문서 템플릿(�
 - 일반 목록에서 숨김
 - "아카이브된 템플릿 보여줘"로 조회 가능
 - 복원 가능: "old-template 복원해줘"
+
+---
+
+## Saving assets
+
+생성하거나 다운로드한 이미지/아이콘을 에셋 라이브러리에 저장합니다.
+
+### Workflow
+
+```
+사용자: "이 아이콘 저장해줘" (SVG 생성 후)
+사용자: "다운받은 로고 저장해줘"
+```
+
+1. **에셋 파일 저장**:
+   - 아이콘: `templates/assets/icons/{id}.svg`
+   - 이미지: `templates/assets/images/{id}.png`
+
+2. **레지스트리 업데이트** (`templates/assets/registry.yaml`):
+   ```yaml
+   icons:
+     - id: new-icon
+       name: 새 아이콘
+       file: icons/new-icon.svg
+       source: generated    # generated | downloaded | brand
+       tags: ["tag1", "tag2"]
+       created: 2026-01-06
+   ```
+
+3. **썸네일 생성** (선택):
+   - `templates/assets/thumbnails/{id}.jpg`
+
+### 에셋 소스 타입
+
+| source | 설명 | 예시 |
+|--------|------|------|
+| `generated` | Claude가 직접 생성한 SVG/이미지 | 아이콘, 다이어그램 |
+| `downloaded` | 웹에서 다운로드 | 배경 이미지, 스톡 사진 |
+| `brand` | 브랜드 공식 에셋 (Brandfetch 등) | 회사 로고 |
+
+---
+
+## Searching assets
+
+저장된 에셋을 검색하여 PPT 생성에 재사용합니다.
+
+### Workflow
+
+```
+사용자: "차트 관련 아이콘 찾아줘"
+사용자: "저장된 로고 보여줘"
+```
+
+1. **레지스트리 검색** (`templates/assets/registry.yaml`):
+   - `tags` 배열에서 키워드 매칭
+   - `name` 필드에서 검색
+   - `source` 타입으로 필터링
+
+2. **결과 표시**:
+   - 매칭된 에셋 목록
+   - 썸네일 이미지 (있는 경우)
+   - 파일 경로
+
+3. **PPT에 적용** (선택):
+   - html2pptx 워크플로우에서 에셋 참조
+   - 이미지 삽입 시 파일 경로 사용
+
+### 검색 예시
+
+```bash
+# 태그로 검색
+tags: ["chart"] → chart-line.svg, chart-bar.svg
+
+# 소스로 필터링
+source: brand → dongkuk-logo.png, company-icon.svg
+
+# 이름으로 검색
+name: "화살표" → arrow-right.svg, arrow-down.svg
+```

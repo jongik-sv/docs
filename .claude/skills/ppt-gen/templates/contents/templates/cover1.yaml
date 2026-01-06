@@ -1,0 +1,69 @@
+# 표지 (기본) 콘텐츠 템플릿
+# 중앙 정렬 제목 + 하단 로고
+
+content_template:
+  id: cover1
+  name: 표지 (기본)
+  description: "중앙 정렬 제목 + 부제목 + 하단 로고"
+  data_type: cover
+
+# 레이아웃 구조
+structure:
+  type: centered-title
+
+  title:
+    position: center
+    font_size: large
+    font_weight: bold
+
+  subtitle:
+    position: below-title
+    font_size: medium
+    format: "{조직명} | {날짜}"
+
+  logo:
+    position: bottom-left
+
+  decorations:
+    - type: gradient_bar
+      position: top
+
+# 사용 용도
+use_for:
+  - "프레젠테이션 표지"
+  - "문서 첫 페이지"
+  - "타이틀 슬라이드"
+
+# 검색용 키워드
+keywords:
+  - "표지"
+  - "타이틀"
+  - "커버"
+  - "제목"
+  - "시작"
+  - "cover"
+
+# HTML 생성 가이드
+html_guide:
+  layout: |
+    <div class="cover-container">
+      <div class="gradient-bar"></div>
+      <div class="title-area">
+        <h1 class="main-title">{title}</h1>
+        <p class="subtitle">{subtitle}</p>
+      </div>
+      <div class="logo-area">
+        <img src="{logo_path}" alt="logo" />
+      </div>
+    </div>
+
+  style_notes:
+    - "제목은 중앙 정렬"
+    - "부제목은 제목 아래 작은 폰트"
+    - "로고는 하단 좌측 또는 중앙"
+    - "상단 그라데이션 바 선택적"
+
+# 예시 데이터
+example:
+  title: "2024년 사업계획서"
+  subtitle: "전략기획팀 | 2024.01.15"

@@ -2,7 +2,7 @@
 # 핵심 숫자를 크게 강조하고 간단한 설명을 덧붙이는 카드형 레이아웃
 
 content_template:
-  id: stat-cards
+  id: stat-cards1
   name: 통계 카드
   description: "핵심 숫자를 크게 강조하고 간단한 설명을 덧붙이는 카드형 레이아웃"
   data_type: numerical

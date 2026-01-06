@@ -2,7 +2,7 @@
 # 긍정적/부정적 측면을 체크/엑스 마크와 함께 양쪽에 배치
 
 content_template:
-  id: pros-cons
+  id: pros-cons1
   name: 장단점
   description: "긍정적/부정적 측면을 체크/엑스 마크와 함께 양쪽에 배치"
   data_type: evaluation

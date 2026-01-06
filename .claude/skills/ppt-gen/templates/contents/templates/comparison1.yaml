@@ -2,8 +2,8 @@
 # 두 가지 항목을 나란히 비교하는 2열 대칭 레이아웃
 
 content_template:
-  id: comparison
-  name: 비교 (A vs B)
+  id: comparison1
+  name: 비교 (A vs B) - 기본
   description: "두 가지 항목을 나란히 비교하는 2열 대칭 레이아웃"
   data_type: comparison
 

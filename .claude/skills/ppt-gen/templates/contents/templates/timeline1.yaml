@@ -2,7 +2,7 @@
 # 시간 순서로 진행되는 이벤트나 단계를 표현
 
 content_template:
-  id: timeline
+  id: timeline1
   name: 타임라인
   description: "시간 순서로 진행되는 이벤트나 단계를 표현하는 가로/세로 흐름"
   data_type: chronological

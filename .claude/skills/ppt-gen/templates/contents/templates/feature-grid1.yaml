@@ -2,7 +2,7 @@
 # 여러 기능이나 특징을 아이콘과 함께 격자 형태로 나열
 
 content_template:
-  id: feature-grid
+  id: feature-grid1
   name: 기능 그리드
   description: "여러 기능이나 특징을 아이콘과 함께 격자 형태로 나열"
   data_type: categorical

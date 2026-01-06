@@ -1,14 +1,23 @@
 #!/usr/bin/env python3
 """
-PPTX Template Analyzer
+PPTX Template Analyzer (3타입 구조 지원)
 
-PPTX 파일을 분석하여 문서 템플릿 YAML 메타데이터를 생성합니다.
+PPTX 파일을 분석하여 그룹 폴더 구조에 맞는 템플릿 파일들을 생성합니다.
 
 Usage:
-    python template-analyzer.py input.pptx template-id [--output templates/documents/]
+    python template-analyzer.py input.pptx 제안서1 --group dongkuk --name "제안서 (기본)"
 
 Output:
-    - templates/documents/{template-id}.yaml: 템플릿 메타데이터
+    - templates/documents/{group}/config.yaml (없으면 생성)
+    - templates/documents/{group}/{template-id}.yaml (양식 파일)
+    - templates/documents/{group}/registry.yaml (자동 업데이트)
+
+Examples:
+    # 새 그룹에 첫 템플릿 등록
+    python template-analyzer.py proposal.pptx 제안서1 --group dongkuk --name "제안서 (기본)"
+
+    # 기존 그룹에 템플릿 추가
+    python template-analyzer.py report.pptx 보고서1 --group dongkuk --name "보고서 (기본)" --type report
 """
 
 import argparse
@@ -287,26 +296,129 @@ def calculate_aspect_ratio(width: int, height: int) -> str:
         return f'{width}:{height}'
 
 
-def generate_yaml(template_id: str, name: str, source: str, theme: dict,
-                  layouts: list, slide_size: dict) -> str:
-    """YAML 메타데이터 생성"""
-    aspect_ratio = calculate_aspect_ratio(slide_size['width_emu'], slide_size['height_emu'])
+def ensure_group_folder(base_dir: Path, group_id: str) -> Path:
+    """그룹 폴더 구조 생성"""
+    group_dir = base_dir / group_id
+    assets_dir = group_dir / 'assets' / 'default'
 
-    data = {
-        'document_template': {
+    group_dir.mkdir(parents=True, exist_ok=True)
+    assets_dir.mkdir(parents=True, exist_ok=True)
+
+    return group_dir
+
+
+def load_or_create_config(group_dir: Path, group_id: str, theme: dict) -> dict:
+    """config.yaml 로드 또는 생성"""
+    config_path = group_dir / 'config.yaml'
+
+    if config_path.exists():
+        with open(config_path, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+
+    # 새 config 생성
+    config = {
+        'group': {
+            'id': group_id,
+            'name': group_id,  # 사용자가 나중에 수정
+        },
+        'theme': {
+            'colors': theme.get('colors', {}),
+            'fonts': theme.get('fonts', {}),
+        },
+        'companies': [
+            {'id': 'default', 'name': f'{group_id} (기본)'}
+        ]
+    }
+
+    # 저장
+    yaml_str = f"""# {group_id} 그룹 설정
+# 자동 생성: {datetime.now().strftime('%Y-%m-%d')}
+
+"""
+    yaml_str += yaml.dump(config, allow_unicode=True, default_flow_style=False, sort_keys=False)
+
+    with open(config_path, 'w', encoding='utf-8') as f:
+        f.write(yaml_str)
+
+    print(f"  config.yaml 생성: {config_path}")
+    return config
+
+
+def update_registry(group_dir: Path, template_id: str, name: str,
+                    template_type: str, description: str) -> None:
+    """registry.yaml 업데이트"""
+    registry_path = group_dir / 'registry.yaml'
+
+    if registry_path.exists():
+        with open(registry_path, 'r', encoding='utf-8') as f:
+            registry = yaml.safe_load(f) or {}
+    else:
+        registry = {'templates': []}
+
+    # 기존 템플릿 확인
+    templates = registry.get('templates', [])
+    existing_ids = [t['id'] for t in templates]
+
+    if template_id in existing_ids:
+        # 업데이트
+        for t in templates:
+            if t['id'] == template_id:
+                t['name'] = name
+                t['type'] = template_type
+                t['description'] = description
+                t['updated'] = datetime.now().strftime('%Y-%m-%d')
+        print(f"  registry.yaml 업데이트: {template_id}")
+    else:
+        # 추가
+        templates.append({
             'id': template_id,
             'name': name,
-            'company': name,
+            'file': f'{template_id}.yaml',
+            'type': template_type,
+            'description': description,
+            'created': datetime.now().strftime('%Y-%m-%d'),
+        })
+        print(f"  registry.yaml 추가: {template_id}")
+
+    registry['templates'] = templates
+
+    # 저장
+    yaml_str = f"""# 문서 템플릿 레지스트리
+# 마지막 업데이트: {datetime.now().strftime('%Y-%m-%d')}
+
+"""
+    yaml_str += yaml.dump(registry, allow_unicode=True, default_flow_style=False, sort_keys=False)
+
+    with open(registry_path, 'w', encoding='utf-8') as f:
+        f.write(yaml_str)
+
+
+def generate_document_yaml(template_id: str, name: str, source: str,
+                           layouts: list, slide_size: dict) -> str:
+    """문서 템플릿 YAML 생성 (양식 파일)"""
+    aspect_ratio = calculate_aspect_ratio(slide_size['width_emu'], slide_size['height_emu'])
+
+    # 슬라이드 구조 생성
+    slides = []
+    for layout in layouts:
+        slide = {
+            'index': layout['index'],
+            'category': layout['category'],
+            'use_for': layout['use_for'],
+        }
+        if layout.get('placeholders'):
+            slide['placeholders'] = layout['placeholders']
+        slides.append(slide)
+
+    data = {
+        'document': {
+            'id': template_id,
+            'name': name,
             'source': source,
             'aspect_ratio': aspect_ratio,
             'slide_size': slide_size,
         },
-        'theme': {
-            'name': theme.get('name', name),
-            'colors': theme.get('colors', {}),
-            'fonts': theme.get('fonts', {}),
-        },
-        'layouts': layouts,
+        'slides': slides,
         'selection_guide': {
             'cover': 0,
             'toc': next((l['index'] for l in layouts if l['category'] == 'toc'), 1),
@@ -320,46 +432,66 @@ def generate_yaml(template_id: str, name: str, source: str, theme: dict,
         ]
     }
 
-    # YAML 문자열 생성
-    yaml_str = f"""# {name} 문서 템플릿
+    yaml_str = f"""# {name}
 # 자동 생성: {datetime.now().strftime('%Y-%m-%d %H:%M')}
 # 원본: {source}
 
 """
     yaml_str += yaml.dump(data, allow_unicode=True, default_flow_style=False, sort_keys=False)
-
     return yaml_str
 
 
 def main():
-    parser = argparse.ArgumentParser(description='PPTX 템플릿 분석기')
+    parser = argparse.ArgumentParser(
+        description='PPTX 템플릿 분석기 (3타입 구조)',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python template-analyzer.py proposal.pptx 제안서1 --group dongkuk
+  python template-analyzer.py report.pptx 보고서1 --group dongkuk --type report
+        """
+    )
     parser.add_argument('pptx_path', help='입력 PPTX 파일 경로')
-    parser.add_argument('template_id', help='템플릿 ID (예: dongkuk)')
-    parser.add_argument('--name', help='템플릿 이름 (기본: template_id)', default=None)
-    parser.add_argument('--output', help='출력 디렉토리', default='templates/documents/')
-    parser.add_argument('--source', help='원본 파일 경로 (YAML에 기록)', default=None)
+    parser.add_argument('template_id', help='템플릿 ID (예: 제안서1, 보고서1)')
+    parser.add_argument('--group', required=True, help='그룹 ID (예: dongkuk)')
+    parser.add_argument('--name', help='템플릿 표시 이름', default=None)
+    parser.add_argument('--type', dest='template_type', default='general',
+                        choices=['proposal', 'report', 'plan', 'general'],
+                        help='템플릿 타입 (proposal, report, plan, general)')
+    parser.add_argument('--base-dir', default='templates/documents/',
+                        help='기본 출력 디렉토리')
+    parser.add_argument('--description', help='템플릿 설명', default=None)
 
     args = parser.parse_args()
 
     pptx_path = args.pptx_path
     template_id = args.template_id
+    group_id = args.group
     name = args.name or template_id
-    source = args.source or pptx_path
-    output_dir = Path(args.output)
+    template_type = args.template_type
+    base_dir = Path(args.base_dir)
 
-    # 디렉토리 생성
-    output_dir.mkdir(parents=True, exist_ok=True)
+    print(f"PPTX 템플릿 분석기")
+    print(f"=" * 40)
+    print(f"입력: {pptx_path}")
+    print(f"그룹: {group_id}")
+    print(f"템플릿: {template_id}")
+    print()
 
-    print(f"분석 중: {pptx_path}")
+    # 1. 그룹 폴더 생성
+    print("[1/5] 그룹 폴더 확인...")
+    group_dir = ensure_group_folder(base_dir, group_id)
+    print(f"  폴더: {group_dir}")
 
-    # 분석 실행
+    # 2. PPTX 분석
+    print("\n[2/5] PPTX 분석...")
     theme = extract_theme(pptx_path)
     print(f"  테마: {theme.get('name', 'Unknown')}")
     print(f"  색상: {len(theme.get('colors', {}))}개")
     print(f"  폰트: {theme.get('fonts', {})}")
 
     layouts = analyze_layouts(pptx_path)
-    print(f"  레이아웃: {len(layouts)}개")
+    print(f"  슬라이드: {len(layouts)}개")
     for layout in layouts:
         print(f"    [{layout['index']}] {layout['category']}")
 
@@ -367,15 +499,29 @@ def main():
     aspect_ratio = calculate_aspect_ratio(slide_size['width_emu'], slide_size['height_emu'])
     print(f"  종횡비: {aspect_ratio}")
 
-    # YAML 생성
-    yaml_content = generate_yaml(template_id, name, source, theme, layouts, slide_size)
+    # 3. config.yaml 처리
+    print("\n[3/5] config.yaml 처리...")
+    load_or_create_config(group_dir, group_id, theme)
 
-    # 파일 저장
-    output_path = output_dir / f"{template_id}.yaml"
-    with open(output_path, 'w', encoding='utf-8') as f:
+    # 4. 양식.yaml 생성
+    print("\n[4/5] 양식 파일 생성...")
+    yaml_content = generate_document_yaml(
+        template_id, name, pptx_path, layouts, slide_size
+    )
+    template_path = group_dir / f"{template_id}.yaml"
+    with open(template_path, 'w', encoding='utf-8') as f:
         f.write(yaml_content)
+    print(f"  저장: {template_path}")
 
-    print(f"\n저장 완료: {output_path}")
+    # 5. registry.yaml 업데이트
+    print("\n[5/5] registry.yaml 업데이트...")
+    description = args.description or f"{name} 문서 템플릿"
+    update_registry(group_dir, template_id, name, template_type, description)
+
+    print("\n" + "=" * 40)
+    print("완료!")
+    print(f"  그룹 폴더: {group_dir}")
+    print(f"  템플릿: {template_path}")
 
 
 if __name__ == '__main__':

@@ -2,7 +2,7 @@
 # 순차적 절차나 워크플로우를 화살표로 연결하여 표현
 
 content_template:
-  id: process-flow
+  id: process-flow1
   name: 프로세스 흐름
   description: "순차적 절차나 워크플로우를 화살표로 연결하여 표현"
   data_type: procedural

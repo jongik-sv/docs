@@ -1,0 +1,61 @@
+# 콘텐츠 템플릿 레지스트리
+templates:
+  # 표지/목차
+  - id: cover1
+    name: 표지 (기본)
+    file: templates/cover1.yaml
+    category: cover
+    description: "중앙 정렬 제목 + 부제목 + 하단 로고"
+    use_for: ["표지", "타이틀 슬라이드"]
+
+  - id: toc1
+    name: 목차 (기본)
+    file: templates/toc1.yaml
+    category: toc
+    description: "번호 + 목차 항목 리스트"
+    use_for: ["목차", "아젠다", "발표 순서"]
+
+  # 비교/대조
+  - id: comparison1
+    name: 비교 (A vs B) - 기본
+    file: templates/comparison1.yaml
+    category: comparison
+    description: "두 가지 항목을 나란히 비교하는 2열 대칭 레이아웃"
+    use_for: ["A vs B 비교", "Before/After", "As-Is/To-Be"]
+
+  - id: pros-cons1
+    name: 장단점 분석
+    file: templates/pros-cons1.yaml
+    category: pros-cons
+    description: "장점과 단점을 2열로 나열"
+    use_for: ["장단점", "Pros/Cons", "강점/약점"]
+
+  # 시간/프로세스
+  - id: timeline1
+    name: 타임라인
+    file: templates/timeline1.yaml
+    category: timeline
+    description: "시간순 데이터를 가로 또는 세로 흐름으로 표시"
+    use_for: ["로드맵", "일정", "마일스톤", "연혁"]
+
+  - id: process-flow1
+    name: 프로세스 플로우
+    file: templates/process-flow1.yaml
+    category: process-flow
+    description: "단계별 절차를 화살표로 연결"
+    use_for: ["프로세스", "절차", "워크플로우", "단계"]
+
+  # 데이터/그리드
+  - id: stat-cards1
+    name: 통계 카드
+    file: templates/stat-cards1.yaml
+    category: stat-cards
+    description: "큰 숫자 + 설명 형태의 핵심 지표 강조"
+    use_for: ["KPI", "핵심 지표", "숫자 강조", "실적"]
+
+  - id: feature-grid1
+    name: 기능 그리드
+    file: templates/feature-grid1.yaml
+    category: feature-grid
+    description: "아이콘 + 텍스트 형태의 기능/특징 나열"
+    use_for: ["기능 소개", "특징", "장점 나열", "서비스 소개"]
