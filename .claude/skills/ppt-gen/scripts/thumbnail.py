@@ -21,6 +21,7 @@ Grid limits by column count:
 Usage:
     python thumbnail.py input.pptx [output_prefix] [--cols N] [--outline-placeholders]
     python thumbnail.py input.pptx output/ --slides 5 --single
+    python thumbnail.py --from-images images/ output/ [--cols N]
 
 Examples:
     python thumbnail.py presentation.pptx
@@ -48,6 +49,13 @@ Examples:
 
     python thumbnail.py input.pptx output/ --slides 1,3,5
     # Creates: output/slide-1.png, output/slide-3.png, output/slide-5.png
+
+    # Image-based mode (no LibreOffice required):
+    python thumbnail.py --from-images images/ grid
+    # Creates grid from existing images in the directory
+
+    python thumbnail.py --from-images images/ output/ --single
+    # Resizes images to 1980x1080 thumbnails
 """
 
 # Single slide output constants
@@ -82,7 +90,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Create thumbnail grids from PowerPoint slides."
     )
-    parser.add_argument("input", help="Input PowerPoint file (.pptx)")
+    parser.add_argument("input", nargs="?", help="Input PowerPoint file (.pptx)")
     parser.add_argument(
         "output_prefix",
         nargs="?",
@@ -110,8 +118,25 @@ def main():
         action="store_true",
         help="Output single slide image(s) instead of grid (1980x1080 PNG)",
     )
+    parser.add_argument(
+        "--from-images",
+        type=str,
+        metavar="DIR",
+        help="Create thumbnails from existing images in directory (no LibreOffice needed)",
+    )
+    parser.add_argument(
+        "--prefix",
+        type=str,
+        default="slide",
+        help="Prefix for output filenames (default: slide). Output: {prefix}-{index}.png",
+    )
 
     args = parser.parse_args()
+
+    # Handle image-based mode
+    if args.from_images:
+        handle_from_images_mode(args)
+        return
 
     # Validate columns
     cols = min(args.cols, MAX_COLS)
@@ -194,6 +219,157 @@ def create_hidden_slide_placeholder(size):
     draw.line([(0, 0), size], fill="#CCCCCC", width=line_width)
     draw.line([(size[0], 0), (0, size[1])], fill="#CCCCCC", width=line_width)
     return img
+
+
+def handle_from_images_mode(args):
+    """Handle thumbnail generation from existing images (no LibreOffice needed).
+
+    This mode:
+    1. Reads images from a directory
+    2. Resizes them to create thumbnails
+    3. Creates a grid or individual thumbnails
+    """
+    image_dir = Path(args.from_images)
+    if not image_dir.exists():
+        print(f"Error: Image directory not found: {image_dir}")
+        sys.exit(1)
+
+    # Find all images in directory (sorted by name)
+    image_extensions = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp"}
+    image_files = sorted([
+        f for f in image_dir.iterdir()
+        if f.suffix.lower() in image_extensions
+    ])
+
+    if not image_files:
+        print(f"Error: No images found in {image_dir}")
+        sys.exit(1)
+
+    print(f"Found {len(image_files)} images in {image_dir}")
+
+    # Validate columns
+    cols = min(args.cols, MAX_COLS)
+    if args.cols > MAX_COLS:
+        print(f"Warning: Columns limited to {MAX_COLS} (requested {args.cols})")
+
+    # Parse slide indices if specified
+    slide_indices = None
+    if args.slides:
+        try:
+            slide_indices = [int(s.strip()) for s in args.slides.split(",")]
+        except ValueError:
+            print(f"Error: Invalid slide indices: {args.slides}")
+            sys.exit(1)
+
+    # Handle single mode - create individual resized thumbnails
+    if args.single or slide_indices:
+        output_dir = Path(args.output_prefix) if args.output_prefix != "thumbnails" else Path(".")
+        output_dir.mkdir(parents=True, exist_ok=True)
+        create_thumbnails_from_images(image_files, output_dir, slide_indices, args.single, args.prefix)
+        return
+
+    # Grid mode - create thumbnail grid
+    output_path = Path(f"{args.output_prefix}.jpg")
+    print(f"Creating grid with {cols} columns...")
+
+    # Create grids
+    grid_files = create_grids(
+        image_files,
+        cols,
+        THUMBNAIL_WIDTH,
+        output_path,
+        placeholder_regions=None,
+        slide_dimensions=None,
+    )
+
+    print(f"Created {len(grid_files)} grid(s):")
+    for grid_file in grid_files:
+        print(f"  - {grid_file}")
+
+
+def create_thumbnails_from_images(image_files, output_dir, slide_indices=None, single_mode=False, prefix="slide"):
+    """Create single thumbnails from existing images by resizing.
+
+    Args:
+        image_files: List of image file paths
+        output_dir: Output directory
+        slide_indices: List of indices to process (0-based). If None, process all.
+        single_mode: If True, always create individual files
+        prefix: Prefix for output filenames (default: "slide")
+    """
+    # Default to all images if not specified
+    if slide_indices is None:
+        slide_indices = list(range(len(image_files)))
+
+    # Validate indices
+    valid_indices = [i for i in slide_indices if 0 <= i < len(image_files)]
+    if not valid_indices:
+        print(f"Error: No valid indices (total images: {len(image_files)})")
+        sys.exit(1)
+
+    created_files = []
+    for idx in valid_indices:
+        input_path = image_files[idx]
+        output_path = output_dir / f"{prefix}-{idx}.png"
+
+        try:
+            with Image.open(input_path) as img:
+                # Convert to RGB if needed (for PNG with transparency)
+                if img.mode in ("RGBA", "P"):
+                    img = img.convert("RGB")
+
+                # Resize to target dimensions maintaining aspect ratio with padding
+                img_resized = resize_with_letterbox(img, SINGLE_WIDTH, SINGLE_HEIGHT)
+                img_resized.save(output_path, "PNG")
+                created_files.append(str(output_path))
+                print(f"  Created: {output_path}")
+        except Exception as e:
+            print(f"  Warning: Failed to process {input_path}: {e}")
+
+    # Print summary
+    if len(created_files) == 1:
+        print(f"Created single thumbnail:")
+    else:
+        print(f"Created {len(created_files)} thumbnail(s):")
+    for f in created_files:
+        print(f"  - {f}")
+
+
+def resize_with_letterbox(img, target_width, target_height, bg_color=(255, 255, 255)):
+    """Resize image to target dimensions with letterbox (padding) to maintain aspect ratio.
+
+    Args:
+        img: PIL Image
+        target_width: Target width
+        target_height: Target height
+        bg_color: Background color for letterbox
+
+    Returns:
+        Resized PIL Image
+    """
+    orig_width, orig_height = img.size
+    orig_aspect = orig_width / orig_height
+    target_aspect = target_width / target_height
+
+    if orig_aspect > target_aspect:
+        # Image is wider - fit to width, pad top/bottom
+        new_width = target_width
+        new_height = int(target_width / orig_aspect)
+    else:
+        # Image is taller - fit to height, pad left/right
+        new_height = target_height
+        new_width = int(target_height * orig_aspect)
+
+    # Resize
+    img_resized = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
+
+    # Create canvas and paste centered
+    canvas = Image.new("RGB", (target_width, target_height), bg_color)
+    paste_x = (target_width - new_width) // 2
+    paste_y = (target_height - new_height) // 2
+    canvas.paste(img_resized, (paste_x, paste_y))
+
+    return canvas
 
 
 def create_single_thumbnails(pptx_path, output_dir, slide_indices=None, single_mode=False):

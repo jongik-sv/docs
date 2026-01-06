@@ -59,3 +59,239 @@ templates:
     category: feature-grid
     description: "아이콘 + 텍스트 형태의 기능/특징 나열"
     use_for: ["기능 소개", "특징", "장점 나열", "서비스 소개"]
+
+  # ============================================
+  # 딥그린 (깔끔이) 템플릿 시리즈 - yeonduppt.tistory.com/24
+  # ============================================
+  - id: deepgreen-cover1
+    name: 표지 (딥그린 중앙정렬)
+    file: templates/deepgreen-cover1.yaml
+    thumbnail: thumbnails/deepgreen-cover1.png
+    category: cover
+    theme: deepgreen
+    design_intent: cover-centered
+    description: "중앙 정렬 제목 + 라운드 라벨 + 발표자 정보"
+    use_for: ["표지", "타이틀", "오프닝"]
+
+  - id: deepgreen-toc1
+    name: 목차 (딥그린 3열)
+    file: templates/deepgreen-toc1.yaml
+    thumbnail: thumbnails/deepgreen-toc1.png
+    category: toc
+    theme: deepgreen
+    design_intent: toc-3col
+    description: "3열 그리드 목차 (번호+제목+항목)"
+    use_for: ["목차", "아젠다", "개요"]
+
+  - id: deepgreen-section1
+    name: 섹션 구분 (딥그린 번호)
+    file: templates/deepgreen-section1.yaml
+    thumbnail: thumbnails/deepgreen-section1.png
+    category: section
+    theme: deepgreen
+    design_intent: section-number
+    description: "큰 숫자 + 섹션 타이틀 + 구분선"
+    use_for: ["섹션 구분", "챕터", "파트"]
+
+  - id: deepgreen-chart1
+    name: 차트 (딥그린 막대+테이블)
+    file: templates/deepgreen-chart1.yaml
+    thumbnail: thumbnails/deepgreen-chart1.png
+    category: chart
+    theme: deepgreen
+    design_intent: chart-bar
+    description: "좌측 막대 차트 + 우측 데이터 테이블"
+    use_for: ["차트", "통계", "데이터 비교"]
+
+  - id: deepgreen-stats1
+    name: 통계 (딥그린 도트그리드)
+    file: templates/deepgreen-stats1.yaml
+    thumbnail: thumbnails/deepgreen-stats1.png
+    category: stat-cards
+    theme: deepgreen
+    design_intent: stats-dotgrid
+    description: "4열 도트그리드 퍼센트 통계"
+    use_for: ["통계", "퍼센트", "지표"]
+
+  - id: deepgreen-grid4col1
+    name: 4열 그리드 (딥그린 아이콘)
+    file: templates/deepgreen-grid4col1.yaml
+    thumbnail: thumbnails/deepgreen-grid4col1.png
+    category: feature-grid
+    theme: deepgreen
+    design_intent: grid-4col-icon
+    description: "4열 아이콘 + 제목 + 설명 그리드"
+    use_for: ["기능 소개", "서비스", "특징"]
+
+  - id: deepgreen-matrix1
+    name: 매트릭스 (딥그린 2x2)
+    file: templates/deepgreen-matrix1.yaml
+    thumbnail: thumbnails/deepgreen-matrix1.png
+    category: diagram
+    theme: deepgreen
+    design_intent: matrix-2x2
+    description: "2x2 매트릭스 (번호+제목+설명)"
+    use_for: ["비교", "사분면", "SWOT"]
+
+  - id: deepgreen-honeycomb1
+    name: 허니콤 (딥그린 6각형)
+    file: templates/deepgreen-honeycomb1.yaml
+    thumbnail: thumbnails/deepgreen-honeycomb1.png
+    category: diagram
+    theme: deepgreen
+    design_intent: process-honeycomb
+    description: "7개 육각형 허니콤 프로세스"
+    use_for: ["생태계", "연결", "허브-스포크"]
+
+  - id: deepgreen-cylinder1
+    name: 실린더 (딥그린 수직)
+    file: templates/deepgreen-cylinder1.yaml
+    thumbnail: thumbnails/deepgreen-cylinder1.png
+    category: process
+    theme: deepgreen
+    design_intent: process-cylinder
+    description: "4단계 수직 실린더 프로세스"
+    use_for: ["프로세스", "퍼널", "단계"]
+
+  - id: deepgreen-process1
+    name: 프로세스 (딥그린 원형)
+    file: templates/deepgreen-process1.yaml
+    thumbnail: thumbnails/deepgreen-process1.png
+    category: process
+    theme: deepgreen
+    design_intent: process-circle
+    description: "4단계 원형 프로세스 (화살표 연결)"
+    use_for: ["프로세스", "워크플로우", "단계"]
+
+  - id: deepgreen-cycle1
+    name: 사이클 (딥그린 순환)
+    file: templates/deepgreen-cycle1.yaml
+    thumbnail: thumbnails/deepgreen-cycle1.png
+    category: diagram
+    theme: deepgreen
+    design_intent: cycle-arrow
+    description: "4단계 순환 화살표 + 중앙 원"
+    use_for: ["사이클", "순환", "루프"]
+
+  - id: deepgreen-imagetext1
+    name: 이미지+텍스트 (딥그린)
+    file: templates/deepgreen-imagetext1.yaml
+    thumbnail: thumbnails/deepgreen-imagetext1.png
+    category: content
+    theme: deepgreen
+    design_intent: image-text
+    description: "좌측 이미지 + 우측 텍스트 분할"
+    use_for: ["제품", "프로필", "특징"]
+
+  - id: deepgreen-dotmap1
+    name: 도트맵 (딥그린 지도)
+    file: templates/deepgreen-dotmap1.yaml
+    thumbnail: thumbnails/deepgreen-dotmap1.png
+    category: diagram
+    theme: deepgreen
+    design_intent: dotmap-text
+    description: "좌측 도트맵 + 우측 정보 패널"
+    use_for: ["위치", "글로벌", "분포"]
+
+  # ============================================
+  # Brand New 템플릿 시리즈 (이미지 기반)
+  # ============================================
+  - id: brandnew-cover1
+    name: 표지 (Brand New)
+    file: templates/brandnew-cover1.yaml
+    thumbnail: thumbnails/brandnew-cover1.png
+    category: cover
+    theme: brandnew
+    style_ref: samples/brandnew-style.yaml
+    description: "비눗방울 배경 + 제목 + 라인"
+    use_for: ["표지", "프로젝트 시작"]
+
+  - id: brandnew-toc1
+    name: 목차 (Brand New)
+    file: templates/brandnew-toc1.yaml
+    thumbnail: thumbnails/brandnew-toc1.png
+    category: toc
+    theme: brandnew
+    style_ref: samples/brandnew-style.yaml
+    description: "4항목 리스트 + 우측 이미지"
+    use_for: ["목차", "아젠다"]
+
+  - id: brandnew-section1
+    name: 섹션 구분 (Brand New)
+    file: templates/brandnew-section1.yaml
+    thumbnail: thumbnails/brandnew-section1.png
+    category: section
+    theme: brandnew
+    style_ref: samples/brandnew-style.yaml
+    description: "Part X 중앙 정렬"
+    use_for: ["섹션", "파트 구분"]
+
+  - id: brandnew-grid3col1
+    name: 3열 이미지 그리드 (Brand New)
+    file: templates/brandnew-grid3col1.yaml
+    thumbnail: thumbnails/brandnew-grid3col1.png
+    category: grid
+    theme: brandnew
+    style_ref: samples/brandnew-style.yaml
+    description: "3열 이미지 + 제목"
+    use_for: ["갤러리", "3가지 항목"]
+
+  - id: brandnew-flow1
+    name: 플로우+텍스트 (Brand New)
+    file: templates/brandnew-flow1.yaml
+    thumbnail: thumbnails/brandnew-flow1.png
+    category: flow
+    theme: brandnew
+    style_ref: samples/brandnew-style.yaml
+    description: "좌측 플로우 다이어그램 + 우측 설명"
+    use_for: ["프로세스", "흐름 설명"]
+
+  - id: brandnew-growth1
+    name: 성장 다이어그램 (Brand New)
+    file: templates/brandnew-growth1.yaml
+    thumbnail: thumbnails/brandnew-growth1.png
+    category: diagram
+    theme: brandnew
+    style_ref: samples/brandnew-style.yaml
+    description: "1→2→3 요소 성장 원형"
+    use_for: ["성장", "확장", "단계"]
+
+  - id: brandnew-process1
+    name: 3단계→결과 (Brand New)
+    file: templates/brandnew-process1.yaml
+    thumbnail: thumbnails/brandnew-process1.png
+    category: process
+    theme: brandnew
+    style_ref: samples/brandnew-style.yaml
+    description: "3단계 → 결과 박스"
+    use_for: ["프로세스", "단계별 결과"]
+
+  - id: brandnew-comparison1
+    name: 2열 비교 (Brand New)
+    file: templates/brandnew-comparison1.yaml
+    thumbnail: thumbnails/brandnew-comparison1.png
+    category: comparison
+    theme: brandnew
+    style_ref: samples/brandnew-style.yaml
+    description: "2열 이미지 비교 (핑크/블루)"
+    use_for: ["비교", "A vs B", "Before/After"]
+
+  - id: brandnew-quote1
+    name: 인용문 (Brand New)
+    file: templates/brandnew-quote1.yaml
+    thumbnail: thumbnails/brandnew-quote1.png
+    category: quote
+    theme: brandnew
+    style_ref: samples/brandnew-style.yaml
+    description: "중앙 인용문, 핑크 배경"
+    use_for: ["인용", "명언"]
+
+  - id: brandnew-closing1
+    name: 마무리 (Brand New)
+    file: templates/brandnew-closing1.yaml
+    thumbnail: thumbnails/brandnew-closing1.png
+    category: closing
+    theme: brandnew
+    style_ref: samples/brandnew-style.yaml
+    description: "Thank you 비눗방울"
+    use_for: ["마무리", "감사"]

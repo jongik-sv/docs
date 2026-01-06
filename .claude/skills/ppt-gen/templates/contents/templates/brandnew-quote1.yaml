@@ -1,0 +1,139 @@
+content_template:
+  id: brandnew-quote1
+  name: "인용문 (중앙 배치)"
+  version: "2.0"
+  source: "Brand New.pptx"
+  source_slide_index: 29
+  extracted_at: "2026-01-07T10:45:00"
+
+design_meta:
+  quality_score: 8.7
+  design_intent: quote-centered
+  design_intents:
+    - quote-centered
+    - content-quote
+  visual_balance: symmetric
+  information_density: low
+
+canvas:
+  reference_width: 1980
+  reference_height: 1080
+  original_width_emu: 12192000
+  original_height_emu: 6858000
+  aspect_ratio: "16:9"
+
+shapes:
+  - id: "shape-0"
+    name: "Quote Text"
+    type: textbox
+    z_index: 1
+    geometry:
+      x: 6.4%
+      y: 37.6%
+      cx: 79.2%
+      cy: 17.5%
+      rotation: 0
+      original_aspect_ratio: 8.06
+    style:
+      fill:
+        type: none
+        color: none
+        opacity: 0.0
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: center
+      font_size_ratio: 0.0222
+      original_font_size_pt: 24.0
+      font_weight: bold
+      font_color: light
+
+  - id: "shape-1"
+    name: "Author Attribution"
+    type: textbox
+    z_index: 2
+    geometry:
+      x: 23.6%
+      y: 57.6%
+      cx: 40.9%
+      cy: 3.9%
+      rotation: 0
+      original_aspect_ratio: 10.44
+    style:
+      fill:
+        type: none
+        color: none
+        opacity: 0.0
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: center
+      font_size_ratio: 0.0148
+      original_font_size_pt: 16.0
+      font_weight: normal
+      font_color: light
+
+gaps:
+  global:
+    column_gap: 5%
+    row_gap: 3%
+    item_gap: 2%
+  between_shapes:
+    - from: "shape-0"
+      to: "shape-1"
+      direction: vertical
+      gap: 20%
+
+spatial_relationships:
+  - from: "shape-0"
+    to: "shape-1"
+    relationship: adjacent-vertical
+    gap: 20%
+    alignment: center
+  - shapes:
+      - "shape-0"
+      - "shape-1"
+    relationship: aligned-center
+
+groups:
+  - id: "quote-group"
+    members:
+      - "shape-0"
+      - "shape-1"
+    bounding_box:
+      x: 6.4%
+      y: 37.6%
+      cx: 79.2%
+      cy: 23.5%
+    internal_gap: 20%
+
+thumbnail: thumbnails/brandnew-quote1.png
+
+use_for:
+  - "격언, 인용문 표시"
+  - "철학적 메시지 전달"
+  - "주요 주장 강조"
+  - "저자 귀속"
+  - "증명된 사실 제시"
+
+keywords:
+  - "인용문"
+  - "명언"
+  - "격언"
+  - "중앙배치"
+  - "author attribution"
+  - "quote"
+  - "citation"
+  - "centered"

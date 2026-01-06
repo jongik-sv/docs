@@ -33,8 +33,9 @@
 
 검색 결과에서:
 1. 유망한 디자인 선별
-2. LLM Vision으로 각 이미지 분석
-3. 스타일 패턴 추출
+2. **출처 URL 기록** (Pinterest, Dribbble, Behance 등)
+3. LLM Vision으로 각 이미지 분석
+4. 스타일 패턴 추출
 
 ### 4. Style Guide Proposal
 

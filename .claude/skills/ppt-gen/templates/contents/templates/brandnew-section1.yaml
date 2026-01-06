@@ -1,0 +1,237 @@
+# Section Divider 템플릿 v2.0
+# 원본: Brand New Presentation (Slide 3)
+# 추출일: 2026-01-07T00:00:00
+
+content_template:
+  id: brandnew-section1
+  name: "섹션 구분 - 대괄호 스타일"
+  version: "2.0"
+  source: brandnew-unpacked
+  source_slide_index: 2
+  extracted_at: "2026-01-07T00:00:00"
+
+design_meta:
+  quality_score: 8.5
+  design_intent: section-centered
+  design_intents:
+    - section-centered
+    - content-centered
+  visual_balance: symmetric
+  information_density: low
+
+canvas:
+  reference_width: 1980
+  reference_height: 1080
+  original_width_emu: 12192000
+  original_height_emu: 6858000
+  aspect_ratio: "16:9"
+
+shapes:
+  # Background image (full slide)
+  - id: "shape-0"
+    name: "Background Image"
+    type: picture
+    z_index: 0
+    geometry:
+      x: 0%
+      y: 0%
+      cx: 100%
+      cy: 100%
+      rotation: 0
+      original_aspect_ratio: 1.778
+    style:
+      fill:
+        type: none
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+
+  # Overlay rectangle (accent color with transparency)
+  - id: "shape-1"
+    name: "Overlay Rectangle"
+    type: rectangle
+    z_index: 1
+    geometry:
+      x: 0%
+      y: 0%
+      cx: 100%
+      cy: 100%
+      rotation: 0
+      original_aspect_ratio: 1.778
+    style:
+      fill:
+        type: solid
+        color: accent
+        opacity: 0.314
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+
+  # Bracket shape (decorative element)
+  - id: "shape-2"
+    name: "Section Bracket"
+    type: bracket
+    z_index: 2
+    geometry:
+      x: 5.98%
+      y: 31.52%
+      cx: 75.60%
+      cy: 29.43%
+      rotation: 0
+      original_aspect_ratio: 3.806
+    style:
+      fill:
+        type: none
+      stroke:
+        color: light
+        width: 1
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+
+  # Section number label "Part 1"
+  - id: "shape-3"
+    name: "Section Number"
+    type: textbox
+    z_index: 3
+    geometry:
+      x: 27.08%
+      y: 37.83%
+      cx: 8.25%
+      cy: 4.90%
+      rotation: 0
+      original_aspect_ratio: 3.072
+    style:
+      fill:
+        type: none
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: center
+      font_size_ratio: 0.0222
+      original_font_size_pt: 24
+      font_weight: normal
+      font_color: light
+
+  # Main title "제목을 입력하세요"
+  - id: "shape-4"
+    name: "Section Title"
+    type: textbox
+    z_index: 4
+    geometry:
+      x: 18.35%
+      y: 45.86%
+      cx: 24.28%
+      cy: 6.87%
+      rotation: 0
+      original_aspect_ratio: 5.049
+    style:
+      fill:
+        type: none
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: center
+      font_size_ratio: 0.0333
+      original_font_size_pt: 36
+      font_weight: bold
+      font_color: light
+
+  # Footer copyright text
+  - id: "shape-5"
+    name: "Footer Text"
+    type: textbox
+    z_index: 5
+    geometry:
+      x: 71.40%
+      y: 93.04%
+      cx: 12.73%
+      cy: 2.45%
+      rotation: 0
+      original_aspect_ratio: 7.778
+    style:
+      fill:
+        type: none
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: right
+      font_size_ratio: 0.0083
+      original_font_size_pt: 9
+      font_weight: normal
+      font_color: light
+
+gaps:
+  global:
+    column_gap: 5%
+    row_gap: 3%
+    item_gap: 2%
+
+spatial_relationships:
+  - shapes: ["shape-3", "shape-4"]
+    relationship: adjacent-vertical
+    gap: 5%
+    alignment: center
+
+  - from: "shape-2"
+    to: "shape-3"
+    relationship: adjacent-vertical
+    gap: 8%
+    alignment: center
+
+groups:
+  - id: "section-content-group"
+    members: ["shape-2", "shape-3", "shape-4"]
+    bounding_box:
+      x: 5%
+      y: 30%
+      cx: 90%
+      cy: 35%
+    internal_gap: 5%
+
+thumbnail: thumbnails/brandnew-section1.png
+
+use_for:
+  - "섹션 구분 페이지"
+  - "Part/Phase 표시"
+  - "장 시작 페이지"
+  - "콘텐츠 타이틀 슬라이드"
+
+keywords:
+  - "section"
+  - "divider"
+  - "part"
+  - "centered"
+  - "bracket"
+  - "section-title"
+  - "phase"

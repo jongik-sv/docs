@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process Honeycomb - Deep Green Template Sample</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Deep Green Color Palette */
+      --primary: #1B5E3D;
+      --primary-dark: #0D3D28;
+      --secondary: #5BA57D;
+      --accent: #B8E0C8;
+      --background: #ffffff;
+      --dark-text: #222222;
+      --gray: #888888;
+      --light-gray: #E0E0E0;
+      --light: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .slide-container {
+      width: 100%;
+      max-width: 1200px;
+      aspect-ratio: 16 / 9;
+      background: var(--background);
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      padding: 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header {
+      margin-bottom: 5%;
+    }
+
+    .page-title {
+      font-size: clamp(18px, 3vw, 32px);
+      font-weight: 700;
+      color: var(--dark-text);
+      margin-bottom: 8px;
+    }
+
+    .page-subtitle {
+      font-size: clamp(10px, 1.5vw, 16px);
+      color: var(--gray);
+      margin-bottom: 12px;
+    }
+
+    .progress-bar {
+      display: flex;
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+      width: 50%;
+    }
+
+    .progress-fill {
+      width: 30%;
+      background: var(--primary);
+    }
+
+    .progress-empty {
+      flex: 1;
+      background: var(--accent);
+    }
+
+    .honeycomb-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70%;
+      position: relative;
+    }
+
+    .honeycomb-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .hex-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 -15px;
+      position: relative;
+    }
+
+    .hex-group.up {
+      margin-top: -80px;
+    }
+
+    .hex-group.down {
+      margin-top: 80px;
+    }
+
+    .hexagon {
+      width: clamp(80px, 12vw, 140px);
+      height: clamp(92px, 13.86vw, 162px);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hexagon:hover {
+      transform: scale(1.05);
+    }
+
+    .hexagon.primary {
+      background: var(--primary);
+    }
+
+    .hexagon.secondary {
+      background: var(--secondary);
+    }
+
+    .hexagon.secondary-light {
+      background: rgba(91, 165, 125, 0.6);
+    }
+
+    .hexagon.accent {
+      background: var(--accent);
+    }
+
+    .hexagon.gray {
+      background: var(--light-gray);
+    }
+
+    .hexagon .icon {
+      font-size: clamp(24px, 3.5vw, 40px);
+    }
+
+    .hexagon.primary .icon,
+    .hexagon.secondary .icon.light {
+      color: var(--light);
+    }
+
+    .hexagon.secondary-light .icon,
+    .hexagon.accent .icon,
+    .hexagon.gray .icon {
+      color: var(--primary);
+    }
+
+    .hex-title {
+      font-size: clamp(10px, 1.4vw, 16px);
+      font-weight: 700;
+      color: var(--dark-text);
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.4;
+    }
+
+    .hex-group.up .hex-title {
+      order: 1;
+      margin-top: 12px;
+    }
+
+    .hex-group.down .hex-title {
+      order: -1;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 3%;
+      right: 5%;
+      font-size: clamp(8px, 1vw, 12px);
+      color: var(--gray);
+    }
+
+    /* Comparison Section */
+    .comparison {
+      margin-top: 40px;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .comparison h3 {
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .comparison-item {
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+    }
+
+    .comparison-item h4 {
+      font-size: 14px;
+      color: var(--dark-text);
+      margin-bottom: 8px;
+    }
+
+    .comparison-item p {
+      font-size: 12px;
+      color: var(--gray);
+    }
+
+    @media (max-width: 768px) {
+      .honeycomb-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hex-group {
+        margin: 10px;
+      }
+
+      .hex-group.up,
+      .hex-group.down {
+        margin-top: 10px;
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div style="width: 100%; max-width: 1400px;">
+    <!-- Slide Preview -->
+    <div class="slide-container">
+      <div class="header">
+        <h1 class="page-title">제목을 입력해 주세요.</h1>
+        <p class="page-subtitle">간략한 설명을 적어주세요.</p>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+          <div class="progress-empty"></div>
+        </div>
+      </div>
+
+      <div class="honeycomb-container">
+        <div class="honeycomb-wrapper">
+          <!-- Hex 1 - Down (Bottom-Left) -->
+          <div class="hex-group down">
+            <div class="hex-title">제목을<br>입력하세요.</div>
+            <div class="hexagon accent">
+              <i class="fa-solid fa-chart-simple icon"></i>
+            </div>
+          </div>
+
+          <!-- Hex 2 - Up -->
+          <div class="hex-group up">
+            <div class="hexagon primary">
+              <i class="fa-solid fa-handshake icon light"></i>
+            </div>
+            <div class="hex-title">제목을<br>입력하세요.</div>
+          </div>
+
+          <!-- Hex 3 - Down -->
+          <div class="hex-group down">
+            <div class="hex-title">제목을<br>입력하세요.</div>
+            <div class="hexagon secondary">
+              <i class="fa-solid fa-clipboard-list icon"></i>
+            </div>
+          </div>
+
+          <!-- Hex 4 - Up -->
+          <div class="hex-group up">
+            <div class="hexagon gray">
+              <i class="fa-solid fa-hourglass-half icon"></i>
+            </div>
+            <div class="hex-title">제목을<br>입력하세요.</div>
+          </div>
+
+          <!-- Hex 5 - Down -->
+          <div class="hex-group down">
+            <div class="hex-title">제목을<br>입력하세요.</div>
+            <div class="hexagon secondary-light">
+              <i class="fa-solid fa-lightbulb icon"></i>
+            </div>
+          </div>
+
+          <!-- Hex 6 - Up -->
+          <div class="hex-group up">
+            <div class="hexagon primary">
+              <i class="fa-solid fa-bullseye icon light"></i>
+            </div>
+            <div class="hex-title">제목을<br>입력하세요.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">© YEONDU-UNNIE POWERPOINT PRESENTATION</div>
+    </div>
+
+    <!-- Template Info -->
+    <div class="comparison">
+      <h3>Template Metadata (process-honeycomb1.yaml)</h3>
+      <div class="comparison-grid">
+        <div class="comparison-item">
+          <h4>Design Intent</h4>
+          <p>process-honeycomb, feature-icons</p>
+        </div>
+        <div class="comparison-item">
+          <h4>Quality Score</h4>
+          <p>9.5 / 10</p>
+        </div>
+        <div class="comparison-item">
+          <h4>Visual Balance</h4>
+          <p>Symmetric (zigzag pattern)</p>
+        </div>
+        <div class="comparison-item">
+          <h4>Information Density</h4>
+          <p>Medium</p>
+        </div>
+        <div class="comparison-item">
+          <h4>Use Cases</h4>
+          <p>프로세스 단계, 핵심 역량, 연결된 기능, 생태계 구조</p>
+        </div>
+        <div class="comparison-item">
+          <h4>Color Scheme</h4>
+          <p>Primary: #1B5E3D | Secondary: #5BA57D | Accent: #B8E0C8</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

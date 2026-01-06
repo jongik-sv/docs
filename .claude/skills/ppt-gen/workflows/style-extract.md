@@ -44,6 +44,7 @@ group:
   id: classic-20260106
   name: Classic Blue Style
   source: extracted_image
+  source_url: "{이미지 출처 URL}"      # 웹 출처 시 기록
 
 theme:
   colors:

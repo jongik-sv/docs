@@ -1,0 +1,182 @@
+# Brand New Cover Slide Template
+# 원본: brandnew-unpacked/ppt/slides/slide1.xml (cover-photo)
+# 추출일: 2026-01-07T00:00:00
+
+content_template:
+  id: brandnew-cover1
+  name: "커버 슬라이드 (풀 이미지 + 제목)"
+  version: "2.0"
+  source: Brand New.pptx
+  source_slide_index: 0
+  extracted_at: "2026-01-07T00:00:00"
+
+design_meta:
+  quality_score: 8.5
+  design_intent: cover-photo
+  design_intents:
+    - cover-photo
+    - cover-fullimage
+  visual_balance: asymmetric
+  information_density: low
+
+canvas:
+  reference_width: 1980
+  reference_height: 1080
+  original_width_emu: 12192000
+  original_height_emu: 6858000
+  aspect_ratio: "16:9"
+
+shapes:
+  - id: "shape-0"
+    name: "Background Photo"
+    type: picture
+    z_index: 0
+    geometry:
+      x: "0.0%"
+      y: "0.0%"
+      cx: "100.0%"
+      cy: "100.0%"
+      rotation: 0
+      original_aspect_ratio: 1.778
+    style:
+      fill:
+        type: image
+        opacity: 1.0
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+
+  - id: "shape-1"
+    name: "Main Title"
+    type: textbox
+    z_index: 1
+    geometry:
+      x: "5.8%"
+      y: "7.3%"
+      cx: "45.7%"
+      cy: "27.2%"
+      rotation: 0
+      original_aspect_ratio: 2.989
+    style:
+      fill:
+        type: solid
+        color: none
+        opacity: 1.0
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      content: "Project."
+      placeholder_type: TITLE
+      alignment: left
+      font_size_ratio: 0.106481
+      original_font_size_pt: 115.0
+      font_weight: bold
+      font_color: light
+
+  - id: "shape-2"
+    name: "Footer Credit"
+    type: textbox
+    z_index: 2
+    geometry:
+      x: "81.9%"
+      y: "96.0%"
+      cx: "18.0%"
+      cy: "3.4%"
+      rotation: 0
+      original_aspect_ratio: 9.508
+    style:
+      fill:
+        type: solid
+        color: none
+        opacity: 1.0
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      content: "ⓒSaebyeol Yu. Saebyeol's PowerPoint"
+      alignment: right
+      font_size_ratio: 0.008333
+      original_font_size_pt: 9.0
+      font_weight: normal
+      font_color: light
+
+  - id: "shape-3"
+    name: "Accent Line"
+    type: line
+    z_index: 3
+    geometry:
+      x: "53.3%"
+      y: "20.8%"
+      cx: "46.7%"
+      cy: "0.0%"
+      rotation: 0
+      original_aspect_ratio: 999.9
+    style:
+      fill:
+        type: none
+        opacity: 0
+      stroke:
+        color: light
+        width: 16
+      shadow:
+        enabled: false
+    text:
+      has_text: false
+
+gaps:
+  global:
+    column_gap: 5%
+    row_gap: 3%
+    item_gap: 2%
+
+spatial_relationships:
+  - shapes:
+      - "shape-1"
+      - "shape-3"
+    relationship: adjacent-vertical
+    gap: 2.2%
+    alignment: left
+
+groups:
+  - id: "cover-content"
+    members:
+      - "shape-1"
+      - "shape-3"
+    bounding_box:
+      x: "5.8%"
+      y: "7.3%"
+      cx: "46.7%"
+      cy: "14.2%"
+    internal_gap: 2.2%
+
+thumbnail: thumbnails/brandnew-cover1.png
+
+use_for:
+  - "프리젠테이션 오프닝 슬라이드"
+  - "프로젝트 타이틀 페이지"
+  - "풀-이미지 배경 커버"
+  - "하단 크레딧 표시"
+
+keywords:
+  - "커버"
+  - "cover"
+  - "title"
+  - "opening"
+  - "풀-이미지"
+  - "background"
+  - "제목"
+  - "프로젝트"

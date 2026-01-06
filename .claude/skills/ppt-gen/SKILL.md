@@ -56,8 +56,12 @@ Required dependencies (should already be installed):
 - **defusedxml**: Secure XML parsing
 
 ### System
-- **LibreOffice**: PDF conversion
-- **Poppler**: pdftoppm for PDF to images
+- **LibreOffice** (`soffice`): PPTX → PDF conversion (required for thumbnails)
+  - Linux: `apt install libreoffice`
+  - macOS: `brew install --cask libreoffice`
+- **Poppler** (`pdftoppm`): PDF → Image conversion (required for thumbnails)
+  - Linux: `apt install poppler-utils`
+  - macOS: `brew install poppler`
 
 ## Code Style Guidelines
 
@@ -65,6 +69,7 @@ Required dependencies (should already be installed):
 - Write concise code
 - Avoid verbose variable names and redundant operations
 - Avoid unnecessary print statements
+- **임시 스크립트는 절대로 스킬 폴더 안에 생성 금지** → 프로젝트 루트에 생성
 
 ## References
 
@@ -75,3 +80,31 @@ Required dependencies (should already be installed):
 | [references/content-schema.md](references/content-schema.md) | 콘텐츠 템플릿 v2.0 스키마 |
 | [references/design-intent.md](references/design-intent.md) | 디자인 의도 분류 |
 | [references/color-palettes.md](references/color-palettes.md) | 색상 팔레트 레퍼런스 |
+
+## 완료 후 정리
+
+**중요**: 스킬 작업 완료 시 생성한 임시 파일을 반드시 삭제합니다.
+
+### 삭제 대상
+
+1. **프로젝트 루트 임시 스크립트**:
+   - `extract_*.py`
+   - `generate_*.py`
+   - `*_thumbnail*.py`
+   - `create_thumbnail.py`
+   - `shapes_data.json`
+
+2. **임시 작업 파일**:
+   - 작업용 `.pptx` 파일 (사용자 요청 최종 출력물 제외)
+   - 임시 `.pdf` 파일
+   - 다운로드한 참조 이미지 (templates/ 외부)
+
+3. **스킬 디렉토리 내 파일** (생성 금지 위반 시):
+   - 임시 스크립트가 스킬 폴더에 생성되었다면 즉시 삭제
+
+### 보존 대상 (삭제 금지)
+
+- `templates/` 하위 모든 파일
+- `registry.yaml` 파일들
+- 사용자가 명시적으로 요청한 최종 출력물
+- 기존 스킬 스크립트 (`scripts/` 내 기본 파일)

@@ -1,0 +1,131 @@
+# Brand New Project Template Style Guide
+# Source: https://yusaebyeol.blogspot.com/2023/01/powerpoint-template-free-download-ppt.html
+# Total Slides: 31
+
+style:
+  id: brandnew
+  name: "Brand New Project"
+  author: "Saebyeol Yu"
+  source_url: "https://yusaebyeol.blogspot.com/2023/01/powerpoint-template-free-download-ppt.html"
+
+color_palette:
+  primary: "#7BA4BC"      # Sky blue - main accent
+  secondary: "#A8C5D8"    # Light blue - softer accent
+  accent: "#F5E1DC"       # Soft pink - warm contrast
+  background: "#FFFFFF"   # White - clean background
+  text_dark: "#4A4A4A"    # Dark gray - body text
+  text_light: "#FFFFFF"   # White - on colored backgrounds
+
+typography:
+  heading_style: "clean-sans"
+  body_style: "readable"
+  korean_font: "Noto Sans KR"
+  english_font: "Arial"
+
+visual_elements:
+  - soap_bubbles: "photo background element"
+  - frame_boxes: "white rectangular frames for emphasis"
+  - bracket_decorators: "curved bracket decorations"
+  - pastel_gradients: "soft color transitions"
+  - rounded_rectangles: "smooth corner cards"
+
+design_characteristics:
+  visual_balance: symmetric
+  information_density: low
+  mood: "fresh, clean, professional"
+  best_for: ["project presentations", "business proposals", "academic"]
+
+slide_catalog:
+  # Cover/Closing
+  - slide: 1
+    type: cover
+    design_intent: cover-photo-bubble
+    description: "Title with horizontal line on bubble photo background"
+
+  - slide: 31
+    type: closing
+    design_intent: closing-thankyou
+    description: "Thank you with bubble background"
+
+  # TOC
+  - slide: 2
+    type: toc
+    design_intent: toc-list-image
+    description: "4-item numbered list with right-side architectural image"
+
+  # Section Dividers
+  - slide: 3
+    type: section
+    design_intent: section-textured
+    description: "Part 1 centered on textured blue background"
+
+  - slide: 9
+    type: section
+    design_intent: section-3d-diamond
+    description: "Part 2 with 3D floating diamond and bracket decorations"
+
+  - slide: 15
+    type: section
+    design_intent: section-photo-forest
+    description: "Part 3 with forest silhouette background"
+
+  # Keyword/Question Highlights
+  - slide: 4
+    type: keyword
+    design_intent: keyword-frame-snow
+    description: "QUESTION in white frame box on snowy mountain"
+
+  - slide: 10
+    type: keyword
+    design_intent: keyword-frame-sky
+    description: "#KEYWORD in white frame box on blue sky"
+
+  # Content Grids
+  - slide: 5
+    type: grid
+    design_intent: grid-3col-image
+    description: "3-column image placeholders with titles below"
+
+  - slide: 8
+    type: comparison
+    design_intent: comparison-2col-image
+    description: "2-column layout with image placeholders (pink/blue)"
+
+  # Process/Flow
+  - slide: 6
+    type: flow
+    design_intent: flow-diagram-text
+    description: "Left: 3-row flow diagram with arrow, Right: title + description"
+
+  - slide: 7
+    type: diagram
+    design_intent: diagram-growth-circles
+    description: "3-stage growth with nested circles (1→2→3 elements)"
+
+  - slide: 11
+    type: process
+    design_intent: process-3step-result
+    description: "3 rounded rect steps → arrow → result box"
+
+  # Data/Charts
+  - slide: 20
+    type: chart
+    design_intent: chart-bar-cards
+    description: "Left: horizontal bar chart, Right: A/B/C cards with descriptions"
+
+  - slide: 25
+    type: map
+    design_intent: map-world-datapoints
+    description: "World map with circular data markers"
+
+  # Quote
+  - slide: 30
+    type: quote
+    design_intent: quote-centered
+    description: "Centered quote text on soft pink background"
+
+thumbnail_files:
+  directory: "brandnew-slides/"
+  format: "slideXX.png"
+  resolution: "1280px width"
+  count: 31

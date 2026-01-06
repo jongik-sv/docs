@@ -1,0 +1,115 @@
+# Closing / Thank You Content Template v2.0
+# Source: Brand New Presentation, Slide 31
+# Extracted: 2026-01-07T10:00:00Z
+
+content_template:
+  id: brandnew-closing1
+  name: "폐막 - 감사합니다"
+  version: "2.0"
+  source: brandnew.pptx
+  source_slide_index: 30
+  extracted_at: "2026-01-07T10:00:00Z"
+
+design_meta:
+  quality_score: 8.5
+  design_intent: closing-thankyou
+  design_intents:
+    - closing-thankyou
+    - content-overlay
+  visual_balance: asymmetric
+  information_density: low
+
+canvas:
+  reference_width: 1980
+  reference_height: 1080
+  original_width_emu: 12192000
+  original_height_emu: 6858000
+  aspect_ratio: "16:9"
+
+shapes:
+  - id: "shape-0"
+    name: "Background Image"
+    type: picture
+    z_index: 0
+    geometry:
+      x: 0%
+      y: 0%
+      cx: 100%
+      cy: 100%
+      rotation: 0
+    style:
+      fill:
+        type: solid
+        color: background
+        opacity: 1.0
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+
+  - id: "shape-1"
+    name: "Main Text - THANK YOU"
+    type: textbox
+    z_index: 1
+    geometry:
+      x: 26.9%
+      y: 29.8%
+      cx: 44.7%
+      cy: 21.5%
+      rotation: 0
+      original_aspect_ratio: 4.629
+    style:
+      fill:
+        type: none
+        color: none
+        opacity: 1.0
+      stroke:
+        color: none
+        width: 0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: TITLE
+      content: "THANK YOU"
+      alignment: center
+      font_size_ratio: 0.0611
+      original_font_size_pt: 66.0
+      font_weight: bold
+      font_color: light
+
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+    item_gap: 2%
+
+spatial_relationships:
+  - shapes:
+      - shape-0
+      - shape-1
+    relationship: overlay
+    description: "Text overlaid on background image"
+
+groups: []
+
+thumbnail: thumbnails/brandnew-closing1.png
+
+use_for:
+  - "프레젠테이션 폐막"
+  - "감사 인사"
+  - "마지막 메시지"
+  - "에필로그 슬라이드"
+
+keywords:
+  - "감사합니다"
+  - "폐막"
+  - "마무리"
+  - "Thank You"
+  - "closing"
+  - "finale"
