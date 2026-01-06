@@ -1,0 +1,228 @@
+# 동국제강 문서 템플릿
+# 회사/브랜드별 PPT 디자인 - 표지, 목차, 섹션 구분 포함
+# PPT기본양식.pptx 분석 기반
+
+document_template:
+  id: dongkuk
+  name: 동국제강
+  company: 동국제강
+  source: .claude/includes/PPT기본양식.pptx
+  aspect_ratio: "4:3"
+  slide_size:
+    width_emu: 9906000  # 약 27.52cm
+    height_emu: 6858000 # 약 19.05cm
+
+# 브랜드 테마
+theme:
+  name: "동국제강"
+  colors:
+    # 메인 브랜드 컬러
+    primary: "#002452"      # 동국제강 네이비 (dk2)
+    secondary: "#C51F2A"    # 동국제강 레드 (accent4)
+    # 추가 색상
+    dark_text: "#262626"    # dk1 - 어두운 텍스트
+    light_bg: "#FFFFFF"     # lt1 - 흰색 배경
+    gray: "#B6B6B6"         # lt2 - 밝은 회색
+    accents:
+      - "#757575"           # accent1 - 회색
+      - "#4B6580"           # accent2 - 청회색
+      - "#B7D0D4"           # accent3 - 연한 청록색
+      - "#D55633"           # accent5 - 주황-빨강
+      - "#E9B86E"           # accent6 - 금색/황토색
+
+  fonts:
+    title: "본고딕 Bold"
+    subtitle: "본고딕 Medium"
+    body: "본고딕 Normal"
+    fallback: "Arial"
+
+  # 공통 디자인 요소
+  design_elements:
+    logo:
+      position: "bottom-left"
+      x_emu: 270064
+      y_emu: 6579886
+    divider_line:
+      y_emu: 540000
+      color: "bg1 65%"
+      thickness_emu: 6350
+    gradient_bar:
+      height_emu: 36000
+      start_color: "#C51F2A"
+      end_color: "#002452"
+      direction: "left-to-right"
+
+# 슬라이드 레이아웃
+# 문서 템플릿은 표지, 목차, 섹션 구분 등 문서 구조 레이아웃을 관리
+layouts:
+  - index: 0
+    name: "표지 (White_Big K)"
+    category: cover
+    use_for: "문서 제목, 발표 표지, 작성자 정보"
+    keywords: ["표지", "제목", "타이틀", "커버", "시작"]
+    placeholders:
+      - id: 15
+        type: title
+        purpose: "문서 제목"
+        font: "본고딕 Bold"
+        font_size_pt: 32
+        color: "#002452"
+      - id: 27
+        type: body
+        idx: 13
+        purpose: "부제목/작성자 정보"
+        font: "본고딕 Medium"
+        font_size_pt: 14
+        format: "{조직명} I {날짜}"
+    features:
+      - "상단 그라데이션 바 (빨강→네이비)"
+      - "오른쪽 Big K 디자인 요소"
+      - "하단 로고"
+
+  - index: 1
+    name: "목차 (간지 1)"
+    category: toc
+    use_for: "목차, Contents, 챕터 구성, 페이지 안내"
+    keywords: ["목차", "Contents", "인덱스", "구성"]
+    placeholders:
+      - id: 22
+        type: body
+        idx: 17
+        purpose: "번호 열 (01~05)"
+        font_size_pt: 16
+        alignment: "right"
+      - id: 20
+        type: body
+        idx: 13
+        purpose: "목차 제목 열"
+        font: "본고딕 Medium"
+        font_size_pt: 16
+      - id: 17
+        type: body
+        idx: 14
+        purpose: "페이지 범위 열 (01-05)"
+        font_size_pt: 16
+    layout_style:
+      columns: 3
+      line_spacing: "200%"
+      no_bullets: true
+    features:
+      - "3열 구조: 번호 | 목차 제목 | 페이지 범위"
+      - "오른쪽 배경 이미지"
+      - "고정 'Contents' 제목"
+
+  - index: 2
+    name: "내지 (Action Title + 본문)"
+    category: content_bullets
+    use_for: "설명, 개요, 리스트 나열, 본문 슬라이드"
+    keywords: ["설명", "개요", "리스트", "본문", "내용", "불릿"]
+    placeholders:
+      - id: 17
+        type: body
+        idx: 19
+        purpose: "Main Title (섹션 제목)"
+        font: "본고딕 Medium"
+        font_size_pt: 19
+        color: "#002452"
+      - id: 16
+        type: title
+        purpose: "Action Title (핵심 메시지, 최대 2줄)"
+        font: "본고딕 Medium"
+        font_size_pt: 17
+      - id: 15
+        type: body
+        idx: 18
+        purpose: "본문 내용 (불릿 리스트)"
+        font_size_pt: 16
+        bullets:
+          level1: "▐"
+          level2: "•"
+          level3: "–"
+    features:
+      - "상단 구분선"
+      - "로고 + 바닥글 + 슬라이드 번호"
+
+  - index: 3
+    name: "내지 (Action Title + 자유 영역)"
+    category: content_free
+    use_for: "차트, 표, 다이어그램, 이미지, 자유 레이아웃"
+    keywords: ["차트", "표", "그래프", "다이어그램", "이미지", "시각화"]
+    placeholders:
+      - id: 17
+        type: body
+        idx: 19
+        purpose: "Main Title (섹션 제목)"
+        font: "본고딕 Medium"
+        font_size_pt: 19
+        color: "#002452"
+      - id: 16
+        type: title
+        purpose: "Action Title (핵심 메시지)"
+        font: "본고딕 Medium"
+        font_size_pt: 17
+    free_area: true
+    free_area_bounds:
+      top_emu: 1431130
+      height_emu: 4500000
+    features:
+      - "본문 placeholder 없음"
+      - "차트/표/이미지 자유 배치 가능"
+
+  - index: 4
+    name: "내지 (넓은 본문)"
+    category: content_wide
+    use_for: "긴 텍스트, 단순 정보, Action Title 불필요한 콘텐츠"
+    keywords: ["텍스트", "정보", "단순", "설명문", "긴글"]
+    placeholders:
+      - id: 17
+        type: body
+        idx: 19
+        purpose: "Main Title (섹션 제목)"
+        font: "본고딕 Medium"
+        font_size_pt: 19
+        color: "#002452"
+      - id: 14
+        type: body
+        idx: 18
+        purpose: "넓은 본문 영역"
+        font_size_pt: 16
+        bullets:
+          level1: "▐"
+          level2: "•"
+          level3: "–"
+    features:
+      - "Action Title 없음"
+      - "본문 영역이 더 넓음"
+
+# LLM 레이아웃 선택 가이드
+selection_guide:
+  # 콘텐츠 타입 → 권장 레이아웃 인덱스
+  cover: 0
+  toc: 1
+  bullets: 2
+  chart: 3
+  table: 3
+  image: 3
+  text_heavy: 4
+
+  # 키워드 매핑
+  keywords:
+    표지: 0
+    제목: 0
+    목차: 1
+    Contents: 1
+    설명: 2
+    개요: 2
+    리스트: 2
+    차트: 3
+    표: 3
+    그래프: 3
+    이미지: 3
+
+# 모범 사례
+best_practices:
+  - "슬라이드당 핵심 메시지 1개"
+  - "연속 3장 이상 동일 레이아웃 금지"
+  - "불릿은 최대 4개 권장"
+  - "Action Title은 최대 2줄"
+  - "Main Title은 섹션 일관성 유지"

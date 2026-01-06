@@ -1,0 +1,90 @@
+# 비교 (A vs B) 콘텐츠 템플릿
+# 두 가지 항목을 나란히 비교하는 2열 대칭 레이아웃
+
+content_template:
+  id: comparison
+  name: 비교 (A vs B)
+  description: "두 가지 항목을 나란히 비교하는 2열 대칭 레이아웃"
+  data_type: comparison
+
+# 레이아웃 구조
+structure:
+  type: two-column-symmetric
+  columns: 2
+
+  left:
+    header: "Before / Option A / 현재"
+    content_type: list
+    items_max: 5
+    visual_marker: null  # 또는 specific icon
+
+  right:
+    header: "After / Option B / 목표"
+    content_type: list
+    items_max: 5
+    visual_marker: null
+
+  # 선택적 요소
+  center_divider: true  # 중앙 구분선
+  header_highlight: true  # 헤더 강조
+
+# 사용 용도
+use_for:
+  - "A vs B 비교"
+  - "Before/After 변화"
+  - "현재 vs 목표"
+  - "문제점 vs 해결책"
+  - "Option 1 vs Option 2"
+  - "As-Is vs To-Be"
+  - "기존 방식 vs 신규 방식"
+
+# 검색용 키워드
+keywords:
+  - "비교"
+  - "vs"
+  - "대비"
+  - "차이"
+  - "before"
+  - "after"
+  - "옵션"
+  - "현재"
+  - "목표"
+  - "As-Is"
+  - "To-Be"
+
+# HTML 생성 가이드
+html_guide:
+  layout: |
+    <div class="comparison-container">
+      <div class="column left">
+        <h3 class="column-header">{left_header}</h3>
+        <ul>{left_items}</ul>
+      </div>
+      <div class="divider"></div>
+      <div class="column right">
+        <h3 class="column-header">{right_header}</h3>
+        <ul>{right_items}</ul>
+      </div>
+    </div>
+
+  style_notes:
+    - "두 열 너비 동일하게"
+    - "헤더에 대비되는 색상 사용 가능"
+    - "중앙 구분선 또는 화살표 배치"
+    - "항목 수 균형 맞추기 권장"
+
+# 예시 데이터
+example:
+  title: "디지털 전환 효과"
+  left:
+    header: "Before"
+    items:
+      - "수작업 데이터 입력"
+      - "엑셀 기반 관리"
+      - "주 1회 보고서"
+  right:
+    header: "After"
+    items:
+      - "자동 데이터 수집"
+      - "통합 시스템 관리"
+      - "실시간 대시보드"

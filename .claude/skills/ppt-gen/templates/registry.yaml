@@ -1,0 +1,132 @@
+# PPT 템플릿 레지스트리
+# LLM이 템플릿을 검색/선택하기 위한 중앙 인덱스
+#
+# 구조:
+#   - documents: 회사/브랜드별 문서 템플릿 (표지, 목차, 레이아웃 포함)
+#   - contents: 데이터 특성별 콘텐츠 템플릿 (슬라이드 본문 패턴)
+
+# =============================================================================
+# 레벨 1: 문서 템플릿 (회사/브랜드)
+# =============================================================================
+# 각 회사의 PPT 디자인을 관리합니다.
+# 포함: 표지, 목차, 섹션 구분, 브랜드 컬러, 폰트, 로고
+documents:
+  - id: dongkuk
+    name: 동국제강
+    company: 동국제강
+    source: .claude/includes/PPT기본양식.pptx
+    yaml_path: documents/dongkuk.yaml
+    thumbnail: documents/thumbnails/dongkuk.jpg
+    aspect_ratio: "4:3"
+    layouts_count: 5
+    created: 2026-01-06
+    last_used: 2026-01-06
+    use_count: 0
+    status: active
+
+# =============================================================================
+# 레벨 2: 콘텐츠 템플릿 (데이터 특성)
+# =============================================================================
+# 슬라이드 내부 콘텐츠 패턴을 관리합니다.
+# 제외: 표지, 목차, 섹션 구분 (문서 템플릿에서 관리)
+# 포함: 비교표, 타임라인, 통계 카드 등 데이터 시각화 패턴
+contents:
+  - id: comparison
+    name: 비교 (A vs B)
+    description: "두 가지 항목을 나란히 비교하는 2열 대칭 레이아웃"
+    use_for:
+      - "A vs B 비교"
+      - "Before/After 변화"
+      - "현재 vs 목표"
+      - "문제점 vs 해결책"
+      - "Option 1 vs Option 2"
+    data_type: comparison
+    structure: two-column-symmetric
+    yaml_path: contents/comparison.yaml
+    thumbnail: contents/thumbnails/comparison.jpg
+    keywords: ["비교", "vs", "대비", "차이", "before", "after", "옵션"]
+    use_count: 0
+    status: active
+
+  - id: timeline
+    name: 타임라인
+    description: "시간 순서로 진행되는 이벤트나 단계를 표현하는 가로/세로 흐름"
+    use_for:
+      - "프로젝트 일정"
+      - "로드맵"
+      - "연혁/히스토리"
+      - "마일스톤"
+      - "단계별 진행 과정"
+    data_type: chronological
+    structure: horizontal-flow
+    yaml_path: contents/timeline.yaml
+    thumbnail: contents/thumbnails/timeline.jpg
+    keywords: ["시간", "일정", "로드맵", "연혁", "마일스톤", "단계", "타임라인", "진행"]
+    use_count: 0
+    status: active
+
+  - id: stat-cards
+    name: 통계 카드
+    description: "핵심 숫자를 크게 강조하고 간단한 설명을 덧붙이는 카드형 레이아웃"
+    use_for:
+      - "KPI 요약"
+      - "실적 하이라이트"
+      - "핵심 지표"
+      - "성과 수치"
+      - "달성률/증가율"
+    data_type: numerical
+    structure: card-grid
+    yaml_path: contents/stat-cards.yaml
+    thumbnail: contents/thumbnails/stat-cards.jpg
+    keywords: ["숫자", "통계", "KPI", "실적", "지표", "성과", "달성", "증가"]
+    use_count: 0
+    status: active
+
+  - id: process-flow
+    name: 프로세스 흐름
+    description: "순차적 절차나 워크플로우를 화살표로 연결하여 표현"
+    use_for:
+      - "업무 프로세스"
+      - "승인 절차"
+      - "제조 공정"
+      - "서비스 플로우"
+      - "의사결정 흐름"
+    data_type: procedural
+    structure: arrow-connected
+    yaml_path: contents/process-flow.yaml
+    thumbnail: contents/thumbnails/process-flow.jpg
+    keywords: ["프로세스", "절차", "워크플로우", "흐름", "단계", "순서"]
+    use_count: 0
+    status: active
+
+  - id: feature-grid
+    name: 기능 그리드
+    description: "여러 기능이나 특징을 아이콘과 함께 격자 형태로 나열"
+    use_for:
+      - "제품 기능 소개"
+      - "서비스 특징"
+      - "솔루션 구성요소"
+      - "핵심 역량"
+    data_type: categorical
+    structure: icon-grid
+    yaml_path: contents/feature-grid.yaml
+    thumbnail: contents/thumbnails/feature-grid.jpg
+    keywords: ["기능", "특징", "구성", "요소", "아이콘", "서비스", "제품"]
+    use_count: 0
+    status: active
+
+  - id: pros-cons
+    name: 장단점
+    description: "긍정적/부정적 측면을 체크/엑스 마크와 함께 양쪽에 배치"
+    use_for:
+      - "장점/단점 분석"
+      - "리스크/기회"
+      - "강점/약점"
+      - "찬성/반대"
+    data_type: evaluation
+    structure: two-column-marked
+    yaml_path: contents/pros-cons.yaml
+    thumbnail: contents/thumbnails/pros-cons.jpg
+    keywords: ["장점", "단점", "장단점", "리스크", "기회", "SWOT", "강점", "약점"]
+    use_count: 0
+    status: active

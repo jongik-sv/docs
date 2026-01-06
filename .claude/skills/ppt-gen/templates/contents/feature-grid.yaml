@@ -1,0 +1,90 @@
+# 기능 그리드 콘텐츠 템플릿
+# 여러 기능이나 특징을 아이콘과 함께 격자 형태로 나열
+
+content_template:
+  id: feature-grid
+  name: 기능 그리드
+  description: "여러 기능이나 특징을 아이콘과 함께 격자 형태로 나열"
+  data_type: categorical
+
+# 레이아웃 구조
+structure:
+  type: icon-grid
+  columns: 3  # 2, 3, 4 가능
+  rows: 2  # 자동 조절 가능
+
+  item:
+    content:
+      - icon: "아이콘 (SVG/이모지)"
+      - title: "기능/특징명"
+      - description: "짧은 설명 (1-2문장)"
+
+  # 스타일 옵션
+  icon_position: top  # top, left
+  icon_size: medium  # small, medium, large
+  card_style: minimal  # minimal, bordered, shadowed
+
+# 사용 용도
+use_for:
+  - "제품 기능 소개"
+  - "서비스 특징"
+  - "솔루션 구성요소"
+  - "핵심 역량"
+  - "주요 장점"
+  - "차별화 포인트"
+
+# 검색용 키워드
+keywords:
+  - "기능"
+  - "특징"
+  - "구성"
+  - "요소"
+  - "아이콘"
+  - "서비스"
+  - "제품"
+  - "장점"
+  - "역량"
+
+# HTML 생성 가이드
+html_guide:
+  layout: |
+    <div class="feature-grid-container">
+      {feature_items}
+    </div>
+
+  item_template: |
+    <div class="feature-item">
+      <div class="feature-icon">{icon}</div>
+      <h4 class="feature-title">{title}</h4>
+      <p class="feature-desc">{description}</p>
+    </div>
+
+  style_notes:
+    - "아이콘은 단순하고 일관된 스타일로"
+    - "제목은 짧고 명확하게 (3-5단어)"
+    - "설명은 1-2줄 이내"
+    - "6개 항목이 가장 균형 잡힘 (2x3 또는 3x2)"
+    - "아이콘 색상은 브랜드 컬러 활용"
+
+# 예시 데이터
+example:
+  title: "스마트 물류 시스템 주요 기능"
+  items:
+    - icon: "📦"
+      title: "실시간 재고 관리"
+      description: "창고별 재고 현황을 실시간으로 모니터링"
+    - icon: "🚚"
+      title: "배송 추적"
+      description: "GPS 기반 실시간 배송 위치 추적"
+    - icon: "📊"
+      title: "데이터 분석"
+      description: "AI 기반 수요 예측 및 최적화"
+    - icon: "🔔"
+      title: "알림 시스템"
+      description: "재고 부족, 배송 지연 자동 알림"
+    - icon: "🔗"
+      title: "시스템 연동"
+      description: "ERP, WMS, TMS 통합 연동"
+    - icon: "📱"
+      title: "모바일 지원"
+      description: "언제 어디서나 모바일 접근"

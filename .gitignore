@@ -1,5 +1,4 @@
 # Python
-*.py
 *.pyc
 __pycache__/
 *.pyo

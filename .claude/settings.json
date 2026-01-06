@@ -1,5 +1,40 @@
 {
   "enabledPlugins": {
     "jdtls-lsp@claude-plugins-official": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -e '(.tool_input.skill // \"\") | startswith(\"wf/\")' > /dev/null 2>&1 && touch /tmp/.claude-wf-flag; exit 0"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Skill",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r 'if (.tool_input.skill // \"\" | startswith(\"wf/\")) then \"\\(.tool_input.args // \"unknown\") \\(.tool_input.skill | split(\"/\")[1]) 워크플로우 종료\" else empty end'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f /tmp/.claude-wf-flag ]; then rm -f /tmp/.claude-wf-flag; else echo '{\"systemMessage\": \"요청완료\"}'; fi"
+          }
+        ]
+      }
+    ]
   }
 }
