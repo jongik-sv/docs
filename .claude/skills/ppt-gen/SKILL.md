@@ -71,6 +71,29 @@ A user may ask you to create, edit, or analyze the contents of a .pptx file. A .
 - registry.yaml 검색 없이 직접 디자인 시작
 - 매칭 가능한 템플릿이 있는데 직접 디자인
 
+### 복잡도 기반 추출 분기 (v3.1)
+
+콘텐츠 템플릿 추출 시, 도형 복잡도에 따라 추출 방식이 달라집니다:
+
+| 도형 유형 | 추출 방식 | 출력 |
+|----------|----------|------|
+| rectangle, oval | geometry only | `x%, y%, cx%, cy%` |
+| hexagon (단일) | geometry only | `x%, y%, cx%, cy%` |
+| textbox | geometry only | `x%, y%, cx%, cy%` |
+| **cycle segments** | SVG path | `path` + `center` |
+| **honeycomb (다수)** | SVG path | `paths` + `layout` |
+| **curved arrows** | SVG path | `path` + `stroke` |
+| **radial layout** | SVG path | `segments[]` + `center` |
+
+**Complex 판단 기준** (자동 SVG 추출 트리거):
+- 6개 이상 세그먼트가 방사형 배치
+- 곡선 화살표 또는 커넥터
+- 벌집형(honeycomb) 레이아웃
+- 비정형 다각형
+- `layout.type: radial` 설정
+
+**참조**: [content-extract.md](workflows/content-extract.md) Step 2.4.1
+
 이 규칙으로:
 - 일관된 디자인 품질 보장
 - 검증된 레이아웃 재사용
@@ -176,6 +199,16 @@ Required dependencies (should already be installed):
 | [references/content-schema.md](references/content-schema.md) | 콘텐츠 템플릿 v2.0 스키마 |
 | [references/design-intent.md](references/design-intent.md) | 디자인 의도 분류 |
 | [references/color-palettes.md](references/color-palettes.md) | 색상 팔레트 레퍼런스 |
+
+## 미구현 사항 (TODO)
+
+스킬 사용 중 "뭐가 안 돼?" 질문 시 아래 목록 참조:
+
+- [ ] **이미지 생성 모델 연동**: MCP를 통한 DALL-E, Midjourney, Stable Diffusion 연결
+  - 현재: 이미지 생성 프롬프트 생성만 지원 (`scripts/image-prompt-generator.js`)
+  - 향후: 프롬프트 → 이미지 자동 생성 → PPT 삽입 파이프라인
+
+---
 
 ## 완료 후 정리
 

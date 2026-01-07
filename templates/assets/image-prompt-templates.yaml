@@ -1,0 +1,274 @@
+# 이미지 생성 프롬프트 템플릿
+# DALL-E, Midjourney, Stable Diffusion 등 외부 서비스용 프롬프트 생성
+#
+# 사용법:
+# 1. 슬라이드 콘텐츠에서 이미지 용도(purpose) 결정
+# 2. 해당 템플릿 로드
+# 3. {subject}, {context} 등 플레이스홀더를 콘텐츠로 치환
+# 4. industry_styles에서 산업별 스타일 추가
+# 5. 최종 프롬프트 + negative_prompt 조합
+
+# ===== 이미지 용도별 템플릿 =====
+templates:
+  # Hero 이미지 (표지, 섹션 구분)
+  hero:
+    base: "cinematic wide shot of {subject}, professional photography"
+    modifiers:
+      - "dramatic lighting"
+      - "high contrast"
+      - "epic scale"
+      - "shallow depth of field"
+    aspect_ratio: "16:9"
+    description: "표지나 섹션 구분에 사용하는 임팩트 있는 이미지"
+
+  # 배경 이미지 (슬라이드 배경)
+  background:
+    base: "abstract {subject} pattern, subtle gradients"
+    modifiers:
+      - "minimalist"
+      - "high resolution texture"
+      - "seamless"
+      - "soft colors"
+    aspect_ratio: "16:9"
+    description: "슬라이드 배경으로 사용하는 추상적 패턴"
+
+  # 일러스트레이션 (개념 설명)
+  illustration:
+    base: "clean vector illustration of {subject}, flat design"
+    modifiers:
+      - "modern corporate style"
+      - "simple shapes"
+      - "limited color palette"
+      - "no gradients"
+    aspect_ratio: "1:1"
+    description: "개념이나 프로세스 설명용 심플한 일러스트"
+
+  # 제품 사진
+  product:
+    base: "professional product photography of {subject}"
+    modifiers:
+      - "studio lighting"
+      - "clean white background"
+      - "sharp focus"
+      - "high detail"
+    aspect_ratio: "1:1"
+    description: "제품 소개용 고품질 사진"
+
+  # 팀/인물 사진
+  team:
+    base: "professional business team in {context}"
+    modifiers:
+      - "natural lighting"
+      - "modern office environment"
+      - "diverse group"
+      - "candid moment"
+    aspect_ratio: "16:9"
+    description: "팀 소개나 협업 관련 이미지"
+
+  # 기술/테크 이미지
+  tech:
+    base: "futuristic {subject} visualization"
+    modifiers:
+      - "digital aesthetics"
+      - "neon accents"
+      - "dark background"
+      - "holographic elements"
+    aspect_ratio: "16:9"
+    description: "기술, AI, 디지털 관련 미래지향적 이미지"
+
+  # 데이터/차트 시각화
+  data:
+    base: "3D visualization of {subject} data"
+    modifiers:
+      - "floating charts"
+      - "glowing connections"
+      - "transparent elements"
+      - "clean infographic style"
+    aspect_ratio: "16:9"
+    description: "데이터 시각화, 인포그래픽 스타일"
+
+  # 자연/환경
+  nature:
+    base: "beautiful {subject} landscape"
+    modifiers:
+      - "golden hour lighting"
+      - "vibrant colors"
+      - "peaceful atmosphere"
+      - "high dynamic range"
+    aspect_ratio: "16:9"
+    description: "자연, 환경, 지속가능성 관련 이미지"
+
+  # 아이콘/심볼
+  icon:
+    base: "simple {subject} icon, single color"
+    modifiers:
+      - "minimal design"
+      - "bold silhouette"
+      - "no background"
+      - "vector style"
+    aspect_ratio: "1:1"
+    description: "단순한 아이콘이나 심볼 이미지"
+
+# ===== 산업별 스타일 변형 =====
+industry_styles:
+  tech:
+    keywords: ["technology", "IT", "software", "digital"]
+    modifiers:
+      - "futuristic"
+      - "digital"
+      - "sleek"
+      - "innovative"
+    color_mood: "blue and purple tones"
+
+  finance:
+    keywords: ["banking", "investment", "insurance", "fintech"]
+    modifiers:
+      - "professional"
+      - "trustworthy"
+      - "corporate"
+      - "sophisticated"
+    color_mood: "navy blue and gold accents"
+
+  healthcare:
+    keywords: ["medical", "hospital", "pharma", "health"]
+    modifiers:
+      - "clean"
+      - "caring"
+      - "bright"
+      - "hopeful"
+    color_mood: "soft blue and white, green accents"
+
+  manufacturing:
+    keywords: ["factory", "industrial", "production", "engineering"]
+    modifiers:
+      - "industrial"
+      - "precision"
+      - "engineering"
+      - "robust"
+    color_mood: "steel gray and orange accents"
+
+  retail:
+    keywords: ["shop", "commerce", "consumer", "brand"]
+    modifiers:
+      - "vibrant"
+      - "lifestyle"
+      - "aspirational"
+      - "trendy"
+    color_mood: "warm and inviting tones"
+
+  education:
+    keywords: ["school", "university", "learning", "training"]
+    modifiers:
+      - "inspiring"
+      - "academic"
+      - "growth-oriented"
+      - "friendly"
+    color_mood: "warm yellows and blues"
+
+  government:
+    keywords: ["public", "government", "civic", "policy"]
+    modifiers:
+      - "authoritative"
+      - "stable"
+      - "transparent"
+      - "inclusive"
+    color_mood: "conservative blues and reds"
+
+# ===== 부정 프롬프트 (공통) =====
+negative_prompts:
+  common:
+    - "text"
+    - "watermark"
+    - "logo"
+    - "signature"
+    - "low quality"
+    - "blurry"
+    - "pixelated"
+    - "distorted"
+
+  professional:
+    - "cartoon"
+    - "anime"
+    - "childish"
+    - "unprofessional"
+    - "cluttered"
+
+  photo:
+    - "illustration"
+    - "drawing"
+    - "painting"
+    - "artificial"
+
+  illustration:
+    - "photorealistic"
+    - "photograph"
+    - "3D render"
+
+# ===== 품질 향상 프롬프트 =====
+quality_boosters:
+  high_quality:
+    - "8k resolution"
+    - "highly detailed"
+    - "professional quality"
+    - "award-winning"
+
+  lighting:
+    - "perfect lighting"
+    - "studio lighting"
+    - "natural light"
+    - "soft shadows"
+
+  composition:
+    - "rule of thirds"
+    - "balanced composition"
+    - "centered"
+    - "symmetrical"
+
+# ===== 종횡비 프리셋 =====
+aspect_ratios:
+  "16:9":
+    width: 1920
+    height: 1080
+    use_for: ["slides", "hero", "background"]
+
+  "4:3":
+    width: 1600
+    height: 1200
+    use_for: ["traditional slides"]
+
+  "1:1":
+    width: 1024
+    height: 1024
+    use_for: ["icons", "product", "profile"]
+
+  "9:16":
+    width: 1080
+    height: 1920
+    use_for: ["mobile", "story"]
+
+# ===== 프롬프트 조합 예시 =====
+examples:
+  - purpose: hero
+    subject: "AI technology network"
+    industry: tech
+    result: |
+      cinematic wide shot of AI technology network, professional photography,
+      dramatic lighting, high contrast, epic scale, shallow depth of field,
+      futuristic, digital, sleek, innovative, blue and purple tones,
+      8k resolution, highly detailed, professional quality
+
+  - purpose: background
+    subject: "data flow"
+    industry: tech
+    result: |
+      abstract data flow pattern, subtle gradients,
+      minimalist, high resolution texture, seamless, soft colors,
+      futuristic, digital, blue and purple tones
+
+  - purpose: team
+    context: "modern tech office discussing project"
+    industry: tech
+    result: |
+      professional business team in modern tech office discussing project,
+      natural lighting, modern office environment, diverse group, candid moment,
+      futuristic, digital, sleek

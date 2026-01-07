@@ -1,0 +1,250 @@
+# flow-circular-apple1 콘텐츠 템플릿 v3.2
+# 원본: flow-circular-apple1.png
+# 재생성: 2026-01-07 (이미지 기반 정밀 추출 및 SVG 변환)
+
+content_template:
+  id: flow-circular-apple1
+  name: "Apple 2030 탄소 중립 로드맵"
+  version: "3.2"
+  schema_version: "3.0-svg"
+  source: flow-circular-apple1.png
+  source_url: ""
+  extracted_at: "2026-01-07T16:35:00Z"
+
+design_meta:
+  quality_score: 9.5
+  design_intent: timeline-process
+  design_intents:
+    - road-map
+    - infographic-sustainability
+  visual_balance: asymmetric
+  information_density: high
+  render_method: svg
+
+canvas:
+  reference_width: 960
+  reference_height: 540
+  aspect_ratio: "16:9"
+  viewBox: "0 0 960 540"
+
+layout:
+  type: winding_path
+  direction: left_to_right
+  flow_path: "vertical_start -> bottom_curve -> up_arch -> top_right"
+
+background:
+  type: solid
+  color: "#F9F9F9"
+
+header:
+  has_header: true
+  geometry:
+    x: 4%
+    y: 4%
+    cx: 90%
+    cy: 15%
+  title:
+    text: "Apple 2030: 탄소 중립을 향한 길"
+    font_size_ratio: 0.045
+    font_weight: bold
+    font_color: "#111111"
+    position: {x: 0, y: 0}
+  subtitle:
+    text: "2030년까지 공급망 및 제품 사용을 포함한 기업 활동 전반에 걸쳐 탄소 중립을 달성하려는 Apple의 다각적인 접근 방식과 주요 성과를 요약합니다."
+    font_size_ratio: 0.016
+    font_color: "#555555"
+    position: {x: 0, y: 50}
+
+# 인라인 SVG: Winding Path, Gauge Chart 등 그래프 요소 포함
+svg_inline: |
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540">
+    <defs>
+      <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1E5128"/> <!-- Dark Green -->
+        <stop offset="50%" stop-color="#4E9F3D"/> <!-- Medium Green -->
+        <stop offset="100%" stop-color="#191A79"/> <!-- Blueish -->
+      </linearGradient>
+      <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+      </filter>
+    </defs>
+
+    <!-- Header Area Placeholder (Text handled by shapes/header) -->
+
+    <!-- Main Winding Path -->
+    <!-- Start Left Vertical -> Curve under Gauge -> Curve over iPhone -> To Top Right Recycle -->
+    <path d="M 60,150 L 60,450 
+             Q 60,500 110,500 L 350,500 
+             Q 450,500 450,400 L 450,250
+             Q 450,150 550,150 L 750,150"
+          fill="none" stroke="url(#pathGradient)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"
+          filter="url(#dropShadow)"/>
+
+    <!-- Path Extension to Right Nodes -->
+    <!-- Blue line from Top Right to others -->
+    <path d="M 820,150 Q 900,150 900,200 L 900,350 Q 900,450 850,450"
+          fill="none" stroke="#6886C5" stroke-width="10" stroke-dasharray="5,5" opacity="0.6"/>
+
+    <!-- Gauge Chart (At x=250, y=300) -->
+    <g transform="translate(250, 320)">
+      <!-- Gauge Background -->
+      <path d="M -80,0 A 80,80 0 0,1 80,0" fill="none" stroke="#E0E0E0" stroke-width="20" stroke-linecap="butt"/>
+      <!-- Gauge Value (approx 75% of 180 deg = 135 deg? Visual shows about 70-80%) -->
+      <path d="M -80,0 A 80,80 0 0,1 40,-69" fill="none" stroke="#2D7A2D" stroke-width="20" stroke-linecap="butt"/>
+      <!-- Needle -->
+      <line x1="0" y1="0" x2="30" y2="-50" stroke="#333" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="6" fill="#333"/>
+    </g>
+
+    <!-- Recycle Arrows Icon (Top Right) -->
+    <g transform="translate(730, 150) scale(0.6)">
+       <path d="M 50,0 A 50,50 0 1,1 0,50" fill="none" stroke="#2D7A2D" stroke-width="15" stroke-dasharray="200" stroke-dashoffset="60"/>
+       <polygon points="60,10 40,10 50,-10" fill="#2D7A2D"/>
+       <polygon points="-10,60 -10,40 10,50" fill="#2D7A2D"/>
+    </g>
+
+  </svg>
+
+shapes:
+  # 1. Left Vertical Group: Apple 2030 Goal
+  - id: "node-goal"
+    name: "Apple 2030 목표"
+    type: textbox
+    z_index: 10
+    geometry:
+      x: 8%
+      y: 25%
+      cx: 15%
+      cy: 40%
+    content:
+      title: "Apple 2030 목표"
+      title_size: 0.022
+      title_weight: bold
+      title_color: "#1E5128"
+      
+      main_text: "2030년까지\n기업 활동 전반에\n걸쳐 탄소 중립\n달성"
+      main_text_size: 0.028
+      main_text_weight: bold
+      main_text_color: "#000000"
+      
+      sub_text: "공급망, 제품 사용\n에너지까지 포함하는\n포괄적인 목표입니다."
+      sub_text_size: 0.015
+      sub_text_color: "#555555"
+
+  # 2. Gauge Group: Emission Reduction
+  - id: "node-gauge"
+    name: "배출량 감축 목표"
+    type: chart_group
+    z_index: 10
+    geometry:
+      x: 27%
+      y: 22%
+      cx: 20%
+      cy: 40%
+    content:
+      top_label: "2015년 대비\n온실가스 배출량\n75% 감축 목표"
+      value_text: "60% 이상"
+      value_desc: "배출량 감축 달성"
+      sub_desc: "(2015년 이후)"
+      bottom_desc: "과학 기반 감축 목표를 통해\n기후 변화에 적극적으로 대응합니다."
+      
+      # Extracted Graph Info
+      extracted_graph:
+        type: "gauge_chart"
+        value: "60%"
+        max: "75%"
+        color: "green"
+        svg_ref: "included_in_inline_svg"
+
+  # 3. Product Group: iPhone
+  - id: "node-product"
+    name: "제품 혁신"
+    type: image_text_group
+    z_index: 10
+    geometry:
+      x: 52%
+      y: 55%
+      cx: 18%
+      cy: 35%
+    content:
+      title: "제품 혁신:\n내구성 및 수리 용이성 향상"
+      description: "iPhone 16은 배터리 교체가\n더 용이하도록 설계되어\n제품 수명을 연장합니다."
+      
+      # Extracted Image Info
+      extracted_image:
+        type: "photo"
+        subject: "iPhone 16 and repair tools"
+        description: "Blue iPhone 16 back view with screwdrivers, indicating repairability."
+        position: "left_of_text"
+
+  # 4. Recycle Group (Top Right)
+  - id: "node-recycle"
+    name: "순환 경제 구축"
+    type: icon_text_group
+    z_index: 10
+    geometry:
+      x: 75%
+      y: 13%
+      cx: 22%
+      cy: 20%
+    content:
+      title: "순환 경제 구축:\n재활용 소재 사용 확대"
+      description: "2025년까지 자석에 100% 재활용 희토류 원소,\n배터리에 100% 재활용 코발트를 사용합니다."
+      
+      # Extracted Graph/Icon Info
+      extracted_image:
+        type: "vector_icon"
+        subject: "Circular arrows loop"
+        description: "Three arrows in a circle representing recycling."
+        svg_ref: "included_in_inline_svg"
+
+  # 5. Energy Group (Mid Right)
+  - id: "node-energy"
+    name: "청정 에너지"
+    type: image_text_group
+    z_index: 10
+    geometry:
+      x: 82%
+      y: 38%
+      cx: 16%
+      cy: 20%
+    content:
+      title: "청정 에너지로의 전환"
+      description: "공급업체 청정 에너지\n프로그램을 통해 17.8GW 이상의\n재생 가능 에너지를 조달했습니다."
+      
+      extracted_image:
+        type: "illustration"
+        subject: "Solar panels and wind turbines"
+        description: "Illustration of solar panels and wind turbines on a green field."
+
+  # 6. Nature Group (Bottom Right)
+  - id: "node-nature"
+    name: "탄소 제거"
+    type: image_text_group
+    z_index: 10
+    geometry:
+      x: 78%
+      y: 65%
+      cx: 20%
+      cy: 25%
+    content:
+      title: "탄소 제거:\n자연 기반 솔루션 투자"
+      description: "Restore Fund를 통해\n브라질 산림 복원 등 전 세계\n생태계를 복원하는 프로젝트를\n지원합니다."
+      badge: "Restore Fund"
+      
+      extracted_image:
+        type: "illustration"
+        subject: "Forest and river"
+        description: "Illustration of a lush forest with a river flowing through it."
+
+spatial_relationships:
+  - type: winding_path
+    path: "start -> gauge -> product -> recycle -> energy -> nature"
+    connector: "inline_svg_path"
+
+keywords:
+  - "Apple 2030"
+  - "탄소 중립"
+  - "로드맵"
+  - "재활용"
+  - "청정 에너지"

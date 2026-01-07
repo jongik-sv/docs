@@ -312,6 +312,118 @@ background:
 
 ---
 
+### 0.6 Asset Recommendation (아이콘/이미지 추천)
+
+템플릿 매칭 후, 슬라이드에 필요한 아이콘과 이미지를 자동 추천합니다.
+
+#### Step 0.6.1: 에셋 필요 파악
+
+매칭된 템플릿의 shapes에서 `type: icon` 또는 `type: picture` 플레이스홀더 확인:
+
+```markdown
+| # | Slide | Template | Asset Placeholders |
+|---|-------|----------|-------------------|
+| 4 | 4대 핵심기능 | grid-4col-icon1 | 4x icon |
+| 5 | 제품 소개 | image-text1 | 1x picture |
+```
+
+#### Step 0.6.2: 아이콘 선택 (우선순위)
+
+**1단계: react-icons 검색**
+
+콘텐츠 키워드로 `templates/assets/icon-mappings.yaml` 매칭:
+
+```yaml
+# icon-mappings.yaml 참조
+보안 → fa/FaShieldAlt
+속도 → fa/FaBolt
+데이터 → fa/FaDatabase
+AI → fa/FaBrain
+```
+
+**2단계: SVG 직접 생성 (대안)**
+
+react-icons에서 적합한 아이콘을 찾지 못한 경우 간단한 SVG 생성.
+
+**아이콘 래스터라이즈** (테마 색상 적용):
+
+```bash
+node scripts/rasterize-icon.js fa/FaShieldAlt "#1E5128" 256 shield.png
+node scripts/rasterize-icon.js fa/FaBolt "#1E5128" 256 bolt.png
+```
+
+#### Step 0.6.3: 이미지 선택
+
+**1단계: registry.yaml 검색**
+
+기존 에셋에서 태그/키워드 매칭:
+
+```bash
+# asset-manager.py 검색
+python scripts/asset-manager.py search --tag "AI" --tag "technology"
+```
+
+**2단계: 웹 크롤링 (필요 시)**
+
+```bash
+python scripts/asset-manager.py crawl "https://example.com/images" --tag "hero"
+```
+
+**3단계: 이미지 생성 프롬프트 출력**
+
+매칭되는 이미지가 없으면 외부 서비스용 프롬프트 생성:
+
+```bash
+node scripts/image-prompt-generator.js --subject "AI 기술 네트워크" --purpose hero --industry tech
+```
+
+출력:
+```
+Prompt: cinematic wide shot of AI technology network, professional photography,
+        dramatic lighting, high contrast, futuristic, digital, blue and purple tones,
+        8k resolution, highly detailed
+
+Negative Prompt: text, watermark, logo, low quality, blurry, cartoon, anime
+Aspect Ratio: 16:9 (1920x1080)
+```
+
+> **Note**: 프롬프트만 생성됨. 이미지 생성은 DALL-E, Midjourney 등 외부 서비스에서 수동 진행.
+> (MCP 통한 이미지 생성 모델 연동 미구현)
+
+#### Step 0.6.4: 에셋 추천 테이블 출력 (필수)
+
+**반드시** 에셋 추천 결과를 테이블로 정리:
+
+```markdown
+| # | Slide | Type | Keyword | Asset | Source |
+|---|-------|------|---------|-------|--------|
+| 4-1 | 핵심기능 | icon | 보안 | FaShieldAlt | react-icons |
+| 4-2 | 핵심기능 | icon | 속도 | FaBolt | react-icons |
+| 4-3 | 핵심기능 | icon | 데이터 | FaDatabase | react-icons |
+| 4-4 | 핵심기능 | icon | 자동화 | FaCogs | react-icons |
+| 5 | 제품소개 | picture | - | ❌ 프롬프트 생성 | image-prompt |
+```
+
+#### Step 0.6.5: HTML에 에셋 삽입
+
+**아이콘 삽입**:
+```html
+<div class="icon-container">
+  <img src="file:///C:/project/docs/workspace/icons/shield.png"
+       style="width: 40pt; height: 40pt;">
+</div>
+```
+
+**이미지 삽입**:
+```html
+<div class="image-area">
+  <img src="file:///C:/project/docs/templates/assets/images/hero-ai.png"
+       style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+```
+
+---
+
 ### 1. MANDATORY - Read Full Guide
 
 **반드시** 상세 가이드 전체를 읽으세요:

@@ -27,11 +27,68 @@
 
 const { chromium } = require('playwright');
 const path = require('path');
+const fs = require('fs');
 const sharp = require('sharp');
+const crypto = require('crypto');
 
 const PT_PER_PX = 0.75;
 const PX_PER_IN = 96;
 const EMU_PER_IN = 914400;
+
+// Helper: Rasterize SVG to PNG using Sharp
+async function rasterizeSvg(svgString, width, height, tmpDir) {
+  const hash = crypto.createHash('md5').update(svgString).digest('hex').substring(0, 8);
+  const pngPath = path.join(tmpDir, `svg_${hash}_${Date.now()}.png`);
+
+  // Ensure SVG has proper dimensions
+  let processedSvg = svgString;
+  if (!svgString.includes('width=') || !svgString.includes('height=')) {
+    processedSvg = svgString.replace(
+      '<svg',
+      `<svg width="${Math.round(width)}" height="${Math.round(height)}"`
+    );
+  }
+
+  await sharp(Buffer.from(processedSvg))
+    .resize(Math.round(width * 2), Math.round(height * 2))  // 2x for retina quality
+    .png()
+    .toFile(pngPath);
+
+  return pngPath;
+}
+
+// Helper: Extract SVG elements from page (separate from main extraction due to Node.js API needs)
+async function extractSvgElements(page) {
+  return await page.$$eval('svg', (svgs) => {
+    return svgs
+      .filter(svg => {
+        const rect = svg.getBoundingClientRect();
+        return rect.width > 0 && rect.height > 0;
+      })
+      .map(svg => {
+        const rect = svg.getBoundingClientRect();
+        // Clone SVG to avoid modifying the original
+        const clone = svg.cloneNode(true);
+
+        // Ensure viewBox is set for proper scaling
+        if (!clone.hasAttribute('viewBox') && clone.hasAttribute('width') && clone.hasAttribute('height')) {
+          const w = parseFloat(clone.getAttribute('width'));
+          const h = parseFloat(clone.getAttribute('height'));
+          clone.setAttribute('viewBox', `0 0 ${w} ${h}`);
+        }
+
+        return {
+          outerHTML: clone.outerHTML,
+          rect: {
+            left: rect.left,
+            top: rect.top,
+            width: rect.width,
+            height: rect.height
+          }
+        };
+      });
+  });
+}
 
 // Helper: Get body dimensions and check for overflow
 async function getBodyDimensions(page) {
@@ -914,6 +971,8 @@ async function html2pptx(htmlFile, pres, options = {}) {
     const filePath = path.isAbsolute(htmlFile) ? htmlFile : path.join(process.cwd(), htmlFile);
     const validationErrors = [];
 
+    let svgElements = [];
+
     try {
       const page = await browser.newPage();
       page.on('console', (msg) => {
@@ -930,9 +989,37 @@ async function html2pptx(htmlFile, pres, options = {}) {
         height: Math.round(bodyDimensions.height)
       });
 
+      // Extract SVG elements before main extraction (NEW v3.1)
+      svgElements = await extractSvgElements(page);
+
       slideData = await extractSlideData(page);
     } finally {
       await browser.close();
+    }
+
+    // Rasterize SVG elements and add as images (NEW v3.1)
+    for (const svg of svgElements) {
+      try {
+        const pngPath = await rasterizeSvg(
+          svg.outerHTML,
+          svg.rect.width,
+          svg.rect.height,
+          tmpDir
+        );
+
+        slideData.elements.push({
+          type: 'image',
+          src: pngPath,
+          position: {
+            x: svg.rect.left / PX_PER_IN,
+            y: svg.rect.top / PX_PER_IN,
+            w: svg.rect.width / PX_PER_IN,
+            h: svg.rect.height / PX_PER_IN
+          }
+        });
+      } catch (svgError) {
+        console.warn(`Warning: Failed to rasterize SVG: ${svgError.message}`);
+      }
     }
 
     // Collect all validation errors

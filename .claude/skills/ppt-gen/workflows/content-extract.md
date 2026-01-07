@@ -292,6 +292,108 @@ text['font_size_ratio'] = font_size_pt / canvas_height_px  # 비율도 함께
 - icon: {name: "chart-bar", color: primary}
 ```
 
+#### Step 2.4.1: 복잡도 분석 및 SVG 추출 (NEW v3.1)
+
+**원칙**: 단순 도형은 geometry만, **복잡 도형은 SVG path**로 추출합니다.
+
+**복잡도 판단 기준**:
+
+| 조건 | 예시 | 추출 방식 |
+|------|------|----------|
+| 사각형, 원, 텍스트만 | 일반 레이아웃 | `geometry` only |
+| 방사형 세그먼트 (3개+) | cycle-6segment, radial chart | `type: svg` |
+| 벌집형 레이아웃 | honeycomb process | `type: svg` |
+| 곡선 화살표/커넥터 | curved arrow cycle | `type: svg` |
+| 비정형 다각형 | custom polygons | `type: svg` |
+| `layout.type: radial` | 방사형 배치 | `type: svg` |
+
+**복잡도 감지 함수**:
+
+```python
+def is_complex_shape(shapes, layout=None):
+    """복잡 도형 여부 판단 → SVG 추출 필요 여부"""
+    # 1. 레이아웃 타입 체크
+    if layout and layout.get('type') == 'radial':
+        return True
+
+    # 2. 방사형 배치 감지 (세그먼트 3개 이상)
+    segment_count = sum(1 for s in shapes if 'segment' in s.get('name', '').lower())
+    if segment_count >= 3:
+        return True
+
+    # 3. 복잡 도형 타입 체크
+    complex_types = {'curved_shape', 'custom_shape', 'cycle-arrows', 'honeycomb'}
+    for shape in shapes:
+        if shape.get('type') in complex_types:
+            return True
+
+    # 4. 다수의 동일 다각형 (벌집 등)
+    hexagon_count = sum(1 for s in shapes if s.get('type') == 'hexagon')
+    if hexagon_count >= 4:
+        return True
+
+    return False
+```
+
+**복잡 도형 SVG 추출**:
+
+복잡도가 감지되면 `type: svg`로 추출하고 SVG path를 생성합니다.
+
+```yaml
+# Complex 도형 → SVG 추출 결과
+shapes:
+  - id: "cycle-segment-0"
+    name: "사이클 세그먼트 1 (상단)"
+    type: svg                           # NEW: SVG 타입
+    z_index: 1
+    geometry:
+      x: 30%                            # 바운딩 박스 (fallback)
+      y: 0%
+      cx: 40%
+      cy: 35%
+    svg:                                # NEW: SVG 필드
+      path: "M 0,-35 C 50,-100 100,-130 70,-165 C 40,-180 -40,-180 -70,-165 Z"
+      viewBox: "0 0 200 200"
+      center: {x: 100, y: 100}          # 상대 좌표 기준점
+      fill: primary                      # 디자인 토큰
+    content:                            # 내부 요소
+      icon:
+        position: {x: 0, y: -130}       # center 기준 상대 좌표
+        name: "fa-user"
+        size: 20
+        color: white
+      label:
+        position: {x: 0, y: -95}
+        text: "Feature Name"
+        font_size: 9
+        color: white
+```
+
+**SVG Path 생성 가이드**:
+
+1. **기준점 설정**: 다이어그램 중심을 (0, 0) 또는 명시적 center 좌표로 설정
+2. **Path 작성**: Bezier 곡선(C), 직선(L), 이동(M), 닫기(Z) 사용
+3. **상대 좌표**: 아이콘/텍스트 위치는 center 기준 상대값
+4. **디자인 토큰**: fill, stroke에 시맨틱 색상 사용 (primary, secondary 등)
+
+**방사형 세그먼트 Path 예시**:
+
+```yaml
+# 6분할 사이클 다이어그램
+svg:
+  center: {x: 480, y: 280}              # 960x540 캔버스 기준 중심
+  segments:
+    - id: segment-0
+      angle: 0                          # 상단 (12시 방향)
+      path: "M 0,-35 C 50,-100 100,-130 70,-165 C 40,-180 -40,-180 -70,-165 Z"
+      fill: "#FF7F50"
+    - id: segment-1
+      angle: 60                         # 우상단 (2시 방향)
+      path: "M 30,-20 C 80,-60 140,-60 165,-30 C 185,10 175,60 140,90 Z"
+      fill: "#32CD32"
+    # ... 4개 더
+```
+
 **이미지 설명 필수 (picture 타입)**: 이미지 도형에는 반드시 `description` 포함
 
 ```yaml
@@ -827,6 +929,103 @@ update_registry(results)
 |------|---------------------|
 | 순차 처리 | ~5분 |
 | 병렬 처리 (13 에이전트) | ~30초-1분 |
+
+---
+
+## External Image Extraction (웹 이미지 추출)
+
+네이버 블로그 등 보호된 사이트에서 이미지를 추출할 때 사용합니다.
+
+### Triggers
+
+- "이 블로그에서 이미지 추출해줘"
+- "네이버 블로그 이미지 다운로드해줘"
+- "웹에서 레퍼런스 이미지 가져와줘"
+- WebFetch/브라우저 직접 접근이 차단된 경우
+
+### Prerequisites
+
+```bash
+pip install playwright
+playwright install chromium
+```
+
+### Workflow
+
+#### 1. 직접 접근 시도
+
+먼저 WebFetch 또는 브라우저 자동화 도구로 직접 접근을 시도합니다.
+
+```
+WebFetch: https://blog.naver.com/...
+→ 실패 시: "Claude Code is unable to fetch from blog.naver.com"
+```
+
+#### 2. Playwright Fallback (asset-manager.py)
+
+직접 접근이 차단되면 `asset-manager.py crawl` 명령을 사용합니다.
+
+```bash
+# 1. 미리보기 (다운로드 없이 목록 확인)
+cd .claude/skills/ppt-gen/scripts
+python asset-manager.py crawl "{URL}" --prefix {prefix} --preview
+
+# 2. 다운로드 실행
+python asset-manager.py crawl "{URL}" \
+    --prefix {prefix} \
+    --tags "reference,template" \
+    --max-images 50 \
+    --min-size 300
+
+# 3. 다운로드된 이미지 확인
+ls -la templates/assets/images/{prefix}*.png
+```
+
+#### 3. 이미지 분석 및 컨텐츠 추출
+
+다운로드된 이미지를 Read 도구로 읽어 분석합니다.
+
+```python
+# Claude의 멀티모달 기능으로 이미지 분석
+for image_path in downloaded_images:
+    Read(image_path)  # 이미지 시각적 분석
+    # → 슬라이드 유형, 레이아웃, 색상, 구성요소 파악
+```
+
+#### 4. YAML 템플릿 생성
+
+분석 결과를 기반으로 콘텐츠 템플릿 YAML을 생성합니다.
+
+### Supported Sites (지원 사이트)
+
+| 사이트 | 핸들러 | 특수 처리 |
+|--------|--------|----------|
+| 네이버 블로그 | NaverBlogHandler | iframe 전환, lazy-load |
+| 네이버 카페 | NaverBlogHandler | iframe 전환, lazy-load |
+| 네이버 포스트 | NaverBlogHandler | iframe 전환, lazy-load |
+| 일반 웹사이트 | GenericHandler | 기본 이미지 추출 |
+
+### Error Handling
+
+```yaml
+# 접근 차단 감지
+if "unable to fetch" in error or "not allowed" in error:
+    # → asset-manager.py crawl 로 전환
+
+# Playwright 미설치
+if "playwright 모듈이 필요합니다" in error:
+    # → pip install playwright && playwright install chromium
+
+# 이미지 없음
+if filtered_count == 0:
+    # → min-size 값 낮추기 또는 다른 URL 시도
+```
+
+### Output
+
+다운로드된 이미지는 다음 위치에 저장됩니다:
+- **이미지**: `templates/assets/images/{prefix}-{NNN}.{ext}`
+- **레지스트리**: `templates/assets/registry.yaml`
 
 ---
 

@@ -263,6 +263,80 @@ shapes:
 | `chevron` | 쉐브론 |
 | `callout` | 콜아웃 |
 | `connector` | 연결선 |
+| `svg` | **SVG 복잡 도형** (NEW v3.1) |
+
+### svg 타입 추가 필드 (NEW v3.1)
+
+복잡한 다이어그램 도형(cycle, honeycomb, curved arrows 등)에 사용합니다.
+단순 도형(rectangle, oval)은 기존 geometry만 사용하고, **복잡 도형만** SVG로 추출합니다.
+
+```yaml
+shapes:
+  - id: "cycle-segment-0"
+    name: "사이클 세그먼트 1"
+    type: svg                    # SVG 복잡 도형
+    z_index: 1
+    geometry:
+      x: 30%                     # 바운딩 박스 (fallback용)
+      y: 0%
+      cx: 40%
+      cy: 35%
+
+    # SVG 관련 필드 (svg 타입 전용)
+    svg:
+      # 옵션 A: 단일 path (가장 일반적)
+      path: "M 0,-35 C 50,-100 100,-130 70,-165 C 40,-180 -40,-180 -70,-165 Z"
+
+      # 옵션 B: 완전한 인라인 SVG (복잡한 다이어그램)
+      inline: |
+        <svg viewBox="0 0 200 200">
+          <path d="M 0,-35 C 50,-100..." fill="primary"/>
+          <circle cx="0" cy="-130" r="24" fill="rgba(255,255,255,0.25)"/>
+        </svg>
+
+      # 공통 속성
+      viewBox: "0 0 200 200"           # SVG viewBox (선택)
+      center: {x: 100, y: 100}         # 상대 좌표 기준점 (선택)
+      fill: primary                    # 채우기 색상 (디자인 토큰)
+      stroke: {color: dark_text, width: 2}  # 테두리 (선택)
+
+    # 내부 요소 (아이콘, 텍스트 등)
+    content:
+      icon:
+        position: {x: 0, y: -130}      # center 기준 상대 좌표
+        name: "fa-user"
+        size: 20
+        color: white
+      label:
+        position: {x: 0, y: -95}
+        text: "Feature Name"
+        font_size: 9
+        color: white
+```
+
+| 필드 | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| path | string | **YES*** | SVG path 문자열 (M, C, L, Z 등) |
+| inline | string | **YES*** | 완전한 SVG 마크업 (복잡한 경우) |
+| viewBox | string | No | SVG viewBox 속성 |
+| center | object | No | 상대 좌표 기준점 {x, y} |
+| fill | string | No | 채우기 색상 (디자인 토큰 또는 HEX) |
+| stroke | object | No | 테두리 {color, width} |
+| content | object | No | 내부 아이콘/텍스트 요소 |
+
+\* `path` 또는 `inline` 중 하나 필수
+
+### 복잡 도형 판단 기준
+
+다음 조건에 해당하면 `type: svg`로 추출합니다:
+
+| 조건 | 예시 |
+|------|------|
+| 방사형 세그먼트 (3개 이상) | cycle-6segment, radial chart |
+| 벌집형 레이아웃 | honeycomb process |
+| 곡선 화살표/커넥터 | curved arrow cycle |
+| 비정형 다각형 | custom polygons |
+| `layout.type: radial` | 방사형 레이아웃 |
 
 ### picture 타입 추가 필드
 

@@ -1,0 +1,192 @@
+# feature-center-icon 콘텐츠 템플릿 v2.0
+# 원본: wooseok2-010.png (네이버 블로그 우석지니)
+# 추출일: 2026-01-07
+
+content_template:
+  id: feature-center-icon1
+  name: "중앙 아이콘 + 좌우 기능 목록"
+  version: "2.0"
+  source: wooseok2-010.png
+  source_url: "https://blog.naver.com/wooseokjin/224125145028"
+  extracted_at: "2026-01-07T00:00:00Z"
+
+design_meta:
+  quality_score: 8.8
+  design_intent: feature-center-icon
+  design_intents:
+    - feature-list
+    - comparison-2col
+  visual_balance: symmetric
+  information_density: medium
+
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: "16:9"
+
+layout:
+  type: center_split
+  center_element: app_icon
+  side_elements: feature_labels
+
+background:
+  type: solid
+  color: "#0D0D0D"
+
+shapes:
+  - id: "center-icon"
+    name: "중앙 앱 아이콘"
+    type: picture
+    z_index: 10
+    geometry:
+      x: 38%
+      y: 20%
+      cx: 24%
+      cy: 45%
+      original_aspect_ratio: 0.53
+    style:
+      shadow: {enabled: true, blur: 30, offset_y: 10, opacity: 0.3}
+    image:
+      source: "app_icons/notebooklm_3d.png"
+      description: "NotebookLM 3D 글래스 스타일 앱 아이콘, 보라색-파란색 그라데이션"
+      fit: contain
+
+  - id: "bottom-label"
+    name: "하단 강조 라벨"
+    type: rounded_rectangle
+    z_index: 12
+    geometry:
+      x: 35%
+      y: 68%
+      cx: 30%
+      cy: 8%
+    style:
+      fill: {type: solid, color: "#FF1493", opacity: 1.0}
+      rounded_corners: 4
+    text:
+      has_text: true
+      content: "No Training"
+      alignment: center
+      font_size_ratio: 0.022
+      font_weight: bold
+      font_color: white
+
+  - id: "left-features"
+    name: "좌측 기능 목록"
+    type: group
+    z_index: 8
+    geometry:
+      x: 5%
+      y: 20%
+      cx: 28%
+      cy: 60%
+    children:
+      - id: "left-1"
+        type: feature_label
+        geometry: {x: 0%, y: 0%, cx: 100%, cy: 15%}
+        style:
+          fill: {type: solid, color: "#1A1A1A"}
+          stroke: {color: "#FF1493", width: 2, position: bottom}
+        text: {content: "소스 문서", alignment: center, font_color: white}
+      - id: "left-2"
+        type: feature_label
+        geometry: {x: 0%, y: 20%, cx: 100%, cy: 15%}
+        style:
+          fill: {type: solid, color: "#1A1A1A"}
+          stroke: {color: "#FF1493", width: 2, position: bottom}
+        text: {content: "폐쇄형", alignment: center, font_color: white}
+      - id: "left-3"
+        type: feature_label
+        geometry: {x: 0%, y: 40%, cx: 100%, cy: 15%}
+        style:
+          fill: {type: solid, color: "#1A1A1A"}
+          stroke: {color: "#FF1493", width: 2, position: bottom}
+        text: {content: "각주 출처", alignment: center, font_color: white}
+      - id: "left-4"
+        type: feature_label
+        geometry: {x: 0%, y: 60%, cx: 100%, cy: 15%}
+        style:
+          fill: {type: solid, color: "#1A1A1A"}
+          stroke: {color: "#FF1493", width: 2, position: bottom}
+        text: {content: "웹 크롤링 X", alignment: center, font_color: white}
+
+  - id: "right-features"
+    name: "우측 기능 목록"
+    type: group
+    z_index: 8
+    geometry:
+      x: 67%
+      y: 20%
+      cx: 28%
+      cy: 60%
+    children:
+      - id: "right-1"
+        type: feature_label
+        geometry: {x: 0%, y: 0%, cx: 100%, cy: 15%}
+        style:
+          fill: {type: solid, color: "#1A1A1A"}
+          stroke: {color: "#FF1493", width: 2, position: bottom}
+        text: {content: "데이터 주권", alignment: center, font_color: white}
+      - id: "right-2"
+        type: feature_label
+        geometry: {x: 0%, y: 20%, cx: 100%, cy: 15%}
+        style:
+          fill: {type: solid, color: "#1A1A1A"}
+          stroke: {color: "#FF1493", width: 2, position: bottom}
+        text: {content: "출처 기반", alignment: center, font_color: white}
+      - id: "right-3"
+        type: feature_label
+        geometry: {x: 0%, y: 40%, cx: 100%, cy: 15%}
+        style:
+          fill: {type: solid, color: "#FF1493"}
+        text: {content: "DB 영구 제거", alignment: center, font_color: white}
+      - id: "right-4"
+        type: feature_label
+        geometry: {x: 0%, y: 60%, cx: 100%, cy: 15%}
+        style:
+          fill: {type: solid, color: "#1A1A1A"}
+          stroke: {color: "#FF1493", width: 2, position: bottom}
+        text: {content: "보안 준수", alignment: center, font_color: white}
+
+icons: []
+
+gaps:
+  global: {column_gap: 5%, row_gap: 3%}
+  between_labels: 5%
+
+spatial_relationships:
+  - type: center_split
+    center: center-icon
+    left: left-features
+    right: right-features
+
+groups:
+  - id: "features-group"
+    elements: [left-features, right-features]
+
+thumbnail: thumbnails/feature/feature-center-icon1.png
+
+use_for:
+  - "제품 특징"
+  - "서비스 장점"
+  - "기능 소개"
+  - "앱 소개"
+  - "보안 기능"
+
+keywords:
+  - "기능"
+  - "특징"
+  - "중앙"
+  - "아이콘"
+  - "좌우"
+  - "다크테마"
+
+expected_prompt: |
+  중앙에 앱/제품 아이콘을 두고 좌우로 기능을 나열하는 슬라이드를 만들어줘.
+  - 다크 테마 배경
+  - 중앙에 3D 스타일 앱 아이콘
+  - 좌측에 4개 기능 라벨
+  - 우측에 4개 기능 라벨
+  - 강조 라벨은 핑크색 배경
+
+prompt_keywords: ["기능", "특징", "중앙", "아이콘", "좌우", "다크"]

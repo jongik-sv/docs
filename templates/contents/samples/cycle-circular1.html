@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Green Cycle Sample</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background-color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .canvas {
+            width: 960px;
+            height: 540px;
+            background-color: #FFFFFF;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* Helper Classes */
+        .abs-box {
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        .header {
+            position: absolute;
+            top: 40px;
+            left: 50px;
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #153E30;
+            margin-bottom: 10px;
+        }
+
+        .header-subtitle {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .header-bar {
+            width: 300px;
+            height: 10px;
+            background-color: #153E30;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .header-bar::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background-color: #E0E0E0;
+        }
+
+
+        /* Labels */
+        .label-text {
+            width: 200px;
+            text-align: center;
+            font-size: 9px;
+            color: #333;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="canvas">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">제목을 입력해 주세요.</div>
+            <div class="header-subtitle">간략한 설명을 적어주세요.</div>
+            <div class="header-bar"></div>
+        </div>
+
+        <!-- SVG Layer for Cycle Arrows -->
+        <div class="abs-box" style="top: 0; left: 0; width: 100%; height: 100%;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+                <g transform="translate(480, 320)"> <!-- Center of diagram -->
+
+                    <!-- Circular Path Background (faint blue/grey) -->
+                    <!-- Arrows are drawn as segments of a donut -->
+
+                    <!-- Top (Lightest Green) -->
+                    <path d="M -90,-20 A 100,100 0 0,1 90,-20 L 70,-20 A 80,80 0 0,0 -70,-20 Z" fill="#DAE8E2"
+                        transform="translate(0, -30)" />
+                    <polygon points="90,-50 110,-20 70,-20" fill="#DAE8E2"
+                        transform="translate(0, -30) rotate(90, 90, -35)" /> <!-- Arrowhead approximation for demo -->
+
+                    <!-- Note: Implementing precise circular arrows in SVG by hand is complex. 
+                          I'll use a simplified representation using rectangular blocks on a circle/path 
+                          similar to the reference image which shows connected arrows.
+                          Ref Image showing: Top, Right, Bottom, Left blocks connected by a light blue circular path.
+                     -->
+
+                    <!-- Circle Track -->
+                    <circle cx="0" cy="0" r="130" fill="none" stroke="#D0D8EF" stroke-width="20" opacity="0.8" />
+                    <!-- Arrow head on track (approximate for Top Left) -->
+                    <polygon points="-90,-100 -110,-80 -90,-80" fill="#D0D8EF" />
+
+                </g>
+            </svg>
+        </div>
+
+        <!-- HTML Overlay for Blocks (Boxes) -->
+        <!-- Center (Top) -->
+        <div class="abs-box" style="left: 480px; top: 180px; transform: translate(-50%, 0);">
+            <div style="background: #6B8E7C; color: white; padding: 10px 30px; border-radius: 4px; font-weight: bold;">
+                타이틀</div>
+        </div>
+
+        <!-- Right -->
+        <div class="abs-box" style="left: 630px; top: 250px;">
+            <div style="background: #2E7D56; color: white; padding: 10px 30px; border-radius: 4px; font-weight: bold;">
+                타이틀</div>
+        </div>
+
+        <!-- Bottom Right -->
+        <div class="abs-box" style="left: 550px; top: 380px;">
+            <div style="background: #153E30; color: white; padding: 10px 30px; border-radius: 4px; font-weight: bold;">
+                타이틀</div>
+        </div>
+
+        <!-- Bottom Left -->
+        <div class="abs-box" style="left: 300px; top: 380px;">
+            <div style="background: #112F23; color: white; padding: 10px 30px; border-radius: 4px; font-weight: bold;">
+                타이틀</div>
+        </div>
+
+        <!-- Left -->
+        <div class="abs-box" style="left: 230px; top: 250px;">
+            <div style="background: #BFD4C9; color: white; padding: 10px 30px; border-radius: 4px; font-weight: bold;">
+                타이틀</div>
+        </div>
+
+
+        <!-- Description Texts -->
+        <div class="abs-box label-text" style="left: 480px; top: 120px; transform: translate(-50%, 0);">
+            Then you say I wanna dance The music's got me going Ain't nothing that can stop how we move yeah
+        </div>
+        <div class="abs-box label-text" style="left: 770px; top: 250px;">
+            Then you say I wanna dance The music's got me going Ain't nothing that can stop how we move yeah
+        </div>
+        <div class="abs-box label-text" style="left: 750px; top: 400px;">
+            Then you say I wanna dance The music's got me going Ain't nothing that can stop how we move yeah
+        </div>
+        <div class="abs-box label-text" style="left: 100px; top: 400px;">
+            Then you say I wanna dance The music's got me going Ain't nothing that can stop how we move yeah
+        </div>
+        <div class="abs-box label-text" style="left: 10px; top: 250px;">
+            Then you say I wanna dance The music's got me going Ain't nothing that can stop how we move yeah
+        </div>
+
+    </div>
+</body>
+
+</html>

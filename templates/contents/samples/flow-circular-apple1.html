@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple 2030: 탄소 중립 로드맵 Sample</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background-color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .canvas {
+            width: 960px;
+            height: 540px;
+            background-color: #F9F9F9;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        /* Helper Classes */
+        .abs-box {
+            position: absolute;
+            box-sizing: border-box;
+            /* Debug border (optional) */
+            /* border: 1px dashed rgba(0,0,0,0.1); */
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text-title {
+            font-weight: 700;
+            color: #1E5128;
+            margin-bottom: 6px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .text-main {
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 6px;
+            line-height: 1.35;
+            white-space: pre-line;
+        }
+
+        .text-desc {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.5;
+            white-space: pre-line;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #1E5128;
+            color: white;
+            font-size: 9px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 12px;
+            margin-top: 6px;
+            width: fit-content;
+        }
+
+        /* Image Placeholder: Explicit Description Box */
+        .img-desc-box {
+            background-color: #f0f0f0;
+            border: 1px dashed #bbb;
+            border-radius: 8px;
+            padding: 8px;
+            color: #666;
+            font-size: 11px;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 10px;
+            overflow: hidden;
+            line-height: 1.3;
+        }
+
+        /* Header */
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 40px;
+            font-weight: 800;
+            color: #111;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            margin: 0;
+            font-size: 14px;
+            color: #555;
+            max-width: 600px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="canvas">
+        <!-- Layer 0: SVG Background (Winding Path & Gauge) -->
+        <div class="abs-box" style="top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+                <defs>
+                    <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#1E5128" /> <!-- Dark Green -->
+                        <stop offset="50%" stop-color="#4E9F3D" /> <!-- Medium Green -->
+                        <stop offset="100%" stop-color="#3b7a9e" /> <!-- Blueish -->
+                    </linearGradient>
+                    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2" />
+                    </filter>
+                </defs>
+
+                <!-- Main Winding Path -->
+                <path d="M 60,150 L 60,450 
+                         Q 60,500 110,500 L 350,500 
+                         Q 450,500 450,400 L 450,250
+                         Q 450,150 550,150 L 750,150" fill="none" stroke="url(#pathGradient)" stroke-width="20"
+                    stroke-linecap="round" stroke-linejoin="round" filter="url(#dropShadow)" opacity="0.9" />
+
+                <!-- Path Extension to Right Nodes (Dashed Blue) -->
+                <path d="M 820,150 Q 900,150 900,200 L 900,350 Q 900,450 850,450" fill="none" stroke="#6886C5"
+                    stroke-width="8" stroke-dasharray="8,8" opacity="0.5" />
+
+                <!-- Gauge Chart (at x=250, y=320) -->
+                <g transform="translate(250, 320)">
+                    <!-- Gauge Background -->
+                    <path d="M -80,0 A 80,80 0 0,1 80,0" fill="none" stroke="#e0e0e0" stroke-width="20"
+                        stroke-linecap="butt" />
+                    <!-- Gauge Value (60% coverage) -->
+                    <path d="M -80,0 A 80,80 0 0,1 40,-69" fill="none" stroke="#2D7A2D" stroke-width="20"
+                        stroke-linecap="butt" />
+                    <!-- Needle -->
+                    <line x1="0" y1="0" x2="30" y2="-50" stroke="#333" stroke-width="4" stroke-linecap="round" />
+                    <circle cx="0" cy="0" r="6" fill="#333" />
+                </g>
+
+                <!-- Recycle Arrows Icon (Top Right, x=730, y=150) -->
+                <g transform="translate(730, 150) scale(0.6)">
+                    <path d="M 50,0 A 50,50 0 1,1 0,50" fill="none" stroke="#2D7A2D" stroke-width="15"
+                        stroke-dasharray="290" stroke-dashoffset="60" />
+                    <polygon points="60,10 40,10 50,-10" fill="#2D7A2D" />
+                    <polygon points="-10,60 -10,40 10,50" fill="#2D7A2D" />
+                </g>
+            </svg>
+        </div>
+
+        <!-- Layer 1: Header -->
+        <div class="abs-box" style="left: 4%; top: 4%; width: 90%; height: 15%; z-index: 10;">
+            <h1>Apple 2030: 탄소 중립을 향한 길</h1>
+            <p class="subtitle">2030년까지 공급망 및 제품 사용을 포함한 기업 활동 전반에 걸쳐 탄소 중립을 달성하려는 Apple의 다각적인 접근 방식과 주요 성과를 요약합니다.</p>
+        </div>
+
+        <!-- Node 1: Apple 2030 Goal (Left Vertical Bar) -->
+        <div class="abs-box" style="left: 8%; top: 25%; width: 15%; height: 40%; z-index: 10; padding: 20px 0;">
+            <!-- Simulating the vertical white box style -->
+            <div
+                style="background: white; border-radius: 12px; padding: 20px 15px; height: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 6px solid #1E5128;">
+                <div class="text-title">Apple 2030 목표</div>
+                <div class="text-main" style="font-size: 19px;">2030년까지<br>기업 활동 전반에<br>걸쳐 탄소 중립<br>달성</div>
+                <div class="text-desc" style="margin-top: 10px;">공급망, 제품 사용<br>에너지까지 포함하는<br>포괄적인 목표입니다.</div>
+            </div>
+        </div>
+
+        <!-- Node 2: Emissions Reduction (Gauge Area) -->
+        <div class="abs-box" style="left: 27%; top: 22%; width: 20%; height: 40%; z-index: 10; text-align: center;">
+            <div class="text-main" style="font-size: 15px;">2015년 대비<br>온실가스 배출량<br>75% 감축 목표</div>
+            <!-- Spacer for Gauge -->
+            <div style="height: 110px;"></div>
+            <div class="text-main" style="font-size: 26px; color: #1E5128;">60% 이상</div>
+            <div class="text-main" style="font-size: 14px;">배출량 감축 달성</div>
+            <div class="text-desc" style="color: #888;">(2015년 이후)</div>
+        </div>
+
+        <!-- Node 3: Product Innovation (iPhone) -->
+        <div class="abs-box card" style="left: 52%; top: 55%; width: 18%; height: 35%; z-index: 15;">
+            <!-- Replaced Emoji with Description Box -->
+            <div class="img-desc-box" style="height: 80px;">[이미지 설명]<br>iPhone 16 후면과<br>수리 도구들</div>
+            <div class="text-title">제품 혁신</div>
+            <div class="text-main" style="font-size: 14px;">내구성 및 수리 용이성 향상</div>
+            <div class="text-desc">iPhone 16은 배터리 교체가 용이하도록 설계되어 제품 수명을 연장합니다.</div>
+        </div>
+
+        <!-- Node 4: Recycling (Top Right) -->
+        <div class="abs-box card" style="left: 77%; top: 11%; width: 20%; height: 20%; z-index: 15;">
+            <div class="text-title">순환 경제 구축</div>
+            <div class="text-main" style="font-size: 14px;">재활용 소재 사용 확대</div>
+            <div class="text-desc">2025년까지 자석에 100% 재활용 희토류, 배터리에 100% 재활용 코발트 사용.</div>
+        </div>
+
+        <!-- Node 5: Clean Energy (Mid Right) -->
+        <div class="abs-box" style="left: 82%; top: 38%; width: 16%; height: 20%; z-index: 15; text-align: left;">
+            <!-- Replaced Emoji with Description Box -->
+            <div class="img-desc-box" style="height: 40px;">[이미지 설명]<br>태양광 패널과 풍력 발전기</div>
+            <div class="text-title">청정 에너지로의 전환</div>
+            <div class="text-desc" style="font-size: 10px;">공급업체 청정 에너지 프로그램을 통해 17.8GW 이상의 재생 에너지를 조달했습니다.</div>
+        </div>
+
+        <!-- Node 6: Carbon Removal (Bottom Right) -->
+        <div class="abs-box" style="left: 78%; top: 65%; width: 20%; height: 25%; z-index: 15;">
+            <!-- Added Description Box -->
+            <div class="img-desc-box" style="height: 50px;">[이미지 설명]<br>강이 흐르는 울창한 숲</div>
+            <div class="text-title">탄소 제거</div>
+            <div class="text-main" style="font-size: 14px;">자연 기반 솔루션 투자</div>
+            <div class="text-desc">Restore Fund를 통해 생태계를 복원하는 프로젝트를 지원합니다.</div>
+            <div class="badge">Restore Fund</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

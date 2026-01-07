@@ -1,0 +1,275 @@
+# cycle-6segment-colorful 콘텐츠 템플릿 v3.0
+# SVG 경로 통합 버전
+# 원본: wooseok1-003.png (네이버 블로그 우석지니)
+
+content_template:
+  id: cycle-6segment-colorful1
+  name: "6분할 순환 다이어그램 (다채로운 색상)"
+  version: "3.0"
+  schema_version: "3.0-svg"  # SVG 확장 스키마
+  source: wooseok1-003.png
+  source_url: "https://blog.naver.com/wooseokjin/224127136621"
+  extracted_at: "2026-01-07T00:00:00Z"
+
+design_meta:
+  quality_score: 9.0
+  design_intent: cycle-6segment
+  design_intents:
+    - cycle-circular
+    - feature-icons
+  visual_balance: symmetric
+  information_density: high
+  render_method: svg  # svg | shapes | hybrid
+
+canvas:
+  reference_width: 960
+  reference_height: 540
+  aspect_ratio: "16:9"
+  viewBox: "0 0 960 540"  # SVG viewBox
+
+# ============================================================
+# SVG 정의 섹션 (NEW in v3.0)
+# ============================================================
+svg:
+  # SVG 전역 정의 (defs)
+  defs: |
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.2"/>
+    </filter>
+
+  # 다이어그램 중심점 (상대 좌표 계산 기준)
+  center: {x: 480, y: 280}
+
+  # 세그먼트 경로 정의
+  segments:
+    - id: segment-0
+      name: "상단 (Orange)"
+      color: "#FF7F50"
+      # SVG path (중심점 기준 상대 좌표)
+      path: |
+        M 0,-35
+        C 50,-100 100,-130 70,-165
+        C 40,-180 -40,-180 -70,-165
+        C -100,-130 -50,-100 0,-35
+      # 아이콘 위치 (중심점 기준)
+      icon:
+        position: {x: 0, y: -130}
+        name: "fa-user"
+        size: 20
+      # 텍스트 위치
+      label:
+        position: {x: 0, y: -95}
+        text: "Smart Living"
+
+    - id: segment-1
+      name: "우상단 (Green)"
+      color: "#32CD32"
+      path: |
+        M 30,-20
+        C 80,-60 140,-60 165,-30
+        C 185,10 175,60 140,90
+        C 100,110 60,70 30,-20
+      icon:
+        position: {x: 120, y: 10}
+        name: "fa-house"
+        size: 20
+      label:
+        position: {x: 120, y: 45}
+        text: "Home Care"
+
+    - id: segment-2
+      name: "우하단 (Blue)"
+      color: "#4169E1"
+      path: |
+        M 30,25
+        C 70,80 90,140 60,170
+        C 25,190 -30,175 -50,140
+        C -65,100 -20,60 30,25
+      icon:
+        position: {x: 30, y: 120}
+        name: "fa-rotate-right"
+        size: 20
+      label:
+        position: {x: 30, y: 155}
+        text: "Automation"
+
+    - id: segment-3
+      name: "하단 (Turquoise)"
+      color: "#40E0D0"
+      path: |
+        M -30,25
+        C -70,80 -90,140 -60,170
+        C -25,190 30,175 50,140
+        C 65,100 20,60 -30,25
+      icon:
+        position: {x: -30, y: 120}
+        name: "fa-sync"
+        size: 20
+      label:
+        position: {x: -30, y: 155}
+        text: "Integration"
+
+    - id: segment-4
+      name: "좌하단 (Pink)"
+      color: "#FF69B4"
+      path: |
+        M -30,-20
+        C -80,-60 -140,-60 -165,-30
+        C -185,10 -175,60 -140,90
+        C -100,110 -60,70 -30,-20
+      icon:
+        position: {x: -120, y: 10}
+        name: "fa-cube"
+        size: 20
+      label:
+        position: {x: -120, y: 45}
+        text: "Delivery"
+
+    - id: segment-5
+      name: "좌상단 (Purple)"
+      color: "#9370DB"
+      path: |
+        M -30,-25
+        C -70,-80 -90,-140 -60,-170
+        C -25,-190 30,-175 50,-140
+        C 65,-100 20,-60 -30,-25
+      icon:
+        position: {x: -30, y: -120}
+        name: "fa-search"
+        size: 20
+      label:
+        position: {x: -30, y: -85}
+        text: "Analytics"
+
+  # 중앙 원
+  center_element:
+    type: ellipse
+    geometry: {rx: 65, ry: 55}
+    style:
+      fill: "#FFFFFF"
+      filter: "url(#shadow)"
+    text:
+      lines:
+        - {content: "Everything", y: -15, font_size: 13, font_weight: bold}
+        - {content: "for a smart", y: 5, font_size: 13, font_weight: bold}
+        - {content: "AI life", y: 25, font_size: 13, font_weight: bold}
+      color: "#333333"
+      alignment: center
+
+# ============================================================
+# 완전한 인라인 SVG (렌더링 준비 완료)
+# ============================================================
+svg_inline: |
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+    <defs>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.2"/>
+      </filter>
+    </defs>
+
+    <!-- Background -->
+    <rect width="960" height="540" fill="#FAFBFC"/>
+
+    <!-- Main diagram (centered at 480, 280) -->
+    <g transform="translate(480, 280)">
+      <!-- Segment 0: Orange -->
+      <path d="M 0,-35 C 50,-100 100,-130 70,-165 C 40,-180 -40,-180 -70,-165 C -100,-130 -50,-100 0,-35" fill="#FF7F50"/>
+      <circle cx="0" cy="-130" r="24" fill="rgba(255,255,255,0.25)"/>
+      <text x="0" y="-95" text-anchor="middle" font-family="Arial" font-size="9" fill="white">Smart Living</text>
+
+      <!-- Segment 1: Green -->
+      <path d="M 30,-20 C 80,-60 140,-60 165,-30 C 185,10 175,60 140,90 C 100,110 60,70 30,-20" fill="#32CD32"/>
+      <circle cx="120" cy="10" r="24" fill="rgba(255,255,255,0.25)"/>
+      <text x="120" y="45" text-anchor="middle" font-family="Arial" font-size="9" fill="white">Home Care</text>
+
+      <!-- Segment 2: Blue -->
+      <path d="M 30,25 C 70,80 90,140 60,170 C 25,190 -30,175 -50,140 C -65,100 -20,60 30,25" fill="#4169E1"/>
+      <circle cx="30" cy="120" r="24" fill="rgba(255,255,255,0.25)"/>
+      <text x="30" y="155" text-anchor="middle" font-family="Arial" font-size="9" fill="white">Automation</text>
+
+      <!-- Segment 3: Turquoise -->
+      <path d="M -30,25 C -70,80 -90,140 -60,170 C -25,190 30,175 50,140 C 65,100 20,60 -30,25" fill="#40E0D0"/>
+      <circle cx="-30" cy="120" r="24" fill="rgba(255,255,255,0.25)"/>
+      <text x="-30" y="155" text-anchor="middle" font-family="Arial" font-size="9" fill="white">Integration</text>
+
+      <!-- Segment 4: Pink -->
+      <path d="M -30,-20 C -80,-60 -140,-60 -165,-30 C -185,10 -175,60 -140,90 C -100,110 -60,70 -30,-20" fill="#FF69B4"/>
+      <circle cx="-120" cy="10" r="24" fill="rgba(255,255,255,0.25)"/>
+      <text x="-120" y="45" text-anchor="middle" font-family="Arial" font-size="9" fill="white">Delivery</text>
+
+      <!-- Segment 5: Purple -->
+      <path d="M -30,-25 C -70,-80 -90,-140 -60,-170 C -25,-190 30,-175 50,-140 C 65,-100 20,-60 -30,-25" fill="#9370DB"/>
+      <circle cx="-30" cy="-120" r="24" fill="rgba(255,255,255,0.25)"/>
+      <text x="-30" y="-85" text-anchor="middle" font-family="Arial" font-size="9" fill="white">Analytics</text>
+
+      <!-- Center Circle -->
+      <ellipse cx="0" cy="0" rx="65" ry="55" fill="white" filter="url(#shadow)"/>
+      <text x="0" y="-15" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#333">Everything</text>
+      <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#333">for a smart</text>
+      <text x="0" y="25" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#333">AI life</text>
+    </g>
+  </svg>
+
+# ============================================================
+# 레거시 shapes 섹션 (하위 호환용)
+# ============================================================
+shapes:
+  - id: "center-circle"
+    name: "중앙 타이틀 원"
+    type: oval
+    z_index: 10
+    geometry:
+      x: 37.5%
+      y: 27.5%
+      cx: 25%
+      cy: 45%
+    style:
+      fill: {type: solid, color: background}
+      shadow: {enabled: true, blur: 20, offset_y: 5, opacity: 0.15}
+    text:
+      has_text: true
+      alignment: center
+      content_hint: "Everything\nfor a smart\nAI life"
+
+# ============================================================
+# 메타데이터
+# ============================================================
+layout:
+  type: radial
+  center: {x: 50%, y: 52%}
+  segments: 6
+  segment_angle: 60  # 360 / 6
+  segment_colors:
+    - "#FF7F50"
+    - "#32CD32"
+    - "#4169E1"
+    - "#40E0D0"
+    - "#FF69B4"
+    - "#9370DB"
+
+thumbnail: thumbnails/cycle/cycle-6segment-colorful1.png
+
+use_for:
+  - "기능 소개"
+  - "서비스 특징"
+  - "순환 프로세스"
+  - "제품 특성"
+  - "6가지 요소"
+
+keywords:
+  - "순환"
+  - "사이클"
+  - "6분할"
+  - "다채로운"
+  - "기능"
+  - "아이콘"
+  - "원형"
+
+expected_prompt: |
+  6개의 요소를 가진 순환 다이어그램 슬라이드를 만들어줘.
+  - 중앙에 흰색 원형 타이틀 영역
+  - 6개의 다채로운 색상 세그먼트가 원형으로 배치
+  - 각 세그먼트에 아이콘과 설명 텍스트
+  - 대칭적인 방사형 레이아웃
+
+prompt_keywords: ["순환", "사이클", "6개", "아이콘", "다채로운", "원형"]

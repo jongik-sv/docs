@@ -438,3 +438,109 @@ templates:
     compatible_themes: [brandnew, default]
     use_for: [closing, thankyou, end]
     prompt_keywords: [마무리, 감사, 끝]
+
+  # ============ CYCLE (우석지니 블로그 추출) ============
+  - id: cycle-4arrow1
+    name: 4요소 순환 화살표 다이어그램
+    file: templates/cycle/cycle-4arrow1.yaml
+    thumbnail: thumbnails/cycle/cycle-4arrow1.png
+    category: diagram
+    design_intent: cycle-4arrow
+    source: 네이버 블로그 우석지니
+    description: 4개 화살표 순환 + 모서리 카드
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [cycle, process, ai, capabilities]
+    prompt_keywords: [순환, 4개, 화살표, AI, 역량]
+
+  # ============ MATRIX (우석지니 블로그 추출) ============
+  - id: venn-4segment1
+    name: 4분할 벤 다이어그램
+    file: templates/matrix/venn-4segment1.yaml
+    thumbnail: thumbnails/matrix/venn-4segment1.png
+    category: diagram
+    design_intent: venn-4segment
+    source: 네이버 블로그 우석지니
+    description: 4개 원 겹침 + 중앙 라벨 + 좌우 설명
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [venn, architecture, technology, overlap]
+    prompt_keywords: [벤다이어그램, 4분할, 겹침, 아키텍처]
+
+  # ============ COMPARISON (우석지니 블로그 추출) ============
+  - id: infographic-race1
+    name: 레이스 컨셉 비교 인포그래픽
+    file: templates/comparison/infographic-race1.yaml
+    thumbnail: thumbnails/comparison/infographic-race1.png
+    category: comparison
+    design_intent: infographic-race
+    source: 네이버 블로그 우석지니
+    description: 레이스 트랙 배경 + 순위 카드 + 차량 일러스트
+    compatible_themes: [default]
+    use_for: [comparison, ranking, esg, competition]
+    prompt_keywords: [비교, 레이스, 순위, ESG, 기업]
+
+  # ============ TABLE (우석지니 블로그 추출) ============
+  - id: table-comparison-3col1
+    name: 3열 비교 테이블 (다크 테마)
+    file: templates/table/table-comparison-3col1.yaml
+    thumbnail: thumbnails/table/table-comparison-3col1.png
+    category: comparison
+    design_intent: table-comparison-3col
+    source: 네이버 블로그 우석지니
+    description: 다크 배경 + 3열 비교 + 앱 아이콘 헤더
+    compatible_themes: [default]
+    use_for: [table, comparison, products, features]
+    prompt_keywords: [테이블, 비교, 3열, 다크, 제품]
+
+  # ============ FEATURE (우석지니 블로그 추출) ============
+  - id: feature-center-icon1
+    name: 중앙 아이콘 + 좌우 기능 목록
+    file: templates/feature/feature-center-icon1.yaml
+    thumbnail: thumbnails/feature/feature-center-icon1.png
+    category: grid
+    design_intent: feature-center-icon
+    source: 네이버 블로그 우석지니
+    description: 다크 배경 + 3D 앱 아이콘 + 좌우 기능 라벨
+    compatible_themes: [default]
+    use_for: [features, app, product, benefits]
+    prompt_keywords: [기능, 아이콘, 중앙, 좌우, 다크]
+
+  # ============ FLOW (우석지니 블로그 추출) ============
+  - id: flow-circular-apple1
+    name: 순환 플로우 인포그래픽
+    file: templates/flow/flow-circular-apple1.yaml
+    thumbnail: thumbnails/flow/flow-circular-apple1.png
+    category: process
+    design_intent: flow-circular
+    source: 네이버 블로그 우석지니
+    description: 순환 화살표 + 중앙 제품 + 주변 정보 노드
+    compatible_themes: [default]
+    use_for: [flow, esg, sustainability, circular]
+    prompt_keywords: [순환, 플로우, ESG, 환경, 탄소중립]
+
+  # ============ GRID (우석지니 블로그 추출 - AI-DOC) ============
+  - id: grid-3col-feature-photo1
+    name: 3열 기능 카드 + 사진 배경
+    file: templates/grid/grid-3col-feature-photo1.yaml
+    thumbnail: thumbnails/grid/grid-3col-feature-photo1.png
+    category: grid
+    design_intent: grid-3col-feature-photo
+    source: 네이버 블로그 우석지니
+    source_url: "https://blog.naver.com/wooseokjin/224090603356?photoView=4"
+    description: 다크 테크 배경 + 히어로 타이틀 + 3개 기능 카드
+    compatible_themes: [default]
+    use_for: [features, product, ai, tech, hero]
+    prompt_keywords: [기능, 특징, 3열, 카드, AI, 다크, 테크]
+
+  # ============ CHART (우석지니 블로그 추출 - AI-DOC) ============
+  - id: chart-pie-bar-combo1
+    name: 파이차트 + 바차트 콤보 (다크 테마)
+    file: templates/chart/chart-pie-bar-combo1.yaml
+    thumbnail: thumbnails/chart/chart-pie-bar-combo1.png
+    category: chart
+    design_intent: chart-pie-bar-combo
+    source: 네이버 블로그 우석지니
+    source_url: "https://blog.naver.com/wooseokjin/224090603356?photoView=5"
+    description: 다크 배경 + 도넛 파이차트 + 연도별 바차트 + 인사이트
+    compatible_themes: [default]
+    use_for: [chart, data, statistics, growth, market]
+    prompt_keywords: [차트, 파이, 바, 통계, 성장, 트렌드, 데이터]
