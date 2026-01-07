@@ -30,15 +30,111 @@ AI 기반 PPT 자동 생성 서비스. 콘텐츠를 입력받아 전문가 수�
 
 A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.
 
-## 3-Type Template System
+## Template Priority Rule (CRITICAL)
+
+**PPT 생성 시 반드시 콘텐츠 템플릿 우선 검색** - 이 단계를 건너뛰면 안 됩니다.
+
+### 필수 프로세스
+
+1. **슬라이드 목록 작성**: 콘텐츠 분석 → 슬라이드 유형/키워드 정리
+2. **registry.yaml 검색**: 각 슬라이드별 매칭 템플릿 찾기
+3. **매칭 결과 테이블 작성**: 어떤 템플릿을 사용할지 명시 (필수 출력물)
+4. **템플릿 YAML 로드**: 매칭된 템플릿의 `shapes[]` 구조 참조
+5. **HTML 생성**: 템플릿 geometry/style을 HTML로 변환
+
+### 유연한 템플릿 활용
+
+템플릿은 **2가지 레벨**에서 활용합니다:
+
+**슬라이드 레벨**: 전체 레이아웃 참조
+- 슬라이드 전체 구조를 템플릿에서 가져오기
+- 예: `deepgreen-cover1` → 표지 슬라이드 전체
+
+**요소 레벨**: 개별 shapes 참조 (더 유연함)
+- 템플릿의 특정 shape만 가져와서 조합
+- 예: `deepgreen-stats1`의 도트그리드 통계 박스 1개만 가져오기
+- 예: `deepgreen-grid4col1`의 아이콘+텍스트 카드 패턴만 가져오기
+- 예: `timeline1`의 단계 표시 요소만 가져와서 커스텀 레이아웃에 배치
+
+**조합 전략**:
+- 여러 템플릿에서 필요한 shapes 선택
+- geometry(위치/크기)는 새 슬라이드에 맞게 조정
+- style(색상/폰트)은 일관성 유지
+
+### 직접 디자인 허용 조건
+
+- registry.yaml을 검색했으나 **매칭되는 템플릿이 없는 경우만**
+- 매칭 결과 테이블에 ❌ 표시된 슬라이드만 직접 디자인
+
+### 금지 사항
+
+- registry.yaml 검색 없이 직접 디자인 시작
+- 매칭 가능한 템플릿이 있는데 직접 디자인
+
+이 규칙으로:
+- 일관된 디자인 품질 보장
+- 검증된 레이아웃 재사용
+- 생성 시간 단축
+
+## 3-Type Template System (v3.0)
+
+> **v3.0 Update**: 템플릿이 스킬에서 분리되어 프로젝트 루트(`C:/project/docs/templates/`)에 저장됩니다.
+> 테마와 컨텐츠가 분리되어 독립적으로 관리됩니다.
 
 템플릿은 3가지 타입으로 관리됩니다:
 
 | 타입 | 경로 | 용도 |
 |------|------|------|
-| 문서 템플릿 | `templates/documents/{그룹}/` | 그룹/회사별 테마, 에셋, 문서 양식 |
-| 콘텐츠 템플릿 | `templates/contents/` | 슬라이드 패턴 (표지, 목차, 비교표 등) |
-| 공용 에셋 | `templates/assets/` | 그룹/회사 무관한 공용 이미지/아이콘 |
+| 테마 | `C:/project/docs/templates/themes/` | 색상/폰트/스타일 정의 (deepgreen, brandnew, default) |
+| 콘텐츠 템플릿 | `C:/project/docs/templates/contents/` | 슬라이드 패턴 (테마 독립적, 디자인 토큰 사용) |
+| 문서 템플릿 | `C:/project/docs/templates/documents/` | 그룹/회사별 문서 양식 |
+| 공용 에셋 | `C:/project/docs/templates/assets/` | 공용 이미지/아이콘 |
+
+### 테마 선택 (MANDATORY)
+
+**PPT 생성 시작 전 반드시 테마를 선택해야 합니다.**
+
+```markdown
+## 🎨 테마 선택
+
+| # | 테마 | 설명 | 주요 색상 |
+|---|------|------|----------|
+| 1 | **Deep Green** | 자연스럽고 깔끔한 딥그린 | 🟢 #1E5128 / 🟩 #4E9F3D |
+| 2 | **Brand New** | 신선한 스카이블루 | 🔵 #7BA4BC / 🩷 #F5E1DC |
+| 3 | **Default** | 중립적인 기본 블루 | 💙 #2563EB / 🩵 #DBEAFE |
+
+> 번호 선택 또는 직접 색상 지정 가능
+```
+
+### 디자인 토큰 시스템
+
+콘텐츠 템플릿은 실제 색상 대신 디자인 토큰을 사용합니다:
+
+```yaml
+# 템플릿 (디자인 토큰)
+style:
+  fill:
+    color: primary      # ← 토큰
+  text:
+    font_color: light   # ← 토큰
+
+# 테마 적용 후 (실제 색상)
+style:
+  fill:
+    color: "#1E5128"    # ← Deep Green primary
+  text:
+    font_color: "#FFFFFF"
+```
+
+**사용 가능한 디자인 토큰**:
+- `primary`: 주요 강조색
+- `secondary`: 보조 강조색
+- `accent`: 하이라이트
+- `background`: 배경색
+- `surface`: 카드/패널 배경
+- `dark_text`: 본문 텍스트
+- `light`: 밝은 텍스트
+- `gray`: 음소거 요소
 
 ## Dependencies
 

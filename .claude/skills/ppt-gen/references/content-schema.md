@@ -8,6 +8,7 @@
 content_template:     # 기본 메타데이터
 design_meta:          # 디자인 품질/의도 분석
 canvas:               # 캔버스 정보 (정규화 기준)
+background:           # 슬라이드 배경 (NEW v2.2)
 shapes:               # 도형 배열 (상세 정보)
 icons:                # 아이콘 정보
 gaps:                 # 오브젝트 간 여백
@@ -16,6 +17,8 @@ groups:               # 그룹 정보
 thumbnail:            # 썸네일 경로 (필수)
 use_for:              # 사용 가이드
 keywords:             # 검색 키워드
+expected_prompt:      # 역추론 프롬프트 (NEW v2.1)
+prompt_keywords:      # 프롬프트 매칭 키워드 (NEW v2.1)
 ```
 
 ---
@@ -260,6 +263,92 @@ shapes:
 | `chevron` | 쉐브론 |
 | `callout` | 콜아웃 |
 | `connector` | 연결선 |
+
+### picture 타입 추가 필드
+
+이미지 도형에는 설명과 용도를 포함합니다.
+
+```yaml
+shapes:
+  - id: "image-0"
+    name: "Hero Image"
+    type: picture
+    geometry:
+      x: 50%
+      y: 0%
+      cx: 50%
+      cy: 100%
+
+    # 이미지 관련 필드 (picture 타입 전용)
+    image:
+      source: "path/to/image.jpg"           # 이미지 경로 (선택)
+      description: "도시 야경 사진, 고층 빌딩과 조명"  # 이미지 설명 (필수)
+      purpose: hero                         # 용도: hero | background | icon | diagram | photo
+      alt_text: "서울 도심 야경"              # 접근성용 대체 텍스트 (선택)
+      fit: cover                            # 이미지 맞춤: cover | contain | fill | none
+      opacity: 1.0                          # 투명도 (0.0~1.0)
+```
+
+| 필드 | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| source | string | No | 이미지 파일 경로 |
+| **description** | string | **YES** | 이미지 내용 설명 (LLM이 이해할 수 있는 자연어) |
+| purpose | string | No | 용도 분류 (hero, background, icon, diagram, photo) |
+| alt_text | string | No | 접근성용 대체 텍스트 |
+| fit | string | No | 맞춤 방식 (기본: cover) |
+| opacity | number | No | 투명도 (기본: 1.0) |
+
+### image.purpose 분류
+
+| 값 | 설명 | 예시 |
+|------|------|------|
+| `hero` | 슬라이드 메인 비주얼 | 전면 배경, 큰 이미지 |
+| `background` | 배경 이미지 | 흐린 배경, 오버레이 이미지 |
+| `icon` | 아이콘성 이미지 | 로고, 심볼 |
+| `diagram` | 다이어그램/차트 | 설명 그래픽, 인포그래픽 |
+| `photo` | 일반 사진 | 제품 사진, 인물 사진 |
+
+---
+
+## 4.1 background (슬라이드 배경)
+
+슬라이드 전체 배경을 정의합니다. 배경 이미지 사용 시 설명이 필수입니다.
+
+```yaml
+background:
+  type: image                              # solid | gradient | image
+
+  # type: solid
+  color: primary                           # 시맨틱 색상
+
+  # type: gradient
+  gradient:
+    type: linear                           # linear | radial
+    angle: 90                              # 각도 (linear)
+    stops:
+      - {position: 0%, color: primary}
+      - {position: 100%, color: secondary}
+
+  # type: image (배경 이미지)
+  image:
+    source: "backgrounds/cityscape.jpg"    # 이미지 경로 (선택)
+    description: "어두운 도시 야경, 블러 처리된 빌딩 불빛"  # 이미지 설명 (필수)
+    fit: cover                             # cover | contain | tile
+    opacity: 0.3                           # 투명도 (오버레이용)
+    overlay_color: dark_text               # 오버레이 색상 (선택)
+    overlay_opacity: 0.5                   # 오버레이 투명도 (선택)
+```
+
+### background.image 필드
+
+| 필드 | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| source | string | No | 배경 이미지 파일 경로 |
+| **description** | string | **YES** | 배경 이미지 설명 (LLM 생성 시 참조) |
+| fit | string | No | 맞춤 방식 (기본: cover) |
+| opacity | number | No | 이미지 투명도 (0.0~1.0) |
+| overlay_color | string | No | 이미지 위 오버레이 색상 |
+| overlay_opacity | number | No | 오버레이 투명도 |
 
 ---
 
@@ -686,6 +775,19 @@ canvas:
   original_height_emu: 6858000
   aspect_ratio: "16:9"
 
+# 배경 이미지 예시 (선택)
+background:
+  type: solid
+  color: background
+  # type: image인 경우
+  # image:
+  #   source: "backgrounds/abstract-blue.jpg"
+  #   description: "추상적인 파란색 그라데이션 배경, 부드러운 곡선 패턴"
+  #   fit: cover
+  #   opacity: 0.15
+  #   overlay_color: dark_text
+  #   overlay_opacity: 0.3
+
 shapes:
   - id: "shape-0"
     name: "Left Panel"
@@ -766,4 +868,160 @@ use_for:
 keywords:
   - "비교"
   - "vs"
+
+expected_prompt: |
+  A vs B 비교 슬라이드를 만들어줘.
+  - 좌측에 A 항목 (배경색 구분)
+  - 우측에 B 항목
+  - 중앙에 구분선
+  - 각 항목에 제목과 설명
+  - 대칭 레이아웃
+
+prompt_keywords:
+  - "비교"
+  - "vs"
+  - "대비"
+  - "Before"
+  - "After"
+  - "As-Is"
+  - "To-Be"
+```
+
+---
+
+## 13. expected_prompt (역추론 프롬프트) - NEW v2.1
+
+슬라이드 레이아웃을 생성하는 자연어 프롬프트를 역추론하여 저장합니다.
+
+### 목적
+
+1. **템플릿 매칭**: 사용자 요청과 템플릿을 의미적으로 매칭
+2. **역참조**: 템플릿이 어떤 요청에 적합한지 문서화
+3. **검색 개선**: 키워드 기반 검색 보완
+
+### 스키마
+
+```yaml
+expected_prompt: |                    # YAML 블록 스칼라 (|) 사용
+  {슬라이드 유형} 슬라이드를 만들어줘.
+  - {요소1 설명}
+  - {요소2 설명}
+  - ...
+  - {레이아웃 특징}
+```
+
+### 작성 규칙
+
+1. **첫 줄**: `{슬라이드 유형} 슬라이드를 만들어줘.`
+2. **요소 설명**: 상단→하단 순서로 각 구성요소 설명
+3. **레이아웃 특징**: 대칭, 그리드, 흐름 등 전체 특성
+
+### 요소별 변환 규칙
+
+| 도형 타입 | 프롬프트 표현 |
+|----------|--------------|
+| `rounded-rectangle` | "라운드 형태의 박스/라벨" |
+| `textbox` (TITLE) | "큰 제목 텍스트" |
+| `textbox` (BODY) | "설명 텍스트" |
+| `group` (N개) | "N개의 카드/열로 구성" |
+| `icon` | "아이콘 표시" |
+| `dotgrid` | "도트그리드로 퍼센트 표시" |
+| `picture` | "이미지/사진 영역" |
+| `oval` | "원형 도형" |
+| `arrow` | "화살표로 연결" |
+
+### 예시
+
+```yaml
+# deepgreen-grid4col1
+expected_prompt: |
+  기능 소개 슬라이드를 만들어줘.
+  - 4개의 카드를 가로로 균등 배치
+  - 각 카드: 상단에 라운드 배경 아이콘
+  - 아이콘 아래에 제목 텍스트
+  - 제목 아래에 설명 텍스트
+  - 균등한 간격의 그리드 레이아웃
+
+# deepgreen-process1
+expected_prompt: |
+  프로세스 슬라이드를 만들어줘.
+  - 4단계 원형 프로세스
+  - 각 단계는 원 안에 번호 (01, 02, 03, 04)
+  - 원 아래에 제목과 설명
+  - 화살표로 단계 연결
+  - 가로 흐름 레이아웃
+```
+
+---
+
+## 14. prompt_keywords (프롬프트 매칭 키워드) - NEW v2.1
+
+템플릿 매칭에 사용되는 키워드 배열입니다.
+
+### 스키마
+
+```yaml
+prompt_keywords:
+  - "{키워드1}"
+  - "{키워드2}"
+  - "{키워드3}"
+  # 5-7개 권장
+```
+
+### 추출 규칙
+
+| 소스 | 추출 방법 |
+|------|----------|
+| `category` | cover → "표지", toc → "목차" |
+| `design_intent` | grid-4col → "4열", "그리드" |
+| `shapes[].type` | icon → "아이콘", dotgrid → "도트" |
+| `use_for` | 배열 그대로 포함 |
+| 레이아웃 분석 | 대칭 → "대칭", N열 → "N열" |
+
+### 매칭 알고리즘
+
+```python
+def match_template(user_prompt, templates):
+    """사용자 프롬프트와 템플릿 매칭"""
+    scores = []
+    user_keywords = extract_keywords(user_prompt)
+
+    for template in templates:
+        # 1. prompt_keywords 매칭 (0.0 ~ 1.0)
+        keyword_matches = len(set(user_keywords) & set(template['prompt_keywords']))
+        keyword_score = keyword_matches / len(template['prompt_keywords'])
+
+        # 2. use_for 매칭 (가중치 1.5)
+        use_for_matches = sum(1 for u in template['use_for'] if u in user_prompt)
+        use_for_score = use_for_matches * 1.5
+
+        # 3. expected_prompt 유사도 (0.0 ~ 1.0)
+        prompt_similarity = compute_similarity(user_prompt, template['expected_prompt'])
+
+        total_score = keyword_score + use_for_score + prompt_similarity
+        scores.append((template['id'], total_score))
+
+    return sorted(scores, key=lambda x: -x[1])
+```
+
+### 예시
+
+```yaml
+# deepgreen-cover1
+prompt_keywords:
+  - "표지"
+  - "타이틀"
+  - "발표자"
+  - "프로젝트"
+  - "중앙정렬"
+  - "라벨"
+
+# deepgreen-stats1
+prompt_keywords:
+  - "통계"
+  - "퍼센트"
+  - "KPI"
+  - "지표"
+  - "도트"
+  - "비율"
 ```

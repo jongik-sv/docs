@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """
-Asset Manager - 에셋 저장/검색/삭제 CLI
+Asset Manager - 에셋 저장/검색/삭제/크롤링 CLI
 
 PPT 생성에 사용할 아이콘, 이미지 등의 에셋을 관리합니다.
+네이버 블로그 등 보호된 사이트에서도 이미지를 크롤링할 수 있습니다.
 
 Usage:
     python asset-manager.py add <file> --id <id> --tags "tag1,tag2"
+    python asset-manager.py add <url> --id <id> --browser  # 보호된 사이트
+    python asset-manager.py crawl <url> --prefix <prefix>  # 페이지 내 모든 이미지
     python asset-manager.py search "chart"
     python asset-manager.py list --type icons
     python asset-manager.py delete <id>
@@ -18,6 +21,15 @@ Examples:
     # URL에서 이미지 추가
     python asset-manager.py add "https://example.com/bg.png" --id hero-bg --tags "background,hero"
 
+    # 네이버 블로그 이미지 (브라우저 모드)
+    python asset-manager.py add "https://postfiles.pstatic.net/..." --id naver-img --browser
+
+    # 웹페이지 전체 이미지 크롤링
+    python asset-manager.py crawl "https://blog.naver.com/..." --prefix design-ref --tags "reference"
+
+    # 크롤링 미리보기
+    python asset-manager.py crawl "https://blog.naver.com/..." --prefix test --preview
+
     # 검색
     python asset-manager.py search chart
     python asset-manager.py search --tags background
@@ -28,6 +40,10 @@ Examples:
 
     # 삭제
     python asset-manager.py delete chart-line
+
+Dependencies:
+    pip install requests pyyaml
+    pip install playwright && playwright install chromium  # 크롤링용
 """
 
 import argparse
@@ -45,12 +61,23 @@ try:
 except ImportError:
     HAS_REQUESTS = False
 
+try:
+    from playwright.sync_api import sync_playwright
+    HAS_PLAYWRIGHT = True
+except ImportError:
+    HAS_PLAYWRIGHT = False
 
-# 기본 경로 설정
+
+# 기본 경로 설정 (v3.0: 프로젝트 루트로 이동)
 SCRIPT_DIR = Path(__file__).parent
-TEMPLATES_DIR = SCRIPT_DIR.parent / 'templates'
+PROJECT_ROOT = Path("C:/project/docs")
+TEMPLATES_DIR = PROJECT_ROOT / 'templates'
 ASSETS_DIR = TEMPLATES_DIR / 'assets'
 REGISTRY_PATH = ASSETS_DIR / 'registry.yaml'
+
+# 콘텐츠 템플릿 경로 (v3.0)
+CONTENTS_DIR = TEMPLATES_DIR / 'contents'
+THEMES_DIR = TEMPLATES_DIR / 'themes'
 
 
 def load_registry() -> dict:
@@ -123,6 +150,117 @@ def is_url(path: str) -> bool:
     return parsed.scheme in ('http', 'https')
 
 
+# ============================================================
+# Site Handlers - 사이트별 크롤링 로직
+# ============================================================
+
+class SiteHandler:
+    """사이트별 크롤링 로직 베이스 클래스"""
+
+    @staticmethod
+    def matches(url: str) -> bool:
+        """이 핸들러가 URL을 처리할 수 있는지 확인"""
+        raise NotImplementedError
+
+    def get_referer(self) -> str:
+        """적절한 Referer 헤더 반환"""
+        return ""
+
+    def prepare_page(self, page):
+        """사이트별 페이지 준비 (iframe 전환 등)"""
+        return page
+
+    def extract_images(self, page) -> list:
+        """페이지에서 이미지 URL 추출"""
+        raise NotImplementedError
+
+
+class NaverBlogHandler(SiteHandler):
+    """네이버 블로그/카페 핸들러"""
+
+    @staticmethod
+    def matches(url: str) -> bool:
+        return 'blog.naver.com' in url or 'cafe.naver.com' in url or 'post.naver.com' in url
+
+    def get_referer(self) -> str:
+        return 'https://blog.naver.com/'
+
+    def prepare_page(self, page):
+        """mainFrame iframe으로 전환"""
+        try:
+            frame = page.frame('mainFrame')
+            if frame:
+                return frame
+        except Exception:
+            pass
+        return page
+
+    def extract_images(self, page) -> list:
+        """네이버 블로그 이미지 추출 (lazy-load 처리)"""
+        return page.evaluate('''() => {
+            const images = [];
+            document.querySelectorAll('img').forEach(img => {
+                const src = img.dataset.lazySrc || img.dataset.src || img.src;
+                if (src && !src.startsWith('data:') && !src.includes('static.naver.net')) {
+                    images.push({
+                        src: src,
+                        alt: img.alt || '',
+                        width: img.naturalWidth || img.width || 0,
+                        height: img.naturalHeight || img.height || 0
+                    });
+                }
+            });
+            return images;
+        }''')
+
+
+class GenericHandler(SiteHandler):
+    """일반 웹사이트 핸들러"""
+
+    @staticmethod
+    def matches(url: str) -> bool:
+        return True  # 폴백 핸들러
+
+    def get_referer(self) -> str:
+        parsed = urlparse('')
+        return ""
+
+    def extract_images(self, page) -> list:
+        """일반 이미지 추출"""
+        return page.evaluate('''() => {
+            return Array.from(document.querySelectorAll('img'))
+                .map(img => ({
+                    src: img.src,
+                    alt: img.alt || '',
+                    width: img.naturalWidth || img.width || 0,
+                    height: img.naturalHeight || img.height || 0
+                }))
+                .filter(img => img.src && !img.src.startsWith('data:'));
+        }''')
+
+
+def get_site_handler(url: str) -> SiteHandler:
+    """URL에 맞는 사이트 핸들러 반환"""
+    handlers = [NaverBlogHandler(), GenericHandler()]
+    for handler in handlers:
+        if handler.matches(url):
+            return handler
+    return GenericHandler()
+
+
+def scroll_page(page_or_frame, scroll_count: int = 5, delay: int = 500):
+    """페이지 스크롤하여 lazy loading 트리거"""
+    for i in range(scroll_count):
+        page_or_frame.evaluate('window.scrollBy(0, window.innerHeight)')
+        page_or_frame.wait_for_timeout(delay)
+    # 맨 위로 스크롤
+    page_or_frame.evaluate('window.scrollTo(0, 0)')
+
+
+# ============================================================
+# Download Functions
+# ============================================================
+
 def download_file(url: str, dest_path: Path) -> bool:
     """URL에서 파일 다운로드"""
     if not HAS_REQUESTS:
@@ -141,12 +279,84 @@ def download_file(url: str, dest_path: Path) -> bool:
         return False
 
 
+def download_with_browser(url: str, dest_path: Path, referer: str = None) -> bool:
+    """Playwright 브라우저로 이미지 다운로드"""
+    if not HAS_PLAYWRIGHT:
+        print("Error: playwright 모듈이 필요합니다.")
+        print("  pip install playwright")
+        print("  playwright install chromium")
+        return False
+
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context(
+                user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                           '(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                locale='ko-KR',
+                timezone_id='Asia/Seoul',
+                extra_http_headers={'Referer': referer} if referer else {}
+            )
+            page = context.new_page()
+
+            # 이미지 URL로 직접 이동
+            response = page.goto(url, wait_until='networkidle', timeout=30000)
+
+            if response and response.ok:
+                content = response.body()
+                with open(dest_path, 'wb') as f:
+                    f.write(content)
+                browser.close()
+                return True
+
+            browser.close()
+            return False
+    except Exception as e:
+        print(f"Error: 브라우저 다운로드 실패 - {e}")
+        return False
+
+
+def download_file_smart(url: str, dest_path: Path, use_browser: bool = False) -> bool:
+    """스마트 다운로드 (requests → browser fallback)"""
+    handler = get_site_handler(url)
+
+    if not use_browser:
+        # Tier 1: requests + 헤더
+        try:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+                'Referer': handler.get_referer() if handler else '',
+            }
+            response = requests.get(url, headers=headers, timeout=30)
+
+            if response.status_code == 200:
+                with open(dest_path, 'wb') as f:
+                    f.write(response.content)
+                return True
+
+            # 차단된 경우 브라우저로 시도
+            if response.status_code in (401, 403, 429):
+                print("  -> 차단됨, 브라우저로 재시도...")
+                use_browser = True
+        except Exception as e:
+            print(f"  -> requests 실패: {e}, 브라우저로 재시도...")
+            use_browser = True
+
+    # Tier 2: 브라우저 다운로드
+    if use_browser:
+        referer = handler.get_referer() if handler else None
+        return download_with_browser(url, dest_path, referer)
+
+    return False
+
+
 def cmd_add(args) -> int:
     """에셋 추가"""
     source = args.source
     asset_id = args.id
     name = args.name or asset_id
     tags = [t.strip() for t in args.tags.split(',')] if args.tags else []
+    use_browser = getattr(args, 'browser', False)
 
     registry = load_registry()
 
@@ -170,7 +380,9 @@ def cmd_add(args) -> int:
         dest_path = dest_dir / filename
 
         print(f"[1/3] 다운로드: {source}")
-        if not download_file(source, dest_path):
+        if use_browser:
+            print("  (브라우저 모드)")
+        if not download_file_smart(source, dest_path, use_browser):
             return 1
 
         source_type = 'downloaded'
@@ -366,6 +578,154 @@ def cmd_delete(args) -> int:
     return 0
 
 
+def cmd_crawl(args) -> int:
+    """웹페이지에서 이미지 크롤링"""
+    url = args.url
+    prefix = args.prefix
+    tags = [t.strip() for t in args.tags.split(',')] if args.tags else []
+    min_size = args.min_size
+    max_images = args.max_images
+    preview_only = args.preview
+
+    if not HAS_PLAYWRIGHT:
+        print("Error: playwright 모듈이 필요합니다.")
+        print("  pip install playwright")
+        print("  playwright install chromium")
+        return 1
+
+    print(f"[1/4] 페이지 로드: {url}")
+
+    # 사이트 핸들러 선택
+    handler = get_site_handler(url)
+    print(f"  핸들러: {type(handler).__name__}")
+
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context(
+                user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                           '(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                viewport={'width': 1920, 'height': 1080},
+                locale='ko-KR',
+                timezone_id='Asia/Seoul',
+            )
+            page = context.new_page()
+
+            # Referer 설정
+            if handler.get_referer():
+                page.set_extra_http_headers({'Referer': handler.get_referer()})
+
+            page.goto(url, wait_until='networkidle', timeout=60000)
+
+            # 사이트별 페이지 준비
+            target = handler.prepare_page(page)
+
+            # 스크롤하여 lazy 이미지 로드
+            print("[2/4] 스크롤하여 이미지 로드...")
+            scroll_page(target)
+
+            # 이미지 추출
+            print("[3/4] 이미지 추출...")
+            images = handler.extract_images(target)
+
+            browser.close()
+    except Exception as e:
+        print(f"Error: 페이지 로드 실패 - {e}")
+        return 1
+
+    # 이미지 필터링
+    filtered = []
+    seen_urls = set()
+    for img in images:
+        src = img.get('src', '')
+
+        # 중복 제거
+        if src in seen_urls:
+            continue
+        seen_urls.add(src)
+
+        # 크기 필터
+        if min_size:
+            width = img.get('width', 0)
+            height = img.get('height', 0)
+            if width < min_size and height < min_size:
+                continue
+
+        # 일반적인 비콘텐츠 이미지 제외
+        skip_patterns = ['logo', 'icon', 'avatar', 'profile', 'button', 'banner', 'ad', 'pixel']
+        if any(pattern in src.lower() for pattern in skip_patterns):
+            continue
+
+        filtered.append(img)
+
+    # 최대 개수 제한
+    if max_images and len(filtered) > max_images:
+        filtered = filtered[:max_images]
+
+    print(f"  발견: {len(images)}개, 필터링: {len(filtered)}개")
+
+    # 미리보기 모드
+    if preview_only:
+        print("\n--- 미리보기 ---")
+        for i, img in enumerate(filtered):
+            src = img['src']
+            display_src = src[:80] + '...' if len(src) > 80 else src
+            print(f"  [{i+1}] {display_src}")
+            print(f"       크기: {img.get('width', '?')}x{img.get('height', '?')}")
+        return 0
+
+    # 다운로드
+    print(f"\n[4/4] {len(filtered)}개 이미지 다운로드...")
+    registry = load_registry()
+    success_count = 0
+
+    for i, img in enumerate(filtered):
+        src = img['src']
+        asset_id = f"{prefix}-{i+1:03d}"
+
+        # 기존 ID 확인
+        existing, _, _ = find_asset(registry, asset_id)
+        if existing:
+            print(f"  Skip: {asset_id} (이미 존재)")
+            continue
+
+        # 파일명 결정
+        parsed = urlparse(src)
+        ext = Path(parsed.path).suffix or '.png'
+        if ext not in ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg']:
+            ext = '.png'
+        filename = f"{asset_id}{ext}"
+
+        dest_dir = ASSETS_DIR / 'images'
+        dest_dir.mkdir(parents=True, exist_ok=True)
+        dest_path = dest_dir / filename
+
+        # 다운로드
+        print(f"  [{i+1}/{len(filtered)}] {asset_id}...", end=' ', flush=True)
+        if download_file_smart(src, dest_path, use_browser=True):
+            # 레지스트리에 추가
+            asset_entry = {
+                'id': asset_id,
+                'name': img.get('alt') or asset_id,
+                'file': f"images/{filename}",
+                'source': 'crawled',
+                'tags': tags,
+                'created': datetime.now().strftime('%Y-%m-%d'),
+                'original_url': src,
+            }
+            registry['images'].append(asset_entry)
+            success_count += 1
+            print("OK")
+        else:
+            print("FAILED")
+
+    save_registry(registry)
+    print(f"\n완료: {success_count}/{len(filtered)}개 이미지 저장됨")
+    print(f"  위치: {ASSETS_DIR / 'images'}")
+
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(
         description='PPT 에셋 관리 CLI',
@@ -402,6 +762,8 @@ Examples:
     add_parser.add_argument('--tags', help='태그 (쉼표 구분)')
     add_parser.add_argument('--type', choices=['icons', 'images'],
                             help='에셋 타입 (자동 감지)')
+    add_parser.add_argument('--browser', '-b', action='store_true',
+                            help='브라우저 다운로드 강제 (보호된 사이트용)')
     add_parser.set_defaults(func=cmd_add)
 
     # search 명령
@@ -429,6 +791,20 @@ Examples:
     delete_parser.add_argument('-f', '--force', action='store_true',
                                help='확인 없이 삭제')
     delete_parser.set_defaults(func=cmd_delete)
+
+    # crawl 명령
+    crawl_parser = subparsers.add_parser('crawl', help='웹페이지 이미지 크롤링')
+    crawl_parser.add_argument('url', help='웹페이지 URL')
+    crawl_parser.add_argument('--prefix', '-p', required=True,
+                              help='에셋 ID 접두사 (예: naver-ref)')
+    crawl_parser.add_argument('--tags', '-t', help='태그 (쉼표 구분)')
+    crawl_parser.add_argument('--min-size', type=int, default=100,
+                              help='최소 이미지 크기 픽셀 (기본: 100)')
+    crawl_parser.add_argument('--max-images', '-m', type=int, default=20,
+                              help='최대 이미지 개수 (기본: 20)')
+    crawl_parser.add_argument('--preview', action='store_true',
+                              help='미리보기만 (다운로드 안 함)')
+    crawl_parser.set_defaults(func=cmd_crawl)
 
     args = parser.parse_args()
 

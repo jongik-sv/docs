@@ -1,0 +1,173 @@
+content_template:
+  id: stats-dotgrid1
+  name: 딥그린 통계 (도트그리드)
+  version: '3.0'
+  source: yeonduppt.tistory.com/24
+  source_slide_index: 5
+  extracted_at: '2025-01-07T02:00:00+09:00'
+  migrated_from: deepgreen-stats1
+  migrated_at: '2026-01-07T14:25:05.864201'
+  original_theme: deepgreen
+design_meta:
+  quality_score: 8.5
+  design_intent: stats-dotgrid
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: stat-box-1
+  name: 통계 박스 1
+  type: group
+  z_index: 1
+  geometry:
+    x: 5%
+    y: 15%
+    cx: 22%
+    cy: 70%
+  children:
+  - id: stat-1-dots
+    type: dotgrid
+    geometry:
+      x: 0%
+      y: 0%
+      cx: 100%
+      cy: 50%
+    style:
+      dot_rows: 10
+      dot_cols: 10
+      dot_radius: 4
+      filled_percent: 75
+      filled_color: primary
+      empty_color: light_gray
+  - id: stat-1-number
+    type: textbox
+    geometry:
+      x: 0%
+      y: 55%
+      cx: 100%
+      cy: 20%
+    text:
+      content: 75%
+      font_size_ratio: 0.045
+      font_weight: bold
+      font_color: primary
+      alignment: center
+  - id: stat-1-label
+    type: textbox
+    geometry:
+      x: 0%
+      y: 78%
+      cx: 100%
+      cy: 20%
+    text:
+      placeholder_type: BODY
+      font_size_ratio: 0.014
+      font_color: dark_text
+      alignment: center
+- id: stat-box-2
+  name: 통계 박스 2
+  type: group
+  z_index: 1
+  geometry:
+    x: 29%
+    y: 15%
+    cx: 22%
+    cy: 70%
+  children:
+  - id: stat-2-dots
+    type: dotgrid
+  - id: stat-2-number
+    type: textbox
+    text:
+      content: 60%
+      font_color: secondary
+  - id: stat-2-label
+    type: textbox
+    text:
+      placeholder_type: BODY
+- id: stat-box-3
+  name: 통계 박스 3
+  type: group
+  z_index: 1
+  geometry:
+    x: 53%
+    y: 15%
+    cx: 22%
+    cy: 70%
+  children:
+  - id: stat-3-dots
+    type: dotgrid
+  - id: stat-3-number
+    type: textbox
+    text:
+      content: 45%
+      font_color: accent
+  - id: stat-3-label
+    type: textbox
+    text:
+      placeholder_type: BODY
+- id: stat-box-4
+  name: 통계 박스 4
+  type: group
+  z_index: 1
+  geometry:
+    x: 77%
+    y: 15%
+    cx: 22%
+    cy: 70%
+  children:
+  - id: stat-4-dots
+    type: dotgrid
+  - id: stat-4-number
+    type: textbox
+    text:
+      content: 30%
+      font_color: primary
+  - id: stat-4-label
+    type: textbox
+    text:
+      placeholder_type: BODY
+gaps:
+  global:
+    column_gap: 2%
+    row_gap: 5%
+  between_shapes:
+  - from: stat-box-1
+    to: stat-box-2
+    gap: 2%
+  - from: stat-box-2
+    to: stat-box-3
+    gap: 2%
+  - from: stat-box-3
+    to: stat-box-4
+    gap: 2%
+spatial_relationships:
+- type: horizontal_distribute
+  elements:
+  - stat-box-1
+  - stat-box-2
+  - stat-box-3
+  - stat-box-4
+  alignment: top
+groups:
+- id: stat-boxes
+  elements:
+  - stat-box-1
+  - stat-box-2
+  - stat-box-3
+  - stat-box-4
+thumbnail: thumbnails/stats/stats-dotgrid1.png
+use_for:
+- statistics
+- percentage
+- comparison
+- metrics
+keywords:
+- 통계
+- 퍼센트
+- 도트
+- 비교
+- 지표

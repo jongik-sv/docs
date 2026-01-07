@@ -1,0 +1,440 @@
+# Content Templates Registry v3.0
+# Theme-independent content templates with design tokens
+
+version: "3.0"
+schema_version: "3.0"
+default_theme: deepgreen
+updated_at: "2026-01-07"
+
+# Available themes
+themes:
+  - id: deepgreen
+    name: Deep Green
+    file: ../themes/deepgreen.yaml
+  - id: brandnew
+    name: Brand New
+    file: ../themes/brandnew.yaml
+  - id: default
+    name: Default
+    file: ../themes/default.yaml
+
+# Template categories
+categories:
+  - id: cover
+    name: Cover Slides
+    description: 표지 및 오프닝 슬라이드
+  - id: toc
+    name: Table of Contents
+    description: 목차 슬라이드
+  - id: section
+    name: Section Dividers
+    description: 섹션 구분 슬라이드
+  - id: comparison
+    name: Comparison
+    description: 비교 및 대조 슬라이드
+  - id: process
+    name: Process & Flow
+    description: 프로세스 및 흐름도 슬라이드
+  - id: chart
+    name: Charts & Data
+    description: 차트 및 데이터 시각화 슬라이드
+  - id: stats
+    name: Statistics
+    description: 통계 및 숫자 강조 슬라이드
+  - id: grid
+    name: Grid Layouts
+    description: 그리드 레이아웃 슬라이드
+  - id: diagram
+    name: Diagrams
+    description: 다이어그램 및 관계도 슬라이드
+  - id: timeline
+    name: Timeline
+    description: 타임라인 슬라이드
+  - id: content
+    name: Content
+    description: 일반 콘텐츠 슬라이드
+  - id: quote
+    name: Quote
+    description: 인용문 슬라이드
+  - id: closing
+    name: Closing
+    description: 마무리 슬라이드
+
+# Template definitions
+templates:
+  # ============ COVER ============
+  - id: cover-centered1
+    name: 표지 (중앙 정렬)
+    file: templates/cover/cover-centered1.yaml
+    thumbnail: thumbnails/cover/cover-centered1.png
+    category: cover
+    design_intent: cover-centered
+    original_theme: deepgreen
+    description: 중앙 정렬 제목 + 라운드 라벨 + 발표자 정보
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [cover, title, opening]
+    prompt_keywords: [표지, 타이틀, 중앙정렬, 라벨]
+
+  - id: cover-photo1
+    name: 표지 (사진 배경)
+    file: templates/cover/cover-photo1.yaml
+    thumbnail: thumbnails/cover/cover-photo1.png
+    category: cover
+    design_intent: cover-photo
+    original_theme: brandnew
+    description: 전체 배경 이미지 + 제목 + 악센트 라인
+    compatible_themes: [brandnew, default]
+    use_for: [cover, title, opening, photo]
+    prompt_keywords: [표지, 사진, 배경, 이미지]
+
+  - id: cover-simple1
+    name: 표지 (심플)
+    file: templates/cover/cover-simple1.yaml
+    thumbnail: thumbnails/cover/cover-simple1.png
+    category: cover
+    design_intent: cover-simple
+    description: 간단한 제목만 있는 표지
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [cover, title]
+    prompt_keywords: [표지, 심플, 간단]
+
+  # ============ TOC ============
+  - id: toc-3col1
+    name: 목차 (3단)
+    file: templates/toc/toc-3col1.yaml
+    thumbnail: thumbnails/toc/toc-3col1.png
+    category: toc
+    design_intent: toc-3col
+    original_theme: deepgreen
+    description: 3개 컬럼 목차 레이아웃
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [toc, contents, agenda]
+    prompt_keywords: [목차, 3단, 컬럼]
+
+  - id: toc-list-image1
+    name: 목차 (리스트 + 이미지)
+    file: templates/toc/toc-list-image1.yaml
+    thumbnail: thumbnails/toc/toc-list-image1.png
+    category: toc
+    design_intent: toc-list-image
+    original_theme: brandnew
+    description: 번호 목록 + 오른쪽 이미지
+    compatible_themes: [brandnew, default]
+    use_for: [toc, contents]
+    prompt_keywords: [목차, 리스트, 이미지]
+
+  - id: toc-simple1
+    name: 목차 (심플)
+    file: templates/toc/toc-simple1.yaml
+    thumbnail: thumbnails/toc/toc-simple1.png
+    category: toc
+    design_intent: toc-simple
+    description: 간단한 목차 레이아웃
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [toc, contents]
+    prompt_keywords: [목차, 심플]
+
+  # ============ SECTION ============
+  - id: section-number1
+    name: 섹션 (번호)
+    file: templates/section/section-number1.yaml
+    thumbnail: thumbnails/section/section-number1.png
+    category: section
+    design_intent: section-number
+    original_theme: deepgreen
+    description: 큰 숫자 + 섹션 제목
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [section, divider, chapter]
+    prompt_keywords: [섹션, 번호, 구분]
+
+  - id: section-textured1
+    name: 섹션 (텍스처 배경)
+    file: templates/section/section-textured1.yaml
+    thumbnail: thumbnails/section/section-textured1.png
+    category: section
+    design_intent: section-textured
+    original_theme: brandnew
+    description: 텍스처 배경 + 중앙 제목
+    compatible_themes: [brandnew, default]
+    use_for: [section, divider]
+    prompt_keywords: [섹션, 배경, 텍스처]
+
+  # ============ COMPARISON ============
+  - id: comparison-2col1
+    name: 비교 (2단)
+    file: templates/comparison/comparison-2col1.yaml
+    thumbnail: thumbnails/comparison/comparison-2col1.png
+    category: comparison
+    design_intent: comparison-2col
+    description: 2개 컬럼 비교 레이아웃
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [comparison, versus, before-after]
+    prompt_keywords: [비교, 2단, 좌우]
+
+  - id: comparison-2col-image1
+    name: 비교 (2단 이미지)
+    file: templates/comparison/comparison-2col-image1.yaml
+    thumbnail: thumbnails/comparison/comparison-2col-image1.png
+    category: comparison
+    design_intent: comparison-2col-image
+    original_theme: brandnew
+    description: 2개 컬럼 + 이미지 플레이스홀더
+    compatible_themes: [brandnew, default]
+    use_for: [comparison, versus, photo]
+    prompt_keywords: [비교, 이미지, 사진]
+
+  - id: pros-cons1
+    name: 장단점 비교
+    file: templates/comparison/pros-cons1.yaml
+    thumbnail: thumbnails/comparison/pros-cons1.png
+    category: comparison
+    design_intent: pros-cons
+    description: 장점/단점 비교 레이아웃
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [pros-cons, advantages, disadvantages]
+    prompt_keywords: [장점, 단점, 장단점]
+
+  # ============ PROCESS ============
+  - id: process-circle1
+    name: 프로세스 (원형)
+    file: templates/process/process-circle1.yaml
+    thumbnail: thumbnails/process/process-circle1.png
+    category: process
+    design_intent: process-circle
+    original_theme: deepgreen
+    description: 원형 프로세스 다이어그램
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [process, workflow, steps]
+    prompt_keywords: [프로세스, 원형, 단계]
+
+  - id: process-3step-result1
+    name: 프로세스 (3단계 결과)
+    file: templates/process/process-3step-result1.yaml
+    thumbnail: thumbnails/process/process-3step-result1.png
+    category: process
+    design_intent: process-3step-result
+    original_theme: brandnew
+    description: 3단계 → 결과 박스
+    compatible_themes: [brandnew, default]
+    use_for: [process, steps, result]
+    prompt_keywords: [프로세스, 3단계, 결과]
+
+  - id: process-flow1
+    name: 프로세스 (흐름)
+    file: templates/process/process-flow1.yaml
+    thumbnail: thumbnails/process/process-flow1.png
+    category: process
+    design_intent: process-flow
+    description: 선형 프로세스 흐름도
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [process, flow, workflow]
+    prompt_keywords: [프로세스, 흐름, 워크플로우]
+
+  - id: process-cylinder1
+    name: 프로세스 (실린더)
+    file: templates/process/process-cylinder1.yaml
+    thumbnail: thumbnails/process/process-cylinder1.png
+    category: process
+    design_intent: process-cylinder
+    original_theme: deepgreen
+    description: 실린더 형태 프로세스
+    compatible_themes: [deepgreen, default]
+    use_for: [process, cylinder, 3d]
+    prompt_keywords: [프로세스, 실린더, 3D]
+
+  - id: process-honeycomb1
+    name: 프로세스 (벌집)
+    file: templates/process/process-honeycomb1.yaml
+    thumbnail: thumbnails/process/process-honeycomb1.png
+    category: process
+    design_intent: process-honeycomb
+    original_theme: deepgreen
+    description: 벌집 모양 프로세스
+    compatible_themes: [deepgreen, default]
+    use_for: [process, honeycomb, hexagon]
+    prompt_keywords: [프로세스, 벌집, 육각형]
+
+  # ============ CHART ============
+  - id: chart-bar-table1
+    name: 차트 (바 + 테이블)
+    file: templates/chart/chart-bar-table1.yaml
+    thumbnail: thumbnails/chart/chart-bar-table1.png
+    category: chart
+    design_intent: chart-bar-table
+    original_theme: deepgreen
+    description: 바 차트 + 데이터 테이블
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [chart, data, bar, table]
+    prompt_keywords: [차트, 바, 테이블, 데이터]
+
+  # ============ STATS ============
+  - id: stats-dotgrid1
+    name: 통계 (점 그리드)
+    file: templates/stats/stats-dotgrid1.yaml
+    thumbnail: thumbnails/stats/stats-dotgrid1.png
+    category: stats
+    design_intent: stats-dotgrid
+    original_theme: deepgreen
+    description: 점 그리드 통계 시각화
+    compatible_themes: [deepgreen, default]
+    use_for: [stats, percentage, grid]
+    prompt_keywords: [통계, 점, 그리드, 퍼센트]
+
+  - id: stat-cards1
+    name: 통계 (카드)
+    file: templates/stats/stat-cards1.yaml
+    thumbnail: thumbnails/stats/stat-cards1.png
+    category: stats
+    design_intent: stat-cards
+    description: 숫자 강조 카드 레이아웃
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [stats, numbers, kpi]
+    prompt_keywords: [통계, 카드, 숫자, KPI]
+
+  # ============ GRID ============
+  - id: grid-4col-icon1
+    name: 그리드 (4단 아이콘)
+    file: templates/grid/grid-4col-icon1.yaml
+    thumbnail: thumbnails/grid/grid-4col-icon1.png
+    category: grid
+    design_intent: grid-4col-icon
+    original_theme: deepgreen
+    description: 4개 컬럼 + 아이콘 그리드
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [grid, features, icons]
+    prompt_keywords: [그리드, 4단, 아이콘]
+
+  - id: grid-3col-image1
+    name: 그리드 (3단 이미지)
+    file: templates/grid/grid-3col-image1.yaml
+    thumbnail: thumbnails/grid/grid-3col-image1.png
+    category: grid
+    design_intent: grid-3col-image
+    original_theme: brandnew
+    description: 3개 컬럼 이미지 그리드
+    compatible_themes: [brandnew, default]
+    use_for: [grid, photos, gallery]
+    prompt_keywords: [그리드, 3단, 이미지]
+
+  - id: feature-grid1
+    name: 기능 그리드
+    file: templates/grid/feature-grid1.yaml
+    thumbnail: thumbnails/grid/feature-grid1.png
+    category: grid
+    design_intent: feature-grid
+    description: 기능/특징 그리드 레이아웃
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [features, benefits, highlights]
+    prompt_keywords: [기능, 특징, 그리드]
+
+  # ============ DIAGRAM ============
+  - id: matrix-2x21
+    name: 매트릭스 (2x2)
+    file: templates/diagram/matrix-2x21.yaml
+    thumbnail: thumbnails/diagram/matrix-2x21.png
+    category: diagram
+    design_intent: matrix-2x2
+    original_theme: deepgreen
+    description: 2x2 매트릭스 다이어그램
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [matrix, quadrant, analysis]
+    prompt_keywords: [매트릭스, 2x2, 사분면]
+
+  - id: cycle-circular1
+    name: 사이클 (원형)
+    file: templates/diagram/cycle-circular1.yaml
+    thumbnail: thumbnails/diagram/cycle-circular1.png
+    category: diagram
+    design_intent: cycle-circular
+    original_theme: deepgreen
+    description: 원형 사이클 다이어그램
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [cycle, circular, loop]
+    prompt_keywords: [사이클, 원형, 순환]
+
+  - id: dotmap-text1
+    name: 도트맵 + 텍스트
+    file: templates/diagram/dotmap-text1.yaml
+    thumbnail: thumbnails/diagram/dotmap-text1.png
+    category: diagram
+    design_intent: dotmap-text
+    original_theme: deepgreen
+    description: 도트맵 + 설명 텍스트
+    compatible_themes: [deepgreen, default]
+    use_for: [map, location, distribution]
+    prompt_keywords: [도트맵, 지도, 분포]
+
+  - id: growth-circles1
+    name: 성장 (원형)
+    file: templates/diagram/growth-circles1.yaml
+    thumbnail: thumbnails/diagram/growth-circles1.png
+    category: diagram
+    design_intent: growth-circles
+    original_theme: brandnew
+    description: 중첩 원형 성장 다이어그램
+    compatible_themes: [brandnew, default]
+    use_for: [growth, stages, evolution]
+    prompt_keywords: [성장, 원형, 단계]
+
+  - id: flow-text1
+    name: 흐름 + 텍스트
+    file: templates/diagram/flow-text1.yaml
+    thumbnail: thumbnails/diagram/flow-text1.png
+    category: diagram
+    design_intent: flow-text
+    original_theme: brandnew
+    description: 흐름 다이어그램 + 설명
+    compatible_themes: [brandnew, default]
+    use_for: [flow, process, text]
+    prompt_keywords: [흐름, 텍스트, 설명]
+
+  # ============ TIMELINE ============
+  - id: timeline1
+    name: 타임라인
+    file: templates/timeline/timeline1.yaml
+    thumbnail: thumbnails/timeline/timeline1.png
+    category: timeline
+    design_intent: timeline
+    description: 기본 타임라인 레이아웃
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [timeline, history, roadmap]
+    prompt_keywords: [타임라인, 연표, 로드맵]
+
+  # ============ CONTENT ============
+  - id: image-text1
+    name: 이미지 + 텍스트
+    file: templates/content/image-text1.yaml
+    thumbnail: thumbnails/content/image-text1.png
+    category: content
+    design_intent: image-text
+    original_theme: deepgreen
+    description: 이미지 + 설명 텍스트 레이아웃
+    compatible_themes: [deepgreen, brandnew, default]
+    use_for: [content, image, text]
+    prompt_keywords: [이미지, 텍스트, 콘텐츠]
+
+  # ============ QUOTE ============
+  - id: quote-centered1
+    name: 인용문 (중앙)
+    file: templates/quote/quote-centered1.yaml
+    thumbnail: thumbnails/quote/quote-centered1.png
+    category: quote
+    design_intent: quote-centered
+    original_theme: brandnew
+    description: 중앙 정렬 인용문
+    compatible_themes: [brandnew, default]
+    use_for: [quote, citation, emphasis]
+    prompt_keywords: [인용문, 명언, 강조]
+
+  # ============ CLOSING ============
+  - id: closing-thankyou1
+    name: 마무리 (감사합니다)
+    file: templates/closing/closing-thankyou1.yaml
+    thumbnail: thumbnails/closing/closing-thankyou1.png
+    category: closing
+    design_intent: closing-thankyou
+    original_theme: brandnew
+    description: 감사합니다 마무리 슬라이드
+    compatible_themes: [brandnew, default]
+    use_for: [closing, thankyou, end]
+    prompt_keywords: [마무리, 감사, 끝]

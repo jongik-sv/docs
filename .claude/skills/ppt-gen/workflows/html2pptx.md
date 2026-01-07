@@ -2,11 +2,116 @@
 
 템플릿 없이 새 PPT를 생성합니다. HTML을 PowerPoint로 변환합니다.
 
+> **v3.0 Update**: 테마와 컨텐츠가 분리되었습니다. PPT 생성 시 먼저 테마를 선택합니다.
+
 ## Triggers
 
 - "PPT 만들어줘"
 - "프레젠테이션 생성해줘"
 - "슬라이드 만들어줘"
+
+## Theme Selection (MANDATORY - 테마 선택)
+
+**PPT 생성 시작 전 반드시 테마를 선택해야 합니다.**
+
+### Step T.1: 테마 목록 표시
+
+사용자에게 다음과 같이 테마 목록을 보여줍니다:
+
+```markdown
+## 🎨 테마 선택
+
+사용 가능한 테마 목록입니다:
+
+| # | 테마 | 설명 | 주요 색상 |
+|---|------|------|----------|
+| 1 | **Deep Green** | 자연스럽고 깔끔한 딥그린 테마 | 🟢 #1E5128 / 🟩 #4E9F3D |
+| 2 | **Brand New** | 신선하고 깔끔한 스카이블루 테마 | 🔵 #7BA4BC / 🩷 #F5E1DC |
+| 3 | **Default** | 중립적인 기본 블루 테마 | 💙 #2563EB / 🩵 #DBEAFE |
+
+> 원하는 테마 번호를 선택하거나, 직접 색상을 지정할 수 있습니다.
+> 예: "1번 테마" 또는 "파란색 계열로"
+```
+
+### Step T.2: 사용자 응답 처리
+
+**옵션 A: 번호 선택** (1, 2, 3)
+```python
+theme_id = ["deepgreen", "brandnew", "default"][user_choice - 1]
+theme = load_theme(f"C:/project/docs/templates/themes/{theme_id}.yaml")
+```
+
+**옵션 B: 커스텀 색상 지정**
+사용자가 직접 색상을 지정하면 임시 테마 생성:
+```yaml
+theme:
+  id: custom
+  name: "Custom Theme"
+
+colors:
+  primary: "{사용자 지정 색상}"
+  secondary: "{자동 계산 - 밝은 버전}"
+  accent: "{자동 계산 - 보색}"
+  background: "#FFFFFF"
+  dark_text: "#1F2937"
+  light: "#FFFFFF"
+```
+
+### Step T.3: 테마 확인
+
+선택된 테마를 확인합니다:
+```markdown
+✅ **선택된 테마**: Deep Green
+- Primary: #1E5128 (진한 녹색)
+- Secondary: #4E9F3D (밝은 녹색)
+- Accent: #D8E9A8 (연두색)
+
+이 테마로 진행할까요? (Y/n)
+```
+
+### Step T.4: 디자인 토큰 해석
+
+선택된 테마의 색상을 컨텐츠 템플릿에 적용합니다:
+
+```python
+def resolve_design_tokens(template: dict, theme: dict) -> dict:
+    """디자인 토큰을 테마 색상으로 치환"""
+    colors = theme['colors']
+
+    def resolve_value(value):
+        if isinstance(value, str) and value in colors:
+            return colors[value]
+        return value
+
+    def walk_and_resolve(obj):
+        if isinstance(obj, dict):
+            return {k: walk_and_resolve(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [walk_and_resolve(item) for item in obj]
+        else:
+            return resolve_value(obj)
+
+    return walk_and_resolve(template)
+```
+
+**적용 예시**:
+```yaml
+# 템플릿 원본 (디자인 토큰)
+style:
+  fill:
+    color: primary    # ← 토큰
+  text:
+    font_color: light # ← 토큰
+
+# 테마 적용 후 (실제 색상)
+style:
+  fill:
+    color: "#1E5128"  # ← Deep Green primary
+  text:
+    font_color: "#FFFFFF"  # ← light
+```
+
+---
 
 ## Design Principles
 
@@ -44,6 +149,168 @@
 | Forest Green | #191A19, #4E9F3D, #1E5128, #FFFFFF |
 
 ## Workflow
+
+### 0. Content Template Search (MANDATORY - DO NOT SKIP)
+
+**중요**: 이 단계를 건너뛰면 안 됩니다. 매칭되는 템플릿이 없는 슬라이드만 직접 디자인합니다.
+
+#### Step 0.1: 슬라이드 목록 작성
+
+콘텐츠를 분석하여 필요한 슬라이드 목록을 먼저 작성합니다:
+
+```markdown
+| # | 슬라이드 유형 | 콘텐츠 특성 | 매칭 키워드 |
+|---|-------------|------------|-----------|
+| 1 | 표지 | 제목, 날짜, 작성자 | cover, 표지 |
+| 2 | 목차 | 섹션 리스트 | toc, 목차, 아젠다 |
+| 3 | 비교표 | A vs B | comparison, 비교 |
+| ... | ... | ... | ... |
+```
+
+#### Step 0.2: 레지스트리 로드 및 매칭
+
+```
+Read C:/project/docs/templates/contents/registry.yaml
+```
+
+> **v3.0**: 템플릿 경로가 `C:/project/docs/templates/`로 변경되었습니다.
+
+**매칭 알고리즘** (우선순위 순서):
+
+1. **use_for 매칭**: 배열에 키워드 포함 여부 (가장 정확)
+   - 예: "A vs B 비교" → `use_for: ["A vs B 비교"]` 매칭
+2. **prompt_keywords 매칭** (NEW): 사용자 프롬프트에서 키워드 추출하여 매칭
+   - 예: "4개 기능 아이콘 그리드" → `prompt_keywords: ["4열", "아이콘", "그리드"]` 매칭
+   - 매칭 점수 = 일치 키워드 수 / 전체 키워드 수
+3. **expected_prompt 유사도 매칭** (NEW): 의미적 유사도 비교
+   - 사용자 요청과 `expected_prompt` 텍스트 비교
+   - 슬라이드 요소(아이콘, 열, 그리드 등) 언급 시 가중치
+4. **category 매칭**: 대분류 일치
+   - 예: cover, toc, comparison, timeline, process, stat-cards
+5. **design_intent 매칭**: 세부 레이아웃 일치
+   - 예: cover-centered, toc-3col, stats-dotgrid, matrix-2x2
+6. **keywords 매칭**: 유사 키워드 검색
+
+**프롬프트 기반 매칭 예시**:
+
+```markdown
+사용자 요청: "4개의 핵심 기능을 아이콘과 함께 보여주는 슬라이드"
+
+매칭 분석:
+| 템플릿 ID | prompt_keywords | 매칭 키워드 | 점수 |
+|----------|-----------------|------------|------|
+| deepgreen-grid4col1 | ["기능", "4열", "아이콘", "그리드"] | 기능, 아이콘, 4 | 0.75 |
+| feature-grid1 | ["기능", "특징", "그리드", "아이콘"] | 기능, 아이콘 | 0.50 |
+| deepgreen-stats1 | ["통계", "퍼센트", "KPI"] | - | 0.00 |
+
+→ deepgreen-grid4col1 선택 (최고 점수)
+```
+
+**expected_prompt 참조 예시**:
+
+```yaml
+# deepgreen-grid4col1의 expected_prompt
+expected_prompt: |
+  기능 소개 슬라이드를 만들어줘.
+  - 4개의 카드를 가로로 균등 배치
+  - 각 카드: 상단에 라운드 배경 아이콘
+  - 아이콘 아래에 제목 텍스트
+  - 제목 아래에 설명 텍스트
+  - 균등한 간격의 그리드 레이아웃
+
+# 사용자 요청과 비교하여 구조적 유사성 확인
+```
+
+#### Step 0.3: 매칭 결과 테이블 작성 (필수)
+
+**반드시** 매칭 결과를 테이블로 정리합니다:
+
+```markdown
+| # | 슬라이드 | 매칭 템플릿 | 매칭 근거 |
+|---|---------|-----------|----------|
+| 1 | 표지 | deepgreen-cover1 | use_for: ["표지"] |
+| 2 | 목차 | deepgreen-toc1 | category: toc |
+| 3 | 섹션 구분 | deepgreen-section1 | category: section |
+| 4 | 기대효과 (30%, 99%) | deepgreen-stats1 | use_for: ["퍼센트", "지표"] |
+| 5 | 3가지 전략 | deepgreen-grid4col1 | design_intent: grid-4col-icon |
+| 6 | 프로세스 | deepgreen-process1 | category: process |
+| 7 | 일정 | timeline1 | use_for: ["일정", "마일스톤"] |
+| 8 | 비교표 | ❌ 없음 | - |
+```
+
+#### Step 0.4: 템플릿 YAML 로드 및 HTML 생성
+
+**매칭된 템플릿이 있는 경우**:
+
+1. `templates/contents/templates/{id}.yaml` 읽기
+2. `shapes[]` 구조에서 geometry와 style 추출
+3. **이미지 필드** 확인: `type: picture`인 경우 `image.description` 읽기
+4. **배경** 확인: `background.type: image`인 경우 `background.image.description` 읽기
+5. % 단위를 pt로 변환 (720pt x 405pt 기준)
+6. HTML/CSS로 변환
+
+**이미지 설명 활용** (picture 타입):
+
+템플릿의 이미지 설명을 참고하여 적절한 이미지를 선택하거나 생성합니다.
+
+```yaml
+# 템플릿 YAML
+shapes:
+  - id: "hero-image"
+    type: picture
+    geometry: {x: 50%, y: 0%, cx: 50%, cy: 100%}
+    image:
+      description: "도시 야경 사진, 고층 빌딩과 조명이 반짝이는 모습"
+      purpose: hero
+      fit: cover
+```
+
+→ HTML 생성 시 이미지 설명에 맞는 이미지를 배치하거나, 설명을 참고하여 유사한 분위기의 이미지 검색/생성
+
+**배경 이미지 활용**:
+
+```yaml
+# 템플릿 YAML
+background:
+  type: image
+  image:
+    description: "어두운 그라데이션 배경, 미세한 기하학적 패턴"
+    fit: cover
+    opacity: 0.3
+```
+
+→ HTML에서 배경 스타일링 시 설명에 맞는 이미지 또는 유사한 효과 적용
+
+**geometry 변환 공식** (16:9 기준):
+- x(pt) = x(%) × 7.2
+- y(pt) = y(%) × 4.05
+- width(pt) = cx(%) × 7.2
+- height(pt) = cy(%) × 4.05
+
+**예시** - deepgreen-cover1.yaml shapes → HTML:
+
+```yaml
+# YAML
+- id: "label-box"
+  geometry: { x: 25%, y: 12%, cx: 50%, cy: 8% }
+  style: { fill: { color: primary }, rounded_corners: 25 }
+```
+
+```html
+<!-- HTML 변환 -->
+<div style="position: absolute; left: 180pt; top: 49pt; width: 360pt; height: 32pt;
+            background: #1E5128; border-radius: 25pt;">
+  <p>라벨 텍스트</p>
+</div>
+```
+
+#### Step 0.5: 매칭 없는 슬라이드만 직접 디자인
+
+**매칭 결과 테이블에서 ❌ 표시된 슬라이드만** Step 1 (Design Principles)로 진행합니다.
+
+**금지**: 매칭 가능한 템플릿이 있는데 직접 디자인하는 것
+
+---
 
 ### 1. MANDATORY - Read Full Guide
 

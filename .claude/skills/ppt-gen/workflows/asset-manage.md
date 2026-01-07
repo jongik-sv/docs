@@ -1,6 +1,7 @@
 # Asset Management Workflow
 
 에셋(이미지/아이콘)을 저장하고 검색합니다.
+네이버 블로그 등 보호된 사이트에서도 이미지를 크롤링할 수 있습니다.
 
 ## Saving Assets
 
@@ -36,7 +37,65 @@ icons:
 |--------|------|------|
 | `generated` | Claude가 직접 생성한 SVG/이미지 | 아이콘, 다이어그램 |
 | `downloaded` | 웹에서 다운로드 | 배경 이미지, 스톡 사진 |
+| `crawled` | 웹페이지에서 크롤링 | 레퍼런스 이미지 |
 | `brand` | 브랜드 공식 에셋 (Brandfetch 등) | 회사 로고 |
+
+---
+
+## Crawling Images from Web
+
+### Triggers
+
+- "이 블로그에서 이미지 가져와줘"
+- "네이버 블로그 이미지 크롤링해줘"
+- "이 페이지의 모든 이미지 저장해줘"
+
+### CLI Usage
+
+```bash
+# 단일 이미지 (보호된 사이트)
+python asset-manager.py add "https://postfiles.pstatic.net/..." \
+    --id naver-img --browser
+
+# 페이지 전체 이미지 크롤링
+python asset-manager.py crawl "https://blog.naver.com/PostView.naver?blogId=xxx&logNo=yyy" \
+    --prefix design-ref \
+    --tags "reference,naver" \
+    --max-images 10
+
+# 미리보기 (다운로드 없이 목록만)
+python asset-manager.py crawl "https://blog.naver.com/..." \
+    --prefix test \
+    --preview
+```
+
+### Crawl Options
+
+| 옵션 | 설명 | 기본값 |
+|------|------|--------|
+| `--prefix` | 에셋 ID 접두사 (필수) | - |
+| `--tags` | 태그 (쉼표 구분) | - |
+| `--min-size` | 최소 이미지 크기 (픽셀) | 100 |
+| `--max-images` | 최대 이미지 개수 | 20 |
+| `--preview` | 미리보기만 | false |
+
+### Supported Sites
+
+| 사이트 | 특수 처리 |
+|--------|----------|
+| 네이버 블로그 | iframe 전환, lazy-load 처리 |
+| 네이버 카페 | iframe 전환, lazy-load 처리 |
+| 네이버 포스트 | iframe 전환, lazy-load 처리 |
+| 일반 웹사이트 | 기본 이미지 추출 |
+
+### Dependencies
+
+크롤링 기능을 사용하려면 Playwright가 필요합니다:
+
+```bash
+pip install playwright
+playwright install chromium
+```
 
 ---
 

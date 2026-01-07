@@ -1,0 +1,75 @@
+content_template:
+  id: pros-cons1
+  name: 장단점
+  description: 긍정적/부정적 측면을 체크/엑스 마크와 함께 양쪽에 배치
+  data_type: evaluation
+  version: '3.0'
+  migrated_from: pros-cons1
+  migrated_at: '2026-01-07T14:25:05.767623'
+structure:
+  type: two-column-marked
+  columns: 2
+  left:
+    header: 장점 / Pros
+    marker: ✓
+    marker_color: green
+    content_type: list
+    items_max: 5
+  right:
+    header: 단점 / Cons
+    marker: ✗
+    marker_color: red
+    content_type: list
+    items_max: 5
+  header_icons: true
+  alternating_rows: false
+use_for:
+- 장점/단점 분석
+- 리스크/기회
+- 강점/약점
+- 찬성/반대
+- SWOT 분석 일부
+- 옵션 평가
+keywords:
+- 장점
+- 단점
+- 장단점
+- 리스크
+- 기회
+- SWOT
+- 강점
+- 약점
+- pros
+- cons
+html_guide:
+  layout: "<div class=\"pros-cons-container\">\n  <div class=\"column pros\">\n  \
+    \  <h3 class=\"column-header\"><span class=\"header-icon\">✓</span> {pros_header}</h3>\n\
+    \    <ul class=\"pros-list\">{pros_items}</ul>\n  </div>\n  <div class=\"column\
+    \ cons\">\n    <h3 class=\"column-header\"><span class=\"header-icon\">✗</span>\
+    \ {cons_header}</h3>\n    <ul class=\"cons-list\">{cons_items}</ul>\n  </div>\n\
+    </div>\n"
+  item_template: "<li class=\"{type}-item\">\n  <span class=\"marker\">{marker}</span>\n\
+    \  <span class=\"text\">{text}</span>\n</li>\n"
+  style_notes:
+  - '장점 열: 녹색 계열 강조'
+  - '단점 열: 빨강 계열 강조'
+  - 마커 아이콘 각 항목 앞에 배치
+  - 헤더에 아이콘 포함
+  - 항목 수 균형 맞추기 권장 (3-5개씩)
+  - 중요한 항목 먼저 배치
+example:
+  title: 클라우드 전환 분석
+  pros:
+    header: 장점
+    items:
+    - 초기 인프라 비용 절감
+    - 확장성 및 유연성
+    - 자동 업데이트 및 패치
+    - 어디서나 접근 가능
+  cons:
+    header: 단점
+    items:
+    - 데이터 보안 우려
+    - 인터넷 의존성
+    - 장기적 비용 증가 가능
+    - 기존 시스템 마이그레이션 필요

@@ -114,5 +114,37 @@ https://www.youtube.com/watch?v=rNtpNY41h5o 코깍노 참고
 
  SKILL.md 를 리펙토링 하자. 각 워크플로우별로 지시를 분리해서 관리하는 것이 좋겠어. 
 
- 각 추출한 컨텐츠는 폴더로 분류해서 저장하는 것이 좋겠어.
- 
+ 컨텐츠와 썸네일이 한 폴더에 있으니 관리하기가 좋지 않아. 각 추출한 컨텐츠는 폴더로 분류해서 저장하는 것이 좋겠어. 
+
+
+
+우석지니(https://blog.naver.com/wooseokjin) 에서 템플릿 추출하자.
+
+
+ ppt-gen 에서 아래에 나오는 인터넷 이미지에 대해서 컨텐츠를 추출해줘. \
+  https://blog.naver.com/wooseokjin/224127136621?photoView=27
+  https://blog.naver.com/wooseokjin/224127136621?photoView=15
+  https://blog.naver.com/wooseokjin/224125145028?photoView=2
+  https://blog.naver.com/wooseokjin/224125145028?photoView=3
+  https://blog.naver.com/wooseokjin/224125145028?photoView=4
+  https://blog.naver.com/wooseokjin/224125145028?photoView=5
+  https://blog.naver.com/wooseokjin/224125145028?photoView=9
+  https://blog.naver.com/wooseokjin/224125145028?photoView=12
+  https://blog.naver.com/wooseokjin/224125145028?photoView=16
+  https://blog.naver.com/wooseokjin/224125145028?photoView=20
+  https://blog.naver.com/wooseokjin/224125145028?photoView=27
+  https://blog.naver.com/wooseokjin/224125145028?photoView=29
+  https://blog.naver.com/wooseokjin/224125145028?photoView=31
+  https://blog.naver.com/wooseokjin/224125145028?photoView=33
+  https://blog.naver.com/wooseokjin/224125145028?photoView=35
+  https://blog.naver.com/wooseokjin/224125145028?photoView=36
+
+
+네이버에서 다운안되게 해놓은 이미지 크롤링하는 방법을 연구해봐. 웹 검색해서 방법을 찾아봐.
+
+ppt-gen 스킬에서 ppt양식 및 컨텐츠 추출할때 작성하는 yaml 파일에 그 양식이나 컨텐츠를 생성하는 프롬프트를 추론해서 만들어줘.  추론된 프롬프트를 입력으로 해서 PPT를 생성하면 해당 양식(페이지별)과 컨텐츠가 만들어지도록 해야해. 그 내용을 registry.yaml 에 예상 프롬프트 항목으로 넣을 수 있도록 해줘.
+ppt를 생성할때 방금전에 생성한 항목을 검색해서 참고하도록 적용해줘.
+
+
+
+ppt-gen 스킬에서 컨텐츠와 양식 내 페이지안에 배경 이미지가 들어갈 경우 이미지에 대한 간단한 설명도 포함 될 수 있도록 스킬을 수정해줘.

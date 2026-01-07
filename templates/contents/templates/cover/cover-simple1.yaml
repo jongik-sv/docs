@@ -1,0 +1,47 @@
+content_template:
+  id: cover-simple1
+  name: 표지 (기본)
+  description: 중앙 정렬 제목 + 부제목 + 하단 로고
+  data_type: cover
+  version: '3.0'
+  migrated_from: cover1
+  migrated_at: '2026-01-07T14:25:05.644888'
+structure:
+  type: centered-title
+  title:
+    position: center
+    font_size: large
+    font_weight: bold
+  subtitle:
+    position: below-title
+    font_size: medium
+    format: '{조직명} | {날짜}'
+  logo:
+    position: bottom-left
+  decorations:
+  - type: gradient_bar
+    position: top
+use_for:
+- 프레젠테이션 표지
+- 문서 첫 페이지
+- 타이틀 슬라이드
+keywords:
+- 표지
+- 타이틀
+- 커버
+- 제목
+- 시작
+- cover
+html_guide:
+  layout: "<div class=\"cover-container\">\n  <div class=\"gradient-bar\"></div>\n\
+    \  <div class=\"title-area\">\n    <h1 class=\"main-title\">{title}</h1>\n   \
+    \ <p class=\"subtitle\">{subtitle}</p>\n  </div>\n  <div class=\"logo-area\">\n\
+    \    <img src=\"{logo_path}\" alt=\"logo\" />\n  </div>\n</div>\n"
+  style_notes:
+  - 제목은 중앙 정렬
+  - 부제목은 제목 아래 작은 폰트
+  - 로고는 하단 좌측 또는 중앙
+  - 상단 그라데이션 바 선택적
+example:
+  title: 2024년 사업계획서
+  subtitle: 전략기획팀 | 2024.01.15

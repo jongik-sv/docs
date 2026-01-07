@@ -1,0 +1,279 @@
+content_template:
+  id: comparison-2col1
+  name: 비교 (A vs B) - 기본
+  version: '3.0'
+  source: null
+  source_slide_index: null
+  extracted_at: '2026-01-06T15:00:00'
+  migrated_from: comparison1
+  migrated_at: '2026-01-07T14:25:05.736291'
+design_meta:
+  quality_score: 8.5
+  design_intent: comparison-2col
+  design_intents:
+  - comparison-2col
+  - grid-2col
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1980
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-left-bg
+  name: Left Panel Background
+  type: rectangle
+  z_index: 0
+  geometry:
+    x: 0%
+    y: 0%
+    cx: 48%
+    cy: 100%
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 0.1
+    stroke:
+      color: none
+      width: 0
+    shadow:
+      enabled: false
+    rounded_corners: 8
+  text:
+    has_text: false
+- id: shape-right-bg
+  name: Right Panel Background
+  type: rectangle
+  z_index: 0
+  geometry:
+    x: 52%
+    y: 0%
+    cx: 48%
+    cy: 100%
+  style:
+    fill:
+      type: solid
+      color: secondary
+      opacity: 0.1
+    stroke:
+      color: none
+      width: 0
+    shadow:
+      enabled: false
+    rounded_corners: 8
+  text:
+    has_text: false
+- id: shape-left-header
+  name: Left Header
+  type: textbox
+  z_index: 1
+  geometry:
+    x: 2%
+    y: 2%
+    cx: 44%
+    cy: 12%
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 1.0
+    stroke:
+      color: none
+      width: 0
+    rounded_corners: 4
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: center
+    font_size_ratio: 0.028
+    font_weight: bold
+    font_color: light
+- id: shape-right-header
+  name: Right Header
+  type: textbox
+  z_index: 1
+  geometry:
+    x: 54%
+    y: 2%
+    cx: 44%
+    cy: 12%
+  style:
+    fill:
+      type: solid
+      color: secondary
+      opacity: 1.0
+    stroke:
+      color: none
+      width: 0
+    rounded_corners: 4
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: center
+    font_size_ratio: 0.028
+    font_weight: bold
+    font_color: light
+- id: shape-left-content
+  name: Left Content Area
+  type: textbox
+  z_index: 1
+  geometry:
+    x: 4%
+    y: 18%
+    cx: 40%
+    cy: 78%
+  style:
+    fill:
+      type: none
+    stroke:
+      color: none
+      width: 0
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.02
+    font_weight: normal
+    font_color: dark_text
+- id: shape-right-content
+  name: Right Content Area
+  type: textbox
+  z_index: 1
+  geometry:
+    x: 56%
+    y: 18%
+    cx: 40%
+    cy: 78%
+  style:
+    fill:
+      type: none
+    stroke:
+      color: none
+      width: 0
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.02
+    font_weight: normal
+    font_color: dark_text
+- id: shape-center-divider
+  name: Center Divider
+  type: line
+  z_index: 2
+  geometry:
+    x: 50%
+    y: 5%
+    cx: 0%
+    cy: 90%
+  style:
+    stroke:
+      color: gray
+      width: 2
+    fill:
+      type: none
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 4%
+    item_gap: 2%
+  between_shapes:
+  - from: shape-left-bg
+    to: shape-right-bg
+    direction: horizontal
+    gap: 4%
+  - from: shape-left-header
+    to: shape-left-content
+    direction: vertical
+    gap: 4%
+  - from: shape-right-header
+    to: shape-right-content
+    direction: vertical
+    gap: 4%
+spatial_relationships:
+- from: shape-left-bg
+  to: shape-right-bg
+  relationship: adjacent-horizontal
+  gap: 4%
+  alignment: top
+- shapes:
+  - shape-left-header
+  - shape-right-header
+  relationship: aligned-top
+- shapes:
+  - shape-left-content
+  - shape-right-content
+  relationship: aligned-top
+- shapes:
+  - shape-left-bg
+  - shape-right-bg
+  relationship: distributed-horizontal
+  total_gap: 4%
+groups:
+- id: group-left-panel
+  members:
+  - shape-left-bg
+  - shape-left-header
+  - shape-left-content
+  bounding_box:
+    x: 0%
+    y: 0%
+    cx: 48%
+    cy: 100%
+  internal_gap: 4%
+- id: group-right-panel
+  members:
+  - shape-right-bg
+  - shape-right-header
+  - shape-right-content
+  bounding_box:
+    x: 52%
+    y: 0%
+    cx: 48%
+    cy: 100%
+  internal_gap: 4%
+thumbnail: thumbnails/comparison/comparison-2col1.png
+use_for:
+- A vs B 비교
+- Before/After 변화
+- 현재 vs 목표
+- 문제점 vs 해결책
+- Option 1 vs Option 2
+- As-Is vs To-Be
+- 기존 방식 vs 신규 방식
+keywords:
+- 비교
+- vs
+- 대비
+- 차이
+- before
+- after
+- 옵션
+- 현재
+- 목표
+- As-Is
+- To-Be
+data_structure:
+  left:
+    header: Before / Option A / 현재
+    content_type: list
+    items_max: 5
+  right:
+    header: After / Option B / 목표
+    content_type: list
+    items_max: 5
+example:
+  title: 디지털 전환 효과
+  left:
+    header: Before
+    items:
+    - 수작업 데이터 입력
+    - 엑셀 기반 관리
+    - 주 1회 보고서
+  right:
+    header: After
+    items:
+    - 자동 데이터 수집
+    - 통합 시스템 관리
+    - 실시간 대시보드

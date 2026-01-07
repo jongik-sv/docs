@@ -1,0 +1,38 @@
+# Brand New Theme
+# Source: yusaebyeol.blogspot.com/2023/01/powerpoint-template-free-download-ppt.html
+
+theme:
+  id: brandnew
+  name: "Brand New"
+  source: yusaebyeol.blogspot.com
+  author: "Saebyeol Yu"
+  description: "신선하고 깔끔한 스카이블루 테마"
+
+colors:
+  # Core semantic colors (design tokens)
+  primary: "#7BA4BC"        # 스카이 블루 - 주요 강조색
+  secondary: "#A8C5D8"      # 연한 블루 - 보조 강조색
+  accent: "#F5E1DC"         # 소프트 핑크 - 따뜻한 대비
+  background: "#FFFFFF"     # 흰색 배경
+  surface: "#F8FAFC"        # 카드/패널 배경
+  dark_text: "#4A4A4A"      # 본문 텍스트 (다크 그레이)
+  light: "#FFFFFF"          # 밝은 텍스트 (흰색)
+  gray: "#9CA3AF"           # 음소거 요소
+
+  # Extended palette
+  accent2: "#E8D5D0"        # 연한 핑크
+  accent3: "#D4E7F2"        # 아이스 블루
+  border: "#E5E7EB"         # 경계선 색상
+
+typography:
+  heading_font: "Arial"
+  body_font: "Arial"
+  korean_font: "Noto Sans KR"
+  heading_weight: bold
+  body_weight: normal
+
+style_hints:
+  rounded_corners: 12       # 더 둥근 모서리
+  shadow_blur: 6            # 부드러운 그림자
+  border_width: 1           # 얇은 테두리
+  card_padding: 24          # 넉넉한 여백

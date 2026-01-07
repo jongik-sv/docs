@@ -1,0 +1,252 @@
+content_template:
+  id: process-circle1
+  name: 딥그린 프로세스 (원형 단계)
+  version: '3.0'
+  source: yeonduppt.tistory.com/24
+  source_slide_index: 10
+  extracted_at: '2025-01-07T02:00:00+09:00'
+  migrated_from: deepgreen-process1
+  migrated_at: '2026-01-07T14:25:05.781417'
+  original_theme: deepgreen
+design_meta:
+  quality_score: 8.5
+  design_intent: process-circle
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: connector-line
+  name: 연결선
+  type: line
+  z_index: 0
+  geometry:
+    x: 15%
+    y: 40%
+    cx: 70%
+    cy: 0%
+  style:
+    stroke:
+      color: light_gray
+      width: 4
+      dash: solid
+- id: step-1
+  name: 스텝 1
+  type: group
+  z_index: 2
+  geometry:
+    x: 5%
+    y: 20%
+    cx: 18%
+    cy: 60%
+  children:
+  - id: step-1-circle
+    type: oval
+    geometry:
+      x: 15%
+      y: 0%
+      cx: 70%
+      cy: 50%
+    style:
+      fill:
+        type: solid
+        color: primary
+      stroke:
+        color: none
+  - id: step-1-number
+    type: textbox
+    geometry:
+      x: 15%
+      y: 12%
+      cx: 70%
+      cy: 26%
+    text:
+      content: '01'
+      alignment: center
+      font_size_ratio: 0.028
+      font_weight: bold
+      font_color: background
+  - id: step-1-title
+    type: textbox
+    geometry:
+      x: 0%
+      y: 55%
+      cx: 100%
+      cy: 15%
+    text:
+      placeholder_type: BODY
+      alignment: center
+      font_size_ratio: 0.016
+      font_weight: bold
+      font_color: dark_text
+  - id: step-1-desc
+    type: textbox
+    geometry:
+      x: 0%
+      y: 72%
+      cx: 100%
+      cy: 28%
+    text:
+      placeholder_type: BODY
+      alignment: center
+      font_size_ratio: 0.012
+      font_color: dark_text
+- id: arrow-1
+  name: 화살표 1→2
+  type: arrow
+  z_index: 1
+  geometry:
+    x: 23%
+    y: 38%
+    cx: 6%
+    cy: 4%
+  style:
+    fill:
+      color: primary
+    direction: right
+- id: step-2
+  name: 스텝 2
+  type: group
+  z_index: 2
+  geometry:
+    x: 26%
+    y: 20%
+    cx: 18%
+    cy: 60%
+  children:
+  - id: step-2-circle
+    type: oval
+    style:
+      fill:
+        color: secondary
+  - id: step-2-number
+    type: textbox
+    text:
+      content: '02'
+      font_color: background
+  - id: step-2-title
+    type: textbox
+    text:
+      placeholder_type: BODY
+  - id: step-2-desc
+    type: textbox
+    text:
+      placeholder_type: BODY
+- id: arrow-2
+  name: 화살표 2→3
+  type: arrow
+  z_index: 1
+  geometry:
+    x: 44%
+    y: 38%
+    cx: 6%
+    cy: 4%
+- id: step-3
+  name: 스텝 3
+  type: group
+  z_index: 2
+  geometry:
+    x: 47%
+    y: 20%
+    cx: 18%
+    cy: 60%
+  children:
+  - id: step-3-circle
+    type: oval
+    style:
+      fill:
+        color: accent
+  - id: step-3-number
+    type: textbox
+    text:
+      content: '03'
+      font_color: background
+  - id: step-3-title
+    type: textbox
+    text:
+      placeholder_type: BODY
+  - id: step-3-desc
+    type: textbox
+    text:
+      placeholder_type: BODY
+- id: arrow-3
+  name: 화살표 3→4
+  type: arrow
+  z_index: 1
+  geometry:
+    x: 65%
+    y: 38%
+    cx: 6%
+    cy: 4%
+- id: step-4
+  name: 스텝 4
+  type: group
+  z_index: 2
+  geometry:
+    x: 68%
+    y: 20%
+    cx: 18%
+    cy: 60%
+  children:
+  - id: step-4-circle
+    type: oval
+    style:
+      fill:
+        color: primary
+  - id: step-4-number
+    type: textbox
+    text:
+      content: '04'
+      font_color: background
+  - id: step-4-title
+    type: textbox
+    text:
+      placeholder_type: BODY
+  - id: step-4-desc
+    type: textbox
+    text:
+      placeholder_type: BODY
+gaps:
+  global:
+    column_gap: 3%
+    row_gap: 5%
+spatial_relationships:
+- type: horizontal_distribute
+  elements:
+  - step-1
+  - step-2
+  - step-3
+  - step-4
+  alignment: top
+- type: sequence
+  elements:
+  - arrow-1
+  - arrow-2
+  - arrow-3
+  between: steps
+groups:
+- id: process-steps
+  elements:
+  - step-1
+  - step-2
+  - step-3
+  - step-4
+- id: arrows
+  elements:
+  - arrow-1
+  - arrow-2
+  - arrow-3
+thumbnail: thumbnails/process/process-circle1.png
+use_for:
+- process
+- workflow
+- timeline
+- steps
+keywords:
+- 프로세스
+- 단계
+- 워크플로우
+- 타임라인
+- 순서

@@ -2,6 +2,9 @@
 
 단일 슬라이드 또는 다중 슬라이드의 레이아웃 패턴을 추출하여 재사용 가능한 콘텐츠 템플릿으로 저장합니다.
 
+> **v3.0 Update**: 템플릿이 스킬에서 분리되어 프로젝트 루트(`C:/project/docs/templates/`)에 저장됩니다.
+> 컨텐츠는 테마 독립적이며, 디자인 토큰 기반으로 작성됩니다.
+
 ## Triggers
 
 - "콘텐츠 추출해줘"
@@ -14,7 +17,27 @@
 
 1. 원본 PPTX 파일 확인
 2. 추출 대상 슬라이드 인덱스 확인 (0-based)
-3. `templates/contents/templates/` 디렉토리 내 기존 파일 확인 (번호 충돌 방지)
+3. 카테고리 결정 후 해당 폴더 내 기존 파일 확인 (번호 충돌 방지)
+
+## 경로 구조 (v3.0)
+
+```
+C:/project/docs/templates/              # 프로젝트 루트 (스킬에서 분리)
+├── themes/                             # 테마 정의
+│   ├── deepgreen.yaml
+│   ├── brandnew.yaml
+│   └── default.yaml
+├── contents/
+│   ├── templates/{category}/           # 카테고리별 YAML
+│   │   ├── cover/
+│   │   ├── toc/
+│   │   ├── section/
+│   │   └── ...
+│   ├── thumbnails/{category}/          # 카테고리별 썸네일
+│   │   ├── cover/
+│   │   └── ...
+│   └── registry.yaml
+```
 
 ---
 
@@ -81,35 +104,41 @@ ls templates/contents/templates/
 
 ```
 파일명 규칙: {design_intent}{번호}.yaml
+저장 경로: templates/contents/templates/{category}/{design_intent}{번호}.yaml
 
 예시:
-- cover1.yaml (첫 번째 표지 - cover-centered 등 대분류 사용 가능)
-- cover-banner1.yaml (첫 번째 배너형 표지)
-- cover-banner2.yaml (두 번째 배너형 표지)
-- process-honeycomb1.yaml (첫 번째 허니콤 프로세스)
-- stats-dotgrid1.yaml (첫 번째 도트그리드 통계)
+- cover/cover-centered1.yaml
+- cover/cover-photo1.yaml
+- process/process-honeycomb1.yaml
+- stats/stats-dotgrid1.yaml
 ```
 
-**번호 충돌 방지 로직**:
+**번호 충돌 방지 로직 (v3.0)**:
 ```python
 import os
 import re
+from pathlib import Path
 
-def get_next_number(design_intent: str, templates_dir: str) -> int:
-    """기존 파일에서 다음 번호를 찾습니다."""
+TEMPLATES_ROOT = Path("C:/project/docs/templates/contents/templates")
+
+def get_next_number(design_intent: str, category: str) -> int:
+    """카테고리 폴더 내에서 다음 번호를 찾습니다."""
+    category_dir = TEMPLATES_ROOT / category
     pattern = re.compile(rf'^{re.escape(design_intent)}(\d+)\.yaml$')
     existing_numbers = []
 
-    for filename in os.listdir(templates_dir):
-        match = pattern.match(filename)
-        if match:
-            existing_numbers.append(int(match.group(1)))
+    if category_dir.exists():
+        for filename in os.listdir(category_dir):
+            match = pattern.match(filename)
+            if match:
+                existing_numbers.append(int(match.group(1)))
 
     return max(existing_numbers, default=0) + 1
 
 # 사용 예시
-next_num = get_next_number("process-honeycomb", "templates/contents/templates/")
+next_num = get_next_number("process-honeycomb", "process")
 filename = f"process-honeycomb{next_num}.yaml"  # process-honeycomb1.yaml
+filepath = TEMPLATES_ROOT / "process" / filename
 ```
 
 #### Step 2.3: Zone 경계 동적 감지
@@ -225,6 +254,7 @@ for shape in all_shapes:
 - **text**: placeholder_type, alignment, **font_size_ratio**, **original_font_size_pt** (필수)
 - **z_index**: 레이어 순서
 - **type**: rectangle, oval, textbox, picture, group, arrow, line
+- **image**: (picture 타입 전용) source, **description** (필수), purpose, fit, opacity
 
 **원본 비율 필수 (다중 비율 지원용)**:
 
@@ -262,6 +292,48 @@ text['font_size_ratio'] = font_size_pt / canvas_height_px  # 비율도 함께
 - icon: {name: "chart-bar", color: primary}
 ```
 
+**이미지 설명 필수 (picture 타입)**: 이미지 도형에는 반드시 `description` 포함
+
+```yaml
+# GOOD - description 포함
+shapes:
+  - id: "image-0"
+    type: picture
+    geometry: {x: 50%, y: 0%, cx: 50%, cy: 100%}
+    image:
+      source: "images/hero-cityscape.jpg"
+      description: "도시 야경 사진, 고층 빌딩들과 조명이 반짝이는 모습"
+      purpose: hero
+      fit: cover
+
+# BAD - description 누락
+shapes:
+  - id: "image-0"
+    type: picture
+    geometry: {x: 50%, y: 0%, cx: 50%, cy: 100%}
+    # image 필드 자체가 없거나 description이 없으면 안 됨
+```
+
+**이미지 설명 작성 가이드**:
+- LLM이 이해할 수 있는 자연어로 작성
+- 이미지의 주요 피사체, 색상, 분위기 포함
+- 예: "추상적인 파란색 그라데이션 배경, 부드러운 곡선과 빛 효과"
+- 예: "비즈니스 미팅 장면, 테이블에 앉은 4명의 직원이 노트북을 보고 있음"
+
+**배경 이미지 설명**: 슬라이드 배경에 이미지가 있는 경우
+
+```yaml
+background:
+  type: image
+  image:
+    source: "backgrounds/abstract-dark.jpg"
+    description: "어두운 그라데이션 배경, 미세한 기하학적 패턴"
+    fit: cover
+    opacity: 0.3
+    overlay_color: dark_text
+    overlay_opacity: 0.5
+```
+
 #### Step 2.5: 테마 색상 → 시맨틱 매핑
 
 `ppt/theme/theme1.xml`에서 색상 로드:
@@ -273,7 +345,133 @@ text['font_size_ratio'] = font_size_pt / canvas_height_px  # 비율도 함께
 | dk2 | primary |
 | accent1 | secondary |
 
-#### Step 2.6: 개별 YAML 생성
+#### Step 2.6: 프롬프트 역추론 (NEW)
+
+추출된 shapes[] 구조를 분석하여 `expected_prompt`와 `prompt_keywords`를 생성합니다.
+
+**역추론 원칙**:
+1. 템플릿의 시각적 구성요소 분석
+2. 각 요소의 역할과 목적 파악
+3. 사용자가 자연어로 요청할 법한 문장으로 변환
+
+**프롬프트 구조**:
+```
+[슬라이드 유형] 슬라이드를 만들어줘.
+- [요소 1]: [위치/스타일/용도]
+- [요소 2]: [위치/스타일/용도]
+- ...
+- [전체 분위기/레이아웃 특징]
+```
+
+**요소별 프롬프트 변환 규칙**:
+
+| 도형 타입 | 프롬프트 표현 |
+|----------|--------------|
+| `rounded-rectangle` (상단) | "상단에 라운드 형태의 라벨/배지" |
+| `textbox` (TITLE) | "중앙에 큰 제목 텍스트" |
+| `textbox` (BODY) | "본문 설명 텍스트" |
+| `group` (N열) | "N개의 카드/열로 구성된 그리드" |
+| `icon` | "아이콘과 함께 표시" |
+| `line` | "구분선" |
+| `dotgrid` | "도트그리드 형태의 퍼센트 표시" |
+| `picture` | "이미지/사진 영역" |
+| `oval` (원형) | "원형 도형/단계 표시" |
+| `arrow` | "화살표로 연결/흐름 표현" |
+
+**역추론 알고리즘**:
+
+```python
+def infer_prompt(shapes, design_intent, category):
+    """shapes 구조에서 expected_prompt 역추론"""
+    prompt_parts = []
+    keywords = set()
+
+    # 1. 슬라이드 유형 문장
+    type_desc = get_category_desc(category)
+    prompt_parts.append(f"{type_desc} 슬라이드를 만들어줘.")
+    keywords.add(category)
+
+    # 2. 그룹 분석 (N열 구조 감지)
+    groups = [s for s in shapes if s['type'] == 'group']
+    if len(groups) >= 3:
+        prompt_parts.append(f"- {len(groups)}개의 항목을 가로로 배치")
+        keywords.add(f"{len(groups)}열")
+        keywords.add("그리드")
+
+    # 3. 요소별 설명 생성 (y 좌표 순서대로)
+    for shape in sorted(shapes, key=lambda s: float(s['geometry']['y'].replace('%',''))):
+        desc = shape_to_prompt(shape)
+        if desc:
+            prompt_parts.append(f"- {desc}")
+            keywords.update(extract_keywords(shape))
+
+    # 4. 레이아웃 특징
+    if is_symmetric(shapes):
+        prompt_parts.append("- 대칭적인 레이아웃")
+        keywords.add("대칭")
+    if has_icons(shapes):
+        keywords.add("아이콘")
+
+    return "\n".join(prompt_parts), list(keywords)
+
+def shape_to_prompt(shape):
+    """단일 shape를 프롬프트 문장으로 변환"""
+    shape_type = shape['type']
+    geometry = shape['geometry']
+    y_pos = float(geometry['y'].replace('%',''))
+
+    # 위치 판단
+    position = "상단" if y_pos < 30 else ("중앙" if y_pos < 70 else "하단")
+
+    if shape_type == 'rounded-rectangle':
+        return f"{position}에 라운드 형태의 박스"
+    elif shape_type == 'textbox':
+        placeholder = shape.get('text', {}).get('placeholder_type', '')
+        if placeholder == 'TITLE':
+            return f"{position}에 큰 제목 텍스트"
+        elif placeholder == 'BODY':
+            return "설명 텍스트"
+    elif shape_type == 'icon':
+        return "아이콘 표시"
+    elif shape_type == 'dotgrid':
+        return "도트그리드로 퍼센트 시각화"
+    elif shape_type == 'group':
+        return None  # 그룹은 상위에서 처리
+    elif shape_type == 'oval':
+        return f"{position}에 원형 도형"
+    elif shape_type == 'arrow':
+        return "화살표로 연결"
+
+    return None
+```
+
+**prompt_keywords 추출 규칙**:
+
+| 소스 | 추출 키워드 |
+|------|-----------|
+| category | cover → "표지", toc → "목차", process → "프로세스" |
+| design_intent | grid-4col → "4열", "그리드" |
+| shapes[].type | icon → "아이콘", dotgrid → "도트", "퍼센트" |
+| use_for | 배열 그대로 포함 |
+| 레이아웃 분석 | 대칭 → "대칭", 가로배치 → "가로", "그리드" |
+
+**생성 예시**:
+
+```yaml
+# deepgreen-grid4col1에서 추론된 프롬프트
+expected_prompt: |
+  기능 소개 슬라이드를 만들어줘.
+  - 4개의 카드를 가로로 균등 배치
+  - 각 카드: 상단에 라운드 배경 아이콘
+  - 아이콘 아래에 제목 텍스트
+  - 제목 아래에 설명 텍스트
+  - 균등한 간격의 그리드 레이아웃
+prompt_keywords: ["기능", "특징", "서비스", "4열", "아이콘", "그리드", "카드"]
+```
+
+---
+
+#### Step 2.7: 개별 YAML 생성
 
 **저장 경로**: `templates/contents/templates/{design_intent}{번호}.yaml`
 
@@ -425,10 +623,30 @@ templates:
   - id: {design_intent}{번호}
     name: {한글 이름}
     file: templates/{design_intent}{번호}.yaml
+    thumbnail: thumbnails/{design_intent}{번호}.png
     category: {대분류}
+    design_intent: {design_intent}
     description: "{설명}"
     use_for: ["용도1", "용도2"]
+    # NEW: 프롬프트 역추론 결과 (Step 2.6에서 생성)
+    expected_prompt: |
+      {슬라이드 유형} 슬라이드를 만들어줘.
+      - {요소1 설명}
+      - {요소2 설명}
+      - {레이아웃 특징}
+    prompt_keywords: ["{키워드1}", "{키워드2}", "{키워드3}"]
 ```
+
+**expected_prompt 작성 가이드**:
+- 사용자가 자연어로 요청할 법한 문장으로 작성
+- 슬라이드의 주요 구성요소를 순서대로 설명
+- 레이아웃 특징(대칭, 그리드, 흐름 등) 포함
+
+**prompt_keywords 작성 가이드**:
+- 5-7개 키워드 권장
+- 한글/영어 혼용 가능
+- category, design_intent에서 파생된 키워드 포함
+- 사용자가 검색할 법한 단어 포함
 
 ---
 
