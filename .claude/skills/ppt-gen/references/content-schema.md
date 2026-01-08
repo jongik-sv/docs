@@ -1,6 +1,522 @@
-# Content Template Schema v2.0
+# Content Template Schema v4.0
 
 콘텐츠 템플릿의 YAML 스키마 정의서입니다. 슬라이드 레이아웃을 재사용 가능한 형태로 저장합니다.
+
+> **버전 히스토리**
+> - v4.0: 콘텐츠-오브젝트 분리, 동적 오브젝트 선택 시스템
+> - v3.1: SVG 복잡 도형 지원
+> - v2.0: 이미지 설명 필수화, expected_prompt 추가
+
+---
+
+# Part 1: v4.0 스키마 (콘텐츠-오브젝트 분리)
+
+## 1. 핵심 개념
+
+v4.0은 **콘텐츠**(배치)와 **오브젝트**(도형)를 분리하여 재사용성과 유연성을 높입니다.
+
+```
+┌─────────────────────────────────────────┐
+│ CONTENT (콘텐츠)                         │
+│ - 배치, 여백, 구조                       │
+│ - "어디에" 배치할 것인가?                │
+│ - placeholder 기반                      │
+└─────────────────────────────────────────┘
+                     │
+                     │ 동적 참조
+                     ▼
+┌─────────────────────────────────────────┐
+│ OBJECT (오브젝트)                        │
+│ - 실제 도형/이미지 정의                  │
+│ - "무엇을" 그릴 것인가?                  │
+│ - 4가지 타입: OOXML, SVG, Image, Desc   │
+└─────────────────────────────────────────┘
+```
+
+## 2. v4.0 콘텐츠 템플릿 구조
+
+```yaml
+content_template:
+  id: comparison-2col1
+  version: "4.0"
+
+  content:
+    layout:
+      type: grid | radial | sequential | freeform
+      columns: 2
+      rows: 1
+
+    zones:
+      # Zone 배열 (아래 섹션 참조)
+      - id: main-diagram
+        type: placeholder
+        geometry: {x: 10%, y: 20%, cx: 80%, cy: 60%}
+        placeholder_type: DIAGRAM
+        object_hint: {category: cycle, element_count: 4-6}
+        object_default: "objects/cycle/6segment.yaml"
+
+    spacing:
+      column_gap: 4%
+      row_gap: 3%
+
+  inline_objects:
+    - id: accent-line
+      type: description
+      desc: "가로 구분선, 두께 2px"
+```
+
+## 3. Layout 섹션
+
+레이아웃 유형을 정의합니다.
+
+```yaml
+layout:
+  type: grid | radial | sequential | freeform
+
+  # grid 타입
+  columns: 2
+  rows: 2
+  column_weights: [1, 1]  # 비율
+  row_weights: [0.3, 0.7]
+
+  # radial 타입
+  center: {x: 50%, y: 50%}
+  radius: 35%
+  start_angle: 90
+
+  # sequential 타입
+  direction: horizontal | vertical
+  alignment: center | start | end
+```
+
+| 타입 | 설명 | 예시 |
+|------|------|------|
+| `grid` | 격자 배치 | 2열 비교, 4열 그리드 |
+| `radial` | 방사형 배치 | 사이클 다이어그램, 원형 차트 |
+| `sequential` | 순차 배치 | 프로세스, 타임라인 |
+| `freeform` | 자유 배치 | 비정형 레이아웃 |
+
+## 4. Zones 섹션 (핵심)
+
+각 Zone은 슬라이드의 영역을 정의하고, 동적으로 오브젝트를 선택합니다.
+
+### 4.1 Zone 스키마
+
+```yaml
+zones:
+  - id: main-diagram
+    type: container | placeholder
+
+    # 배치 정보
+    geometry:
+      x: 10%
+      y: 20%
+      cx: 80%
+      cy: 60%
+
+    # 플레이스홀더 유형 (필수)
+    placeholder_type: TITLE | SUBTITLE | BODY | ICON | IMAGE | CHART | DIAGRAM
+
+    # 오브젝트 선택 (3가지 방식 - 모두 선택적)
+    # 방식 1: 동적 검색 (LLM이 registry에서 최적 오브젝트 선택)
+    object_hint:
+      category: [cycle, process]    # 검색할 카테고리
+      semantic: "순환 프로세스"       # 의미적 설명
+      style: colorful               # 스타일 태그
+      element_count: 4-6            # 요소 개수 범위
+      complexity: medium            # 복잡도
+
+    # 방식 2: 고정/폴백 (검색 실패 시 또는 고정 사용)
+    object_default: "objects/cycle/6segment.yaml"
+
+    # 방식 3: 설명 기반 생성 (간단한 도형)
+    object_desc: "둥근 모서리 카드 배경"
+
+    # 스타일 참조 (테마 토큰)
+    style_ref: primary-fill | secondary-stroke | surface-bg
+```
+
+### 4.2 오브젝트 선택 우선순위
+
+```
+1. object_hint 있음?
+   ├─ YES → Registry 검색 → 매칭 결과 사용
+   └─ 매칭 실패 → 2번으로
+
+2. object_default 있음?
+   ├─ YES → 기본 오브젝트 사용
+   └─ NO → 3번으로
+
+3. object_desc 있음?
+   ├─ YES → LLM이 설명 기반 생성
+   └─ NO → 텍스트 플레이스홀더만
+```
+
+### 4.3 Zone 예시
+
+```yaml
+zones:
+  # 예시 1: 단순 컨테이너 (오브젝트 불필요)
+  - id: left-panel
+    type: container
+    geometry: {x: 2%, y: 15%, cx: 46%, cy: 80%}
+    style_ref: primary-fill
+    object_desc: "둥근 모서리 사각형 배경"
+
+  # 예시 2: 동적 오브젝트 선택 (힌트 기반 검색)
+  - id: main-diagram
+    type: placeholder
+    geometry: {x: 10%, y: 20%, cx: 80%, cy: 60%}
+    placeholder_type: DIAGRAM
+    object_hint:
+      category: [cycle, process]
+      semantic: "순환 프로세스"
+      element_count: 4-6
+      style: colorful
+    object_default: "objects/cycle/6segment-colorful.yaml"
+
+  # 예시 3: 고정 오브젝트 (특정 도형 필수)
+  - id: logo-area
+    type: placeholder
+    geometry: {x: 85%, y: 5%, cx: 10%, cy: 10%}
+    placeholder_type: IMAGE
+    object_default: "objects/images/company-logo.yaml"
+
+  # 예시 4: 텍스트 영역 (오브젝트 불필요)
+  - id: title
+    type: placeholder
+    geometry: {x: 10%, y: 5%, cx: 70%, cy: 10%}
+    placeholder_type: TITLE
+```
+
+## 5. Object Hint 스키마
+
+LLM이 오브젝트 Registry를 검색할 때 사용하는 조건입니다.
+
+```yaml
+object_hint:
+  # 검색 카테고리 (배열 또는 단일)
+  category: [cycle, process, flow]
+
+  # 의미적 설명 (자연어)
+  semantic: "6단계 순환 프로세스 다이어그램"
+
+  # 스타일 태그
+  style: [colorful, segmented]
+
+  # 요소 개수 (단일, 범위, 배열)
+  element_count: 4-6    # 범위
+  # element_count: 4    # 단일
+  # element_count: [4, 5, 6]  # 배열
+
+  # 복잡도
+  complexity: [medium, high]  # low | medium | high
+```
+
+| 필드 | 타입 | 설명 |
+|------|------|------|
+| `category` | string/array | 검색할 오브젝트 카테고리 |
+| `semantic` | string | 의미적 설명 (LLM 매칭용) |
+| `style` | string/array | 스타일 태그 |
+| `element_count` | string/number/array | 요소 개수 조건 |
+| `complexity` | string/array | 복잡도 수준 |
+
+## 6. Inline Objects
+
+간단한 도형은 콘텐츠 내에 인라인으로 정의합니다.
+
+```yaml
+inline_objects:
+  - id: divider-line
+    type: description
+    desc: "가로 구분선"
+    render_hint:
+      shape: line
+      orientation: horizontal
+      thickness: 2px
+      color: secondary
+
+  - id: card-bg
+    type: description
+    desc: "둥근 모서리 카드 배경"
+    render_hint:
+      shape: rounded-rectangle
+      corner_radius: 8px
+      fill: surface
+      shadow: soft
+```
+
+---
+
+# Part 2: Object 스키마
+
+## 7. Object 타입
+
+오브젝트는 4가지 타입으로 분류됩니다.
+
+| 타입 | 설명 | 저장 내용 |
+|------|------|----------|
+| `ooxml` | PPTX 네이티브 도형 | XML 정의, shape_type, path |
+| `svg` | 벡터 그래픽 | SVG inline 또는 파일 경로 |
+| `image` | 래스터 이미지 | 파일 경로, 소스 정보 |
+| `description` | 간단한 도형 | 텍스트 설명만 |
+
+## 8. Object 파일 구조
+
+```
+templates/contents/objects/
+├── registry.yaml           # 오브젝트 레지스트리
+├── cycle/
+│   ├── 6segment-colorful.yaml
+│   └── 4arrow.yaml
+├── honeycomb/
+│   └── process-hex.yaml
+├── arrows/
+│   └── curved-arrows.yaml
+├── icons/
+│   └── fa-icons.yaml
+└── images/
+    └── hero-backgrounds.yaml
+```
+
+## 9. Object Registry 스키마
+
+오브젝트 검색을 위한 메타데이터 레지스트리입니다.
+
+```yaml
+# objects/registry.yaml
+version: "1.0"
+
+objects:
+  - id: cycle-6segment-colorful
+    file: cycle/6segment-colorful.yaml
+    type: ooxml
+
+    # 검색용 메타데이터
+    metadata:
+      category: cycle
+      tags: [colorful, segmented, 6-element, process]
+      semantic: "6단계 순환 다이어그램, 컬러풀한 세그먼트"
+      element_count: 6
+      complexity: high
+      style: colorful
+
+  - id: cycle-4arrow
+    file: cycle/4arrow.yaml
+    type: svg
+    metadata:
+      category: cycle
+      tags: [minimal, arrow, 4-element]
+      semantic: "4단계 순환 화살표, 미니멀 스타일"
+      element_count: 4
+      complexity: medium
+      style: minimal
+
+  - id: process-honeycomb
+    file: process/honeycomb.yaml
+    type: ooxml
+    metadata:
+      category: process
+      tags: [hexagon, connected, flow]
+      semantic: "벌집 형태 프로세스 다이어그램"
+      element_count: [5, 7]  # 범위
+      complexity: high
+      style: geometric
+```
+
+## 10. Object YAML 예시
+
+### 10.1 OOXML 타입
+
+```yaml
+# objects/cycle/6segment-colorful.yaml
+object:
+  id: 6segment-colorful
+  type: ooxml
+  version: "1.0"
+
+segments:
+  - id: segment-orange
+    name: "상단 세그먼트 (주황)"
+    type: ooxml
+    ooxml:
+      shape_type: freeform
+      path: "M 0,-35 C 50,-100 100,-130 70,-165 ..."
+      fill: "#FF7F50"
+      effect: null
+    metadata:
+      semantic: "순환 다이어그램 상단 조각"
+      position_hint: top
+
+  - id: segment-blue
+    name: "우상단 세그먼트 (파랑)"
+    type: ooxml
+    ooxml:
+      shape_type: freeform
+      path: "M 70,-165 C 120,-180 ..."
+      fill: "#6495ED"
+```
+
+### 10.2 SVG 타입
+
+```yaml
+# objects/cycle/circular-arrows.yaml
+object:
+  id: circular-arrows
+  type: svg
+  version: "1.0"
+
+svg:
+  viewBox: "0 0 200 200"
+  inline: |
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <path d="M 100,20 A 80,80 0 0,1 180,100"
+            fill="none" stroke="currentColor" stroke-width="8"/>
+    </svg>
+
+variants:
+  - id: 4-segment
+    segments: 4
+    gap_angle: 8
+  - id: 6-segment
+    segments: 6
+    gap_angle: 5
+
+metadata:
+  semantic: "순환 화살표 다이어그램"
+  customizable: [segments, gap_angle, colors]
+```
+
+### 10.3 Image 타입
+
+```yaml
+# objects/images/hero-backgrounds.yaml
+object:
+  id: hero-backgrounds
+  type: image
+  version: "1.0"
+
+images:
+  - id: city-night
+    file: images/city-night.jpg
+    description: "도시 야경 사진, 어두운 배경"
+    source: unsplash
+    license: free
+    tags: [dark, urban, tech]
+
+  - id: nature-green
+    file: images/nature-green.jpg
+    description: "녹색 자연 배경"
+    source: unsplash
+    tags: [light, nature, eco]
+```
+
+### 10.4 Description 타입 (인라인)
+
+```yaml
+# 콘텐츠 내 inline_objects로 정의
+inline_objects:
+  - id: divider-line
+    type: description
+    desc: "가로 구분선"
+    render_hint:
+      shape: line
+      orientation: horizontal
+      thickness: 2px
+      color: secondary
+```
+
+---
+
+# Part 3: 동적 오브젝트 선택 시스템
+
+## 11. LLM 오브젝트 선택 흐름
+
+```
+사용자: "4단계 순환 프로세스 PPT 만들어줘"
+                    │
+                    ▼
+┌─────────────────────────────────────────────────────────────┐
+│ 1. 콘텐츠 분석 & 템플릿 선택                                  │
+│    - 콘텐츠: "순환 프로세스" → category: cycle               │
+│    - 템플릿: process-visual1 선택                           │
+│    - object_hint: {category: cycle, element_count: 4}       │
+└─────────────────────────────────────────────────────────────┘
+                    │
+                    ▼
+┌─────────────────────────────────────────────────────────────┐
+│ 2. 오브젝트 Registry 검색                                    │
+│                                                             │
+│    Query:                                                   │
+│    - category IN [cycle, process, flow]                     │
+│    - element_count MATCH 4                                  │
+│                                                             │
+│    결과:                                                     │
+│    ┌──────────────────────┬────────────┬──────────┐         │
+│    │ 오브젝트             │ 매칭 점수  │ 선택     │         │
+│    ├──────────────────────┼────────────┼──────────┤         │
+│    │ cycle-4arrow         │ 95%        │ ✓        │         │
+│    │ cycle-6segment       │ 60%        │          │         │
+│    │ process-honeycomb    │ 40%        │          │         │
+│    └──────────────────────┴────────────┴──────────┘         │
+└─────────────────────────────────────────────────────────────┘
+                    │
+                    ▼
+┌─────────────────────────────────────────────────────────────┐
+│ 3. PPT 생성                                                 │
+│    - 콘텐츠 geometry로 위치 결정                             │
+│    - 선택된 오브젝트(cycle-4arrow)로 렌더링                   │
+│    - 테마 색상 적용                                          │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## 12. 유연성 모드
+
+| 모드 | 설명 | 스키마 설정 |
+|------|------|------------|
+| **고정** | 특정 오브젝트만 사용 | `object_default` only (no hint) |
+| **검색** | LLM이 최적 선택 | `object_hint` + `object_default` |
+| **자유** | 설명 기반 생성 | `object_desc` only |
+| **혼합** | 힌트 + 설명 | `object_hint` + `object_desc` |
+
+## 13. 검색 알고리즘
+
+```python
+def select_object(zone, content_context, registry):
+    """
+    오브젝트 선택 알고리즘
+
+    1. object_hint가 있으면 registry 검색
+    2. 매칭 결과가 있으면 최고 점수 오브젝트 반환
+    3. 없으면 object_default 반환
+    4. default도 없으면 object_desc로 LLM 생성
+    """
+    if zone.object_hint:
+        candidates = registry.search(
+            category=zone.object_hint.category,
+            element_count=zone.object_hint.element_count,
+            style=zone.object_hint.style,
+            semantic=zone.object_hint.semantic
+        )
+
+        # 콘텐츠 컨텍스트로 점수 계산
+        scored = score_candidates(candidates, content_context)
+
+        if scored:
+            return scored[0]  # 최고 점수 오브젝트
+
+    if zone.object_default:
+        return registry.get(zone.object_default)
+
+    if zone.object_desc:
+        return generate_from_description(zone.object_desc)
+
+    return None  # 단순 placeholder
+```
+
+---
+
+# Part 4: v2.0 레거시 스키마 (호환성 유지)
 
 ## 스키마 개요
 

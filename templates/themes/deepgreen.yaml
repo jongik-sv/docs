@@ -9,29 +9,29 @@ theme:
 
 colors:
   # Core semantic colors (design tokens)
-  primary: "#1E5128"        # 진한 녹색 - 주요 강조색
-  secondary: "#4E9F3D"      # 밝은 녹색 - 보조 강조색
-  accent: "#D8E9A8"         # 연두색 - 하이라이트
-  background: "#FFFFFF"     # 흰색 배경
-  surface: "#F4F6F6"        # 카드/패널 배경
-  dark_text: "#191A19"      # 본문 텍스트 (거의 검정)
-  light: "#FFFFFF"          # 밝은 텍스트 (흰색)
-  gray: "#AAB7B8"           # 음소거 요소
+  primary: "#1E5128" # 진한 녹색 - 주요 강조색
+  secondary: "#4E9F3D" # 밝은 녹색 - 보조 강조색
+  accent: "#D8E9A8" # 연두색 - 하이라이트
+  background: "#FFFFFF" # 흰색 배경
+  surface: "#F4F6F6" # 카드/패널 배경
+  dark_text: "#191A19" # 본문 텍스트 (거의 검정)
+  light: "#FFFFFF" # 밝은 텍스트 (흰색)
+  gray: "#AAB7B8" # 음소거 요소
 
   # Extended palette
-  accent2: "#7BC74D"        # 중간 녹색
-  accent3: "#8BC34A"        # 라임 녹색
-  border: "#E0E0E0"         # 경계선 색상
+  accent2: "#7BC74D" # 중간 녹색
+  accent3: "#8BC34A" # 라임 녹색
+  border: "#E0E0E0" # 경계선 색상
 
 typography:
   heading_font: "Arial"
   body_font: "Arial"
   korean_font: "Malgun Gothic"
   heading_weight: bold
-  body_weight: normal
+  body_weight: normal`
 
 style_hints:
-  rounded_corners: 8        # 기본 모서리 반경 (pt)
-  shadow_blur: 4            # 그림자 블러
-  border_width: 2           # 테두리 두께
-  card_padding: 20          # 카드 내부 여백
+  rounded_corners: 8 # 기본 모서리 반경 (pt)
+  shadow_blur: 4 # 그림자 블러
+  border_width: 2 # 테두리 두께
+  card_padding: 20 # 카드 내부 여백

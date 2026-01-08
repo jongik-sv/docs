@@ -1,0 +1,116 @@
+# Object Registry v1.0
+# 오브젝트 검색을 위한 메타데이터 레지스트리
+# LLM이 object_hint를 기반으로 최적의 오브젝트를 검색할 때 사용
+
+version: "1.0"
+description: "콘텐츠 템플릿에서 참조하는 오브젝트 라이브러리"
+
+# 카테고리 정의
+categories:
+  - id: cycle
+    name: "순환 다이어그램"
+    description: "사이클, 순환 프로세스 표현"
+
+  - id: honeycomb
+    name: "벌집 다이어그램"
+    description: "육각형 기반 프로세스/기능 표현"
+
+  - id: arrows
+    name: "화살표/커넥터"
+    description: "방향, 흐름 표현"
+
+  - id: shapes
+    name: "기본 도형"
+    description: "사각형, 원 등 기본 도형"
+
+  - id: icons
+    name: "아이콘"
+    description: "FontAwesome, Material 등 아이콘"
+
+  - id: images
+    name: "이미지"
+    description: "배경, 히어로 이미지"
+
+# 오브젝트 목록
+objects:
+  # === CYCLE ===
+  # 예시 오브젝트 (실제 파일은 추후 마이그레이션 시 추가)
+  # - id: cycle-6segment-colorful
+  #   file: cycle/6segment-colorful.yaml
+  #   type: ooxml
+  #   metadata:
+  #     category: cycle
+  #     tags: [colorful, segmented, 6-element, process]
+  #     semantic: "6단계 순환 다이어그램, 컬러풀한 세그먼트"
+  #     element_count: 6
+  #     complexity: high
+  #     style: colorful
+
+  # - id: cycle-4arrow
+  #   file: cycle/4arrow.yaml
+  #   type: svg
+  #   metadata:
+  #     category: cycle
+  #     tags: [minimal, arrow, 4-element]
+  #     semantic: "4단계 순환 화살표, 미니멀 스타일"
+  #     element_count: 4
+  #     complexity: medium
+  #     style: minimal
+
+  # === HONEYCOMB ===
+  # - id: process-honeycomb
+  #   file: honeycomb/process-hex.yaml
+  #   type: ooxml
+  #   metadata:
+  #     category: honeycomb
+  #     tags: [hexagon, connected, flow]
+  #     semantic: "벌집 형태 프로세스 다이어그램"
+  #     element_count: [5, 7]
+  #     complexity: high
+  #     style: geometric
+
+# 검색 가이드
+search_guide:
+  # object_hint 필드별 매칭 방법
+  category:
+    type: exact_or_array
+    description: "카테고리 ID 또는 배열로 검색"
+
+  semantic:
+    type: fuzzy
+    description: "의미적 유사도로 검색 (LLM 판단)"
+
+  element_count:
+    type: range
+    description: "단일값, 범위(4-6), 배열([4,5,6]) 지원"
+
+  style:
+    type: tag_match
+    description: "스타일 태그 매칭"
+
+  complexity:
+    type: enum
+    values: [low, medium, high]
+    description: "복잡도 수준 필터"
+
+  tags:
+    type: tag_match
+    description: "태그 매칭 (OR 조건)"
+
+# 오브젝트 타입 정의
+object_types:
+  ooxml:
+    description: "PPTX 네이티브 도형 (XML path 포함)"
+    use_case: "복잡한 다이어그램, 방사형 세그먼트"
+
+  svg:
+    description: "벡터 그래픽 (SVG inline 또는 파일)"
+    use_case: "확장 가능한 도형, 커스텀 아이콘"
+
+  image:
+    description: "래스터 이미지 (파일 경로)"
+    use_case: "배경, 사진, 로고"
+
+  description:
+    description: "텍스트 설명만 (LLM이 렌더링)"
+    use_case: "간단한 도형 (사각형, 원, 선)"
