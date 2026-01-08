@@ -1,0 +1,26 @@
+# Deep Green Theme
+# Source: PRD v4.9 - Section 6.1
+
+theme:
+  id: deepgreen
+  name: "Deep Green"
+  description: "자연스럽고 깔끔한 딥그린 테마"
+
+colors:
+  primary: "#1E5128"      # 주요 강조색 (진한 녹색)
+  secondary: "#4E9F3D"    # 보조 강조색 (밝은 녹색)
+  accent: "#D8E9A8"       # 하이라이트 (연두색)
+  background: "#FFFFFF"   # 배경색
+  surface: "#F4F6F6"      # 카드/패널 배경
+  dark_text: "#191A19"    # 본문 텍스트
+  light: "#FFFFFF"        # 밝은 텍스트
+  gray: "#AAB7B8"         # 음소거 요소
+
+typography:
+  heading_font: "Arial"
+  body_font: "Arial"
+  korean_font: "Malgun Gothic"
+
+style_hints:
+  rounded_corners: 8
+  shadow_blur: 4

@@ -626,6 +626,109 @@ svg:
     # ... 4개 더
 ```
 
+---
+
+#### Step 2.4.3: 이미지 자동 벡터화 (VTracer)
+
+**목적**: 래스터 이미지(PNG, JPG)를 SVG로 변환하여 `shape_source: svg`로 저장
+
+**사용 시점**:
+- 아이콘/로고 이미지를 벡터로 변환하고 싶을 때
+- 다이어그램 이미지를 편집 가능한 형태로 추출할 때
+- 이미지 품질 손실 없이 확대/축소가 필요할 때
+
+**스크립트 사용**:
+
+```bash
+# 기본 변환 (자동 프리셋)
+python .claude/skills/ppt-extract/scripts/image-vectorizer.py extracted_icon.png --output icon.svg
+
+# 프리셋별 변환
+python .claude/skills/ppt-extract/scripts/image-vectorizer.py logo.png --preset logo --output logo.svg
+python .claude/skills/ppt-extract/scripts/image-vectorizer.py diagram.png --preset diagram --output diagram.svg
+
+# 배치 변환
+python .claude/skills/ppt-extract/scripts/image-vectorizer.py ./media/ --output ./svgs/
+```
+
+**프리셋 선택 가이드**:
+
+| 이미지 유형 | 프리셋 | 예상 품질 |
+|------------|--------|----------|
+| 단색 아이콘 | `icon` | 95-99% |
+| 플랫 로고 | `logo` | 90-95% |
+| 다이어그램 | `diagram` | 85-95% |
+| 차트 | `chart` | 85-90% |
+| 기타 | `default` | 80-90% |
+
+**워크플로우 통합**:
+
+```python
+# 1. PPTX에서 미디어 추출
+media_files = extract_media_from_pptx(pptx_path)
+
+# 2. 벡터화 대상 판단
+for media in media_files:
+    if should_vectorize(media):  # 아이콘, 로고, 다이어그램인지 판단
+        # 3. VTracer로 SVG 변환
+        svg_path = vectorize_with_vtracer(media['path'], preset='auto')
+
+        # 4. 템플릿에 shape_source: svg로 저장
+        shape['shape_source'] = 'svg'
+        shape['svg'] = {
+            'file': svg_path,
+            'original_image': media['path']  # fallback용 원본 보존
+        }
+```
+
+**벡터화 대상 판단 함수**:
+
+```python
+def should_vectorize(media_file):
+    """이미지를 SVG로 변환할지 판단"""
+    filename = media_file['name'].lower()
+
+    # 아이콘/로고 판단
+    if any(kw in filename for kw in ['icon', 'logo', 'symbol', 'badge']):
+        return True
+
+    # 크기 기반 판단 (작은 이미지 = 아이콘 가능성)
+    if media_file['width'] <= 256 and media_file['height'] <= 256:
+        return True
+
+    # 색상 수 기반 (적은 색상 = 벡터화 적합)
+    if media_file.get('color_count', 100) <= 32:
+        return True
+
+    return False
+```
+
+**출력 YAML 예시**:
+
+```yaml
+shapes:
+  - id: "icon-diagram"
+    type: svg
+    shape_source: svg
+    geometry:
+      x: 10%
+      y: 15%
+      cx: 80%
+      cy: 70%
+    svg:
+      file: "svgs/process-diagram.svg"
+      original_image: "media/image1.png"  # fallback
+      preset_used: "diagram"
+      vectorization_quality: 0.92
+```
+
+**한계 및 주의사항**:
+- 사진/복잡한 이미지는 벡터화 품질이 낮음 → `shape_source: html` 또는 원본 이미지 유지
+- 텍스트가 포함된 이미지는 경로로 변환됨 (편집 불가)
+- 그라데이션은 계단식으로 근사됨
+
+---
+
 **이미지 설명 필수 (picture 타입)**: 이미지 도형에는 반드시 `description` 포함
 
 ```yaml

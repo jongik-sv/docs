@@ -1,10 +1,10 @@
-# 기본양식 (동국시스템즈)
-# 자동 생성: 2026-01-09 00:04
+# 기본양식
+# 자동 생성: 2026-01-09 02:13
 # 원본: 동국시스템즈 기본양식.pptx
 
 document:
   id: 기본양식
-  name: 기본양식 (동국시스템즈)
+  name: 기본양식
   source: 동국시스템즈 기본양식.pptx
   aspect_ratio: 9906000:6858000
   slide_size:
@@ -40,7 +40,19 @@ layouts:
   placeholders:
   - type: body
     idx: 13
+    position:
+      x: 4.8
+      y: 53.6
+      width: 58.7
+      height: 3.6
+    role: 본문 텍스트
   - type: title
+    position:
+      x: 4.8
+      y: 33.2
+      width: 59.0
+      height: 13.9
+    role: 슬라이드 제목
   images:
   - rId: rId7
     file: assets/default/image2.png
@@ -57,10 +69,28 @@ layouts:
   placeholders:
   - type: body
     idx: 17
+    position:
+      x: 9.4
+      y: 33.2
+      width: 6.9
+      height: 47.3
+    role: 본문 텍스트
   - type: body
     idx: 14
+    position:
+      x: 74.1
+      y: 33.3
+      width: 12.2
+      height: 45.6
+    role: 본문 텍스트
   - type: body
     idx: 13
+    position:
+      x: 16.5
+      y: 33.2
+      width: 37.7
+      height: 47.3
+    role: 본문 텍스트
   images:
   - rId: rId8
     file: assets/default/image2.png
@@ -81,13 +111,43 @@ layouts:
   placeholders:
   - type: body
     idx: 18
+    position:
+      x: 3.0
+      y: 20.9
+      width: 102.4
+      height: 12.8
+    role: 본문 텍스트
   - type: title
+    position:
+      x: 3.0
+      y: 8.4
+      width: 102.3
+      height: 10.3
+    role: 슬라이드 제목
   - type: body
     idx: 19
+    position:
+      x: 3.0
+      y: 2.5
+      width: 67.5
+      height: 5.4
+    role: 본문 텍스트
   - type: sldNum
     idx: 4
+    position:
+      x: 101.3
+      y: 96.3
+      width: 4.1
+      height: 2.2
+    role: 슬라이드 번호
   - type: ftr
     idx: 3
+    position:
+      x: 85.2
+      y: 96.3
+      width: 16.8
+      height: 2.2
+    role: 바닥글
   images:
   - rId: rId7
     file: assets/default/image2.png
@@ -105,14 +165,44 @@ layouts:
   - 불릿
   placeholders:
   - type: title
+    position:
+      x: 3.0
+      y: 8.4
+      width: 102.3
+      height: 10.3
+    role: 슬라이드 제목
   - type: body
     idx: 19
+    position:
+      x: 3.0
+      y: 2.5
+      width: 67.5
+      height: 5.4
+    role: 본문 텍스트
   - type: sldNum
     idx: 4
+    position:
+      x: 101.3
+      y: 96.3
+      width: 4.1
+      height: 2.2
+    role: 슬라이드 번호
   - type: ftr
     idx: 3
+    position:
+      x: 85.2
+      y: 96.3
+      width: 16.8
+      height: 2.2
+    role: 바닥글
   - type: body
     idx: 20
+    position:
+      x: 3.0
+      y: 22.1
+      width: 102.3
+      height: 71.7
+    role: 본문 텍스트
   images:
   - rId: rId7
     file: assets/default/image2.png
@@ -131,12 +221,36 @@ layouts:
   placeholders:
   - type: body
     idx: 19
+    position:
+      x: 3.0
+      y: 2.0
+      width: 102.3
+      height: 6.5
+    role: 본문 텍스트
   - type: sldNum
     idx: 4
+    position:
+      x: 101.3
+      y: 96.3
+      width: 4.1
+      height: 2.2
+    role: 슬라이드 번호
   - type: ftr
     idx: 3
+    position:
+      x: 85.2
+      y: 96.3
+      width: 16.8
+      height: 2.2
+    role: 바닥글
   - type: body
     idx: 18
+    position:
+      x: 3.0
+      y: 13.6
+      width: 102.4
+      height: 12.8
+    role: 본문 텍스트
   images:
   - rId: rId7
     file: assets/default/image2.png

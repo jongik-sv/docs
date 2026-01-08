@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 20pt 40pt 10pt; }
+.header h1 { color: #1E293B; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { flex: 1; padding: 8pt 40pt 40pt; display: flex; flex-wrap: wrap; gap: 12pt; align-content: flex-start; }
+.risk-card {
+  background: #F8FAFC; border-radius: 6pt; padding: 12pt;
+  width: calc(50% - 6pt); border-left: 3pt solid #EF4444;
+}
+.risk-card.medium { border-left-color: #F59E0B; }
+.risk-card.low { border-left-color: #10B981; }
+.risk-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6pt; }
+.risk-header h4 { color: #1E293B; font-size: 10pt; margin: 0; font-weight: bold; }
+.risk-level-box { background: #FEE2E2; padding: 2pt 6pt; border-radius: 8pt; }
+.risk-level-box p { color: #EF4444; font-size: 7pt; margin: 0; }
+.risk-card.medium .risk-level-box { background: #FEF3C7; }
+.risk-card.medium .risk-level-box p { color: #F59E0B; }
+.risk-card.low .risk-level-box { background: #D1FAE5; }
+.risk-card.low .risk-level-box p { color: #10B981; }
+.risk-card p.desc { color: #64748B; font-size: 8pt; margin: 0 0 4pt 0; line-height: 1.3; }
+.risk-card p.response { color: #1E293B; font-size: 8pt; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>위험 관리</h1>
+</div>
+<div class="content">
+  <div class="risk-card">
+    <div class="risk-header">
+      <h4>요구사항 변경</h4>
+      <div class="risk-level-box"><p>영향:상 / 확률:상</p></div>
+    </div>
+    <p class="desc">프로젝트 진행 중 요구사항의 잦은 변경</p>
+    <p class="response">대응: CCB 통해 통제, 영향도 분석 필수 (PM)</p>
+  </div>
+  <div class="risk-card medium">
+    <div class="risk-header">
+      <h4>일정 지연</h4>
+      <div class="risk-level-box"><p>영향:상 / 확률:중</p></div>
+    </div>
+    <p class="desc">개발 복잡도 증가로 인한 일정 지연</p>
+    <p class="response">대응: 주간 진척관리, Critical Path 모니터링 (PM)</p>
+  </div>
+  <div class="risk-card medium">
+    <div class="risk-header">
+      <h4>기술적 난제</h4>
+      <div class="risk-level-box"><p>영향:중 / 확률:중</p></div>
+    </div>
+    <p class="desc">신기술 적용, 레거시 연동 등 기술적 문제</p>
+    <p class="response">대응: PoC 선행, 외부 전문가 자문 (AA)</p>
+  </div>
+  <div class="risk-card low">
+    <div class="risk-header">
+      <h4>인력 이탈</h4>
+      <div class="risk-level-box"><p>영향:상 / 확률:하</p></div>
+    </div>
+    <p class="desc">핵심 인력의 이탈로 인한 연속성 저해</p>
+    <p class="response">대응: 대체 인력 풀 확보, 기술 문서화 (PM)</p>
+  </div>
+  <div class="risk-card medium">
+    <div class="risk-header">
+      <h4>데이터 마이그레이션</h4>
+      <div class="risk-level-box"><p>영향:상 / 확률:중</p></div>
+    </div>
+    <p class="desc">레거시 데이터 이관 시 정합성 문제</p>
+    <p class="response">대응: 사전 검증, 롤백 계획 수립 (DBA)</p>
+  </div>
+</div>
+</body>
+</html>

@@ -25,6 +25,7 @@ import xml.dom.minidom
 from pathlib import Path
 from datetime import datetime
 import re
+import sys
 import yaml
 import shutil
 
@@ -35,14 +36,17 @@ try:
 except ImportError:
     FONT_MANAGER_AVAILABLE = False
 
-
-# OOXML 네임스페이스
-NAMESPACES = {
-    'a': 'http://schemas.openxmlformats.org/drawingml/2006/main',
-    'r': 'http://schemas.openxmlformats.org/officeDocument/2006/relationships',
-    'p': 'http://schemas.openxmlformats.org/presentationml/2006/main',
-    'rel': 'http://schemas.openxmlformats.org/package/2006/relationships',
-}
+# 공유 모듈 import
+SCRIPT_DIR = Path(__file__).parent
+sys.path.insert(0, str(SCRIPT_DIR.parent.parent / 'shared'))
+from xml_utils import (
+    extract_layout_ooxml,
+    extract_layout_rels,
+    extract_slide_master_ooxml,
+    extract_slide_master_rels,
+    extract_theme_ooxml,
+    NAMESPACES,
+)
 
 # 관계 타입
 REL_NS = 'http://schemas.openxmlformats.org/package/2006/relationships'
@@ -146,6 +150,11 @@ def analyze_slide_layout(pptx_path: str, layout_num: int) -> dict:
             if cSld is not None:
                 layout_info['name'] = cSld.get('name', f'Layout {layout_num}')
 
+            # 슬라이드 크기 (기본값: 10" x 7.5" in EMU)
+            # 실제 크기는 presentation.xml에서 가져와야 하지만 기본값 사용
+            slide_width_emu = 9144000
+            slide_height_emu = 6858000
+
             # 플레이스홀더 분석
             shapes = root.findall('.//p:sp', NAMESPACES)
             layout_info['shape_count'] = len(shapes)
@@ -161,6 +170,40 @@ def analyze_slide_layout(pptx_path: str, layout_num: int) -> dict:
                     }
                     if ph_idx:
                         placeholder['idx'] = int(ph_idx) if ph_idx.isdigit() else ph_idx
+
+                    # 위치/크기 추출 (xfrm)
+                    xfrm = shape.find('.//p:spPr/a:xfrm', NAMESPACES)
+                    if xfrm is not None:
+                        off = xfrm.find('a:off', NAMESPACES)
+                        ext = xfrm.find('a:ext', NAMESPACES)
+                        if off is not None and ext is not None:
+                            x_emu = int(off.get('x', 0))
+                            y_emu = int(off.get('y', 0))
+                            cx_emu = int(ext.get('cx', 0))
+                            cy_emu = int(ext.get('cy', 0))
+
+                            placeholder['position'] = {
+                                'x': round(x_emu / slide_width_emu * 100, 1),
+                                'y': round(y_emu / slide_height_emu * 100, 1),
+                                'width': round(cx_emu / slide_width_emu * 100, 1),
+                                'height': round(cy_emu / slide_height_emu * 100, 1),
+                            }
+
+                    # 역할 자동 설정
+                    role_map = {
+                        'title': '슬라이드 제목',
+                        'ctrTitle': '중앙 제목',
+                        'subTitle': '부제목',
+                        'body': '본문 텍스트',
+                        'pic': '이미지',
+                        'chart': '차트',
+                        'tbl': '표',
+                        'dgm': '다이어그램',
+                        'sldNum': '슬라이드 번호',
+                        'ftr': '바닥글',
+                        'dt': '날짜',
+                    }
+                    placeholder['role'] = role_map.get(ph_type, ph_type)
 
                     layout_info['placeholders'].append(placeholder)
 
@@ -253,86 +296,6 @@ def extract_media_assets(pptx_path: str, output_dir: Path) -> dict:
             }
 
     return assets
-
-
-def extract_layout_ooxml(pptx_path: str, layout_num: int) -> str:
-    """레이아웃의 원본 OOXML을 pretty-print하여 반환"""
-    with zipfile.ZipFile(pptx_path, 'r') as zf:
-        layout_file = f'ppt/slideLayouts/slideLayout{layout_num}.xml'
-        if layout_file not in zf.namelist():
-            return ''
-
-        with zf.open(layout_file) as f:
-            content = f.read().decode('utf-8')
-            try:
-                dom = xml.dom.minidom.parseString(content)
-                return dom.toprettyxml(indent='  ')
-            except Exception:
-                return content
-
-
-def extract_layout_rels(pptx_path: str, layout_num: int) -> str:
-    """레이아웃의 관계 파일(_rels)을 pretty-print하여 반환"""
-    with zipfile.ZipFile(pptx_path, 'r') as zf:
-        rels_file = f'ppt/slideLayouts/_rels/slideLayout{layout_num}.xml.rels'
-        if rels_file not in zf.namelist():
-            return ''
-
-        with zf.open(rels_file) as f:
-            content = f.read().decode('utf-8')
-            try:
-                dom = xml.dom.minidom.parseString(content)
-                return dom.toprettyxml(indent='  ')
-            except Exception:
-                return content
-
-
-def extract_slide_master_ooxml(pptx_path: str) -> str:
-    """슬라이드 마스터의 원본 OOXML을 pretty-print하여 반환"""
-    with zipfile.ZipFile(pptx_path, 'r') as zf:
-        master_file = 'ppt/slideMasters/slideMaster1.xml'
-        if master_file not in zf.namelist():
-            return ''
-
-        with zf.open(master_file) as f:
-            content = f.read().decode('utf-8')
-            try:
-                dom = xml.dom.minidom.parseString(content)
-                return dom.toprettyxml(indent='  ')
-            except Exception:
-                return content
-
-
-def extract_slide_master_rels(pptx_path: str) -> str:
-    """슬라이드 마스터의 관계 파일(_rels)을 pretty-print하여 반환"""
-    with zipfile.ZipFile(pptx_path, 'r') as zf:
-        rels_file = 'ppt/slideMasters/_rels/slideMaster1.xml.rels'
-        if rels_file not in zf.namelist():
-            return ''
-
-        with zf.open(rels_file) as f:
-            content = f.read().decode('utf-8')
-            try:
-                dom = xml.dom.minidom.parseString(content)
-                return dom.toprettyxml(indent='  ')
-            except Exception:
-                return content
-
-
-def extract_theme_ooxml(pptx_path: str) -> str:
-    """테마 파일의 원본 OOXML을 pretty-print하여 반환"""
-    with zipfile.ZipFile(pptx_path, 'r') as zf:
-        theme_file = 'ppt/theme/theme1.xml'
-        if theme_file not in zf.namelist():
-            return ''
-
-        with zf.open(theme_file) as f:
-            content = f.read().decode('utf-8')
-            try:
-                dom = xml.dom.minidom.parseString(content)
-                return dom.toprettyxml(indent='  ')
-            except Exception:
-                return content
 
 
 def classify_by_layout_name(layout_name: str, layout_info: dict) -> str:

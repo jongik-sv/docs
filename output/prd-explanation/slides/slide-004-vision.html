@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: '본고딕', 'Malgun Gothic', Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 20pt 40pt 10pt; }
+.header h1 { color: #002452; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { flex: 1; padding: 10pt 40pt 30pt; }
+.vision-box {
+  background: #002452;
+  border-radius: 8pt; padding: 20pt; margin-bottom: 15pt;
+}
+.vision-box h2 { color: #FFFFFF; font-size: 14pt; margin: 0 0 8pt 0; }
+.vision-box p { color: #B6B6B6; font-size: 10pt; margin: 0; line-height: 1.5; }
+.decisions { display: flex; gap: 12pt; }
+.decision-card {
+  flex: 1; background: #F8FAFC; border-radius: 6pt; padding: 12pt;
+  border-top: 3pt solid #C51F2A;
+}
+.decision-card h4 { color: #002452; font-size: 10pt; margin: 0 0 6pt 0; font-weight: bold; }
+.decision-card p { color: #262626; font-size: 9pt; margin: 0; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>제품 비전</h1>
+</div>
+<div class="content">
+  <div class="vision-box">
+    <h2>Claude Code 환경에서 전문 디자이너 수준의 PPT 자동 생성</h2>
+    <p>2개 스킬 + 1 앱 구조: ppt-extract(추출) + ppt-gen(생성) + ppt-manager(관리)</p>
+  </div>
+  <div class="decisions">
+    <div class="decision-card">
+      <h4>아키텍처</h4>
+      <p>2개 스킬 + 1 앱 분리 구조로 독립적 개발 및 유지보수</p>
+    </div>
+    <div class="decision-card">
+      <h4>기능 분류</h4>
+      <p>추출 스킬(파이프라인 외부) + 생성 스킬(5단계 파이프라인)</p>
+    </div>
+    <div class="decision-card">
+      <h4>템플릿 시스템</h4>
+      <p>v4.0: 테마, 콘텐츠, 오브젝트, 문서, 에셋</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

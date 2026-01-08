@@ -67,45 +67,25 @@ try:
 except ImportError:
     HAS_PLAYWRIGHT = False
 
-
-# 기본 경로 설정 (v3.0: 프로젝트 루트로 이동)
+# 공유 모듈 import
 SCRIPT_DIR = Path(__file__).parent
-PROJECT_ROOT = Path("C:/project/docs")
-TEMPLATES_DIR = PROJECT_ROOT / 'templates'
-ASSETS_DIR = TEMPLATES_DIR / 'assets'
-REGISTRY_PATH = ASSETS_DIR / 'registry.yaml'
+sys.path.insert(0, str(SCRIPT_DIR.parent.parent / 'shared'))
+from config import TEMPLATES_DIR, ASSETS_DIR, CONTENTS_DIR, THEMES_DIR
+from yaml_utils import load_registry as _load_registry, save_registry as _save_registry
 
-# 콘텐츠 템플릿 경로 (v3.0)
-CONTENTS_DIR = TEMPLATES_DIR / 'contents'
-THEMES_DIR = TEMPLATES_DIR / 'themes'
+# 레지스트리 경로
+REGISTRY_PATH = ASSETS_DIR / 'registry.yaml'
 
 
 def load_registry() -> dict:
-    """registry.yaml 로드"""
-    if not REGISTRY_PATH.exists():
-        return {'icons': [], 'images': []}
-
-    with open(REGISTRY_PATH, 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f) or {}
-
-    return {
-        'icons': data.get('icons') or [],
-        'images': data.get('images') or []
-    }
+    """registry.yaml 로드 (에셋용 래퍼)"""
+    return _load_registry(REGISTRY_PATH, ['icons', 'images'])
 
 
 def save_registry(registry: dict) -> None:
-    """registry.yaml 저장"""
+    """registry.yaml 저장 (에셋용 래퍼)"""
     ASSETS_DIR.mkdir(parents=True, exist_ok=True)
-
-    yaml_str = f"""# 공용 에셋 레지스트리
-# 마지막 업데이트: {datetime.now().strftime('%Y-%m-%d %H:%M')}
-
-"""
-    yaml_str += yaml.dump(registry, allow_unicode=True, default_flow_style=False, sort_keys=False)
-
-    with open(REGISTRY_PATH, 'w', encoding='utf-8') as f:
-        f.write(yaml_str)
+    _save_registry(REGISTRY_PATH, registry, '공용 에셋 레지스트리')
 
 
 def get_all_assets(registry: dict) -> list:

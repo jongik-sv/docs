@@ -42,28 +42,11 @@ from pathlib import Path
 
 import yaml
 
-
-# 기본 경로 설정
+# 공유 모듈 import
 SCRIPT_DIR = Path(__file__).parent
-TEMPLATES_DIR = SCRIPT_DIR.parent / 'templates'
-DOCUMENTS_DIR = TEMPLATES_DIR / 'documents'
-CONTENTS_DIR = TEMPLATES_DIR / 'contents'
-
-
-def load_yaml(path: Path) -> dict:
-    """YAML 파일 로드"""
-    if not path.exists():
-        return {}
-    with open(path, 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f) or {}
-
-
-def save_yaml(path: Path, data: dict, header: str = '') -> None:
-    """YAML 파일 저장"""
-    yaml_str = header
-    yaml_str += yaml.dump(data, allow_unicode=True, default_flow_style=False, sort_keys=False)
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write(yaml_str)
+sys.path.insert(0, str(SCRIPT_DIR.parent.parent / 'shared'))
+from config import TEMPLATES_DIR, DOCUMENTS_DIR, CONTENTS_DIR
+from yaml_utils import load_yaml, save_yaml
 
 
 def scan_document_templates() -> list:

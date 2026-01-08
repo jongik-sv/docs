@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: '본고딕', 'Malgun Gothic', Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 20pt 40pt 10pt; }
+.header h1 { color: #002452; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { flex: 1; padding: 10pt 40pt 25pt; display: flex; gap: 15pt; }
+.workflow-card {
+  flex: 1; background: #F8FAFC; border-radius: 8pt; padding: 15pt;
+  border-top: 4pt solid #C51F2A;
+}
+.workflow-card h3 { color: #C51F2A; font-size: 12pt; margin: 0 0 8pt 0; font-weight: bold; }
+.workflow-card .trigger { color: #B6B6B6; font-size: 8pt; margin: 0 0 10pt 0; font-style: italic; }
+.workflow-card p.desc { color: #262626; font-size: 9pt; margin: 0; line-height: 1.5; }
+.workflow-card .badge { margin-top: 10pt; }
+.workflow-card .badge span {
+  display: inline-block; background: #C51F2A; color: #FFFFFF;
+  font-size: 7pt; padding: 3pt 8pt; border-radius: 10pt;
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>ppt-gen 워크플로우</h1>
+</div>
+<div class="content">
+  <div class="workflow-card">
+    <h3>html2pptx</h3>
+    <p class="trigger">"PPT 만들어줘"</p>
+    <p class="desc">5단계 파이프라인 실행<br/>HTML 슬라이드를 PPTX로 변환</p>
+    <div class="badge"><span>핵심 워크플로우</span></div>
+  </div>
+  <div class="workflow-card">
+    <h3>template</h3>
+    <p class="trigger">"동국시스템즈 양식으로"</p>
+    <p class="desc">문서 템플릿 기반 생성<br/>기존 양식에 콘텐츠 채우기</p>
+    <div class="badge"><span>템플릿 기반</span></div>
+  </div>
+  <div class="workflow-card">
+    <h3>ooxml</h3>
+    <p class="trigger">"이 PPT 수정해줘"</p>
+    <p class="desc">OOXML 직접 편집<br/>기존 PPT 구조 수정</p>
+    <div class="badge"><span>고급 기능</span></div>
+  </div>
+</div>
+</body>
+</html>

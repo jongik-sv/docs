@@ -44,11 +44,14 @@ try:
 except ImportError:
     HAS_BS4 = False
 
-
-# 기본 경로 설정
+# 공유 모듈 import
+import sys
 SCRIPT_DIR = Path(__file__).parent
-TEMPLATES_DIR = SCRIPT_DIR.parent / 'templates'
-CONTENTS_DIR = TEMPLATES_DIR / 'contents'
+sys.path.insert(0, str(SCRIPT_DIR.parent.parent / 'shared'))
+from config import CONTENTS_DIR
+from yaml_utils import load_registry, save_registry
+
+# 레지스트리 경로
 REGISTRY_PATH = CONTENTS_DIR / 'registry.yaml'
 
 
@@ -315,28 +318,9 @@ def generate_content_template(
     return template
 
 
-def load_registry() -> dict:
-    """registry.yaml 로드"""
-    if not REGISTRY_PATH.exists():
-        return {'templates': []}
-    with open(REGISTRY_PATH, 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f) or {'templates': []}
-
-
-def save_registry(registry: dict) -> None:
-    """registry.yaml 저장"""
-    yaml_str = f"""# 콘텐츠 템플릿 레지스트리
-# 마지막 업데이트: {datetime.now().strftime('%Y-%m-%d %H:%M')}
-
-"""
-    yaml_str += yaml.dump(registry, allow_unicode=True, default_flow_style=False, sort_keys=False)
-    with open(REGISTRY_PATH, 'w', encoding='utf-8') as f:
-        f.write(yaml_str)
-
-
 def update_registry(template_id: str, name: str, category: str, file_name: str) -> None:
     """레지스트리 업데이트"""
-    registry = load_registry()
+    registry = load_registry(REGISTRY_PATH, ['templates'])
     templates = registry.get('templates', [])
 
     # 기존 항목 확인
@@ -362,7 +346,7 @@ def update_registry(template_id: str, name: str, category: str, file_name: str) 
         templates.append(entry)
 
     registry['templates'] = templates
-    save_registry(registry)
+    save_registry(REGISTRY_PATH, registry, '콘텐츠 템플릿 레지스트리')
 
 
 def cmd_crawl(args) -> int:

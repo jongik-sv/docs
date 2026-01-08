@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #F8FAFC; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 25pt 40pt 15pt; }
+.header h1 { color: #1E293B; font-size: 22pt; margin: 0; font-weight: bold; }
+.header p { color: #94A3B8; font-size: 11pt; margin: 4pt 0 0 0; }
+.content {
+  display: flex; flex: 1; padding: 10pt 40pt 30pt;
+  justify-content: space-between; gap: 20pt;
+}
+.system-card {
+  background: #FFFFFF; border-radius: 10pt; padding: 20pt;
+  width: 145pt; text-align: center;
+  box-shadow: 0 2pt 8pt rgba(0,0,0,0.06);
+}
+.icon-circle {
+  background: #DBEAFE; width: 50pt; height: 50pt; border-radius: 50%;
+  margin: 0 auto 15pt; display: flex; align-items: center; justify-content: center;
+}
+.icon-circle p { color: #2563EB; font-size: 20pt; margin: 0; font-weight: bold; }
+.system-card h3 { color: #1E293B; font-size: 14pt; margin: 0 0 5pt 0; font-weight: bold; }
+.system-card .abbr { color: #2563EB; font-size: 10pt; margin: 0 0 12pt 0; }
+.feature-list { text-align: left; }
+.feature-item { display: flex; align-items: center; margin-bottom: 6pt; }
+.feature-bar { width: 2pt; height: 12pt; background: #DBEAFE; margin-right: 8pt; }
+.feature-item p { color: #64748B; font-size: 9pt; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>시스템 범위</h1>
+  <p>System Scope - 4개 핵심 모듈</p>
+</div>
+<div class="content">
+  <div class="system-card">
+    <div class="icon-circle"><p>W</p></div>
+    <h3>창고관리시스템</h3>
+    <p class="abbr">WMS</p>
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-bar"></div><p>입출고 관리</p></div>
+      <div class="feature-item"><div class="feature-bar"></div><p>재고 관리</p></div>
+      <div class="feature-item"><div class="feature-bar"></div><p>피킹/패킹</p></div>
+    </div>
+  </div>
+  <div class="system-card">
+    <div class="icon-circle"><p>T</p></div>
+    <h3>배송관리시스템</h3>
+    <p class="abbr">TMS</p>
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-bar"></div><p>배차 관리</p></div>
+      <div class="feature-item"><div class="feature-bar"></div><p>경로 최적화</p></div>
+      <div class="feature-item"><div class="feature-bar"></div><p>배송 추적</p></div>
+    </div>
+  </div>
+  <div class="system-card">
+    <div class="icon-circle"><p>O</p></div>
+    <h3>주문관리시스템</h3>
+    <p class="abbr">OMS</p>
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-bar"></div><p>주문 접수</p></div>
+      <div class="feature-item"><div class="feature-bar"></div><p>주문 할당</p></div>
+      <div class="feature-item"><div class="feature-bar"></div><p>정산 처리</p></div>
+    </div>
+  </div>
+  <div class="system-card">
+    <div class="icon-circle"><p>D</p></div>
+    <h3>통합모니터링</h3>
+    <p class="abbr">Dashboard</p>
+    <div class="feature-list">
+      <div class="feature-item"><div class="feature-bar"></div><p>실시간 현황</p></div>
+      <div class="feature-item"><div class="feature-bar"></div><p>KPI 모니터링</p></div>
+      <div class="feature-item"><div class="feature-bar"></div><p>리포트 생성</p></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

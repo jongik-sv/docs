@@ -14,6 +14,7 @@ PPTX, 이미지에서 재사용 가능한 템플릿과 에셋을 추출합니다
 | "콘텐츠 추출해줘", "슬라이드 저장" | content-extract | [workflows/content-extract.md](workflows/content-extract.md) |
 | "문서 양식 추출해줘", "템플릿 등록" | document-extract | [workflows/document-extract.md](workflows/document-extract.md) |
 | "이 이미지 스타일로" | style-extract | [workflows/style-extract.md](workflows/style-extract.md) |
+| "이미지를 SVG로", "벡터화" | image-vectorize | 아래 Scripts 섹션 참조 |
 
 ## Output Structure
 
@@ -42,6 +43,7 @@ C:/project/docs/templates/
 - colorthief: 이미지 색상 추출
 - Pillow: 이미지 처리
 - defusedxml: XML 파싱
+- vtracer: 이미지 벡터화 (Rust 기반, 빠름)
 
 **System:**
 - LibreOffice (`soffice`): 썸네일 생성용
@@ -53,6 +55,46 @@ C:/project/docs/templates/
 | `scripts/template-analyzer.py` | PPTX → YAML 분석 |
 | `scripts/style-extractor.py` | 이미지 색상 추출 |
 | `scripts/slide-crawler.py` | 온라인 슬라이드 크롤링 |
+| `scripts/image-vectorizer.py` | 이미지 → SVG 벡터화 |
+
+### Image Vectorizer (이미지 벡터화)
+
+래스터 이미지(PNG, JPG)를 벡터 그래픽(SVG)으로 변환합니다. VTracer 기반으로 빠르고 고품질.
+
+**설치:**
+```bash
+pip install vtracer
+```
+
+**사용법:**
+```bash
+# 기본 변환 (자동 프리셋)
+python .claude/skills/ppt-extract/scripts/image-vectorizer.py icon.png
+
+# 프리셋 지정
+python .claude/skills/ppt-extract/scripts/image-vectorizer.py logo.png --preset icon --output logo.svg
+
+# 배치 변환 (디렉토리)
+python .claude/skills/ppt-extract/scripts/image-vectorizer.py ./images/ --output ./svgs/
+
+# 프리셋 목록
+python .claude/skills/ppt-extract/scripts/image-vectorizer.py --list-presets
+```
+
+**프리셋:**
+| 프리셋 | 용도 | 특징 |
+|-------|------|------|
+| `icon` | 아이콘 | 최고 품질, 세밀한 디테일 보존 |
+| `logo` | 로고 | 선명한 엣지, 날카로운 코너 |
+| `diagram` | 다이어그램 | 직선/곡선 혼합, 부드러운 곡선 |
+| `chart` | 차트 | 직각 보존, 다각형 모드 |
+| `default` | 기본 | 균형 잡힌 설정 |
+
+**예상 품질:**
+- 단색 아이콘: 95-99%
+- 플랫 로고: 90-95%
+- 다이어그램: 85-95%
+- 차트: 85-90%
 
 ## Shared Resources (ppt-gen에서 공유)
 
@@ -65,3 +107,49 @@ C:/project/docs/templates/
 
 - [ppt-gen/references/content-schema.md](../ppt-gen/references/content-schema.md): 콘텐츠 템플릿 v4.0 스키마 (공유)
 - [references/font-mappings.yaml](references/font-mappings.yaml): 폰트 매핑 정의
+
+---
+
+## 완료 후 정리 (MANDATORY)
+
+**중요**: 추출 작업 완료 시 생성한 임시 파일을 반드시 삭제합니다.
+
+### 삭제 대상
+
+1. **언팩된 PPTX 폴더**:
+   - `workspace/unpacked/` 전체 폴더
+   - `workspace/template-preview/` 폴더
+
+2. **임시 스크립트** (프로젝트 루트에 생성된 경우):
+   - `extract_*.py`
+   - `analyze_*.py`
+   - `*_temp*.py`
+
+3. **임시 작업 파일**:
+   - `workspace/analysis/` 폴더 (분석 결과 YAML)
+   - 임시 `.pdf` 파일
+   - 크롤링 임시 이미지 (`templates/` 외부)
+
+### 보존 대상 (삭제 금지)
+
+- `templates/` 하위 모든 파일 (추출 결과물)
+- `registry.yaml` 파일들
+- 사용자가 명시적으로 요청한 출력물
+
+### 정리 명령어
+
+```bash
+# 언팩 폴더 삭제
+rm -rf workspace/unpacked workspace/template-preview workspace/analysis
+
+# 프로젝트 루트 임시 스크립트 삭제
+rm -f extract_*.py analyze_*.py *_temp*.py
+```
+
+### 정리 체크리스트
+
+추출 완료 전 다음을 확인:
+- [ ] `templates/` 에 결과물 저장됨
+- [ ] `registry.yaml` 업데이트됨
+- [ ] 썸네일 생성됨 (`thumbnails/`)
+- [ ] 임시 폴더 삭제됨 (`workspace/`)

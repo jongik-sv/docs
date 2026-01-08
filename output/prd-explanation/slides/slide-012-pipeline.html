@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: '본고딕', 'Malgun Gothic', Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 20pt 40pt 10pt; }
+.header h1 { color: #002452; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { flex: 1; padding: 10pt 40pt 25pt; }
+.pipeline { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15pt; }
+.stage {
+  background: #002452; border-radius: 50%; width: 50pt; height: 50pt;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.stage .num { color: #C51F2A; font-size: 14pt; font-weight: bold; margin: 0; }
+.stage .name { color: #FFFFFF; font-size: 8pt; margin: 2pt 0 0 0; }
+.arrow p { color: #B6B6B6; font-size: 18pt; margin: 0; }
+.details { display: flex; gap: 10pt; }
+.detail-box {
+  flex: 1; background: #F8FAFC; border-radius: 6pt; padding: 10pt;
+  border-top: 2pt solid #002452;
+}
+.detail-box:nth-child(2) { border-top-color: #4B6580; }
+.detail-box:nth-child(3) { border-top-color: #C51F2A; }
+.detail-box:nth-child(4) { border-top-color: #002452; }
+.detail-box:nth-child(5) { border-top-color: #4B6580; }
+.detail-box h4 { color: #262626; font-size: 9pt; margin: 0 0 4pt 0; font-weight: bold; }
+.detail-box p { color: #B6B6B6; font-size: 8pt; margin: 0; line-height: 1.3; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>5단계 생성 파이프라인</h1>
+</div>
+<div class="content">
+  <div class="pipeline">
+    <div class="stage">
+      <p class="num">1</p>
+      <p class="name">Setup</p>
+    </div>
+    <div class="arrow"><p>&rarr;</p></div>
+    <div class="stage">
+      <p class="num">2</p>
+      <p class="name">Outline</p>
+    </div>
+    <div class="arrow"><p>&rarr;</p></div>
+    <div class="stage">
+      <p class="num">3</p>
+      <p class="name">Matching</p>
+    </div>
+    <div class="arrow"><p>&rarr;</p></div>
+    <div class="stage">
+      <p class="num">4</p>
+      <p class="name">Content</p>
+    </div>
+    <div class="arrow"><p>&rarr;</p></div>
+    <div class="stage">
+      <p class="num">5</p>
+      <p class="name">Generation</p>
+    </div>
+  </div>
+  <div class="details">
+    <div class="detail-box">
+      <h4>Setup</h4>
+      <p>테마/양식 선택<br/>색상/폰트 설정</p>
+    </div>
+    <div class="detail-box">
+      <h4>Outline</h4>
+      <p>슬라이드 구성<br/>섹션 분할</p>
+    </div>
+    <div class="detail-box">
+      <h4>Matching</h4>
+      <p>템플릿 매칭<br/>레이아웃 선택</p>
+    </div>
+    <div class="detail-box">
+      <h4>Content</h4>
+      <p>HTML 생성<br/>콘텐츠 채우기</p>
+    </div>
+    <div class="detail-box">
+      <h4>Generation</h4>
+      <p>PPTX 변환<br/>최종 출력</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

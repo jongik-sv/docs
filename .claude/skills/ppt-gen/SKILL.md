@@ -14,12 +14,105 @@ AI 기반 PPT 자동 생성 서비스. 콘텐츠를 입력받아 전문가 수�
 
 | 요청 유형 | 워크플로우 | 가이드 |
 |----------|-----------|--------|
-| "PPT 만들어줘" (템플릿 없음) | html2pptx | [workflows/html2pptx.md](workflows/html2pptx.md) |
+| "PPT 만들어줘" (새 PPT 생성) | html2pptx | [workflows/html2pptx.md](workflows/html2pptx.md) |
 | "동국제강 양식으로" (템플릿 사용) | template | [workflows/template.md](workflows/template.md) |
 | "이 PPT 수정해줘" | ooxml | [workflows/ooxml.md](workflows/ooxml.md) |
 | "PPT 분석해줘" | analysis | [workflows/analysis.md](workflows/analysis.md) |
 
 > **추출 기능**: 콘텐츠/문서/스타일 추출은 **ppt-extract** 스킬을 사용하세요.
+
+## 5단계 파이프라인 (v5.2)
+
+PPT 생성은 5단계 파이프라인으로 진행됩니다:
+
+```
+1단계(Setup) → 2단계(Outline) → 3단계(Matching) → 4단계(Content) → 5단계(PPTX)
+```
+
+| 단계 | 이름 | 설명 | 슬라이드 데이터 |
+|------|------|------|----------------|
+| 1 | Setup | 전역 설정 (테마, 청중, 목적) | - |
+| 2 | Outline | 슬라이드별 콘텐츠 | `title`, `purpose`, `key_points` |
+| 3 | Matching | 디자인/레이아웃 | `template_id`, `layout` |
+| 4 | Content | 에셋/파일 생성 | `html_file`, `assets`, `ooxml_bindings` |
+| 5 | Generation | PPTX 변환 | `generated`, `pptx_slide_index` |
+
+### 슬라이드별 플랫 구조
+
+각 슬라이드에 데이터가 **플랫하게 누적**됩니다 (단계 구분 없음):
+
+```json
+{
+  "session": { "id": "...", "title": "...", "status": "in_progress" },
+  "current_stage": 4,
+  "setup": { "presentation": {...}, "theme": {...} },
+  "slides": [
+    {
+      "index": 0,
+      "title": "표지",
+      "purpose": "cover",
+      "key_points": ["제안사", "날짜"],
+      "template_id": "cover-centered1",
+      "match_score": 0.95,
+      "html_file": "slides/slide-001.html",
+      "assets": { "icons": ["logo.svg"], "images": [] },
+      "text_content": { "headline": "스마트 물류 시스템" }
+    }
+  ],
+  "output": { "pptx_file": "output.pptx" }
+}
+```
+
+### 생성 방식 (2가지)
+
+| 방식 | 용도 | 슬라이드 필드 |
+|------|------|--------------|
+| **HTML** | 새 슬라이드 생성 | `html_file`, `assets`, `text_content` |
+| **OOXML** | 문서양식 편집 | `ooxml_bindings` (ID별 텍스트/이미지/색상) |
+
+- **SVG**: 바인딩 불가 (path 변환됨) → 정적 아이콘/그래픽으로만 사용
+
+### OOXML 바인딩 예시
+
+```json
+{
+  "ooxml_bindings": {
+    "template": "documents/dongkuk/cover.xml",
+    "mappings": [
+      { "id": "sp_title", "type": "text", "value": "스마트 물류 시스템" },
+      { "id": "sp_logo", "type": "image", "value": "assets/logo.png" },
+      { "id": "sp_accent", "type": "color", "value": "#1E5128" }
+    ]
+  }
+}
+```
+
+### Session Manager 사용법
+
+```javascript
+const SessionManager = require('./scripts/session-manager');
+
+// 새 세션 생성
+const session = await SessionManager.create('스마트 물류 제안서');
+
+// 1단계: 전역 설정
+await session.completeSetup({
+  presentation: { title: '...', audience: '경영진' },
+  theme: { id: 'deepgreen', colors: { primary: '#1E5128' } }
+});
+
+// 2~4단계: 슬라이드별 데이터 누적 (플랫 병합)
+await session.updateSlide(0, { title: '표지', purpose: 'cover' });
+await session.updateSlide(0, { template_id: 'cover-centered1' });
+await session.updateSlide(0, { html_file: 'slide-001.html' });
+
+// 5단계: 최종 생성
+await session.updateSlide(0, { generated: true });
+await session.completeGeneration({ pptx_file: 'output.pptx' });
+
+// 세션 재개
+const session = await SessionManager.resume('2026-01-09_143025_a7b2c3d4');
+```
 
 ## Overview
 
@@ -212,6 +305,7 @@ Required dependencies (should already be installed):
 | [references/content-schema.md](references/content-schema.md) | 콘텐츠 템플릿 v2.0 스키마 |
 | [references/design-intent.md](references/design-intent.md) | 디자인 의도 분류 |
 | [references/color-palettes.md](references/color-palettes.md) | 색상 팔레트 레퍼런스 |
+| [schemas/pipeline.schema.json](schemas/pipeline.schema.json) | 5단계 파이프라인 JSON 스키마 |
 
 ## 미구현 사항 (TODO)
 

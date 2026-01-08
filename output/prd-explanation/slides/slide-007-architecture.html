@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: '본고딕', 'Malgun Gothic', Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 20pt 40pt 10pt; }
+.header h1 { color: #002452; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { flex: 1; padding: 10pt 40pt 25pt; display: flex; flex-direction: column; gap: 10pt; }
+.arch-row { display: flex; gap: 12pt; }
+.arch-box {
+  flex: 1; border-radius: 6pt; padding: 12pt;
+}
+.arch-box.extract { background: #002452; }
+.arch-box.gen { background: #C51F2A; }
+.arch-box.manager { background: #4B6580; }
+.arch-box h3 { color: #FFFFFF; font-size: 11pt; margin: 0 0 6pt 0; font-weight: bold; }
+.arch-box p { color: rgba(255,255,255,0.8); font-size: 9pt; margin: 0; line-height: 1.4; }
+.flow-arrow { text-align: center; padding: 5pt; }
+.flow-arrow p { color: #B6B6B6; font-size: 14pt; margin: 0; }
+.detail-row { display: flex; gap: 12pt; margin-top: 5pt; }
+.detail-card {
+  flex: 1; background: #F8FAFC; border-radius: 6pt; padding: 10pt;
+  border-top: 2pt solid #002452;
+}
+.detail-card:nth-child(2) { border-top-color: #C51F2A; }
+.detail-card:nth-child(3) { border-top-color: #4B6580; }
+.detail-card h4 { color: #262626; font-size: 9pt; margin: 0 0 4pt 0; font-weight: bold; }
+.detail-card p { color: #B6B6B6; font-size: 8pt; margin: 0; line-height: 1.3; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>2개 스킬 + 1 앱 구조</h1>
+</div>
+<div class="content">
+  <div class="arch-row">
+    <div class="arch-box extract">
+      <h3>ppt-extract (추출 스킬)</h3>
+      <p>템플릿/에셋 준비 - 파이프라인 외부</p>
+    </div>
+    <div class="arch-box gen">
+      <h3>ppt-gen (생성 스킬)</h3>
+      <p>PPT 생성 - 5단계 파이프라인</p>
+    </div>
+    <div class="arch-box manager">
+      <h3>ppt-manager (앱)</h3>
+      <p>템플릿/에셋 관리 - Electron</p>
+    </div>
+  </div>
+  <div class="flow-arrow"><p>templates/ 폴더로 연결</p></div>
+  <div class="detail-row">
+    <div class="detail-card">
+      <h4>추출</h4>
+      <p>content-extract, document-extract, style-extract</p>
+    </div>
+    <div class="detail-card">
+      <h4>생성</h4>
+      <p>html2pptx, template, ooxml, analysis</p>
+    </div>
+    <div class="detail-card">
+      <h4>관리</h4>
+      <p>목록, 미리보기, 검색, 삭제</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pipeline.schema.json",
+  "title": "PPT Generation Pipeline State",
+  "description": "PPT 생성 파이프라인 상태 스키마 - 슬라이드별 플랫 구조 (v5.2)",
+  "type": "object",
+  "required": ["session", "current_stage"],
+  "properties": {
+    "session": {
+      "type": "object",
+      "required": ["id", "title", "created_at", "status"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}_\\d{6}_[a-f0-9]{8}$" },
+        "title": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" },
+        "status": { "enum": ["in_progress", "paused", "completed", "failed"] }
+      }
+    },
+    "current_stage": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "1=Setup, 2=Outline, 3=Matching, 4=Content, 5=Generation"
+    },
+    "setup": {
+      "type": "object",
+      "description": "1단계: 전역 설정",
+      "properties": {
+        "presentation": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "topic": { "type": "string" },
+            "audience": { "type": "string" },
+            "purpose": { "type": "string" },
+            "document_type": { "type": "string" },
+            "duration_minutes": { "type": "integer" },
+            "estimated_slides": { "type": "integer" }
+          }
+        },
+        "theme": {
+          "type": "object",
+          "properties": {
+            "id": { "type": "string" },
+            "colors": { "type": "object" }
+          }
+        }
+      }
+    },
+    "slides": {
+      "type": "array",
+      "description": "슬라이드별 플랫 데이터 (2~5단계 누적)",
+      "items": {
+        "type": "object",
+        "required": ["index"],
+        "properties": {
+          "index": { "type": "integer" },
+
+          "title": { "type": "string", "description": "2단계: 슬라이드 제목" },
+          "purpose": { "type": "string", "description": "2단계: 슬라이드 목적 (cover, toc, content...)" },
+          "key_points": { "type": "array", "items": { "type": "string" }, "description": "2단계: 핵심 포인트" },
+          "speaker_notes": { "type": "string", "description": "2단계: 발표자 노트" },
+
+          "template_id": { "type": ["string", "null"], "description": "3단계: 매칭된 템플릿 ID" },
+          "object_id": { "type": ["string", "null"], "description": "3단계: 매칭된 오브젝트 ID" },
+          "match_score": { "type": "number", "description": "3단계: 매칭 점수" },
+          "layout": {
+            "type": "object",
+            "description": "3단계: 레이아웃 정보",
+            "properties": {
+              "type": { "type": "string" },
+              "columns": { "type": "integer" }
+            }
+          },
+
+          "html_file": { "type": "string", "description": "4단계: HTML 파일 (HTML 방식)" },
+          "assets": {
+            "type": "object",
+            "description": "4단계: 에셋 (SVG는 정적 그래픽으로만)",
+            "properties": {
+              "icons": { "type": "array", "items": { "type": "string" } },
+              "images": { "type": "array", "items": { "type": "string" } },
+              "backgrounds": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "text_content": {
+            "type": "object",
+            "description": "4단계: 텍스트 콘텐츠",
+            "properties": {
+              "headline": { "type": "string" },
+              "subheadline": { "type": "string" },
+              "body": { "type": "string" }
+            }
+          },
+          "ooxml_bindings": {
+            "type": "object",
+            "description": "4단계: OOXML 바인딩 (문서양식 편집용)",
+            "properties": {
+              "template": { "type": "string", "description": "OOXML 템플릿 경로" },
+              "mappings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["id", "type", "value"],
+                  "properties": {
+                    "id": { "type": "string", "description": "Shape ID" },
+                    "type": { "enum": ["text", "image", "color"], "description": "바인딩 타입" },
+                    "value": { "type": "string", "description": "바인딩 값" }
+                  }
+                }
+              }
+            }
+          },
+
+          "generated": { "type": "boolean", "description": "5단계: 생성 완료 여부" },
+          "pptx_slide_index": { "type": "integer", "description": "5단계: PPTX 내 슬라이드 인덱스" }
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "description": "5단계: 최종 출력",
+      "properties": {
+        "pptx_file": { "type": ["string", "null"] },
+        "thumbnail_file": { "type": ["string", "null"] },
+        "slide_count": { "type": "integer" },
+        "completed_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

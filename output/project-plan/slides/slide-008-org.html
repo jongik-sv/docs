@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 20pt 40pt 8pt; }
+.header h1 { color: #1E293B; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { flex: 1; padding: 8pt 40pt 40pt; }
+.table-container {
+  background: #F8FAFC; border-radius: 6pt; overflow: hidden;
+}
+.table-row { display: flex; border-bottom: 1pt solid #E2E8F0; }
+.table-row:last-child { border-bottom: none; }
+.table-row.header-row { background: #2563EB; }
+.table-cell { padding: 8pt 10pt; display: flex; align-items: center; }
+.col-role { width: 90pt; }
+.col-name { width: 80pt; }
+.col-resp { flex: 1; }
+.col-note { width: 90pt; }
+.table-row.header-row p { color: #FFFFFF; font-size: 9pt; margin: 0; font-weight: bold; }
+.table-row:not(.header-row) p { color: #1E293B; font-size: 9pt; margin: 0; }
+.table-row:not(.header-row) .col-role p { color: #2563EB; font-weight: bold; }
+.table-row:not(.header-row) .col-note p { color: #64748B; }
+.summary-bar {
+  margin-top: 12pt; display: flex; gap: 12pt;
+}
+.summary-card {
+  background: #DBEAFE; border-radius: 6pt; padding: 12pt 15pt;
+  flex: 1; text-align: center;
+}
+.summary-card h4 { color: #2563EB; font-size: 18pt; margin: 0; font-weight: bold; }
+.summary-card p { color: #1E293B; font-size: 9pt; margin: 4pt 0 0 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>프로젝트 조직</h1>
+</div>
+<div class="content">
+  <div class="table-container">
+    <div class="table-row header-row">
+      <div class="table-cell col-role"><p>역할</p></div>
+      <div class="table-cell col-name"><p>담당자</p></div>
+      <div class="table-cell col-resp"><p>주요 책임</p></div>
+      <div class="table-cell col-note"><p>비고</p></div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell col-role"><p>발주기관 PM</p></div>
+      <div class="table-cell col-name"><p>정민호 부장</p></div>
+      <div class="table-cell col-resp"><p>프로젝트 총괄 관리, 의사결정</p></div>
+      <div class="table-cell col-note"><p>최종 승인권자</p></div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell col-role"><p>수행사 PM</p></div>
+      <div class="table-cell col-name"><p>김철수 차장</p></div>
+      <div class="table-cell col-resp"><p>프로젝트 수행 총괄, 품질/위험 관리</p></div>
+      <div class="table-cell col-note"><p>현장 대리인</p></div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell col-role"><p>AA (아키텍트)</p></div>
+      <div class="table-cell col-name"><p>박준형 책임</p></div>
+      <div class="table-cell col-resp"><p>시스템 설계, 아키텍처 검토</p></div>
+      <div class="table-cell col-note"><p>MSA 전문가</p></div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell col-role"><p>개발 리더</p></div>
+      <div class="table-cell col-name"><p>최수진 선임</p></div>
+      <div class="table-cell col-resp"><p>개발 총괄, 기술 이슈 해결</p></div>
+      <div class="table-cell col-note"><p>풀스택</p></div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell col-role"><p>QA / DBA</p></div>
+      <div class="table-cell col-name"><p>한미영/오현우</p></div>
+      <div class="table-cell col-resp"><p>품질 관리, DB 설계 및 튜닝</p></div>
+      <div class="table-cell col-note"><p>ISTQB/OCP</p></div>
+    </div>
+  </div>
+  <div class="summary-bar">
+    <div class="summary-card">
+      <h4>8명</h4>
+      <p>총 투입 인력</p>
+    </div>
+    <div class="summary-card">
+      <h4>78MM</h4>
+      <p>총 투입 공수</p>
+    </div>
+    <div class="summary-card">
+      <h4>12개월</h4>
+      <p>프로젝트 기간</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 25pt 40pt 15pt; }
+.header h1 { color: #1E293B; font-size: 22pt; margin: 0; font-weight: bold; }
+.header p { color: #94A3B8; font-size: 11pt; margin: 4pt 0 0 0; }
+.subtitle-bar {
+  background: #DBEAFE; margin: 0 40pt; padding: 12pt 20pt; border-radius: 6pt;
+}
+.subtitle-bar p { color: #1E293B; font-size: 11pt; margin: 0; text-align: center; }
+.content {
+  display: flex; flex: 1; padding: 20pt 40pt 30pt;
+  justify-content: space-between; gap: 20pt;
+}
+.strategy-card {
+  background: #F8FAFC; border-radius: 10pt; padding: 20pt;
+  flex: 1; border-top: 4pt solid #2563EB;
+}
+.strategy-card.second { border-top-color: #3B82F6; }
+.strategy-card.third { border-top-color: #60A5FA; }
+.card-number p { color: #2563EB; font-size: 28pt; margin: 0 0 10pt 0; font-weight: bold; }
+.strategy-card.second .card-number p { color: #3B82F6; }
+.strategy-card.third .card-number p { color: #60A5FA; }
+.strategy-card h3 { color: #1E293B; font-size: 13pt; margin: 0 0 10pt 0; font-weight: bold; }
+.strategy-card p.desc { color: #64748B; font-size: 10pt; margin: 0; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>추진 전략</h1>
+  <p>Implementation Strategy</p>
+</div>
+<div class="subtitle-bar">
+  <p>"안정적 전환"과 "혁신적 기능 구현"의 균형을 핵심 가치로 추진</p>
+</div>
+<div class="content">
+  <div class="strategy-card">
+    <div class="card-number"><p>01</p></div>
+    <h3>단계적 전환 전략</h3>
+    <p class="desc">Big Bang 방식이 아닌 모듈별 순차 전환으로 운영 리스크를 최소화합니다. 각 모듈의 안정화 후 다음 단계로 진행합니다.</p>
+  </div>
+  <div class="strategy-card second">
+    <div class="card-number"><p>02</p></div>
+    <h3>애자일 기반 개발</h3>
+    <p class="desc">2주 단위 스프린트로 빠른 피드백 수용과 유연한 대응이 가능합니다. 격주 스프린트 리뷰를 통해 진행 상황을 공유합니다.</p>
+  </div>
+  <div class="strategy-card third">
+    <div class="card-number"><p>03</p></div>
+    <h3>현업 밀착 협업</h3>
+    <p class="desc">주 2회 현업 리뷰를 통한 요구사항 정합성을 확보합니다. 현업 담당자의 피드백을 즉시 반영하여 품질을 높입니다.</p>
+  </div>
+</div>
+</body>
+</html>

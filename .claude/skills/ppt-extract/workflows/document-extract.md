@@ -57,16 +57,53 @@ AskUserQuestion:
 python .claude/skills/ppt-gen/scripts/thumbnail.py input.pptx workspace/template-preview
 ```
 
-### 3. Analyze Theme and Layouts
+### 3. Analyze Theme, Layouts, and Placeholders
 
 ```bash
 # PPTX 언팩 (ppt-gen의 ooxml 스크립트 사용)
 python .claude/skills/ppt-gen/ooxml/scripts/unpack.py input.pptx workspace/unpacked
 ```
 
-분석 항목:
+**분석 항목:**
+
+#### 3.1 테마 분석
 - **테마 파일**: `ppt/theme/theme1.xml` → 색상/폰트 추출
-- **슬라이드 레이아웃**: 각 슬라이드 카테고리 분류
+
+#### 3.2 플레이스홀더 추출
+
+**슬라이드 레이아웃 파일**: `ppt/slideLayouts/slideLayout*.xml`
+
+```xml
+<!-- 플레이스홀더 예시 -->
+<p:sp>
+  <p:nvSpPr>
+    <p:nvPr>
+      <p:ph type="title" idx="0"/>  <!-- type과 idx로 역할 식별 -->
+    </p:nvPr>
+  </p:nvSpPr>
+  <p:spPr>
+    <a:xfrm>
+      <a:off x="457200" y="274638"/>   <!-- 위치 (EMU 단위) -->
+      <a:ext cx="8229600" cy="1143000"/> <!-- 크기 (EMU 단위) -->
+    </a:xfrm>
+  </p:spPr>
+</p:sp>
+```
+
+**EMU → % 변환:**
+```python
+# 슬라이드 크기 (기본: 9144000 x 6858000 EMU = 10" x 7.5")
+slide_width = 9144000
+slide_height = 6858000
+
+x_percent = (x_emu / slide_width) * 100
+y_percent = (y_emu / slide_height) * 100
+width_percent = (cx_emu / slide_width) * 100
+height_percent = (cy_emu / slide_height) * 100
+```
+
+#### 3.3 슬라이드 카테고리 분류
+각 슬라이드의 플레이스홀더 구성으로 카테고리 추론
 
 ### 4. Create Group Folder and YAML
 
@@ -91,7 +128,7 @@ companies:
     name: New Company
 ```
 
-**{양식}.yaml** (레이아웃 정보):
+**{양식}.yaml** (레이아웃 + 플레이스홀더 정보):
 ```yaml
 template:
   id: 제안서1
@@ -102,13 +139,56 @@ layouts:
   - index: 0
     category: cover
     name: 표지
+    placeholders:
+      - type: title
+        role: "메인 제목"
+        position: {x: 10%, y: 35%, width: 80%, height: 15%}
+      - type: subtitle
+        role: "부제목/슬로건"
+        position: {x: 10%, y: 52%, width: 80%, height: 8%}
+      - type: picture
+        role: "배경 이미지"
+        position: {x: 0%, y: 0%, width: 100%, height: 100%}
+        z_order: -1
+
   - index: 1
     category: toc
     name: 목차
+    placeholders:
+      - type: title
+        role: "목차 제목"
+        position: {x: 5%, y: 8%, width: 90%, height: 10%}
+      - type: body
+        role: "목차 항목 리스트"
+        position: {x: 10%, y: 25%, width: 80%, height: 65%}
+
   - index: 2
     category: content_bullets
     name: 본문 (불릿)
+    placeholders:
+      - type: title
+        role: "슬라이드 제목"
+        position: {x: 5%, y: 5%, width: 90%, height: 12%}
+      - type: body
+        role: "본문 내용 (불릿 포인트)"
+        position: {x: 5%, y: 20%, width: 90%, height: 70%}
 ```
+
+### Placeholder Types (PPTX 표준)
+
+| type | idx | 역할 |
+|------|-----|------|
+| `title` | 0 | 슬라이드 제목 |
+| `body` | 1 | 본문 텍스트 |
+| `subtitle` | - | 부제목 |
+| `ctrTitle` | - | 중앙 제목 (표지용) |
+| `picture` | - | 이미지 영역 |
+| `chart` | - | 차트 영역 |
+| `table` | - | 표 영역 |
+| `dgm` | - | 다이어그램 (SmartArt) |
+| `footer` | 10 | 바닥글 |
+| `sldNum` | 12 | 슬라이드 번호 |
+| `dt` | 11 | 날짜/시간 |
 
 ### 5. Update Registry
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #ffffff; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: '본고딕', 'Malgun Gothic', Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { padding: 20pt 40pt 10pt; }
+.header h1 { color: #002452; font-size: 20pt; margin: 0; font-weight: bold; }
+.content { flex: 1; padding: 10pt 40pt 30pt; display: flex; gap: 15pt; }
+.user-card {
+  flex: 1; background: #F8FAFC; border-radius: 8pt; padding: 18pt;
+  border-left: 4pt solid #002452; display: flex; flex-direction: column;
+}
+.user-card:nth-child(2) { border-left-color: #C51F2A; }
+.user-card:nth-child(3) { border-left-color: #4B6580; }
+.user-card .badge { display: inline-block; margin-bottom: 10pt; }
+.user-card .badge span {
+  background: #002452; color: #FFFFFF; font-size: 8pt;
+  padding: 3pt 8pt; border-radius: 10pt;
+}
+.user-card:nth-child(2) .badge span { background: #C51F2A; }
+.user-card:nth-child(3) .badge span { background: #4B6580; }
+.user-card h3 { color: #262626; font-size: 13pt; margin: 0 0 8pt 0; font-weight: bold; }
+.user-card ul { margin: 0; padding-left: 15pt; }
+.user-card li { color: #262626; font-size: 9pt; margin-bottom: 5pt; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>타겟 사용자</h1>
+</div>
+<div class="content">
+  <div class="user-card">
+    <div class="badge"><span>Primary</span></div>
+    <h3>기업/비즈니스 사용자</h3>
+    <ul>
+      <li>제안서 작성</li>
+      <li>보고서 작성</li>
+      <li>사업계획서</li>
+    </ul>
+  </div>
+  <div class="user-card">
+    <div class="badge"><span>Secondary</span></div>
+    <h3>컨설턴트/스타트업</h3>
+    <ul>
+      <li>고객 프레젠테이션</li>
+      <li>투자 IR</li>
+      <li>프로젝트 관리</li>
+    </ul>
+  </div>
+  <div class="user-card">
+    <div class="badge"><span>Tertiary</span></div>
+    <h3>디자이너</h3>
+    <ul>
+      <li>템플릿 추출/등록</li>
+      <li>에셋 관리</li>
+      <li>디자인 커스터마이징</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
