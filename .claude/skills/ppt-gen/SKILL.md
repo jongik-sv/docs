@@ -1,6 +1,6 @@
 ---
 name: ppt-gen
-description: "AI-powered PPT generation service. Use when: (1) Creating presentations from Markdown/JSON content, (2) Using templates to generate branded presentations, (3) Modifying or editing existing presentations, (4) Automating slide design with LLM-based layout selection"
+description: "AI-powered PPT generation service. Use when: (1) Creating presentations from Markdown/JSON content, (2) Using templates to generate branded presentations, (3) Modifying or editing existing presentations, (4) Analyzing PPT structure. For template/style extraction, use ppt-extract skill."
 license: Proprietary. LICENSE.txt has complete terms
 ---
 
@@ -18,13 +18,8 @@ AI 기반 PPT 자동 생성 서비스. 콘텐츠를 입력받아 전문가 수�
 | "동국제강 양식으로" (템플릿 사용) | template | [workflows/template.md](workflows/template.md) |
 | "이 PPT 수정해줘" | ooxml | [workflows/ooxml.md](workflows/ooxml.md) |
 | "PPT 분석해줘" | analysis | [workflows/analysis.md](workflows/analysis.md) |
-| "콘텐츠 추출해줘", "슬라이드 저장" | content-extract | [workflows/content-extract.md](workflows/content-extract.md) |
-| "문서 양식 추출해줘", "템플릿 등록" | document-extract | [workflows/document-extract.md](workflows/document-extract.md) |
-| "이 이미지 스타일로" | style-extract | [workflows/style-extract.md](workflows/style-extract.md) |
-| "PPT 디자인 찾아줘" | design-search | [workflows/design-search.md](workflows/design-search.md) |
-| "템플릿 목록/삭제" | template-manage | [workflows/template-manage.md](workflows/template-manage.md) |
-| "이 아이콘/이미지 저장해줘" | asset-manage | [workflows/asset-manage.md](workflows/asset-manage.md) |
-| "썸네일 생성해줘" | thumbnail | [workflows/thumbnail.md](workflows/thumbnail.md) |
+
+> **추출 기능**: 콘텐츠/문서/스타일 추출은 **ppt-extract** 스킬을 사용하세요.
 
 ## Overview
 
@@ -71,33 +66,51 @@ A user may ask you to create, edit, or analyze the contents of a .pptx file. A .
 - registry.yaml 검색 없이 직접 디자인 시작
 - 매칭 가능한 템플릿이 있는데 직접 디자인
 
-### 복잡도 기반 추출 분기 (v3.1)
+### Shape Source 기반 하이브리드 추출 (v3.1)
 
-콘텐츠 템플릿 추출 시, 도형 복잡도에 따라 추출 방식이 달라집니다:
+콘텐츠 템플릿 추출 시, 도형 복잡도에 따라 **shape_source** 타입이 결정됩니다:
 
-| 도형 유형 | 추출 방식 | 출력 |
-|----------|----------|------|
-| rectangle, oval | geometry only | `x%, y%, cx%, cy%` |
-| hexagon (단일) | geometry only | `x%, y%, cx%, cy%` |
-| textbox | geometry only | `x%, y%, cx%, cy%` |
-| **cycle segments** | SVG path | `path` + `center` |
-| **honeycomb (다수)** | SVG path | `paths` + `layout` |
-| **curved arrows** | SVG path | `path` + `stroke` |
-| **radial layout** | SVG path | `segments[]` + `center` |
+**5가지 Shape Source 타입**:
 
-**Complex 판단 기준** (자동 SVG 추출 트리거):
-- 6개 이상 세그먼트가 방사형 배치
-- 곡선 화살표 또는 커넥터
-- 벌집형(honeycomb) 레이아웃
-- 비정형 다각형
-- `layout.type: radial` 설정
+| shape_source | 설명 | PPT 생성 시 처리 |
+|--------------|------|-----------------|
+| `ooxml` | 원본 OOXML 보존 | fragment 그대로 사용 (좌표/색상만 치환) |
+| `svg` | SVG 벡터 경로 | SVG → OOXML 변환 (custGeom) |
+| `reference` | 다른 shape/Object 참조 | 참조 대상의 OOXML 복사 + 오버라이드 |
+| `html` | HTML/CSS 스니펫 | HTML → 이미지 → PPT 삽입 |
+| `description` | 자연어 설명 | LLM이 설명에 맞게 OOXML 생성 |
 
-**참조**: [content-extract.md](workflows/content-extract.md) Step 2.4.1
+**복잡도에 따른 자동 분류**:
+
+| 복잡 → `ooxml` | 단순 → `description` |
+|----------------|---------------------|
+| 그라데이션 채우기 | 단색 채우기 |
+| 커스텀 도형 (`<a:custGeom>`) | 기본 도형 (`<a:prstGeom>`) |
+| 3D 효과, 베벨, 반사 | 단순 그림자 또는 없음 |
+| 복잡한 텍스트 (여러 서식) | 단일 스타일 텍스트 |
+| 그룹화된 도형 | 단일 도형 |
+| 방사형 세그먼트 (3개+) | 사각형, 원, 기본 화살표 |
+
+**Extraction Mode (슬라이드 타입별)**:
+
+| 슬라이드 타입 | extraction_mode | 추출 범위 |
+|--------------|-----------------|----------|
+| Cover, TOC, Section, Closing | `full` | 전체 슬라이드 |
+| Content (일반) | `content_only` | 콘텐츠 Zone만 (제목/푸터 제외) |
+
+**Object 분리 저장**:
+- 재사용 가능한 다이어그램은 `templates/contents/objects/`에 별도 저장
+- 템플릿에서 `shape_source: reference`로 참조
+
+**참조**:
+- **ppt-extract** 스킬의 content-extract 워크플로우 (추출 관련)
+- [content-schema.md](references/content-schema.md) v2.1 스키마
 
 이 규칙으로:
+- 복잡한 도형 100% 보존 (OOXML)
+- 단순 도형은 자연어로 간결화
+- 재사용 가능한 Object 컴포넌트
 - 일관된 디자인 품질 보장
-- 검증된 레이아웃 재사용
-- 생성 시간 단축
 
 ## 3-Type Template System (v3.0)
 

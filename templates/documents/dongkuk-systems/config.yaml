@@ -1,0 +1,25 @@
+# dongkuk-systems 그룹 설정
+# 자동 생성: 2026-01-09
+
+group:
+  id: dongkuk-systems
+  name: dongkuk-systems
+theme:
+  name: ''
+  colors:
+    dark_text: '#262626'
+    light_bg: '#FFFFFF'
+    primary: '#002452'
+    gray: '#B6B6B6'
+    accent1: '#757575'
+    accent2: '#4B6580'
+    accent3: '#B7D0D4'
+    secondary: '#C51F2A'
+    accent5: '#D55633'
+    accent6: '#E9B86E'
+  fonts:
+    title: 본고딕 Medium
+    body: 본고딕 Normal
+companies:
+- id: default
+  name: dongkuk-systems (기본)

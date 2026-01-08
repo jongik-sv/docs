@@ -1,0 +1,239 @@
+content_template:
+  id: deepgreen-timeline1
+  name: timeline
+  version: '2.0'
+  source: 깔끔이 딥그린.pptx
+  source_slide_index: 12
+  extracted_at: '2026-01-08T23:29:15.407869'
+design_meta:
+  quality_score: 8.5
+  design_intent: timeline
+  design_intents:
+  - timeline
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  original_width_emu: !!python/object/new:pptx.util.Emu
+  - 12192000
+  original_height_emu: !!python/object/new:pptx.util.Emu
+  - 6858000
+  aspect_ratio: '16:9'
+background:
+  type: solid
+  color: background
+shapes:
+- id: shape-2
+  name: '순서도: 자기 디스크 1'
+  type: auto_shape (1)
+  geometry:
+    x: 4.31%
+    y: 70.75%
+    cx: 23.97%
+    cy: 19.55%
+  style:
+    fill:
+      type: solid
+      color: '#C4D6D0'
+  z_index: 0
+- id: shape-8
+  name: '순서도: 자기 디스크 7'
+  type: auto_shape (1)
+  geometry:
+    x: 4.31%
+    y: 45.58%
+    cx: 23.97%
+    cy: 19.55%
+  style:
+    fill:
+      type: solid
+      color: '#83A99B'
+  z_index: 1
+- id: shape-10
+  name: '순서도: 자기 디스크 9'
+  type: auto_shape (1)
+  geometry:
+    x: 4.31%
+    y: 20.4%
+    cx: 23.97%
+    cy: 19.55%
+  style:
+    fill:
+      type: solid
+      color: '#479374'
+  z_index: 2
+- id: shape-11
+  name: 직선 연결선 10
+  type: line (9)
+  geometry:
+    x: 25.86%
+    y: 23.92%
+    cx: 14.1%
+    cy: 6.8%
+  z_index: 3
+- id: shape-12
+  name: 직사각형 11
+  type: auto_shape (1)
+  geometry:
+    x: 41.67%
+    y: 15.58%
+    cx: 55.22%
+    cy: 23.02%
+  z_index: 4
+- id: shape-15
+  name: 직사각형 14
+  type: auto_shape (1)
+  geometry:
+    x: 41.67%
+    y: 42.98%
+    cx: 55.22%
+    cy: 23.02%
+  z_index: 5
+- id: shape-16
+  name: 직사각형 15
+  type: auto_shape (1)
+  geometry:
+    x: 41.67%
+    y: 70.38%
+    cx: 55.22%
+    cy: 23.02%
+  z_index: 6
+- id: shape-22
+  name: 직선 연결선 21
+  type: line (9)
+  geometry:
+    x: 25.58%
+    y: 74.81%
+    cx: 13.44%
+    cy: 5.55%
+  z_index: 7
+- id: shape-24
+  name: TextBox 23
+  type: text_box (17)
+  geometry:
+    x: 5.43%
+    y: 27.96%
+    cx: 21.72%
+    cy: 10.66%
+  text:
+    has_text: true
+    alignment: center (2)
+    font_size_pt: 16.0
+    sample_text: "제목을 \v입력하세요."
+  z_index: 8
+- id: shape-25
+  name: TextBox 24
+  type: text_box (17)
+  geometry:
+    x: 5.43%
+    y: 53.22%
+    cx: 21.72%
+    cy: 10.66%
+  text:
+    has_text: true
+    alignment: center (2)
+    font_size_pt: 16.0
+    sample_text: "제목을 \v입력하세요."
+  z_index: 9
+- id: shape-26
+  name: TextBox 25
+  type: text_box (17)
+  geometry:
+    x: 5.43%
+    y: 77.94%
+    cx: 21.72%
+    cy: 10.66%
+  text:
+    has_text: true
+    alignment: center (2)
+    font_size_pt: 16.0
+    sample_text: "제목을 \v입력하세요."
+  z_index: 10
+- id: shape-27
+  name: TextBox 26
+  type: text_box (17)
+  geometry:
+    x: 44.14%
+    y: 20.4%
+    cx: 50.28%
+    cy: 11.28%
+  text:
+    has_text: true
+    alignment: left
+    font_size_pt: 12.0
+    font_color: '#153325'
+    sample_text: 'Then you say I wanna dance The music''s got me going Ain''t nothing
+      that can stop '
+  z_index: 11
+- id: shape-28
+  name: TextBox 27
+  type: text_box (17)
+  geometry:
+    x: 44.14%
+    y: 48.63%
+    cx: 50.28%
+    cy: 11.28%
+  text:
+    has_text: true
+    alignment: left
+    font_size_pt: 12.0
+    font_color: '#153325'
+    sample_text: 'Then you say I wanna dance The music''s got me going Ain''t nothing
+      that can stop '
+  z_index: 12
+- id: shape-29
+  name: TextBox 28
+  type: text_box (17)
+  geometry:
+    x: 44.14%
+    y: 77.59%
+    cx: 50.28%
+    cy: 11.28%
+  text:
+    has_text: true
+    alignment: left
+    font_size_pt: 12.0
+    font_color: '#153325'
+    sample_text: 'Then you say I wanna dance The music''s got me going Ain''t nothing
+      that can stop '
+  z_index: 13
+- id: shape-34
+  name: TextBox 33
+  type: text_box (17)
+  geometry:
+    x: 2.88%
+    y: 0%
+    cx: 41.31%
+    cy: 5.05%
+  text:
+    has_text: true
+    alignment: left
+    font_size_pt: 12.0
+    font_color: '#22523B'
+    sample_text: 간략한 설명을 적어주세요.
+  z_index: 14
+- id: shape-35
+  name: TextBox 34
+  type: text_box (17)
+  geometry:
+    x: 2.73%
+    y: 0%
+    cx: 41.31%
+    cy: 7.29%
+  text:
+    has_text: true
+    alignment: left
+    font_size_pt: 20.0
+    font_color: '#22523B'
+    sample_text: 제목을 입력해 주세요.
+  z_index: 15
+thumbnail: thumbnails/timeline/deepgreen-timeline1.png
+use_for: []
+keywords:
+- timeline
+- timeline
+expected_prompt: timeline 슬라이드를 만들어줘.
+prompt_keywords:
+- timeline
+- timeline

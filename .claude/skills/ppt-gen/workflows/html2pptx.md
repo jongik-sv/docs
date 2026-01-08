@@ -243,11 +243,152 @@ expected_prompt: |
 **매칭된 템플릿이 있는 경우**:
 
 1. `templates/contents/templates/{id}.yaml` 읽기
-2. `shapes[]` 구조에서 geometry와 style 추출
-3. **이미지 필드** 확인: `type: picture`인 경우 `image.description` 읽기
-4. **배경** 확인: `background.type: image`인 경우 `background.image.description` 읽기
-5. % 단위를 pt로 변환 (720pt x 405pt 기준)
-6. HTML/CSS로 변환
+2. `shapes[]` 구조에서 **shape_source 타입 확인** (v3.1)
+3. shape_source 타입별 처리 (아래 참조)
+4. % 단위를 pt로 변환 (720pt x 405pt 기준)
+5. HTML/CSS로 변환 또는 OOXML 직접 삽입
+
+---
+
+#### Step 0.4.1: Shape Source 기반 렌더링 (v3.1 NEW)
+
+템플릿의 각 shape는 **shape_source** 필드에 따라 다르게 처리됩니다:
+
+**Shape Source 타입별 처리**:
+
+| shape_source | 처리 방식 | 설명 |
+|--------------|----------|------|
+| `ooxml` | OOXML fragment 직접 사용 | 좌표/색상만 치환 후 slide.xml에 삽입 |
+| `svg` | SVG → OOXML 변환 | `<a:custGeom>` path로 변환 |
+| `reference` | 참조 대상 로드 | Object 파일에서 OOXML 복사 |
+| `html` | HTML → 이미지 변환 | 스크린샷 후 이미지로 삽입 |
+| `description` | LLM 생성 또는 HTML 변환 | 자연어 설명 기반 생성 |
+
+**1. OOXML 타입 처리** (`shape_source: ooxml`):
+
+```python
+def render_ooxml_shape(shape, theme, target_canvas):
+    """OOXML fragment를 직접 재사용"""
+    xml = shape['ooxml']['fragment']
+
+    # 1. 좌표 스케일링 (EMU 단위)
+    original_emu = shape['ooxml']['emu']
+    scale_x = target_canvas['width_emu'] / 12192000  # 원본 16:9 기준
+    scale_y = target_canvas['height_emu'] / 6858000
+
+    xml = scale_emu_coordinates(xml, original_emu, scale_x, scale_y)
+
+    # 2. 테마 색상 치환
+    if theme.get('apply_colors') and shape.get('style'):
+        original_colors = shape['ooxml'].get('colors', {})
+        for color_type, original_hex in original_colors.items():
+            if original_hex and shape['style'].get('fill', {}).get('color'):
+                token = shape['style']['fill']['color']
+                new_hex = theme['colors'].get(token, original_hex)
+                xml = xml.replace(original_hex.replace('#', ''), new_hex.replace('#', ''))
+
+    return xml
+
+# slide.xml에 직접 삽입
+def insert_shape_to_slide(slide_xml, shape_xml):
+    """<p:spTree>에 shape 추가"""
+    sp_tree = slide_xml.find('.//p:spTree', NS)
+    shape_element = etree.fromstring(shape_xml)
+    sp_tree.append(shape_element)
+```
+
+**2. Reference 타입 처리** (`shape_source: reference`):
+
+```python
+def render_reference_shape(shape, theme, target_canvas):
+    """Object 파일에서 참조 로드"""
+    ref = shape['reference']
+
+    # Object 파일 로드
+    object_path = f"templates/contents/{ref['object']}"
+    object_yaml = load_yaml(object_path)
+
+    # 컴포넌트들의 OOXML 수집
+    result_xml = []
+    for component in object_yaml['object']['components']:
+        if component.get('shape_source') == 'ooxml':
+            xml = component['ooxml']['fragment']
+
+            # 오버라이드 적용 (있는 경우)
+            if ref.get('override'):
+                xml = apply_overrides(xml, ref['override'], component['id'])
+
+            result_xml.append(xml)
+
+    return result_xml
+```
+
+**3. Description 타입 처리** (`shape_source: description`):
+
+```python
+def render_description_shape(shape, theme, target_canvas):
+    """자연어 설명을 HTML로 변환"""
+    desc = shape['description']['text']
+    hints = shape['description'].get('hints', {})
+
+    # geometry와 hints를 기반으로 HTML 생성
+    geometry = shape['geometry']
+    style = shape.get('style', {})
+
+    html = f"""
+    <div style="
+        position: absolute;
+        left: {geometry['x']};
+        top: {geometry['y']};
+        width: {geometry['cx']};
+        height: {geometry['cy']};
+        background: {resolve_color(style.get('fill', {}).get('color'), theme)};
+        border-radius: {style.get('rounded_corners', 0)}pt;
+    ">
+        <!-- 설명 기반 콘텐츠 -->
+    </div>
+    """
+
+    return html
+```
+
+**렌더링 흐름도**:
+
+```
+템플릿 로드
+  │
+  ▼
+┌─────────────────────────────────────┐
+│ shape_source 타입 확인               │
+└─────────────────────────────────────┘
+  │
+  ├── ooxml ──────► OOXML fragment 직접 사용
+  │                  ├── 좌표 스케일링
+  │                  └── 색상 토큰 치환
+  │
+  ├── reference ──► Object 파일 로드
+  │                  ├── 컴포넌트 OOXML 수집
+  │                  └── 오버라이드 적용
+  │
+  ├── svg ────────► SVG → OOXML 변환
+  │                  └── <a:custGeom> 생성
+  │
+  ├── html ───────► HTML 렌더링 → 이미지
+  │                  └── 이미지로 삽입
+  │
+  └── description ► HTML/CSS 생성
+                     └── html2pptx 처리
+```
+
+---
+
+**기존 방식 (shape_source가 없는 경우)**:
+
+shape_source 필드가 없는 레거시 템플릿은 기존 방식대로 처리합니다:
+
+1. **이미지 필드** 확인: `type: picture`인 경우 `image.description` 읽기
+2. **배경** 확인: `background.type: image`인 경우 `background.image.description` 읽기
+3. geometry와 style을 HTML/CSS로 변환
 
 **이미지 설명 활용** (picture 타입):
 

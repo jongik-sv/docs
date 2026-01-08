@@ -63,6 +63,7 @@ SINGLE_WIDTH = 1980
 SINGLE_HEIGHT = 1080
 
 import argparse
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -71,6 +72,141 @@ from pathlib import Path
 from inventory import extract_text_inventory
 from PIL import Image, ImageDraw, ImageFont
 from pptx import Presentation
+
+
+# Office backend detection cache
+_office_backend_cache = None
+
+
+def find_office_backend() -> str:
+    """사용 가능한 Office 백엔드 찾기 (LibreOffice 우선)
+
+    Returns:
+        'libreoffice' | 'msoffice' | None
+    """
+    global _office_backend_cache
+    if _office_backend_cache is not None:
+        return _office_backend_cache
+
+    # 1. LibreOffice 확인 (우선)
+    if shutil.which('soffice'):
+        _office_backend_cache = 'libreoffice'
+        return 'libreoffice'
+
+    # 2. MS Office 확인 (Windows 전용)
+    if sys.platform == 'win32':
+        try:
+            import win32com.client
+            ppt = win32com.client.Dispatch('PowerPoint.Application')
+            ppt.Quit()
+            _office_backend_cache = 'msoffice'
+            return 'msoffice'
+        except Exception:
+            pass
+
+    _office_backend_cache = None
+    return None
+
+
+def convert_with_libreoffice(pptx_path: Path, output_dir: Path) -> Path:
+    """LibreOffice로 PPTX→PDF 변환"""
+    result = subprocess.run(
+        [
+            "soffice",
+            "--headless",
+            "--convert-to",
+            "pdf",
+            "--outdir",
+            str(output_dir),
+            str(pptx_path),
+        ],
+        capture_output=True,
+        text=True,
+    )
+
+    pdf_path = output_dir / f"{pptx_path.stem}.pdf"
+    if result.returncode != 0 or not pdf_path.exists():
+        raise RuntimeError(f"LibreOffice PDF 변환 실패: {result.stderr}")
+
+    return pdf_path
+
+
+def convert_with_msoffice(pptx_path: Path, output_dir: Path) -> Path:
+    """MS PowerPoint COM으로 PPTX→PDF 변환 (Windows 전용)"""
+    import win32com.client
+    import pythoncom
+
+    # COM 초기화
+    pythoncom.CoInitialize()
+
+    ppt = None
+    presentation = None
+    pdf_path = output_dir / f"{pptx_path.stem}.pdf"
+
+    try:
+        ppt = win32com.client.Dispatch('PowerPoint.Application')
+        ppt.Visible = True  # 백그라운드 실행 제약으로 인해 필요
+
+        # 절대 경로를 Windows 스타일로 변환
+        pptx_abs_path = str(pptx_path.absolute()).replace('/', '\\')
+        pdf_abs_path = str(pdf_path.absolute()).replace('/', '\\')
+
+        presentation = ppt.Presentations.Open(
+            pptx_abs_path,
+            ReadOnly=True,
+            WithWindow=False
+        )
+
+        # ppFixedFormatTypePDF = 2, ppFixedFormatIntentPrint = 2
+        presentation.SaveAs(pdf_abs_path, 32)  # ppSaveAsPDF = 32
+
+        presentation.Close()
+        presentation = None
+
+    finally:
+        if presentation:
+            try:
+                presentation.Close()
+            except:
+                pass
+        if ppt:
+            try:
+                ppt.Quit()
+            except:
+                pass
+        pythoncom.CoUninitialize()
+
+    if not pdf_path.exists():
+        raise RuntimeError("MS Office PDF 변환 실패")
+
+    return pdf_path
+
+
+def convert_pptx_to_pdf(pptx_path: Path, output_dir: Path, backend: str = None) -> Path:
+    """PPTX→PDF 변환 (자동 백엔드 선택)
+
+    Args:
+        pptx_path: 입력 PPTX 파일
+        output_dir: 출력 디렉토리
+        backend: 'libreoffice' | 'msoffice' | 'auto' | None
+
+    Returns:
+        생성된 PDF 파일 경로
+    """
+    if backend is None or backend == 'auto':
+        backend = find_office_backend()
+
+    if backend is None:
+        raise RuntimeError(
+            "LibreOffice 또는 MS Office가 필요합니다.\n"
+            "- LibreOffice: https://www.libreoffice.org/\n"
+            "- MS Office: PowerPoint가 설치되어 있어야 합니다 (Windows)"
+        )
+
+    if backend == 'libreoffice':
+        return convert_with_libreoffice(pptx_path, output_dir)
+    else:
+        return convert_with_msoffice(pptx_path, output_dir)
 
 # Constants
 THUMBNAIL_WIDTH = 300  # Fixed thumbnail width in pixels
@@ -130,8 +266,24 @@ def main():
         default="slide",
         help="Prefix for output filenames (default: slide). Output: {prefix}-{index}.png",
     )
+    parser.add_argument(
+        "--backend",
+        type=str,
+        choices=["auto", "libreoffice", "msoffice"],
+        default="auto",
+        help="PDF conversion backend (default: auto). auto=LibreOffice first, then MS Office",
+    )
 
     args = parser.parse_args()
+
+    # Show detected backend
+    if not args.from_images:
+        backend = args.backend if args.backend != 'auto' else find_office_backend()
+        if backend:
+            print(f"Using backend: {backend}")
+        else:
+            print("Error: No Office application found (LibreOffice or MS Office required)")
+            sys.exit(1)
 
     # Handle image-based mode
     if args.from_images:
@@ -162,7 +314,7 @@ def main():
     if args.single or slide_indices:
         output_dir = Path(args.output_prefix)
         output_dir.mkdir(parents=True, exist_ok=True)
-        create_single_thumbnails(input_path, output_dir, slide_indices, args.single)
+        create_single_thumbnails(input_path, output_dir, slide_indices, args.single, args.backend)
         return
 
     # Construct output path (always JPG for grid mode)
@@ -184,7 +336,7 @@ def main():
                     print(f"Found placeholders on {len(placeholder_regions)} slides")
 
             # Convert slides to images
-            slide_images = convert_to_images(input_path, Path(temp_dir), CONVERSION_DPI)
+            slide_images = convert_to_images(input_path, Path(temp_dir), CONVERSION_DPI, args.backend)
             if not slide_images:
                 print("Error: No slides found")
                 sys.exit(1)
@@ -372,7 +524,7 @@ def resize_with_letterbox(img, target_width, target_height, bg_color=(255, 255, 
     return canvas
 
 
-def create_single_thumbnails(pptx_path, output_dir, slide_indices=None, single_mode=False):
+def create_single_thumbnails(pptx_path, output_dir, slide_indices=None, single_mode=False, backend=None):
     """Create single slide thumbnail(s) at high resolution.
 
     Args:
@@ -380,6 +532,7 @@ def create_single_thumbnails(pptx_path, output_dir, slide_indices=None, single_m
         output_dir: Output directory for thumbnails
         slide_indices: List of slide indices (0-based) to extract. If None, extracts all.
         single_mode: If True and slide_indices has one item, outputs single file
+        backend: 'libreoffice' | 'msoffice' | 'auto' | None
     """
     with tempfile.TemporaryDirectory() as temp_dir:
         temp_dir = Path(temp_dir)
@@ -402,24 +555,9 @@ def create_single_thumbnails(pptx_path, output_dir, slide_indices=None, single_m
             print(f"Error: No valid slide indices (total slides: {total_slides})")
             sys.exit(1)
 
-        # Convert to PDF
-        pdf_path = temp_dir / f"{pptx_path.stem}.pdf"
+        # Convert to PDF using unified backend
         print(f"Converting to PDF...")
-        result = subprocess.run(
-            [
-                "soffice",
-                "--headless",
-                "--convert-to",
-                "pdf",
-                "--outdir",
-                str(temp_dir),
-                str(pptx_path),
-            ],
-            capture_output=True,
-            text=True,
-        )
-        if result.returncode != 0 or not pdf_path.exists():
-            raise RuntimeError("PDF conversion failed")
+        pdf_path = convert_pptx_to_pdf(pptx_path, temp_dir, backend)
 
         # Calculate DPI for target resolution (1980x1080)
         # Standard slide is 10" x 7.5" (16:9 aspect)
@@ -521,8 +659,15 @@ def get_placeholder_regions(pptx_path):
     return placeholder_regions, (slide_width_inches, slide_height_inches)
 
 
-def convert_to_images(pptx_path, temp_dir, dpi):
-    """Convert PowerPoint to images via PDF, handling hidden slides."""
+def convert_to_images(pptx_path, temp_dir, dpi, backend=None):
+    """Convert PowerPoint to images via PDF, handling hidden slides.
+
+    Args:
+        pptx_path: Path to the PowerPoint file
+        temp_dir: Temporary directory for intermediate files
+        dpi: DPI for image conversion
+        backend: 'libreoffice' | 'msoffice' | 'auto' | None
+    """
     # Detect hidden slides
     print("Analyzing presentation...")
     prs = Presentation(str(pptx_path))
@@ -539,25 +684,9 @@ def convert_to_images(pptx_path, temp_dir, dpi):
     if hidden_slides:
         print(f"Hidden slides: {sorted(hidden_slides)}")
 
-    pdf_path = temp_dir / f"{pptx_path.stem}.pdf"
-
-    # Convert to PDF
+    # Convert to PDF using unified backend
     print("Converting to PDF...")
-    result = subprocess.run(
-        [
-            "soffice",
-            "--headless",
-            "--convert-to",
-            "pdf",
-            "--outdir",
-            str(temp_dir),
-            str(pptx_path),
-        ],
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0 or not pdf_path.exists():
-        raise RuntimeError("PDF conversion failed")
+    pdf_path = convert_pptx_to_pdf(Path(pptx_path), temp_dir, backend)
 
     # Convert PDF to images
     print(f"Converting to images at {dpi} DPI...")

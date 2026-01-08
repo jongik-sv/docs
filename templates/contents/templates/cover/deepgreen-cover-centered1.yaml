@@ -1,0 +1,128 @@
+content_template:
+  id: deepgreen-cover-centered1
+  name: cover-centered
+  version: '2.0'
+  source: 깔끔이 딥그린.pptx
+  source_slide_index: 1
+  extracted_at: '2026-01-08T23:29:15.249527'
+design_meta:
+  quality_score: 8.5
+  design_intent: cover-centered
+  design_intents:
+  - cover-centered
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  original_width_emu: !!python/object/new:pptx.util.Emu
+  - 12192000
+  original_height_emu: !!python/object/new:pptx.util.Emu
+  - 6858000
+  aspect_ratio: '16:9'
+background:
+  type: solid
+  color: background
+shapes:
+- id: shape-22
+  name: 직선 연결선 21
+  type: line (9)
+  geometry:
+    x: 9.86%
+    y: 12.76%
+    cx: 80.29%
+    cy: 0%
+  z_index: 0
+- id: shape-13
+  name: '사각형: 둥근 모서리 12'
+  type: auto_shape (1)
+  geometry:
+    x: 27.53%
+    y: 6.98%
+    cx: 44.54%
+    cy: 11.6%
+  style:
+    fill:
+      type: solid
+      color: '#22523B'
+  text:
+    has_text: true
+    alignment: center (2)
+    sample_text: 2021년 DAMSUNG 2분기 평가보고회
+  z_index: 1
+- id: shape-25
+  name: TextBox 24
+  type: text_box (17)
+  geometry:
+    x: 32.95%
+    y: 77.44%
+    cx: 34.09%
+    cy: 6.17%
+  text:
+    has_text: true
+    alignment: center (2)
+    font_size_pt: 16.0
+    font_color: '#22523B'
+    sample_text: 경영지원2팀 홍길동 대리
+  z_index: 2
+- id: shape-27
+  name: TextBox 26
+  type: text_box (17)
+  geometry:
+    x: 23.21%
+    y: 27.33%
+    cx: 53.17%
+    cy: 14.02%
+  text:
+    has_text: true
+    alignment: center (2)
+    font_size_pt: 44.0
+    font_color: '#22523B'
+    sample_text: 1분기 사업 성과 보고서
+  z_index: 3
+- id: shape-29
+  name: TextBox 28
+  type: text_box (17)
+  geometry:
+    x: 18.53%
+    y: 43.75%
+    cx: 62.54%
+    cy: 16.37%
+  text:
+    has_text: true
+    alignment: center (2)
+    font_size_pt: 12.0
+    sample_text: "언제나 찾아 오는 부두의 이별이 아쉬워 두 손을 꼭 잡았나. 눈 앞에 바다를 핑계로 헤어지나. 남자는 배 여자는 항구.\v\
+      보내 주는 사람은 말이 "
+  z_index: 4
+- id: shape-8
+  name: 직선 연결선 7
+  type: line (9)
+  geometry:
+    x: 9.86%
+    y: 66.96%
+    cx: 80.29%
+    cy: 0%
+  z_index: 5
+- id: shape-2
+  name: 이등변 삼각형 1
+  type: auto_shape (1)
+  geometry:
+    x: 49.09%
+    y: 69.24%
+    cx: 1.83%
+    cy: 3.12%
+  style:
+    fill:
+      type: solid
+      color: '#153325'
+  z_index: 6
+thumbnail: thumbnails/cover/deepgreen-cover-centered1.png
+use_for: []
+keywords:
+- cover-centered
+- cover
+expected_prompt: cover-centered 슬라이드를 만들어줘.
+prompt_keywords:
+- cover-centered
+- cover

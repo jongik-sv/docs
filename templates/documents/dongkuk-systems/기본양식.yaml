@@ -1,0 +1,153 @@
+# 기본양식 (동국시스템즈)
+# 자동 생성: 2026-01-09 00:04
+# 원본: 동국시스템즈 기본양식.pptx
+
+document:
+  id: 기본양식
+  name: 기본양식 (동국시스템즈)
+  source: 동국시스템즈 기본양식.pptx
+  aspect_ratio: 9906000:6858000
+  slide_size:
+    width_emu: 9906000
+    height_emu: 6858000
+assets:
+- id: image2
+  file: assets/default/image2.png
+  type: png
+  size_bytes: 5855
+  usage: icon
+- id: image1
+  file: assets/default/image1.emf
+  type: emf
+  size_bytes: 184
+  usage: logo
+- id: image3
+  file: assets/default/image3.png
+  type: png
+  size_bytes: 298069
+  usage: background
+layouts:
+- index: 1
+  name: White_Big K 버전
+  category: cover
+  use_for: 문서 제목, 발표 표지, 작성자 정보
+  keywords:
+  - 표지
+  - 제목
+  - 타이틀
+  - 커버
+  - 시작
+  placeholders:
+  - type: body
+    idx: 13
+  - type: title
+  images:
+  - rId: rId7
+    file: assets/default/image2.png
+  ooxml_ref: ooxml/slideLayout1.xml
+- index: 2
+  name: 간지 1
+  category: section
+  use_for: 섹션 구분, 챕터 시작
+  keywords:
+  - 섹션
+  - 챕터
+  - 구분
+  - 간지
+  placeholders:
+  - type: body
+    idx: 17
+  - type: body
+    idx: 14
+  - type: body
+    idx: 13
+  images:
+  - rId: rId8
+    file: assets/default/image2.png
+  - rId: rId7
+    file: assets/default/image3.png
+  ooxml_ref: ooxml/slideLayout2.xml
+- index: 3
+  name: 내지 (Action title 사용, 텍스트 사용)
+  category: content_bullets
+  use_for: 설명, 개요, 리스트 나열, 본문 슬라이드
+  keywords:
+  - 설명
+  - 개요
+  - 리스트
+  - 본문
+  - 내용
+  - 불릿
+  placeholders:
+  - type: body
+    idx: 18
+  - type: title
+  - type: body
+    idx: 19
+  - type: sldNum
+    idx: 4
+  - type: ftr
+    idx: 3
+  images:
+  - rId: rId7
+    file: assets/default/image2.png
+  ooxml_ref: ooxml/slideLayout3.xml
+- index: 4
+  name: 내지 (Action title 사용, 콘텐츠 사용 )
+  category: content_bullets
+  use_for: 설명, 개요, 리스트 나열, 본문 슬라이드
+  keywords:
+  - 설명
+  - 개요
+  - 리스트
+  - 본문
+  - 내용
+  - 불릿
+  placeholders:
+  - type: title
+  - type: body
+    idx: 19
+  - type: sldNum
+    idx: 4
+  - type: ftr
+    idx: 3
+  - type: body
+    idx: 20
+  images:
+  - rId: rId7
+    file: assets/default/image2.png
+  ooxml_ref: ooxml/slideLayout4.xml
+- index: 5
+  name: 내지 (Action Title 미사용, 텍스트 사용)
+  category: content_bullets
+  use_for: 설명, 개요, 리스트 나열, 본문 슬라이드
+  keywords:
+  - 설명
+  - 개요
+  - 리스트
+  - 본문
+  - 내용
+  - 불릿
+  placeholders:
+  - type: body
+    idx: 19
+  - type: sldNum
+    idx: 4
+  - type: ftr
+    idx: 3
+  - type: body
+    idx: 18
+  images:
+  - rId: rId7
+    file: assets/default/image2.png
+  ooxml_ref: ooxml/slideLayout5.xml
+selection_guide:
+  cover: 1
+  section: 2
+  toc: 2
+  bullets: 3
+  chart: 4
+best_practices:
+- 슬라이드당 핵심 메시지 1개
+- 연속 3장 이상 동일 레이아웃 금지
+- 불릿은 최대 4개 권장

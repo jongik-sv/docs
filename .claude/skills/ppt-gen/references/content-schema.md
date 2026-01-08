@@ -5,6 +5,7 @@
 > **버전 히스토리**
 > - v4.0: 콘텐츠-오브젝트 분리, 동적 오브젝트 선택 시스템
 > - v3.1: SVG 복잡 도형 지원
+> - **v2.1: shape_source 선택적 추출, OOXML 보존, extraction_mode** (NEW)
 > - v2.0: 이미지 설명 필수화, expected_prompt 추가
 
 ---
@@ -513,6 +514,457 @@ def select_object(zone, content_context, registry):
 
     return None  # 단순 placeholder
 ```
+
+---
+
+# Part 3.5: v2.1 스키마 (OOXML 하이브리드)
+
+## 14. 핵심 개념
+
+v2.1은 **선택적 OOXML 보존**을 통해 복잡한 도형의 정확한 재현과 단순한 도형의 유연한 생성을 동시에 지원합니다.
+
+```
+┌─────────────────────────────────────────┐
+│ Shape Source 선택적 추출                 │
+│                                         │
+│ 복잡한 도형 → shape_source: ooxml       │
+│   (그라데이션, 커스텀 도형, 3D 효과)      │
+│   → 원본 OOXML fragment 보존            │
+│                                         │
+│ 단순한 도형 → shape_source: description │
+│   (사각형, 원, 기본 텍스트박스)           │
+│   → 자연어 설명으로 저장                 │
+└─────────────────────────────────────────┘
+```
+
+## 15. extraction_mode (추출 모드)
+
+슬라이드 타입에 따라 추출 범위를 결정합니다.
+
+### 15.1 모드 정의
+
+| 모드 | 설명 | 적용 슬라이드 |
+|------|------|--------------|
+| `full` | 전체 추출 (제목/푸터 포함) | Cover, TOC, Section, Closing |
+| `content_only` | 콘텐츠 Zone만 추출 | 일반 Content 슬라이드 |
+
+### 15.2 스키마
+
+```yaml
+content_template:
+  id: process-linear1
+  design_intent: process
+  extraction_mode: content_only  # full | content_only
+
+  # content_only 모드일 때 콘텐츠 영역 경계
+  content_zone:
+    bounds:
+      top: 15%       # 제목 영역 아래부터
+      bottom: 92%    # 푸터 영역 위까지
+      left: 5%
+      right: 95%
+```
+
+### 15.3 슬라이드 타입별 모드
+
+```python
+FULL_EXTRACTION_TYPES = ['cover', 'toc', 'section', 'closing', 'agenda']
+
+def get_extraction_mode(design_intent):
+    """슬라이드 타입에 따른 추출 모드 결정"""
+    if design_intent in FULL_EXTRACTION_TYPES:
+        return 'full'      # 전체 추출 (제목이 콘텐츠의 일부)
+    return 'content_only'  # 콘텐츠 영역만 추출
+```
+
+## 16. shape_source (Shape 소스 타입)
+
+각 shape의 정의 방식을 지정합니다.
+
+### 16.1 타입 정의
+
+| shape_source | 설명 | PPT 생성 시 처리 |
+|--------------|------|-----------------|
+| `ooxml` | 원본 OOXML 보존 | fragment 그대로 사용 (좌표/색상 치환) |
+| `svg` | SVG 벡터 경로 | SVG → OOXML 변환 (custGeom) |
+| `reference` | 다른 shape/Object 참조 | 참조 대상 복사 + 오버라이드 |
+| `html` | HTML/CSS 스니펫 | HTML → 이미지 → PPT 삽입 |
+| `description` | 자연어 설명 | LLM이 OOXML 생성 |
+
+### 16.2 복잡도 판단 기준
+
+**OOXML로 추출 (복잡):**
+- 그라데이션 채우기 (`<a:gradFill>`)
+- 커스텀 도형 (`<a:custGeom>`)
+- 3D 효과, 베벨, 반사
+- 복잡한 텍스트 서식 (여러 run)
+- 그룹화된 도형 (`<p:grpSp>`)
+- 패턴/텍스처 채우기
+
+**Description으로 추출 (단순):**
+- 단색 채우기 (`<a:solidFill>`)
+- 기본 도형 (`<a:prstGeom>`: rect, oval, roundRect)
+- 단순 그림자 또는 없음
+- 단일 스타일 텍스트
+- 단일 도형
+
+```python
+def determine_shape_source(shape_xml):
+    """Shape 복잡도에 따라 ooxml/description 결정"""
+
+    if has_gradient_fill(shape_xml):        return 'ooxml'
+    if has_custom_geometry(shape_xml):      return 'ooxml'
+    if has_3d_effects(shape_xml):           return 'ooxml'
+    if has_complex_text_formatting(shape_xml): return 'ooxml'
+    if has_pattern_fill(shape_xml):         return 'ooxml'
+    if is_grouped_shape(shape_xml):         return 'ooxml'
+
+    return 'description'
+```
+
+## 17. ooxml 섹션 (shape_source: ooxml)
+
+원본 OOXML을 보존하여 정확한 재현을 보장합니다.
+
+### 17.1 스키마
+
+```yaml
+shapes:
+  - id: "shape-1"
+    name: "배경 상단"
+    shape_source: ooxml
+
+    # 기존 필드 (커스터마이징/테마 적용용)
+    type: rectangle
+    z_index: 1
+    geometry:
+      x: 0%
+      y: 28.4%
+      cx: 100%
+      cy: 34.8%
+    style:
+      fill:
+        type: solid
+        color: accent_light  # 테마 토큰
+        opacity: 0.25
+
+    # NEW: 원본 OOXML 보존
+    ooxml:
+      # 원본 XML fragment (필수)
+      fragment: |
+        <p:sp>
+          <p:nvSpPr>
+            <p:cNvPr id="2" name="배경 상단"/>
+            <p:cNvSpPr/>
+            <p:nvPr/>
+          </p:nvSpPr>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="0" y="3074400"/>
+              <a:ext cx="12192000" cy="3762000"/>
+            </a:xfrm>
+            <a:prstGeom prst="rect">
+              <a:avLst/>
+            </a:prstGeom>
+            <a:solidFill>
+              <a:srgbClr val="C5D3CC"><a:alpha val="25000"/></a:srgbClr>
+            </a:solidFill>
+            <a:ln><a:noFill/></a:ln>
+          </p:spPr>
+          <p:txBody>
+            <a:bodyPr/><a:lstStyle/><a:p><a:endParaRPr/></a:p>
+          </p:txBody>
+        </p:sp>
+
+      # 원본 EMU 좌표 (스케일링용)
+      emu:
+        x: 0
+        y: 3074400
+        cx: 12192000
+        cy: 3762000
+
+      # 원본 색상 (테마 치환용)
+      colors:
+        fill: "#C5D3CC"
+        stroke: null
+        text: null
+```
+
+### 17.2 필드 설명
+
+| 필드 | 타입 | 필수 | 설명 |
+|------|------|------|------|
+| `fragment` | string | YES | 원본 OOXML XML 문자열 |
+| `emu` | object | YES | 원본 EMU 좌표 {x, y, cx, cy} |
+| `colors` | object | No | 원본 색상 (테마 치환 시 사용) |
+| `fonts` | object | No | 원본 폰트 정보 |
+
+### 17.3 PPT 생성 시 처리
+
+```python
+def render_ooxml_shape(shape, theme, target_canvas):
+    xml = shape.ooxml.fragment
+
+    # 1. 좌표 스케일링
+    if target_canvas != REFERENCE_CANVAS:
+        xml = scale_coordinates(xml, shape.ooxml.emu, target_canvas)
+
+    # 2. 테마 색상 치환 (선택적)
+    if theme.apply_colors and shape.ooxml.colors:
+        original_color = shape.ooxml.colors.fill
+        new_color = theme.get_color(shape.style.fill.color)
+        xml = xml.replace(original_color.lstrip('#'), new_color.lstrip('#'))
+
+    return xml
+```
+
+## 18. description 섹션 (shape_source: description)
+
+자연어 설명으로 도형을 정의합니다.
+
+### 18.1 스키마
+
+```yaml
+shapes:
+  - id: "shape-2"
+    name: "카드 배경"
+    shape_source: description
+
+    # 기존 필드
+    type: rectangle
+    geometry:
+      x: 5%
+      y: 10%
+      cx: 40%
+      cy: 80%
+
+    # 자연어 설명
+    description:
+      text: |
+        둥근 모서리 사각형
+        - 모서리 반경: 8px
+        - 채우기: surface 색상
+        - 그림자: 부드러운 드롭섀도우 (blur: 10px, offset: 0,4px)
+        - 투명도: 100%
+
+      # 선택적 힌트 (LLM 가이드용)
+      hints:
+        shape_type: roundRect
+        corner_radius: 8
+        has_shadow: true
+        fill_token: surface
+```
+
+### 18.2 Description으로 처리 가능한 예시
+
+```yaml
+# 단순 도형
+description:
+  text: "사각형, primary 색상, 25% 투명도"
+
+# 이미지
+description:
+  text: "히어로 배경 이미지, 도시 야경, 어두운 톤, 16:9 비율"
+
+# 차트
+description:
+  text: |
+    막대 차트
+    - X축: Q1, Q2, Q3, Q4
+    - 매출: 100, 150, 200, 180 (primary 색상)
+    - 비용: 80, 90, 120, 100 (secondary 색상)
+
+# 아이콘
+description:
+  text: "Font Awesome star 아이콘, 32px, primary 색상"
+```
+
+## 19. reference 섹션 (shape_source: reference)
+
+다른 shape나 Object를 참조합니다.
+
+### 19.1 스키마
+
+```yaml
+shapes:
+  - id: "main-diagram"
+    shape_source: reference
+
+    reference:
+      # 외부 Object 파일 참조
+      object: "objects/cycle/6segment-colorful.yaml"
+
+      # 또는 같은 파일 내 shape 참조
+      local: "shape-5"
+
+      # 오버라이드 (선택)
+      override:
+        geometry:
+          x: 15%
+          y: 20%
+          cx: 70%
+          cy: 65%
+        style:
+          fill:
+            color: secondary
+```
+
+## 20. Object 파일 스키마
+
+재사용 가능한 다이어그램 컴포넌트를 별도 파일로 저장합니다.
+
+### 20.1 디렉토리 구조
+
+```
+templates/contents/objects/
+├── registry.yaml           # Object 레지스트리
+├── cycle/
+│   ├── 6segment-colorful.yaml
+│   └── 4arrow.yaml
+├── process/
+│   └── honeycomb.yaml
+└── chart/
+    └── bar-simple.yaml
+```
+
+### 20.2 Object YAML 스키마
+
+```yaml
+# objects/cycle/6segment-colorful.yaml
+object:
+  id: 6segment-colorful
+  name: "6세그먼트 컬러풀 사이클"
+  type: diagram
+  version: "1.0"
+
+  # 바운딩 박스 (원본 슬라이드 내 위치)
+  bounding_box:
+    x: 20%
+    y: 15%
+    cx: 60%
+    cy: 70%
+
+  # 구성 요소
+  components:
+    - id: segment-1
+      shape_source: ooxml
+      ooxml:
+        fragment: |
+          <p:sp><!-- 세그먼트 1 OOXML --></p:sp>
+        emu: {x: 2438400, y: 1028700, cx: 3657600, cy: 2400000}
+      relative_position:
+        angle: 0
+        radius: 35%
+
+    - id: segment-2
+      shape_source: ooxml
+      ooxml:
+        fragment: |
+          <p:sp><!-- 세그먼트 2 OOXML --></p:sp>
+        emu: {x: 5486400, y: 1028700, cx: 3657600, cy: 2400000}
+      relative_position:
+        angle: 60
+        radius: 35%
+    # ... 6개 세그먼트
+
+  # 검색용 메타데이터
+  metadata:
+    category: cycle
+    tags: [colorful, 6-element, radial, process]
+    semantic: "6단계 순환 다이어그램, 컬러풀한 세그먼트"
+    element_count: 6
+    complexity: high
+    style: colorful
+```
+
+### 20.3 Object Registry 스키마
+
+```yaml
+# objects/registry.yaml
+version: "1.0"
+
+categories:
+  - id: cycle
+    name: "순환 다이어그램"
+  - id: process
+    name: "프로세스 다이어그램"
+  - id: chart
+    name: "차트"
+
+objects:
+  - id: cycle-6segment-colorful
+    file: cycle/6segment-colorful.yaml
+    type: ooxml
+    metadata:
+      category: cycle
+      tags: [colorful, 6-element]
+      element_count: 6
+      complexity: high
+
+  - id: cycle-4arrow
+    file: cycle/4arrow.yaml
+    type: svg
+    metadata:
+      category: cycle
+      tags: [minimal, arrow]
+      element_count: 4
+      complexity: medium
+```
+
+## 21. 추출 워크플로우 (v2.1)
+
+```
+PPTX
+  │
+  ▼
+┌─────────────────────────────────────┐
+│ Step 1: 슬라이드 타입 분류           │
+│ - cover, toc, section, closing      │
+│   → extraction_mode: full           │
+│ - 나머지                             │
+│   → extraction_mode: content_only   │
+└─────────────────────────────────────┘
+  │
+  ▼
+┌─────────────────────────────────────┐
+│ Step 2: Zone 필터링                  │
+│ - full: 모든 shape 포함             │
+│ - content_only: 제목/푸터 제외       │
+└─────────────────────────────────────┘
+  │
+  ▼
+┌─────────────────────────────────────┐
+│ Step 3: Shape별 복잡도 판단          │
+│ - 복잡 → shape_source: ooxml        │
+│ - 단순 → shape_source: description  │
+└─────────────────────────────────────┘
+  │
+  ▼
+┌─────────────────────────────────────┐
+│ Step 4: YAML 생성                    │
+│ - ooxml: fragment + emu + colors    │
+│ - description: 자연어 설명           │
+└─────────────────────────────────────┘
+  │
+  ▼
+┌─────────────────────────────────────┐
+│ Step 5: Object 분리 (선택)           │
+│ - 재사용 가능한 다이어그램 감지       │
+│ - objects/ 폴더에 별도 저장          │
+└─────────────────────────────────────┘
+```
+
+## 22. v2.1 장점 요약
+
+| 항목 | 기존 (v2.0) | 개선 (v2.1) |
+|------|------------|-------------|
+| 복잡 도형 보존 | 재구성 필요 | OOXML로 100% 보존 |
+| 단순 도형 | 속성 나열 | Description으로 간결화 |
+| 생성 속도 | 모두 재생성 | 복잡한 것만 치환 |
+| 정확도 | 근사치 | 원본 동일 (복잡 도형) |
+| 재사용성 | 템플릿 단위 | Object 단위 컴포넌트 |
+| 일관성 | 제목 포함 | 콘텐츠만 분리 (content_only) |
+| 용량 | 작음 | 선택적 (복잡한 것만 OOXML) |
 
 ---
 
