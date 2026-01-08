@@ -1,6 +1,6 @@
 # PRD: PPT Skills Suite
 
-**버전**: 4.0
+**버전**: 4.2
 **작성일**: 2026-01-08
 **상태**: Draft
 
@@ -21,7 +21,7 @@ Claude Code 환경에서 **전문 디자이너 수준의 PPT**를 자동 생성�
 | 스킬 네이밍 | **ppt- 접두어 통일** (ppt-extract, ppt-design, ppt-create, ppt-image) |
 | 관리 기능 | **Electron 데스크톱 앱** (ppt-manager) |
 | 공유 유틸리티 | **ppt-create에 포함** (thumbnail.py, ooxml/) |
-| 템플릿 시스템 | **v3.0 유지** (테마, 콘텐츠, 문서, 에셋) |
+| 템플릿 시스템 | **v4.0** (테마, 콘텐츠, 오브젝트, 문서, 에셋) |
 
 ### 1.3 타겟 사용자
 
@@ -165,7 +165,7 @@ Claude Code 환경에서 **전문 디자이너 수준의 PPT**를 자동 생성�
 
 **참조 문서**:
 - `references/custom-elements.md` - HTML 요소 스키마
-- `references/content-schema.md` - 콘텐츠 템플릿 v2.0 스키마
+- `references/content-schema.md` - 콘텐츠 템플릿 v4.0 스키마
 
 ---
 
@@ -259,7 +259,7 @@ Claude Code 환경에서 **전문 디자이너 수준의 PPT**를 자동 생성�
 
 ---
 
-## 5. 템플릿 시스템 (v3.0)
+## 5. 템플릿 시스템 (v4.0)
 
 ### 5.1 테마 (themes/)
 
@@ -306,7 +306,7 @@ style_hints:
 
 **레지스트리**: `registry.yaml`
 ```yaml
-version: "3.0"
+version: "4.0"
 default_theme: deepgreen
 
 categories:
@@ -340,12 +340,12 @@ templates:
     prompt_keywords: [표지, 타이틀, 중앙정렬]
 ```
 
-**템플릿 파일 구조**:
+**템플릿 파일 구조 (v4.0)**:
 ```yaml
 content_template:
   id: comparison-2col1
   name: "2열 비교"
-  version: "3.0"
+  version: "4.0"
 
 design_meta:
   quality_score: 9.2
@@ -355,30 +355,27 @@ canvas:
   reference_width: 1920
   reference_height: 1080
 
-shapes:
-  - id: left-panel
-    type: rectangle
-    geometry:
-      x: 2%
-      y: 15%
-      cx: 46%
-      cy: 80%
-    style:
-      fill:
-        color: primary      # 디자인 토큰
-      rounded_corners: 8
-    text:
-      placeholder_type: TITLE
-      font_color: light
+content:
+  layout:
+    type: grid
+    columns: 2
 
-gaps:
-  global:
+  zones:
+    - id: left-panel
+      type: container
+      geometry: {x: 2%, y: 15%, cx: 46%, cy: 80%}
+      style_ref: primary-fill
+      object_desc: "둥근 모서리 사각형 배경"
+
+    - id: right-panel
+      type: container
+      geometry: {x: 52%, y: 15%, cx: 46%, cy: 80%}
+      style_ref: secondary-fill
+      object_desc: "둥근 모서리 사각형 배경"
+
+  spacing:
     column_gap: 4%
     row_gap: 3%
-
-spatial_relationships:
-  - type: horizontal_distribute
-    elements: [left-panel, right-panel]
 ```
 
 **카테고리별 템플릿 수** (40개+):
@@ -899,7 +896,7 @@ Claude:
 
 ### A. YAML 스키마 정의
 
-콘텐츠 템플릿 v3.0 스키마: `ppt-create/references/content-schema.md` 참조
+콘텐츠 템플릿 v4.0 스키마: `ppt-create/references/content-schema.md` 참조
 
 ### B. 콘텐츠 템플릿 카테고리 (19개)
 
@@ -922,3 +919,4 @@ cover, toc, section, comparison, process, chart, stats, grid, diagram, timeline,
 | 3.0 | 2026-01-06 | 초기 PRD (단일 ppt-gen 스킬) |
 | 4.0 | 2026-01-08 | 4 스킬 + 1 앱 분리 구조로 재설계 |
 | 4.1 | 2026-01-08 | 콘텐츠-오브젝트 분리 스키마 추가, 동적 오브젝트 선택 시스템 |
+| 4.2 | 2026-01-08 | 문서 전체 v4.0 버전 참조 통일, 템플릿 예시 v4.0 스키마로 업데이트 |
