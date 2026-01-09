@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .left-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8pt;
+      height: 100%;
+      background: #1E5128;
+    }
+    .page-title {
+      position: absolute;
+      left: 36pt;
+      top: 24pt;
+    }
+    .page-title h1 {
+      color: #1E5128;
+      font-size: 22pt;
+      font-weight: bold;
+    }
+    .grid-container {
+      position: absolute;
+      left: 36pt;
+      top: 70pt;
+      width: 648pt;
+      display: flex;
+      gap: 20pt;
+    }
+    .strategy-card {
+      flex: 1;
+      background: #F4F6F6;
+      border-radius: 8pt;
+      padding: 24pt 20pt;
+      border-top: 5pt solid #1E5128;
+    }
+    .card-number-wrapper {
+      width: 32pt;
+      height: 32pt;
+      background: #1E5128;
+      border-radius: 50%;
+      margin-bottom: 16pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-number {
+      color: #FFFFFF;
+      font-size: 16pt;
+      font-weight: bold;
+    }
+    .card-title {
+      color: #1E5128;
+      font-size: 15pt;
+      font-weight: bold;
+      margin-bottom: 12pt;
+    }
+    .card-desc {
+      color: #191A19;
+      font-size: 11pt;
+      line-height: 1.5;
+      margin-bottom: 16pt;
+    }
+    .card-detail {
+      background: #FFFFFF;
+      border-radius: 4pt;
+      padding: 12pt;
+    }
+    .card-detail p {
+      color: #4E9F3D;
+      font-size: 10pt;
+      line-height: 1.5;
+    }
+    .footer {
+      position: absolute;
+      left: 36pt;
+      bottom: 16pt;
+      width: 648pt;
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer p {
+      color: #AAB7B8;
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-bar"></div>
+  <div class="page-title">
+    <h1>핵심 추진 전략</h1>
+  </div>
+  <div class="grid-container">
+    <div class="strategy-card">
+      <div class="card-number-wrapper"><p class="card-number">1</p></div>
+      <p class="card-title">단계적 전환 전략</p>
+      <p class="card-desc">Big Bang 방식이 아닌 모듈별 순차 전환으로 리스크 최소화</p>
+      <div class="card-detail">
+        <p>WMS → TMS → OMS → Dashboard 순차 오픈</p>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="card-number-wrapper"><p class="card-number">2</p></div>
+      <p class="card-title">애자일 기반 개발</p>
+      <p class="card-desc">2주 단위 스프린트로 빠른 피드백과 유연한 대응</p>
+      <div class="card-detail">
+        <p>스프린트 리뷰 격주 금요일 진행</p>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="card-number-wrapper"><p class="card-number">3</p></div>
+      <p class="card-title">현업 밀착 협업</p>
+      <p class="card-desc">주 2회 현업 리뷰를 통한 요구사항 정합성 확보</p>
+      <div class="card-detail">
+        <p>화/목 현업 담당자 정기 미팅</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>스마트 물류관리 시스템 구축</p>
+    <p>7</p>
+  </div>
+</body>
+</html>

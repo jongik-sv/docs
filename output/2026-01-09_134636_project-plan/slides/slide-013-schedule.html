@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      position: absolute;
+      left: 40pt;
+      top: 25pt;
+    }
+    .header h1 {
+      font-size: 22pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+    .header-line {
+      position: absolute;
+      left: 40pt;
+      top: 55pt;
+      width: 60pt;
+      height: 3pt;
+      background: #4E9F3D;
+    }
+    .timeline-container {
+      position: absolute;
+      left: 40pt;
+      top: 85pt;
+      width: 640pt;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 0;
+      top: 45pt;
+      width: 640pt;
+      height: 4pt;
+      background: #1E5128;
+      border-radius: 2pt;
+    }
+    .phases {
+      display: flex;
+      position: relative;
+    }
+    .phase {
+      flex: 1;
+      text-align: center;
+      padding: 0 5pt;
+    }
+    .phase-dot {
+      width: 16pt;
+      height: 16pt;
+      background: #1E5128;
+      border-radius: 8pt;
+      margin: 38pt auto 10pt auto;
+      border: 3pt solid #FFFFFF;
+      box-shadow: 0 0 0 2pt #1E5128;
+    }
+    .phase-name {
+      font-size: 11pt;
+      color: #1E5128;
+      font-weight: bold;
+      margin-bottom: 5pt;
+    }
+    .phase-period {
+      font-size: 8pt;
+      color: #AAB7B8;
+      margin-bottom: 5pt;
+    }
+    .phase-duration-box {
+      margin-bottom: 8pt;
+    }
+    .phase-duration {
+      font-size: 8pt;
+      color: #1E5128;
+    }
+    .phase-tasks {
+      font-size: 8pt;
+      color: #191A19;
+      line-height: 1.4;
+      text-align: left;
+      background: #F4F6F6;
+      border-radius: 5pt;
+      padding: 8pt;
+    }
+    .milestone-section {
+      position: absolute;
+      left: 40pt;
+      bottom: 30pt;
+      width: 640pt;
+      background: #1E5128;
+      border-radius: 8pt;
+      padding: 12pt 20pt;
+      display: flex;
+      justify-content: space-between;
+    }
+    .milestone {
+      text-align: center;
+    }
+    .milestone .date {
+      font-size: 10pt;
+      color: #D8E9A8;
+      font-weight: bold;
+    }
+    .milestone .name {
+      font-size: 8pt;
+      color: #FFFFFF;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>마스터 일정 및 마일스톤</h1>
+  </div>
+  <div class="header-line"></div>
+  <div class="timeline-container">
+    <div class="timeline-line"></div>
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-name">착수</p>
+        <p class="phase-period">2025.01</p>
+        <div class="phase-duration-box"><p class="phase-duration">4주</p></div>
+        <div class="phase-tasks">
+          <p>킥오프</p>
+          <p>환경구축</p>
+          <p>표준정의</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-name">분석</p>
+        <p class="phase-period">2025.02-03</p>
+        <div class="phase-duration-box"><p class="phase-duration">8주</p></div>
+        <div class="phase-tasks">
+          <p>요구사항 확정</p>
+          <p>현행 분석</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-name">설계</p>
+        <p class="phase-period">2025.04-05</p>
+        <div class="phase-duration-box"><p class="phase-duration">8주</p></div>
+        <div class="phase-tasks">
+          <p>아키텍처 설계</p>
+          <p>화면/DB 설계</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-name">개발</p>
+        <p class="phase-period">2025.06-09</p>
+        <div class="phase-duration-box"><p class="phase-duration">16주</p></div>
+        <div class="phase-tasks">
+          <p>코딩</p>
+          <p>단위테스트</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-name">테스트</p>
+        <p class="phase-period">2025.10-11</p>
+        <div class="phase-duration-box"><p class="phase-duration">6주</p></div>
+        <div class="phase-tasks">
+          <p>통합테스트</p>
+          <p>성능/인수</p>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-name">이행</p>
+        <p class="phase-period">2025.11-12</p>
+        <div class="phase-duration-box"><p class="phase-duration">6주</p></div>
+        <div class="phase-tasks">
+          <p>오픈</p>
+          <p>운영이관</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="milestone-section">
+    <div class="milestone">
+      <p class="date">01.10</p>
+      <p class="name">착수보고</p>
+    </div>
+    <div class="milestone">
+      <p class="date">03.31</p>
+      <p class="name">요구사항 확정</p>
+    </div>
+    <div class="milestone">
+      <p class="date">05.31</p>
+      <p class="name">설계 완료</p>
+    </div>
+    <div class="milestone">
+      <p class="date">09.30</p>
+      <p class="name">개발 완료</p>
+    </div>
+    <div class="milestone">
+      <p class="date">11.15</p>
+      <p class="name">테스트 완료</p>
+    </div>
+    <div class="milestone">
+      <p class="date">12.01</p>
+      <p class="name">시스템 오픈</p>
+    </div>
+  </div>
+</body>
+</html>

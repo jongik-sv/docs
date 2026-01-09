@@ -1,0 +1,27 @@
+# Ocean Blue Theme
+# Source: 2025 Professional Blue Palette
+# Reference: https://prezent.ai/blog/blue-color-palettes
+
+theme:
+  id: ocean-blue
+  name: "Ocean Blue"
+  description: "신뢰감을 주는 블루 그라데이션 테마"
+
+colors:
+  primary: "#113F67"      # 주요 강조색 (딥 블루)
+  secondary: "#226597"    # 보조 강조색 (미디엄 블루)
+  accent: "#4F98CA"       # 하이라이트 (스카이 블루)
+  background: "#FFFFFF"   # 배경색
+  surface: "#F3F9FB"      # 카드/패널 배경
+  dark_text: "#1A2634"    # 본문 텍스트
+  light: "#FFFFFF"        # 밝은 텍스트
+  gray: "#7A8B9A"         # 음소거 요소
+
+typography:
+  heading_font: "Arial"
+  body_font: "Arial"
+  korean_font: "Malgun Gothic"
+
+style_hints:
+  rounded_corners: 6
+  shadow_blur: 4

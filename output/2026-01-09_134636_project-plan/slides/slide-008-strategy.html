@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      position: absolute;
+      left: 40pt;
+      top: 25pt;
+    }
+    .header h1 {
+      font-size: 22pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+    .header-line {
+      position: absolute;
+      left: 40pt;
+      top: 55pt;
+      width: 60pt;
+      height: 3pt;
+      background: #4E9F3D;
+    }
+    .cards-container {
+      position: absolute;
+      left: 40pt;
+      top: 85pt;
+      width: 640pt;
+      display: flex;
+      gap: 20pt;
+    }
+    .strategy-card {
+      flex: 1;
+      background: #F4F6F6;
+      border-radius: 10pt;
+      padding: 20pt;
+      border-top: 4pt solid #1E5128;
+    }
+    .card-number {
+      width: 30pt;
+      height: 30pt;
+      background: #1E5128;
+      border-radius: 15pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12pt;
+    }
+    .card-number p {
+      font-size: 14pt;
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+    .card-title {
+      font-size: 13pt;
+      color: #1E5128;
+      font-weight: bold;
+      margin-bottom: 10pt;
+    }
+    .card-desc {
+      font-size: 9pt;
+      color: #191A19;
+      line-height: 1.5;
+    }
+    .card-highlight {
+      margin-top: 12pt;
+      padding: 8pt 10pt;
+      background: #D8E9A8;
+      border-radius: 5pt;
+    }
+    .card-highlight p {
+      font-size: 8pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>핵심 추진 전략</h1>
+  </div>
+  <div class="header-line"></div>
+  <div class="cards-container">
+    <div class="strategy-card">
+      <div class="card-number"><p>1</p></div>
+      <p class="card-title">단계적 전환 전략</p>
+      <p class="card-desc">Big Bang 방식이 아닌 모듈별 순차 전환으로 리스크 최소화</p>
+      <div class="card-highlight">
+        <p>WMS → TMS → OMS → Dashboard</p>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="card-number"><p>2</p></div>
+      <p class="card-title">애자일 기반 개발</p>
+      <p class="card-desc">2주 단위 스프린트로 빠른 피드백과 유연한 대응 체계 구축</p>
+      <div class="card-highlight">
+        <p>2주 Sprint + Daily Standup</p>
+      </div>
+    </div>
+    <div class="strategy-card">
+      <div class="card-number"><p>3</p></div>
+      <p class="card-title">현업 밀착 협업</p>
+      <p class="card-desc">주 2회 현업 리뷰를 통한 요구사항 정합성 확보</p>
+      <div class="card-highlight">
+        <p>주 2회 현업 리뷰 미팅</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

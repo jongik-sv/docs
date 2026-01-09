@@ -250,9 +250,10 @@ function addElements(slideData, targetSlide, pres) {
       let adjustedX = el.position.x;
       let adjustedW = el.position.w;
 
-      // Make single-line text 2% wider to account for underestimate
+      // Make single-line text 10% wider to account for browser/PowerPoint font rendering difference
+      // (PowerPoint renders fonts wider than browsers, especially for Korean text)
       if (isSingleLine) {
-        const widthIncrease = el.position.w * 0.02;
+        const widthIncrease = el.position.w * 0.10;
         const align = el.style.align;
 
         if (align === 'center') {

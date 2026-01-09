@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "pipeline.schema.json",
   "title": "PPT Generation Pipeline State",
-  "description": "PPT 생성 파이프라인 상태 스키마 - 슬라이드별 플랫 구조 (v5.2)",
+  "description": "PPT 생성 파이프라인 상태 스키마 - 슬라이드별 플랫 구조 (v5.3 - 디자인 정보 확장)",
   "type": "object",
   "required": ["session", "current_stage"],
   "properties": {
@@ -10,7 +10,11 @@
       "type": "object",
       "required": ["id", "title", "created_at", "status"],
       "properties": {
-        "id": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}_\\d{6}_[a-f0-9]{8}$" },
+        "id": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}_\\d{6}_[a-z0-9][a-z0-9-]*$",
+          "description": "세션 ID: YYYY-MM-DD_HHMMSS_name (예: 2026-01-09_134636_project-plan)"
+        },
         "title": { "type": "string" },
         "created_at": { "type": "string", "format": "date-time" },
         "updated_at": { "type": "string", "format": "date-time" },
@@ -113,8 +117,268 @@
             }
           },
 
+          "content_bindings": {
+            "type": ["object", "null"],
+            "description": "4단계: 구조화된 콘텐츠 바인딩 (v5.3 NEW)",
+            "properties": {
+              "title": { "type": "string", "description": "슬라이드 제목" },
+              "subtitle": { "type": ["string", "null"], "description": "부제목" },
+              "items": {
+                "type": "array",
+                "description": "카드/아이템 배열 (cards, steps, features 등)",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "number": { "type": "string" },
+                    "title": { "type": "string" },
+                    "subtitle": { "type": "string" },
+                    "description": { "type": "string" },
+                    "features": { "type": "array", "items": { "type": "string" } },
+                    "icon": { "type": "string" },
+                    "image": { "type": "string" }
+                  }
+                }
+              },
+              "table": {
+                "type": "object",
+                "description": "테이블 데이터",
+                "properties": {
+                  "headers": { "type": "array", "items": { "type": "string" } },
+                  "rows": { "type": "array", "items": { "type": "array" } }
+                }
+              },
+              "footer": {
+                "type": "object",
+                "properties": {
+                  "page_number": { "type": "string" },
+                  "project_name": { "type": "string" }
+                }
+              },
+              "highlight": { "type": "string", "description": "강조 텍스트" }
+            }
+          },
+
           "generated": { "type": "boolean", "description": "5단계: 생성 완료 여부" },
-          "pptx_slide_index": { "type": "integer", "description": "5단계: PPTX 내 슬라이드 인덱스" }
+          "pptx_slide_index": { "type": "integer", "description": "5단계: PPTX 내 슬라이드 인덱스" },
+
+          "design_info": {
+            "type": ["object", "null"],
+            "description": "5단계: 완전한 디자인 정보 (v5.3 NEW)",
+            "properties": {
+              "layout": {
+                "type": "object",
+                "description": "레이아웃 정보",
+                "properties": {
+                  "type": { "enum": ["grid", "radial", "sequential", "freeform", "split", "centered"] },
+                  "grid": {
+                    "type": "object",
+                    "properties": {
+                      "columns": { "type": "integer" },
+                      "rows": { "type": "integer" },
+                      "column_weights": { "type": "array", "items": { "type": "number" } }
+                    }
+                  },
+                  "direction": { "enum": ["horizontal", "vertical"] }
+                }
+              },
+              "zones": {
+                "type": "array",
+                "description": "콘텐츠 영역 정의",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "role": { "enum": ["slide_title", "subtitle", "main_content", "sidebar", "footer", "header", "decoration"] },
+                    "geometry": {
+                      "type": "object",
+                      "properties": {
+                        "x": { "type": "number", "description": "pt 단위" },
+                        "y": { "type": "number" },
+                        "cx": { "type": "number", "description": "width in pt" },
+                        "cy": { "type": "number", "description": "height in pt" }
+                      }
+                    },
+                    "placeholder_type": { "enum": ["TITLE", "BODY", "DIAGRAM", "PICTURE", "TABLE", "CHART"] },
+                    "element_type": { "type": "string", "description": "card-grid, timeline, process 등" },
+                    "element_count": { "type": "integer" }
+                  }
+                }
+              },
+              "shapes_summary": {
+                "type": "object",
+                "description": "도형 요약",
+                "properties": {
+                  "total_count": { "type": "integer" },
+                  "by_type": {
+                    "type": "object",
+                    "additionalProperties": { "type": "integer" }
+                  },
+                  "patterns": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "type": { "type": "string", "description": "numbered_card, icon_card 등" },
+                        "count": { "type": "integer" },
+                        "elements": { "type": "array", "items": { "type": "string" } }
+                      }
+                    }
+                  }
+                }
+              },
+              "color_tokens": {
+                "type": "object",
+                "description": "사용된 색상 토큰 (HEX 값)",
+                "additionalProperties": { "type": "string" }
+              },
+              "typography": {
+                "type": "object",
+                "description": "타이포그래피 정보",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "font_size_pt": { "type": "number" },
+                    "font_weight": { "enum": ["normal", "bold", "light"] },
+                    "font_color": { "type": "string" },
+                    "line_height": { "type": "number" }
+                  }
+                }
+              },
+              "spacing": {
+                "type": "object",
+                "description": "간격 정보 (pt 단위)",
+                "properties": {
+                  "slide_margin": {
+                    "type": "object",
+                    "properties": {
+                      "top": { "type": "number" },
+                      "right": { "type": "number" },
+                      "bottom": { "type": "number" },
+                      "left": { "type": "number" }
+                    }
+                  },
+                  "section_gap": { "type": "number" },
+                  "item_gap": { "type": "number" },
+                  "card_padding": { "type": "number" }
+                }
+              },
+              "constraints": {
+                "type": "object",
+                "description": "제약 조건",
+                "properties": {
+                  "max_items": { "type": "integer" },
+                  "min_items": { "type": "integer" },
+                  "title_max_chars": { "type": "integer" },
+                  "description_max_lines": { "type": "integer" }
+                }
+              },
+              "visual_properties": {
+                "type": "object",
+                "description": "시각적 속성",
+                "properties": {
+                  "balance": { "enum": ["symmetric", "asymmetric"] },
+                  "hierarchy": { "type": "integer", "description": "시각적 계층 수" },
+                  "emphasis_style": { "enum": ["numbered", "icon", "color", "size"] }
+                }
+              }
+            }
+          },
+
+          "slide_stage": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 5,
+            "description": "슬라이드별 현재 스테이지 (v5.3 NEW - 수정 루프 지원)"
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "수정 횟수 (0 = 최초 생성) (v5.3 NEW)"
+          },
+          "revision_history": {
+            "type": "array",
+            "description": "수정 이력 (선택적) (v5.3 NEW)",
+            "items": {
+              "type": "object",
+              "properties": {
+                "revision": { "type": "integer" },
+                "template_id": { "type": "string" },
+                "timestamp": { "type": "string", "format": "date-time" },
+                "reason": { "type": "string", "description": "수정 사유" }
+              }
+            }
+          },
+
+          "evaluation": {
+            "type": ["object", "null"],
+            "description": "4단계: 디자인 평가 결과 (v5.7 NEW)",
+            "properties": {
+              "attempt_number": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 3,
+                "description": "현재 시도 횟수"
+              },
+              "current_score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100,
+                "description": "현재 평가 점수"
+              },
+              "passed": {
+                "type": "boolean",
+                "description": "합격 여부 (≥70)"
+              },
+              "selected_reason": {
+                "enum": ["passed", "best_of_3"],
+                "description": "선택 사유: passed=70점 이상 합격, best_of_3=3회 실패 후 최고 점수 선택"
+              },
+              "details": {
+                "type": "object",
+                "description": "카테고리별 세부 점수",
+                "properties": {
+                  "layout": { "$ref": "#/$defs/categoryScore" },
+                  "typography": { "$ref": "#/$defs/categoryScore" },
+                  "color": { "$ref": "#/$defs/categoryScore" },
+                  "content_fit": { "$ref": "#/$defs/categoryScore" },
+                  "visual": { "$ref": "#/$defs/categoryScore" }
+                }
+              },
+              "critical_failures": {
+                "type": ["array", "null"],
+                "items": {
+                  "enum": ["overflow", "contrast_failure", "element_count_mismatch", "content_missing"]
+                },
+                "description": "자동 불합격 사유"
+              }
+            }
+          },
+
+          "attempt_history": {
+            "type": "array",
+            "description": "디자인 평가 시도 이력 (v5.7 NEW)",
+            "items": {
+              "type": "object",
+              "properties": {
+                "attempt": { "type": "integer", "minimum": 1, "maximum": 3 },
+                "template_id": { "type": "string" },
+                "html_file": { "type": "string" },
+                "score": { "type": "number", "minimum": 0, "maximum": 100 },
+                "passed": { "type": "boolean" },
+                "critical_failures": {
+                  "type": ["array", "null"],
+                  "items": { "type": "string" }
+                },
+                "issues": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "description": "발견된 문제점"
+                },
+                "timestamp": { "type": "string", "format": "date-time" }
+              },
+              "required": ["attempt", "template_id", "score", "passed", "timestamp"]
+            }
+          }
         }
       }
     },
@@ -127,6 +391,23 @@
         "slide_count": { "type": "integer" },
         "completed_at": { "type": "string", "format": "date-time" }
       }
+    }
+  },
+
+  "$defs": {
+    "categoryScore": {
+      "type": "object",
+      "description": "디자인 평가 카테고리별 점수 (v5.7)",
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "description": "획득 점수" },
+        "max": { "type": "number", "description": "최대 점수" },
+        "issues": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "발견된 문제점"
+        }
+      },
+      "required": ["score", "max"]
     }
   }
 }

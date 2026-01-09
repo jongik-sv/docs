@@ -1,0 +1,113 @@
+content_template:
+  id: basic-table-simple3
+  name: 간단한 테이블
+  version: '2.0'
+  source: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 12
+  extracted_at: '2026-01-09T11:10:10.387121'
+design_meta:
+  quality_score: 8.5
+  design_intent: basic-table-simple
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1980
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-249
+  name: BoxContent
+  type: rect
+  z_index: 5
+  geometry:
+    x: 17.3
+    y: 7.8
+    cx: 60.0
+    cy: 36.6
+    original_aspect_ratio: 3.655
+  style:
+    fill:
+      type: solid
+      color: default
+      opacity: 1.0
+  text:
+    has_text: true
+- id: shape-250
+  name: BoxHeader
+  type: rect
+  z_index: 6
+  geometry:
+    x: 2.1
+    y: 49.8
+    cx: 15.3
+    cy: 36.6
+    original_aspect_ratio: 0.932
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 1.0
+  text:
+    has_text: true
+- id: shape-251
+  name: BoxContent
+  type: rect
+  z_index: 7
+  geometry:
+    x: 17.3
+    y: 49.8
+    cx: 60.0
+    cy: 36.6
+    original_aspect_ratio: 3.655
+  style:
+    fill:
+      type: solid
+      color: default
+      opacity: 1.0
+  text:
+    has_text: true
+- id: shape-252
+  name: BoxHeader
+  type: rect
+  z_index: 8
+  geometry:
+    x: 2.1
+    y: 7.8
+    cx: 15.3
+    cy: 36.6
+    original_aspect_ratio: 0.932
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 1.0
+  text:
+    has_text: true
+gaps:
+  global:
+    column_gap: 2.0
+    row_gap: 2.0
+  between_shapes: []
+spatial_relationships: []
+groups: []
+thumbnail: thumbnails/basic-table-simple3.png
+use_for:
+- 데이터 비교
+- 통계 표시
+- 가격표
+- 스펙 비교
+- 명세표
+keywords:
+- 테이블
+- 표
+- 데이터
+- 비교
+- 행
+- 열
+expected_prompt: 헤더와 여러 행의 데이터를 포함하는 간단한 테이블
+prompt_keywords:
+- table-simple
+- table
+- 테이블
+- 표
+- 데이터

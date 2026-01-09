@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .grid-container { position: absolute; top: 100px; left: 50px; right: 50px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .quality-card { background: #F4F6F6; border-radius: 12px; padding: 20px; text-align: center; border-bottom: 4px solid #4E9F3D; }
+    .card-icon { width: 55px; height: 55px; background: #1E5128; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px; color: #FFFFFF; }
+    .card-title { font-size: 15px; color: #1E5128; font-weight: bold; margin-bottom: 8px; }
+    .card-timing { font-size: 11px; color: #4E9F3D; margin-bottom: 10px; padding: 4px 10px; background: #D8E9A8; border-radius: 10px; display: inline-block; }
+    .card-desc { font-size: 12px; color: #666; line-height: 1.5; text-align: left; }
+    .tools-section { position: absolute; bottom: 60px; left: 50px; right: 50px; }
+    .tools-title { font-size: 14px; color: #1E5128; font-weight: bold; margin-bottom: 12px; }
+    .tools-grid { display: flex; gap: 15px; }
+    .tool-item { flex: 1; background: #1E5128; color: #FFFFFF; padding: 12px 15px; border-radius: 6px; text-align: center; }
+    .tool-name { font-size: 13px; font-weight: bold; margin-bottom: 4px; }
+    .tool-desc { font-size: 11px; opacity: 0.8; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>품질 보증 활동</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="grid-container">
+    <div class="quality-card">
+      <div class="card-icon">&#128196;</div>
+      <p class="card-title">산출물 검토</p>
+      <span class="card-timing">단계별 말</span>
+      <p class="card-desc">발주 담당자 검토 및 승인 프로세스 적용</p>
+    </div>
+    <div class="quality-card">
+      <div class="card-icon">&#128269;</div>
+      <p class="card-title">코드 리뷰</p>
+      <span class="card-timing">개발 기간</span>
+      <p class="card-desc">GitHub PR 필수 2인 이상 승인 규칙 적용</p>
+    </div>
+    <div class="quality-card">
+      <div class="card-icon">&#128202;</div>
+      <p class="card-title">정적 분석</p>
+      <span class="card-timing">개발 기간</span>
+      <p class="card-desc">SonarQube 품질 게이트 기준 적용</p>
+    </div>
+    <div class="quality-card">
+      <div class="card-icon">&#9989;</div>
+      <p class="card-title">테스트</p>
+      <span class="card-timing">통합/인수</span>
+      <p class="card-desc">시나리오 기반 통합 및 인수 테스트 수행</p>
+    </div>
+  </div>
+  <div class="tools-section">
+    <p class="tools-title">품질 관리 도구</p>
+    <div class="tools-grid">
+      <div class="tool-item">
+        <p class="tool-name">GitHub</p>
+        <p class="tool-desc">소스 형상관리</p>
+      </div>
+      <div class="tool-item">
+        <p class="tool-name">SonarQube</p>
+        <p class="tool-desc">정적 분석</p>
+      </div>
+      <div class="tool-item">
+        <p class="tool-name">Jira</p>
+        <p class="tool-desc">이슈 관리</p>
+      </div>
+      <div class="tool-item">
+        <p class="tool-name">Confluence</p>
+        <p class="tool-desc">문서 관리</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">19 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

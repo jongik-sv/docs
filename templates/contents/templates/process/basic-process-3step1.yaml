@@ -1,0 +1,1146 @@
+# 3단계 프로세스 콘텐츠 템플릿 v2.0
+# 원본: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx:56
+# 추출일: 2026-01-09T11:10:29.185231
+
+content_template:
+  id: "basic-process-3step1"
+  name: "3단계 프로세스"
+  version: "2.0"
+  source: "/home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx"
+  source_slide_index: 56
+  extracted_at: "2026-01-09T11:10:29.185231"
+
+design_meta:
+  quality_score: 8.5
+  design_intent: "basic-process-3step"
+  visual_balance: "symmetric"
+  information_density: "medium"
+
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: "16:9"
+
+shapes:
+  - id: "shape-7"
+    name: "Rectangle 2"
+    type: "rectangle"
+    z_index: 7
+    geometry:
+      x: 6.7
+      y: 66.1
+      cx: 16.4
+      cy: 2.6
+      rotation: 0
+      original_aspect_ratio: 13.812
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-8"
+    name: "TextBox 7"
+    type: "rectangle"
+    z_index: 8
+    geometry:
+      x: 6.4
+      y: 70.0
+      cx: 10.5
+      cy: 5.9
+      rotation: 0
+      original_aspect_ratio: 3.983
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-9"
+    name: "TextBox 10"
+    type: "rectangle"
+    z_index: 9
+    geometry:
+      x: 6.4
+      y: 76.1
+      cx: 13.8
+      cy: 16.0
+      rotation: 0
+      original_aspect_ratio: 1.931
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-10"
+    name: "Oval 7"
+    type: "oval"
+    z_index: 10
+    geometry:
+      x: 7.0
+      y: 55.1
+      cx: 4.1
+      cy: 9.2
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 5.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-11"
+    name: "Rectangle 8"
+    type: "rectangle"
+    z_index: 11
+    geometry:
+      x: 23.8
+      y: 54.8
+      cx: 16.4
+      cy: 2.6
+      rotation: 0
+      original_aspect_ratio: 13.812
+    style:
+      fill:
+        type: "solid"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-12"
+    name: "TextBox 13"
+    type: "rectangle"
+    z_index: 12
+    geometry:
+      x: 24.0
+      y: 58.8
+      cx: 10.2
+      cy: 5.9
+      rotation: 0
+      original_aspect_ratio: 3.875
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-13"
+    name: "Oval 13"
+    type: "oval"
+    z_index: 13
+    geometry:
+      x: 24.6
+      y: 44.0
+      cx: 4.1
+      cy: 9.2
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 5.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-14"
+    name: "Rectangle 14"
+    type: "rectangle"
+    z_index: 14
+    geometry:
+      x: 40.6
+      y: 42.9
+      cx: 16.4
+      cy: 2.6
+      rotation: 0
+      original_aspect_ratio: 13.812
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-15"
+    name: "TextBox 19"
+    type: "rectangle"
+    z_index: 15
+    geometry:
+      x: 40.8
+      y: 46.9
+      cx: 9.7
+      cy: 5.9
+      rotation: 0
+      original_aspect_ratio: 3.654
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-16"
+    name: "Oval 19"
+    type: "oval"
+    z_index: 16
+    geometry:
+      x: 41.2
+      y: 31.9
+      cx: 4.1
+      cy: 9.2
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 5.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-17"
+    name: "Rectangle 20"
+    type: "rectangle"
+    z_index: 17
+    geometry:
+      x: 57.4
+      y: 31.0
+      cx: 16.4
+      cy: 2.6
+      rotation: 0
+      original_aspect_ratio: 13.812
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-18"
+    name: "TextBox 25"
+    type: "rectangle"
+    z_index: 18
+    geometry:
+      x: 57.1
+      y: 34.8
+      cx: 10.5
+      cy: 5.9
+      rotation: 0
+      original_aspect_ratio: 3.968
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-19"
+    name: "Oval 25"
+    type: "oval"
+    z_index: 19
+    geometry:
+      x: 57.9
+      y: 20.7
+      cx: 4.1
+      cy: 8.4
+      rotation: 0
+      original_aspect_ratio: 1.085
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 5.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-20"
+    name: "TextBox 34"
+    type: "rectangle"
+    z_index: 20
+    geometry:
+      x: 23.9
+      y: 64.7
+      cx: 13.8
+      cy: 16.0
+      rotation: 0
+      original_aspect_ratio: 1.931
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-21"
+    name: "TextBox 35"
+    type: "rectangle"
+    z_index: 21
+    geometry:
+      x: 40.8
+      y: 53.2
+      cx: 13.8
+      cy: 16.0
+      rotation: 0
+      original_aspect_ratio: 1.931
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-22"
+    name: "TextBox 36"
+    type: "rectangle"
+    z_index: 22
+    geometry:
+      x: 57.4
+      y: 41.1
+      cx: 13.8
+      cy: 16.0
+      rotation: 0
+      original_aspect_ratio: 1.931
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-23"
+    name: "AutoShape 68"
+    type: "rectangle"
+    z_index: 23
+    geometry:
+      x: 25.1
+      y: 46.0
+      cx: 4.0
+      cy: 5.8
+      rotation: 0
+      original_aspect_ratio: 1.565
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-24"
+    name: "Freeform 70"
+    type: "rectangle"
+    z_index: 24
+    geometry:
+      x: 25.6
+      y: 46.0
+      cx: 2.8
+      cy: 3.1
+      rotation: 0
+      original_aspect_ratio: 2.011
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-25"
+    name: "Freeform 71"
+    type: "rectangle"
+    z_index: 25
+    geometry:
+      x: 25.1
+      y: 47.2
+      cx: 4.0
+      cy: 4.6
+      rotation: 0
+      original_aspect_ratio: 1.975
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-26"
+    name: "AutoShape 116"
+    type: "rectangle"
+    z_index: 26
+    geometry:
+      x: 59.0
+      y: 22.7
+      cx: 2.8
+      cy: 5.7
+      rotation: 0
+      original_aspect_ratio: 1.093
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-27"
+    name: "Freeform 118"
+    type: "rectangle"
+    z_index: 27
+    geometry:
+      x: 59.1
+      y: 26.8
+      cx: 0.2
+      cy: 0.5
+      rotation: 0
+      original_aspect_ratio: 0.797
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-28"
+    name: "Freeform 119"
+    type: "rectangle"
+    z_index: 28
+    geometry:
+      x: 59.1
+      y: 23.8
+      cx: 2.6
+      cy: 0.4
+      rotation: 0
+      original_aspect_ratio: 14.836
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-29"
+    name: "Freeform 120"
+    type: "rectangle"
+    z_index: 29
+    geometry:
+      x: 59.2
+      y: 24.4
+      cx: 2.4
+      cy: 2.2
+      rotation: 0
+      original_aspect_ratio: 2.473
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-30"
+    name: "Freeform 121"
+    type: "rectangle"
+    z_index: 30
+    geometry:
+      x: 59.3
+      y: 26.8
+      cx: 0.4
+      cy: 0.6
+      rotation: 0
+      original_aspect_ratio: 1.584
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-31"
+    name: "Freeform 122"
+    type: "rectangle"
+    z_index: 31
+    geometry:
+      x: 59.6
+      y: 26.8
+      cx: 0.5
+      cy: 1.2
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-32"
+    name: "Freeform 123"
+    type: "rectangle"
+    z_index: 32
+    geometry:
+      x: 59.7
+      y: 27.1
+      cx: 0.2
+      cy: 0.5
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-33"
+    name: "Freeform 124"
+    type: "rectangle"
+    z_index: 33
+    geometry:
+      x: 60.0
+      y: 26.8
+      cx: 0.7
+      cy: 0.6
+      rotation: 0
+      original_aspect_ratio: 2.674
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-34"
+    name: "Freeform 125"
+    type: "rectangle"
+    z_index: 34
+    geometry:
+      x: 61.0
+      y: 26.8
+      cx: 0.5
+      cy: 0.6
+      rotation: 0
+      original_aspect_ratio: 1.843
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-35"
+    name: "Freeform 126"
+    type: "rectangle"
+    z_index: 35
+    geometry:
+      x: 60.6
+      y: 26.8
+      cx: 0.5
+      cy: 1.2
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-36"
+    name: "Freeform 127"
+    type: "rectangle"
+    z_index: 36
+    geometry:
+      x: 60.8
+      y: 27.1
+      cx: 0.2
+      cy: 0.5
+      rotation: 0
+      original_aspect_ratio: 0.958
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-37"
+    name: "Freeform 128"
+    type: "rectangle"
+    z_index: 37
+    geometry:
+      x: 60.2
+      y: 27.5
+      cx: 0.4
+      cy: 0.3
+      rotation: 0
+      original_aspect_ratio: 2.957
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-38"
+    name: "Freeform 129"
+    type: "rectangle"
+    z_index: 38
+    geometry:
+      x: 59.0
+      y: 28.0
+      cx: 2.8
+      cy: 0.1
+      rotation: 0
+      original_aspect_ratio: 55.312
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-39"
+    name: "Freeform 130"
+    type: "rectangle"
+    z_index: 39
+    geometry:
+      x: 61.6
+      y: 26.8
+      cx: 0.2
+      cy: 0.5
+      rotation: 0
+      original_aspect_ratio: 0.841
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-40"
+    name: "Freeform 131"
+    type: "rectangle"
+    z_index: 40
+    geometry:
+      x: 59.0
+      y: 28.1
+      cx: 2.7
+      cy: 0.2
+      rotation: 0
+      original_aspect_ratio: 30.929
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-41"
+    name: "Freeform 132"
+    type: "rectangle"
+    z_index: 41
+    geometry:
+      x: 60.0
+      y: 22.7
+      cx: 1.5
+      cy: 1.0
+      rotation: 0
+      original_aspect_ratio: 3.224
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-42"
+    name: "Freeform 133"
+    type: "rectangle"
+    z_index: 42
+    geometry:
+      x: 59.2
+      y: 23.1
+      cx: 1.2
+      cy: 0.6
+      rotation: 0
+      original_aspect_ratio: 4.393
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+
+gaps:
+  global:
+    column_gap: 5
+    row_gap: 5
+  between_shapes: []
+
+spatial_relationships: []
+
+groups: []
+
+thumbnail: "thumbnails/basic-process-3step1.png"
+
+use_for:
+  - "간단한 3단계"
+  - "기본 프로세스"
+  - "단순 흐름 표현"
+  - "3가지 항목"
+  - "기초 단계"
+
+keywords:
+  - "3단계 프로세스"
+  - "간단한 흐름"
+  - "3가지 단계"
+  - "순차적 진행"
+  - "단순 프로세스"
+
+expected_prompt: "3개 단계를 순차적으로 표현하는 프로세스"
+
+prompt_keywords:
+  - "프로세스"
+  - "타임라인"
+  - "다이어그램"
+  - "단계"
+  - "흐름"
+  - "시간"
+  - "진행"
+  - "레이아웃"
+
+shape_sources:
+  - type: "ooxml"
+    description: "원본 도형 XML 보존"

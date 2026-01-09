@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Noto Sans KR', Arial, sans-serif; background: #002452; position: relative; overflow: hidden; }
+    .bg-circle1 { position: absolute; top: 10pt; right: 10pt; width: 120pt; height: 120pt; background: rgba(75,101,128,0.3); border-radius: 60pt; }
+    .bg-circle2 { position: absolute; bottom: 30pt; left: 10pt; width: 100pt; height: 100pt; background: rgba(183,208,212,0.2); border-radius: 50pt; }
+    .content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+    .thank-you { font-size: 36pt; font-weight: 700; color: white; margin-bottom: 10pt; letter-spacing: 2pt; }
+    .subtitle { font-size: 12pt; color: #B7D0D4; margin-bottom: 20pt; }
+    .divider { width: 50pt; height: 3pt; background: #C51F2A; margin: 0 auto 20pt; }
+    .contact-info { display: flex; justify-content: center; gap: 25pt; }
+    .contact-item { text-align: center; }
+    .contact-label { font-size: 9pt; color: #B7D0D4; margin-bottom: 5pt; white-space: nowrap; }
+    .contact-value { font-size: 11pt; color: white; font-weight: 500; white-space: nowrap; }
+    
+    .company-logo { position: absolute; bottom: 35pt; left: 50%; transform: translateX(-50%); }
+    .logo-text { font-size: 10pt; color: rgba(255,255,255,0.6); letter-spacing: 2pt; }
+  
+    .footer-wrap { position: absolute; bottom: 15pt; right: 30pt; display: flex; align-items: center; gap: 20pt; }
+    .footer-info { font-size: 9pt; color: #B6B6B6; }
+    .footer-page { font-size: 9pt; color: #B6B6B6; }
+    .logo-img { height: 18pt; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="bg-circle1"></div>
+  <div class="bg-circle2"></div>
+  <div class="content">
+    <h1 class="thank-you">감사합니다</h1>
+    <p class="subtitle">스마트 물류관리 시스템 구축 제안</p>
+    <div class="divider"></div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <p class="contact-label">담당자</p>
+        <p class="contact-value">PM 홍길동</p>
+      </div>
+      <div class="contact-item">
+        <p class="contact-label">연락처</p>
+        <p class="contact-value">02-1234-5678</p>
+      </div>
+      <div class="contact-item">
+        <p class="contact-label">이메일</p>
+        <p class="contact-value">pm@company.com</p>
+      </div>
+    </div>
+  </div>
+  <div class="company-logo">
+    <p class="logo-text">DONGKUK SYSTEMS</p>
+  </div>
+  <div class="footer-wrap">
+    <p class="footer-page">22</p>
+  </div>
+</body>
+</html>

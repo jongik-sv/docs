@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .table-container { position: absolute; top: 95px; left: 50px; right: 50px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { background: #1E5128; color: #FFFFFF; padding: 12px 15px; text-align: left; font-weight: bold; }
+    td { padding: 12px 15px; color: #191A19; border-bottom: 1px solid #E5E5E5; }
+    tr:nth-child(even) td { background: #F9F9F9; }
+    .tech-area { font-weight: bold; color: #1E5128; }
+    .tech-name { color: #4E9F3D; font-weight: bold; }
+    .tech-version { color: #666; }
+    .tech-note { font-size: 12px; color: #888; }
+    .arch-note { position: absolute; bottom: 60px; left: 50px; right: 50px; background: #D8E9A8; padding: 15px 25px; border-radius: 8px; display: flex; gap: 40px; justify-content: center; }
+    .arch-item { text-align: center; }
+    .arch-label { font-size: 12px; color: #666; margin-bottom: 4px; }
+    .arch-value { font-size: 14px; color: #1E5128; font-weight: bold; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>기술 아키텍처</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>영역</th>
+        <th>기술/제품</th>
+        <th>버전</th>
+        <th>라이선스</th>
+        <th>비고</th>
+      </tr>
+      <tr>
+        <td class="tech-area">Frontend</td>
+        <td class="tech-name">Vue.js 3, TypeScript</td>
+        <td class="tech-version">3.4</td>
+        <td>MIT</td>
+        <td class="tech-note">SPA 구조</td>
+      </tr>
+      <tr>
+        <td class="tech-area">Backend</td>
+        <td class="tech-name">Spring Boot, Java</td>
+        <td class="tech-version">3.2 / 17</td>
+        <td>Apache 2.0</td>
+        <td class="tech-note">MSA 구조</td>
+      </tr>
+      <tr>
+        <td class="tech-area">Database</td>
+        <td class="tech-name">PostgreSQL, Redis</td>
+        <td class="tech-version">16 / 7</td>
+        <td>PostgreSQL / BSD</td>
+        <td class="tech-note">RDBMS + Cache</td>
+      </tr>
+      <tr>
+        <td class="tech-area">Infra</td>
+        <td class="tech-name">AWS (EKS, RDS, S3)</td>
+        <td class="tech-version">-</td>
+        <td>Commercial</td>
+        <td class="tech-note">클라우드 네이티브</td>
+      </tr>
+      <tr>
+        <td class="tech-area">AI/ML</td>
+        <td class="tech-name">Python, TensorFlow</td>
+        <td class="tech-version">3.11 / 2.15</td>
+        <td>PSF / Apache 2.0</td>
+        <td class="tech-note">수요예측, 경로최적화</td>
+      </tr>
+    </table>
+  </div>
+  <div class="arch-note">
+    <div class="arch-item">
+      <p class="arch-label">아키텍처</p>
+      <p class="arch-value">MSA (Microservices)</p>
+    </div>
+    <div class="arch-item">
+      <p class="arch-label">인프라</p>
+      <p class="arch-value">Cloud Native (AWS)</p>
+    </div>
+    <div class="arch-item">
+      <p class="arch-label">컨테이너</p>
+      <p class="arch-value">Kubernetes (EKS)</p>
+    </div>
+  </div>
+  <div class="page-num">11 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

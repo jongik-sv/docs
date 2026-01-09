@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Noto Sans KR', Arial, sans-serif; background: #002452; position: relative; overflow: hidden; }
+    .bg-pattern { position: absolute; right: 0; bottom: 0; width: 300pt; height: 300pt; background: rgba(183,208,212,0.15); border-radius: 150pt 0%, transparent 70%); }
+    .content { position: absolute; top: 50%; left: 80pt; transform: translateY(-50%); }
+    .num { font-size: 72pt; font-weight: 700; color: rgba(255,255,255,0.2); line-height: 1; }
+    .title { font-size: 32pt; font-weight: 500; color: white; margin-top: -10pt; }
+    .subtitle { font-size: 12pt; color: #B7D0D4; margin-top: 15pt; }
+    .accent-line { position: absolute; bottom: 80pt; left: 80pt; width: 60pt; height: 4pt; background: #C51F2A; }
+    .items { position: absolute; bottom: 50pt; left: 80pt; display: flex; gap: 30pt; }
+    .items p { color: #B7D0D4; font-size: 10pt; }
+    
+  
+    .footer-wrap { position: absolute; bottom: 15pt; right: 30pt; display: flex; align-items: center; gap: 20pt; }
+    .footer-info { font-size: 9pt; color: #B6B6B6; }
+    .footer-page { font-size: 9pt; color: #B6B6B6; }
+    .logo-img { height: 18pt; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="bg-pattern"></div>
+  <div class="content">
+    <p class="num">04</p>
+    <h1 class="title">프로젝트 일정</h1>
+    <p class="subtitle">Project Schedule</p>
+  </div>
+  <div class="accent-line"></div>
+  <div class="items">
+    <p>마스터 일정</p>
+    <p>주요 마일스톤</p>
+  </div>
+  <div class="footer-wrap">
+    <p class="footer-page">15</p>
+  </div>
+</body>
+</html>

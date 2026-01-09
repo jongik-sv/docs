@@ -16,9 +16,12 @@ pptx_path: path/to/file.pptx           # 원본 PPTX 파일 경로
 unpacked_dir: workspace/unpacked        # 언팩된 디렉토리 경로
 slide_index: 5                          # 추출할 슬라이드 인덱스 (0-based)
 design_intent: stats-dotgrid            # 사전 분석된 디자인 의도
-output_filename: stats-dotgrid1         # 출력 파일명 (번호 포함, 확장자 제외)
+category: stats                         # 카테고리 (폴더명)
+output_filename: basic-stats-dotgrid1   # 출력 파일명 (prefix 포함, 확장자 제외)
 source_aspect_ratio: "16:9"             # 원본 슬라이드 비율
 ```
+
+**카테고리 목록**: chart, comparison, content, cycle, diagram, feature, funnel, grid, hierarchy, matrix, process, quote, roadmap, stats, table, timeline, cover, toc, section, closing
 
 ## Workflow
 
@@ -214,7 +217,13 @@ icons:
 
 ### 7. YAML 생성
 
-**저장 경로**: `templates/contents/templates/{output_filename}.yaml`
+**저장 경로**: `templates/contents/templates/{category}/{output_filename}.yaml`
+
+**CRITICAL**: 반드시 카테고리 폴더에 저장합니다. 폴더가 없으면 생성하세요.
+
+```bash
+mkdir -p templates/contents/templates/{category}
+```
 
 ```yaml
 # {design_intent} 콘텐츠 템플릿 v2.0
@@ -254,32 +263,55 @@ spatial_relationships: []
 
 groups: []
 
-thumbnail: thumbnails/{output_filename}.png
+thumbnail: thumbnails/{category}/{output_filename}.png
 
-use_for: []
-keywords: []
+use_for:
+  - "{용도1 - 한글로 구체적인 사용 상황}"
+  - "{용도2}"
+  - "{용도3}"
+  - "{용도4}"
+  - "{용도5}"
+keywords:
+  - "{키워드1 - 한글}"
+  - "{키워드2}"
+  - "{키워드3}"
+  - "{키워드4}"
+  - "{키워드5}"
 ```
 
 ### 8. 썸네일 생성 (MANDATORY)
 
 **CRITICAL**: 썸네일 없이는 추출이 완료되지 않습니다. 반드시 실행하세요.
 
+**저장 경로**: `templates/contents/thumbnails/{category}/{output_filename}.png`
+
+```bash
+# 카테고리 폴더 생성
+mkdir -p templates/contents/thumbnails/{category}
+```
+
 #### 방법 A: PPTX에서 직접 생성 (LibreOffice 필요)
 
 ```bash
-cd .claude/skills/ppt-gen && python scripts/thumbnail.py {pptx_path} templates/contents/thumbnails/ --slides {slide_index} --single --prefix {output_filename}
+cd .claude/skills/ppt-gen && python scripts/thumbnail.py {pptx_path} templates/contents/thumbnails/{category}/ --slides {slide_index} --single
+
+# 파일명 변경
+mv templates/contents/thumbnails/{category}/slide-{slide_index}.png templates/contents/thumbnails/{category}/{output_filename}.png
 
 # 썸네일 확인
-test -f .claude/skills/ppt-gen/templates/contents/thumbnails/{output_filename}-{slide_index}.png && echo "Thumbnail OK" || echo "ERROR!"
+test -f templates/contents/thumbnails/{category}/{output_filename}.png && echo "Thumbnail OK" || echo "ERROR!"
 ```
 
 #### 방법 B: 기존 이미지에서 생성 (LibreOffice 불필요)
 
 ```bash
-cd .claude/skills/ppt-gen && python scripts/thumbnail.py --from-images {image_dir}/ templates/contents/thumbnails/ --slides {slide_index} --single --prefix {output_filename}
+cd .claude/skills/ppt-gen && python scripts/thumbnail.py --from-images {image_dir}/ templates/contents/thumbnails/{category}/ --slides {slide_index} --single
+
+# 파일명 변경
+mv templates/contents/thumbnails/{category}/slide-{slide_index}.png templates/contents/thumbnails/{category}/{output_filename}.png
 
 # 썸네일 확인
-test -f .claude/skills/ppt-gen/templates/contents/thumbnails/{output_filename}-{slide_index}.png && echo "Thumbnail OK" || echo "ERROR!"
+test -f templates/contents/thumbnails/{category}/{output_filename}.png && echo "Thumbnail OK" || echo "ERROR!"
 ```
 
 #### 시스템 의존성
@@ -303,9 +335,11 @@ error_message: "LibreOffice not found. Use --from-images mode with downloaded im
 
 ```yaml
 status: success | error
-yaml_path: templates/contents/templates/{output_filename}.yaml
-thumbnail_path: templates/contents/thumbnails/{output_filename}.png
+yaml_path: templates/contents/templates/{category}/{output_filename}.yaml
+thumbnail_path: templates/contents/thumbnails/{category}/{output_filename}.png
 shapes_count: {추출된 도형 수}
+use_for_count: {use_for 항목 수, 최소 5개}
+keywords_count: {keywords 항목 수, 최소 5개}
 error_message: {에러 시 메시지}
 ```
 
@@ -318,3 +352,41 @@ error_message: {에러 시 메시지}
 5. **아이콘 크기 필수**: 아이콘에 `size` 또는 `size_ratio` 기록
 6. **시맨틱 색상 사용**: RGB 값 대신 시맨틱 색상명 사용
 7. **썸네일 필수**: YAML 생성 후 반드시 썸네일 생성
+8. **카테고리 폴더 필수**: 반드시 `{category}/` 폴더에 저장
+9. **use_for 상세 작성**: 최소 5개, 한글로 구체적인 사용 상황 기술
+10. **keywords 상세 작성**: 최소 5개, 한글 키워드로 검색 최적화
+
+### use_for 작성 가이드
+
+```yaml
+# GOOD - 구체적인 사용 상황
+use_for:
+  - "4단계 프로세스 흐름 설명"
+  - "시간 순서대로 진행되는 절차 표시"
+  - "단계별 업무 진행 과정 시각화"
+  - "화살표 기반 흐름도 제작"
+  - "순차적 업무 프로세스 설명"
+
+# BAD - 너무 추상적
+use_for:
+  - "프로세스"
+  - "흐름"
+```
+
+### keywords 작성 가이드
+
+```yaml
+# GOOD - 다양한 검색어
+keywords:
+  - "프로세스"
+  - "흐름도"
+  - "4단계"
+  - "화살표"
+  - "순차"
+  - "절차"
+  - "업무흐름"
+
+# BAD - 중복/불충분
+keywords:
+  - "process"
+```

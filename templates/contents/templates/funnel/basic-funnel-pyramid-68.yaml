@@ -1,0 +1,182 @@
+content_template:
+  id: basic-funnel-pyramid
+  name: 피라미드
+  version: '2.0'
+  source: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 68
+  extracted_at: '2026-01-09T11:10:16.522270'
+  design_intent: basic-funnel-pyramid
+design_meta:
+  quality_score: 8.5
+  design_intent: basic-funnel-pyramid
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1980
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-1
+  name: 직사각형 30
+  type: rectangle
+  geometry:
+    x: 0.9%
+    y: 25.5%
+    cx: 78.1%
+    cy: 60.4%
+    original_aspect_ratio: 2.881
+- id: shape-2
+  name: 직사각형 31
+  type: rectangle
+  geometry:
+    x: 15.4%
+    y: 33.0%
+    cx: 7.8%
+    cy: 23.3%
+    original_aspect_ratio: 0.744
+- id: shape-3
+  name: 직사각형 32
+  type: rectangle
+  geometry:
+    x: 22.4%
+    y: 33.0%
+    cx: 14.1%
+    cy: 23.3%
+    original_aspect_ratio: 1.355
+- id: shape-4
+  name: 직사각형 34
+  type: rectangle
+  geometry:
+    x: 36.6%
+    y: 33.0%
+    cx: 28.4%
+    cy: 23.3%
+    original_aspect_ratio: 2.72
+- id: shape-5
+  name: 직사각형 37
+  type: rectangle
+  geometry:
+    x: 65.0%
+    y: 33.0%
+    cx: 7.8%
+    cy: 23.3%
+    original_aspect_ratio: 0.744
+- id: shape-6
+  name: 직사각형 41
+  type: rectangle
+  geometry:
+    x: 15.6%
+    y: 64.1%
+    cx: 7.1%
+    cy: 8.9%
+    original_aspect_ratio: 1.794
+- id: shape-7
+  name: 직사각형 42
+  type: rectangle
+  geometry:
+    x: 22.9%
+    y: 64.1%
+    cx: 7.1%
+    cy: 8.9%
+    original_aspect_ratio: 1.794
+- id: shape-8
+  name: 직사각형 43
+  type: rectangle
+  geometry:
+    x: 37.0%
+    y: 64.1%
+    cx: 10.5%
+    cy: 8.9%
+    original_aspect_ratio: 2.644
+- id: shape-9
+  name: 직사각형 44
+  type: rectangle
+  geometry:
+    x: 5.7%
+    y: 41.9%
+    cx: 9.6%
+    cy: 5.9%
+    original_aspect_ratio: 3.629
+- id: shape-10
+  name: 직사각형 45
+  type: rectangle
+  geometry:
+    x: 0.9%
+    y: 34.0%
+    cx: 14.4%
+    cy: 5.9%
+    original_aspect_ratio: 5.433
+- id: shape-11
+  name: 직사각형 46
+  type: rectangle
+  geometry:
+    x: 2.1%
+    y: 49.9%
+    cx: 13.2%
+    cy: 5.9%
+    original_aspect_ratio: 4.977
+- id: shape-12
+  name: '화살표: 오각형 15'
+  type: rectangle
+  geometry:
+    x: 15.2%
+    y: 76.4%
+    cx: 57.4%
+    cy: 5.7%
+    original_aspect_ratio: 22.531
+- id: shape-13
+  name: 직사각형 52
+  type: rectangle
+  geometry:
+    x: 15.4%
+    y: 34.0%
+    cx: 7.0%
+    cy: 5.3%
+    original_aspect_ratio: 2.956
+- id: shape-14
+  name: 직사각형 62
+  type: rectangle
+  geometry:
+    x: 15.4%
+    y: 41.9%
+    cx: 7.0%
+    cy: 5.3%
+    original_aspect_ratio: 2.956
+- id: shape-15
+  name: 직사각형 63
+  type: rectangle
+  geometry:
+    x: 15.4%
+    y: 49.6%
+    cx: 7.0%
+    cy: 5.3%
+    original_aspect_ratio: 2.956
+- id: shape-16
+  name: TextBox 64
+  type: rectangle
+  geometry:
+    x: 0.8%
+    y: 88.5%
+    cx: 78.2%
+    cy: 8.9%
+    original_aspect_ratio: 19.681
+use_for:
+- 위계적 우선순위 표현
+- 단계별 중요도 시각화
+- 피라미드 구조의 계층 표시
+- 하단부터 상단으로의 누적 개념
+- 마슬로우의 욕구 단계 등 위계 표현
+keywords:
+- pyramid
+- hierarchy
+- levels
+- priorities
+- structure
+- 피라미드
+- 계층
+expected_prompt: 위아래로 쌓이는 피라미드 레벨 구조
+prompt_keywords:
+- pyramid shape
+- stacked levels
+- hierarchy
+thumbnail: thumbnails/basic-funnel-pyramid-68.png

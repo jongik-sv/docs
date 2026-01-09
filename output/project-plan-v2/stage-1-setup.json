@@ -1,0 +1,40 @@
+{
+  "stage": 1,
+  "stage_name": "Setup",
+  "completed_at": "2026-01-09T10:00:00Z",
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "topic": "물류관리 시스템 구축 프로젝트 계획",
+      "audience": "혼합 (경영진 + 실무자)",
+      "purpose": "프로젝트 착수보고 및 수행계획 공유",
+      "document_type": "project-plan",
+      "duration_minutes": 25,
+      "estimated_slides": 24,
+      "source_file": "project-plan.md"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      },
+      "fonts": {
+        "heading": "Malgun Gothic",
+        "body": "Malgun Gothic"
+      }
+    },
+    "design_guidelines": {
+      "style": "professional",
+      "density": "balanced",
+      "visual_elements": ["icons", "charts", "tables", "diagrams"]
+    }
+  }
+}

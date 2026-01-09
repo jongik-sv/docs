@@ -1,0 +1,191 @@
+content_template:
+  id: basic-content-2col4
+  name: 2열 콘텐츠 구성
+  description: 분할된 2열 구조의 종합 콘텐츠 배치
+  version: '2.0'
+  source: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 4
+  extracted_at: '2026-01-09T11:11:08.519177'
+design_meta:
+  quality_score: 8.5
+  design_intent: content-2col
+  visual_balance: symmetric
+  information_density: medium
+  layout_type: text-based
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: PlaceHolder 1
+  type: rect
+  z_index: 0
+  geometry:
+    x: 2.24%
+    y: 8.4%
+    cx: 76.72%
+    cy: 10.32%
+    rotation: 0
+    original_aspect_ratio: 13.217
+  text:
+    has_text: true
+    placeholder_type: TITLE
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14
+    font_weight: normal
+- id: shape-2
+  name: PlaceHolder 3
+  type: rect
+  z_index: 2
+  geometry:
+    x: 2.24%
+    y: 8.4%
+    cx: 76.72%
+    cy: 10.32%
+    rotation: 0
+    original_aspect_ratio: 13.217
+  text:
+    has_text: true
+    placeholder_type: TITLE
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14
+    font_weight: normal
+- id: shape-5
+  name: 텍스트 개체 틀 22
+  type: rect
+  z_index: 5
+  geometry:
+    x: 5.53%
+    y: 30.19%
+    cx: 33.36%
+    cy: 25.91%
+    rotation: 0
+    original_aspect_ratio: 2.289
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14.0
+    font_weight: normal
+- id: shape-6
+  name: 텍스트 개체 틀 22
+  type: rect
+  z_index: 6
+  geometry:
+    x: 41.86%
+    y: 30.19%
+    cx: 33.36%
+    cy: 25.91%
+    rotation: 0
+    original_aspect_ratio: 2.289
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14.0
+    font_weight: normal
+- id: shape-7
+  name: 텍스트 개체 틀 22
+  type: rect
+  z_index: 7
+  geometry:
+    x: 5.53%
+    y: 64.35%
+    cx: 33.36%
+    cy: 25.91%
+    rotation: 0
+    original_aspect_ratio: 2.289
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14.0
+    font_weight: normal
+- id: shape-8
+  name: 텍스트 개체 틀 22
+  type: rect
+  z_index: 8
+  geometry:
+    x: 41.86%
+    y: 64.35%
+    cx: 33.36%
+    cy: 25.91%
+    rotation: 0
+    original_aspect_ratio: 2.289
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14.0
+    font_weight: normal
+- id: shape-9
+  name: ColumnHeader
+  type: rect
+  z_index: 9
+  geometry:
+    x: 5.48%
+    y: 23.23%
+    cx: 33.41%
+    cy: 4.95%
+    rotation: 0
+    original_aspect_ratio: 11.999
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.014814814814814815
+    original_font_size_pt: 16.0
+    font_weight: normal
+- id: shape-10
+  name: ColumnHeader
+  type: rect
+  z_index: 10
+  geometry:
+    x: 41.81%
+    y: 23.23%
+    cx: 33.41%
+    cy: 4.95%
+    rotation: 0
+    original_aspect_ratio: 11.999
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.014814814814814815
+    original_font_size_pt: 16.0
+    font_weight: normal
+gaps:
+  global:
+    column_gap: 3.5
+    row_gap: 3.0
+  between_shapes: []
+spatial_relationships: []
+groups: []
+thumbnail: thumbnails/basic-content-2col4.png
+use_for:
+- 좌우 분할 구조의 내용 배치
+- 이원적 정보 제시 및 비교
+- 좌측-우측 항목 대응 표현
+- 텍스트 중심의 상세 구성
+- 칼럼 형식의 신문 스타일 레이아웃
+keywords:
+- 2열
+- 콘텐츠
+- 분할
+- 좌우
+- 칼럼
+- 배치
+expected_prompt: 좌우 분할된 2열 콘텐츠 구성 레이아웃
+prompt_keywords:
+- 좌우 분할 구조
+- 2열 콘텐츠
+- 병렬 콘텐츠
+- 텍스트 배치
+- 칼럼형 레이아웃

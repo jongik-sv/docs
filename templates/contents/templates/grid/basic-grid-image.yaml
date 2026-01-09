@@ -1,0 +1,202 @@
+content_template:
+  id: basic-grid-image
+  name: 3열 이미지 그리드
+  version: '2.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 21
+  extracted_at: '2026-01-09T11:10:21.356401'
+  shape_source: description
+  expected_prompt: 3개 열의 이미지 그리드 레이아웃을 만들어주세요. 3xN 형태로 이미지를 배치할 수 있는 템플릿입니다.
+  prompt_keywords:
+  - 갤러리
+  - 3열
+  - 이미지
+  - 포트폴리오
+  - 균등배치
+  - 그리드
+design_meta:
+  quality_score: 8.5
+  design_intent: grid-image
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: 직사각형 12
+  type: rectangle
+  z_index: 0
+  geometry:
+    x: 1.6%
+    y: 16.2%
+    cx: 23.2%
+    cy: 51.8%
+    original_aspect_ratio: 0.999
+    original_width_px: 279.4
+    original_height_px: 279.6
+  style:
+    fill:
+      type: solid
+      color: scheme_bg2
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-1
+  name: 직사각형 13
+  type: rectangle
+  z_index: 1
+  geometry:
+    x: 55.2%
+    y: 16.2%
+    cx: 23.2%
+    cy: 51.8%
+    original_aspect_ratio: 0.999
+    original_width_px: 279.4
+    original_height_px: 279.6
+  style:
+    fill:
+      type: solid
+      color: scheme_accent2
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-2
+  name: 직사각형 14
+  type: rectangle
+  z_index: 2
+  geometry:
+    x: 28.4%
+    y: 16.2%
+    cx: 23.2%
+    cy: 51.8%
+    original_aspect_ratio: 0.999
+    original_width_px: 279.4
+    original_height_px: 279.6
+  style:
+    fill:
+      type: solid
+      color: scheme_accent3
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-3
+  name: 직사각형 15
+  type: rectangle
+  z_index: 3
+  geometry:
+    x: -0.9%
+    y: 7.9%
+    cx: 15.1%
+    cy: 33.0%
+    original_aspect_ratio: 1.02
+    original_width_px: 182.0
+    original_height_px: 178.4
+  style:
+    fill:
+      type: solid
+      color: 4f81bd
+  text:
+    has_text: true
+    font_size_pt: 88.0
+- id: shape-4
+  name: 직사각형 16
+  type: rectangle
+  z_index: 4
+  geometry:
+    x: 25.9%
+    y: 8.1%
+    cx: 15.1%
+    cy: 33.0%
+    original_aspect_ratio: 1.02
+    original_width_px: 182.0
+    original_height_px: 178.4
+  style:
+    fill:
+      type: solid
+      color: 4f81bd
+  text:
+    has_text: true
+    font_size_pt: 88.0
+- id: shape-5
+  name: 직사각형 17
+  type: rectangle
+  z_index: 5
+  geometry:
+    x: 52.7%
+    y: 8.1%
+    cx: 15.1%
+    cy: 33.0%
+    original_aspect_ratio: 1.02
+    original_width_px: 182.0
+    original_height_px: 178.4
+  style:
+    fill:
+      type: solid
+      color: 4f81bd
+  text:
+    has_text: true
+    font_size_pt: 88.0
+- id: shape-6
+  name: 직사각형 18
+  type: rectangle
+  z_index: 6
+  geometry:
+    x: 1.6%
+    y: 71.4%
+    cx: 23.2%
+    cy: 14.5%
+    original_aspect_ratio: 3.561
+    original_width_px: 279.4
+    original_height_px: 78.5
+  style:
+    fill:
+      type: solid
+      color: scheme_dk1
+  text:
+    has_text: true
+    font_size_pt: 12.0
+- id: shape-7
+  name: 텍스트 개체 틀 5
+  type: rectangle
+  z_index: 7
+  geometry:
+    x: -0.8%
+    y: 33.6%
+    cx: 81.5%
+    cy: 8.5%
+    original_aspect_ratio: 21.359
+    original_width_px: 980.8
+    original_height_px: 45.9
+  style:
+    fill:
+      type: solid
+      color: '161516'
+  text:
+    has_text: true
+    font_size_pt: 18
+use_for:
+- 3x3 또는 3xN 갤러리
+- 균등 배치
+- 사례 연구 시각화
+- 포트폴리오 이미지 전시
+- 이미지 중심 콘텐츠
+- 3열 이미지 그리드 (가변 행 수)
+keywords:
+- 그리드
+- 이미지
+- 갤러리
+- 3열
+- 포트폴리오
+- 레이아웃
+- 사례
+thumbnail: thumbnails/basic-grid-image.png
+design_patterns:
+- gallery
+- image-grid
+- portfolio
+content_structure:
+  main_area: 3열 이미지 그리드 (가변 행 수)
+  spacing: 균등한 행/열 간격
+  visual_hierarchy: 이미지 중심

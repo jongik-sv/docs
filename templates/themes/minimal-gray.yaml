@@ -1,0 +1,27 @@
+# Minimal Gray Theme
+# Source: 2025 Minimalist Design Trends
+# Reference: https://24slides.com/presentbetter/best-presentation-design-trends
+
+theme:
+  id: minimal-gray
+  name: "Minimal Gray"
+  description: "깔끔한 모노톤 미니멀리스트 테마"
+
+colors:
+  primary: "#333333"      # 주요 강조색 (차콜)
+  secondary: "#666666"    # 보조 강조색 (미디엄 그레이)
+  accent: "#E74C3C"       # 하이라이트 (레드 포인트)
+  background: "#FFFFFF"   # 배경색
+  surface: "#F5F5F5"      # 카드/패널 배경
+  dark_text: "#1A1A1A"    # 본문 텍스트
+  light: "#FFFFFF"        # 밝은 텍스트
+  gray: "#999999"         # 음소거 요소
+
+typography:
+  heading_font: "Arial"
+  body_font: "Arial"
+  korean_font: "Malgun Gothic"
+
+style_hints:
+  rounded_corners: 2
+  shadow_blur: 2

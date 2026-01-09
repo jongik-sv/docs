@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      position: absolute;
+      left: 40pt;
+      top: 25pt;
+    }
+    .header h1 {
+      font-size: 22pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+    .header-line {
+      position: absolute;
+      left: 40pt;
+      top: 55pt;
+      width: 60pt;
+      height: 3pt;
+      background: #4E9F3D;
+    }
+    .table-container {
+      position: absolute;
+      left: 40pt;
+      top: 80pt;
+      width: 640pt;
+    }
+    .table-header {
+      display: flex;
+      background: #1E5128;
+      border-radius: 6pt 6pt 0 0;
+    }
+    .table-header .cell {
+      padding: 10pt 12pt;
+      font-size: 10pt;
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+    .table-row {
+      display: flex;
+      border-bottom: 1pt solid #E0E0E0;
+    }
+    .table-row:nth-child(even) {
+      background: #F4F6F6;
+    }
+    .table-row .cell {
+      padding: 10pt 12pt;
+      font-size: 9pt;
+      color: #191A19;
+    }
+    .cell-area {
+      width: 100pt;
+      font-weight: bold;
+      color: #1E5128;
+    }
+    .cell-tech {
+      width: 180pt;
+    }
+    .cell-version {
+      width: 80pt;
+    }
+    .cell-note {
+      flex: 1;
+    }
+    .method-box {
+      position: absolute;
+      left: 40pt;
+      bottom: 35pt;
+      width: 640pt;
+      background: #F4F6F6;
+      border-radius: 8pt;
+      padding: 12pt 15pt;
+      border-left: 4pt solid #4E9F3D;
+    }
+    .method-box h3 {
+      font-size: 10pt;
+      color: #1E5128;
+      font-weight: bold;
+      margin-bottom: 5pt;
+    }
+    .method-box p {
+      font-size: 9pt;
+      color: #191A19;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>기술 아키텍처</h1>
+  </div>
+  <div class="header-line"></div>
+  <div class="table-container">
+    <div class="table-header">
+      <div class="cell cell-area"><p>영역</p></div>
+      <div class="cell cell-tech"><p>기술/제품</p></div>
+      <div class="cell cell-version"><p>버전</p></div>
+      <div class="cell cell-note"><p>비고</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell cell-area"><p>Frontend</p></div>
+      <div class="cell cell-tech"><p>Vue.js 3, TypeScript</p></div>
+      <div class="cell cell-version"><p>3.4 / 5.3</p></div>
+      <div class="cell cell-note"><p>SPA 구조</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell cell-area"><p>Backend</p></div>
+      <div class="cell cell-tech"><p>Spring Boot, Java</p></div>
+      <div class="cell cell-version"><p>3.2 / 17</p></div>
+      <div class="cell cell-note"><p>MSA 구조</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell cell-area"><p>Database</p></div>
+      <div class="cell cell-tech"><p>PostgreSQL, Redis</p></div>
+      <div class="cell cell-version"><p>16 / 7</p></div>
+      <div class="cell cell-note"><p>RDBMS + Cache</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell cell-area"><p>Infra</p></div>
+      <div class="cell cell-tech"><p>AWS (EKS, RDS, S3)</p></div>
+      <div class="cell cell-version"><p>-</p></div>
+      <div class="cell cell-note"><p>클라우드 네이티브</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell cell-area"><p>AI/ML</p></div>
+      <div class="cell cell-tech"><p>Python, TensorFlow</p></div>
+      <div class="cell cell-version"><p>3.11 / 2.15</p></div>
+      <div class="cell cell-note"><p>수요예측, 경로최적화</p></div>
+    </div>
+  </div>
+  <div class="method-box">
+    <h3>수행 방법론</h3>
+    <p>Agile-Waterfall 하이브리드 | 대규모 SI 프로젝트 안정성 + 애자일 유연성 결합</p>
+  </div>
+</body>
+</html>

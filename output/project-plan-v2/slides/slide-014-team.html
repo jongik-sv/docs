@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .table-container { position: absolute; top: 95px; left: 50px; right: 50px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th { background: #1E5128; color: #FFFFFF; padding: 10px 15px; text-align: center; font-weight: bold; }
+    td { padding: 10px 15px; color: #191A19; border-bottom: 1px solid #E5E5E5; text-align: center; }
+    tr:nth-child(even) td { background: #F9F9F9; }
+    .role-pm { background: #D8E9A8 !important; font-weight: bold; }
+    .grade-high { color: #1E5128; font-weight: bold; }
+    .summary-row td { background: #1E5128 !important; color: #FFFFFF; font-weight: bold; }
+    .stats-container { position: absolute; bottom: 60px; left: 50px; right: 50px; display: flex; gap: 30px; }
+    .stat-box { flex: 1; background: #F4F6F6; padding: 20px; border-radius: 8px; text-align: center; border-top: 4px solid #4E9F3D; }
+    .stat-value { font-size: 32px; color: #1E5128; font-weight: bold; }
+    .stat-unit { font-size: 16px; color: #4E9F3D; }
+    .stat-label { font-size: 13px; color: #666; margin-top: 5px; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>투입 인력 현황</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>구분</th>
+        <th>분야</th>
+        <th>등급</th>
+        <th>성명</th>
+        <th>투입기간</th>
+      </tr>
+      <tr class="role-pm">
+        <td>PM</td>
+        <td>관리</td>
+        <td class="grade-high">특급</td>
+        <td>김철수</td>
+        <td>12개월</td>
+      </tr>
+      <tr>
+        <td>AA</td>
+        <td>설계</td>
+        <td class="grade-high">특급</td>
+        <td>박준형</td>
+        <td>10개월</td>
+      </tr>
+      <tr>
+        <td>PL</td>
+        <td>개발</td>
+        <td class="grade-high">고급</td>
+        <td>최수진</td>
+        <td>12개월</td>
+      </tr>
+      <tr>
+        <td>Dev</td>
+        <td>Backend</td>
+        <td class="grade-high">고급</td>
+        <td>임동현</td>
+        <td>10개월</td>
+      </tr>
+      <tr>
+        <td>Dev</td>
+        <td>Frontend</td>
+        <td>중급</td>
+        <td>강서연</td>
+        <td>10개월</td>
+      </tr>
+      <tr>
+        <td>Dev</td>
+        <td>Backend</td>
+        <td>중급</td>
+        <td>윤재호</td>
+        <td>10개월</td>
+      </tr>
+      <tr>
+        <td>DBA</td>
+        <td>DB</td>
+        <td class="grade-high">고급</td>
+        <td>오현우</td>
+        <td>8개월</td>
+      </tr>
+      <tr>
+        <td>QA</td>
+        <td>테스트</td>
+        <td>중급</td>
+        <td>한미영</td>
+        <td>6개월</td>
+      </tr>
+    </table>
+  </div>
+  <div class="stats-container">
+    <div class="stat-box">
+      <p class="stat-value">8<span class="stat-unit">명</span></p>
+      <p class="stat-label">총 투입 인원</p>
+    </div>
+    <div class="stat-box">
+      <p class="stat-value">78<span class="stat-unit">MM</span></p>
+      <p class="stat-label">총 투입 공수</p>
+    </div>
+    <div class="stat-box">
+      <p class="stat-value">12<span class="stat-unit">개월</span></p>
+      <p class="stat-label">프로젝트 기간</p>
+    </div>
+  </div>
+  <div class="page-num">14 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

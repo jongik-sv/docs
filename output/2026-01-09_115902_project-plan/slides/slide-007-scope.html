@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Noto Sans KR', Arial, sans-serif; background: white; position: relative; }
+    .header { position: absolute; top: 20pt; left: 30pt; }
+    .main-title { font-size: 14pt; color: #002452; font-weight: 500; }
+    .action-title { font-size: 12pt; color: #262626; margin-top: 6pt; }
+    .grid { position: absolute; top: 90pt; left: 30pt; right: 30pt; display: flex; gap: 15pt; }
+    .card { flex: 1; background: #F8F9FA; border-radius: 8pt; padding: 20pt; text-align: center; }
+    .card-icon { width: 50pt; height: 50pt; border-radius: 50%; margin: 0 auto 12pt; display: flex; align-items: center; justify-content: center; font-size: 20pt; color: white; }
+    .card:nth-child(1) .card-icon { background: #002452; }
+    .card:nth-child(2) .card-icon { background: #4B6580; }
+    .card:nth-child(3) .card-icon { background: #C51F2A; }
+    .card:nth-child(4) .card-icon { background: #E9B86E; }
+    .card-title { font-size: 14pt; font-weight: 700; color: #262626; margin-bottom: 4pt; white-space: nowrap; }
+    .card-subtitle { font-size: 9pt; color: #757575; margin-bottom: 12pt; white-space: nowrap; }
+    .card-features { text-align: left; }
+    .card-features li { font-size: 9pt; color: #262626; margin-bottom: 6pt; list-style: none; padding-left: 10pt; position: relative; }
+    .card-features li:before { content: ''; position: absolute; left: 0; top: 4pt; width: 4pt; height: 4pt; border-radius: 50%; }
+    .card:nth-child(1) .card-features li:before { background: #002452; }
+    .card:nth-child(2) .card-features li:before { background: #4B6580; }
+    .card:nth-child(3) .card-features li:before { background: #C51F2A; }
+    .card:nth-child(4) .card-features li:before { background: #E9B86E; }
+    
+    .accent-bar { position: absolute; top: 0; left: 0; width: 100%; height: 3pt; background: #002452; }
+  
+    .footer-wrap { position: absolute; bottom: 15pt; right: 30pt; display: flex; align-items: center; gap: 20pt; }
+    .footer-info { font-size: 9pt; color: #B6B6B6; }
+    .footer-page { font-size: 9pt; color: #B6B6B6; }
+    .logo-img { height: 18pt; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <div class="header">
+    <p class="main-title">시스템 범위</p>
+    <p class="action-title">4개 핵심 시스템으로 물류 전 프로세스 통합 관리</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon"><p>W</p></div>
+      <p class="card-title">WMS</p>
+      <p class="card-subtitle">창고관리시스템</p>
+      <ul class="card-features">
+        <li>입출고 관리</li>
+        <li>재고 관리</li>
+        <li>피킹/패킹</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon"><p>T</p></div>
+      <p class="card-title">TMS</p>
+      <p class="card-subtitle">배송관리시스템</p>
+      <ul class="card-features">
+        <li>배차 관리</li>
+        <li>경로 최적화</li>
+        <li>실시간 추적</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon"><p>O</p></div>
+      <p class="card-title">OMS</p>
+      <p class="card-subtitle">주문관리시스템</p>
+      <ul class="card-features">
+        <li>주문 접수</li>
+        <li>주문 할당</li>
+        <li>정산 처리</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon"><p>D</p></div>
+      <p class="card-title">Dashboard</p>
+      <p class="card-subtitle">통합모니터링</p>
+      <ul class="card-features">
+        <li>실시간 현황</li>
+        <li>KPI 모니터링</li>
+        <li>리포트</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-wrap">
+    <img class="logo-img" src="../../../templates/documents/dongkuk-systems/assets/default/image2.png" alt="logo" />
+    <p class="footer-info">작성_테크솔루션</p>
+    <p class="footer-page">7</p>
+  </div>
+</body>
+</html>

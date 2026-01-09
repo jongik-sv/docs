@@ -1,0 +1,211 @@
+content_template:
+  id: basic-content-quote
+  name: 인용문
+  version: '2.0'
+  source: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 61
+  extracted_at: '2026-01-09T11:10:16.441020'
+  design_intent: basic-content-quote
+  shape_source: description
+  expected_prompt: 인용문 또는 주요 메시지를 강조 표시하는 슬라이드를 만들어주세요. 텍스트 중심의 콘텐츠입니다.
+  prompt_keywords:
+  - 인용
+  - 명언
+  - 메시지
+  - 강조
+  - 텍스트
+  - 톤앤매너
+  - 설명
+design_meta:
+  quality_score: 8.5
+  design_intent: basic-content-quote
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1980
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-1
+  name: Rectangle 5
+  type: rectangle
+  geometry:
+    x: 0.9%
+    y: 40.3%
+    cx: 21.4%
+    cy: 20.5%
+    original_aspect_ratio: 2.325
+- id: shape-2
+  name: Rectangle 7
+  type: rectangle
+  geometry:
+    x: 29.3%
+    y: 19.9%
+    cx: 21.4%
+    cy: 20.5%
+    original_aspect_ratio: 2.325
+- id: shape-3
+  name: Rectangle 9
+  type: rectangle
+  geometry:
+    x: 29.3%
+    y: 60.7%
+    cx: 21.4%
+    cy: 20.5%
+    original_aspect_ratio: 2.325
+- id: shape-4
+  name: Oval 12
+  type: rectangle
+  geometry:
+    x: 24.4%
+    y: 27.0%
+    cx: 2.7%
+    cy: 5.9%
+    original_aspect_ratio: 1.031
+- id: shape-5
+  name: Oval 17
+  type: rectangle
+  geometry:
+    x: 53.4%
+    y: 37.4%
+    cx: 2.7%
+    cy: 5.9%
+    original_aspect_ratio: 1.031
+- id: shape-6
+  name: Rectangle 13
+  type: rectangle
+  geometry:
+    x: 58.9%
+    y: 16.2%
+    cx: 19.1%
+    cy: 7.4%
+    original_aspect_ratio: 5.757
+- id: shape-7
+  name: Rectangle 18
+  type: rectangle
+  geometry:
+    x: 58.9%
+    y: 36.6%
+    cx: 19.1%
+    cy: 7.4%
+    original_aspect_ratio: 5.757
+- id: shape-8
+  name: Rectangle 14
+  type: rectangle
+  geometry:
+    x: 58.9%
+    y: 77.4%
+    cx: 19.1%
+    cy: 7.4%
+    original_aspect_ratio: 5.757
+- id: shape-9
+  name: Rectangle 19
+  type: rectangle
+  geometry:
+    x: 58.9%
+    y: 57.0%
+    cx: 19.1%
+    cy: 7.4%
+    original_aspect_ratio: 5.757
+- id: shape-10
+  name: Oval 22
+  type: rectangle
+  geometry:
+    x: 24.4%
+    y: 68.0%
+    cx: 2.7%
+    cy: 5.9%
+    original_aspect_ratio: 1.031
+- id: shape-11
+  name: Oval 23
+  type: rectangle
+  geometry:
+    x: 53.4%
+    y: 16.9%
+    cx: 2.7%
+    cy: 5.9%
+    original_aspect_ratio: 1.031
+- id: shape-12
+  name: Oval 24
+  type: rectangle
+  geometry:
+    x: 53.4%
+    y: 78.2%
+    cx: 2.7%
+    cy: 5.9%
+    original_aspect_ratio: 1.031
+- id: shape-13
+  name: Oval 25
+  type: rectangle
+  geometry:
+    x: 53.4%
+    y: 57.8%
+    cx: 2.7%
+    cy: 5.9%
+    original_aspect_ratio: 1.031
+- id: shape-14
+  name: Rectangle 4
+  type: rectangle
+  geometry:
+    x: 0.9%
+    y: 32.9%
+    cx: 21.4%
+    cy: 7.4%
+    original_aspect_ratio: 6.455
+- id: shape-15
+  name: Rectangle 6
+  type: rectangle
+  geometry:
+    x: 29.3%
+    y: 12.5%
+    cx: 21.4%
+    cy: 7.4%
+    original_aspect_ratio: 6.455
+- id: shape-16
+  name: Rectangle 8
+  type: rectangle
+  geometry:
+    x: 29.3%
+    y: 53.3%
+    cx: 21.4%
+    cy: 7.4%
+    original_aspect_ratio: 6.455
+- id: shape-17
+  name: Rectangle 16
+  type: rectangle
+  geometry:
+    x: 58.2%
+    y: 35.1%
+    cx: 20.4%
+    cy: 30.6%
+    original_aspect_ratio: 1.484
+use_for:
+- 대형 텍스트 (인용문 또는 메시지)
+- 중요한 메시지나 인용구 강조
+- 권장사항 또는 의견 표현
+- 직관적 메시지 전달
+- 강조할 주요 내용 제시
+- 텍스트 콘텐츠 중심의 슬라이드
+keywords:
+- quote
+- message
+- text
+- content
+- emphasis
+- insight
+- 인용
+- 메시지
+expected_prompt: Rolling stages를 포함한 프로세스 설명
+prompt_keywords:
+- rolling stages
+- process description
+- bullet points
+thumbnail: thumbnails/basic-content-quote-61.png
+design_patterns:
+- quote
+- message
+- text-focus
+content_structure:
+  main_area: 대형 텍스트 (인용문 또는 메시지)
+  supporting_text: 출처 또는 설명 문구
+  visual_hierarchy: 인용문 > 출처 > 배경 이미지/패턴

@@ -1,0 +1,191 @@
+{
+  "session": {
+    "id": "2026-01-09_134636_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T13:46:36+09:00",
+    "updated_at": "2026-01-09T13:47:00+09:00"
+  },
+  "current_stage": 2,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "subtitle": "착수보고",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "slide_count_target": "15-20장",
+      "source_file": "project-plan.md"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      }
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축",
+      "purpose": "cover",
+      "key_points": ["프로젝트 수행계획서", "(주)테크솔루션", "2025-01-06"],
+      "speaker_notes": "착수보고 프레젠테이션 표지"
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "key_points": ["프로젝트 개요", "추진 전략 및 방법론", "프로젝트 조직", "프로젝트 일정", "품질 및 위험 관리"],
+      "speaker_notes": "발표 목차 안내"
+    },
+    {
+      "index": 2,
+      "title": "01. 프로젝트 개요",
+      "purpose": "section",
+      "key_points": ["섹션 구분"],
+      "speaker_notes": "첫 번째 섹션 시작"
+    },
+    {
+      "index": 3,
+      "title": "프로젝트 배경 및 목적",
+      "purpose": "content",
+      "key_points": [
+        "발주기관: (주)글로벌물류",
+        "수행사: (주)테크솔루션",
+        "계약금액: 15억원",
+        "계약기간: 2025.01.06 ~ 2025.12.31",
+        "현황: 10년 이상 운영 레거시 시스템 노후화",
+        "목표: AI 기반 물류 최적화, 실시간 추적"
+      ],
+      "speaker_notes": "프로젝트 기본 정보와 배경 설명"
+    },
+    {
+      "index": 4,
+      "title": "기대 효과",
+      "purpose": "stats",
+      "key_points": [
+        "물류 처리 효율 30% 향상",
+        "재고 정확도 99.5% 달성",
+        "운영 비용 20% 절감"
+      ],
+      "speaker_notes": "3가지 핵심 기대효과 수치 강조"
+    },
+    {
+      "index": 5,
+      "title": "프로젝트 범위",
+      "purpose": "table",
+      "key_points": [
+        "WMS: 창고관리시스템 - 입출고, 재고, 피킹/패킹",
+        "TMS: 배송관리시스템 - 배차, 경로최적화, 추적",
+        "OMS: 주문관리시스템 - 주문접수, 할당, 정산",
+        "Dashboard: 통합모니터링 - 실시간 현황, KPI"
+      ],
+      "speaker_notes": "4개 핵심 시스템 모듈 범위 설명"
+    },
+    {
+      "index": 6,
+      "title": "02. 추진 전략 및 방법론",
+      "purpose": "section",
+      "key_points": ["섹션 구분"],
+      "speaker_notes": "두 번째 섹션 시작"
+    },
+    {
+      "index": 7,
+      "title": "핵심 추진 전략",
+      "purpose": "feature",
+      "key_points": [
+        "단계적 전환 전략: Big Bang 아닌 모듈별 순차 전환으로 리스크 최소화",
+        "애자일 기반 개발: 2주 단위 스프린트로 빠른 피드백과 유연한 대응",
+        "현업 밀착 협업: 주 2회 현업 리뷰를 통한 요구사항 정합성 확보"
+      ],
+      "speaker_notes": "3가지 핵심 전략 설명"
+    },
+    {
+      "index": 8,
+      "title": "기술 아키텍처",
+      "purpose": "table",
+      "key_points": [
+        "Frontend: Vue.js 3, TypeScript",
+        "Backend: Spring Boot, Java 17",
+        "Database: PostgreSQL 16, Redis 7",
+        "Infra: AWS (EKS, RDS, S3)",
+        "AI/ML: Python, TensorFlow"
+      ],
+      "speaker_notes": "기술 스택 구성 설명"
+    },
+    {
+      "index": 9,
+      "title": "03. 프로젝트 조직",
+      "purpose": "section",
+      "key_points": ["섹션 구분"],
+      "speaker_notes": "세 번째 섹션 시작"
+    },
+    {
+      "index": 10,
+      "title": "조직 및 역할",
+      "purpose": "hierarchy",
+      "key_points": [
+        "발주기관 PM: 정민호 부장 - 프로젝트 총괄 관리",
+        "수행사 PM: 김철수 차장 - 프로젝트 수행 총괄",
+        "AA: 박준형 책임 - 시스템 설계",
+        "개발 리더: 최수진 선임 - 개발 총괄",
+        "투입 인력: 8명, 78MM"
+      ],
+      "speaker_notes": "프로젝트 조직 구성 및 R&R"
+    },
+    {
+      "index": 11,
+      "title": "04. 프로젝트 일정",
+      "purpose": "section",
+      "key_points": ["섹션 구분"],
+      "speaker_notes": "네 번째 섹션 시작"
+    },
+    {
+      "index": 12,
+      "title": "마스터 일정 및 마일스톤",
+      "purpose": "timeline",
+      "key_points": [
+        "착수: 2025.01 (4주) - 킥오프, 환경구축",
+        "분석: 2025.02-03 (8주) - 요구사항 확정",
+        "설계: 2025.04-05 (8주) - 아키텍처/화면/DB 설계",
+        "개발: 2025.06-09 (16주) - 코딩, 단위테스트",
+        "테스트: 2025.10-11 (6주) - 통합/성능/인수 테스트",
+        "이행: 2025.11-12 (6주) - 오픈, 운영이관"
+      ],
+      "speaker_notes": "6단계 마스터 일정 및 주요 마일스톤"
+    },
+    {
+      "index": 13,
+      "title": "05. 품질 및 위험 관리",
+      "purpose": "section",
+      "key_points": ["섹션 구분"],
+      "speaker_notes": "다섯 번째 섹션 시작"
+    },
+    {
+      "index": 14,
+      "title": "품질/보안/위험 관리",
+      "purpose": "grid",
+      "key_points": [
+        "품질: 산출물 검토, 코드 리뷰 (GitHub PR), 정적 분석 (SonarQube)",
+        "보안: 보안서약서 징구, 출입 관리, OWASP Top 10 점검",
+        "위험: 요구사항 변경 → CCB 통제, 일정 지연 → Critical Path 모니터링"
+      ],
+      "speaker_notes": "품질, 보안, 위험 관리 계획"
+    },
+    {
+      "index": 15,
+      "title": "감사합니다",
+      "purpose": "closing",
+      "key_points": ["Q&A", "연락처: PM 김철수"],
+      "speaker_notes": "마무리 및 Q&A 안내"
+    }
+  ]
+}

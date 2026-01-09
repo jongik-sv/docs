@@ -1,0 +1,37 @@
+{
+  "stage": 4,
+  "stage_name": "Content",
+  "completed_at": "2026-01-09T10:30:00Z",
+  "content_summary": {
+    "total_slides": 24,
+    "html_generated": 24,
+    "method": "html",
+    "theme_applied": "deepgreen"
+  },
+  "slides": [
+    { "index": 0, "html_file": "slides/slide-001-cover.html", "assets": { "icons": [], "images": [] } },
+    { "index": 1, "html_file": "slides/slide-002-toc.html", "assets": { "icons": [], "images": [] } },
+    { "index": 2, "html_file": "slides/slide-003-section1.html", "assets": { "icons": [], "images": [] } },
+    { "index": 3, "html_file": "slides/slide-004-background.html", "assets": { "icons": [], "images": [] } },
+    { "index": 4, "html_file": "slides/slide-005-effects.html", "assets": { "icons": ["rocket", "chart", "money"], "images": [] } },
+    { "index": 5, "html_file": "slides/slide-006-scope.html", "assets": { "icons": ["check", "cross"], "images": [] } },
+    { "index": 6, "html_file": "slides/slide-007-systems.html", "assets": { "icons": ["warehouse", "truck", "document", "dashboard"], "images": [] } },
+    { "index": 7, "html_file": "slides/slide-008-section2.html", "assets": { "icons": [], "images": [] } },
+    { "index": 8, "html_file": "slides/slide-009-strategy.html", "assets": { "icons": [], "images": [] } },
+    { "index": 9, "html_file": "slides/slide-010-methodology.html", "assets": { "icons": [], "images": [] } },
+    { "index": 10, "html_file": "slides/slide-011-techstack.html", "assets": { "icons": [], "images": [] } },
+    { "index": 11, "html_file": "slides/slide-012-section3.html", "assets": { "icons": [], "images": [] } },
+    { "index": 12, "html_file": "slides/slide-013-rr.html", "assets": { "icons": [], "images": [] } },
+    { "index": 13, "html_file": "slides/slide-014-team.html", "assets": { "icons": [], "images": [] } },
+    { "index": 14, "html_file": "slides/slide-015-section4.html", "assets": { "icons": [], "images": [] } },
+    { "index": 15, "html_file": "slides/slide-016-schedule.html", "assets": { "icons": [], "images": [] } },
+    { "index": 16, "html_file": "slides/slide-017-milestone.html", "assets": { "icons": ["document", "list", "wrench", "code", "check", "book"], "images": [] } },
+    { "index": 17, "html_file": "slides/slide-018-section5.html", "assets": { "icons": [], "images": [] } },
+    { "index": 18, "html_file": "slides/slide-019-quality.html", "assets": { "icons": ["document", "search", "chart", "check"], "images": [] } },
+    { "index": 19, "html_file": "slides/slide-020-security.html", "assets": { "icons": ["user", "building", "computer", "pc"], "images": [] } },
+    { "index": 20, "html_file": "slides/slide-021-training.html", "assets": { "icons": [], "images": [] } },
+    { "index": 21, "html_file": "slides/slide-022-section6.html", "assets": { "icons": [], "images": [] } },
+    { "index": 22, "html_file": "slides/slide-023-risk.html", "assets": { "icons": [], "images": [] } },
+    { "index": 23, "html_file": "slides/slide-024-closing.html", "assets": { "icons": [], "images": [] } }
+  ]
+}

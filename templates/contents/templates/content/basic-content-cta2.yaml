@@ -1,0 +1,191 @@
+content_template:
+  id: basic-content-cta2
+  name: 텍스트 + CTA 버튼 레이아웃
+  description: 텍스트와 행동 유도(CTA) 버튼을 포함한 콘텐츠 슬라이드
+  version: '2.0'
+  source: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 2
+  extracted_at: '2026-01-09T11:11:08.500172'
+design_meta:
+  quality_score: 8.5
+  design_intent: content-cta
+  visual_balance: symmetric
+  information_density: high
+  layout_type: text-based
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: PlaceHolder 1
+  type: rect
+  z_index: 0
+  geometry:
+    x: 2.24%
+    y: 8.4%
+    cx: 76.72%
+    cy: 10.32%
+    rotation: 0
+    original_aspect_ratio: 13.217
+  text:
+    has_text: true
+    placeholder_type: TITLE
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14
+    font_weight: normal
+- id: shape-2
+  name: PlaceHolder 3
+  type: rect
+  z_index: 2
+  geometry:
+    x: 2.24%
+    y: 8.4%
+    cx: 76.72%
+    cy: 10.32%
+    rotation: 0
+    original_aspect_ratio: 13.217
+  text:
+    has_text: true
+    placeholder_type: TITLE
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14
+    font_weight: normal
+- id: shape-5
+  name: 텍스트 개체 틀 11
+  type: rect
+  z_index: 5
+  geometry:
+    x: 5.22%
+    y: 28.2%
+    cx: 30.61%
+    cy: 46.79%
+    rotation: 0
+    original_aspect_ratio: 1.163
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14.0
+    font_weight: normal
+- id: shape-6
+  name: takeaway_box
+  type: rect
+  z_index: 6
+  geometry:
+    x: 16.26%
+    y: 80.66%
+    cx: 48.73%
+    cy: 7.74%
+    rotation: 0
+    original_aspect_ratio: 11.196
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.014814814814814815
+    original_font_size_pt: 16.0
+    font_weight: normal
+- id: shape-7
+  name: ColumnHeader
+  type: rect
+  z_index: 7
+  geometry:
+    x: 5.22%
+    y: 22.24%
+    cx: 30.61%
+    cy: 4.91%
+    rotation: 0
+    original_aspect_ratio: 11.074
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.014814814814814815
+    original_font_size_pt: 16.0
+    font_weight: normal
+- id: shape-8
+  name: 갈매기형 수장 7
+  type: rect
+  z_index: 8
+  geometry:
+    x: 38.92%
+    y: 42.69%
+    cx: 3.4%
+    cy: 17.8%
+    rotation: 0
+    original_aspect_ratio: 0.34
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14
+    font_weight: normal
+- id: shape-9
+  name: 텍스트 개체 틀 11
+  type: rect
+  z_index: 9
+  geometry:
+    x: 45.42%
+    y: 28.2%
+    cx: 30.61%
+    cy: 46.79%
+    rotation: 0
+    original_aspect_ratio: 1.163
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14.0
+    font_weight: normal
+- id: shape-10
+  name: ColumnHeader
+  type: rect
+  z_index: 10
+  geometry:
+    x: 45.42%
+    y: 22.24%
+    cx: 30.61%
+    cy: 4.91%
+    rotation: 0
+    original_aspect_ratio: 11.074
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.014814814814814815
+    original_font_size_pt: 16.0
+    font_weight: normal
+gaps:
+  global:
+    column_gap: 2.0
+    row_gap: 3.0
+  between_shapes: []
+spatial_relationships: []
+groups: []
+thumbnail: thumbnails/basic-content-cta2.png
+use_for:
+- 행동 유도(CTA) 버튼이 포함된 슬라이드
+- 사용자 상호작용 유도 (클릭, 가입 등)
+- 제안 및 인터랙션이 필요한 페이지
+- 버튼 클릭 유도를 통한 다음 단계 진행
+- 콜투액션(Call To Action) 명확히 표시
+keywords:
+- CTA
+- 버튼
+- 텍스트
+- 행동
+- 유도
+- 상호작용
+expected_prompt: 텍스트와 CTA 버튼으로 구성된 행동 유도 레이아웃
+prompt_keywords:
+- 행동 유도 버튼
+- CTA 버튼 포함
+- 클릭 유도
+- 콜투액션
+- 상호작용 요소

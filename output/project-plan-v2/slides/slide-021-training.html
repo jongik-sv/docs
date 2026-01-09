@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .training-section { position: absolute; top: 95px; left: 50px; right: 50px; }
+    .section-title { font-size: 16px; color: #1E5128; font-weight: bold; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .section-title::before { content: ''; width: 4px; height: 20px; background: #4E9F3D; }
+    .training-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 25px; }
+    .training-table th { background: #1E5128; color: #FFFFFF; padding: 10px 12px; text-align: left; }
+    .training-table td { padding: 10px 12px; border-bottom: 1px solid #E5E5E5; }
+    .training-table tr:nth-child(even) td { background: #F9F9F9; }
+    .highlight-cell { color: #1E5128; font-weight: bold; }
+    .transfer-section { position: absolute; bottom: 60px; left: 50px; right: 50px; }
+    .transfer-grid { display: flex; gap: 20px; }
+    .transfer-card { flex: 1; background: #F4F6F6; padding: 18px; border-radius: 8px; border-top: 4px solid #4E9F3D; }
+    .transfer-title { font-size: 14px; color: #1E5128; font-weight: bold; margin-bottom: 8px; }
+    .transfer-content { font-size: 12px; color: #666; line-height: 1.5; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>교육 및 기술이전</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="training-section">
+    <p class="section-title">교육 훈련 계획</p>
+    <table class="training-table">
+      <tr>
+        <th>교육명</th>
+        <th>대상</th>
+        <th>시기</th>
+        <th>내용</th>
+      </tr>
+      <tr>
+        <td class="highlight-cell">사용자 교육</td>
+        <td>현업 담당자 30명</td>
+        <td>오픈 2주 전</td>
+        <td>시스템 주요 기능 및 사용법</td>
+      </tr>
+      <tr>
+        <td class="highlight-cell">운영자 교육</td>
+        <td>IT 운영팀 5명</td>
+        <td>오픈 3주 전</td>
+        <td>시스템 구성, 백업/복구, 장애대응</td>
+      </tr>
+      <tr>
+        <td class="highlight-cell">관리자 교육</td>
+        <td>관리자 10명</td>
+        <td>오픈 1주 전</td>
+        <td>권한 관리, 리포트 활용</td>
+      </tr>
+    </table>
+  </div>
+  <div class="transfer-section">
+    <p class="section-title">기술이전 계획</p>
+    <div class="transfer-grid">
+      <div class="transfer-card">
+        <p class="transfer-title">이전 대상</p>
+        <p class="transfer-content">시스템 소스코드, 설계 산출물, 운영 매뉴얼 등 일체</p>
+      </div>
+      <div class="transfer-card">
+        <p class="transfer-title">이전 방법</p>
+        <p class="transfer-content">담당자 1:1 멘토링 및 인계인수서 작성</p>
+      </div>
+      <div class="transfer-card">
+        <p class="transfer-title">지원 기간</p>
+        <p class="transfer-content">시스템 안정화 기간 (오픈 후 3개월)</p>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">21 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

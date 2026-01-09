@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .comparison-container { position: absolute; top: 110px; left: 50px; right: 50px; display: flex; gap: 30px; }
+    .comp-box { flex: 1; border-radius: 12px; overflow: hidden; }
+    .comp-header { padding: 15px 20px; font-size: 18px; font-weight: bold; color: #FFFFFF; }
+    .comp-header.include { background: #1E5128; }
+    .comp-header.exclude { background: #666; }
+    .comp-body { padding: 25px; background: #F4F6F6; min-height: 300px; }
+    .comp-item { display: flex; align-items: flex-start; margin-bottom: 18px; }
+    .comp-icon { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: #FFFFFF; margin-right: 12px; flex-shrink: 0; }
+    .comp-icon.check { background: #4E9F3D; }
+    .comp-icon.cross { background: #AAB7B8; }
+    .comp-text { flex: 1; }
+    .comp-title { font-size: 15px; color: #191A19; font-weight: bold; margin-bottom: 4px; }
+    .comp-desc { font-size: 12px; color: #666; line-height: 1.4; }
+    .note-box { position: absolute; bottom: 60px; left: 50px; right: 50px; background: #D8E9A8; padding: 12px 20px; border-radius: 6px; display: flex; align-items: center; }
+    .note-icon { font-size: 20px; margin-right: 12px; }
+    .note-text { font-size: 13px; color: #1E5128; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>프로젝트 범위</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="comparison-container">
+    <div class="comp-box">
+      <div class="comp-header include">포함 범위 (In-Scope)</div>
+      <div class="comp-body">
+        <div class="comp-item">
+          <div class="comp-icon check">&#10003;</div>
+          <div class="comp-text">
+            <p class="comp-title">입고/출고 관리</p>
+            <p class="comp-desc">입출고 처리, 검수, 반품 관리</p>
+          </div>
+        </div>
+        <div class="comp-item">
+          <div class="comp-icon check">&#10003;</div>
+          <div class="comp-text">
+            <p class="comp-title">재고 관리</p>
+            <p class="comp-desc">실시간 재고 추적, 재고 조정, 실사</p>
+          </div>
+        </div>
+        <div class="comp-item">
+          <div class="comp-icon check">&#10003;</div>
+          <div class="comp-text">
+            <p class="comp-title">배송 추적</p>
+            <p class="comp-desc">실시간 배송 현황, GPS 추적</p>
+          </div>
+        </div>
+        <div class="comp-item">
+          <div class="comp-icon check">&#10003;</div>
+          <div class="comp-text">
+            <p class="comp-title">정산 시스템</p>
+            <p class="comp-desc">비용 정산, 청구서 관리</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="comp-box">
+      <div class="comp-header exclude">제외 범위 (Out-of-Scope)</div>
+      <div class="comp-body">
+        <div class="comp-item">
+          <div class="comp-icon cross">&#10005;</div>
+          <div class="comp-text">
+            <p class="comp-title">회계 시스템</p>
+            <p class="comp-desc">인터페이스 개발만 포함</p>
+          </div>
+        </div>
+        <div class="comp-item">
+          <div class="comp-icon cross">&#10005;</div>
+          <div class="comp-text">
+            <p class="comp-title">HR 시스템</p>
+            <p class="comp-desc">인터페이스 개발만 포함</p>
+          </div>
+        </div>
+        <div class="comp-item">
+          <div class="comp-icon cross">&#10005;</div>
+          <div class="comp-text">
+            <p class="comp-title">기존 ERP 시스템</p>
+            <p class="comp-desc">인터페이스 개발만 포함</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="note-box">
+    <span class="note-icon">&#128161;</span>
+    <span class="note-text">4개 핵심 모듈 신규 개발, 기존 시스템은 인터페이스 연동으로 진행</span>
+  </div>
+  <div class="page-num">6 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

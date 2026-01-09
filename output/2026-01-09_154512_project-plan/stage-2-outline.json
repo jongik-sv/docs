@@ -1,0 +1,197 @@
+{
+  "session": {
+    "id": "2026-01-09_154512_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T15:45:12Z",
+    "updated_at": "2026-01-09T15:46:00Z"
+  },
+  "current_stage": 2,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "subtitle": "착수보고",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "emphasis": "전체 균형",
+      "slide_count": 15,
+      "source_document": "/home/jji/project/docs/project-plan.md"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      },
+      "typography": {
+        "heading_font": "Arial",
+        "body_font": "Arial",
+        "korean_font": "Malgun Gothic"
+      }
+    },
+    "project_info": {
+      "project_name": "스마트 물류관리 시스템 구축",
+      "client": "(주)글로벌물류",
+      "vendor": "(주)테크솔루션",
+      "contract_amount": "15억원",
+      "contract_period": "2025-01-06 ~ 2025-12-31",
+      "pm": "김철수"
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축 수행계획서",
+      "purpose": "cover",
+      "key_points": ["프로젝트 착수보고", "2025.01", "(주)테크솔루션"],
+      "speaker_notes": "착수보고회 표지 슬라이드"
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "key_points": ["프로젝트 개요", "추진 전략", "조직 및 역할", "프로젝트 일정", "품질/위험 관리"],
+      "speaker_notes": "발표 순서 안내"
+    },
+    {
+      "index": 2,
+      "title": "프로젝트 개요",
+      "purpose": "section",
+      "key_points": ["SECTION 01"],
+      "speaker_notes": "첫 번째 섹션 시작"
+    },
+    {
+      "index": 3,
+      "title": "프로젝트 배경 및 기대효과",
+      "purpose": "stats",
+      "key_points": [
+        "연간 500만건 물류 처리",
+        "레거시 시스템 10년 이상 운영",
+        "물류 효율 30% 향상 목표",
+        "재고 정확도 99.5% 목표",
+        "운영 비용 20% 절감 목표"
+      ],
+      "speaker_notes": "현재 문제점과 기대효과 설명"
+    },
+    {
+      "index": 4,
+      "title": "시스템 범위",
+      "purpose": "grid",
+      "key_points": [
+        "WMS: 창고관리시스템 - 입출고, 재고, 피킹/패킹",
+        "TMS: 배송관리시스템 - 배차, 경로최적화, 추적",
+        "OMS: 주문관리시스템 - 주문접수, 할당, 정산",
+        "Dashboard: 통합모니터링 - 실시간 현황, KPI, 리포트"
+      ],
+      "speaker_notes": "구축 대상 시스템 4개 모듈 설명"
+    },
+    {
+      "index": 5,
+      "title": "추진 전략",
+      "purpose": "section",
+      "key_points": ["SECTION 02"],
+      "speaker_notes": "두 번째 섹션 시작"
+    },
+    {
+      "index": 6,
+      "title": "핵심 추진 전략",
+      "purpose": "grid",
+      "key_points": [
+        "단계적 전환: Big Bang 방식 대신 모듈별 순차 전환으로 리스크 최소화",
+        "애자일 기반 개발: 2주 단위 스프린트로 빠른 피드백과 유연한 대응",
+        "현업 밀착 협업: 주 2회 현업 리뷰를 통한 요구사항 정합성 확보"
+      ],
+      "speaker_notes": "3대 핵심 전략 설명"
+    },
+    {
+      "index": 7,
+      "title": "기술 아키텍처",
+      "purpose": "grid",
+      "key_points": [
+        "Frontend: Vue.js 3, TypeScript - SPA 구조",
+        "Backend: Spring Boot, Java 17 - MSA 구조",
+        "Database: PostgreSQL, Redis - RDBMS + Cache",
+        "AI/ML: Python, TensorFlow - 수요예측, 경로최적화"
+      ],
+      "speaker_notes": "기술 스택 설명"
+    },
+    {
+      "index": 8,
+      "title": "조직 및 역할",
+      "purpose": "section",
+      "key_points": ["SECTION 03"],
+      "speaker_notes": "세 번째 섹션 시작"
+    },
+    {
+      "index": 9,
+      "title": "프로젝트 조직 및 투입 인력",
+      "purpose": "hierarchy",
+      "key_points": [
+        "발주기관 PM: 정민호 부장",
+        "수행사 PM: 김철수 차장 (현장 대리인)",
+        "AA: 박준형 책임 (MSA 전문가)",
+        "개발 리더: 최수진 선임",
+        "총 8명, 78MM 투입"
+      ],
+      "speaker_notes": "조직 구성 및 R&R 설명"
+    },
+    {
+      "index": 10,
+      "title": "프로젝트 일정",
+      "purpose": "section",
+      "key_points": ["SECTION 04"],
+      "speaker_notes": "네 번째 섹션 시작"
+    },
+    {
+      "index": 11,
+      "title": "마스터 일정 및 마일스톤",
+      "purpose": "timeline",
+      "key_points": [
+        "착수: 2025-01 ~ 2025-01 (4주)",
+        "분석: 2025-02 ~ 2025-03 (8주)",
+        "설계: 2025-04 ~ 2025-05 (8주)",
+        "개발: 2025-06 ~ 2025-09 (16주)",
+        "테스트: 2025-10 ~ 2025-11 (6주)",
+        "이행: 2025-11 ~ 2025-12 (6주)"
+      ],
+      "speaker_notes": "전체 일정 및 6개 마일스톤 설명"
+    },
+    {
+      "index": 12,
+      "title": "품질 및 위험 관리",
+      "purpose": "section",
+      "key_points": ["SECTION 05"],
+      "speaker_notes": "다섯 번째 섹션 시작"
+    },
+    {
+      "index": 13,
+      "title": "주요 위험 및 대응 방안",
+      "purpose": "table",
+      "key_points": [
+        "요구사항 변경 (상/상): CCB 통제, 영향도 분석 필수",
+        "일정 지연 (상/중): 주간 진척관리, Critical Path 모니터링",
+        "기술적 난제 (중/중): PoC 선행, 외부 전문가 자문",
+        "데이터 마이그레이션 (상/중): 사전 검증, 롤백 계획 수립"
+      ],
+      "speaker_notes": "주요 위험 요소 및 대응 방안 설명"
+    },
+    {
+      "index": 14,
+      "title": "감사합니다",
+      "purpose": "closing",
+      "key_points": [
+        "(주)테크솔루션",
+        "PM 김철수",
+        "프로젝트 성공적 완수를 위해 최선을 다하겠습니다"
+      ],
+      "speaker_notes": "마무리 인사 및 Q&A 안내"
+    }
+  ]
+}

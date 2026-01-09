@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      position: absolute;
+      left: 40pt;
+      top: 25pt;
+    }
+    .header h1 {
+      font-size: 22pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+    .header-line {
+      position: absolute;
+      left: 40pt;
+      top: 55pt;
+      width: 60pt;
+      height: 3pt;
+      background: #4E9F3D;
+    }
+    .org-container {
+      position: absolute;
+      left: 40pt;
+      top: 75pt;
+      width: 640pt;
+    }
+    .org-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10pt;
+    }
+    .org-box {
+      background: #1E5128;
+      border-radius: 6pt;
+      padding: 10pt 15pt;
+      text-align: center;
+      margin: 0 8pt;
+    }
+    .org-box.sponsor {
+      background: #4E9F3D;
+    }
+    .org-box.pm {
+      background: #1E5128;
+    }
+    .org-box.team {
+      background: #F4F6F6;
+      border: 2pt solid #1E5128;
+    }
+    .org-box .role {
+      font-size: 8pt;
+      color: #D8E9A8;
+      margin-bottom: 3pt;
+    }
+    .org-box .name {
+      font-size: 11pt;
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+    .org-box.team .role {
+      color: #4E9F3D;
+    }
+    .org-box.team .name {
+      color: #1E5128;
+    }
+    .connector {
+      width: 2pt;
+      height: 15pt;
+      background: #AAB7B8;
+      margin: 0 auto;
+    }
+    .horizontal-line {
+      width: 400pt;
+      height: 2pt;
+      background: #AAB7B8;
+      margin: 0 auto;
+    }
+    .summary-box {
+      position: absolute;
+      left: 40pt;
+      bottom: 30pt;
+      width: 640pt;
+      background: #F4F6F6;
+      border-radius: 8pt;
+      padding: 12pt 20pt;
+      display: flex;
+      justify-content: space-around;
+    }
+    .summary-item {
+      text-align: center;
+    }
+    .summary-item .value {
+      font-size: 20pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+    .summary-item .label {
+      font-size: 9pt;
+      color: #AAB7B8;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>조직 및 역할</h1>
+  </div>
+  <div class="header-line"></div>
+  <div class="org-container">
+    <div class="org-row">
+      <div class="org-box sponsor">
+        <p class="role">발주기관 PM</p>
+        <p class="name">정민호 부장</p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="org-row">
+      <div class="org-box pm">
+        <p class="role">수행사 PM</p>
+        <p class="name">김철수 차장</p>
+      </div>
+      <div class="org-box pm">
+        <p class="role">PMO</p>
+        <p class="name">이영희 과장</p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="horizontal-line"></div>
+    <div class="connector"></div>
+    <div class="org-row">
+      <div class="org-box team">
+        <p class="role">AA (아키텍트)</p>
+        <p class="name">박준형 책임</p>
+      </div>
+      <div class="org-box team">
+        <p class="role">개발 리더</p>
+        <p class="name">최수진 선임</p>
+      </div>
+      <div class="org-box team">
+        <p class="role">QA 담당</p>
+        <p class="name">한미영 대리</p>
+      </div>
+      <div class="org-box team">
+        <p class="role">DBA</p>
+        <p class="name">오현우 대리</p>
+      </div>
+    </div>
+  </div>
+  <div class="summary-box">
+    <div class="summary-item">
+      <p class="value">8</p>
+      <p class="label">투입 인력 (명)</p>
+    </div>
+    <div class="summary-item">
+      <p class="value">78</p>
+      <p class="label">총 M/M</p>
+    </div>
+    <div class="summary-item">
+      <p class="value">12</p>
+      <p class="label">프로젝트 기간 (개월)</p>
+    </div>
+  </div>
+</body>
+</html>

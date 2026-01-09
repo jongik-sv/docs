@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 25pt; left: 40pt; }
+    .header h1 { font-size: 20pt; color: #1E5128; font-weight: bold; }
+    .header-line { width: 50pt; height: 3pt; background: #4E9F3D; margin-top: 6pt; }
+    .stats-grid { position: absolute; top: 90pt; left: 40pt; right: 40pt; display: flex; gap: 25pt; justify-content: center; }
+    .stat-card { flex: 1; max-width: 200pt; background: #F4F6F6; border-radius: 12pt; padding: 25pt 20pt; text-align: center; position: relative; }
+    .stat-card::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 60pt; height: 4pt; background: #1E5128; border-radius: 0 0 4pt 4pt; }
+    .stat-card:nth-child(2)::before { background: #4E9F3D; }
+    .stat-card:nth-child(3)::before { background: #D8E9A8; }
+    .stat-num { font-size: 42pt; font-weight: bold; color: #1E5128; }
+    .stat-card:nth-child(2) .stat-num { color: #4E9F3D; }
+    .stat-unit { font-size: 18pt; color: #1E5128; }
+    .stat-card:nth-child(2) .stat-unit { color: #4E9F3D; }
+    .stat-label { font-size: 14pt; color: #191A19; font-weight: bold; margin-top: 10pt; }
+    .stat-desc { font-size: 10pt; color: #AAB7B8; margin-top: 6pt; line-height: 1.4; }
+    .arrow { color: #4E9F3D; font-size: 14pt; margin-right: 4pt; }
+    .bottom-note { position: absolute; bottom: 50pt; left: 40pt; right: 40pt; text-align: center; font-size: 11pt; color: #666; background: #F9F9F9; padding: 12pt; border-radius: 6pt; }
+    .footer { position: absolute; bottom: 15pt; right: 40pt; font-size: 9pt; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 15pt; left: 40pt; font-size: 9pt; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>기대효과</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <p><span class="stat-num">30</span><span class="stat-unit">%</span></p>
+      <p class="stat-label"><span class="arrow">↑</span>물류 처리 효율</p>
+      <p class="stat-desc">AI 기반 최적화로<br>처리 속도 대폭 향상</p>
+    </div>
+    <div class="stat-card">
+      <p><span class="stat-num">99.5</span><span class="stat-unit">%</span></p>
+      <p class="stat-label"><span class="arrow">↑</span>재고 정확도</p>
+      <p class="stat-desc">실시간 추적으로<br>재고 오차 최소화</p>
+    </div>
+    <div class="stat-card">
+      <p><span class="stat-num">20</span><span class="stat-unit">%</span></p>
+      <p class="stat-label"><span class="arrow">↓</span>운영 비용 절감</p>
+      <p class="stat-desc">자동화/효율화로<br>비용 구조 개선</p>
+    </div>
+  </div>
+  <div class="bottom-note">
+    <strong>핵심 가치:</strong> 안정적 전환과 혁신적 기능 구현의 균형
+  </div>
+  <div class="page-num">6 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

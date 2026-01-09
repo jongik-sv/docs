@@ -1,0 +1,115 @@
+# 가로 타임라인 콘텐츠 템플릿 v2.0
+# 원본: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx:33
+# 추출일: 2026-01-09T11:10:58.366168
+# 카테고리: timeline
+
+content_template:
+  id: basic-timeline-horizontal1
+  name: "가로 타임라인"
+  version: "2.0"
+  category: "timeline"
+  source: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 33
+  extracted_at: "2026-01-09T11:10:58.366173"
+
+design_meta:
+  quality_score: 7.8
+  design_intent: timeline-horizontal
+  visual_balance: balanced
+  information_density: medium
+  color_scheme: "multicolor"
+  grid_structure: "horizontal"
+
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: "16:9"
+
+shape_source: "ooxml"
+
+layout:
+  type: "timeline"
+  grid:
+    structure: "horizontal"
+    gap_percent: 5
+
+main_components:
+  - name: "timeline axis"
+    count: 1
+    type: "main line"
+  - name: "event markers"
+    count: 10
+    type: "time points"
+  - name: "labels and descriptions"
+    count: 20
+    type: "text content"
+
+spatial_relationships:
+  - type: "aligned"
+    description: "주요 요소들이 일관된 그리드에 정렬됨"
+  - type: "grouped"
+    description: "관련 요소들이 논리적으로 그룹화됨"
+
+gaps:
+  global:
+    column_gap: 5
+    row_gap: 5
+  between_shapes: []
+
+thumbnail: "thumbnails/basic-timeline-horizontal1.png"
+
+use_for:
+  - "조직 내 공식 발표 및 회의 자료"
+  - "이사진 또는 주요 이해관계자 보고"
+  - "기업 전략 및 로드맵 공유"
+  - "제품/서비스 기능 설명 및 데모"
+  - "사내 교육 및 온보딩 프로그램"
+
+keywords:
+  - "timeline-horizontal"
+  - "가로 타임라인"
+  - "템플릿"
+  - "디자인"
+  - "timeline"
+
+expected_prompt: "2022-2026 발전사: 2022 창립, 2023 시리즈A, 2024 확대, 2025 글로벌"
+
+prompt_keywords:
+  - "timeline-horizontal"
+  - "가로 타임라인"
+  - "timeline"
+  - "레이아웃"
+  - "콘텐츠"
+  - "템플릿"
+
+compatible_with:
+  - "상세 데이터 포함"
+  - "이미지/아이콘 추가"
+  - "텍스트 내용 커스텀"
+  - "색상 테마 변경"
+  - "데이터 표시"
+
+restrictions:
+  - "요소 개수 변경 시 레이아웃 재조정 필요"
+  - "텍스트 길이가 길 경우 폰트 사이즈 조정"
+  - "이미지 추가 시 종횡비 유지"
+
+notes: |
+  이 템플릿은 기본 양식 세트에서 추출된 공식 디자인입니다.
+  콘텐츠 수정 시 다음을 준수하세요:
+
+  1. 레이아웃의 균형 유지 - 여백과 정렬 보존
+  2. 색상 일관성 - 지정된 색상 팔레트 사용
+  3. 타이포그래피 - 폰트 및 크기 규칙 준수
+  4. 그리드 시스템 - 요소들의 정렬 유지
+  5. 콘텐츠 계층 - 제목/본문/강조의 명확한 구분
+
+metadata:
+  category: "timeline"
+  difficulty: "medium"
+  reusability: "high"
+  created_date: "2026-01-09"
+  last_updated: "2026-01-09"
+  content_type: "timeline"
+  supports_animation: false
+  supports_interactivity: false

@@ -1,0 +1,57 @@
+{
+  "session": {
+    "id": "2026-01-09_134636_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "status": "completed",
+    "created_at": "2026-01-09T13:46:36+09:00",
+    "updated_at": "2026-01-09T14:10:00+09:00"
+  },
+  "current_stage": 5,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "subtitle": "착수보고",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "slide_count_target": "15-20장",
+      "source_file": "project-plan.md"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      }
+    }
+  },
+  "slides": [
+    {"index": 0, "title": "스마트 물류관리 시스템 구축", "purpose": "cover", "template_id": "deepgreen-cover-centered1", "html_file": "slides/slide-001-cover.html", "generated": true, "pptx_slide_index": 1},
+    {"index": 1, "title": "목차", "purpose": "toc", "template_id": "deepgreen-toc-3col1", "html_file": "slides/slide-002-toc.html", "generated": true, "pptx_slide_index": 2},
+    {"index": 2, "title": "01. 프로젝트 개요", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-003-section1.html", "generated": true, "pptx_slide_index": 3},
+    {"index": 3, "title": "프로젝트 배경 및 목적", "purpose": "content", "template_id": "basic-content-2col0", "html_file": "slides/slide-004-background.html", "generated": true, "pptx_slide_index": 4},
+    {"index": 4, "title": "기대 효과", "purpose": "stats", "template_id": "basic-stats-cards", "html_file": "slides/slide-005-effects.html", "generated": true, "pptx_slide_index": 5},
+    {"index": 5, "title": "프로젝트 범위", "purpose": "table", "template_id": "basic-table-simple3", "html_file": "slides/slide-006-scope.html", "generated": true, "pptx_slide_index": 6},
+    {"index": 6, "title": "02. 추진 전략 및 방법론", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-007-section2.html", "generated": true, "pptx_slide_index": 7},
+    {"index": 7, "title": "핵심 추진 전략", "purpose": "feature", "template_id": "deepgreen-grid-3col1", "html_file": "slides/slide-008-strategy.html", "generated": true, "pptx_slide_index": 8},
+    {"index": 8, "title": "기술 아키텍처", "purpose": "table", "template_id": "basic-table-simple4", "html_file": "slides/slide-009-techstack.html", "generated": true, "pptx_slide_index": 9},
+    {"index": 9, "title": "03. 프로젝트 조직", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-010-section3.html", "generated": true, "pptx_slide_index": 10},
+    {"index": 10, "title": "조직 및 역할", "purpose": "hierarchy", "template_id": "basic-hierarchy-org-40", "html_file": "slides/slide-011-organization.html", "generated": true, "pptx_slide_index": 11},
+    {"index": 11, "title": "04. 프로젝트 일정", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-012-section4.html", "generated": true, "pptx_slide_index": 12},
+    {"index": 12, "title": "마스터 일정 및 마일스톤", "purpose": "timeline", "template_id": "basic-process-6step1", "html_file": "slides/slide-013-schedule.html", "generated": true, "pptx_slide_index": 13},
+    {"index": 13, "title": "05. 품질 및 위험 관리", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-014-section5.html", "generated": true, "pptx_slide_index": 14},
+    {"index": 14, "title": "품질/보안/위험 관리", "purpose": "grid", "template_id": "deepgreen-grid-3col1", "html_file": "slides/slide-015-quality.html", "generated": true, "pptx_slide_index": 15},
+    {"index": 15, "title": "감사합니다", "purpose": "closing", "template_id": "deepgreen-closing1", "html_file": "slides/slide-016-closing.html", "generated": true, "pptx_slide_index": 16}
+  ],
+  "output": {
+    "pptx_file": "project-plan.pptx",
+    "method": "custom_generate_js",
+    "slide_count": 16
+  }
+}

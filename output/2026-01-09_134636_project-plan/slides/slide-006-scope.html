@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      position: absolute;
+      left: 40pt;
+      top: 25pt;
+    }
+    .header h1 {
+      font-size: 22pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+    .header-line {
+      position: absolute;
+      left: 40pt;
+      top: 55pt;
+      width: 60pt;
+      height: 3pt;
+      background: #4E9F3D;
+    }
+    .table-container {
+      position: absolute;
+      left: 40pt;
+      top: 80pt;
+      width: 640pt;
+    }
+    .table-header {
+      display: flex;
+      background: #1E5128;
+      border-radius: 6pt 6pt 0 0;
+    }
+    .table-header .cell {
+      padding: 10pt 12pt;
+      font-size: 10pt;
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+    .table-row {
+      display: flex;
+      border-bottom: 1pt solid #E0E0E0;
+    }
+    .table-row:nth-child(even) {
+      background: #F4F6F6;
+    }
+    .table-row .cell {
+      padding: 12pt;
+      font-size: 9pt;
+      color: #191A19;
+    }
+    .cell-system {
+      width: 100pt;
+      font-weight: bold;
+      color: #1E5128;
+    }
+    .cell-name {
+      width: 140pt;
+    }
+    .cell-function {
+      flex: 1;
+    }
+    .badge {
+      display: inline-block;
+      background: #D8E9A8;
+      color: #1E5128;
+      font-size: 8pt;
+      padding: 2pt 6pt;
+      border-radius: 3pt;
+    }
+    .badge p {
+      margin: 0;
+    }
+    .cell-function {
+      display: flex;
+      gap: 4pt;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>프로젝트 범위 (시스템)</h1>
+  </div>
+  <div class="header-line"></div>
+  <div class="table-container">
+    <div class="table-header">
+      <div class="cell cell-system"><p>시스템</p></div>
+      <div class="cell cell-name"><p>대상 시스템</p></div>
+      <div class="cell cell-function"><p>주요 기능</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell cell-system"><p>WMS</p></div>
+      <div class="cell cell-name"><p>창고관리시스템</p></div>
+      <div class="cell cell-function"><p><div class="badge"><p>입출고</p></div><div class="badge"><p>재고</p></div><div class="badge"><p>피킹/패킹</p></div></p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell cell-system"><p>TMS</p></div>
+      <div class="cell cell-name"><p>배송관리시스템</p></div>
+      <div class="cell cell-function"><p><div class="badge"><p>배차</p></div><div class="badge"><p>경로최적화</p></div><div class="badge"><p>추적</p></div></p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell cell-system"><p>OMS</p></div>
+      <div class="cell cell-name"><p>주문관리시스템</p></div>
+      <div class="cell cell-function"><p><div class="badge"><p>주문접수</p></div><div class="badge"><p>할당</p></div><div class="badge"><p>정산</p></div></p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell cell-system"><p>Dashboard</p></div>
+      <div class="cell cell-name"><p>통합모니터링</p></div>
+      <div class="cell cell-function"><p><div class="badge"><p>실시간 현황</p></div><div class="badge"><p>KPI</p></div><div class="badge"><p>리포트</p></div></p></div>
+    </div>
+  </div>
+</body>
+</html>

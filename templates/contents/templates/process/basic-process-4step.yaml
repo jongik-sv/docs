@@ -1,0 +1,203 @@
+content_template:
+  id: basic-process-4step
+  name: 4단계 프로세스 흐름
+  version: '2.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 24
+  extracted_at: '2026-01-09T11:10:21.412931'
+  shape_source: description
+  expected_prompt: 4단계 순차 프로세스를 보여주는 슬라이드를 만들어주세요. 각 단계가 화살표로 연결되어 흐름을 표현합니다.
+  prompt_keywords:
+  - 프로세스
+  - 4단계
+  - 흐름
+  - 화살표
+  - 순차
+  - 절차
+  - 진행
+design_meta:
+  quality_score: 8.5
+  design_intent: process-4step
+  visual_balance: asymmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: 타원 44
+  type: shape
+  z_index: 0
+  geometry:
+    x: 7.6%
+    y: 14.4%
+    cx: 13.2%
+    cy: 29.4%
+    original_aspect_ratio: 1.0
+    original_width_px: 158.6
+    original_height_px: 158.6
+  style:
+    fill:
+      type: solid
+      color: '002452'
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-1
+  name: 타원 45
+  type: shape
+  z_index: 1
+  geometry:
+    x: 24.7%
+    y: 14.4%
+    cx: 13.2%
+    cy: 29.4%
+    original_aspect_ratio: 1.0
+    original_width_px: 158.6
+    original_height_px: 158.6
+  style:
+    fill:
+      type: solid
+      color: '002452'
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-2
+  name: 타원 46
+  type: shape
+  z_index: 2
+  geometry:
+    x: 41.9%
+    y: 14.4%
+    cx: 13.2%
+    cy: 29.4%
+    original_aspect_ratio: 1.0
+    original_width_px: 158.6
+    original_height_px: 158.6
+  style:
+    fill:
+      type: solid
+      color: '002452'
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-3
+  name: 타원 47
+  type: shape
+  z_index: 3
+  geometry:
+    x: 59.1%
+    y: 14.4%
+    cx: 13.2%
+    cy: 29.4%
+    original_aspect_ratio: 1.0
+    original_width_px: 158.6
+    original_height_px: 158.6
+  style:
+    fill:
+      type: solid
+      color: '002452'
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-4
+  name: 직사각형 52
+  type: rectangle
+  z_index: 4
+  geometry:
+    x: 26.8%
+    y: 26.9%
+    cx: 9.0%
+    cy: 6.0%
+    original_aspect_ratio: 3.371
+    original_width_px: 108.5
+    original_height_px: 32.2
+  style:
+    fill:
+      type: solid
+      color: scheme_dk2
+  text:
+    has_text: true
+    font_size_pt: 16.0
+- id: shape-5
+  name: 직사각형 61
+  type: rectangle
+  z_index: 5
+  geometry:
+    x: 6.2%
+    y: 48.0%
+    cx: 16.0%
+    cy: 43.4%
+    original_aspect_ratio: 0.823
+    original_width_px: 192.7
+    original_height_px: 234.3
+  style:
+    fill:
+      type: solid
+      color: scheme_tx1
+  text:
+    has_text: true
+    font_size_pt: 14.0
+- id: shape-6
+  name: 직사각형 66
+  type: rectangle
+  z_index: 6
+  geometry:
+    x: 23.3%
+    y: 48.0%
+    cx: 16.0%
+    cy: 43.4%
+    original_aspect_ratio: 0.823
+    original_width_px: 192.7
+    original_height_px: 234.3
+  style:
+    fill:
+      type: solid
+      color: scheme_tx1
+  text:
+    has_text: true
+    font_size_pt: 14.0
+- id: shape-7
+  name: 직사각형 71
+  type: rectangle
+  z_index: 7
+  geometry:
+    x: 40.5%
+    y: 48.0%
+    cx: 16.0%
+    cy: 43.4%
+    original_aspect_ratio: 0.823
+    original_width_px: 192.7
+    original_height_px: 234.3
+  style:
+    fill:
+      type: solid
+      color: scheme_tx1
+  text:
+    has_text: true
+    font_size_pt: 14.0
+use_for:
+- 단계별 진행 과정
+- 4개 박스 (수평 배치) + 화살표 연결
+- 4단계 프로세스 흐름
+- 순차적 업무
+- 시간 순서 절차 표시
+- 화살표 기반 흐름도
+keywords:
+- 프로세스
+- 흐름
+- 4단계
+- 화살표
+- 순차
+- 절차
+- 방법
+thumbnail: thumbnails/basic-process-4step.png
+design_patterns:
+- process-flow
+- step-by-step
+- sequence
+content_structure:
+  main_area: 4개 박스 (수평 배치) + 화살표 연결
+  progression: 좌→우 순차 흐름
+  visual_hierarchy: 숫자/아이콘 > 제목 > 설명

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 25pt; left: 40pt; }
+    .header h1 { font-size: 20pt; color: #1E5128; font-weight: bold; }
+    .header-line { width: 50pt; height: 3pt; background: #4E9F3D; margin-top: 6pt; }
+    .org-container { position: absolute; top: 70pt; left: 40pt; right: 40pt; }
+    .org-row { display: flex; justify-content: center; margin-bottom: 15pt; }
+    .org-box { background: #1E5128; color: #FFFFFF; padding: 10pt 20pt; border-radius: 6pt; text-align: center; min-width: 120pt; }
+    .org-box.alt { background: #4E9F3D; }
+    .org-box.light { background: #F4F6F6; color: #191A19; border: 1pt solid #E5E5E5; }
+    .org-box h4 { font-size: 10pt; margin-bottom: 3pt; }
+    .org-box p { font-size: 9pt; opacity: 0.9; }
+    .org-box.light p { color: #666; }
+    .connector { width: 2pt; height: 15pt; background: #AAB7B8; margin: 0 auto; }
+    .connector-h { display: flex; justify-content: center; align-items: center; gap: 80pt; position: relative; }
+    .connector-h::before { content: ''; position: absolute; top: 50%; left: 25%; right: 25%; height: 2pt; background: #AAB7B8; }
+    .team-grid { display: flex; gap: 12pt; justify-content: center; flex-wrap: wrap; margin-top: 15pt; }
+    .team-box { background: #F4F6F6; padding: 8pt 12pt; border-radius: 4pt; text-align: center; min-width: 90pt; border-left: 3pt solid #4E9F3D; }
+    .team-box h5 { font-size: 9pt; color: #1E5128; margin-bottom: 2pt; }
+    .team-box p { font-size: 8pt; color: #666; }
+    .legend { position: absolute; bottom: 50pt; left: 40pt; display: flex; gap: 20pt; }
+    .legend-item { display: flex; align-items: center; gap: 6pt; font-size: 9pt; color: #666; }
+    .legend-box { width: 12pt; height: 12pt; border-radius: 2pt; }
+    .legend-box.client { background: #1E5128; }
+    .legend-box.vendor { background: #4E9F3D; }
+    .footer { position: absolute; bottom: 15pt; right: 40pt; font-size: 9pt; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 15pt; left: 40pt; font-size: 9pt; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>조직별 역할 및 책임 (R&R)</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="org-container">
+    <div class="org-row">
+      <div class="org-box">
+        <h4>발주기관 PM</h4>
+        <p>정민호 부장</p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="connector-h">
+      <div class="org-box alt">
+        <h4>수행사 PM</h4>
+        <p>김철수 차장</p>
+      </div>
+      <div class="org-box alt">
+        <h4>PMO</h4>
+        <p>이영희 과장</p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="team-grid">
+      <div class="team-box">
+        <h5>AA (아키텍트)</h5>
+        <p>박준형 책임</p>
+      </div>
+      <div class="team-box">
+        <h5>개발 리더</h5>
+        <p>최수진 선임</p>
+      </div>
+      <div class="team-box">
+        <h5>QA 담당</h5>
+        <p>한미영 대리</p>
+      </div>
+      <div class="team-box">
+        <h5>DBA</h5>
+        <p>오현우 대리</p>
+      </div>
+    </div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-box client"></div> 발주기관</div>
+    <div class="legend-item"><div class="legend-box vendor"></div> 수행사</div>
+  </div>
+  <div class="page-num">13 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

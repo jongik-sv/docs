@@ -1,0 +1,191 @@
+content_template:
+  id: basic-grid-3col5
+  name: 3열 그리드 레이아웃
+  description: 3열 균등 분할 그리드 카드 레이아웃
+  version: '2.0'
+  source: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 5
+  extracted_at: '2026-01-09T11:11:08.528474'
+design_meta:
+  quality_score: 8.5
+  design_intent: grid-3col
+  visual_balance: asymmetric
+  information_density: high
+  layout_type: grid-based
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: PlaceHolder 1
+  type: rect
+  z_index: 0
+  geometry:
+    x: 2.24%
+    y: 8.4%
+    cx: 76.72%
+    cy: 10.32%
+    rotation: 0
+    original_aspect_ratio: 13.217
+  text:
+    has_text: true
+    placeholder_type: TITLE
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14
+    font_weight: normal
+- id: shape-2
+  name: PlaceHolder 3
+  type: rect
+  z_index: 2
+  geometry:
+    x: 2.24%
+    y: 8.4%
+    cx: 76.72%
+    cy: 10.32%
+    rotation: 0
+    original_aspect_ratio: 13.217
+  text:
+    has_text: true
+    placeholder_type: TITLE
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14
+    font_weight: normal
+- id: shape-5
+  name: ColumnHeader
+  type: rect
+  z_index: 5
+  geometry:
+    x: 7.94%
+    y: 57.18%
+    cx: 20.66%
+    cy: 4.91%
+    rotation: 0
+    original_aspect_ratio: 7.475
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.014814814814814815
+    original_font_size_pt: 16.0
+    font_weight: normal
+- id: shape-6
+  name: ColumnHeader
+  type: rect
+  z_index: 6
+  geometry:
+    x: 29.32%
+    y: 57.18%
+    cx: 20.66%
+    cy: 4.91%
+    rotation: 0
+    original_aspect_ratio: 7.475
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.014814814814814815
+    original_font_size_pt: 16.0
+    font_weight: normal
+- id: shape-7
+  name: ColumnHeader
+  type: rect
+  z_index: 7
+  geometry:
+    x: 50.71%
+    y: 57.18%
+    cx: 20.66%
+    cy: 4.91%
+    rotation: 0
+    original_aspect_ratio: 7.475
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.014814814814814815
+    original_font_size_pt: 16.0
+    font_weight: normal
+- id: shape-8
+  name: 텍스트 개체 틀 16
+  type: rect
+  z_index: 8
+  geometry:
+    x: 8.11%
+    y: 64.51%
+    cx: 20.66%
+    cy: 25.57%
+    rotation: 0
+    original_aspect_ratio: 1.436
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14.0
+    font_weight: normal
+- id: shape-9
+  name: 텍스트 개체 틀 16
+  type: rect
+  z_index: 9
+  geometry:
+    x: 29.32%
+    y: 64.51%
+    cx: 20.66%
+    cy: 25.57%
+    rotation: 0
+    original_aspect_ratio: 1.436
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14.0
+    font_weight: normal
+- id: shape-10
+  name: 텍스트 개체 틀 16
+  type: rect
+  z_index: 10
+  geometry:
+    x: 50.71%
+    y: 64.51%
+    cx: 20.66%
+    cy: 25.57%
+    rotation: 0
+    original_aspect_ratio: 1.436
+  text:
+    has_text: true
+    placeholder_type: BODY
+    alignment: left
+    font_size_ratio: 0.012962962962962963
+    original_font_size_pt: 14.0
+    font_weight: normal
+gaps:
+  global:
+    column_gap: 3.5
+    row_gap: 2.5
+  between_shapes: []
+spatial_relationships: []
+groups: []
+thumbnail: thumbnails/basic-grid-3col5.png
+use_for:
+- 3열 그리드 구조의 카드형 항목 배치
+- 카드형 컨텐츠의 균등 분할 표현
+- 3개 항목의 균형있는 시각적 표현
+- 항목별 카드 기반 정보 비교
+- 시각적 균형과 대칭성 강조
+keywords:
+- 3열
+- 그리드
+- 카드
+- 균등
+- 분할
+- 항목
+expected_prompt: 3열 그리드로 항목을 균등하게 배치하는 카드형 레이아웃
+prompt_keywords:
+- 3열 그리드
+- 카드형 배치
+- 균등 분할
+- 항목 표시
+- 카드 그리드

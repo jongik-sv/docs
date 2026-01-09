@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 25pt; left: 40pt; }
+    .header h1 { font-size: 20pt; color: #1E5128; font-weight: bold; }
+    .header-line { width: 50pt; height: 3pt; background: #4E9F3D; margin-top: 6pt; }
+    .table-container { position: absolute; top: 70pt; left: 40pt; right: 40pt; }
+    table { width: 100%; border-collapse: collapse; font-size: 10pt; }
+    th { background: #1E5128; color: #FFFFFF; padding: 8pt 10pt; text-align: center; font-weight: bold; }
+    td { padding: 8pt 10pt; color: #191A19; border-bottom: 1pt solid #E5E5E5; text-align: center; }
+    tr:nth-child(even) td { background: #F9F9F9; }
+    .name { font-weight: bold; color: #1E5128; }
+    .grade-special { background: #1E5128; color: #FFFFFF; padding: 2pt 8pt; border-radius: 10pt; font-size: 9pt; }
+    .grade-high { background: #4E9F3D; color: #FFFFFF; padding: 2pt 8pt; border-radius: 10pt; font-size: 9pt; }
+    .grade-mid { background: #D8E9A8; color: #191A19; padding: 2pt 8pt; border-radius: 10pt; font-size: 9pt; }
+    .summary-row td { background: #F4F6F6; font-weight: bold; }
+    .summary-row .total { color: #1E5128; font-size: 12pt; }
+    .stats { position: absolute; bottom: 50pt; left: 40pt; right: 40pt; display: flex; gap: 20pt; }
+    .stat-item { flex: 1; background: #F4F6F6; padding: 12pt; border-radius: 6pt; text-align: center; }
+    .stat-item .num { font-size: 24pt; font-weight: bold; color: #1E5128; }
+    .stat-item .label { font-size: 10pt; color: #666; }
+    .footer { position: absolute; bottom: 15pt; right: 40pt; font-size: 9pt; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 15pt; left: 40pt; font-size: 9pt; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>투입 인력 현황</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>구분</th>
+        <th>분야</th>
+        <th>등급</th>
+        <th>성명</th>
+        <th>투입기간</th>
+      </tr>
+      <tr>
+        <td>PM</td>
+        <td>관리</td>
+        <td><span class="grade-special">특급</span></td>
+        <td class="name">김철수</td>
+        <td>12개월</td>
+      </tr>
+      <tr>
+        <td>AA</td>
+        <td>설계</td>
+        <td><span class="grade-special">특급</span></td>
+        <td class="name">박준형</td>
+        <td>10개월</td>
+      </tr>
+      <tr>
+        <td>PL</td>
+        <td>개발</td>
+        <td><span class="grade-high">고급</span></td>
+        <td class="name">최수진</td>
+        <td>12개월</td>
+      </tr>
+      <tr>
+        <td>Dev</td>
+        <td>Backend</td>
+        <td><span class="grade-high">고급</span></td>
+        <td class="name">임동현</td>
+        <td>10개월</td>
+      </tr>
+      <tr>
+        <td>Dev</td>
+        <td>Frontend</td>
+        <td><span class="grade-mid">중급</span></td>
+        <td class="name">강서연</td>
+        <td>10개월</td>
+      </tr>
+      <tr>
+        <td>Dev</td>
+        <td>Backend</td>
+        <td><span class="grade-mid">중급</span></td>
+        <td class="name">윤재호</td>
+        <td>10개월</td>
+      </tr>
+      <tr>
+        <td>DBA</td>
+        <td>DB</td>
+        <td><span class="grade-high">고급</span></td>
+        <td class="name">오현우</td>
+        <td>8개월</td>
+      </tr>
+      <tr>
+        <td>QA</td>
+        <td>테스트</td>
+        <td><span class="grade-mid">중급</span></td>
+        <td class="name">한미영</td>
+        <td>6개월</td>
+      </tr>
+    </table>
+  </div>
+  <div class="stats">
+    <div class="stat-item">
+      <p class="num">8</p>
+      <p class="label">총 인원</p>
+    </div>
+    <div class="stat-item">
+      <p class="num">78</p>
+      <p class="label">총 M/M</p>
+    </div>
+    <div class="stat-item">
+      <p class="num">12</p>
+      <p class="label">프로젝트 기간 (개월)</p>
+    </div>
+  </div>
+  <div class="page-num">14 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

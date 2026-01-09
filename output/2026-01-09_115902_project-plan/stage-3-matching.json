@@ -1,0 +1,65 @@
+{
+  "session": {
+    "id": "2026-01-09_115902_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T11:59:02"
+  },
+  "current_stage": 3,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "subtitle": "(주)테크솔루션",
+      "audience": "발주기관 경영진 및 프로젝트 관계자",
+      "purpose": "프로젝트 수행계획 공유 및 승인",
+      "source_file": "project-plan.md"
+    },
+    "theme": {
+      "id": "dongkuk-systems",
+      "colors": {
+        "primary": "#002452",
+        "secondary": "#C51F2A",
+        "accent1": "#757575",
+        "accent2": "#4B6580",
+        "accent3": "#B7D0D4",
+        "accent5": "#D55633",
+        "accent6": "#E9B86E",
+        "dark_text": "#262626",
+        "light_bg": "#FFFFFF",
+        "gray": "#B6B6B6"
+      },
+      "fonts": {
+        "title": "본고딕 Medium",
+        "body": "본고딕 Normal"
+      }
+    },
+    "document_template": {
+      "group": "dongkuk-systems",
+      "template": "기본양식"
+    }
+  },
+  "slides": [
+    {"index": 0, "title": "스마트 물류관리 시스템 구축 수행계획서", "purpose": "cover", "layout_category": "cover", "layout_index": 1, "key_points": ["(주)테크솔루션", "2025-01-03"], "template_id": null},
+    {"index": 1, "title": "목차", "purpose": "toc", "layout_category": "section", "layout_index": 2, "key_points": ["프로젝트 개요", "추진 전략 및 방법론", "프로젝트 조직", "프로젝트 일정", "관리 계획"], "template_id": null},
+    {"index": 2, "title": "01 프로젝트 개요", "purpose": "section", "layout_category": "section", "layout_index": 2, "key_points": ["프로젝트 정보", "배경 및 목적", "시스템 범위"], "template_id": null},
+    {"index": 3, "title": "프로젝트 기본 정보", "purpose": "stats", "layout_category": "content_visual", "layout_index": 4, "key_points": ["발주기관: (주)글로벌물류", "수행사: (주)테크솔루션", "계약금액: 15억원", "계약기간: 12개월"], "template_id": "basic-stats-cards", "match_score": 0.90},
+    {"index": 4, "title": "프로젝트 배경 및 목적", "purpose": "comparison", "layout_category": "content_visual", "layout_index": 4, "key_points": ["현황: 레거시 시스템 노후화", "목표: AI 기반 물류 최적화"], "template_id": "basic-comparison-2col6", "match_score": 0.88},
+    {"index": 5, "title": "기대 효과", "purpose": "stats", "layout_category": "content_visual", "layout_index": 4, "key_points": ["물류 효율 30%↑", "재고 정확도 99.5%", "운영 비용 20%↓"], "template_id": "basic-stats-cards", "match_score": 0.92},
+    {"index": 6, "title": "시스템 범위", "purpose": "grid", "layout_category": "content_visual", "layout_index": 4, "key_points": ["WMS", "TMS", "OMS", "Dashboard"], "template_id": "basic-grid-icon6", "match_score": 0.90},
+    {"index": 7, "title": "02 추진 전략 및 방법론", "purpose": "section", "layout_category": "section", "layout_index": 2, "key_points": ["핵심 전략", "수행 방법론", "기술 아키텍처"], "template_id": null},
+    {"index": 8, "title": "핵심 추진 전략", "purpose": "grid", "layout_category": "content_visual", "layout_index": 4, "key_points": ["단계적 전환", "애자일 기반", "현업 밀착"], "template_id": "basic-grid-3col1", "match_score": 0.92},
+    {"index": 9, "title": "수행 방법론", "purpose": "process", "layout_category": "content_visual", "layout_index": 4, "key_points": ["분석", "설계", "개발", "테스트/이행"], "template_id": "basic-process-4step", "match_score": 0.90},
+    {"index": 10, "title": "기술 아키텍처", "purpose": "process", "layout_category": "content_visual", "layout_index": 4, "key_points": ["Frontend", "Backend", "Database", "Infra", "AI/ML"], "template_id": "basic-process-5step1", "match_score": 0.88},
+    {"index": 11, "title": "03 프로젝트 조직", "purpose": "section", "layout_category": "section", "layout_index": 2, "key_points": ["조직 구성", "역할 및 책임", "투입 인력"], "template_id": null},
+    {"index": 12, "title": "프로젝트 조직도", "purpose": "hierarchy", "layout_category": "content_visual", "layout_index": 4, "key_points": ["발주PM", "수행PM", "PMO", "AA"], "template_id": "basic-hierarchy-org", "match_score": 0.90},
+    {"index": 13, "title": "투입 인력 현황", "purpose": "table", "layout_category": "content_visual", "layout_index": 4, "key_points": ["PM", "AA", "PL", "Dev", "DBA", "QA", "총 8명 78MM"], "template_id": "basic-table-simple4", "match_score": 0.85},
+    {"index": 14, "title": "04 프로젝트 일정", "purpose": "section", "layout_category": "section", "layout_index": 2, "key_points": ["마스터 일정", "주요 마일스톤"], "template_id": null},
+    {"index": 15, "title": "마스터 일정", "purpose": "timeline", "layout_category": "content_visual", "layout_index": 4, "key_points": ["착수", "분석", "설계", "개발", "테스트", "이행"], "template_id": "basic-process-6step1", "match_score": 0.92},
+    {"index": 16, "title": "주요 마일스톤", "purpose": "timeline", "layout_category": "content_visual", "layout_index": 4, "key_points": ["M1", "M2", "M3", "M4", "M5", "M6"], "template_id": "basic-timeline-milestone1", "match_score": 0.90},
+    {"index": 17, "title": "05 관리 계획", "purpose": "section", "layout_category": "section", "layout_index": 2, "key_points": ["품질 관리", "보안 관리", "위험 관리"], "template_id": null},
+    {"index": 18, "title": "품질 관리 계획", "purpose": "grid", "layout_category": "content_visual", "layout_index": 4, "key_points": ["산출물 검토", "코드 리뷰", "정적 분석", "테스트"], "template_id": "basic-grid-icon6", "match_score": 0.88},
+    {"index": 19, "title": "보안 관리 계획", "purpose": "grid", "layout_category": "content_visual", "layout_index": 4, "key_points": ["인적 보안", "물리 보안", "기술 보안", "PC 보안"], "template_id": "basic-grid-icon6", "match_score": 0.88},
+    {"index": 20, "title": "위험 관리 계획", "purpose": "table", "layout_category": "content_visual", "layout_index": 4, "key_points": ["요구변경", "일정지연", "기술난제", "인력이탈", "데이터 마이그레이션"], "template_id": "basic-table-simple5", "match_score": 0.85},
+    {"index": 21, "title": "감사합니다", "purpose": "closing", "layout_category": "cover", "layout_index": 1, "key_points": ["(주)테크솔루션", "PM 김철수 차장"], "template_id": null}
+  ]
+}

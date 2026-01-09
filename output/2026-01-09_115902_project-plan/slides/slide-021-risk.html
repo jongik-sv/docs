@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Noto Sans KR', Arial, sans-serif; background: white; position: relative; }
+    .header { position: absolute; top: 20pt; left: 30pt; }
+    .main-title { font-size: 14pt; color: #002452; font-weight: 500; }
+    .action-title { font-size: 12pt; color: #262626; margin-top: 6pt; }
+
+    /* 테이블 헤더 배경 */
+    .table-header-bg { position: absolute; top: 80pt; left: 30pt; width: 660pt; height: 28pt; background: #002452; border-radius: 6pt 6pt 0 0; }
+
+    /* 행 배경 (짝수) */
+    .row-bg-even { position: absolute; left: 30pt; width: 660pt; height: 36pt; background: #F8F9FA; }
+
+    /* 열 위치 */
+    .col1 { position: absolute; left: 35pt; width: 100pt; }
+    .col2 { position: absolute; left: 140pt; width: 70pt; }
+    .col3 { position: absolute; left: 215pt; width: 220pt; }
+    .col4 { position: absolute; left: 440pt; width: 90pt; }
+    .col5 { position: absolute; left: 535pt; width: 150pt; }
+
+    /* 행 위치 */
+    .row0 { top: 84pt; }
+    .row1 { top: 112pt; }
+    .row2 { top: 148pt; }
+    .row3 { top: 184pt; }
+    .row4 { top: 220pt; }
+    .row5 { top: 256pt; }
+
+    /* 텍스트 스타일 */
+    .header-text { font-size: 9pt; font-weight: 500; color: white; white-space: nowrap; }
+    .cell-text { font-size: 9pt; color: #262626; white-space: nowrap; }
+
+    /* 위험 등급 배지 */
+    .risk { display: inline-block; padding: 3pt 12pt; border-radius: 3pt; min-width: 40pt; text-align: center; }
+    .risk-high { background: #C51F2A; }
+    .risk-medium { background: #E9B86E; }
+    .risk-low { background: #B7D0D4; }
+    .risk-high p { color: white; font-size: 8pt; font-weight: 500; white-space: nowrap; }
+    .risk-medium p { color: #262626; font-size: 8pt; font-weight: 500; white-space: nowrap; }
+    .risk-low p { color: #262626; font-size: 8pt; font-weight: 500; white-space: nowrap; }
+
+    .accent-bar { position: absolute; top: 0; left: 0; width: 100%; height: 3pt; background: #002452; }
+    .legend { position: absolute; bottom: 40pt; left: 30pt; display: flex; gap: 20pt; font-size: 8pt; color: #757575; }
+    .legend-item { display: flex; align-items: center; gap: 5pt; }
+    .legend-dot { width: 10pt; height: 10pt; border-radius: 2pt; }
+    .legend-dot.high { background: #C51F2A; }
+    .legend-dot.medium { background: #E9B86E; }
+    .legend-dot.low { background: #B7D0D4; }
+
+    .footer-wrap { position: absolute; bottom: 15pt; right: 30pt; display: flex; align-items: center; gap: 20pt; }
+    .footer-info { font-size: 9pt; color: #B6B6B6; }
+    .footer-page { font-size: 9pt; color: #B6B6B6; }
+    .logo-img { height: 18pt; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <div class="header">
+    <p class="main-title">위험 관리 계획</p>
+    <p class="action-title">주요 리스크 식별 및 대응 전략</p>
+  </div>
+
+  <!-- 테이블 배경 -->
+  <div class="table-header-bg"></div>
+  <div class="row-bg-even" style="top: 148pt;"></div>
+  <div class="row-bg-even" style="top: 220pt;"></div>
+
+  <!-- 헤더 행 -->
+  <div class="col1 row0"><p class="header-text">위험 요소</p></div>
+  <div class="col2 row0"><p class="header-text">등급</p></div>
+  <div class="col3 row0"><p class="header-text">대응 전략</p></div>
+  <div class="col4 row0"><p class="header-text">담당</p></div>
+  <div class="col5 row0"><p class="header-text">모니터링</p></div>
+
+  <!-- 1행: 일정 지연 -->
+  <div class="col1 row1"><p class="cell-text">일정 지연</p></div>
+  <div class="col2 row1"><div class="risk risk-high"><p>높음</p></div></div>
+  <div class="col3 row1"><p class="cell-text">버퍼 일정 확보 / 주간 진척 점검</p></div>
+  <div class="col4 row1"><p class="cell-text">PM</p></div>
+  <div class="col5 row1"><p class="cell-text">주간 보고</p></div>
+
+  <!-- 2행: 기술적 이슈 -->
+  <div class="col1 row2"><p class="cell-text">기술적 이슈</p></div>
+  <div class="col2 row2"><div class="risk risk-high"><p>높음</p></div></div>
+  <div class="col3 row2"><p class="cell-text">PoC 조기 수행 / 전문가 지원</p></div>
+  <div class="col4 row2"><p class="cell-text">기술리더</p></div>
+  <div class="col5 row2"><p class="cell-text">일일 스탠드업</p></div>
+
+  <!-- 3행: 요구사항 변경 -->
+  <div class="col1 row3"><p class="cell-text">요구사항 변경</p></div>
+  <div class="col2 row3"><div class="risk risk-medium"><p>중간</p></div></div>
+  <div class="col3 row3"><p class="cell-text">변경관리 프로세스 / 영향도 분석</p></div>
+  <div class="col4 row3"><p class="cell-text">PM/PL</p></div>
+  <div class="col5 row3"><p class="cell-text">변경요청 시</p></div>
+
+  <!-- 4행: 인력 이탈 -->
+  <div class="col1 row4"><p class="cell-text">인력 이탈</p></div>
+  <div class="col2 row4"><div class="risk risk-medium"><p>중간</p></div></div>
+  <div class="col3 row4"><p class="cell-text">지식 공유 / 백업 인력 지정</p></div>
+  <div class="col4 row4"><p class="cell-text">PM</p></div>
+  <div class="col5 row4"><p class="cell-text">월간 점검</p></div>
+
+  <!-- 5행: 외부 시스템 연동 -->
+  <div class="col1 row5"><p class="cell-text">외부 시스템 연동</p></div>
+  <div class="col2 row5"><div class="risk risk-low"><p>낮음</p></div></div>
+  <div class="col3 row5"><p class="cell-text">인터페이스 사전 협의 / Mock 서버</p></div>
+  <div class="col4 row5"><p class="cell-text">개발리더</p></div>
+  <div class="col5 row5"><p class="cell-text">단계별 검증</p></div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot high"></div><p>높음</p></div>
+    <div class="legend-item"><div class="legend-dot medium"></div><p>중간</p></div>
+    <div class="legend-item"><div class="legend-dot low"></div><p>낮음</p></div>
+  </div>
+  <div class="footer-wrap">
+    <img class="logo-img" src="../../../templates/documents/dongkuk-systems/assets/default/image2.png" alt="logo" />
+    <p class="footer-info">작성_테크솔루션</p>
+    <p class="footer-page">21</p>
+  </div>
+</body>
+</html>

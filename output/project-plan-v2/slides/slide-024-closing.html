@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #1E5128; position: relative; overflow: hidden; }
+    .banner { position: absolute; top: 0; left: 0; right: 0; height: 8px; background: #4E9F3D; }
+    .banner-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 8px; background: #4E9F3D; }
+    .content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; }
+    .thank-you { font-size: 48px; color: #FFFFFF; font-weight: bold; margin-bottom: 20px; }
+    .subtitle { font-size: 20px; color: #D8E9A8; margin-bottom: 40px; }
+    .divider { width: 100px; height: 4px; background: #4E9F3D; margin: 0 auto 35px; }
+    .contact { color: #FFFFFF; }
+    .contact-name { font-size: 20px; font-weight: bold; margin-bottom: 10px; }
+    .contact-company { font-size: 16px; margin-bottom: 8px; opacity: 0.9; }
+    .contact-email { font-size: 14px; color: #D8E9A8; }
+    .decoration { position: absolute; right: 0; top: 0; bottom: 0; width: 200px; background: linear-gradient(135deg, transparent 0%, rgba(78,159,61,0.2) 100%); }
+    .corner-tl { position: absolute; top: 40px; left: 40px; width: 80px; height: 80px; border-left: 3px solid rgba(255,255,255,0.2); border-top: 3px solid rgba(255,255,255,0.2); }
+    .corner-br { position: absolute; bottom: 40px; right: 40px; width: 80px; height: 80px; border-right: 3px solid rgba(255,255,255,0.2); border-bottom: 3px solid rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body>
+  <div class="banner"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="decoration"></div>
+  <div class="content">
+    <p class="thank-you">감사합니다</p>
+    <p class="subtitle">스마트 물류관리 시스템 구축 프로젝트</p>
+    <div class="divider"></div>
+    <div class="contact">
+      <p class="contact-name">김철수 PM</p>
+      <p class="contact-company">(주)테크솔루션</p>
+      <p class="contact-email">pm@techsolution.co.kr</p>
+    </div>
+  </div>
+  <div class="banner-bottom"></div>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .left-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8pt;
+      height: 100%;
+      background: #1E5128;
+    }
+    .page-title {
+      position: absolute;
+      left: 36pt;
+      top: 30pt;
+      width: 648pt;
+    }
+    .page-title h1 {
+      color: #1E5128;
+      font-size: 24pt;
+      font-weight: bold;
+    }
+    .toc-container {
+      position: absolute;
+      left: 36pt;
+      top: 90pt;
+      width: 648pt;
+      display: flex;
+      gap: 20pt;
+    }
+    .toc-item {
+      flex: 1;
+      background: #F4F6F6;
+      border-radius: 8pt;
+      padding: 20pt 16pt;
+      border-left: 4pt solid #1E5128;
+    }
+    .toc-number {
+      color: #1E5128;
+      font-size: 28pt;
+      font-weight: bold;
+      margin-bottom: 12pt;
+    }
+    .toc-title {
+      color: #191A19;
+      font-size: 13pt;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    .toc-desc {
+      color: #AAB7B8;
+      font-size: 10pt;
+      margin-top: 8pt;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-bar"></div>
+  <div class="page-title">
+    <h1>목차</h1>
+  </div>
+  <div class="toc-container">
+    <div class="toc-item">
+      <p class="toc-number">01</p>
+      <p class="toc-title">프로젝트 개요</p>
+      <p class="toc-desc">배경, 목적, 범위</p>
+    </div>
+    <div class="toc-item">
+      <p class="toc-number">02</p>
+      <p class="toc-title">추진 전략</p>
+      <p class="toc-desc">방법론, 아키텍처</p>
+    </div>
+    <div class="toc-item">
+      <p class="toc-number">03</p>
+      <p class="toc-title">조직 및 역할</p>
+      <p class="toc-desc">R&R, 투입 인력</p>
+    </div>
+    <div class="toc-item">
+      <p class="toc-number">04</p>
+      <p class="toc-title">프로젝트 일정</p>
+      <p class="toc-desc">마스터 일정</p>
+    </div>
+    <div class="toc-item">
+      <p class="toc-number">05</p>
+      <p class="toc-title">품질/위험 관리</p>
+      <p class="toc-desc">위험 대응</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+content_template:
+  id: basic-feature-icons2
+  name: 아이콘 기능 그리드
+  version: '2.0'
+  source: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 11
+  extracted_at: '2026-01-09T11:10:10.380442'
+design_meta:
+  quality_score: 8.5
+  design_intent: basic-feature-icons
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1980
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-235
+  name: 직사각형 4
+  type: rect
+  z_index: 5
+  geometry:
+    x: 0.7
+    y: 11.7
+    cx: 38.2
+    cy: 32.6
+    original_aspect_ratio: 2.607
+  style:
+    fill:
+      type: solid
+      color: '#b6b6b6'
+      opacity: 1.0
+  text:
+    has_text: true
+- id: shape-236
+  name: 직사각형 6
+  type: rect
+  z_index: 6
+  geometry:
+    x: 0.6
+    y: 4.8
+    cx: 15.7
+    cy: 6.9
+    original_aspect_ratio: 5.094
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 1.0
+  text:
+    has_text: true
+- id: shape-237
+  name: 직사각형 9
+  type: rect
+  z_index: 7
+  geometry:
+    x: 41.5
+    y: 11.7
+    cx: 38.2
+    cy: 32.6
+    original_aspect_ratio: 2.607
+  style:
+    fill:
+      type: solid
+      color: '#b6b6b6'
+      opacity: 1.0
+  text:
+    has_text: true
+- id: shape-238
+  name: 자유형 10
+  type: rectangle
+  z_index: 8
+  geometry:
+    x: 40.0
+    y: 11.6
+    cx: 1.4
+    cy: 3.9
+    original_aspect_ratio: 0.826
+  style:
+    fill:
+      type: solid
+      color: surface
+      opacity: 1.0
+  text:
+    has_text: false
+- id: shape-239
+  name: 자유형 12
+  type: rectangle
+  z_index: 9
+  geometry:
+    x: 40.0
+    y: 4.9
+    cx: 15.5
+    cy: 6.7
+    original_aspect_ratio: 5.131
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 1.0
+  text:
+    has_text: true
+- id: shape-240
+  name: 직사각형 14
+  type: rect
+  z_index: 10
+  geometry:
+    x: 0.7
+    y: 57.9
+    cx: 38.2
+    cy: 32.6
+    original_aspect_ratio: 2.607
+  style:
+    fill:
+      type: solid
+      color: '#b6b6b6'
+      opacity: 1.0
+  text:
+    has_text: true
+- id: shape-241
+  name: 자유형 29
+  type: rectangle
+  z_index: 11
+  geometry:
+    x: 0.6
+    y: 50.6
+    cx: 38.3
+    cy: 7.3
+    original_aspect_ratio: 11.655
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 1.0
+  text:
+    has_text: true
+- id: shape-242
+  name: 직사각형 40
+  type: rect
+  z_index: 12
+  geometry:
+    x: 41.5
+    y: 58.0
+    cx: 38.2
+    cy: 32.6
+    original_aspect_ratio: 2.607
+  style:
+    fill:
+      type: solid
+      color: '#b6b6b6'
+      opacity: 1.0
+  text:
+    has_text: true
+- id: shape-243
+  name: 직사각형 41
+  type: rect
+  z_index: 13
+  geometry:
+    x: 41.4
+    y: 51.2
+    cx: 38.3
+    cy: 6.9
+    original_aspect_ratio: 12.427
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 1.0
+  text:
+    has_text: true
+gaps:
+  global:
+    column_gap: 2.0
+    row_gap: 2.0
+  between_shapes: []
+spatial_relationships: []
+groups: []
+thumbnail: thumbnails/basic-feature-icons2.png
+use_for:
+- 기능 소개
+- 특징 표현
+- 서비스 항목
+- 핵심 가치
+- 이점 설명
+keywords:
+- 아이콘
+- 기능
+- 그리드
+- 특징
+- 이점
+- 순환
+expected_prompt: 아이콘과 텍스트로 표현된 기능/특징 그리드
+prompt_keywords:
+- feature-icons
+- grid
+- 아이콘
+- 기능
+- 그리드

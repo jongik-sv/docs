@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 25pt; left: 40pt; }
+    .header h1 { font-size: 20pt; color: #1E5128; font-weight: bold; }
+    .header-line { width: 50pt; height: 3pt; background: #4E9F3D; margin-top: 6pt; }
+    .content { position: absolute; top: 70pt; left: 40pt; right: 40pt; display: flex; gap: 20pt; }
+    .col { flex: 1; }
+    .col-title { font-size: 13pt; color: #FFFFFF; background: #1E5128; padding: 10pt 15pt; border-radius: 6pt 6pt 0 0; text-align: center; font-weight: bold; }
+    .col-title.alt { background: #4E9F3D; }
+    .col-body { background: #F4F6F6; border-radius: 0 0 6pt 6pt; padding: 15pt; min-height: 250pt; }
+    .scope-item { display: flex; align-items: flex-start; margin-bottom: 12pt; padding-bottom: 12pt; border-bottom: 1pt solid #E5E5E5; }
+    .scope-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .scope-icon { width: 32pt; height: 32pt; background: #1E5128; border-radius: 6pt; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 14pt; font-weight: bold; margin-right: 10pt; flex-shrink: 0; }
+    .scope-icon.alt { background: #4E9F3D; }
+    .scope-text h4 { font-size: 11pt; color: #191A19; font-weight: bold; margin-bottom: 3pt; }
+    .scope-text p { font-size: 9pt; color: #666; line-height: 1.4; }
+    .exclude { opacity: 0.7; }
+    .exclude .scope-icon { background: #AAB7B8; }
+    .footer { position: absolute; bottom: 15pt; right: 40pt; font-size: 9pt; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 15pt; left: 40pt; font-size: 9pt; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>프로젝트 범위</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="content">
+    <div class="col">
+      <div class="col-title">포함 범위 (In-Scope)</div>
+      <div class="col-body">
+        <div class="scope-item">
+          <div class="scope-icon">W</div>
+          <div class="scope-text">
+            <h4>WMS (창고관리시스템)</h4>
+            <p>입출고, 재고관리, 피킹/패킹</p>
+          </div>
+        </div>
+        <div class="scope-item">
+          <div class="scope-icon">T</div>
+          <div class="scope-text">
+            <h4>TMS (배송관리시스템)</h4>
+            <p>배차, 경로최적화, 실시간 추적</p>
+          </div>
+        </div>
+        <div class="scope-item">
+          <div class="scope-icon">O</div>
+          <div class="scope-text">
+            <h4>OMS (주문관리시스템)</h4>
+            <p>주문접수, 할당, 정산</p>
+          </div>
+        </div>
+        <div class="scope-item">
+          <div class="scope-icon">D</div>
+          <div class="scope-text">
+            <h4>Dashboard (통합모니터링)</h4>
+            <p>실시간 현황, KPI, 리포트</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-title alt">제외 범위 (Out-of-Scope)</div>
+      <div class="col-body">
+        <div class="scope-item exclude">
+          <div class="scope-icon">$</div>
+          <div class="scope-text">
+            <h4>회계 시스템</h4>
+            <p>인터페이스만 개발</p>
+          </div>
+        </div>
+        <div class="scope-item exclude">
+          <div class="scope-icon">H</div>
+          <div class="scope-text">
+            <h4>HR 시스템</h4>
+            <p>인터페이스만 개발</p>
+          </div>
+        </div>
+        <div class="scope-item exclude">
+          <div class="scope-icon">E</div>
+          <div class="scope-text">
+            <h4>기존 ERP 시스템</h4>
+            <p>인터페이스만 개발</p>
+          </div>
+        </div>
+        <div class="scope-item">
+          <div class="scope-icon alt">!</div>
+          <div class="scope-text">
+            <h4>핵심 모듈</h4>
+            <p><strong>4개 핵심 모듈</strong> 신규 개발<br>외부 시스템은 연동만 진행</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">7 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

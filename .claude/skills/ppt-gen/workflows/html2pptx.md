@@ -4,11 +4,341 @@
 
 > **v3.0 Update**: 테마와 컨텐츠가 분리되었습니다. PPT 생성 시 먼저 테마를 선택합니다.
 
+---
+
+## ⚠️ MANDATORY EXECUTION RULES (v5.8)
+
+**이 섹션은 PPT 생성 시 반드시 따라야 하는 실행 규칙입니다. 건너뛰면 안 됩니다.**
+
+### 파이프라인 시작 전 필수 체크리스트
+
+```
+□ Step 0: 사전 질문 (MUST NOT SKIP)
+  ├─ □ 청중 확인 (경영진/실무자/혼합)
+  ├─ □ 발표 시간 확인 (10분/20-30분/1시간+)
+  └─ □ 강조점 확인 (기술/일정/팀/균형)
+
+□ Step 1: 테마 선택 (MUST NOT SKIP)
+  └─ □ 테마 목록 표시 후 사용자 선택 받기
+```
+
+**위 체크리스트를 건너뛰고 바로 슬라이드 생성을 시작하면 안 됩니다.**
+
+### Stage별 필수 호출 규칙
+
+| Stage | 필수 호출 | 저장 필드 |
+|-------|----------|----------|
+| **Stage 1** | 사전 질문 → 테마 선택 | `setup.presentation`, `setup.theme` |
+| **Stage 2** | 아웃라인 작성 | slides[].`title`, `purpose`, `key_points` |
+| **Stage 3** | 템플릿 매칭 + **아이콘 결정** | slides[].`template_id`, `match_score`, `icon_decision` |
+| **Stage 4** | **아이콘 생성** + HTML 생성 | slides[].`html_file`, `content_bindings`, `assets_generated` |
+| **Stage 5** | PPTX 변환 + **디자인 정보 추출** | slides[].`generated`, `design_info`, `evaluation` |
+
+### Stage 3: 아이콘 결정 (MANDATORY)
+
+**템플릿 매칭 후 반드시 아이콘 필요성을 판단합니다.**
+
+```javascript
+// 필수 호출
+const { analyzeIconNeed } = require('./scripts/icon-decision');
+const iconMappings = loadYaml('templates/assets/icon-mappings.yaml');
+
+for (const slide of slides) {
+  const iconDecision = analyzeIconNeed(slide, template, iconMappings);
+  await session.updateSlide(slide.index, { icon_decision: iconDecision });
+}
+```
+
+**아이콘 적합 슬라이드 유형**: grid, feature, stats, process, comparison
+
+### Stage 4: 아이콘 생성 및 HTML 삽입 (MANDATORY)
+
+**`icon_decision.needs_icons === true`인 슬라이드는 아이콘을 생성해야 합니다.**
+
+```javascript
+// 필수 호출
+const { resolveIcons, insertIconsToHtml } = require('./scripts/icon-resolver');
+
+if (slide.icon_decision?.needs_icons) {
+  const icons = await resolveIcons(slide, slide.icon_decision, theme, outputDir);
+  const updatedHtml = insertIconsToHtml(htmlContent, icons.icons);
+
+  await session.updateSlide(slide.index, {
+    assets_generated: { icons: icons.icons, images: [] }
+  });
+}
+```
+
+**아이콘 생성 결과**: `output/{session-id}/icons/*.png`
+
+### Stage 5: 디자인 정보 및 평가 (MANDATORY)
+
+**PPTX 변환 후 각 슬라이드에 다음을 기록합니다.**
+
+```javascript
+// 필수 기록
+await session.updateSlide(slide.index, {
+  generated: true,
+  slide_stage: 5,
+  revision: 0,
+  design_info: extractDesignInfo(htmlContent, slide),
+  evaluation: evaluateDesign(htmlContent, slide, template)
+});
+```
+
+### 품질 합격 기준 (PASS CRITERIA)
+
+| 항목 | 기준 | 불합격 시 조치 |
+|------|------|---------------|
+| **슬라이드 평가 점수** | **85점 이상** | Stage 3 롤백 → 템플릿 재매칭 → 재생성 |
+| 아이콘 적용 | 필수 슬라이드 100% | icon-resolver 재실행 |
+| 콘텐츠 바인딩 | 모든 필드 채워짐 | content_bindings 보완 |
+
+**불합격 슬라이드 처리**:
+```
+evaluation.score < 85 ?
+  → slide_stage = 3 으로 롤백
+  → 해당 슬라이드만 Stage 3 → 4 → 5 재진행
+  → 재평가 (최대 3회 반복)
+```
+
+### 데이터 누적 규칙 (CRITICAL)
+
+**stage-N.json은 반드시 stage-1부터 stage-N까지의 모든 데이터를 포함해야 합니다.**
+
+```
+stage-5-generation.json 필수 포함 필드:
+├── session (id, title, status, created_at, updated_at)
+├── current_stage: 5
+├── setup (presentation, theme)
+├── slides[] 각 슬라이드:
+│   ├── Stage 2: index, title, purpose, key_points
+│   ├── Stage 3: template_id, match_score, icon_decision
+│   ├── Stage 4: html_file, content_bindings, assets_generated
+│   └── Stage 5: generated, design_info, evaluation, slide_stage, revision
+└── output (pptx_file, method, generated_at)
+```
+
+**검증**: Stage 5 저장 전 모든 슬라이드에 위 필드가 존재하는지 확인
+
+---
+
+## Stage JSON 저장 규칙 (MANDATORY)
+
+**PPT 생성 파이프라인은 5단계로 진행되며, 각 단계 완료 시 JSON 파일을 저장합니다.**
+
+### 핵심 원칙: 누적 저장
+
+**각 stage-N.json은 반드시 stage-1부터 stage-N까지의 모든 데이터를 포함해야 합니다.**
+
+```
+output/{session-id}/
+├── stage-1-setup.json      # session + setup
+├── stage-2-outline.json    # session + setup + slides(outline)
+├── stage-3-matching.json   # session + setup + slides(outline + matching)
+├── stage-4-content.json    # session + setup + slides(outline + matching + content)
+├── stage-5-generation.json # session + setup + slides(전체) + output
+├── slides/                 # HTML 파일들
+└── output.pptx             # 최종 결과물
+```
+
+### 단계별 필수 포함 데이터
+
+| Stage | 파일명 | 필수 포함 데이터 |
+|-------|-------|----------------|
+| 1 | stage-1-setup.json | `session`, `setup` (theme, presentation) |
+| 2 | stage-2-outline.json | 위 + `slides[]` (index, title, purpose, key_points, speaker_notes) |
+| 3 | stage-3-matching.json | 위 + slides에 `template_id`, `match_score`, `match_reason`, `layout` 추가 |
+| 4 | stage-4-content.json | 위 + slides에 `html_file`, `assets`, `content_bindings` 추가 (v5.3) |
+| 5 | stage-5-generation.json | 위 + slides에 `generated`, `design_info`, `slide_stage`, `revision` 추가, `output` 섹션 (v5.3) |
+
+### 올바른 예시 (stage-3-matching.json)
+
+```json
+{
+  "session": {
+    "id": "2026-01-09_100000_a1b2c3d4",
+    "title": "프로젝트 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T10:00:00Z",
+    "updated_at": "2026-01-09T10:10:00Z"
+  },
+  "current_stage": 3,
+  "setup": {
+    "presentation": { "title": "...", "audience": "혼합" },
+    "theme": { "id": "deepgreen", "colors": { "primary": "#1E5128" } }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "표지",
+      "purpose": "cover",
+      "key_points": ["제목", "날짜"],
+      "speaker_notes": "프로젝트 소개",
+      "template_id": "deepgreen-cover-centered1",
+      "match_score": 0.95,
+      "match_reason": "cover 카테고리 정확 매칭"
+    }
+  ]
+}
+```
+
+### 잘못된 예시 (현재 문제)
+
+```json
+{
+  "stage": 3,
+  "slides": [
+    {
+      "index": 0,
+      "template_id": "deepgreen-cover-centered1"
+    }
+  ]
+}
+```
+
+**문제점**: `session`, `setup` 누락, slides에 `title`, `purpose`, `key_points` 누락
+
+### 단계 전환 시 데이터 병합
+
+각 단계 시작 시:
+
+1. **이전 단계 JSON 로드**: `Read stage-{N-1}-*.json`
+2. **데이터 확장**: 각 슬라이드에 새 필드 추가
+3. **누적 저장**: 전체 데이터를 `stage-{N}-*.json`에 저장
+
+```python
+# 개념적 예시
+previous = read_json('stage-2-outline.json')
+
+for slide in previous['slides']:
+    slide['template_id'] = matched_template
+    slide['match_score'] = score
+    slide['match_reason'] = reason
+
+previous['current_stage'] = 3
+write_json('stage-3-matching.json', previous)
+```
+
+### 세션 재개 지원
+
+중단된 세션 재개 시:
+
+1. 가장 최신 stage-N.json 파일 확인
+2. 해당 파일에 모든 이전 데이터가 포함되어 있으므로 즉시 재개 가능
+3. 다음 단계부터 진행
+
+---
+
+## CRITICAL: 스크린캡처 방식 금지
+
+**슬라이드 전체를 스크린캡처해서 PPT에 이미지로 삽입하는 것은 절대 금지입니다.**
+
+### 금지 사항
+
+- Playwright/Puppeteer로 HTML 페이지 전체를 스크린샷 캡처
+- 슬라이드를 1920x1080 등 Full HD 이미지로 변환
+- `stage-5-generation.json`에 `"method": "screenshot"` 사용
+- 슬라이드 1장당 이미지 1개로 변환하는 모든 방식
+
+### 필수 사항
+
+- 반드시 `html2pptx.js` 스크립트를 사용하여 HTML 요소를 개별 PPT 오브젝트로 변환
+- 텍스트 → 텍스트 상자 (편집 가능)
+- 이미지 → 이미지 오브젝트
+- 도형 → 도형 오브젝트
+- SVG만 예외적으로 PNG 래스터라이즈 허용 (개별 SVG 요소만, 전체 페이지 X)
+
+### 올바른 변환 명령
+
+```bash
+node .claude/skills/ppt-gen/scripts/html2pptx.js slides/ output.pptx
+```
+
+### 검증 방법
+
+```bash
+# PPTX 내 이미지 크기 확인
+unzip -l output.pptx | grep media/
+file /tmp/extracted/ppt/media/*.png
+
+# 1920x1080 등 슬라이드 크기 이미지가 있으면 잘못된 것
+# stage-5-generation.json의 method가 "html2pptx"여야 함
+```
+
+---
+
 ## Triggers
 
 - "PPT 만들어줘"
 - "프레젠테이션 생성해줘"
 - "슬라이드 만들어줘"
+
+## Pre-Generation Questions (MANDATORY - 사전 질문)
+
+**PPT 생성 시작 전 반드시 다음 정보를 확인해야 합니다.**
+
+### Step P.1: 사전 질문 (AskUserQuestion 도구 사용)
+
+다음 3가지 질문을 **AskUserQuestion** 도구로 한 번에 물어봅니다:
+
+```json
+{
+  "questions": [
+    {
+      "question": "발표 대상(청중)은 누구인가요?",
+      "header": "청중",
+      "options": [
+        {"label": "경영진/스폰서", "description": "고위 의사결정자, 핵심 요약 중심"},
+        {"label": "발주기관 담당자", "description": "프로젝트 실무자, 상세 내용 포함"},
+        {"label": "내부 팀원", "description": "프로젝트 수행 팀, 실무 중심"},
+        {"label": "혼합 (경영진+실무자)", "description": "착수보고 등 공식 발표"}
+      ],
+      "multiSelect": false
+    },
+    {
+      "question": "발표 시간은 얼마나 되나요?",
+      "header": "시간",
+      "options": [
+        {"label": "10분 내외", "description": "핵심 요약만 (8-10장)"},
+        {"label": "20-30분", "description": "주요 내용 상세 (15-20장)"},
+        {"label": "1시간 이상", "description": "전체 내용 포함 (25장+)"}
+      ],
+      "multiSelect": false
+    },
+    {
+      "question": "강조하고 싶은 핵심 포인트가 있나요?",
+      "header": "강조점",
+      "options": [
+        {"label": "기술 아키텍처", "description": "MSA, 클라우드, AI/ML 등"},
+        {"label": "프로젝트 일정", "description": "마일스톤, 단계별 계획"},
+        {"label": "팀 및 역할", "description": "조직 구성, R&R"},
+        {"label": "전체 균형", "description": "모든 섹션 동등하게"}
+      ],
+      "multiSelect": false
+    }
+  ]
+}
+```
+
+### Step P.2: 응답 기반 슬라이드 구성 결정
+
+| 청중 | 시간 | 슬라이드 수 | 상세도 |
+|------|------|------------|--------|
+| 경영진/스폰서 | 10분 | 8-10장 | 핵심 요약, 비주얼 중심 |
+| 경영진/스폰서 | 20-30분 | 12-15장 | 주요 내용 + 요약 |
+| 발주기관 담당자 | 20-30분 | 15-20장 | 상세 내용 포함 |
+| 혼합 | 20-30분 | 15-20장 | 균형 잡힌 구성 |
+| 내부 팀원 | 1시간+ | 25장+ | 전체 상세 내용 |
+
+### Step P.3: 강조점 반영
+
+- **기술 아키텍처**: 아키텍처 다이어그램, 기술 스택 슬라이드 추가
+- **프로젝트 일정**: 타임라인, 마일스톤 슬라이드 강조
+- **팀 및 역할**: 조직도, R&R 슬라이드 상세화
+- **전체 균형**: 모든 섹션 동등 비중
+
+---
 
 ## Theme Selection (MANDATORY - 테마 선택)
 
@@ -261,7 +591,7 @@ expected_prompt: |
 | `ooxml` | OOXML fragment 직접 사용 | 좌표/색상만 치환 후 slide.xml에 삽입 |
 | `svg` | SVG → OOXML 변환 | `<a:custGeom>` path로 변환 |
 | `reference` | 참조 대상 로드 | Object 파일에서 OOXML 복사 |
-| `html` | HTML → 이미지 변환 | 스크린샷 후 이미지로 삽입 |
+| `html` | html2pptx.js 변환 | 개별 HTML 요소를 PPT 오브젝트로 변환 (스크린샷 금지) |
 | `description` | LLM 생성 또는 HTML 변환 | 자연어 설명 기반 생성 |
 
 **1. OOXML 타입 처리** (`shape_source: ooxml`):
@@ -373,8 +703,8 @@ def render_description_shape(shape, theme, target_canvas):
   ├── svg ────────► SVG → OOXML 변환
   │                  └── <a:custGeom> 생성
   │
-  ├── html ───────► HTML 렌더링 → 이미지
-  │                  └── 이미지로 삽입
+  ├── html ───────► html2pptx.js 처리
+  │                  └── 개별 요소를 PPT 오브젝트로 변환 (스크린샷 금지)
   │
   └── description ► HTML/CSS 생성
                      └── html2pptx 처리
@@ -587,6 +917,72 @@ Read .claude/skills/ppt-gen/html2pptx.md (전체 파일)
 - `class="placeholder"`: 차트/테이블 영역
 - 그라디언트/아이콘은 PNG로 먼저 래스터라이즈
 
+### 2.5 Content Bindings 기록 (v5.3 NEW)
+
+**HTML 생성 시 사용된 콘텐츠 구조를 `content_bindings`에 기록합니다.**
+
+이 단계는 슬라이드 재사용, 템플릿 학습, 수정 루프에 필수입니다.
+
+#### Step 4.5.1: content_bindings 구조
+
+```json
+{
+  "index": 3,
+  "title": "프로젝트 기본 정보",
+  "purpose": "stats",
+  "template_id": "basic-stats-cards",
+  "html_file": "slides/slide-004-info.html",
+  "content_bindings": {
+    "title": "프로젝트 기본 정보",
+    "subtitle": null,
+    "items": [
+      { "number": "01", "title": "발주기관", "description": "(주)글로벌물류" },
+      { "number": "02", "title": "수행사", "description": "(주)테크솔루션" },
+      { "number": "03", "title": "계약금액", "description": "15억원" },
+      { "number": "04", "title": "계약기간", "description": "12개월" }
+    ],
+    "footer": {
+      "page_number": "4",
+      "project_name": "스마트 물류관리 시스템"
+    }
+  }
+}
+```
+
+#### Step 4.5.2: 콘텐츠 타입별 바인딩
+
+| 슬라이드 유형 | content_bindings 구조 |
+|--------------|----------------------|
+| **cover** | `title`, `subtitle`, `date`, `company` |
+| **toc** | `title`, `items[{number, title}]` |
+| **section** | `title`, `section_number`, `key_points[]` |
+| **stats** | `title`, `items[{number, title, description, value}]` |
+| **grid** | `title`, `items[{title, description, icon, features[]}]` |
+| **comparison** | `title`, `columns[{header, items[]}]` |
+| **timeline** | `title`, `items[{period, title, description}]` |
+| **process** | `title`, `steps[{number, title, description}]` |
+| **table** | `title`, `table{headers[], rows[][]}` |
+| **hierarchy** | `title`, `root{title, children[{title, children[]}]}` |
+| **closing** | `title`, `contact{name, title, email}` |
+
+#### Step 4.5.3: content_bindings 생성 시점
+
+```
+HTML 생성 시
+  │
+  ├── 원본 콘텐츠 분석 (key_points, 소스 문서)
+  │
+  ├── HTML 요소 생성
+  │
+  └── content_bindings 동시 기록  ← 이 시점!
+      │
+      └── stage-4-content.json에 저장
+```
+
+**중요**: HTML에 렌더링된 모든 텍스트/데이터가 content_bindings에 구조화되어야 합니다.
+
+---
+
 ### 3. Convert to PowerPoint
 
 ```javascript
@@ -619,6 +1015,413 @@ python scripts/thumbnail.py output.pptx workspace/thumbnails --cols 4
 - **대비 문제**: 배경과 텍스트 대비 부족
 
 문제 발견 시 HTML 수정 후 재생성.
+
+---
+
+### 4.5 Design Info 추출 (v5.3 NEW)
+
+**PPTX 변환 완료 후, 슬라이드별 디자인 정보를 `design_info`에 기록합니다.**
+
+이 정보는 템플릿 학습, 디자인 재사용, 문서화에 활용됩니다.
+
+#### Step 5.3.1: design_info 구조
+
+```json
+{
+  "index": 8,
+  "title": "핵심 추진 전략",
+  "design_info": {
+    "layout": {
+      "type": "grid",
+      "grid": { "columns": 3, "rows": 1, "column_weights": [1, 1, 1] },
+      "direction": "horizontal"
+    },
+    "zones": [
+      {
+        "id": "title-zone",
+        "role": "slide_title",
+        "geometry": { "x": 36, "y": 20, "cx": 648, "cy": 40 },
+        "placeholder_type": "TITLE"
+      },
+      {
+        "id": "content-zone",
+        "role": "main_content",
+        "geometry": { "x": 36, "y": 80, "cx": 648, "cy": 280 },
+        "placeholder_type": "BODY",
+        "element_type": "card-grid",
+        "element_count": 3
+      },
+      {
+        "id": "footer-zone",
+        "role": "footer",
+        "geometry": { "x": 36, "y": 380, "cx": 648, "cy": 20 }
+      }
+    ],
+    "shapes_summary": {
+      "total_count": 12,
+      "by_type": { "rectangle": 6, "text_box": 4, "circle": 2 },
+      "patterns": [
+        { "type": "numbered_card", "count": 3, "elements": ["number_circle", "title_text", "description_text", "features_list"] }
+      ]
+    },
+    "color_tokens": {
+      "primary": "#002452",
+      "secondary": "#C51F2A",
+      "accent": "#4B6580",
+      "background": "#FFFFFF",
+      "dark_text": "#262626",
+      "light": "#FFFFFF"
+    },
+    "typography": {
+      "slide_title": { "font_size_pt": 24, "font_weight": "bold", "font_color": "#002452" },
+      "card_title": { "font_size_pt": 14, "font_weight": "bold", "font_color": "#262626" },
+      "body": { "font_size_pt": 11, "font_weight": "normal", "font_color": "#262626", "line_height": 1.4 }
+    },
+    "spacing": {
+      "slide_margin": { "top": 20, "right": 36, "bottom": 25, "left": 36 },
+      "section_gap": 24,
+      "item_gap": 16,
+      "card_padding": 12
+    },
+    "constraints": {
+      "max_items": 4,
+      "min_items": 2,
+      "title_max_chars": 30,
+      "description_max_lines": 3
+    },
+    "visual_properties": {
+      "balance": "symmetric",
+      "hierarchy": 3,
+      "emphasis_style": "numbered"
+    }
+  }
+}
+```
+
+#### Step 5.3.2: design_info 추출 대상
+
+| 필드 | 추출 대상 | 설명 |
+|------|----------|------|
+| **layout** | HTML 구조 | grid/radial/sequential/freeform/split |
+| **zones** | HTML 영역 | 각 콘텐츠 영역의 역할과 위치 |
+| **shapes_summary** | HTML 요소 | 도형 개수, 타입별 분류, 패턴 |
+| **color_tokens** | CSS 색상 | 사용된 색상 토큰 매핑 |
+| **typography** | CSS 폰트 | 타이포그래피 정보 |
+| **spacing** | CSS 간격 | 마진, 패딩, 갭 |
+| **constraints** | 콘텐츠 | 최대/최소 아이템, 문자 수 제한 |
+| **visual_properties** | 전체 | 균형, 계층, 강조 스타일 |
+
+#### Step 5.3.3: 수정 루프 지원 (v5.3 NEW)
+
+개별 슬라이드만 수정하는 경우를 지원합니다:
+
+```json
+{
+  "index": 5,
+  "slide_stage": 5,      // 현재 스테이지 (2~5)
+  "revision": 0,         // 수정 횟수 (0 = 최초 생성)
+  "revision_history": [] // 선택적: 수정 이력
+}
+```
+
+**수정 루프 시나리오**:
+
+```
+전체 생성 완료 (모든 slides[].slide_stage = 5)
+        │
+        ▼
+5번 슬라이드 수정 요청: "템플릿 바꿔줘"
+        │
+        ▼
+slides[5].slide_stage = 3 (Matching 단계로 롤백)
+slides[5].revision = 1
+        │
+        ▼
+5번만 Stage 3 → 4 → 5 진행
+        │
+        ▼
+slides[5].slide_stage = 5
+slides[5].revision_history = [
+  { "revision": 0, "template_id": "old-template", "timestamp": "...", "reason": "초기 생성" },
+  { "revision": 1, "template_id": "new-template", "timestamp": "...", "reason": "사용자 요청" }
+]
+```
+
+#### Step 5.3.4: design_info 생성 시점
+
+```
+PPTX 변환 완료 (html2pptx.js)
+        │
+        ├── 각 슬라이드 HTML 분석
+        │   ├── DOM 구조 → layout 추출
+        │   ├── CSS → typography, spacing, colors 추출
+        │   └── 요소 수 → shapes_summary 추출
+        │
+        └── design_info 기록
+            │
+            └── stage-5-generation.json에 저장
+```
+
+**중요**: design_info는 PPTX 변환 성공 후에만 기록됩니다 (`generated: true` 슬라이드만).
+
+### 5. HTML 작성 규칙 (CRITICAL)
+
+**html2pptx.js에서 지원되지 않는 태그가 있습니다. 반드시 대체 방법을 사용하세요.**
+
+#### 5.1 지원되지 않는 태그
+
+| 태그 | 상태 | 대체 방법 |
+|------|------|----------|
+| `<table>`, `<tr>`, `<td>`, `<th>` | ❌ 미지원 | `<div>` + display: flex |
+| `<span>` (텍스트 포함) | ❌ 변환 안 됨 | `<p>` 또는 `<div><p>` |
+
+**표 레이아웃 예시**:
+```html
+<!-- ❌ 잘못된 방법 (변환 안 됨) -->
+<table>
+  <tr><th>구분</th><th>내용</th></tr>
+  <tr><td>PM</td><td>관리</td></tr>
+</table>
+
+<!-- ✅ 올바른 방법 -->
+<div class="table-row header">
+  <div class="cell"><p>구분</p></div>
+  <div class="cell"><p>내용</p></div>
+</div>
+<div class="table-row">
+  <div class="cell"><p>PM</p></div>
+  <div class="cell"><p>관리</p></div>
+</div>
+
+<style>
+.table-row { display: flex; }
+.table-row.header { background: #002452; }
+.table-row.header .cell p { color: white; }
+.cell { flex: 1; padding: 10pt 8pt; }
+</style>
+```
+
+#### 5.2 지원되는 태그
+
+| 태그 | 용도 |
+|------|------|
+| `<div>` | 배경, 테두리, 그림자 (shape) |
+| `<p>`, `<h1>`-`<h6>` | 텍스트 |
+| `<ul>`, `<ol>`, `<li>` | 리스트 |
+| `<img>` | 이미지 |
+| `<svg>` | 벡터 (PNG로 래스터라이즈) |
+
+---
+
+### 6. HTML 검증 및 수정 (필수)
+
+HTML 슬라이드 생성 후 **반드시** 다음 검증을 수행하고 문제 발견 시 수정합니다.
+
+#### 6.1 검증 체크리스트
+
+모든 슬라이드에 대해 다음을 확인:
+
+| 검증 항목 | 기준 | 수정 방법 |
+|----------|------|----------|
+| **색상 대비** | 어두운 배경 + 밝은 텍스트 또는 그 반대 | rgba 투명 배경 → 불투명 solid 색상 |
+| **오버플로우** | 720pt × 405pt 내 | 폰트 크기 축소, 마진 조정 |
+| **CSS 클래스** | 정의 ↔ 사용 일치 | 누락 클래스 추가 |
+| **태그 규칙** | 텍스트는 `<p>`, `<h1-6>` 내에만 | wrapper 태그 추가 |
+| **콘텐츠 누락** | 원본 데이터와 비교 | 누락된 콘텐츠 추가 |
+
+#### 6.2 색상 대비 검사 규칙
+
+**문제 패턴 감지**:
+```css
+/* 문제: 투명 배경에 밝은 텍스트 */
+.element { background: rgba(183,208,212,0.1); }
+.element span { color: white; }
+
+/* 수정: solid 어두운 배경으로 변경 */
+.element { background: #002452; }
+```
+
+**테마 색상 활용** (동국시스템즈 기준):
+- 어두운 배경: `#002452`, `#4B6580`, `#C51F2A`
+- 밝은 텍스트: `white`, `#FFFFFF`
+- 밝은 배경: `#FFFFFF`, `#F8F9FA`
+- 어두운 텍스트: `#262626`, `#002452`
+
+**검사 명령어**:
+```bash
+# 투명 배경 찾기 (rgba 알파값 0.0~0.2)
+grep -n "rgba.*0\.[0-2])" slides/*.html
+
+# 밝은 텍스트 찾기
+grep -n "color:\s*white\|color:\s*#fff" slides/*.html
+```
+
+#### 6.3 검증/수정 루프 (최대 3회)
+
+```
+HTML 생성 완료
+    ↓
+[1] 모든 HTML 파일 읽기
+    ↓
+[2] 각 슬라이드 검증:
+    - rgba 배경 + white/light 텍스트 조합 찾기
+    - overflow 확인
+    - CSS 클래스 일치 확인
+    - 콘텐츠 누락 확인
+    ↓
+[3] 문제 발견? ─No→ PPTX 변환 진행
+    ↓ Yes
+[4] 문제 수정 (Edit 도구 사용)
+    ↓
+[5] 재검증 (최대 3회 반복)
+    ↓
+수정 불가 → 사용자에게 보고
+```
+
+**CRITICAL**: PPTX 변환 전 반드시 이 검증 단계를 수행해야 합니다.
+
+---
+
+### 6.5 디자인 평가 루프 (v5.7 NEW)
+
+**기술 검증 통과 후, LLM이 디자인 품질을 평가하고 불합격 시 재매칭합니다.**
+
+#### 6.5.1 평가 기준 (100점 만점)
+
+| 카테고리 | 배점 | 평가 항목 |
+|---------|-----|----------|
+| **레이아웃** | 25점 | 정렬 일관성(10), 여백 균형(8), 시각적 균형(7) |
+| **타이포그래피** | 20점 | 가독성(10), 계층 구조(5), 줄간격/자간(5) |
+| **색상** | 20점 | 대비(10), 조화(5), 강조 적절성(5) |
+| **콘텐츠 적합성** | 25점 | 템플릿 매칭(15), 정보량(10) |
+| **시각 요소** | 10점 | 아이콘/이미지(5), 장식 요소(5) |
+
+#### 6.5.2 합격/불합격 기준
+
+| 점수 | 결과 |
+|-----|------|
+| **70점 이상** | 합격 → Stage 5 진행 |
+| **70점 미만** | 불합격 → 재매칭 |
+
+#### 6.5.3 자동 불합격 (Critical Failures)
+
+점수와 관계없이 불합격:
+- `overflow`: 텍스트/요소가 720x405pt 초과
+- `contrast_failure`: 대비 4.5:1 미만 (WCAG AA 미달)
+- `element_count_mismatch`: 템플릿과 콘텐츠 수 차이 2개 이상
+- `content_missing`: title, key_points 미표시
+
+#### 6.5.4 평가 루프 흐름
+
+```
+기술 검증 통과 (6.3)
+    │
+    ▼
+디자인 평가 (attempt = 1)
+    │
+    ├─ 합격 (≥70) ─────────────────► Stage 5: PPTX 변환
+    │
+    └─ 불합격 (<70 또는 Critical)
+           │
+           ▼
+       attempt < 3?
+           │
+           ├─ Yes → 재매칭 (실패 템플릿 제외)
+           │            │
+           │            └───► HTML 재생성 → 기술 검증 → 디자인 평가 (attempt++)
+           │
+           └─ No → 최고 점수 디자인 선택 (best_of_3)
+                       │
+                       ▼
+                   Stage 5: PPTX 변환
+```
+
+#### 6.5.5 평가 모듈 사용
+
+```javascript
+const evaluator = require('./scripts/design-evaluator');
+const rematcher = require('./scripts/template-rematcher');
+
+// 단일 슬라이드 평가
+const result = await evaluator.evaluate({
+  html: htmlContent,
+  slide: slideData,
+  template: templateInfo,
+  theme: themeColors
+});
+
+// 불합격 시 재매칭
+if (!result.passed) {
+  const failedTemplates = [slideData.template_id];
+  const alternative = rematcher.selectAlternative(slideData, failedTemplates, registry);
+
+  if (alternative) {
+    // 새 템플릿으로 HTML 재생성
+    slideData.template_id = alternative.id;
+    // ... HTML 재생성 로직
+  }
+}
+```
+
+#### 6.5.6 세션 저장
+
+```javascript
+const session = await SessionManager.resume(sessionId);
+
+// 평가 결과 저장
+await session.saveEvaluation(slideIndex, evaluation);
+
+// 재매칭 위한 리셋
+await session.resetForRematching(slideIndex);
+
+// 3회 실패 시 최고 점수 선택
+await session.finalizeBestOf3(slideIndex, bestAttempt);
+```
+
+#### 6.5.7 슬라이드별 평가 데이터
+
+```json
+{
+  "slides[i]": {
+    "evaluation": {
+      "attempt_number": 2,
+      "current_score": 78,
+      "passed": true,
+      "selected_reason": "passed",
+      "details": {
+        "layout": { "score": 22, "max": 25, "issues": [] },
+        "typography": { "score": 18, "max": 20, "issues": [] },
+        "color": { "score": 17, "max": 20, "issues": [] },
+        "content_fit": { "score": 15, "max": 25, "issues": [] },
+        "visual": { "score": 6, "max": 10, "issues": [] }
+      },
+      "critical_failures": null
+    },
+    "attempt_history": [
+      {
+        "attempt": 1,
+        "template_id": "deepgreen-feature-cards1",
+        "score": 52,
+        "passed": false,
+        "critical_failures": ["element_count_mismatch"],
+        "issues": ["4개 카드 템플릿에 6개 콘텐츠"],
+        "timestamp": "2026-01-09T14:30:00Z"
+      }
+    ]
+  }
+}
+```
+
+#### 6.5.8 selected_reason 값
+
+| 값 | 설명 |
+|----|------|
+| `passed` | 70점 이상 합격 |
+| `best_of_3` | 3회 실패 후 최고 점수 선택 |
+
+**CRITICAL**: 평가 루프를 건너뛰지 마세요. 모든 슬라이드는 반드시 평가를 거쳐야 합니다.
+
+---
 
 ## Layout Tips
 

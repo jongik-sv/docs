@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .milestone-container { position: absolute; top: 110px; left: 50px; right: 50px; }
+    .milestone-line { position: absolute; top: 30px; left: 40px; right: 40px; height: 4px; background: #D8E9A8; }
+    .milestones { display: flex; justify-content: space-between; position: relative; }
+    .milestone { text-align: center; width: 130px; }
+    .milestone-dot { width: 60px; height: 60px; background: #1E5128; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; color: #FFFFFF; font-size: 18px; font-weight: bold; border: 4px solid #D8E9A8; }
+    .milestone-date { font-size: 12px; color: #4E9F3D; font-weight: bold; margin-bottom: 4px; }
+    .milestone-title { font-size: 13px; color: #191A19; font-weight: bold; margin-bottom: 4px; }
+    .milestone-desc { font-size: 11px; color: #666; line-height: 1.3; }
+    .deliverables { position: absolute; bottom: 60px; left: 50px; right: 50px; }
+    .deliverables-title { font-size: 14px; color: #1E5128; font-weight: bold; margin-bottom: 12px; }
+    .deliverables-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .deliverable { background: #F4F6F6; padding: 12px 15px; border-radius: 6px; display: flex; align-items: center; gap: 10px; }
+    .deliverable-icon { width: 30px; height: 30px; background: #4E9F3D; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 14px; }
+    .deliverable-text { font-size: 12px; color: #191A19; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>주요 마일스톤</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="milestone-container">
+    <div class="milestone-line"></div>
+    <div class="milestones">
+      <div class="milestone">
+        <div class="milestone-dot">M1</div>
+        <p class="milestone-date">1/10</p>
+        <p class="milestone-title">착수보고</p>
+        <p class="milestone-desc">수행계획서</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-dot">M2</div>
+        <p class="milestone-date">3/31</p>
+        <p class="milestone-title">요구사항 확정</p>
+        <p class="milestone-desc">요구사항정의서</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-dot">M3</div>
+        <p class="milestone-date">5/31</p>
+        <p class="milestone-title">설계 완료</p>
+        <p class="milestone-desc">설계서 일체</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-dot">M4</div>
+        <p class="milestone-date">9/30</p>
+        <p class="milestone-title">개발 완료</p>
+        <p class="milestone-desc">소스코드</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-dot">M5</div>
+        <p class="milestone-date">11/15</p>
+        <p class="milestone-title">테스트 완료</p>
+        <p class="milestone-desc">테스트결과서</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-dot">M6</div>
+        <p class="milestone-date">12/1</p>
+        <p class="milestone-title">시스템 오픈</p>
+        <p class="milestone-desc">오픈보고서</p>
+      </div>
+    </div>
+  </div>
+  <div class="deliverables">
+    <p class="deliverables-title">마일스톤별 주요 산출물</p>
+    <div class="deliverables-grid">
+      <div class="deliverable">
+        <div class="deliverable-icon">&#128196;</div>
+        <span class="deliverable-text">착수/완료 보고서</span>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">&#128221;</div>
+        <span class="deliverable-text">요구사항정의서</span>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">&#128736;</div>
+        <span class="deliverable-text">설계서 일체</span>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">&#128187;</div>
+        <span class="deliverable-text">소스코드</span>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">&#9989;</div>
+        <span class="deliverable-text">테스트결과서</span>
+      </div>
+      <div class="deliverable">
+        <div class="deliverable-icon">&#128218;</div>
+        <span class="deliverable-text">운영자매뉴얼</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">17 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

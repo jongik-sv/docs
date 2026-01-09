@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .cards-container { position: absolute; top: 110px; left: 50px; right: 50px; display: flex; gap: 25px; }
+    .strategy-card { flex: 1; background: #F4F6F6; border-radius: 12px; padding: 25px; border-left: 5px solid #1E5128; }
+    .card-num { width: 40px; height: 40px; background: #1E5128; color: #FFFFFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; margin-bottom: 15px; }
+    .card-title { font-size: 18px; color: #1E5128; font-weight: bold; margin-bottom: 12px; }
+    .card-subtitle { font-size: 13px; color: #4E9F3D; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #DDD; }
+    .card-features { list-style: none; }
+    .card-features li { font-size: 13px; color: #666; margin-bottom: 10px; padding-left: 20px; position: relative; line-height: 1.4; }
+    .card-features li::before { content: ''; position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background: #4E9F3D; border-radius: 50%; }
+    .core-value { position: absolute; bottom: 60px; left: 50px; right: 50px; background: #D8E9A8; padding: 15px 25px; border-radius: 8px; text-align: center; }
+    .core-value p { font-size: 14px; color: #1E5128; font-weight: bold; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>핵심 추진 전략</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="cards-container">
+    <div class="strategy-card">
+      <div class="card-num">1</div>
+      <p class="card-title">단계적 전환 전략</p>
+      <p class="card-subtitle">리스크 최소화</p>
+      <ul class="card-features">
+        <li>Big Bang 방식 지양</li>
+        <li>모듈별 순차 전환</li>
+        <li>안정성 우선 접근</li>
+        <li>롤백 계획 수립</li>
+      </ul>
+    </div>
+    <div class="strategy-card">
+      <div class="card-num">2</div>
+      <p class="card-title">애자일 기반 개발</p>
+      <p class="card-subtitle">유연한 대응</p>
+      <ul class="card-features">
+        <li>2주 단위 스프린트</li>
+        <li>빠른 피드백 반영</li>
+        <li>변화에 유연한 대응</li>
+        <li>지속적 개선 문화</li>
+      </ul>
+    </div>
+    <div class="strategy-card">
+      <div class="card-num">3</div>
+      <p class="card-title">현업 밀착 협업</p>
+      <p class="card-subtitle">요구사항 정합성</p>
+      <ul class="card-features">
+        <li>주 2회 현업 리뷰</li>
+        <li>요구사항 검증</li>
+        <li>사용자 피드백 반영</li>
+        <li>실무 중심 설계</li>
+      </ul>
+    </div>
+  </div>
+  <div class="core-value">
+    <p>핵심 가치: "안정적 전환" + "혁신적 기능 구현"의 균형</p>
+  </div>
+  <div class="page-num">9 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

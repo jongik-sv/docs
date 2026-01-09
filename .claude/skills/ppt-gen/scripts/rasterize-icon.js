@@ -162,7 +162,10 @@ async function main() {
   }
 }
 
-main().catch(console.error);
+// CLI로 직접 실행할 때만 main() 호출
+if (require.main === module) {
+  main().catch(console.error);
+}
 
 // 모듈 export (다른 스크립트에서 사용 가능)
 module.exports = { rasterize, batchRasterize, getIcon };

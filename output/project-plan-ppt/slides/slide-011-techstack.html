@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 25pt; left: 40pt; }
+    .header h1 { font-size: 20pt; color: #1E5128; font-weight: bold; }
+    .header-line { width: 50pt; height: 3pt; background: #4E9F3D; margin-top: 6pt; }
+    .table-container { position: absolute; top: 70pt; left: 40pt; right: 40pt; }
+    table { width: 100%; border-collapse: collapse; font-size: 10pt; }
+    th { background: #1E5128; color: #FFFFFF; padding: 10pt 12pt; text-align: left; font-weight: bold; }
+    td { padding: 10pt 12pt; color: #191A19; border-bottom: 1pt solid #E5E5E5; }
+    tr:nth-child(even) td { background: #F9F9F9; }
+    .tech-name { font-weight: bold; color: #1E5128; }
+    .version { color: #4E9F3D; font-family: 'Courier New', monospace; }
+    .license { font-size: 9pt; color: #AAB7B8; }
+    .note { font-size: 9pt; color: #666; }
+    .arch-note { position: absolute; bottom: 50pt; left: 40pt; right: 40pt; background: #F4F6F6; padding: 12pt 15pt; border-radius: 6pt; border-left: 4pt solid #4E9F3D; }
+    .arch-note p { font-size: 10pt; color: #191A19; }
+    .arch-note strong { color: #1E5128; }
+    .footer { position: absolute; bottom: 15pt; right: 40pt; font-size: 9pt; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 15pt; left: 40pt; font-size: 9pt; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>기술 아키텍처</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>영역</th>
+        <th>기술/제품</th>
+        <th>버전</th>
+        <th>라이선스</th>
+        <th>비고</th>
+      </tr>
+      <tr>
+        <td><strong>Frontend</strong></td>
+        <td class="tech-name">Vue.js 3, TypeScript</td>
+        <td class="version">3.4</td>
+        <td class="license">MIT</td>
+        <td class="note">SPA 구조</td>
+      </tr>
+      <tr>
+        <td><strong>Backend</strong></td>
+        <td class="tech-name">Spring Boot, Java</td>
+        <td class="version">3.2 / 17</td>
+        <td class="license">Apache 2.0</td>
+        <td class="note">MSA 구조</td>
+      </tr>
+      <tr>
+        <td><strong>Database</strong></td>
+        <td class="tech-name">PostgreSQL, Redis</td>
+        <td class="version">16 / 7</td>
+        <td class="license">PostgreSQL / BSD</td>
+        <td class="note">RDBMS + Cache</td>
+      </tr>
+      <tr>
+        <td><strong>Infra</strong></td>
+        <td class="tech-name">AWS (EKS, RDS, S3)</td>
+        <td class="version">-</td>
+        <td class="license">Commercial</td>
+        <td class="note">클라우드 네이티브</td>
+      </tr>
+      <tr>
+        <td><strong>AI/ML</strong></td>
+        <td class="tech-name">Python, TensorFlow</td>
+        <td class="version">3.11 / 2.15</td>
+        <td class="license">PSF / Apache 2.0</td>
+        <td class="note">수요예측, 경로최적화</td>
+      </tr>
+    </table>
+  </div>
+  <div class="arch-note">
+    <p><strong>아키텍처 특징:</strong> MSA(Microservices Architecture) 기반 설계로 확장성과 유지보수성 확보, Kubernetes 기반 컨테이너 오케스트레이션</p>
+  </div>
+  <div class="page-num">11 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

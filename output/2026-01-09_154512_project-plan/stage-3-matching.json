@@ -1,0 +1,252 @@
+{
+  "session": {
+    "id": "2026-01-09_154512_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T15:45:12Z",
+    "updated_at": "2026-01-09T15:47:00Z"
+  },
+  "current_stage": 3,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "subtitle": "착수보고",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "emphasis": "전체 균형",
+      "slide_count": 15,
+      "source_document": "/home/jji/project/docs/project-plan.md"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      }
+    },
+    "project_info": {
+      "project_name": "스마트 물류관리 시스템 구축",
+      "client": "(주)글로벌물류",
+      "vendor": "(주)테크솔루션",
+      "contract_amount": "15억원",
+      "contract_period": "2025-01-06 ~ 2025-12-31",
+      "pm": "김철수"
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축 수행계획서",
+      "purpose": "cover",
+      "key_points": ["프로젝트 착수보고", "2025.01", "(주)테크솔루션"],
+      "speaker_notes": "착수보고회 표지 슬라이드",
+      "template_id": "deepgreen-cover-centered1",
+      "match_score": 0.95,
+      "match_reason": "category: cover 매칭",
+      "layout": "centered"
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "key_points": ["프로젝트 개요", "추진 전략", "조직 및 역할", "프로젝트 일정", "품질/위험 관리"],
+      "speaker_notes": "발표 순서 안내",
+      "template_id": "deepgreen-toc-3col1",
+      "match_score": 0.90,
+      "match_reason": "category: toc, 5개 섹션 표시",
+      "layout": "3-column"
+    },
+    {
+      "index": 2,
+      "title": "프로젝트 개요",
+      "purpose": "section",
+      "key_points": ["SECTION 01"],
+      "speaker_notes": "첫 번째 섹션 시작",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "category: section 매칭",
+      "layout": "section-divider"
+    },
+    {
+      "index": 3,
+      "title": "프로젝트 배경 및 기대효과",
+      "purpose": "stats",
+      "key_points": [
+        "연간 500만건 물류 처리",
+        "레거시 시스템 10년 이상 운영",
+        "물류 효율 30% 향상 목표",
+        "재고 정확도 99.5% 목표",
+        "운영 비용 20% 절감 목표"
+      ],
+      "speaker_notes": "현재 문제점과 기대효과 설명",
+      "template_id": "basic-stats-cards",
+      "match_score": 0.85,
+      "match_reason": "use_for: KPI 대시보드, 통계 수치 요약",
+      "layout": "stats-cards"
+    },
+    {
+      "index": 4,
+      "title": "시스템 범위",
+      "purpose": "grid",
+      "key_points": [
+        "WMS: 창고관리시스템",
+        "TMS: 배송관리시스템",
+        "OMS: 주문관리시스템",
+        "Dashboard: 통합모니터링"
+      ],
+      "speaker_notes": "구축 대상 시스템 4개 모듈 설명",
+      "template_id": "basic-grid-icon6",
+      "match_score": 0.88,
+      "match_reason": "4열 아이콘 그리드, 기능 표시",
+      "layout": "grid-4col-icon"
+    },
+    {
+      "index": 5,
+      "title": "추진 전략",
+      "purpose": "section",
+      "key_points": ["SECTION 02"],
+      "speaker_notes": "두 번째 섹션 시작",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "category: section 매칭",
+      "layout": "section-divider"
+    },
+    {
+      "index": 6,
+      "title": "핵심 추진 전략",
+      "purpose": "grid",
+      "key_points": [
+        "단계적 전환: 모듈별 순차 전환",
+        "애자일 기반: 2주 스프린트",
+        "현업 밀착: 주 2회 리뷰"
+      ],
+      "speaker_notes": "3대 핵심 전략 설명",
+      "template_id": "basic-grid-3col1",
+      "match_score": 0.90,
+      "match_reason": "3열 그리드, 균형잡힌 레이아웃",
+      "layout": "grid-3col"
+    },
+    {
+      "index": 7,
+      "title": "기술 아키텍처",
+      "purpose": "grid",
+      "key_points": [
+        "Frontend: Vue.js 3",
+        "Backend: Spring Boot",
+        "Database: PostgreSQL",
+        "AI/ML: TensorFlow"
+      ],
+      "speaker_notes": "기술 스택 설명",
+      "template_id": "basic-grid-icon6",
+      "match_score": 0.88,
+      "match_reason": "4열 아이콘 그리드, 기술 스택 표시",
+      "layout": "grid-4col-icon"
+    },
+    {
+      "index": 8,
+      "title": "조직 및 역할",
+      "purpose": "section",
+      "key_points": ["SECTION 03"],
+      "speaker_notes": "세 번째 섹션 시작",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "category: section 매칭",
+      "layout": "section-divider"
+    },
+    {
+      "index": 9,
+      "title": "프로젝트 조직 및 투입 인력",
+      "purpose": "hierarchy",
+      "key_points": [
+        "발주기관 PM: 정민호",
+        "수행사 PM: 김철수",
+        "AA: 박준형",
+        "개발리더: 최수진",
+        "총 8명, 78MM"
+      ],
+      "speaker_notes": "조직 구성 및 R&R 설명",
+      "template_id": "basic-hierarchy-org",
+      "match_score": 0.92,
+      "match_reason": "use_for: 조직 구조 및 역할 관계 표현",
+      "layout": "hierarchy-org"
+    },
+    {
+      "index": 10,
+      "title": "프로젝트 일정",
+      "purpose": "section",
+      "key_points": ["SECTION 04"],
+      "speaker_notes": "네 번째 섹션 시작",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "category: section 매칭",
+      "layout": "section-divider"
+    },
+    {
+      "index": 11,
+      "title": "마스터 일정 및 마일스톤",
+      "purpose": "timeline",
+      "key_points": [
+        "착수 (01월)",
+        "분석 (02-03월)",
+        "설계 (04-05월)",
+        "개발 (06-09월)",
+        "테스트 (10-11월)",
+        "이행 (11-12월)"
+      ],
+      "speaker_notes": "전체 일정 및 6개 마일스톤 설명",
+      "template_id": "deepgreen-timeline1",
+      "match_score": 0.90,
+      "match_reason": "category: timeline, 단계별 흐름",
+      "layout": "timeline-horizontal"
+    },
+    {
+      "index": 12,
+      "title": "품질 및 위험 관리",
+      "purpose": "section",
+      "key_points": ["SECTION 05"],
+      "speaker_notes": "다섯 번째 섹션 시작",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "category: section 매칭",
+      "layout": "section-divider"
+    },
+    {
+      "index": 13,
+      "title": "주요 위험 및 대응 방안",
+      "purpose": "table",
+      "key_points": [
+        "요구사항 변경: CCB 통제",
+        "일정 지연: 주간 진척관리",
+        "기술적 난제: PoC 선행",
+        "데이터 마이그레이션: 사전 검증"
+      ],
+      "speaker_notes": "주요 위험 요소 및 대응 방안 설명",
+      "template_id": "basic-table-simple4",
+      "match_score": 0.85,
+      "match_reason": "use_for: 데이터 비교, 스펙 비교",
+      "layout": "table-simple"
+    },
+    {
+      "index": 14,
+      "title": "감사합니다",
+      "purpose": "closing",
+      "key_points": [
+        "(주)테크솔루션",
+        "PM 김철수",
+        "최선을 다하겠습니다"
+      ],
+      "speaker_notes": "마무리 인사 및 Q&A 안내",
+      "template_id": "deepgreen-closing1",
+      "match_score": 0.95,
+      "match_reason": "category: closing 매칭",
+      "layout": "closing-thankyou"
+    }
+  ]
+}

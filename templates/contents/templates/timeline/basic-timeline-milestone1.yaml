@@ -1,0 +1,546 @@
+# 마일스톤 타임라인 콘텐츠 템플릿 v2.0
+# 원본: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx:55
+# 추출일: 2026-01-09T11:10:29.176003
+
+content_template:
+  id: "basic-timeline-milestone1"
+  name: "마일스톤 타임라인"
+  version: "2.0"
+  source: "/home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx"
+  source_slide_index: 55
+  extracted_at: "2026-01-09T11:10:29.176003"
+
+design_meta:
+  quality_score: 8.5
+  design_intent: "basic-timeline-milestone"
+  visual_balance: "symmetric"
+  information_density: "medium"
+
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: "16:9"
+
+shapes:
+  - id: "shape-7"
+    name: "TextBox 44"
+    type: "rectangle"
+    z_index: 7
+    geometry:
+      x: 4.2
+      y: 18.5
+      cx: 7.5
+      cy: 7.7
+      rotation: 0
+      original_aspect_ratio: 2.189
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.018518518518518517
+      original_font_size_pt: 20.0
+      font_weight: "normal"
+  - id: "shape-8"
+    name: "TextBox 47"
+    type: "rectangle"
+    z_index: 8
+    geometry:
+      x: 8.2
+      y: 30.8
+      cx: 14.7
+      cy: 23.8
+      rotation: 0
+      original_aspect_ratio: 1.375
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.2
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-9"
+    name: "TextBox 48"
+    type: "rectangle"
+    z_index: 9
+    geometry:
+      x: 35.5
+      y: 18.5
+      cx: 7.5
+      cy: 7.7
+      rotation: 0
+      original_aspect_ratio: 2.189
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.018518518518518517
+      original_font_size_pt: 20.0
+      font_weight: "normal"
+  - id: "shape-10"
+    name: "TextBox 52"
+    type: "rectangle"
+    z_index: 10
+    geometry:
+      x: 64.4
+      y: 18.5
+      cx: 7.5
+      cy: 7.7
+      rotation: 0
+      original_aspect_ratio: 2.189
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.018518518518518517
+      original_font_size_pt: 20.0
+      font_weight: "normal"
+  - id: "shape-11"
+    name: "TextBox 60"
+    type: "rectangle"
+    z_index: 11
+    geometry:
+      x: 17.7
+      y: 83.4
+      cx: 7.5
+      cy: 7.7
+      rotation: 0
+      original_aspect_ratio: 2.189
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.018518518518518517
+      original_font_size_pt: 20.0
+      font_weight: "normal"
+  - id: "shape-12"
+    name: "TextBox 64"
+    type: "rectangle"
+    z_index: 12
+    geometry:
+      x: 46.2
+      y: 83.4
+      cx: 7.5
+      cy: 7.7
+      rotation: 0
+      original_aspect_ratio: 2.189
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.018518518518518517
+      original_font_size_pt: 20.0
+      font_weight: "normal"
+  - id: "shape-13"
+    name: "TextBox 32"
+    type: "rectangle"
+    z_index: 13
+    geometry:
+      x: 36.0
+      y: 30.8
+      cx: 14.7
+      cy: 23.8
+      rotation: 0
+      original_aspect_ratio: 1.375
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.2
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-14"
+    name: "TextBox 33"
+    type: "rectangle"
+    z_index: 14
+    geometry:
+      x: 63.7
+      y: 30.8
+      cx: 14.7
+      cy: 23.8
+      rotation: 0
+      original_aspect_ratio: 1.375
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.2
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-15"
+    name: "TextBox 34"
+    type: "rectangle"
+    z_index: 15
+    geometry:
+      x: 50.2
+      y: 57.5
+      cx: 14.7
+      cy: 23.8
+      rotation: 0
+      original_aspect_ratio: 1.375
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.2
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-16"
+    name: "TextBox 35"
+    type: "rectangle"
+    z_index: 16
+    geometry:
+      x: 21.7
+      y: 57.5
+      cx: 14.7
+      cy: 23.8
+      rotation: 0
+      original_aspect_ratio: 1.375
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.2
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "line-17"
+    name: "Straight Connector 37"
+    type: "line"
+    z_index: 17
+    geometry:
+      x: 1.2
+      y: 55.7
+      cx: 78.6
+      cy: 0.0
+      rotation: 0
+      original_aspect_ratio: 8343.667
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 5.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.02
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "line-18"
+    name: "Straight Connector 39"
+    type: "line"
+    z_index: 18
+    geometry:
+      x: 21.5
+      y: 55.8
+      cx: 0.0
+      cy: 26.2
+      rotation: 0
+      original_aspect_ratio: 0.001
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.02
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "line-19"
+    name: "Straight Connector 40"
+    type: "line"
+    z_index: 19
+    geometry:
+      x: 49.9
+      y: 55.8
+      cx: 0.0
+      cy: 26.2
+      rotation: 0
+      original_aspect_ratio: 0.001
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.02
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "line-20"
+    name: "Straight Connector 50"
+    type: "line"
+    z_index: 20
+    geometry:
+      x: 8.0
+      y: 29.5
+      cx: 0.0
+      cy: 26.2
+      rotation: 0
+      original_aspect_ratio: 0.001
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.02
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "line-21"
+    name: "Straight Connector 51"
+    type: "line"
+    z_index: 21
+    geometry:
+      x: 35.7
+      y: 29.5
+      cx: 0.0
+      cy: 26.2
+      rotation: 0
+      original_aspect_ratio: 0.001
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.02
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "line-22"
+    name: "Straight Connector 52"
+    type: "line"
+    z_index: 22
+    geometry:
+      x: 63.5
+      y: 29.5
+      cx: 0.0
+      cy: 26.2
+      rotation: 0
+      original_aspect_ratio: 0.001
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.02
+      original_font_size_pt: 18
+      font_weight: "normal"
+
+gaps:
+  global:
+    column_gap: 5
+    row_gap: 5
+  between_shapes: []
+
+spatial_relationships: []
+
+groups: []
+
+thumbnail: "thumbnails/basic-timeline-milestone1.png"
+
+use_for:
+  - "주요 성과 표시"
+  - "마일스톤 강조"
+  - "사건 시점 표현"
+  - "타임라인 강조"
+  - "성과 기반 진행"
+
+keywords:
+  - "마일스톤 타임라인"
+  - "성과 표시"
+  - "주요 사건"
+  - "타임라인 마킹"
+  - "기간별 진행"
+
+expected_prompt: "타임라인상에 마일스톤을 강조하여 표시"
+
+prompt_keywords:
+  - "프로세스"
+  - "타임라인"
+  - "다이어그램"
+  - "단계"
+  - "흐름"
+  - "시간"
+  - "진행"
+  - "레이아웃"
+
+shape_sources:
+  - type: "ooxml"
+    description: "원본 도형 XML 보존"

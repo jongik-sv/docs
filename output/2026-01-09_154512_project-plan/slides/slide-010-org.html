@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .left-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8pt;
+      height: 100%;
+      background: #1E5128;
+    }
+    .page-title {
+      position: absolute;
+      left: 36pt;
+      top: 24pt;
+    }
+    .page-title h1 {
+      color: #1E5128;
+      font-size: 22pt;
+      font-weight: bold;
+    }
+    .org-container {
+      position: absolute;
+      left: 36pt;
+      top: 70pt;
+      width: 648pt;
+    }
+    .org-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12pt;
+    }
+    .org-box {
+      background: #1E5128;
+      border-radius: 6pt;
+      padding: 12pt 20pt;
+      text-align: center;
+      min-width: 140pt;
+    }
+    .org-box.client {
+      background: #4E9F3D;
+    }
+    .org-box p.role {
+      color: #D8E9A8;
+      font-size: 9pt;
+      margin-bottom: 4pt;
+    }
+    .org-box p.name {
+      color: #FFFFFF;
+      font-size: 12pt;
+      font-weight: bold;
+    }
+    .org-box p.position {
+      color: #FFFFFF;
+      font-size: 9pt;
+      opacity: 0.8;
+    }
+    .team-row {
+      display: flex;
+      justify-content: center;
+      gap: 16pt;
+      margin-top: 20pt;
+    }
+    .team-box {
+      background: #F4F6F6;
+      border-radius: 6pt;
+      padding: 10pt 16pt;
+      text-align: center;
+      border-left: 3pt solid #1E5128;
+    }
+    .team-box p.role {
+      color: #4E9F3D;
+      font-size: 9pt;
+      margin-bottom: 2pt;
+    }
+    .team-box p.name {
+      color: #191A19;
+      font-size: 11pt;
+      font-weight: bold;
+    }
+    .summary-box {
+      position: absolute;
+      right: 36pt;
+      bottom: 50pt;
+      background: #1E5128;
+      border-radius: 8pt;
+      padding: 16pt 24pt;
+    }
+    .summary-box p {
+      color: #FFFFFF;
+      font-size: 14pt;
+      font-weight: bold;
+    }
+    .summary-box p.sub {
+      color: #D8E9A8;
+      font-size: 11pt;
+      font-weight: normal;
+      margin-top: 4pt;
+    }
+    .connector-v {
+      width: 2pt;
+      height: 20pt;
+      background: #AAB7B8;
+      margin: 0 auto;
+    }
+    .footer {
+      position: absolute;
+      left: 36pt;
+      bottom: 16pt;
+    }
+    .footer p {
+      color: #AAB7B8;
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-bar"></div>
+  <div class="page-title">
+    <h1>프로젝트 조직 및 투입 인력</h1>
+  </div>
+  <div class="org-container">
+    <div class="org-row">
+      <div class="org-box client">
+        <p class="role">발주기관 PM</p>
+        <p class="name">정민호 부장</p>
+        <p class="position">(주)글로벌물류</p>
+      </div>
+    </div>
+    <div class="connector-v"></div>
+    <div class="org-row">
+      <div class="org-box">
+        <p class="role">수행사 PM</p>
+        <p class="name">김철수 차장</p>
+        <p class="position">현장 대리인</p>
+      </div>
+    </div>
+    <div class="connector-v"></div>
+    <div class="team-row">
+      <div class="team-box">
+        <p class="role">AA (아키텍트)</p>
+        <p class="name">박준형 책임</p>
+      </div>
+      <div class="team-box">
+        <p class="role">개발 리더</p>
+        <p class="name">최수진 선임</p>
+      </div>
+      <div class="team-box">
+        <p class="role">QA 담당</p>
+        <p class="name">한미영 대리</p>
+      </div>
+      <div class="team-box">
+        <p class="role">DBA</p>
+        <p class="name">오현우 대리</p>
+      </div>
+    </div>
+  </div>
+  <div class="summary-box">
+    <p>총 8명 / 78MM</p>
+    <p class="sub">12개월 투입 계획</p>
+  </div>
+  <div class="footer">
+    <p>10</p>
+  </div>
+</body>
+</html>

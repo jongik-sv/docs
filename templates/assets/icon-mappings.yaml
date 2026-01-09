@@ -1,0 +1,180 @@
+# 키워드-아이콘 매핑 테이블
+# PPT 생성 시 콘텐츠 키워드를 분석하여 적절한 아이콘 자동 추천
+#
+# 사용법:
+# 1. 슬라이드 콘텐츠에서 키워드 추출
+# 2. mappings에서 매칭되는 아이콘 검색
+# 3. react-icons에서 래스터라이즈하여 PNG 생성
+#
+# react-icons 패키지:
+# - fa: Font Awesome
+# - hi: Heroicons
+# - ai: Ant Design Icons
+# - bi: Bootstrap Icons
+# - fi: Feather Icons
+# - gi: Game Icons
+# - md: Material Design Icons
+# - ri: Remix Icons
+# - si: Simple Icons (브랜드)
+
+mappings:
+  # ===== Technology =====
+  보안: { icon: "fa/FaShieldAlt", aliases: ["security", "방어", "안전"] }
+  속도: { icon: "fa/FaBolt", aliases: ["speed", "빠른", "성능"] }
+  데이터: { icon: "fa/FaDatabase", aliases: ["data", "DB", "저장소"] }
+  AI: { icon: "fa/FaBrain", aliases: ["인공지능", "머신러닝", "딥러닝"] }
+  클라우드: { icon: "fa/FaCloud", aliases: ["cloud", "클라우드컴퓨팅"] }
+  서버: { icon: "fa/FaServer", aliases: ["server", "호스팅"] }
+  코드: { icon: "fa/FaCode", aliases: ["code", "개발", "프로그래밍"] }
+  모바일: { icon: "fa/FaMobileAlt", aliases: ["mobile", "앱", "스마트폰"] }
+  네트워크: { icon: "fa/FaNetworkWired", aliases: ["network", "연결", "통신"] }
+  자동화: { icon: "fa/FaRobot", aliases: ["automation", "로봇", "RPA"] }
+
+  # ===== Business & Strategy =====
+  성장: { icon: "hi/HiTrendingUp", aliases: ["growth", "증가", "상승"] }
+  목표: { icon: "hi/HiOutlineFlag", aliases: ["goal", "타겟", "비전"] }
+  전략: { icon: "gi/GiChessKnight", aliases: ["strategy", "기획", "계획"] }
+  성공: { icon: "fa/FaTrophy", aliases: ["success", "승리", "달성"] }
+  효율: { icon: "fa/FaChartLine", aliases: ["efficiency", "생산성", "최적화"] }
+  혁신: { icon: "fa/FaLightbulb", aliases: ["innovation", "아이디어", "창의"] }
+  리더십: { icon: "fa/FaCrown", aliases: ["leadership", "경영", "리더"] }
+  파트너십: { icon: "fa/FaHandshake", aliases: ["partnership", "협력", "제휴"] }
+
+  # ===== Communication & Team =====
+  소통: { icon: "fa/FaComments", aliases: ["communication", "대화", "채팅"] }
+  협업: { icon: "fa/FaUsers", aliases: ["collaboration", "팀워크", "공동작업"] }
+  회의: { icon: "fa/FaUserFriends", aliases: ["meeting", "미팅", "회담"] }
+  공유: { icon: "fa/FaShareAlt", aliases: ["share", "배포", "전달"] }
+  피드백: { icon: "fa/FaCommentDots", aliases: ["feedback", "의견", "리뷰"] }
+
+  # ===== Process & Time =====
+  프로세스: { icon: "fa/FaCogs", aliases: ["process", "워크플로우", "절차"] }
+  시간: { icon: "fa/FaClock", aliases: ["time", "일정", "스케줄"] }
+  일정: { icon: "fa/FaCalendarAlt", aliases: ["schedule", "캘린더", "계획표"] }
+  단계: { icon: "fa/FaListOl", aliases: ["step", "순서", "페이즈"] }
+  체크리스트: { icon: "fa/FaTasks", aliases: ["checklist", "할일", "TODO"] }
+
+  # ===== Finance =====
+  비용: { icon: "fa/FaWallet", aliases: ["cost", "지출", "예산"] }
+  수익: { icon: "fa/FaChartLine", aliases: ["revenue", "매출", "이익"] }
+  투자: { icon: "fa/FaCoins", aliases: ["investment", "펀딩", "자본"] }
+  절감: { icon: "fa/FaPiggyBank", aliases: ["saving", "절약", "비용절감"] }
+
+  # ===== Quality & Analysis =====
+  품질: { icon: "fa/FaMedal", aliases: ["quality", "퀄리티", "우수"] }
+  분석: { icon: "fa/FaChartBar", aliases: ["analysis", "통계", "리포트"] }
+  검증: { icon: "fa/FaCheckCircle", aliases: ["verification", "확인", "인증"] }
+  모니터링: { icon: "fa/FaEye", aliases: ["monitoring", "감시", "관찰"] }
+
+  # ===== Document & Content =====
+  문서: { icon: "fa/FaFileAlt", aliases: ["document", "서류", "파일"] }
+  보고서: { icon: "fa/FaClipboardList", aliases: ["report", "리포트", "결과"] }
+  프레젠테이션: { icon: "fa/FaDesktop", aliases: ["presentation", "발표", "PPT"] }
+  교육: { icon: "fa/FaGraduationCap", aliases: ["education", "학습", "트레이닝"] }
+
+  # ===== Location & Global =====
+  글로벌: { icon: "fa/FaGlobe", aliases: ["global", "세계", "국제"] }
+  위치: { icon: "fa/FaMapMarkerAlt", aliases: ["location", "장소", "지역"] }
+  배송: { icon: "fa/FaTruck", aliases: ["delivery", "물류", "운송"] }
+
+  # ===== Customer & Service =====
+  고객: { icon: "fa/FaUserTie", aliases: ["customer", "클라이언트", "사용자"] }
+  서비스: { icon: "fa/FaConciergeBell", aliases: ["service", "지원", "헬프데스크"] }
+  만족: { icon: "fa/FaSmile", aliases: ["satisfaction", "행복", "긍정"] }
+
+  # ===== Logistics (물류) =====
+  창고: { icon: "fa/FaWarehouse", aliases: ["warehouse", "WMS", "저장"] }
+  주문: { icon: "fa/FaClipboardList", aliases: ["order", "OMS", "발주"] }
+  재고: { icon: "fa/FaBoxes", aliases: ["inventory", "stock", "물품"] }
+  피킹: { icon: "fa/FaHandPointer", aliases: ["picking", "픽업", "선택"] }
+  대시보드: { icon: "fa/FaTachometerAlt", aliases: ["dashboard", "현황판", "KPI"] }
+
+  # ===== Risk & Warning =====
+  위험: { icon: "fa/FaExclamationTriangle", aliases: ["risk", "경고", "주의"] }
+  지연: { icon: "fa/FaHourglass", aliases: ["delay", "대기", "지체"] }
+  오류: { icon: "fa/FaBug", aliases: ["error", "버그", "결함"] }
+  변경: { icon: "fa/FaExchangeAlt", aliases: ["change", "수정", "변경관리"] }
+
+# 카테고리별 그룹핑 (검색 최적화)
+categories:
+  technology:
+    - 보안
+    - 속도
+    - 데이터
+    - AI
+    - 클라우드
+    - 서버
+    - 코드
+    - 모바일
+    - 네트워크
+    - 자동화
+  business:
+    - 성장
+    - 목표
+    - 전략
+    - 성공
+    - 효율
+    - 혁신
+    - 리더십
+    - 파트너십
+  communication:
+    - 소통
+    - 협업
+    - 회의
+    - 공유
+    - 피드백
+  process:
+    - 프로세스
+    - 시간
+    - 일정
+    - 단계
+    - 체크리스트
+  finance:
+    - 비용
+    - 수익
+    - 투자
+    - 절감
+  quality:
+    - 품질
+    - 분석
+    - 검증
+    - 모니터링
+  document:
+    - 문서
+    - 보고서
+    - 프레젠테이션
+    - 교육
+  location:
+    - 글로벌
+    - 위치
+    - 배송
+  customer:
+    - 고객
+    - 서비스
+    - 만족
+  logistics:
+    - 창고
+    - 주문
+    - 재고
+    - 피킹
+    - 대시보드
+  risk:
+    - 위험
+    - 지연
+    - 오류
+    - 변경
+
+# 기본 아이콘 (매칭 실패 시)
+defaults:
+  technology: "fa/FaMicrochip"
+  business: "fa/FaBriefcase"
+  communication: "fa/FaComment"
+  process: "fa/FaSitemap"
+  finance: "fa/FaDollarSign"
+  quality: "fa/FaStar"
+  document: "fa/FaFile"
+  location: "fa/FaMapPin"
+  customer: "fa/FaUser"
+  logistics: "fa/FaBox"
+  risk: "fa/FaExclamationCircle"
+  fallback: "fa/FaCircle"

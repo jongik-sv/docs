@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 25pt; left: 40pt; }
+    .header h1 { font-size: 20pt; color: #1E5128; font-weight: bold; }
+    .header-line { width: 50pt; height: 3pt; background: #4E9F3D; margin-top: 6pt; }
+    .method-label { position: absolute; top: 30pt; right: 40pt; background: #1E5128; color: #FFFFFF; padding: 6pt 12pt; border-radius: 4pt; font-size: 10pt; }
+    .process { position: absolute; top: 85pt; left: 40pt; right: 40pt; display: flex; align-items: center; }
+    .step { flex: 1; text-align: center; position: relative; }
+    .step-circle { width: 60pt; height: 60pt; border-radius: 50%; background: #1E5128; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 11pt; font-weight: bold; margin: 0 auto 10pt; }
+    .step:nth-child(2) .step-circle { background: #4E9F3D; }
+    .step:nth-child(3) .step-circle { background: #1E5128; }
+    .step:nth-child(4) .step-circle { background: #4E9F3D; }
+    .step-title { font-size: 12pt; color: #191A19; font-weight: bold; }
+    .arrow { color: #AAB7B8; font-size: 24pt; margin: 0 -5pt; }
+    .details { position: absolute; top: 180pt; left: 40pt; right: 40pt; display: flex; gap: 15pt; }
+    .detail-box { flex: 1; background: #F4F6F6; border-radius: 6pt; padding: 12pt; border-top: 3pt solid #1E5128; }
+    .detail-box:nth-child(2) { border-top-color: #4E9F3D; }
+    .detail-box:nth-child(3) { border-top-color: #1E5128; }
+    .detail-box:nth-child(4) { border-top-color: #4E9F3D; }
+    .detail-box h4 { font-size: 10pt; color: #1E5128; margin-bottom: 6pt; }
+    .detail-box p { font-size: 8pt; color: #666; line-height: 1.4; }
+    .detail-box .output { font-size: 8pt; color: #4E9F3D; margin-top: 6pt; font-weight: bold; }
+    .footer { position: absolute; bottom: 15pt; right: 40pt; font-size: 9pt; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 15pt; left: 40pt; font-size: 9pt; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>수행 방법론</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="method-label">Agile-Waterfall 하이브리드</div>
+  <div class="process">
+    <div class="step">
+      <div class="step-circle">분석</div>
+      <p class="step-title">Analysis</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="step">
+      <div class="step-circle">설계</div>
+      <p class="step-title">Design</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="step">
+      <div class="step-circle">개발</div>
+      <p class="step-title">Development</p>
+    </div>
+    <span class="arrow">→</span>
+    <div class="step">
+      <div class="step-circle">테스트<br>이행</div>
+      <p class="step-title">Test & Deploy</p>
+    </div>
+  </div>
+  <div class="details">
+    <div class="detail-box">
+      <h4>분석 단계</h4>
+      <p>• 요구사항 정의<br>• 현행 시스템 분석<br>• 데이터 분석</p>
+      <p class="output">→ 요구사항정의서, AS-IS 분석서</p>
+    </div>
+    <div class="detail-box">
+      <h4>설계 단계</h4>
+      <p>• 아키텍처 설계<br>• UI/UX 설계<br>• DB 설계</p>
+      <p class="output">→ 설계서 일체</p>
+    </div>
+    <div class="detail-box">
+      <h4>개발 단계</h4>
+      <p>• 기능 구현<br>• 단위 테스트<br>• 코드 리뷰</p>
+      <p class="output">→ 소스코드, 단위테스트결과서</p>
+    </div>
+    <div class="detail-box">
+      <h4>테스트/이행</h4>
+      <p>• 통합/인수 테스트<br>• 시스템 전환<br>• 안정화</p>
+      <p class="output">→ 테스트결과서, 이행계획서</p>
+    </div>
+  </div>
+  <div class="page-num">10 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

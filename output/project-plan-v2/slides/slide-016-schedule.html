@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .timeline-container { position: absolute; top: 100px; left: 50px; right: 50px; }
+    .timeline-header { display: flex; margin-bottom: 15px; padding-left: 120px; }
+    .month-label { flex: 1; text-align: center; font-size: 11px; color: #666; }
+    .timeline-row { display: flex; align-items: center; margin-bottom: 12px; }
+    .phase-label { width: 110px; font-size: 13px; color: #191A19; font-weight: bold; flex-shrink: 0; }
+    .phase-bar-container { flex: 1; height: 35px; background: #F4F6F6; border-radius: 4px; position: relative; }
+    .phase-bar { position: absolute; height: 100%; border-radius: 4px; display: flex; align-items: center; justify-content: center; }
+    .phase-bar p { color: #FFFFFF; font-size: 11px; font-weight: bold; }
+    .phase-1 { left: 0%; width: 8.3%; background: #1E5128; }
+    .phase-2 { left: 8.3%; width: 16.6%; background: #2E7D32; }
+    .phase-3 { left: 25%; width: 16.6%; background: #388E3C; }
+    .phase-4 { left: 41.6%; width: 33.3%; background: #4E9F3D; }
+    .phase-5 { left: 75%; width: 12.5%; background: #66BB6A; }
+    .phase-6 { left: 87.5%; width: 12.5%; background: #81C784; }
+    .legend { position: absolute; bottom: 60px; left: 50px; right: 50px; display: flex; gap: 15px; flex-wrap: wrap; }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-color { width: 16px; height: 16px; border-radius: 3px; }
+    .legend-text { font-size: 11px; color: #666; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>마스터 일정</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="timeline-container">
+    <div class="timeline-header">
+      <span class="month-label">1월</span>
+      <span class="month-label">2월</span>
+      <span class="month-label">3월</span>
+      <span class="month-label">4월</span>
+      <span class="month-label">5월</span>
+      <span class="month-label">6월</span>
+      <span class="month-label">7월</span>
+      <span class="month-label">8월</span>
+      <span class="month-label">9월</span>
+      <span class="month-label">10월</span>
+      <span class="month-label">11월</span>
+      <span class="month-label">12월</span>
+    </div>
+    <div class="timeline-row">
+      <span class="phase-label">착수 (4주)</span>
+      <div class="phase-bar-container">
+        <div class="phase-bar phase-1"><p>착수</p></div>
+      </div>
+    </div>
+    <div class="timeline-row">
+      <span class="phase-label">분석 (8주)</span>
+      <div class="phase-bar-container">
+        <div class="phase-bar phase-2"><p>분석</p></div>
+      </div>
+    </div>
+    <div class="timeline-row">
+      <span class="phase-label">설계 (8주)</span>
+      <div class="phase-bar-container">
+        <div class="phase-bar phase-3"><p>설계</p></div>
+      </div>
+    </div>
+    <div class="timeline-row">
+      <span class="phase-label">개발 (16주)</span>
+      <div class="phase-bar-container">
+        <div class="phase-bar phase-4"><p>개발</p></div>
+      </div>
+    </div>
+    <div class="timeline-row">
+      <span class="phase-label">테스트 (6주)</span>
+      <div class="phase-bar-container">
+        <div class="phase-bar phase-5"><p>테스트</p></div>
+      </div>
+    </div>
+    <div class="timeline-row">
+      <span class="phase-label">이행/안정화 (6주)</span>
+      <div class="phase-bar-container">
+        <div class="phase-bar phase-6"><p>이행</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-color" style="background:#1E5128"></div><span class="legend-text">착수: 킥오프, 환경구축</span></div>
+    <div class="legend-item"><div class="legend-color" style="background:#2E7D32"></div><span class="legend-text">분석: 요구사항 확정</span></div>
+    <div class="legend-item"><div class="legend-color" style="background:#388E3C"></div><span class="legend-text">설계: 아키텍처/UI/DB</span></div>
+    <div class="legend-item"><div class="legend-color" style="background:#4E9F3D"></div><span class="legend-text">개발: 코딩, 단위테스트</span></div>
+    <div class="legend-item"><div class="legend-color" style="background:#66BB6A"></div><span class="legend-text">테스트: 통합/인수</span></div>
+    <div class="legend-item"><div class="legend-color" style="background:#81C784"></div><span class="legend-text">이행: 오픈, 안정화</span></div>
+  </div>
+  <div class="page-num">16 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

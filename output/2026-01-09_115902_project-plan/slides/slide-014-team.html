@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Noto Sans KR', Arial, sans-serif; background: white; position: relative; }
+    .header { position: absolute; top: 20pt; left: 30pt; }
+    .main-title { font-size: 14pt; color: #002452; font-weight: 500; }
+    .action-title { font-size: 12pt; color: #262626; margin-top: 6pt; }
+
+    /* 테이블 헤더 배경 */
+    .table-header-bg { position: absolute; top: 80pt; left: 30pt; width: 660pt; height: 28pt; background: #002452; }
+
+    /* 테이블 행 배경 (짝수) */
+    .row-bg-even { position: absolute; left: 30pt; width: 660pt; height: 32pt; background: #F8F9FA; }
+
+    /* 열 위치 */
+    .col1 { position: absolute; left: 30pt; width: 70pt; }
+    .col2 { position: absolute; left: 100pt; width: 130pt; }
+    .col3 { position: absolute; left: 230pt; width: 100pt; }
+    .col4 { position: absolute; left: 330pt; width: 200pt; }
+    .col5 { position: absolute; left: 530pt; width: 80pt; }
+
+    /* 행 위치 */
+    .row0 { top: 84pt; }
+    .row1 { top: 112pt; }
+    .row2 { top: 144pt; }
+    .row3 { top: 176pt; }
+    .row4 { top: 208pt; }
+    .row5 { top: 240pt; }
+    .row6 { top: 272pt; }
+
+    /* 텍스트 스타일 */
+    .header-text { font-size: 10pt; font-weight: 500; color: white; }
+    .cell-text { font-size: 10pt; color: #262626; }
+
+    /* 등급 배지 - 폭 넉넉하게 (PPTX 변환용) */
+    .grade { display: inline-block; padding: 4pt 16pt; border-radius: 3pt; min-width: 45pt; text-align: center; }
+    .grade-special { background: #002452; }
+    .grade-high { background: #4B6580; }
+    .grade-mid { background: #B7D0D4; }
+    .grade-special p { color: white; font-size: 9pt; white-space: nowrap; }
+    .grade-high p { color: white; font-size: 9pt; white-space: nowrap; }
+    .grade-mid p { color: #262626; font-size: 9pt; white-space: nowrap; }
+
+    /* 요약 */
+    .summary { position: absolute; bottom: 55pt; left: 30pt; display: flex; gap: 30pt; }
+    .summary-item { background: #F8F9FA; padding: 10pt 20pt; border-radius: 6pt; border-left: 4pt solid #002452; }
+    .summary-label { font-size: 9pt; color: #757575; }
+    .summary-value { font-size: 16pt; font-weight: 700; color: #002452; }
+
+    .accent-bar { position: absolute; top: 0; left: 0; width: 100%; height: 3pt; background: #002452; }
+    .footer-wrap { position: absolute; bottom: 15pt; right: 30pt; display: flex; align-items: center; gap: 20pt; }
+    .footer-info { font-size: 9pt; color: #B6B6B6; }
+    .footer-page { font-size: 9pt; color: #B6B6B6; }
+    .logo-img { height: 18pt; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <div class="header">
+    <p class="main-title">투입 인력 현황</p>
+    <p class="action-title">총 8명, 78MM 투입으로 전문 인력 기반 프로젝트 수행</p>
+  </div>
+
+  <!-- 테이블 배경 -->
+  <div class="table-header-bg"></div>
+  <div class="row-bg-even" style="top: 144pt;"></div>
+  <div class="row-bg-even" style="top: 208pt;"></div>
+  <div class="row-bg-even" style="top: 272pt;"></div>
+
+  <!-- 헤더 행 -->
+  <div class="col1 row0"><p class="header-text">구분</p></div>
+  <div class="col2 row0"><p class="header-text">분야</p></div>
+  <div class="col3 row0"><p class="header-text">등급</p></div>
+  <div class="col4 row0"><p class="header-text">성명</p></div>
+  <div class="col5 row0"><p class="header-text">투입기간</p></div>
+
+  <!-- PM 행 -->
+  <div class="col1 row1"><p class="cell-text">PM</p></div>
+  <div class="col2 row1"><p class="cell-text">관리</p></div>
+  <div class="col3 row1"><div class="grade grade-special"><p>특급</p></div></div>
+  <div class="col4 row1"><p class="cell-text">김철수</p></div>
+  <div class="col5 row1"><p class="cell-text">12개월</p></div>
+
+  <!-- AA 행 -->
+  <div class="col1 row2"><p class="cell-text">AA</p></div>
+  <div class="col2 row2"><p class="cell-text">설계</p></div>
+  <div class="col3 row2"><div class="grade grade-special"><p>특급</p></div></div>
+  <div class="col4 row2"><p class="cell-text">박준형</p></div>
+  <div class="col5 row2"><p class="cell-text">10개월</p></div>
+
+  <!-- PL 행 -->
+  <div class="col1 row3"><p class="cell-text">PL</p></div>
+  <div class="col2 row3"><p class="cell-text">개발</p></div>
+  <div class="col3 row3"><div class="grade grade-high"><p>고급</p></div></div>
+  <div class="col4 row3"><p class="cell-text">최수진</p></div>
+  <div class="col5 row3"><p class="cell-text">12개월</p></div>
+
+  <!-- Dev 행 -->
+  <div class="col1 row4"><p class="cell-text">Dev</p></div>
+  <div class="col2 row4"><p class="cell-text">Backend/Frontend</p></div>
+  <div class="col3 row4"><div class="grade grade-high"><p>고급</p></div></div>
+  <div class="col4 row4"><p class="cell-text">임동현, 강서연, 윤재호</p></div>
+  <div class="col5 row4"><p class="cell-text">10개월</p></div>
+
+  <!-- DBA 행 -->
+  <div class="col1 row5"><p class="cell-text">DBA</p></div>
+  <div class="col2 row5"><p class="cell-text">DB</p></div>
+  <div class="col3 row5"><div class="grade grade-high"><p>고급</p></div></div>
+  <div class="col4 row5"><p class="cell-text">오현우</p></div>
+  <div class="col5 row5"><p class="cell-text">8개월</p></div>
+
+  <!-- QA 행 -->
+  <div class="col1 row6"><p class="cell-text">QA</p></div>
+  <div class="col2 row6"><p class="cell-text">테스트</p></div>
+  <div class="col3 row6"><div class="grade grade-mid"><p>중급</p></div></div>
+  <div class="col4 row6"><p class="cell-text">한미영</p></div>
+  <div class="col5 row6"><p class="cell-text">6개월</p></div>
+
+  <div class="summary">
+    <div class="summary-item">
+      <p class="summary-label">총 투입 인원</p>
+      <p class="summary-value">8명</p>
+    </div>
+    <div class="summary-item">
+      <p class="summary-label">총 투입 공수</p>
+      <p class="summary-value">78 MM</p>
+    </div>
+  </div>
+  <div class="footer-wrap">
+    <img class="logo-img" src="../../../templates/documents/dongkuk-systems/assets/default/image2.png" alt="logo" />
+    <p class="footer-info">작성_테크솔루션</p>
+    <p class="footer-page">14</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      position: absolute;
+      left: 40pt;
+      top: 25pt;
+    }
+    .header h1 {
+      font-size: 22pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+    .header-line {
+      position: absolute;
+      left: 40pt;
+      top: 55pt;
+      width: 60pt;
+      height: 3pt;
+      background: #4E9F3D;
+    }
+    .cards-container {
+      position: absolute;
+      left: 40pt;
+      top: 90pt;
+      width: 640pt;
+      display: flex;
+      gap: 30pt;
+      justify-content: center;
+    }
+    .stat-card {
+      width: 180pt;
+      height: 200pt;
+      background: #F4F6F6;
+      border-radius: 12pt;
+      padding: 25pt 20pt;
+      text-align: center;
+      border-top: 5pt solid #1E5128;
+    }
+    .stat-icon {
+      width: 50pt;
+      height: 50pt;
+      background: #D8E9A8;
+      border-radius: 25pt;
+      margin: 0 auto 15pt auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stat-icon p {
+      font-size: 20pt;
+      color: #1E5128;
+    }
+    .stat-value {
+      font-size: 36pt;
+      color: #1E5128;
+      font-weight: bold;
+      margin-bottom: 5pt;
+    }
+    .stat-unit {
+      font-size: 14pt;
+      color: #4E9F3D;
+      margin-bottom: 10pt;
+    }
+    .stat-title {
+      font-size: 12pt;
+      color: #191A19;
+      font-weight: bold;
+      margin-bottom: 8pt;
+    }
+    .stat-desc {
+      font-size: 9pt;
+      color: #AAB7B8;
+      line-height: 1.4;
+    }
+    .footer-note {
+      position: absolute;
+      left: 40pt;
+      bottom: 30pt;
+      width: 640pt;
+      text-align: center;
+    }
+    .footer-note p {
+      font-size: 10pt;
+      color: #AAB7B8;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>기대 효과</h1>
+  </div>
+  <div class="header-line"></div>
+  <div class="cards-container">
+    <div class="stat-card">
+      <div class="stat-icon"><p>+</p></div>
+      <p class="stat-value">30</p>
+      <p class="stat-unit">%</p>
+      <p class="stat-title">물류 처리 효율 향상</p>
+      <p class="stat-desc">AI 기반 최적화로 처리량 증가</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><p>+</p></div>
+      <p class="stat-value">99.5</p>
+      <p class="stat-unit">%</p>
+      <p class="stat-title">재고 정확도 달성</p>
+      <p class="stat-desc">실시간 재고 추적 시스템</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon"><p>-</p></div>
+      <p class="stat-value">20</p>
+      <p class="stat-unit">%</p>
+      <p class="stat-title">운영 비용 절감</p>
+      <p class="stat-desc">자동화 및 프로세스 개선</p>
+    </div>
+  </div>
+  <div class="footer-note">
+    <p>동종 업계 벤치마크 기준 예상 수치</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Noto Sans KR', Arial, sans-serif; background: white; position: relative; }
+    .header { position: absolute; top: 20pt; left: 30pt; }
+    .header h2 { color: #002452; font-size: 20pt; font-weight: 500; }
+    .content { position: absolute; top: 80pt; left: 30pt; right: 30pt; display: flex; gap: 20pt; }
+    .section { flex: 1; padding: 20pt; background: #F8F9FA; border-left: 4pt solid #002452; }
+    .section:nth-child(2) { border-left-color: #4B6580; }
+    .section:nth-child(3) { border-left-color: #B7D0D4; }
+    .section:nth-child(4) { border-left-color: #C51F2A; }
+    .section:nth-child(5) { border-left-color: #E9B86E; }
+    .num { font-size: 28pt; font-weight: 700; color: #002452; margin-bottom: 8pt; white-space: nowrap; }
+    .section:nth-child(2) .num { color: #4B6580; }
+    .section:nth-child(3) .num { color: #B7D0D4; }
+    .section:nth-child(4) .num { color: #C51F2A; }
+    .section:nth-child(5) .num { color: #E9B86E; }
+    .title { font-size: 11pt; font-weight: 500; color: #262626; margin-bottom: 10pt; white-space: nowrap; }
+    .items { font-size: 9pt; color: #757575; line-height: 1.6; }
+    
+  
+    .footer-wrap { position: absolute; bottom: 15pt; right: 30pt; display: flex; align-items: center; gap: 20pt; }
+    .footer-info { font-size: 9pt; color: #B6B6B6; }
+    .footer-page { font-size: 9pt; color: #B6B6B6; }
+    .logo-img { height: 18pt; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>CONTENTS</h2>
+  </div>
+  <div class="content">
+    <div class="section">
+      <p class="num">01</p>
+      <p class="title">프로젝트 개요</p>
+      <p class="items">기본 정보<br>배경 및 목적<br>기대 효과<br>시스템 범위</p>
+    </div>
+    <div class="section">
+      <p class="num">02</p>
+      <p class="title">추진 전략</p>
+      <p class="items">핵심 전략<br>수행 방법론<br>기술 아키텍처</p>
+    </div>
+    <div class="section">
+      <p class="num">03</p>
+      <p class="title">프로젝트 조직</p>
+      <p class="items">조직 구성<br>역할 및 책임<br>투입 인력</p>
+    </div>
+    <div class="section">
+      <p class="num">04</p>
+      <p class="title">프로젝트 일정</p>
+      <p class="items">마스터 일정<br>주요 마일스톤</p>
+    </div>
+    <div class="section">
+      <p class="num">05</p>
+      <p class="title">관리 계획</p>
+      <p class="items">품질 관리<br>보안 관리<br>위험 관리</p>
+    </div>
+  </div>
+  <div class="footer-wrap">
+    <img class="logo-img" src="../../../templates/documents/dongkuk-systems/assets/default/image2.png" alt="logo" />
+    <p class="footer-info">작성_테크솔루션</p>
+    <p class="footer-page">2</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 25pt; left: 40pt; }
+    .header h1 { font-size: 20pt; color: #1E5128; font-weight: bold; }
+    .header-line { width: 50pt; height: 3pt; background: #4E9F3D; margin-top: 6pt; }
+    .grid { position: absolute; top: 80pt; left: 40pt; right: 40pt; display: flex; gap: 20pt; }
+    .card { flex: 1; background: #F4F6F6; border-radius: 10pt; padding: 20pt; position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5pt; background: #1E5128; }
+    .card:nth-child(2)::before { background: #4E9F3D; }
+    .card:nth-child(3)::before { background: #D8E9A8; }
+    .card-num { font-size: 36pt; font-weight: bold; color: rgba(30,81,40,0.15); position: absolute; top: 10pt; right: 15pt; }
+    .card-icon { width: 40pt; height: 40pt; background: #1E5128; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 18pt; margin-bottom: 12pt; }
+    .card:nth-child(2) .card-icon { background: #4E9F3D; }
+    .card:nth-child(3) .card-icon { background: #191A19; }
+    .card h3 { font-size: 13pt; color: #191A19; font-weight: bold; margin-bottom: 10pt; }
+    .card p { font-size: 10pt; color: #666; line-height: 1.5; }
+    .card ul { margin-left: 12pt; margin-top: 8pt; }
+    .card li { font-size: 9pt; color: #666; line-height: 1.6; }
+    .bottom-note { position: absolute; bottom: 50pt; left: 40pt; right: 40pt; background: #1E5128; color: #FFFFFF; padding: 12pt 20pt; border-radius: 6pt; font-size: 11pt; text-align: center; }
+    .footer { position: absolute; bottom: 15pt; right: 40pt; font-size: 9pt; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 15pt; left: 40pt; font-size: 9pt; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>핵심 전략</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-num">01</div>
+      <div class="card-icon">S</div>
+      <h3>단계적 전환 전략</h3>
+      <p>Big Bang 방식이 아닌 모듈별 순차 전환으로 리스크 최소화</p>
+      <ul>
+        <li>WMS → TMS → OMS 순차 전환</li>
+        <li>병행 운영 기간 확보</li>
+        <li>롤백 계획 수립</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-num">02</div>
+      <div class="card-icon">A</div>
+      <h3>애자일 기반 개발</h3>
+      <p>2주 단위 스프린트로 빠른 피드백과 유연한 대응</p>
+      <ul>
+        <li>2주 스프린트 주기</li>
+        <li>Daily Scrum 운영</li>
+        <li>Sprint Review/Retro</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-num">03</div>
+      <div class="card-icon">C</div>
+      <h3>현업 밀착 협업</h3>
+      <p>주 2회 현업 리뷰를 통한 요구사항 정합성 확보</p>
+      <ul>
+        <li>현업 담당자 상주</li>
+        <li>주 2회 정기 리뷰</li>
+        <li>실시간 피드백 반영</li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom-note">
+    <strong>핵심 가치:</strong> "안정적 전환"과 "혁신적 기능 구현"의 균형
+  </div>
+  <div class="page-num">9 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "session": {
+    "id": "2026-01-09_100000_a1b2c3d4",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "created_at": "2026-01-09T10:00:00Z",
+    "updated_at": "2026-01-09T10:35:00Z",
+    "status": "completed"
+  },
+  "current_stage": 5,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "topic": "물류관리 시스템 구축 프로젝트 계획",
+      "audience": "혼합 (경영진 + 실무자)",
+      "purpose": "프로젝트 착수보고 및 수행계획 공유",
+      "document_type": "project-plan",
+      "duration_minutes": 25,
+      "estimated_slides": 24,
+      "source_file": "project-plan.md"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      }
+    }
+  },
+  "slides": [
+    { "index": 0, "title": "스마트 물류관리 시스템 구축", "purpose": "cover", "template_id": "deepgreen-cover-centered1", "html_file": "slides/slide-001-cover.html" },
+    { "index": 1, "title": "목차", "purpose": "toc", "template_id": "deepgreen-toc-3col1", "html_file": "slides/slide-002-toc.html" },
+    { "index": 2, "title": "프로젝트 개요", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-003-section1.html" },
+    { "index": 3, "title": "프로젝트 배경 및 목적", "purpose": "content", "template_id": "basic-content-2col1", "html_file": "slides/slide-004-background.html" },
+    { "index": 4, "title": "기대 효과", "purpose": "stats", "template_id": "basic-stats-cards", "html_file": "slides/slide-005-effects.html" },
+    { "index": 5, "title": "프로젝트 범위", "purpose": "comparison", "template_id": "basic-comparison-2col6", "html_file": "slides/slide-006-scope.html" },
+    { "index": 6, "title": "시스템 구성", "purpose": "grid", "template_id": "basic-grid-icon6", "html_file": "slides/slide-007-systems.html" },
+    { "index": 7, "title": "추진 전략", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-008-section2.html" },
+    { "index": 8, "title": "핵심 추진 전략", "purpose": "grid", "template_id": "deepgreen-grid-3col1", "html_file": "slides/slide-009-strategy.html" },
+    { "index": 9, "title": "수행 방법론", "purpose": "process", "template_id": "basic-process-4step", "html_file": "slides/slide-010-methodology.html" },
+    { "index": 10, "title": "기술 아키텍처", "purpose": "table", "template_id": "basic-table-simple3", "html_file": "slides/slide-011-techstack.html" },
+    { "index": 11, "title": "조직 및 역할", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-012-section3.html" },
+    { "index": 12, "title": "조직 역할 및 책임 (R&R)", "purpose": "table", "template_id": "basic-table-simple3", "html_file": "slides/slide-013-rr.html" },
+    { "index": 13, "title": "투입 인력 현황", "purpose": "table", "template_id": "basic-table-simple3", "html_file": "slides/slide-014-team.html" },
+    { "index": 14, "title": "일정 계획", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-015-section4.html" },
+    { "index": 15, "title": "마스터 일정", "purpose": "timeline", "template_id": "deepgreen-timeline1", "html_file": "slides/slide-016-schedule.html" },
+    { "index": 16, "title": "주요 마일스톤", "purpose": "timeline", "template_id": "basic-timeline-milestone1", "html_file": "slides/slide-017-milestone.html" },
+    { "index": 17, "title": "품질/보안 관리", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-018-section5.html" },
+    { "index": 18, "title": "품질 보증 활동", "purpose": "grid", "template_id": "basic-grid-icon6", "html_file": "slides/slide-019-quality.html" },
+    { "index": 19, "title": "보안 관리 계획", "purpose": "grid", "template_id": "basic-grid-icon6", "html_file": "slides/slide-020-security.html" },
+    { "index": 20, "title": "교육 및 기술이전", "purpose": "table", "template_id": "basic-table-simple3", "html_file": "slides/slide-021-training.html" },
+    { "index": 21, "title": "위험 관리", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-022-section6.html" },
+    { "index": 22, "title": "주요 위험 및 대응", "purpose": "table", "template_id": "basic-table-simple3", "html_file": "slides/slide-023-risk.html" },
+    { "index": 23, "title": "감사합니다", "purpose": "closing", "template_id": "deepgreen-closing1", "html_file": "slides/slide-024-closing.html" }
+  ],
+  "output": {
+    "pptx_file": "스마트물류관리시스템_수행계획서_v2.pptx",
+    "thumbnail_file": null,
+    "slide_count": 24,
+    "completed_at": "2026-01-09T10:35:00Z"
+  }
+}

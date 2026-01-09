@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .method-box { position: absolute; top: 100px; left: 50px; right: 50px; background: #F4F6F6; padding: 15px 25px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; }
+    .method-label { font-size: 14px; color: #666; }
+    .method-value { font-size: 18px; color: #1E5128; font-weight: bold; }
+    .process-container { position: absolute; top: 170px; left: 50px; right: 50px; display: flex; align-items: center; justify-content: space-between; }
+    .process-step { flex: 1; text-align: center; position: relative; }
+    .step-circle { width: 90px; height: 90px; background: #1E5128; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; }
+    .step-circle p { color: #FFFFFF; font-size: 14px; font-weight: bold; text-align: center; line-height: 1.2; }
+    .step-title { font-size: 16px; color: #191A19; font-weight: bold; margin-bottom: 8px; }
+    .step-outputs { font-size: 11px; color: #666; line-height: 1.4; }
+    .process-arrow { font-size: 28px; color: #4E9F3D; flex-shrink: 0; margin: 0 5px; margin-top: -50px; }
+    .deliverables { position: absolute; bottom: 60px; left: 50px; right: 50px; }
+    .deliverables-title { font-size: 14px; color: #1E5128; font-weight: bold; margin-bottom: 12px; }
+    .deliverables-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+    .deliverable-item { background: #D8E9A8; padding: 10px 15px; border-radius: 6px; text-align: center; }
+    .deliverable-item p { font-size: 12px; color: #1E5128; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>수행 방법론</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="method-box">
+    <div><span class="method-label">방법론: </span><span class="method-value">Agile-Waterfall 하이브리드</span></div>
+    <div><span class="method-label">선정 사유: </span><span class="method-value">대규모 SI 안정성 + 애자일 유연성</span></div>
+  </div>
+  <div class="process-container">
+    <div class="process-step">
+      <div class="step-circle"><p>분석</p></div>
+      <p class="step-title">Analysis</p>
+      <p class="step-outputs">요구사항 정의<br/>현행 분석</p>
+    </div>
+    <span class="process-arrow">&#10140;</span>
+    <div class="process-step">
+      <div class="step-circle"><p>설계</p></div>
+      <p class="step-title">Design</p>
+      <p class="step-outputs">아키텍처 설계<br/>UI/DB 설계</p>
+    </div>
+    <span class="process-arrow">&#10140;</span>
+    <div class="process-step">
+      <div class="step-circle"><p>개발</p></div>
+      <p class="step-title">Development</p>
+      <p class="step-outputs">기능 구현<br/>단위 테스트</p>
+    </div>
+    <span class="process-arrow">&#10140;</span>
+    <div class="process-step">
+      <div class="step-circle"><p>테스트<br/>/이행</p></div>
+      <p class="step-title">Test & Deploy</p>
+      <p class="step-outputs">통합/인수 테스트<br/>시스템 전환</p>
+    </div>
+  </div>
+  <div class="deliverables">
+    <p class="deliverables-title">주요 산출물</p>
+    <div class="deliverables-grid">
+      <div class="deliverable-item"><p>요구사항정의서</p></div>
+      <div class="deliverable-item"><p>설계서 일체</p></div>
+      <div class="deliverable-item"><p>소스코드</p></div>
+      <div class="deliverable-item"><p>테스트결과서</p></div>
+    </div>
+  </div>
+  <div class="page-num">10 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

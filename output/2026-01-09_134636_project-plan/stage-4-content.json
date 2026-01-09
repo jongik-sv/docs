@@ -1,0 +1,272 @@
+{
+  "session": {
+    "id": "2026-01-09_134636_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T13:46:36+09:00",
+    "updated_at": "2026-01-09T13:52:00+09:00"
+  },
+  "current_stage": 4,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "subtitle": "착수보고",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "slide_count_target": "15-20장",
+      "source_file": "project-plan.md"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      }
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축",
+      "purpose": "cover",
+      "key_points": [
+        "프로젝트 수행계획서",
+        "(주)테크솔루션",
+        "2025-01-06",
+        "발표자: 김철수 (PM)"
+      ],
+      "speaker_notes": "안녕하십니까. 스마트 물류관리 시스템 구축 프로젝트의 착수 보고를 시작하겠습니다. 본 프로젝트는 (주)글로벌물류의 차세대 물류 혁신을 위한 핵심 과제입니다.",
+      "template_id": "deepgreen-cover-centered1",
+      "match_score": 0.95,
+      "match_reason": "category: cover 정확 매칭",
+      "html_file": "slides/slide-001-cover.html",
+      "assets": {}
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "key_points": ["프로젝트 개요", "추진 전략 및 방법론", "프로젝트 조직", "프로젝트 일정", "품질 및 위험 관리"],
+      "speaker_notes": "발표 목차 안내",
+      "template_id": "deepgreen-toc-3col1",
+      "match_score": 0.90,
+      "match_reason": "category: toc, 5개 섹션을 3열로 표현",
+      "html_file": "slides/slide-002-toc.html",
+      "assets": {}
+    },
+    {
+      "index": 2,
+      "title": "01. 프로젝트 개요",
+      "purpose": "section",
+      "key_points": ["섹션 구분"],
+      "speaker_notes": "첫 번째 섹션 시작",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "category: section, VERSION 번호 스타일",
+      "html_file": "slides/slide-003-section1.html",
+      "assets": {}
+    },
+    {
+      "index": 3,
+      "title": "프로젝트 배경 및 목적",
+      "purpose": "content",
+      "key_points": [
+        "**추진 배경**: 글로벌물류는 연간 500만 건 이상의 물동량을 처리하는 Top 5 기업이나, 10년 이상 된 노후화된 레거시 시스템으로 인해 처리 속도 저하와 실시간 재고 파악 불가의 어려움에 직면해 있습니다.",
+        "**핵심 목표**: AI 기반의 물류 최적화 알고리즘 도입, 클라우드 네이티브 아키텍처 전환, 그리고 실시간 재고/배송 추적 체계 구축을 통해 운영 효율을 극대화합니다.",
+        "**사업 개요**: 발주기관 (주)글로벌물류, 수행사 (주)테크솔루션이 협력하여 2025년 1월 6일부터 12월 31일까지 12개월간 진행되는 15억 원 규모의 사업입니다."
+      ],
+      "speaker_notes": "본 프로젝트는 급증하는 물동량에 대응하고 노후화된 시스템의 한계를 극복하기 위해 추진되었습니다. AI와 클라우드 기술을 접목하여 근본적인 체질 개선을 목표로 합니다.",
+      "template_id": "basic-content-2col0",
+      "match_score": 0.85,
+      "match_reason": "2열 텍스트 콘텐츠 배치에 적합",
+      "html_file": "slides/slide-004-background.html",
+      "assets": {}
+    },
+    {
+      "index": 4,
+      "title": "기대 효과",
+      "purpose": "stats",
+      "key_points": [
+        "물류 처리 효율 **30% 향상**: 자동화 프로세스 도입으로 입출고 및 피킹 시간 단축",
+        "재고 정확도 **99.5% 달성**: 실시간 트래킹 및 AI 수요 예측을 통한 오차 최소화",
+        "운영 비용 **20% 절감**: 최적화된 배차 및 인력 운영을 통한 비용 구조 개선"
+      ],
+      "speaker_notes": "성공적인 시스템 구축을 통해 물류 효율, 정확도, 비용의 세 가지 핵심 KPI에서 획기적인 개선이 기대됩니다.",
+      "template_id": "basic-stats-cards",
+      "match_score": 0.92,
+      "match_reason": "3-4개 카드 (그리드 배치), KPI 대시보드",
+      "html_file": "slides/slide-005-effects.html",
+      "assets": {}
+    },
+    {
+      "index": 5,
+      "title": "프로젝트 범위",
+      "purpose": "table",
+      "key_points": [
+        "WMS (창고관리)|입출고 관리, 재고 실사, 피킹/패킹 자동화",
+        "TMS (배송관리)|AI 배차 최적화, 실시간 배송 경로 추적",
+        "OMS (주문관리)|주문 접수 통합, 재고 할당 및 정산 자동화",
+        "Dashboard (모니터링)|실시간 물류 흐름 시각화, KPI 리포트 제공"
+      ],
+      "speaker_notes": "구축 범위는 WMS, TMS, OMS의 3대 핵심 모듈과 이를 통합 관제하는 대시보드로 구성됩니다.",
+      "template_id": "basic-table-simple3",
+      "match_score": 0.88,
+      "match_reason": "데이터 비교, 스펙 비교용 테이블",
+      "html_file": "slides/slide-006-scope.html",
+      "assets": {}
+    },
+    {
+      "index": 6,
+      "title": "02. 추진 전략 및 방법론",
+      "purpose": "section",
+      "key_points": ["섹션 구분"],
+      "speaker_notes": "두 번째 섹션 시작",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "category: section",
+      "html_file": "slides/slide-007-section2.html",
+      "assets": {}
+    },
+    {
+      "index": 7,
+      "title": "핵심 추진 전략",
+      "purpose": "feature",
+      "key_points": [
+        "**단계적 전환 전략**: Big Bang 방식의 위험을 회피하기 위해 모듈별 순차 전환을 추진하여 시스템 안정성을 최우선으로 확보합니다.",
+        "**애자일(Agile) 기반 개발**: 2주 단위 스프린트를 통해 산출물을 조기에 가시화하고, 현업의 피드백을 즉각 반영하여 만족도를 높입니다.",
+        "**현업 밀착 협업**: 주 2회 정기 리뷰 및 현업 참여 테스트를 의무화하여 요구사항과 구현 결과물 간의 정합성을 보장합니다."
+      ],
+      "speaker_notes": "안정성을 담보하면서도 혁신을 이루기 위해 단계적 전환, 애자일 프로세스, 그리고 현업과의 밀착 협업을 3대 전략으로 설정했습니다.",
+      "template_id": "deepgreen-grid-3col1",
+      "match_score": 0.90,
+      "match_reason": "3열 그리드 레이아웃, 콘텐츠 카드",
+      "html_file": "slides/slide-008-strategy.html",
+      "assets": {}
+    },
+    {
+      "index": 8,
+      "title": "기술 아키텍처",
+      "purpose": "table",
+      "key_points": [
+        "Frontend|Vue.js 3, TypeScript|SPA 구조, 반응형 웹 구현",
+        "Backend|Spring Boot 3.2, Java 17|MSA 구조, 높은 확장성",
+        "Database|PostgreSQL 16, Redis 7|대용량 데이터 처리, 인메모리 캐싱",
+        "Infra|AWS (EKS, RDS, S3)|클라우드 네이티브, 유연한 스케일링",
+        "AI/ML|Python 3.11, TensorFlow|수요예측 및 경로 최적화 모델 운영"
+      ],
+      "speaker_notes": "최신 트렌드를 반영한 검증된 오픈소스 스택을 기반으로, 클라우드 네이티브 환경에서 고성능과 유연성을 동시에 제공합니다.",
+      "template_id": "basic-table-simple4",
+      "match_score": 0.88,
+      "match_reason": "기술 스택 테이블 표현",
+      "html_file": "slides/slide-009-techstack.html",
+      "assets": {}
+    },
+    {
+      "index": 9,
+      "title": "03. 프로젝트 조직",
+      "purpose": "section",
+      "key_points": ["섹션 구분"],
+      "speaker_notes": "세 번째 섹션 시작",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "category: section",
+      "html_file": "slides/slide-010-section3.html",
+      "assets": {}
+    },
+    {
+      "index": 10,
+      "title": "조직 및 역할",
+      "purpose": "hierarchy",
+      "key_points": [
+        "총괄 관리 (PM): 김철수 (특급, 12MM) - 사업 수행 총괄 및 이슈 해결",
+        "설계 리딩 (AA): 박준형 (특급, 10MM) - 아키텍처 수립 및 기술 검토",
+        "개발 리더 (PL): 최수진 (고급, 12MM) - 개발 공정 관리 및 핵심 모듈 구현",
+        "품질 관리 (QA): 한미영 (중급, 6MM) - 테스트 계획 수립 및 품질 보증"
+      ],
+      "speaker_notes": "총 8명의 전문 인력이 78 M/M 동안 투입되며, 각 분야별 최고 수준의 전문가들로 팀을 구성했습니다.",
+      "template_id": "basic-hierarchy-org-40",
+      "match_score": 0.90,
+      "match_reason": "조직 구조도 표시, 계층 관계 표현",
+      "html_file": "slides/slide-011-organization.html",
+      "assets": {}
+    },
+    {
+      "index": 11,
+      "title": "04. 프로젝트 일정",
+      "purpose": "section",
+      "key_points": ["섹션 구분"],
+      "speaker_notes": "네 번째 섹션 시작",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "category: section",
+      "html_file": "slides/slide-012-section4.html",
+      "assets": {}
+    },
+    {
+      "index": 12,
+      "title": "마스터 일정 및 마일스톤",
+      "purpose": "timeline",
+      "key_points": [
+        "1단계: 착수 (1월)|환경 구축 및 표준 정의, Kick-off",
+        "2단계: 분석 (2-3월)|요구사항 확정 (M2), 현행 시스템 분석",
+        "3단계: 설계 (4-5월)|아키텍처/화면/DB 설계 완료 (M3)",
+        "4단계: 개발 (6-9월)|기능 구현 및 단위 테스트 완료 (M4)",
+        "5단계: 테스트 (10-11월)|통합/성능/인수 테스트 수행 (M5)",
+        "6단계: 이행 (11-12월)|시스템 전환 및 오픈 (M6), 안정화 지원"
+      ],
+      "speaker_notes": "총 12개월의 일정으로, 분석/설계 단계를 충실히 수행하여 개발 리스크를 최소화하고 충분한 테스트 기간을 확보했습니다.",
+      "template_id": "basic-process-6step1",
+      "match_score": 0.92,
+      "match_reason": "6개 단계 표현, 상세 복합 프로세스",
+      "html_file": "slides/slide-013-schedule.html",
+      "assets": {}
+    },
+    {
+      "index": 13,
+      "title": "05. 품질 및 위험 관리",
+      "purpose": "section",
+      "key_points": ["섹션 구분"],
+      "speaker_notes": "다섯 번째 섹션 시작",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "category: section",
+      "html_file": "slides/slide-014-section5.html",
+      "assets": {}
+    },
+    {
+      "index": 14,
+      "title": "품질/보안/위험 관리",
+      "purpose": "grid",
+      "key_points": [
+        "**품질 보증 (QA)**: 단계별 산출물에 대한 엄격한 검토(Review)와 GitHub PR을 통한 코드 리뷰를 의무화하며, SonarQube를 활용한 정적 분석으로 코드 품질을 상시 관리합니다.",
+        "**보안 관리**: 전 인원 보안서약서 집구 및 통제구역 출입 관리 등 물리적 보안을 준수하고, 소스코드 보안약점 진단(OWASP Top 10) 및 DB 암호화를 적용합니다.",
+        "**위험 관리 (Risk)**: 요구사항 변경 등 주요 위험 요소는 변경관리위원회(CCB)를 통해 투명하게 통제하며, Critical Path에 대한 주간 단위 집중 모니터링을 수행합니다."
+      ],
+      "speaker_notes": "성공적인 프로젝트 완수를 위해 품질, 보안, 위험 관리 체계를 수립하고 이를 철저히 이행할 것을 약속드립니다.",
+      "template_id": "deepgreen-grid-3col1",
+      "match_score": 0.90,
+      "match_reason": "3열 그리드 레이아웃",
+      "html_file": "slides/slide-015-quality.html",
+      "assets": {}
+    },
+    {
+      "index": 15,
+      "title": "감사합니다",
+      "purpose": "closing",
+      "key_points": ["Q&A", "연락처: PM 김철수"],
+      "speaker_notes": "마무리 및 Q&A 안내",
+      "template_id": "deepgreen-closing1",
+      "match_score": 0.95,
+      "match_reason": "category: closing",
+      "html_file": "slides/slide-016-closing.html",
+      "assets": {}
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .content-area { position: absolute; top: 100px; left: 50px; right: 50px; display: flex; gap: 40px; }
+    .column { flex: 1; }
+    .column-header { background: #1E5128; color: #FFFFFF; padding: 12px 20px; font-size: 16px; font-weight: bold; border-radius: 6px 6px 0 0; }
+    .column-body { background: #F4F6F6; padding: 20px; border-radius: 0 0 6px 6px; min-height: 320px; }
+    .item { margin-bottom: 20px; }
+    .item-title { font-size: 14px; color: #1E5128; font-weight: bold; margin-bottom: 6px; display: flex; align-items: center; }
+    .item-title::before { content: ''; width: 8px; height: 8px; background: #4E9F3D; border-radius: 50%; margin-right: 10px; }
+    .item-desc { font-size: 13px; color: #666; line-height: 1.5; margin-left: 18px; }
+    .highlight { background: #D8E9A8; padding: 15px; border-radius: 6px; margin-top: 15px; }
+    .highlight p { font-size: 13px; color: #1E5128; line-height: 1.5; }
+    .highlight-title { font-weight: bold; margin-bottom: 5px; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>프로젝트 배경 및 목적</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="content-area">
+    <div class="column">
+      <div class="column-header">현황 및 문제점</div>
+      <div class="column-body">
+        <div class="item">
+          <p class="item-title">레거시 시스템 노후화</p>
+          <p class="item-desc">10년 이상 운영된 시스템으로 처리 속도 저하</p>
+        </div>
+        <div class="item">
+          <p class="item-title">실시간 재고 파악 불가</p>
+          <p class="item-desc">수작업 집계로 인한 재고 불일치 빈발</p>
+        </div>
+        <div class="item">
+          <p class="item-title">타 시스템 연동 한계</p>
+          <p class="item-desc">ERP, 회계 시스템과의 연동 어려움</p>
+        </div>
+        <div class="highlight">
+          <p class="highlight-title">발주기관 현황</p>
+          <p>글로벌물류: 연간 500만건 처리</p>
+          <p>국내 Top 5 물류기업</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="column-header">추진 목표</div>
+      <div class="column-body">
+        <div class="item">
+          <p class="item-title">AI 기반 물류 최적화</p>
+          <p class="item-desc">수요예측, 경로최적화 알고리즘 도입</p>
+        </div>
+        <div class="item">
+          <p class="item-title">실시간 재고/배송 추적</p>
+          <p class="item-desc">IoT 연동으로 실시간 가시성 확보</p>
+        </div>
+        <div class="item">
+          <p class="item-title">클라우드 기반 확장성</p>
+          <p class="item-desc">AWS 인프라로 유연한 확장 대응</p>
+        </div>
+        <div class="highlight">
+          <p class="highlight-title">프로젝트 정보</p>
+          <p>계약금액: 15억원 (VAT 별도)</p>
+          <p>계약기간: 2025.01 ~ 2025.12 (12개월)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num">4 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

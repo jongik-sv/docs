@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Noto Sans KR', Arial, sans-serif; background: white; position: relative; }
+    .header { position: absolute; top: 20pt; left: 30pt; }
+    .main-title { font-size: 14pt; color: #002452; font-weight: 500; }
+    .action-title { font-size: 12pt; color: #262626; margin-top: 6pt; }
+    .org-chart { position: absolute; top: 85pt; left: 30pt; right: 30pt; }
+    .level { display: flex; justify-content: center; gap: 20pt; margin-bottom: 15pt; }
+    .level-label { position: absolute; left: 0; font-size: 9pt; color: #757575; background: #F8F9FA; padding: 4pt 8pt; border-radius: 3pt; }
+    .node { background: #F8F9FA; border-radius: 6pt; padding: 12pt 16pt; text-align: center; min-width: 120pt; border-left: 4pt solid #002452; }
+    .node.client { border-left-color: #E9B86E; background: #FFF9F0; }
+    .node.pm { border-left-color: #002452; }
+    .node.team { border-left-color: #4B6580; }
+    .node-title { font-size: 9pt; color: #757575; margin-bottom: 4pt; white-space: nowrap; }
+    .node-name { font-size: 11pt; font-weight: 500; color: #262626; white-space: nowrap; }
+    .node-role { font-size: 8pt; color: #002452; margin-top: 4pt; white-space: nowrap; }
+    .connector { width: 2pt; height: 15pt; background: #B6B6B6; margin: 0 auto; }
+    .h-connector { display: flex; justify-content: center; align-items: center; margin-bottom: 10pt; }
+    .h-line { height: 2pt; background: #B6B6B6; flex: 1; max-width: 150pt; }
+    
+    .accent-bar { position: absolute; top: 0; left: 0; width: 100%; height: 3pt; background: #002452; }
+  
+    .footer-wrap { position: absolute; bottom: 15pt; right: 30pt; display: flex; align-items: center; gap: 20pt; }
+    .footer-info { font-size: 9pt; color: #B6B6B6; }
+    .footer-page { font-size: 9pt; color: #B6B6B6; }
+    .logo-img { height: 18pt; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <div class="header">
+    <p class="main-title">프로젝트 조직도</p>
+    <p class="action-title">발주기관-수행사 협력 체계로 효율적인 프로젝트 수행</p>
+  </div>
+  <div class="org-chart">
+    <div class="level">
+      <div class="node client">
+        <p class="node-title">발주기관 PM</p>
+        <p class="node-name">정민호 부장</p>
+        <p class="node-role">총괄 관리, 의사결정</p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="level">
+      <div class="node pm">
+        <p class="node-title">수행사 PM</p>
+        <p class="node-name">김철수 차장</p>
+        <p class="node-role">수행 총괄, 품질/위험 관리</p>
+      </div>
+      <div class="node team">
+        <p class="node-title">PMO</p>
+        <p class="node-name">이영희 과장</p>
+        <p class="node-role">프로젝트 관리 지원</p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="level">
+      <div class="node team">
+        <p class="node-title">AA (아키텍트)</p>
+        <p class="node-name">박준형 책임</p>
+        <p class="node-role">시스템 설계</p>
+      </div>
+      <div class="node team">
+        <p class="node-title">개발 리더</p>
+        <p class="node-name">최수진 선임</p>
+        <p class="node-role">개발 총괄</p>
+      </div>
+      <div class="node team">
+        <p class="node-title">QA 담당</p>
+        <p class="node-name">한미영 대리</p>
+        <p class="node-role">품질 관리, 테스트</p>
+      </div>
+      <div class="node team">
+        <p class="node-title">DBA</p>
+        <p class="node-name">오현우 대리</p>
+        <p class="node-role">DB 설계 및 튜닝</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrap">
+    <img class="logo-img" src="../../../templates/documents/dongkuk-systems/assets/default/image2.png" alt="logo" />
+    <p class="footer-info">작성_테크솔루션</p>
+    <p class="footer-page">13</p>
+  </div>
+</body>
+</html>

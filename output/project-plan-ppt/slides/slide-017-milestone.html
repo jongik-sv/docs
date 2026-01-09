@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 25pt; left: 40pt; }
+    .header h1 { font-size: 20pt; color: #1E5128; font-weight: bold; }
+    .header-line { width: 50pt; height: 3pt; background: #4E9F3D; margin-top: 6pt; }
+    .timeline-container { position: absolute; top: 85pt; left: 40pt; right: 40pt; }
+    .timeline-line { position: absolute; top: 35pt; left: 0; right: 0; height: 4pt; background: linear-gradient(90deg, #1E5128, #4E9F3D, #D8E9A8); border-radius: 2pt; }
+    .milestones { display: flex; justify-content: space-between; position: relative; }
+    .milestone { text-align: center; width: 100pt; }
+    .milestone-dot { width: 20pt; height: 20pt; background: #1E5128; border-radius: 50%; margin: 25pt auto 10pt; border: 3pt solid #FFFFFF; box-shadow: 0 0 0 2pt #1E5128; position: relative; z-index: 1; }
+    .milestone:nth-child(even) .milestone-dot { background: #4E9F3D; box-shadow: 0 0 0 2pt #4E9F3D; }
+    .milestone-label { font-size: 11pt; color: #1E5128; font-weight: bold; margin-bottom: 4pt; }
+    .milestone-date { font-size: 9pt; color: #4E9F3D; margin-bottom: 4pt; }
+    .milestone-output { font-size: 8pt; color: #666; line-height: 1.3; }
+    .table-container { position: absolute; top: 220pt; left: 40pt; right: 40pt; }
+    table { width: 100%; border-collapse: collapse; font-size: 9pt; }
+    th { background: #F4F6F6; color: #1E5128; padding: 6pt 8pt; text-align: left; font-weight: bold; border-bottom: 2pt solid #1E5128; }
+    td { padding: 6pt 8pt; color: #191A19; border-bottom: 1pt solid #E5E5E5; }
+    .footer { position: absolute; bottom: 15pt; right: 40pt; font-size: 9pt; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 15pt; left: 40pt; font-size: 9pt; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>주요 마일스톤</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="timeline-container">
+    <div class="timeline-line"></div>
+    <div class="milestones">
+      <div class="milestone">
+        <div class="milestone-dot"></div>
+        <p class="milestone-label">M1</p>
+        <p class="milestone-date">01/10</p>
+        <p class="milestone-output">착수보고</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-dot"></div>
+        <p class="milestone-label">M2</p>
+        <p class="milestone-date">03/31</p>
+        <p class="milestone-output">요구사항 확정</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-dot"></div>
+        <p class="milestone-label">M3</p>
+        <p class="milestone-date">05/31</p>
+        <p class="milestone-output">설계 완료</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-dot"></div>
+        <p class="milestone-label">M4</p>
+        <p class="milestone-date">09/30</p>
+        <p class="milestone-output">개발 완료</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-dot"></div>
+        <p class="milestone-label">M5</p>
+        <p class="milestone-date">11/15</p>
+        <p class="milestone-output">테스트 완료</p>
+      </div>
+      <div class="milestone">
+        <div class="milestone-dot"></div>
+        <p class="milestone-label">M6</p>
+        <p class="milestone-date">12/01</p>
+        <p class="milestone-output">시스템 오픈</p>
+      </div>
+    </div>
+  </div>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>마일스톤</th>
+        <th>예정일</th>
+        <th>주요 산출물</th>
+        <th>승인</th>
+      </tr>
+      <tr><td>M1 착수보고</td><td>2025-01-10</td><td>수행계획서</td><td>스폰서</td></tr>
+      <tr><td>M2 요구사항 확정</td><td>2025-03-31</td><td>요구사항정의서</td><td>발주PM</td></tr>
+      <tr><td>M3 설계 완료</td><td>2025-05-31</td><td>설계서 일체</td><td>발주PM</td></tr>
+      <tr><td>M4 개발 완료</td><td>2025-09-30</td><td>소스코드</td><td>PL</td></tr>
+      <tr><td>M5 테스트 완료</td><td>2025-11-15</td><td>테스트결과서</td><td>PM</td></tr>
+      <tr><td>M6 시스템 오픈</td><td>2025-12-01</td><td>오픈보고서</td><td>스폰서</td></tr>
+    </table>
+  </div>
+  <div class="page-num">17 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

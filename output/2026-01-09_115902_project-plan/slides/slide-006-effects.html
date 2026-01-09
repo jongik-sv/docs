@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Noto Sans KR', Arial, sans-serif; background: white; position: relative; }
+    .header { position: absolute; top: 20pt; left: 30pt; }
+    .main-title { font-size: 14pt; color: #002452; font-weight: 500; }
+    .action-title { font-size: 12pt; color: #262626; margin-top: 6pt; }
+    .stats { position: absolute; top: 100pt; left: 30pt; right: 30pt; display: flex; gap: 30pt; justify-content: center; }
+    .stat { text-align: center; flex: 1; max-width: 180pt; }
+    .stat-circle { width: 140pt; height: 140pt; border-radius: 50%; margin: 0 auto 12pt; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .stat:nth-child(1) .stat-circle { background: #002452; }
+    .stat:nth-child(2) .stat-circle { background: #4B6580; }
+    .stat:nth-child(3) .stat-circle { background: #C51F2A; }
+    .stat-value { font-size: 32pt; font-weight: 700; color: white; white-space: nowrap; }
+    .stat-unit { font-size: 14pt; color: rgba(255,255,255,0.9); white-space: nowrap; }
+    .stat-label { font-size: 11pt; font-weight: 500; color: #262626; margin-bottom: 4pt; }
+    .stat-desc { font-size: 9pt; color: #757575; }
+    
+    .accent-bar { position: absolute; top: 0; left: 0; width: 100%; height: 3pt; background: #002452; }
+  
+    .footer-wrap { position: absolute; bottom: 15pt; right: 30pt; display: flex; align-items: center; gap: 20pt; }
+    .footer-info { font-size: 9pt; color: #B6B6B6; }
+    .footer-page { font-size: 9pt; color: #B6B6B6; }
+    .logo-img { height: 18pt; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <div class="header">
+    <p class="main-title">기대 효과</p>
+    <p class="action-title">스마트 물류 시스템 도입으로 운영 효율 극대화 및 비용 절감 달성</p>
+  </div>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-circle">
+        <p class="stat-value">30</p>
+        <p class="stat-unit">% 향상</p>
+      </div>
+      <p class="stat-label">물류 처리 효율</p>
+      <p class="stat-desc">AI 경로 최적화 및<br>자동화 프로세스 도입</p>
+    </div>
+    <div class="stat">
+      <div class="stat-circle">
+        <p class="stat-value">99.5</p>
+        <p class="stat-unit">% 달성</p>
+      </div>
+      <p class="stat-label">재고 정확도</p>
+      <p class="stat-desc">실시간 재고 추적 및<br>자동 재고 조정</p>
+    </div>
+    <div class="stat">
+      <div class="stat-circle">
+        <p class="stat-value">20</p>
+        <p class="stat-unit">% 절감</p>
+      </div>
+      <p class="stat-label">운영 비용</p>
+      <p class="stat-desc">클라우드 인프라 및<br>업무 자동화</p>
+    </div>
+  </div>
+  <div class="footer-wrap">
+    <img class="logo-img" src="../../../templates/documents/dongkuk-systems/assets/default/image2.png" alt="logo" />
+    <p class="footer-info">작성_테크솔루션</p>
+    <p class="footer-page">6</p>
+  </div>
+</body>
+</html>

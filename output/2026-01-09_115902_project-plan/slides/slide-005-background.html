@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Noto Sans KR', Arial, sans-serif; background: white; position: relative; }
+    .header { position: absolute; top: 20pt; left: 30pt; }
+    .main-title { font-size: 14pt; color: #002452; font-weight: 500; }
+    .action-title { font-size: 12pt; color: #262626; margin-top: 6pt; }
+    .content { position: absolute; top: 90pt; left: 30pt; right: 30pt; display: flex; gap: 30pt; }
+    .col { flex: 1; }
+    .col-title { display: flex; align-items: center; gap: 10pt; margin-bottom: 15pt; }
+    .col-icon { width: 36pt; height: 36pt; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 16pt; }
+    .col-icon.problem { background: #757575; }
+    .col-icon.goal { background: #002452; }
+    .col-label { font-size: 12pt; font-weight: 500; color: #262626; white-space: nowrap; }
+    .col-box { background: #F8F9FA; padding: 15pt; border-radius: 6pt; }
+    .col-box.problem { border-left: 4pt solid #757575; }
+    .col-box.goal { border-left: 4pt solid #002452; }
+    .col-box ul { list-style: none; }
+    .col-box li { font-size: 10pt; color: #262626; margin-bottom: 10pt; padding-left: 12pt; position: relative; }
+    .col-box li:before { content: ''; position: absolute; left: 0; top: 5pt; width: 4pt; height: 4pt; background: #757575; border-radius: 50%; }
+    .col-box.goal li:before { background: #002452; }
+    .col-box li strong { color: #C51F2A; }
+    .arrow { position: absolute; top: 180pt; left: 50%; transform: translateX(-50%); font-size: 24pt; color: #B7D0D4; }
+    
+    .accent-bar { position: absolute; top: 0; left: 0; width: 100%; height: 3pt; background: #002452; }
+  
+    .footer-wrap { position: absolute; bottom: 15pt; right: 30pt; display: flex; align-items: center; gap: 20pt; }
+    .footer-info { font-size: 9pt; color: #B6B6B6; }
+    .footer-page { font-size: 9pt; color: #B6B6B6; }
+    .logo-img { height: 18pt; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <div class="header">
+    <p class="main-title">프로젝트 배경 및 목적</p>
+    <p class="action-title">레거시 시스템 노후화 해결 및 차세대 스마트 물류 시스템 구축</p>
+  </div>
+  <div class="content">
+    <div class="col">
+      <div class="col-title">
+        <div class="col-icon problem"><p>!</p></div>
+        <p class="col-label">현황 및 문제점</p>
+      </div>
+      <div class="col-box problem">
+        <ul>
+          <li><strong>10년 이상</strong> 운영된 레거시 시스템</li>
+          <li>급증하는 물동량 대응 한계</li>
+          <li>처리 속도 저하 및 병목 현상</li>
+          <li>실시간 재고 파악 불가</li>
+          <li>타 시스템 연동 한계</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-title">
+        <div class="col-icon goal"><p>&#10003;</p></div>
+        <p class="col-label">추진 목표</p>
+      </div>
+      <div class="col-box goal">
+        <ul>
+          <li><strong>AI 기반</strong> 물류 최적화</li>
+          <li>실시간 재고/배송 추적</li>
+          <li>클라우드 기반 확장성 확보</li>
+          <li>MSA 아키텍처로 유연성 강화</li>
+          <li>데이터 기반 의사결정 지원</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrap">
+    <img class="logo-img" src="../../../templates/documents/dongkuk-systems/assets/default/image2.png" alt="logo" />
+    <p class="footer-info">작성_테크솔루션</p>
+    <p class="footer-page">5</p>
+  </div>
+</body>
+</html>

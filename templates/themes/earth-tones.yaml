@@ -1,0 +1,27 @@
+# Earth Tones Theme
+# Source: 2025 Nature-Inspired Sustainability Trends
+# Reference: https://slideuplift.com/blog/best-powerpoint-color-palettes-you-should-use/
+
+theme:
+  id: earth-tones
+  name: "Earth Tones"
+  description: "자연에서 영감 받은 따뜻한 어스톤 테마"
+
+colors:
+  primary: "#5D4E37"      # 주요 강조색 (다크 브라운)
+  secondary: "#8B7355"    # 보조 강조색 (카멜)
+  accent: "#C9A959"       # 하이라이트 (샌드 골드)
+  background: "#FDF8F3"   # 배경색 (웜 화이트)
+  surface: "#F5EDE4"      # 카드/패널 배경
+  dark_text: "#3D3229"    # 본문 텍스트
+  light: "#FFFFFF"        # 밝은 텍스트
+  gray: "#9A8C7B"         # 음소거 요소
+
+typography:
+  heading_font: "Arial"
+  body_font: "Arial"
+  korean_font: "Malgun Gothic"
+
+style_hints:
+  rounded_corners: 6
+  shadow_blur: 4

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .left-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8pt;
+      height: 100%;
+      background: #1E5128;
+    }
+    .page-title {
+      position: absolute;
+      left: 36pt;
+      top: 24pt;
+    }
+    .page-title h1 {
+      color: #1E5128;
+      font-size: 22pt;
+      font-weight: bold;
+    }
+    .table-container {
+      position: absolute;
+      left: 36pt;
+      top: 70pt;
+      width: 648pt;
+    }
+    .table-row {
+      display: flex;
+      border-bottom: 1pt solid #D8E9A8;
+    }
+    .table-row.header {
+      background: #1E5128;
+      border-bottom: none;
+    }
+    .table-row.header .cell p {
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+    .table-row:nth-child(odd):not(.header) {
+      background: #F4F6F6;
+    }
+    .cell {
+      padding: 10pt 8pt;
+      display: flex;
+      align-items: center;
+    }
+    .cell p {
+      color: #191A19;
+      font-size: 10pt;
+      line-height: 1.4;
+    }
+    .cell.risk { width: 140pt; }
+    .cell.impact { width: 60pt; text-align: center; justify-content: center; }
+    .cell.prob { width: 60pt; text-align: center; justify-content: center; }
+    .cell.response { flex: 1; }
+    .cell.owner { width: 60pt; text-align: center; justify-content: center; }
+    .badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2pt 8pt;
+      border-radius: 4pt;
+    }
+    .badge p {
+      font-size: 9pt;
+      font-weight: bold;
+    }
+    .badge.high { background: #1E5128; }
+    .badge.high p { color: #FFFFFF; }
+    .badge.mid { background: #4E9F3D; }
+    .badge.mid p { color: #FFFFFF; }
+    .badge.low { background: #D8E9A8; }
+    .badge.low p { color: #191A19; }
+    .footer {
+      position: absolute;
+      left: 36pt;
+      bottom: 16pt;
+      width: 648pt;
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer p {
+      color: #AAB7B8;
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-bar"></div>
+  <div class="page-title">
+    <h1>주요 위험 및 대응 방안</h1>
+  </div>
+  <div class="table-container">
+    <div class="table-row header">
+      <div class="cell risk"><p>위험 요소</p></div>
+      <div class="cell impact"><p>영향도</p></div>
+      <div class="cell prob"><p>발생확률</p></div>
+      <div class="cell response"><p>대응 방안</p></div>
+      <div class="cell owner"><p>담당</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell risk"><p>요구사항 변경</p></div>
+      <div class="cell impact"><div class="badge high"><p>상</p></div></div>
+      <div class="cell prob"><div class="badge high"><p>상</p></div></div>
+      <div class="cell response"><p>CCB 통해 통제, 영향도 분석 필수</p></div>
+      <div class="cell owner"><p>PM</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell risk"><p>일정 지연</p></div>
+      <div class="cell impact"><div class="badge high"><p>상</p></div></div>
+      <div class="cell prob"><div class="badge mid"><p>중</p></div></div>
+      <div class="cell response"><p>주간 진척관리, Critical Path 집중 모니터링</p></div>
+      <div class="cell owner"><p>PM</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell risk"><p>기술적 난제</p></div>
+      <div class="cell impact"><div class="badge mid"><p>중</p></div></div>
+      <div class="cell prob"><div class="badge mid"><p>중</p></div></div>
+      <div class="cell response"><p>PoC 선행, 외부 전문가 자문</p></div>
+      <div class="cell owner"><p>AA</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell risk"><p>인력 이탈</p></div>
+      <div class="cell impact"><div class="badge high"><p>상</p></div></div>
+      <div class="cell prob"><div class="badge low"><p>하</p></div></div>
+      <div class="cell response"><p>대체 인력 풀 확보, 기술 문서화 강화</p></div>
+      <div class="cell owner"><p>PM</p></div>
+    </div>
+    <div class="table-row">
+      <div class="cell risk"><p>데이터 마이그레이션</p></div>
+      <div class="cell impact"><div class="badge high"><p>상</p></div></div>
+      <div class="cell prob"><div class="badge mid"><p>중</p></div></div>
+      <div class="cell response"><p>사전 검증, 롤백 계획 수립</p></div>
+      <div class="cell owner"><p>DBA</p></div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>스마트 물류관리 시스템 구축</p>
+    <p>14</p>
+  </div>
+</body>
+</html>

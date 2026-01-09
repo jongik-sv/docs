@@ -1,0 +1,546 @@
+# 진행바 타임라인 콘텐츠 템플릿 v2.0
+# 원본: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx:58
+# 추출일: 2026-01-09T11:10:29.192179
+
+content_template:
+  id: "basic-timeline-progress1"
+  name: "진행바 타임라인"
+  version: "2.0"
+  source: "/home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx"
+  source_slide_index: 58
+  extracted_at: "2026-01-09T11:10:29.192179"
+
+design_meta:
+  quality_score: 8.5
+  design_intent: "basic-timeline-progress"
+  visual_balance: "symmetric"
+  information_density: "medium"
+
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: "16:9"
+
+shapes:
+  - id: "shape-6"
+    name: "Rectangle 3"
+    type: "rectangle"
+    z_index: 6
+    geometry:
+      x: 2.3
+      y: 19.1
+      cx: 18.1
+      cy: 13.2
+      rotation: 0
+      original_aspect_ratio: 3.05
+    style:
+      fill:
+        type: "solid"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-7"
+    name: "Rectangle 3"
+    type: "rectangle"
+    z_index: 7
+    geometry:
+      x: 2.3
+      y: 38.4
+      cx: 18.1
+      cy: 13.2
+      rotation: 0
+      original_aspect_ratio: 3.05
+    style:
+      fill:
+        type: "solid"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-8"
+    name: "Rectangle 3"
+    type: "rectangle"
+    z_index: 8
+    geometry:
+      x: 2.2
+      y: 57.8
+      cx: 18.1
+      cy: 13.2
+      rotation: 0
+      original_aspect_ratio: 3.05
+    style:
+      fill:
+        type: "solid"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-9"
+    name: "Rectangle 3"
+    type: "rectangle"
+    z_index: 9
+    geometry:
+      x: 2.2
+      y: 77.1
+      cx: 18.1
+      cy: 13.2
+      rotation: 0
+      original_aspect_ratio: 3.05
+    style:
+      fill:
+        type: "solid"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-10"
+    name: "Rectangle 3"
+    type: "rectangle"
+    z_index: 10
+    geometry:
+      x: 27.8
+      y: 24.5
+      cx: 23.0
+      cy: 23.7
+      rotation: 0
+      original_aspect_ratio: 2.164
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-11"
+    name: "Rectangle 3"
+    type: "rectangle"
+    z_index: 11
+    geometry:
+      x: 27.8
+      y: 55.5
+      cx: 23.0
+      cy: 23.7
+      rotation: 0
+      original_aspect_ratio: 2.164
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-12"
+    name: "FlowTriangle"
+    type: "triangle"
+    z_index: 12
+    geometry:
+      x: 50.7
+      y: 47.9
+      cx: 10.1
+      cy: 8.2
+      rotation: 0
+      original_aspect_ratio: 2.762
+    style:
+      fill:
+        type: "solid"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.8
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-13"
+    name: "Rectangle 3"
+    type: "rectangle"
+    z_index: 13
+    geometry:
+      x: 60.4
+      y: 24.5
+      cx: 18.1
+      cy: 13.2
+      rotation: 0
+      original_aspect_ratio: 3.05
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-14"
+    name: "Rectangle 3"
+    type: "rectangle"
+    z_index: 14
+    geometry:
+      x: 60.4
+      y: 66.0
+      cx: 18.1
+      cy: 13.2
+      rotation: 0
+      original_aspect_ratio: 3.05
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-15"
+    name: "ColumnHeader"
+    type: "rectangle"
+    z_index: 15
+    geometry:
+      x: 1.6
+      y: 4.3
+      cx: 18.7
+      cy: 6.6
+      rotation: 0
+      original_aspect_ratio: 6.366
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.8
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.014814814814814815
+      original_font_size_pt: 16.0
+      font_weight: "normal"
+  - id: "shape-16"
+    name: "ColumnHeader"
+    type: "rectangle"
+    z_index: 16
+    geometry:
+      x: 27.8
+      y: 4.3
+      cx: 23.6
+      cy: 6.6
+      rotation: 0
+      original_aspect_ratio: 8.022
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.8
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.014814814814814815
+      original_font_size_pt: 16.0
+      font_weight: "normal"
+  - id: "shape-17"
+    name: "ColumnHeader"
+    type: "rectangle"
+    z_index: 17
+    geometry:
+      x: 60.4
+      y: 4.3
+      cx: 18.1
+      cy: 6.6
+      rotation: 0
+      original_aspect_ratio: 6.14
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.8
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.014814814814814815
+      original_font_size_pt: 16.0
+      font_weight: "normal"
+  - id: "shape-18"
+    name: "Rectangle 3"
+    type: "rectangle"
+    z_index: 18
+    geometry:
+      x: 60.4
+      y: 45.3
+      cx: 18.1
+      cy: 13.2
+      rotation: 0
+      original_aspect_ratio: 3.05
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.012962962962962963
+      original_font_size_pt: 14.0
+      font_weight: "normal"
+  - id: "shape-19"
+    name: "FlowTriangle"
+    type: "triangle"
+    z_index: 19
+    geometry:
+      x: 68.4
+      y: 40.2
+      cx: 2.7
+      cy: 3.4
+      rotation: 0
+      original_aspect_ratio: 1.769
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.8
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-20"
+    name: "FlowTriangle"
+    type: "triangle"
+    z_index: 20
+    geometry:
+      x: 68.4
+      y: 60.7
+      cx: 2.7
+      cy: 3.4
+      rotation: 0
+      original_aspect_ratio: 1.769
+    style:
+      fill:
+        type: "solid"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.8
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-21"
+    name: "FlowTriangle"
+    type: "triangle"
+    z_index: 21
+    geometry:
+      x: 19.5
+      y: 47.9
+      cx: 10.1
+      cy: 8.2
+      rotation: 0
+      original_aspect_ratio: 2.762
+    style:
+      fill:
+        type: "solid"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.8
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+
+gaps:
+  global:
+    column_gap: 5
+    row_gap: 5
+  between_shapes: []
+
+spatial_relationships: []
+
+groups: []
+
+thumbnail: "thumbnails/basic-timeline-progress1.png"
+
+use_for:
+  - "진행 상태 표시"
+  - "완료율 표현"
+  - "진행도 시각화"
+  - "시간 기반 진행률"
+  - "프로그레스 표시"
+
+keywords:
+  - "진행바 타임라인"
+  - "진행률 표시"
+  - "완료도 표현"
+  - "시간 기반 진행"
+  - "프로그레스"
+
+expected_prompt: "진행바로 진행 상태를 표시하는 타임라인"
+
+prompt_keywords:
+  - "프로세스"
+  - "타임라인"
+  - "다이어그램"
+  - "단계"
+  - "흐름"
+  - "시간"
+  - "진행"
+  - "레이아웃"
+
+shape_sources:
+  - type: "ooxml"
+    description: "원본 도형 XML 보존"

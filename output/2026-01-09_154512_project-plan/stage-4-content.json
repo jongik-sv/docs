@@ -1,0 +1,301 @@
+{
+  "session": {
+    "id": "2026-01-09_154512_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T15:45:12Z",
+    "updated_at": "2026-01-09T15:50:00Z"
+  },
+  "current_stage": 4,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "subtitle": "착수보고",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "slide_count": 15
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      }
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축 수행계획서",
+      "purpose": "cover",
+      "key_points": ["프로젝트 착수보고", "2025.01", "(주)테크솔루션"],
+      "template_id": "deepgreen-cover-centered1",
+      "match_score": 0.95,
+      "html_file": "slides/slide-001-cover.html",
+      "content_bindings": {
+        "title": "스마트 물류관리 시스템 구축 수행계획서",
+        "subtitle": "(주)글로벌물류",
+        "date": "2025년 1월",
+        "company": "(주)테크솔루션"
+      }
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "key_points": ["프로젝트 개요", "추진 전략", "조직 및 역할", "프로젝트 일정", "품질/위험 관리"],
+      "template_id": "deepgreen-toc-3col1",
+      "match_score": 0.90,
+      "html_file": "slides/slide-002-toc.html",
+      "content_bindings": {
+        "title": "목차",
+        "items": [
+          {"number": "01", "title": "프로젝트 개요", "description": "배경, 목적, 범위"},
+          {"number": "02", "title": "추진 전략", "description": "방법론, 아키텍처"},
+          {"number": "03", "title": "조직 및 역할", "description": "R&R, 투입 인력"},
+          {"number": "04", "title": "프로젝트 일정", "description": "마스터 일정"},
+          {"number": "05", "title": "품질/위험 관리", "description": "위험 대응"}
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "title": "프로젝트 개요",
+      "purpose": "section",
+      "key_points": ["SECTION 01"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "html_file": "slides/slide-003-section1.html",
+      "content_bindings": {
+        "section_number": "01",
+        "title": "프로젝트 개요"
+      }
+    },
+    {
+      "index": 3,
+      "title": "프로젝트 배경 및 기대효과",
+      "purpose": "stats",
+      "key_points": ["500만건", "10년+", "30%", "99.5%", "20%"],
+      "template_id": "basic-stats-cards",
+      "match_score": 0.85,
+      "html_file": "slides/slide-004-background.html",
+      "content_bindings": {
+        "title": "프로젝트 배경 및 기대효과",
+        "items": [
+          {"value": "500만건", "label": "연간 물류 처리량", "description": "국내 Top 5 물류기업"},
+          {"value": "10년+", "label": "레거시 시스템 운영", "description": "처리 속도 저하 문제"},
+          {"value": "15억원", "label": "프로젝트 규모", "description": "12개월 수행 기간"},
+          {"value": "30%", "label": "물류 처리 효율 향상"},
+          {"value": "99.5%", "label": "재고 정확도 달성"},
+          {"value": "20%", "label": "운영 비용 절감"}
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "title": "시스템 범위",
+      "purpose": "grid",
+      "key_points": ["WMS", "TMS", "OMS", "Dashboard"],
+      "template_id": "basic-grid-icon6",
+      "match_score": 0.88,
+      "html_file": "slides/slide-005-scope.html",
+      "content_bindings": {
+        "title": "시스템 범위",
+        "items": [
+          {"icon": "W", "title": "WMS", "subtitle": "창고관리시스템", "features": ["입출고 관리", "재고 관리", "피킹/패킹"]},
+          {"icon": "T", "title": "TMS", "subtitle": "배송관리시스템", "features": ["배차 관리", "경로 최적화", "실시간 추적"]},
+          {"icon": "O", "title": "OMS", "subtitle": "주문관리시스템", "features": ["주문 접수", "할당 관리", "정산 처리"]},
+          {"icon": "D", "title": "Dashboard", "subtitle": "통합모니터링", "features": ["실시간 현황", "KPI 대시보드", "리포트 생성"]}
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "title": "추진 전략",
+      "purpose": "section",
+      "key_points": ["SECTION 02"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "html_file": "slides/slide-006-section2.html",
+      "content_bindings": {
+        "section_number": "02",
+        "title": "추진 전략"
+      }
+    },
+    {
+      "index": 6,
+      "title": "핵심 추진 전략",
+      "purpose": "grid",
+      "key_points": ["단계적 전환", "애자일 기반", "현업 밀착"],
+      "template_id": "basic-grid-3col1",
+      "match_score": 0.90,
+      "html_file": "slides/slide-007-strategy.html",
+      "content_bindings": {
+        "title": "핵심 추진 전략",
+        "items": [
+          {"number": "1", "title": "단계적 전환 전략", "description": "Big Bang 방식이 아닌 모듈별 순차 전환으로 리스크 최소화", "detail": "WMS → TMS → OMS → Dashboard 순차 오픈"},
+          {"number": "2", "title": "애자일 기반 개발", "description": "2주 단위 스프린트로 빠른 피드백과 유연한 대응", "detail": "스프린트 리뷰 격주 금요일 진행"},
+          {"number": "3", "title": "현업 밀착 협업", "description": "주 2회 현업 리뷰를 통한 요구사항 정합성 확보", "detail": "화/목 현업 담당자 정기 미팅"}
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "title": "기술 아키텍처",
+      "purpose": "grid",
+      "key_points": ["Frontend", "Backend", "Database", "AI/ML"],
+      "template_id": "basic-grid-icon6",
+      "match_score": 0.88,
+      "html_file": "slides/slide-008-tech.html",
+      "content_bindings": {
+        "title": "기술 아키텍처",
+        "items": [
+          {"icon": "FE", "title": "Frontend", "subtitle": "Vue.js 3 + TypeScript", "features": ["SPA 구조", "반응형 UI", "컴포넌트 기반"]},
+          {"icon": "BE", "title": "Backend", "subtitle": "Spring Boot + Java 17", "features": ["MSA 구조", "RESTful API", "컨테이너 기반"]},
+          {"icon": "DB", "title": "Database", "subtitle": "PostgreSQL + Redis", "features": ["RDBMS + Cache", "고가용성 구성", "실시간 처리"]},
+          {"icon": "AI", "title": "AI/ML", "subtitle": "Python + TensorFlow", "features": ["수요 예측", "경로 최적화", "이상 탐지"]}
+        ]
+      }
+    },
+    {
+      "index": 8,
+      "title": "조직 및 역할",
+      "purpose": "section",
+      "key_points": ["SECTION 03"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "html_file": "slides/slide-009-section3.html",
+      "content_bindings": {
+        "section_number": "03",
+        "title": "조직 및 역할"
+      }
+    },
+    {
+      "index": 9,
+      "title": "프로젝트 조직 및 투입 인력",
+      "purpose": "hierarchy",
+      "key_points": ["8명", "78MM"],
+      "template_id": "basic-hierarchy-org",
+      "match_score": 0.92,
+      "html_file": "slides/slide-010-org.html",
+      "content_bindings": {
+        "title": "프로젝트 조직 및 투입 인력",
+        "root": {
+          "role": "발주기관 PM",
+          "name": "정민호 부장",
+          "org": "(주)글로벌물류"
+        },
+        "pm": {
+          "role": "수행사 PM",
+          "name": "김철수 차장",
+          "position": "현장 대리인"
+        },
+        "team": [
+          {"role": "AA", "name": "박준형 책임"},
+          {"role": "개발 리더", "name": "최수진 선임"},
+          {"role": "QA 담당", "name": "한미영 대리"},
+          {"role": "DBA", "name": "오현우 대리"}
+        ],
+        "summary": "총 8명 / 78MM"
+      }
+    },
+    {
+      "index": 10,
+      "title": "프로젝트 일정",
+      "purpose": "section",
+      "key_points": ["SECTION 04"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "html_file": "slides/slide-011-section4.html",
+      "content_bindings": {
+        "section_number": "04",
+        "title": "프로젝트 일정"
+      }
+    },
+    {
+      "index": 11,
+      "title": "마스터 일정 및 마일스톤",
+      "purpose": "timeline",
+      "key_points": ["착수", "분석", "설계", "개발", "테스트", "이행"],
+      "template_id": "deepgreen-timeline1",
+      "match_score": 0.90,
+      "html_file": "slides/slide-012-schedule.html",
+      "content_bindings": {
+        "title": "마스터 일정 및 마일스톤",
+        "timeline": [
+          {"period": "01월", "title": "착수", "duration": "4주"},
+          {"period": "02-03월", "title": "분석", "duration": "8주"},
+          {"period": "04-05월", "title": "설계", "duration": "8주"},
+          {"period": "06-09월", "title": "개발", "duration": "16주"},
+          {"period": "10-11월", "title": "테스트", "duration": "6주"},
+          {"period": "11-12월", "title": "이행", "duration": "6주"}
+        ],
+        "milestones": [
+          {"id": "M1", "title": "착수보고", "date": "2025-01-10"},
+          {"id": "M2", "title": "요구사항 확정", "date": "2025-03-31"},
+          {"id": "M3", "title": "설계 완료", "date": "2025-05-31"},
+          {"id": "M4", "title": "개발 완료", "date": "2025-09-30"},
+          {"id": "M5", "title": "테스트 완료", "date": "2025-11-15"},
+          {"id": "M6", "title": "시스템 오픈", "date": "2025-12-01"}
+        ]
+      }
+    },
+    {
+      "index": 12,
+      "title": "품질 및 위험 관리",
+      "purpose": "section",
+      "key_points": ["SECTION 05"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "html_file": "slides/slide-013-section5.html",
+      "content_bindings": {
+        "section_number": "05",
+        "title": "품질 및 위험 관리"
+      }
+    },
+    {
+      "index": 13,
+      "title": "주요 위험 및 대응 방안",
+      "purpose": "table",
+      "key_points": ["요구사항 변경", "일정 지연", "기술적 난제", "데이터 마이그레이션"],
+      "template_id": "basic-table-simple4",
+      "match_score": 0.85,
+      "html_file": "slides/slide-014-risk.html",
+      "content_bindings": {
+        "title": "주요 위험 및 대응 방안",
+        "table": {
+          "headers": ["위험 요소", "영향도", "발생확률", "대응 방안", "담당"],
+          "rows": [
+            ["요구사항 변경", "상", "상", "CCB 통해 통제, 영향도 분석 필수", "PM"],
+            ["일정 지연", "상", "중", "주간 진척관리, Critical Path 집중 모니터링", "PM"],
+            ["기술적 난제", "중", "중", "PoC 선행, 외부 전문가 자문", "AA"],
+            ["인력 이탈", "상", "하", "대체 인력 풀 확보, 기술 문서화 강화", "PM"],
+            ["데이터 마이그레이션", "상", "중", "사전 검증, 롤백 계획 수립", "DBA"]
+          ]
+        }
+      }
+    },
+    {
+      "index": 14,
+      "title": "감사합니다",
+      "purpose": "closing",
+      "key_points": ["(주)테크솔루션", "PM 김철수"],
+      "template_id": "deepgreen-closing1",
+      "match_score": 0.95,
+      "html_file": "slides/slide-015-closing.html",
+      "content_bindings": {
+        "title": "감사합니다",
+        "message": "프로젝트 성공적 완수를 위해 최선을 다하겠습니다",
+        "company": "(주)테크솔루션",
+        "contact": "PM 김철수"
+      }
+    }
+  ]
+}

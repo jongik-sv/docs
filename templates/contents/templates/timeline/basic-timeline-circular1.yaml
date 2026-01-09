@@ -1,0 +1,636 @@
+# 원형 타임라인 콘텐츠 템플릿 v2.0
+# 원본: /home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx:51
+# 추출일: 2026-01-09T11:10:29.153953
+
+content_template:
+  id: "basic-timeline-circular1"
+  name: "원형 타임라인"
+  version: "2.0"
+  source: "/home/jji/project/docs/PPT기본양식_병합_수정(선별).pptx"
+  source_slide_index: 51
+  extracted_at: "2026-01-09T11:10:29.153953"
+
+design_meta:
+  quality_score: 8.5
+  design_intent: "basic-timeline-circular"
+  visual_balance: "symmetric"
+  information_density: "medium"
+
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: "16:9"
+
+shapes:
+  - id: "shape-7"
+    name: "TextBox 59"
+    type: "rectangle"
+    z_index: 7
+    geometry:
+      x: 8.8
+      y: 41.4
+      cx: 13.3
+      cy: 15.2
+      rotation: 0
+      original_aspect_ratio: 1.946
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-8"
+    name: "Oval 5"
+    type: "oval"
+    z_index: 8
+    geometry:
+      x: 63.7
+      y: 24.4
+      cx: 8.5
+      cy: 18.9
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "background"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.5
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-9"
+    name: "Oval 6"
+    type: "oval"
+    z_index: 9
+    geometry:
+      x: 64.6
+      y: 26.5
+      cx: 6.6
+      cy: 14.6
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 0.5
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.5
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-10"
+    name: "Oval 17"
+    type: "oval"
+    z_index: 10
+    geometry:
+      x: 54.0
+      y: 30.9
+      cx: 2.5
+      cy: 5.6
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 0.4
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-11"
+    name: "Oval 18"
+    type: "oval"
+    z_index: 11
+    geometry:
+      x: 54.6
+      y: 32.3
+      cx: 1.2
+      cy: 2.8
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "secondary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-12"
+    name: "TextBox 52"
+    type: "rectangle"
+    z_index: 12
+    geometry:
+      x: 50.8
+      y: 20.2
+      cx: 8.9
+      cy: 7.7
+      rotation: 0
+      original_aspect_ratio: 2.593
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.018518518518518517
+      original_font_size_pt: 20.0
+      font_weight: "normal"
+  - id: "shape-13"
+    name: "TextBox 53"
+    type: "rectangle"
+    z_index: 13
+    geometry:
+      x: 38.3
+      y: 20.8
+      cx: 7.1
+      cy: 6.5
+      rotation: 0
+      original_aspect_ratio: 2.451
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.014814814814814815
+      original_font_size_pt: 16.0
+      font_weight: "normal"
+  - id: "shape-14"
+    name: "TextBox 54"
+    type: "rectangle"
+    z_index: 14
+    geometry:
+      x: 24.6
+      y: 20.8
+      cx: 7.1
+      cy: 6.5
+      rotation: 0
+      original_aspect_ratio: 2.451
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.014814814814814815
+      original_font_size_pt: 16.0
+      font_weight: "normal"
+  - id: "shape-15"
+    name: "TextBox 55"
+    type: "rectangle"
+    z_index: 15
+    geometry:
+      x: 10.9
+      y: 20.8
+      cx: 7.1
+      cy: 6.5
+      rotation: 0
+      original_aspect_ratio: 2.451
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.014814814814814815
+      original_font_size_pt: 16.0
+      font_weight: "normal"
+  - id: "shape-16"
+    name: "Oval 17"
+    type: "oval"
+    z_index: 16
+    geometry:
+      x: 40.6
+      y: 30.9
+      cx: 2.5
+      cy: 5.6
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 0.4
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-17"
+    name: "Oval 18"
+    type: "oval"
+    z_index: 17
+    geometry:
+      x: 41.2
+      y: 32.3
+      cx: 1.2
+      cy: 2.8
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "secondary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-18"
+    name: "Oval 17"
+    type: "oval"
+    z_index: 18
+    geometry:
+      x: 26.9
+      y: 30.9
+      cx: 2.5
+      cy: 5.6
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 0.4
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-19"
+    name: "Oval 18"
+    type: "oval"
+    z_index: 19
+    geometry:
+      x: 27.5
+      y: 32.3
+      cx: 1.2
+      cy: 2.8
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "secondary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-20"
+    name: "Oval 17"
+    type: "oval"
+    z_index: 20
+    geometry:
+      x: 13.2
+      y: 30.9
+      cx: 2.5
+      cy: 5.6
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "accent"
+        opacity: 0.4
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-21"
+    name: "Oval 18"
+    type: "oval"
+    z_index: 21
+    geometry:
+      x: 13.8
+      y: 32.3
+      cx: 1.2
+      cy: 2.8
+      rotation: 0
+      original_aspect_ratio: 1.0
+    style:
+      fill:
+        type: "solid"
+        color: "secondary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 1.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "center"
+      font_size_ratio: 0.016666666666666666
+      original_font_size_pt: 18
+      font_weight: "normal"
+  - id: "shape-22"
+    name: "TextBox 45"
+    type: "rectangle"
+    z_index: 22
+    geometry:
+      x: 22.3
+      y: 41.4
+      cx: 13.3
+      cy: 15.2
+      rotation: 0
+      original_aspect_ratio: 1.946
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-23"
+    name: "TextBox 46"
+    type: "rectangle"
+    z_index: 23
+    geometry:
+      x: 35.7
+      y: 41.4
+      cx: 13.3
+      cy: 15.2
+      rotation: 0
+      original_aspect_ratio: 1.946
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "shape-24"
+    name: "TextBox 47"
+    type: "rectangle"
+    z_index: 24
+    geometry:
+      x: 49.2
+      y: 41.4
+      cx: 13.3
+      cy: 15.2
+      rotation: 0
+      original_aspect_ratio: 1.946
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 0.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: true
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.011111111111111112
+      original_font_size_pt: 12.0
+      font_weight: "normal"
+  - id: "line-25"
+    name: "Straight Connector 3"
+    type: "line"
+    z_index: 25
+    geometry:
+      x: 14.3
+      y: 33.7
+      cx: 55.1
+      cy: 0.2
+      rotation: 0
+      original_aspect_ratio: 674.615
+    style:
+      fill:
+        type: "none"
+        color: "primary"
+        opacity: 1.0
+      stroke:
+        type: "solid"
+        color: "primary"
+        width: 2.0
+      shadow:
+        enabled: false
+      rounded_corners: 0
+    text:
+      has_text: false
+      placeholder_type: "BODY"
+      alignment: "left"
+      font_size_ratio: 0.02
+      original_font_size_pt: 18
+      font_weight: "normal"
+
+gaps:
+  global:
+    column_gap: 5
+    row_gap: 5
+  between_shapes: []
+
+spatial_relationships: []
+
+groups: []
+
+thumbnail: "thumbnails/basic-timeline-circular1.png"
+
+use_for:
+  - "순환 프로세스 설명"
+  - "반복되는 주기 표현"
+  - "지속적 개선 표시"
+  - "순환 구조 시각화"
+  - "루프 기반 프로세스"
+
+keywords:
+  - "원형 타임라인"
+  - "순환 구조"
+  - "시간 흐름"
+  - "프로세스 순환"
+  - "반복적 진행"
+
+expected_prompt: "중앙을 중심으로 순환하는 원형 타임라인 또는 프로세스"
+
+prompt_keywords:
+  - "프로세스"
+  - "타임라인"
+  - "다이어그램"
+  - "단계"
+  - "흐름"
+  - "시간"
+  - "진행"
+  - "레이아웃"
+
+shape_sources:
+  - type: "ooxml"
+    description: "원본 도형 XML 보존"

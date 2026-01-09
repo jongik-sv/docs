@@ -1,0 +1,39 @@
+{
+  "session": {
+    "id": "2026-01-09_134636_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T13:46:36+09:00",
+    "updated_at": "2026-01-09T13:46:36+09:00"
+  },
+  "current_stage": 1,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "subtitle": "착수보고",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "slide_count_target": "15-20장",
+      "source_file": "project-plan.md"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      },
+      "typography": {
+        "heading_font": "Arial",
+        "body_font": "Arial",
+        "korean_font": "Malgun Gothic"
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      position: absolute;
+      left: 40pt;
+      top: 25pt;
+    }
+    .header h1 {
+      font-size: 22pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+    .header-line {
+      position: absolute;
+      left: 40pt;
+      top: 55pt;
+      width: 60pt;
+      height: 3pt;
+      background: #4E9F3D;
+    }
+    .cards-container {
+      position: absolute;
+      left: 40pt;
+      top: 80pt;
+      width: 640pt;
+      display: flex;
+      gap: 15pt;
+    }
+    .mgmt-card {
+      flex: 1;
+      background: #F4F6F6;
+      border-radius: 10pt;
+      padding: 15pt;
+      border-top: 4pt solid #1E5128;
+    }
+    .mgmt-card.security {
+      border-top-color: #4E9F3D;
+    }
+    .mgmt-card.risk {
+      border-top-color: #D8E9A8;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12pt;
+    }
+    .card-icon {
+      width: 28pt;
+      height: 28pt;
+      background: #1E5128;
+      border-radius: 6pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10pt;
+    }
+    .card-icon p {
+      font-size: 14pt;
+      color: #FFFFFF;
+    }
+    .card-title {
+      font-size: 13pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+    .card-items {
+      list-style: none;
+    }
+    .card-items li {
+      font-size: 9pt;
+      color: #191A19;
+      padding: 6pt 0;
+      border-bottom: 1pt solid #E0E0E0;
+      display: flex;
+      align-items: flex-start;
+    }
+    .card-items li:last-child {
+      border-bottom: none;
+    }
+    .item-bullet {
+      width: 6pt;
+      height: 6pt;
+      background: #4E9F3D;
+      border-radius: 3pt;
+      margin-right: 8pt;
+      margin-top: 4pt;
+      flex-shrink: 0;
+    }
+    .item-text {
+      flex: 1;
+    }
+    .card-items .item-label {
+      font-weight: bold;
+      color: #1E5128;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>품질/보안/위험 관리</h1>
+  </div>
+  <div class="header-line"></div>
+  <div class="cards-container">
+    <div class="mgmt-card">
+      <div class="card-header">
+        <div class="card-icon"><p>Q</p></div>
+        <p class="card-title">품질 관리</p>
+      </div>
+      <ul class="card-items">
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">산출물 검토</span> - 발주 담당자 승인</p></li>
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">코드 리뷰</span> - GitHub PR, 2인 이상 승인</p></li>
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">정적 분석</span> - SonarQube 품질 게이트</p></li>
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">테스트</span> - 시나리오 기반 통합/인수</p></li>
+      </ul>
+    </div>
+    <div class="mgmt-card security">
+      <div class="card-header">
+        <div class="card-icon" style="background:#4E9F3D"><p>S</p></div>
+        <p class="card-title">보안 관리</p>
+      </div>
+      <ul class="card-items">
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">인적 보안</span> - 보안서약서, 보안 교육</p></li>
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">물리 보안</span> - 출입 관리, 장비 통제</p></li>
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">기술 보안</span> - OWASP Top 10, DB 암호화</p></li>
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">PC 보안</span> - 백신, DLP 솔루션</p></li>
+      </ul>
+    </div>
+    <div class="mgmt-card risk">
+      <div class="card-header">
+        <div class="card-icon" style="background:#191A19"><p>R</p></div>
+        <p class="card-title">위험 관리</p>
+      </div>
+      <ul class="card-items">
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">요구사항 변경</span> - CCB 통제, 영향도 분석</p></li>
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">일정 지연</span> - Critical Path 모니터링</p></li>
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">기술 난제</span> - PoC 선행, 전문가 자문</p></li>
+        <li><div class="item-bullet"></div><p class="item-text"><span class="item-label">인력 이탈</span> - 대체 인력 풀, 문서화</p></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

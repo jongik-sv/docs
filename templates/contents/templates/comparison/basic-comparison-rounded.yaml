@@ -1,0 +1,203 @@
+content_template:
+  id: basic-comparison-rounded
+  name: 둥근 박스 비교 레이아웃
+  version: '2.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 25
+  extracted_at: '2026-01-09T11:10:21.420178'
+  shape_source: description
+  expected_prompt: 2가지 옵션을 나란히 비교하는 슬라이드를 만들어주세요. 둥근 박스로 부드러운 느낌의 비교 레이아웃입니다.
+  prompt_keywords:
+  - 비교
+  - 2가지
+  - 옵션
+  - 대안
+  - 라운드
+  - 특징
+  - 차이
+design_meta:
+  quality_score: 8.5
+  design_intent: comparison-rounded
+  visual_balance: asymmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: 모서리가 둥근 직사각형 29
+  type: shape
+  z_index: 0
+  geometry:
+    x: 2.5%
+    y: 40.4%
+    cx: 75.4%
+    cy: 21.0%
+    original_aspect_ratio: 8.007
+    original_width_px: 907.0
+    original_height_px: 113.3
+  style:
+    fill:
+      type: solid
+      color: scheme_accent3
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-1
+  name: 타원 30
+  type: shape
+  z_index: 1
+  geometry:
+    x: 3.2%
+    y: 42.1%
+    cx: 7.8%
+    cy: 17.5%
+    original_aspect_ratio: 1.0
+    original_width_px: 94.4
+    original_height_px: 94.4
+  style:
+    fill:
+      type: solid
+      color: scheme_bg1
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-2
+  name: 모서리가 둥근 직사각형 35
+  type: shape
+  z_index: 2
+  geometry:
+    x: 2.5%
+    y: 69.7%
+    cx: 75.4%
+    cy: 21.0%
+    original_aspect_ratio: 8.007
+    original_width_px: 907.0
+    original_height_px: 113.3
+  style:
+    fill:
+      type: solid
+      color: scheme_accent2
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-3
+  name: 타원 36
+  type: shape
+  z_index: 3
+  geometry:
+    x: 3.2%
+    y: 71.5%
+    cx: 7.8%
+    cy: 17.5%
+    original_aspect_ratio: 1.0
+    original_width_px: 94.4
+    original_height_px: 94.4
+  style:
+    fill:
+      type: solid
+      color: scheme_bg1
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-4
+  name: 직사각형 41
+  type: rectangle
+  z_index: 4
+  geometry:
+    x: 2.5%
+    y: 4.4%
+    cx: 31.3%
+    cy: 7.4%
+    original_aspect_ratio: 9.4
+    original_width_px: 376.9
+    original_height_px: 40.1
+  style:
+    fill:
+      type: solid
+      color: scheme_dk1
+  text:
+    has_text: true
+    font_size_pt: 16.0
+- id: shape-5
+  name: 모서리가 둥근 직사각형 42
+  type: shape
+  z_index: 5
+  geometry:
+    x: 2.5%
+    y: 11.2%
+    cx: 75.4%
+    cy: 21.0%
+    original_aspect_ratio: 8.007
+    original_width_px: 907.0
+    original_height_px: 113.3
+  style:
+    fill:
+      type: solid
+      color: scheme_bg2
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-6
+  name: 타원 43
+  type: shape
+  z_index: 6
+  geometry:
+    x: 3.2%
+    y: 13.0%
+    cx: 7.8%
+    cy: 17.5%
+    original_aspect_ratio: 1.0
+    original_width_px: 94.4
+    original_height_px: 94.4
+  style:
+    fill:
+      type: solid
+      color: scheme_bg1
+  text:
+    has_text: true
+    font_size_pt: 18
+- id: shape-7
+  name: 직사각형 53
+  type: rectangle
+  z_index: 7
+  geometry:
+    x: 31.4%
+    y: 14.4%
+    cx: 36.9%
+    cy: 14.5%
+    original_aspect_ratio: 5.653
+    original_width_px: 443.5
+    original_height_px: 78.5
+  style:
+    fill:
+      type: solid
+      color: scheme_dk1
+  text:
+    has_text: true
+    font_size_pt: 12.0
+use_for:
+- 방식 A vs 방식 B
+- 선택지 제시
+- 두 가지 대안 비교
+- 특징 상호 비교
+- 2개 둥근 박스 (좌우 배치)
+- 제품 vs 제품 비교
+keywords:
+- 비교
+- 대조
+- 선택
+- 라운드
+- 상대방
+- 특징
+- 차이
+thumbnail: thumbnails/basic-comparison-rounded.png
+design_patterns:
+- comparison
+- two-column
+- rounded-design
+content_structure:
+  main_area: 2개 둥근 박스 (좌우 배치)
+  content_per_box: 제목 + 주요 특징 리스트
+  visual_hierarchy: 제목 > 특징항목 > 설명

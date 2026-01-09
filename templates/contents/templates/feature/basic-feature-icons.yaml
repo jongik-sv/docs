@@ -1,0 +1,203 @@
+content_template:
+  id: basic-feature-icons
+  name: 4열 아이콘 기능 표시
+  version: '2.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 20
+  extracted_at: '2026-01-09T11:10:21.348292'
+  shape_source: description
+  expected_prompt: 4개의 아이콘/이미지를 보여줄 수 있는 기능 표시 슬라이드를 만들어주세요. 각 기능마다 아이콘, 제목, 설명이 들어갈
+    수 있어야 합니다.
+  prompt_keywords:
+  - 4열
+  - 아이콘
+  - 기능
+  - 한눈에
+  - 특징
+  - 균등배치
+design_meta:
+  quality_score: 8.5
+  design_intent: feature-icons
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Rectangle 35
+  type: rectangle
+  z_index: 0
+  geometry:
+    x: 34.6%
+    y: 91.7%
+    cx: 3.4%
+    cy: 4.9%
+    original_aspect_ratio: 1.545
+    original_width_px: 41.0
+    original_height_px: 26.6
+  style:
+    fill:
+      type: solid
+      color: '002452'
+  text:
+    has_text: true
+    font_size_pt: 20.0
+- id: shape-1
+  name: Rectangle 36
+  type: rectangle
+  z_index: 1
+  geometry:
+    x: 40.3%
+    y: 92.7%
+    cx: 3.7%
+    cy: 3.0%
+    original_aspect_ratio: 2.771
+    original_width_px: 44.4
+    original_height_px: 16.0
+  style:
+    fill:
+      type: solid
+      color: scheme_dk1
+  text:
+    has_text: true
+    font_size_pt: 10.0
+- id: shape-2
+  name: Rectangle 37
+  type: rectangle
+  z_index: 2
+  geometry:
+    x: 48.5%
+    y: 92.7%
+    cx: 4.3%
+    cy: 3.3%
+    original_aspect_ratio: 2.922
+    original_width_px: 52.2
+    original_height_px: 17.9
+  style:
+    fill:
+      type: solid
+      color: scheme_accent4
+  text:
+    has_text: true
+    font_size_pt: 20.0
+- id: shape-3
+  name: Rectangle 38
+  type: rectangle
+  z_index: 3
+  geometry:
+    x: 55.3%
+    y: 93.0%
+    cx: 3.7%
+    cy: 3.0%
+    original_aspect_ratio: 2.771
+    original_width_px: 44.4
+    original_height_px: 16.0
+  style:
+    fill:
+      type: solid
+      color: scheme_dk1
+  text:
+    has_text: true
+    font_size_pt: 10.0
+- id: shape-4
+  name: Rectangle 39
+  type: rectangle
+  z_index: 4
+  geometry:
+    x: 64.0%
+    y: 92.7%
+    cx: 4.4%
+    cy: 3.3%
+    original_aspect_ratio: 2.939
+    original_width_px: 52.5
+    original_height_px: 17.9
+  style:
+    fill:
+      type: solid
+      color: scheme_accent4
+  text:
+    has_text: true
+    font_size_pt: 20.0
+- id: shape-5
+  name: Rectangle 40
+  type: rectangle
+  z_index: 5
+  geometry:
+    x: 70.1%
+    y: 93.0%
+    cx: 3.7%
+    cy: 3.0%
+    original_aspect_ratio: 2.771
+    original_width_px: 44.4
+    original_height_px: 16.0
+  style:
+    fill:
+      type: solid
+      color: scheme_dk1
+  text:
+    has_text: true
+    font_size_pt: 10.0
+- id: shape-6
+  name: Rectangle 3
+  type: rectangle
+  z_index: 6
+  geometry:
+    x: 1.1%
+    y: 10.7%
+    cx: 20.6%
+    cy: 10.3%
+    original_aspect_ratio: 4.453
+    original_width_px: 248.1
+    original_height_px: 55.7
+  style:
+    fill:
+      type: solid
+      color: scheme_tx1
+  text:
+    has_text: true
+    font_size_pt: 14.0
+- id: shape-7
+  name: Rectangle 4
+  type: rectangle
+  z_index: 7
+  geometry:
+    x: 1.1%
+    y: 23.9%
+    cx: 20.6%
+    cy: 10.3%
+    original_aspect_ratio: 4.453
+    original_width_px: 248.1
+    original_height_px: 55.7
+  style:
+    fill:
+      type: solid
+      color: scheme_tx1
+  text:
+    has_text: true
+    font_size_pt: 14.0
+use_for:
+- 제품 기능 소개
+- 서비스 특징 4가지 나열
+- 핵심 기능 강조
+- 아이콘 기반 정보 표현
+- 상단 2/3
+- 균형잡힌 레이아웃
+keywords:
+- 기능
+- 아이콘
+- 4열
+- 특징
+- 서비스
+- 제품
+- 소개
+thumbnail: thumbnails/basic-feature-icons.png
+design_patterns:
+- grid
+- icon-based
+- feature-showcase
+content_structure:
+  main_area: '상단 2/3: 4개 기능 박스 (좌상, 우상, 좌하, 우하)'
+  text_area: '하단: 상세 설명 또는 추가 정보'
+  visual_hierarchy: 아이콘 > 제목 > 설명

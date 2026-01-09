@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 720pt; height: 405pt; font-family: 'Noto Sans KR', Arial, sans-serif; background: white; position: relative; }
+    .header { position: absolute; top: 20pt; left: 30pt; }
+    .main-title { font-size: 14pt; color: #002452; font-weight: 500; }
+    .action-title { font-size: 12pt; color: #262626; margin-top: 6pt; }
+    .methodology-label { position: absolute; top: 85pt; left: 30pt; background: #002452; color: white; padding: 8pt 20pt; font-size: 11pt; border-radius: 4pt; }
+    .methodology-label p { white-space: nowrap; }
+    .process { position: absolute; top: 130pt; left: 30pt; right: 30pt; display: flex; align-items: flex-start; }
+    .step { flex: 1; text-align: center; position: relative; }
+    .step-box { background: #F8F9FA; border-radius: 8pt; padding: 15pt 10pt; margin: 0 5pt; border-top: 4pt solid #002452; }
+    .step:nth-child(2) .step-box { border-top-color: #4B6580; }
+    .step:nth-child(3) .step-box { border-top-color: #B7D0D4; }
+    .step:nth-child(4) .step-box { border-top-color: #C51F2A; }
+    .step-title { font-size: 12pt; font-weight: 700; color: #262626; margin-bottom: 8pt; white-space: nowrap; }
+    .step-items { font-size: 9pt; color: #757575; line-height: 1.6; }
+    .step-output { margin-top: 10pt; }
+    .step-output-box { font-size: 8pt; color: #002452; background: #E8F4F8; padding: 6pt 10pt; border-radius: 4pt; min-width: 80pt; text-align: center; }
+    .arrow { position: absolute; right: -12pt; top: 50%; transform: translateY(-50%); font-size: 16pt; color: #B6B6B6; z-index: 10; }
+    
+    .accent-bar { position: absolute; top: 0; left: 0; width: 100%; height: 3pt; background: #002452; }
+  
+    .footer-wrap { position: absolute; bottom: 15pt; right: 30pt; display: flex; align-items: center; gap: 20pt; }
+    .footer-info { font-size: 9pt; color: #B6B6B6; }
+    .footer-page { font-size: 9pt; color: #B6B6B6; }
+    .logo-img { height: 18pt; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <div class="header">
+    <p class="main-title">수행 방법론</p>
+    <p class="action-title">Agile-Waterfall 하이브리드 방법론으로 안정성과 유연성 결합</p>
+  </div>
+  <div class="methodology-label"><p>Agile-Waterfall Hybrid</p></div>
+  <div class="process">
+    <div class="step">
+      <div class="step-box">
+        <p class="step-title">분석</p>
+        <p class="step-items">요구사항 정의<br>현행 분석</p>
+        <div class="step-output"><div class="step-output-box"><p>요구사항정의서<br>AS-IS 분석서</p></div></div>
+      </div>
+      <div class="arrow"><p>→</p></div>
+    </div>
+    <div class="step">
+      <div class="step-box">
+        <p class="step-title">설계</p>
+        <p class="step-items">아키텍처 설계<br>UI/DB 설계</p>
+        <div class="step-output"><div class="step-output-box"><p>설계서 일체</p></div></div>
+      </div>
+      <div class="arrow"><p>→</p></div>
+    </div>
+    <div class="step">
+      <div class="step-box">
+        <p class="step-title">개발</p>
+        <p class="step-items">기능 구현<br>단위 테스트</p>
+        <div class="step-output"><div class="step-output-box"><p>소스코드<br>단위테스트결과서</p></div></div>
+      </div>
+      <div class="arrow"><p>→</p></div>
+    </div>
+    <div class="step">
+      <div class="step-box">
+        <p class="step-title">테스트/이행</p>
+        <p class="step-items">통합/인수 테스트<br>시스템 전환</p>
+        <div class="step-output"><div class="step-output-box"><p>테스트결과서<br>이행계획서</p></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-wrap">
+    <img class="logo-img" src="../../../templates/documents/dongkuk-systems/assets/default/image2.png" alt="logo" />
+    <p class="footer-info">작성_테크솔루션</p>
+    <p class="footer-page">10</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+{
+  "stage": 3,
+  "stage_name": "Matching",
+  "completed_at": "2026-01-09T10:10:00Z",
+  "matching_summary": {
+    "total_slides": 24,
+    "matched_from_registry": 24,
+    "direct_design": 0,
+    "match_rate": "100%"
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축",
+      "purpose": "cover",
+      "template_id": "deepgreen-cover-centered1",
+      "match_score": 0.95,
+      "match_reason": "cover 카테고리 정확 매칭"
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "template_id": "deepgreen-toc-3col1",
+      "match_score": 0.90,
+      "match_reason": "6개 섹션 → 3열 TOC 구조 적합"
+    },
+    {
+      "index": 2,
+      "title": "프로젝트 개요",
+      "purpose": "section",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드"
+    },
+    {
+      "index": 3,
+      "title": "프로젝트 배경 및 목적",
+      "purpose": "content",
+      "template_id": "basic-content-2col1",
+      "match_score": 0.85,
+      "match_reason": "현황/목표 2열 대비 구조"
+    },
+    {
+      "index": 4,
+      "title": "기대 효과",
+      "purpose": "stats",
+      "template_id": "basic-stats-cards",
+      "match_score": 0.92,
+      "match_reason": "3개 KPI 수치 카드 적합"
+    },
+    {
+      "index": 5,
+      "title": "프로젝트 범위",
+      "purpose": "comparison",
+      "template_id": "basic-comparison-2col6",
+      "match_score": 0.88,
+      "match_reason": "포함/제외 범위 대비"
+    },
+    {
+      "index": 6,
+      "title": "시스템 구성",
+      "purpose": "grid",
+      "template_id": "basic-grid-icon6",
+      "match_score": 0.90,
+      "match_reason": "4개 시스템 아이콘 그리드"
+    },
+    {
+      "index": 7,
+      "title": "추진 전략",
+      "purpose": "section",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드"
+    },
+    {
+      "index": 8,
+      "title": "핵심 추진 전략",
+      "purpose": "grid",
+      "template_id": "deepgreen-grid-3col1",
+      "match_score": 0.90,
+      "match_reason": "3개 전략 카드 레이아웃"
+    },
+    {
+      "index": 9,
+      "title": "수행 방법론",
+      "purpose": "process",
+      "template_id": "basic-process-4step",
+      "match_score": 0.92,
+      "match_reason": "4단계 프로세스 흐름"
+    },
+    {
+      "index": 10,
+      "title": "기술 아키텍처",
+      "purpose": "table",
+      "template_id": "basic-table-simple3",
+      "match_score": 0.85,
+      "match_reason": "기술 스택 테이블"
+    },
+    {
+      "index": 11,
+      "title": "조직 및 역할",
+      "purpose": "section",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드"
+    },
+    {
+      "index": 12,
+      "title": "조직 역할 및 책임 (R&R)",
+      "purpose": "table",
+      "template_id": "basic-table-simple3",
+      "match_score": 0.88,
+      "match_reason": "R&R 테이블"
+    },
+    {
+      "index": 13,
+      "title": "투입 인력 현황",
+      "purpose": "table",
+      "template_id": "basic-table-simple3",
+      "match_score": 0.85,
+      "match_reason": "인력 투입 테이블"
+    },
+    {
+      "index": 14,
+      "title": "일정 계획",
+      "purpose": "section",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드"
+    },
+    {
+      "index": 15,
+      "title": "마스터 일정",
+      "purpose": "timeline",
+      "template_id": "deepgreen-timeline1",
+      "match_score": 0.92,
+      "match_reason": "6단계 일정 타임라인"
+    },
+    {
+      "index": 16,
+      "title": "주요 마일스톤",
+      "purpose": "timeline",
+      "template_id": "basic-timeline-milestone1",
+      "match_score": 0.90,
+      "match_reason": "6개 마일스톤 표시"
+    },
+    {
+      "index": 17,
+      "title": "품질/보안 관리",
+      "purpose": "section",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드"
+    },
+    {
+      "index": 18,
+      "title": "품질 보증 활동",
+      "purpose": "grid",
+      "template_id": "basic-grid-icon6",
+      "match_score": 0.88,
+      "match_reason": "4개 활동 아이콘 그리드"
+    },
+    {
+      "index": 19,
+      "title": "보안 관리 계획",
+      "purpose": "grid",
+      "template_id": "basic-grid-icon6",
+      "match_score": 0.88,
+      "match_reason": "4개 보안 영역 그리드"
+    },
+    {
+      "index": 20,
+      "title": "교육 및 기술이전",
+      "purpose": "table",
+      "template_id": "basic-table-simple3",
+      "match_score": 0.85,
+      "match_reason": "교육 계획 테이블"
+    },
+    {
+      "index": 21,
+      "title": "위험 관리",
+      "purpose": "section",
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드"
+    },
+    {
+      "index": 22,
+      "title": "주요 위험 및 대응",
+      "purpose": "table",
+      "template_id": "basic-table-simple3",
+      "match_score": 0.88,
+      "match_reason": "위험 대응 테이블"
+    },
+    {
+      "index": 23,
+      "title": "감사합니다",
+      "purpose": "closing",
+      "template_id": "deepgreen-closing1",
+      "match_score": 0.95,
+      "match_reason": "closing 카테고리 정확 매칭"
+    }
+  ]
+}

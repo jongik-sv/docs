@@ -1,0 +1,32 @@
+# Gradient Modern Theme
+# Source: 2025 Gradient & Vibrant Trends
+# Reference: https://www.accio.com/business/powerpoint_design_trends
+
+theme:
+  id: gradient-modern
+  name: "Gradient Modern"
+  description: "마젠타와 일렉트릭 블루의 역동적인 그라데이션 테마"
+
+colors:
+  primary: "#6C3483"      # 주요 강조색 (마젠타 퍼플)
+  secondary: "#2980B9"    # 보조 강조색 (일렉트릭 블루)
+  accent: "#E91E63"       # 하이라이트 (핫 핑크)
+  background: "#FFFFFF"   # 배경색
+  surface: "#F5F0FA"      # 카드/패널 배경
+  dark_text: "#1A1A2E"    # 본문 텍스트
+  light: "#FFFFFF"        # 밝은 텍스트
+  gray: "#8E8E9A"         # 음소거 요소
+
+# 그라데이션 정의 (html2pptx에서 사용)
+gradients:
+  primary_gradient: "linear-gradient(135deg, #6C3483 0%, #2980B9 100%)"
+  accent_gradient: "linear-gradient(135deg, #E91E63 0%, #FF6F61 100%)"
+
+typography:
+  heading_font: "Arial"
+  body_font: "Arial"
+  korean_font: "Malgun Gothic"
+
+style_hints:
+  rounded_corners: 12
+  shadow_blur: 8

@@ -1,0 +1,43 @@
+{
+  "session": {
+    "id": "2026-01-09_115902_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T11:59:02"
+  },
+  "current_stage": 1,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "subtitle": "(주)테크솔루션",
+      "audience": "발주기관 경영진 및 프로젝트 관계자",
+      "purpose": "프로젝트 수행계획 공유 및 승인",
+      "source_file": "project-plan.md"
+    },
+    "theme": {
+      "id": "dongkuk-systems",
+      "name": "동국시스템즈",
+      "colors": {
+        "primary": "#002452",
+        "secondary": "#C51F2A",
+        "accent1": "#757575",
+        "accent2": "#4B6580",
+        "accent3": "#B7D0D4",
+        "accent5": "#D55633",
+        "accent6": "#E9B86E",
+        "dark_text": "#262626",
+        "light_bg": "#FFFFFF",
+        "gray": "#B6B6B6"
+      },
+      "fonts": {
+        "title": "본고딕 Medium",
+        "body": "본고딕 Normal"
+      }
+    },
+    "document_template": {
+      "group": "dongkuk-systems",
+      "template": "기본양식",
+      "source": "동국시스템즈 기본양식.pptx"
+    }
+  }
+}

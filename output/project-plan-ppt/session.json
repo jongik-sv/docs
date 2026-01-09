@@ -1,0 +1,61 @@
+{
+  "session": {
+    "id": "2026-01-09_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T10:00:00Z"
+  },
+  "current_stage": 4,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+      "subtitle": "착수보고",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "emphasis": "전체 균형"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      }
+    }
+  },
+  "slides": [
+    {"index": 0, "title": "표지", "purpose": "cover", "template_id": "deepgreen-cover-centered1"},
+    {"index": 1, "title": "목차", "purpose": "toc", "template_id": "deepgreen-toc-3col1"},
+    {"index": 2, "title": "프로젝트 개요", "purpose": "section", "template_id": "deepgreen-section-number1"},
+    {"index": 3, "title": "프로젝트 정보", "purpose": "table", "template_id": "basic-table-simple3"},
+    {"index": 4, "title": "배경 및 목적", "purpose": "content", "template_id": "basic-content-2col1"},
+    {"index": 5, "title": "기대효과", "purpose": "stats", "template_id": "basic-stats-cards"},
+    {"index": 6, "title": "프로젝트 범위", "purpose": "comparison", "template_id": "basic-comparison-2col6"},
+    {"index": 7, "title": "추진 전략", "purpose": "section", "template_id": "deepgreen-section-number1"},
+    {"index": 8, "title": "핵심 전략", "purpose": "grid", "template_id": "basic-grid-3col1"},
+    {"index": 9, "title": "수행 방법론", "purpose": "process", "template_id": "basic-process-4step"},
+    {"index": 10, "title": "기술 아키텍처", "purpose": "table", "template_id": "basic-table-simple4"},
+    {"index": 11, "title": "조직 및 역할", "purpose": "section", "template_id": "deepgreen-section-number1"},
+    {"index": 12, "title": "조직별 R&R", "purpose": "hierarchy", "template_id": "basic-hierarchy-org"},
+    {"index": 13, "title": "투입 인력 현황", "purpose": "table", "template_id": "basic-table-simple5"},
+    {"index": 14, "title": "프로젝트 일정", "purpose": "section", "template_id": "deepgreen-section-number1"},
+    {"index": 15, "title": "마스터 일정", "purpose": "process", "template_id": "basic-process-6step1"},
+    {"index": 16, "title": "주요 마일스톤", "purpose": "timeline", "template_id": "basic-timeline-milestone1"},
+    {"index": 17, "title": "관리 계획", "purpose": "section", "template_id": "deepgreen-section-number1"},
+    {"index": 18, "title": "산출물 관리", "purpose": "table", "template_id": "basic-table-simple3"},
+    {"index": 19, "title": "품질/보안 관리", "purpose": "comparison", "template_id": "basic-comparison-2col9"},
+    {"index": 20, "title": "교육/기술이전", "purpose": "grid", "template_id": "basic-grid-3col5"},
+    {"index": 21, "title": "위험 관리", "purpose": "section", "template_id": "deepgreen-section-number1"},
+    {"index": 22, "title": "주요 위험 및 대응", "purpose": "table", "template_id": "basic-table-simple4"},
+    {"index": 23, "title": "마무리", "purpose": "closing", "template_id": "deepgreen-closing1"}
+  ],
+  "output": {
+    "pptx_file": "스마트물류관리시스템_수행계획서.pptx"
+  }
+}

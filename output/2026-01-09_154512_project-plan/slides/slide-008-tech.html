@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .left-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8pt;
+      height: 100%;
+      background: #1E5128;
+    }
+    .page-title {
+      position: absolute;
+      left: 36pt;
+      top: 24pt;
+    }
+    .page-title h1 {
+      color: #1E5128;
+      font-size: 22pt;
+      font-weight: bold;
+    }
+    .grid-container {
+      position: absolute;
+      left: 36pt;
+      top: 70pt;
+      width: 648pt;
+      display: flex;
+      gap: 16pt;
+    }
+    .tech-card {
+      flex: 1;
+      background: #F4F6F6;
+      border-radius: 8pt;
+      padding: 20pt 16pt;
+      text-align: center;
+    }
+    .icon-box {
+      width: 48pt;
+      height: 48pt;
+      background: #1E5128;
+      border-radius: 8pt;
+      margin: 0 auto 16pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon-box p {
+      color: #D8E9A8;
+      font-size: 18pt;
+      font-weight: bold;
+    }
+    .tech-title {
+      color: #1E5128;
+      font-size: 13pt;
+      font-weight: bold;
+      margin-bottom: 8pt;
+    }
+    .tech-stack {
+      color: #4E9F3D;
+      font-size: 11pt;
+      font-weight: bold;
+      margin-bottom: 12pt;
+    }
+    .tech-features {
+      text-align: left;
+      padding: 0 8pt;
+    }
+    .tech-features p {
+      color: #191A19;
+      font-size: 9pt;
+      line-height: 1.6;
+      padding-left: 10pt;
+      position: relative;
+    }
+    .tech-features p::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #4E9F3D;
+    }
+    .footer {
+      position: absolute;
+      left: 36pt;
+      bottom: 16pt;
+      width: 648pt;
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer p {
+      color: #AAB7B8;
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-bar"></div>
+  <div class="page-title">
+    <h1>기술 아키텍처</h1>
+  </div>
+  <div class="grid-container">
+    <div class="tech-card">
+      <div class="icon-box"><p>FE</p></div>
+      <p class="tech-title">Frontend</p>
+      <p class="tech-stack">Vue.js 3 + TypeScript</p>
+      <div class="tech-features">
+        <p>SPA 구조</p>
+        <p>반응형 UI</p>
+        <p>컴포넌트 기반</p>
+      </div>
+    </div>
+    <div class="tech-card">
+      <div class="icon-box"><p>BE</p></div>
+      <p class="tech-title">Backend</p>
+      <p class="tech-stack">Spring Boot + Java 17</p>
+      <div class="tech-features">
+        <p>MSA 구조</p>
+        <p>RESTful API</p>
+        <p>컨테이너 기반</p>
+      </div>
+    </div>
+    <div class="tech-card">
+      <div class="icon-box"><p>DB</p></div>
+      <p class="tech-title">Database</p>
+      <p class="tech-stack">PostgreSQL + Redis</p>
+      <div class="tech-features">
+        <p>RDBMS + Cache</p>
+        <p>고가용성 구성</p>
+        <p>실시간 처리</p>
+      </div>
+    </div>
+    <div class="tech-card">
+      <div class="icon-box"><p>AI</p></div>
+      <p class="tech-title">AI/ML</p>
+      <p class="tech-stack">Python + TensorFlow</p>
+      <div class="tech-features">
+        <p>수요 예측</p>
+        <p>경로 최적화</p>
+        <p>이상 탐지</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>스마트 물류관리 시스템 구축</p>
+    <p>8</p>
+  </div>
+</body>
+</html>

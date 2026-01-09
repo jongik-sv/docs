@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .cards-container { position: absolute; top: 120px; left: 50px; right: 50px; display: flex; gap: 30px; justify-content: center; }
+    .stat-card { flex: 1; max-width: 260px; background: #F4F6F6; border-radius: 12px; padding: 30px 25px; text-align: center; border-top: 5px solid #1E5128; }
+    .stat-icon { width: 60px; height: 60px; background: #D8E9A8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; }
+    .stat-value { font-size: 48px; color: #1E5128; font-weight: bold; margin-bottom: 8px; }
+    .stat-unit { font-size: 20px; color: #4E9F3D; }
+    .stat-label { font-size: 16px; color: #191A19; font-weight: bold; margin-bottom: 10px; }
+    .stat-desc { font-size: 13px; color: #666; line-height: 1.4; }
+    .bottom-note { position: absolute; bottom: 70px; left: 50px; right: 50px; background: #1E5128; color: #FFFFFF; padding: 15px 25px; border-radius: 8px; text-align: center; }
+    .bottom-note p { font-size: 14px; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>기대 효과</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="cards-container">
+    <div class="stat-card">
+      <div class="stat-icon">&#128640;</div>
+      <p class="stat-value">30<span class="stat-unit">%</span></p>
+      <p class="stat-label">물류 처리 효율 향상</p>
+      <p class="stat-desc">AI 기반 경로 최적화 및 자동화로 처리 속도 대폭 개선</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">&#128202;</div>
+      <p class="stat-value">99.5<span class="stat-unit">%</span></p>
+      <p class="stat-label">재고 정확도 달성</p>
+      <p class="stat-desc">실시간 재고 추적 시스템으로 재고 불일치 최소화</p>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">&#128176;</div>
+      <p class="stat-value">20<span class="stat-unit">%</span></p>
+      <p class="stat-label">운영 비용 절감</p>
+      <p class="stat-desc">프로세스 자동화 및 최적화로 운영 비용 감소</p>
+    </div>
+  </div>
+  <div class="bottom-note">
+    <p>차세대 스마트 물류 시스템으로 글로벌 경쟁력 확보</p>
+  </div>
+  <div class="page-num">5 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

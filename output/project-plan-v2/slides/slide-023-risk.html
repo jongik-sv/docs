@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .table-container { position: absolute; top: 90px; left: 50px; right: 50px; }
+    table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    th { background: #1E5128; color: #FFFFFF; padding: 10px 10px; text-align: left; font-weight: bold; }
+    td { padding: 10px 10px; color: #191A19; border-bottom: 1px solid #E5E5E5; vertical-align: top; }
+    tr:nth-child(even) td { background: #F9F9F9; }
+    .risk-name { font-weight: bold; color: #1E5128; }
+    .level-high { background: #FF6B6B; color: #FFFFFF; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: bold; }
+    .level-mid { background: #FFD93D; color: #191A19; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: bold; }
+    .level-low { background: #6BCB77; color: #FFFFFF; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: bold; }
+    .response { line-height: 1.4; }
+    .change-box { position: absolute; bottom: 55px; left: 50px; right: 50px; background: #F4F6F6; padding: 15px 20px; border-radius: 8px; border-left: 5px solid #4E9F3D; }
+    .change-title { font-size: 13px; color: #1E5128; font-weight: bold; margin-bottom: 8px; }
+    .change-flow { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #666; flex-wrap: wrap; }
+    .change-step { background: #D8E9A8; padding: 5px 12px; border-radius: 4px; color: #1E5128; }
+    .change-arrow { color: #4E9F3D; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>주요 위험 및 대응</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>위험 요소</th>
+        <th>영향도</th>
+        <th>발생확률</th>
+        <th>대응 방안</th>
+        <th>담당</th>
+      </tr>
+      <tr>
+        <td class="risk-name">요구사항 변경</td>
+        <td><span class="level-high">상</span></td>
+        <td><span class="level-high">상</span></td>
+        <td class="response">변경관리위원회(CCB) 통해 통제, 영향도 분석 필수</td>
+        <td>PM</td>
+      </tr>
+      <tr>
+        <td class="risk-name">일정 지연</td>
+        <td><span class="level-high">상</span></td>
+        <td><span class="level-mid">중</span></td>
+        <td class="response">주간 진척관리, Critical Path 집중 모니터링</td>
+        <td>PM</td>
+      </tr>
+      <tr>
+        <td class="risk-name">기술적 난제</td>
+        <td><span class="level-mid">중</span></td>
+        <td><span class="level-mid">중</span></td>
+        <td class="response">PoC 선행, 외부 전문가 자문</td>
+        <td>AA</td>
+      </tr>
+      <tr>
+        <td class="risk-name">인력 이탈</td>
+        <td><span class="level-high">상</span></td>
+        <td><span class="level-low">하</span></td>
+        <td class="response">대체 인력 풀 확보, 기술 문서화 강화</td>
+        <td>PM</td>
+      </tr>
+      <tr>
+        <td class="risk-name">데이터 마이그레이션</td>
+        <td><span class="level-high">상</span></td>
+        <td><span class="level-mid">중</span></td>
+        <td class="response">사전 검증, 롤백 계획 수립</td>
+        <td>DBA</td>
+      </tr>
+    </table>
+  </div>
+  <div class="change-box">
+    <p class="change-title">변경 통제 절차 (CCB)</p>
+    <div class="change-flow">
+      <span class="change-step">1. 변경 요청</span>
+      <span class="change-arrow">&#10140;</span>
+      <span class="change-step">2. 영향도 분석</span>
+      <span class="change-arrow">&#10140;</span>
+      <span class="change-step">3. 승인/반려</span>
+      <span class="change-arrow">&#10140;</span>
+      <span class="change-step">4. 변경 이행</span>
+    </div>
+  </div>
+  <div class="page-num">23 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

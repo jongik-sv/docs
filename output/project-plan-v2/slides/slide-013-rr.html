@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 960px; height: 540px; font-family: 'Malgun Gothic', Arial, sans-serif; background: #FFFFFF; position: relative; overflow: hidden; }
+    .header { position: absolute; top: 30px; left: 50px; }
+    .header h1 { font-size: 24px; color: #1E5128; font-weight: bold; }
+    .header-line { width: 60px; height: 4px; background: #4E9F3D; margin-top: 8px; }
+    .table-container { position: absolute; top: 95px; left: 50px; right: 50px; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th { background: #1E5128; color: #FFFFFF; padding: 10px 12px; text-align: left; font-weight: bold; }
+    td { padding: 10px 12px; color: #191A19; border-bottom: 1px solid #E5E5E5; vertical-align: top; }
+    tr:nth-child(even) td { background: #F9F9F9; }
+    .role-name { font-weight: bold; color: #1E5128; }
+    .person-name { color: #4E9F3D; font-weight: bold; }
+    .responsibility { line-height: 1.4; }
+    .note { font-size: 11px; color: #888; }
+    .org-note { position: absolute; bottom: 60px; left: 50px; right: 50px; display: flex; gap: 20px; }
+    .org-box { flex: 1; background: #F4F6F6; padding: 12px 15px; border-radius: 6px; border-left: 4px solid #4E9F3D; }
+    .org-box-title { font-size: 12px; color: #1E5128; font-weight: bold; margin-bottom: 4px; }
+    .org-box-content { font-size: 11px; color: #666; }
+    .footer { position: absolute; bottom: 20px; right: 50px; font-size: 12px; color: #AAB7B8; }
+    .page-num { position: absolute; bottom: 20px; left: 50px; font-size: 12px; color: #AAB7B8; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>조직 역할 및 책임 (R&R)</h1>
+    <div class="header-line"></div>
+  </div>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>역할</th>
+        <th>담당자</th>
+        <th>주요 책임</th>
+        <th>비고</th>
+      </tr>
+      <tr>
+        <td class="role-name">발주기관 PM</td>
+        <td class="person-name">정민호 부장</td>
+        <td class="responsibility">프로젝트 총괄 관리, 의사결정</td>
+        <td class="note">최종 승인권자</td>
+      </tr>
+      <tr>
+        <td class="role-name">수행사 PM</td>
+        <td class="person-name">김철수 차장</td>
+        <td class="responsibility">프로젝트 수행 총괄, 품질/위험 관리</td>
+        <td class="note">현장 대리인</td>
+      </tr>
+      <tr>
+        <td class="role-name">PMO</td>
+        <td class="person-name">이영희 과장</td>
+        <td class="responsibility">프로젝트 관리 지원, 품질 검토</td>
+        <td class="note">테크솔루션 PMO</td>
+      </tr>
+      <tr>
+        <td class="role-name">AA (아키텍트)</td>
+        <td class="person-name">박준형 책임</td>
+        <td class="responsibility">시스템 설계, 아키텍처 검토</td>
+        <td class="note">MSA 전문가</td>
+      </tr>
+      <tr>
+        <td class="role-name">개발 리더</td>
+        <td class="person-name">최수진 선임</td>
+        <td class="responsibility">개발 총괄, 기술 이슈 해결</td>
+        <td class="note">풀스택</td>
+      </tr>
+      <tr>
+        <td class="role-name">QA 담당</td>
+        <td class="person-name">한미영 대리</td>
+        <td class="responsibility">품질 관리, 테스트 총괄</td>
+        <td class="note">ISTQB 자격</td>
+      </tr>
+      <tr>
+        <td class="role-name">DBA</td>
+        <td class="person-name">오현우 대리</td>
+        <td class="responsibility">DB 설계 및 튜닝</td>
+        <td class="note">OCP 자격</td>
+      </tr>
+    </table>
+  </div>
+  <div class="org-note">
+    <div class="org-box">
+      <p class="org-box-title">발주기관</p>
+      <p class="org-box-content">(주)글로벌물류</p>
+    </div>
+    <div class="org-box">
+      <p class="org-box-title">수행사</p>
+      <p class="org-box-content">(주)테크솔루션</p>
+    </div>
+    <div class="org-box">
+      <p class="org-box-title">협력 체계</p>
+      <p class="org-box-content">주간 보고, 월간 경영진 보고</p>
+    </div>
+  </div>
+  <div class="page-num">13 / 24</div>
+  <div class="footer">스마트 물류관리 시스템 구축</div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .left-bar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 8pt;
+      height: 100%;
+      background: #1E5128;
+    }
+    .page-title {
+      position: absolute;
+      left: 36pt;
+      top: 24pt;
+    }
+    .page-title h1 {
+      color: #1E5128;
+      font-size: 22pt;
+      font-weight: bold;
+    }
+    .cards-container {
+      position: absolute;
+      left: 36pt;
+      top: 70pt;
+      width: 648pt;
+      display: flex;
+      gap: 16pt;
+    }
+    .stat-card {
+      flex: 1;
+      background: #F4F6F6;
+      border-radius: 8pt;
+      padding: 16pt;
+      text-align: center;
+      border-top: 4pt solid #1E5128;
+    }
+    .stat-value {
+      color: #1E5128;
+      font-size: 28pt;
+      font-weight: bold;
+      margin-bottom: 8pt;
+    }
+    .stat-label {
+      color: #191A19;
+      font-size: 11pt;
+      font-weight: bold;
+      margin-bottom: 4pt;
+    }
+    .stat-desc {
+      color: #AAB7B8;
+      font-size: 9pt;
+    }
+    .section-title {
+      position: absolute;
+      left: 36pt;
+      top: 220pt;
+    }
+    .section-title h2 {
+      color: #4E9F3D;
+      font-size: 14pt;
+      font-weight: bold;
+    }
+    .effects-container {
+      position: absolute;
+      left: 36pt;
+      top: 250pt;
+      width: 648pt;
+      display: flex;
+      gap: 16pt;
+    }
+    .effect-card {
+      flex: 1;
+      background: #1E5128;
+      border-radius: 8pt;
+      padding: 20pt 16pt;
+      text-align: center;
+    }
+    .effect-value {
+      color: #FFFFFF;
+      font-size: 32pt;
+      font-weight: bold;
+    }
+    .effect-label {
+      color: #D8E9A8;
+      font-size: 11pt;
+      margin-top: 8pt;
+    }
+    .footer {
+      position: absolute;
+      left: 36pt;
+      bottom: 16pt;
+      width: 648pt;
+      display: flex;
+      justify-content: space-between;
+    }
+    .footer p {
+      color: #AAB7B8;
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="left-bar"></div>
+  <div class="page-title">
+    <h1>프로젝트 배경 및 기대효과</h1>
+  </div>
+  <div class="cards-container">
+    <div class="stat-card">
+      <p class="stat-value">500만건</p>
+      <p class="stat-label">연간 물류 처리량</p>
+      <p class="stat-desc">국내 Top 5 물류기업</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-value">10년+</p>
+      <p class="stat-label">레거시 시스템 운영</p>
+      <p class="stat-desc">처리 속도 저하 문제</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-value">15억원</p>
+      <p class="stat-label">프로젝트 규모</p>
+      <p class="stat-desc">12개월 수행 기간</p>
+    </div>
+  </div>
+  <div class="section-title">
+    <h2>기대효과</h2>
+  </div>
+  <div class="effects-container">
+    <div class="effect-card">
+      <p class="effect-value">30%</p>
+      <p class="effect-label">물류 처리 효율 향상</p>
+    </div>
+    <div class="effect-card">
+      <p class="effect-value">99.5%</p>
+      <p class="effect-label">재고 정확도 달성</p>
+    </div>
+    <div class="effect-card">
+      <p class="effect-value">20%</p>
+      <p class="effect-label">운영 비용 절감</p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>스마트 물류관리 시스템 구축</p>
+    <p>4</p>
+  </div>
+</body>
+</html>

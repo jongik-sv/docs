@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      position: absolute;
+      left: 40pt;
+      top: 25pt;
+    }
+    .header h1 {
+      font-size: 22pt;
+      color: #1E5128;
+      font-weight: bold;
+    }
+    .header-line {
+      position: absolute;
+      left: 40pt;
+      top: 55pt;
+      width: 60pt;
+      height: 3pt;
+      background: #4E9F3D;
+    }
+    .content-container {
+      position: absolute;
+      left: 40pt;
+      top: 75pt;
+      width: 640pt;
+      display: flex;
+      gap: 20pt;
+    }
+    .col {
+      flex: 1;
+    }
+    .info-box {
+      background: #F4F6F6;
+      border-radius: 8pt;
+      padding: 15pt;
+      margin-bottom: 12pt;
+    }
+    .info-box h2 {
+      font-size: 11pt;
+      color: #1E5128;
+      font-weight: bold;
+      margin-bottom: 10pt;
+    }
+    .info-box .header-line {
+      width: 100%;
+      height: 2pt;
+      background: #D8E9A8;
+      margin-bottom: 6pt;
+    }
+    .info-row {
+      display: flex;
+      margin-bottom: 6pt;
+    }
+    .info-label {
+      width: 70pt;
+      font-size: 9pt;
+      color: #AAB7B8;
+    }
+    .info-value {
+      flex: 1;
+      font-size: 9pt;
+      color: #191A19;
+      font-weight: bold;
+    }
+    .issue-box {
+      background: #1E5128;
+      border-radius: 8pt;
+      padding: 15pt;
+      margin-bottom: 12pt;
+    }
+    .issue-box h2 {
+      font-size: 11pt;
+      color: #FFFFFF;
+      font-weight: bold;
+      margin-bottom: 10pt;
+    }
+    .issue-box p {
+      font-size: 9pt;
+      color: #D8E9A8;
+      line-height: 1.5;
+    }
+    .goal-box {
+      background: #4E9F3D;
+      border-radius: 8pt;
+      padding: 15pt;
+    }
+    .goal-box h2 {
+      font-size: 11pt;
+      color: #FFFFFF;
+      font-weight: bold;
+      margin-bottom: 10pt;
+    }
+    .goal-box p {
+      font-size: 9pt;
+      color: #FFFFFF;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>프로젝트 배경 및 목적</h1>
+  </div>
+  <div class="header-line"></div>
+  <div class="content-container">
+    <div class="col">
+      <div class="info-box">
+        <h2>프로젝트 정보</h2>
+        <div class="info-row">
+          <p class="info-label">프로젝트명</p>
+          <p class="info-value">스마트 물류관리 시스템 구축</p>
+        </div>
+        <div class="info-row">
+          <p class="info-label">발주기관</p>
+          <p class="info-value">(주)글로벌물류</p>
+        </div>
+        <div class="info-row">
+          <p class="info-label">수행사</p>
+          <p class="info-value">(주)테크솔루션</p>
+        </div>
+        <div class="info-row">
+          <p class="info-label">계약금액</p>
+          <p class="info-value">15억원 (VAT 별도)</p>
+        </div>
+        <div class="info-row">
+          <p class="info-label">계약기간</p>
+          <p class="info-value">2025.01.06 ~ 2025.12.31 (12개월)</p>
+        </div>
+      </div>
+      <div class="issue-box">
+        <h2>현황 및 문제점</h2>
+        <p>10년 이상 운영된 레거시 시스템으로 인한 처리 속도 저하, 실시간 재고 파악 불가, 타 시스템 연동 한계</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="goal-box">
+        <h2>추진 목표</h2>
+        <p>AI 기반 물류 최적화, 실시간 재고/배송 추적, 클라우드 기반 확장성 확보</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
