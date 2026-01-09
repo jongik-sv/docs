@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 24pt;
+      left: 40pt;
+      color: #1E5128;
+      font-size: 18pt;
+      font-weight: 700;
+    }
+    .title-line {
+      position: absolute;
+      top: 52pt;
+      left: 40pt;
+      width: 640pt;
+      height: 2pt;
+      background: #1E5128;
+    }
+    .table-container {
+      position: absolute;
+      top: 72pt;
+      left: 40pt;
+      width: 640pt;
+    }
+    .table-header {
+      display: flex;
+      background: #1E5128;
+      border-radius: 6pt 6pt 0 0;
+      padding: 10pt 12pt;
+    }
+    .table-header div {
+      color: #FFFFFF;
+      font-size: 10pt;
+      font-weight: 600;
+      text-align: center;
+    }
+    .col-role { width: 70pt; }
+    .col-field { width: 80pt; }
+    .col-grade { width: 60pt; }
+    .col-name { width: 80pt; }
+    .col-period { width: 80pt; }
+    .col-responsibility { flex: 1; }
+    .table-row {
+      display: flex;
+      padding: 9pt 12pt;
+      border-bottom: 1pt solid #E8E8E8;
+      align-items: center;
+    }
+    .table-row:nth-child(even) {
+      background: #F4F6F6;
+    }
+    .table-row div {
+      font-size: 9pt;
+      color: #191A19;
+      text-align: center;
+    }
+    .table-row .col-responsibility {
+      text-align: left;
+      color: #AAB7B8;
+    }
+    .grade-badge {
+      display: inline-block;
+      padding: 2pt 8pt;
+      border-radius: 3pt;
+      font-size: 8pt;
+      font-weight: 600;
+    }
+    .grade-special { background: #1E5128; color: #FFFFFF; }
+    .grade-senior { background: #4E9F3D; color: #FFFFFF; }
+    .grade-mid { background: #D8E9A8; color: #1E5128; }
+    .summary-row {
+      display: flex;
+      background: #F4F6F6;
+      border-radius: 0 0 6pt 6pt;
+      padding: 12pt;
+      margin-top: 2pt;
+    }
+    .summary-item {
+      flex: 1;
+      text-align: center;
+    }
+    .summary-label {
+      font-size: 9pt;
+      color: #AAB7B8;
+      margin-bottom: 4pt;
+    }
+    .summary-value {
+      font-size: 16pt;
+      font-weight: 700;
+      color: #1E5128;
+    }
+  </style>
+</head>
+<body>
+<div class="slide-title"><p>투입 인력 현황</p></div>
+<div class="title-line"></div>
+<div class="table-container">
+<div class="table-header">
+<div class="col-role"><p>역할</p></div>
+<div class="col-field"><p>분야</p></div>
+<div class="col-grade"><p>등급</p></div>
+<div class="col-name"><p>성명</p></div>
+<div class="col-period"><p>투입기간</p></div>
+<div class="col-responsibility"><p>주요 책임</p></div>
+</div>
+<div class="table-row">
+<div class="col-role"><p>PM</p></div>
+<div class="col-field"><p>관리</p></div>
+<div class="col-grade"><p>특급</p></div>
+<div class="col-name"><p>김철수</p></div>
+<div class="col-period"><p>12개월</p></div>
+<div class="col-responsibility"><p>프로젝트 수행 총괄, 품질/위험 관리</p></div>
+</div>
+<div class="table-row">
+<div class="col-role"><p>AA</p></div>
+<div class="col-field"><p>설계</p></div>
+<div class="col-grade"><p>특급</p></div>
+<div class="col-name"><p>박준형</p></div>
+<div class="col-period"><p>10개월</p></div>
+<div class="col-responsibility"><p>시스템 설계, 아키텍처 검토</p></div>
+</div>
+<div class="table-row">
+<div class="col-role"><p>PL</p></div>
+<div class="col-field"><p>개발</p></div>
+<div class="col-grade"><p>고급</p></div>
+<div class="col-name"><p>최수진</p></div>
+<div class="col-period"><p>12개월</p></div>
+<div class="col-responsibility"><p>개발 총괄, 기술 이슈 해결</p></div>
+</div>
+<div class="table-row">
+<div class="col-role"><p>Dev</p></div>
+<div class="col-field"><p>Backend</p></div>
+<div class="col-grade"><p>고급</p></div>
+<div class="col-name"><p>임동현</p></div>
+<div class="col-period"><p>10개월</p></div>
+<div class="col-responsibility"><p>백엔드 API 개발</p></div>
+</div>
+<div class="table-row">
+<div class="col-role"><p>Dev</p></div>
+<div class="col-field"><p>Frontend</p></div>
+<div class="col-grade"><p>중급</p></div>
+<div class="col-name"><p>강서연</p></div>
+<div class="col-period"><p>10개월</p></div>
+<div class="col-responsibility"><p>프론트엔드 UI 개발</p></div>
+</div>
+<div class="table-row">
+<div class="col-role"><p>DBA</p></div>
+<div class="col-field"><p>DB</p></div>
+<div class="col-grade"><p>고급</p></div>
+<div class="col-name"><p>오현우</p></div>
+<div class="col-period"><p>8개월</p></div>
+<div class="col-responsibility"><p>DB 설계 및 튜닝</p></div>
+</div>
+<div class="table-row">
+<div class="col-role"><p>QA</p></div>
+<div class="col-field"><p>테스트</p></div>
+<div class="col-grade"><p>중급</p></div>
+<div class="col-name"><p>한미영</p></div>
+<div class="col-period"><p>6개월</p></div>
+<div class="col-responsibility"><p>품질 관리, 테스트 총괄</p></div>
+</div>
+<div class="summary-row">
+<div class="summary-item">
+<div class="summary-label"><p>총 인원</p></div>
+<div class="summary-value"><p>8명</p></div>
+</div>
+<div class="summary-item">
+<div class="summary-label"><p>총 투입 공수</p></div>
+<div class="summary-value"><p>78 MM</p></div>
+</div>
+<div class="summary-item">
+<div class="summary-label"><p>프로젝트 기간</p></div>
+<div class="summary-value"><p>12개월</p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

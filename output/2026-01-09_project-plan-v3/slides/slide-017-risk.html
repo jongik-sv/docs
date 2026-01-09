@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 24pt;
+      left: 40pt;
+      color: #1E5128;
+      font-size: 18pt;
+      font-weight: 700;
+    }
+    .title-line {
+      position: absolute;
+      top: 52pt;
+      left: 40pt;
+      width: 640pt;
+      height: 2pt;
+      background: #1E5128;
+    }
+    .risk-container {
+      position: absolute;
+      top: 68pt;
+      left: 40pt;
+      width: 640pt;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12pt;
+    }
+    .risk-card {
+      width: 310pt;
+      background: #F4F6F6;
+      border-radius: 8pt;
+      padding: 14pt;
+      border-left: 4pt solid #1E5128;
+    }
+    .risk-card:nth-child(2) { border-left-color: #4E9F3D; }
+    .risk-card:nth-child(3) { border-left-color: #D8E9A8; }
+    .risk-card:nth-child(4) { border-left-color: #AAB7B8; }
+    .risk-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8pt;
+    }
+    .risk-title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #1E5128;
+    }
+    .risk-level {
+      display: flex;
+      gap: 4pt;
+    }
+    .level-badge {
+      font-size: 8pt;
+      padding: 2pt 6pt;
+      border-radius: 3pt;
+    }
+    .level-high { background: #FFE5E5; color: #C51F2A; }
+    .level-mid { background: #FFF3CD; color: #856404; }
+    .risk-impact {
+      font-size: 8pt;
+      color: #AAB7B8;
+      margin-bottom: 8pt;
+    }
+    .risk-response {
+      background: #FFFFFF;
+      border-radius: 4pt;
+      padding: 8pt;
+    }
+    .response-label {
+      font-size: 8pt;
+      color: #4E9F3D;
+      font-weight: 600;
+      margin-bottom: 4pt;
+    }
+    .response-text {
+      font-size: 9pt;
+      color: #191A19;
+      line-height: 1.4;
+    }
+    .change-process {
+      position: absolute;
+      bottom: 24pt;
+      left: 40pt;
+      width: 640pt;
+      background: #1E5128;
+      border-radius: 6pt;
+      padding: 14pt 20pt;
+    }
+    .process-title {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 10pt;
+    }
+    .process-steps {
+      display: flex;
+      align-items: center;
+      gap: 6pt;
+    }
+    .process-step {
+      background: rgba(255,255,255,0.15);
+      border-radius: 4pt;
+      padding: 8pt 12pt;
+      text-align: center;
+    }
+    .step-number {
+      font-size: 9pt;
+      color: #D8E9A8;
+      margin-bottom: 2pt;
+    }
+    .step-name {
+      font-size: 9pt;
+      color: #FFFFFF;
+      font-weight: 500;
+    }
+    .step-desc {
+      font-size: 7pt;
+      color: rgba(255,255,255,0.7);
+    }
+    .process-arrow {
+      color: #4E9F3D;
+      font-size: 14pt;
+    }
+  </style>
+</head>
+<body>
+<div class="slide-title"><p>위험 및 변경 관리</p></div>
+<div class="title-line"></div>
+<div class="risk-container">
+<div class="risk-card">
+<div class="risk-header">
+<div class="risk-title"><p>요구사항 변경</p></div>
+<div class="risk-level">
+<p>영향: 상</p>
+<p>확률: 상</p>
+</div>
+</div>
+<div class="risk-impact"><p>프로젝트 범위, 일정, 비용에 직접적 영향</p></div>
+<div class="risk-response">
+<div class="response-label"><p>대응 방안</p></div>
+<div class="response-text"><p>변경관리위원회(CCB) 통해 통제, 영향도 분석 필수 (PM 담당)</p></div>
+</div>
+</div>
+<div class="risk-card">
+<div class="risk-header">
+<div class="risk-title"><p>일정 지연</p></div>
+<div class="risk-level">
+<p>영향: 상</p>
+<p>확률: 중</p>
+</div>
+</div>
+<div class="risk-impact"><p>마일스톤 미달성, 오픈 일정 지연 가능성</p></div>
+<div class="risk-response">
+<div class="response-label"><p>대응 방안</p></div>
+<div class="response-text"><p>주간 진척관리, Critical Path 집중 모니터링 (PM 담당)</p></div>
+</div>
+</div>
+<div class="risk-card">
+<div class="risk-header">
+<div class="risk-title"><p>기술적 난제</p></div>
+<div class="risk-level">
+<p>영향: 중</p>
+<p>확률: 중</p>
+</div>
+</div>
+<div class="risk-impact"><p>MSA, AI 연동 등 신기술 적용 이슈</p></div>
+<div class="risk-response">
+<div class="response-label"><p>대응 방안</p></div>
+<div class="response-text"><p>PoC 선행, 외부 전문가 자문 (AA 담당)</p></div>
+</div>
+</div>
+<div class="risk-card">
+<div class="risk-header">
+<div class="risk-title"><p>데이터 마이그레이션</p></div>
+<div class="risk-level">
+<p>영향: 상</p>
+<p>확률: 중</p>
+</div>
+</div>
+<div class="risk-impact"><p>레거시 데이터 정합성, 이행 오류 위험</p></div>
+<div class="risk-response">
+<div class="response-label"><p>대응 방안</p></div>
+<div class="response-text"><p>사전 검증, 롤백 계획 수립 (DBA 담당)</p></div>
+</div>
+</div>
+</div>
+<div class="change-process">
+<div class="process-title"><p>변경 통제 절차</p></div>
+<div class="process-steps">
+<div class="process-step">
+<div class="step-number"><p>1</p></div>
+<div class="step-name"><p>변경 요청</p></div>
+<div class="step-desc"><p>CR 접수 (Jira)</p></div>
+</div>
+<div class="process-arrow"><p>→</p></div>
+<div class="process-step">
+<div class="step-number"><p>2</p></div>
+<div class="step-name"><p>영향도 분석</p></div>
+<div class="step-desc"><p>3일 내</p></div>
+</div>
+<div class="process-arrow"><p>→</p></div>
+<div class="process-step">
+<div class="step-number"><p>3</p></div>
+<div class="step-name"><p>CCB 심의</p></div>
+<div class="step-desc"><p>주 1회</p></div>
+</div>
+<div class="process-arrow"><p>→</p></div>
+<div class="process-step">
+<div class="step-number"><p>4</p></div>
+<div class="step-name"><p>변경 이행</p></div>
+<div class="step-desc"><p>산출물 현행화</p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

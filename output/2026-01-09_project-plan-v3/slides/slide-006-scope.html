@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 24pt;
+      left: 40pt;
+      color: #1E5128;
+      font-size: 18pt;
+      font-weight: 700;
+    }
+    .title-line {
+      position: absolute;
+      top: 52pt;
+      left: 40pt;
+      width: 640pt;
+      height: 2pt;
+      background: #1E5128;
+    }
+    .grid-container {
+      position: absolute;
+      top: 72pt;
+      left: 40pt;
+      width: 640pt;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16pt;
+    }
+    .system-card {
+      width: 306pt;
+      background: #F4F6F6;
+      border-radius: 8pt;
+      padding: 16pt;
+      border-top: 3pt solid #1E5128;
+    }
+    .system-card:nth-child(2) { border-top-color: #4E9F3D; }
+    .system-card:nth-child(3) { border-top-color: #D8E9A8; }
+    .system-card:nth-child(4) { border-top-color: #AAB7B8; }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10pt;
+      margin-bottom: 10pt;
+    }
+    .card-icon {
+      width: 32pt;
+      height: 32pt;
+      background: #1E5128;
+      border-radius: 6pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16pt;
+    }
+    .system-card:nth-child(2) .card-icon { background: #4E9F3D; }
+    .system-card:nth-child(3) .card-icon { background: #4E9F3D; }
+    .system-card:nth-child(4) .card-icon { background: #1E5128; }
+    .card-title-group {
+      flex: 1;
+    }
+    .card-abbr {
+      font-size: 14pt;
+      font-weight: 700;
+      color: #1E5128;
+    }
+    .card-name {
+      font-size: 10pt;
+      color: #AAB7B8;
+    }
+    .card-features {
+      list-style: none;
+    }
+    .card-features li {
+      font-size: 10pt;
+      color: #191A19;
+      padding: 5pt 0;
+      padding-left: 14pt;
+      position: relative;
+      border-bottom: 1pt solid #E8E8E8;
+    }
+    .card-features li:last-child {
+      border-bottom: none;
+    }
+    .card-features li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9pt;
+      width: 5pt;
+      height: 5pt;
+      background: #4E9F3D;
+      border-radius: 50%;
+    }
+    .scope-note {
+      position: absolute;
+      bottom: 28pt;
+      left: 40pt;
+      width: 640pt;
+      display: flex;
+      gap: 16pt;
+    }
+    .note-item {
+      flex: 1;
+      padding: 10pt 14pt;
+      border-radius: 6pt;
+      font-size: 9pt;
+    }
+    .note-include {
+      background: rgba(30,81,40,0.1);
+      color: #1E5128;
+    }
+    .note-exclude {
+      background: rgba(170,183,184,0.2);
+      color: #AAB7B8;
+    }
+    .note-label {
+      font-weight: 600;
+      margin-bottom: 4pt;
+    }
+  </style>
+</head>
+<body>
+<div class="slide-title"><p>시스템 범위</p></div>
+<div class="title-line"></div>
+<div class="grid-container">
+<div class="system-card">
+<div class="card-header">
+<div class="card-icon"><p>🏭</p></div>
+<div class="card-title-group">
+<div class="card-abbr"><p>WMS</p></div>
+<div class="card-name"><p>창고관리시스템</p></div>
+</div>
+</div>
+<ul class="card-features">
+<li>입출고 관리</li>
+<li>재고 관리</li>
+<li>피킹/패킹 최적화</li>
+</ul>
+</div>
+<div class="system-card">
+<div class="card-header">
+<div class="card-icon"><p>🚚</p></div>
+<div class="card-title-group">
+<div class="card-abbr"><p>TMS</p></div>
+<div class="card-name"><p>배송관리시스템</p></div>
+</div>
+</div>
+<ul class="card-features">
+<li>배차 관리</li>
+<li>AI 경로 최적화</li>
+<li>실시간 배송 추적</li>
+</ul>
+</div>
+<div class="system-card">
+<div class="card-header">
+<div class="card-icon"><p>📋</p></div>
+<div class="card-title-group">
+<div class="card-abbr"><p>OMS</p></div>
+<div class="card-name"><p>주문관리시스템</p></div>
+</div>
+</div>
+<ul class="card-features">
+<li>주문 접수/처리</li>
+<li>재고 할당</li>
+<li>정산 관리</li>
+</ul>
+</div>
+<div class="system-card">
+<div class="card-header">
+<div class="card-icon"><p>📊</p></div>
+<div class="card-title-group">
+<div class="card-abbr"><p>Dashboard</p></div>
+<div class="card-name"><p>통합모니터링</p></div>
+</div>
+</div>
+<ul class="card-features">
+<li>실시간 현황 모니터링</li>
+<li>KPI 대시보드</li>
+<li>리포트 생성</li>
+</ul>
+</div>
+</div>
+<div class="scope-note">
+<div class="note-item note-include"><p>
+<div class="note-label"><p>포함 범위</p></div><p>
+      4개 핵심 모듈 신규 개발, 레거시 데이터 마이그레이션
+    </p></div>
+<div class="note-item note-exclude"><p>
+<div class="note-label"><p>제외 범위</p></div><p>
+      회계/HR/ERP 시스템 (인터페이스만 개발)
+    </p></div>
+</div>
+</body>
+</html>

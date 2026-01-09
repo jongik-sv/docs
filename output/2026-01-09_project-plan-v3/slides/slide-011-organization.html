@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 24pt;
+      left: 40pt;
+      color: #1E5128;
+      font-size: 18pt;
+      font-weight: 700;
+    }
+    .title-line {
+      position: absolute;
+      top: 52pt;
+      left: 40pt;
+      width: 640pt;
+      height: 2pt;
+      background: #1E5128;
+    }
+    .org-container {
+      position: absolute;
+      top: 68pt;
+      left: 40pt;
+      width: 640pt;
+      height: 300pt;
+    }
+    .org-row {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10pt;
+    }
+    .org-box {
+      padding: 10pt 14pt;
+      border-radius: 6pt;
+      text-align: center;
+      min-width: 120pt;
+    }
+    .org-box.client {
+      background: #1E5128;
+      color: #FFFFFF;
+    }
+    .org-box.vendor {
+      background: #4E9F3D;
+      color: #FFFFFF;
+    }
+    .org-box.team {
+      background: #F4F6F6;
+      color: #191A19;
+    }
+    .org-role {
+      font-size: 8pt;
+      opacity: 0.8;
+      margin-bottom: 2pt;
+    }
+    .org-name {
+      font-size: 11pt;
+      font-weight: 600;
+    }
+    .org-person {
+      font-size: 9pt;
+      margin-top: 2pt;
+    }
+    .org-connector {
+      width: 2pt;
+      height: 16pt;
+      background: #AAB7B8;
+      margin: 0 auto;
+    }
+    .org-hconnector {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10pt;
+    }
+    .hline {
+      width: 200pt;
+      height: 2pt;
+      background: #AAB7B8;
+    }
+    .vline {
+      width: 2pt;
+      height: 16pt;
+      background: #AAB7B8;
+    }
+    .team-row {
+      display: flex;
+      justify-content: center;
+      gap: 12pt;
+    }
+    .team-box {
+      background: #F4F6F6;
+      border-radius: 6pt;
+      padding: 10pt 12pt;
+      text-align: center;
+      min-width: 90pt;
+    }
+    .team-role {
+      font-size: 8pt;
+      color: #AAB7B8;
+      margin-bottom: 2pt;
+    }
+    .team-name {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #1E5128;
+    }
+    .team-person {
+      font-size: 9pt;
+      color: #191A19;
+    }
+    .team-badge {
+      font-size: 7pt;
+      background: #D8E9A8;
+      color: #1E5128;
+      padding: 2pt 6pt;
+      border-radius: 3pt;
+      margin-top: 4pt;
+      display: inline-block;
+    }
+    .legend {
+      position: absolute;
+      bottom: 24pt;
+      right: 40pt;
+      display: flex;
+      gap: 16pt;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6pt;
+      font-size: 9pt;
+      color: #AAB7B8;
+    }
+    .legend-color {
+      width: 12pt;
+      height: 12pt;
+      border-radius: 3pt;
+    }
+    .legend-color.client { background: #1E5128; }
+    .legend-color.vendor { background: #4E9F3D; }
+    .legend-color.team { background: #F4F6F6; border: 1pt solid #AAB7B8; }
+  </style>
+</head>
+<body>
+<div class="slide-title"><p>프로젝트 조직 구성</p></div>
+<div class="title-line"></div>
+<div class="org-container">
+<div class="org-row" style="gap: 60pt;">
+<div class="org-box client">
+<div class="org-role"><p>발주기관 PM</p></div>
+<div class="org-name"><p>정민호 부장</p></div>
+<div class="org-person"><p>(주)글로벌물류</p></div>
+</div>
+<div class="org-box vendor">
+<div class="org-role"><p>수행사 PM</p></div>
+<div class="org-name"><p>김철수 차장</p></div>
+<div class="org-person"><p>(주)테크솔루션</p></div>
+</div>
+</div>
+<div class="org-hconnector">
+<div class="vline"></div>
+</div>
+<div class="org-row">
+<div class="org-box vendor">
+<div class="org-role"><p>PMO</p></div>
+<div class="org-name"><p>이영희 과장</p></div>
+<div class="org-person"><p>품질 검토</p></div>
+</div>
+</div>
+<div class="org-hconnector">
+<div class="hline"></div>
+</div>
+<div class="team-row">
+<div class="team-box">
+<div class="team-role"><p>AA (아키텍트)</p></div>
+<div class="team-name"><p>박준형 책임</p></div>
+<div class="team-badge"><p>MSA 전문가</p></div>
+</div>
+<div class="team-box">
+<div class="team-role"><p>개발 리더</p></div>
+<div class="team-name"><p>최수진 선임</p></div>
+<div class="team-badge"><p>풀스택</p></div>
+</div>
+<div class="team-box">
+<div class="team-role"><p>QA 담당</p></div>
+<div class="team-name"><p>한미영 대리</p></div>
+<div class="team-badge"><p>ISTQB</p></div>
+</div>
+<div class="team-box">
+<div class="team-role"><p>DBA</p></div>
+<div class="team-name"><p>오현우 대리</p></div>
+<div class="team-badge"><p>OCP</p></div>
+</div>
+</div>
+</div>
+<div class="legend">
+<div class="legend-item"><p><div class="legend-color client"></div><p>발주기관</p></div>
+<div class="legend-item"><p><div class="legend-color vendor"></div><p>수행사 관리</p></div>
+<div class="legend-item"><p><div class="legend-color team"></div><p>수행팀</p></div>
+</div>
+</body>
+</html>

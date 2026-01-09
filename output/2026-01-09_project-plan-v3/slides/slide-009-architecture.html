@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 24pt;
+      left: 40pt;
+      color: #1E5128;
+      font-size: 18pt;
+      font-weight: 700;
+    }
+    .title-line {
+      position: absolute;
+      top: 52pt;
+      left: 40pt;
+      width: 640pt;
+      height: 2pt;
+      background: #1E5128;
+    }
+    .arch-container {
+      position: absolute;
+      top: 68pt;
+      left: 40pt;
+      width: 640pt;
+      height: 300pt;
+    }
+    .arch-layer {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4pt;
+    }
+    .layer-label {
+      width: 80pt;
+      font-size: 10pt;
+      font-weight: 600;
+      color: #1E5128;
+      text-align: right;
+      padding-right: 12pt;
+    }
+    .layer-content {
+      flex: 1;
+      display: flex;
+      gap: 8pt;
+    }
+    .tech-box {
+      flex: 1;
+      padding: 8pt 10pt;
+      border-radius: 6pt;
+      text-align: center;
+    }
+    .tech-box.frontend { background: #D8E9A8; }
+    .tech-box.backend { background: #4E9F3D; color: #FFFFFF; }
+    .tech-box.database { background: #1E5128; color: #FFFFFF; }
+    .tech-box.infra { background: #F4F6F6; border: 1pt solid #AAB7B8; }
+    .tech-box.ai { background: #1E5128; color: #FFFFFF; }
+    .tech-name {
+      font-size: 11pt;
+      font-weight: 600;
+      margin-bottom: 4pt;
+    }
+    .tech-version {
+      font-size: 8pt;
+      opacity: 0.8;
+    }
+    .tech-desc {
+      font-size: 8pt;
+      opacity: 0.7;
+      margin-top: 2pt;
+    }
+    .arch-arrow {
+      width: 80pt;
+    }
+    .arrow-line {
+      width: 100%;
+      height: 20pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .arrow-line::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 8pt solid transparent;
+      border-right: 8pt solid transparent;
+      border-top: 10pt solid #AAB7B8;
+    }
+    .feature-row {
+      position: absolute;
+      bottom: 20pt;
+      left: 40pt;
+      width: 640pt;
+      display: flex;
+      gap: 12pt;
+    }
+    .feature-item {
+      flex: 1;
+      background: #F4F6F6;
+      border-radius: 6pt;
+      padding: 6pt 10pt;
+      text-align: center;
+    }
+    .feature-icon {
+      font-size: 14pt;
+      margin-bottom: 2pt;
+    }
+    .feature-title {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #1E5128;
+    }
+    .feature-desc {
+      font-size: 8pt;
+      color: #AAB7B8;
+    }
+  </style>
+</head>
+<body>
+<div class="slide-title"><p>기술 아키텍처</p></div>
+<div class="title-line"></div>
+<div class="arch-container">
+<div class="arch-layer">
+<div class="layer-label"><p>Frontend</p></div>
+<div class="layer-content">
+<div class="tech-box frontend">
+<div class="tech-name"><p>Vue.js 3</p></div>
+<div class="tech-version"><p>v3.4 / TypeScript</p></div>
+<div class="tech-desc"><p>SPA 구조</p></div>
+</div>
+<div class="tech-box frontend">
+<div class="tech-name"><p>Vuetify 3</p></div>
+<div class="tech-version"><p>UI Framework</p></div>
+<div class="tech-desc"><p>Material Design</p></div>
+</div>
+<div class="tech-box frontend">
+<div class="tech-name"><p>Pinia</p></div>
+<div class="tech-version"><p>State Management</p></div>
+<div class="tech-desc"><p>Reactive Store</p></div>
+</div>
+</div>
+</div>
+<div class="arch-layer">
+<div class="layer-label"><p>Backend</p></div>
+<div class="layer-content">
+<div class="tech-box backend">
+<div class="tech-name"><p>Spring Boot 3.2</p></div>
+<div class="tech-version"><p>Java 17 / MSA</p></div>
+<div class="tech-desc"><p>마이크로서비스</p></div>
+</div>
+<div class="tech-box backend">
+<div class="tech-name"><p>Spring Cloud</p></div>
+<div class="tech-version"><p>Gateway / Config</p></div>
+<div class="tech-desc"><p>서비스 메시</p></div>
+</div>
+<div class="tech-box backend">
+<div class="tech-name"><p>Kafka</p></div>
+<div class="tech-version"><p>Event Streaming</p></div>
+<div class="tech-desc"><p>비동기 처리</p></div>
+</div>
+</div>
+</div>
+<div class="arch-layer">
+<div class="layer-label"><p>Database</p></div>
+<div class="layer-content">
+<div class="tech-box database">
+<div class="tech-name"><p>PostgreSQL 16</p></div>
+<div class="tech-version"><p>RDBMS</p></div>
+<div class="tech-desc"><p>메인 DB</p></div>
+</div>
+<div class="tech-box database">
+<div class="tech-name"><p>Redis 7</p></div>
+<div class="tech-version"><p>In-Memory Cache</p></div>
+<div class="tech-desc"><p>세션/캐시</p></div>
+</div>
+<div class="tech-box database">
+<div class="tech-name"><p>Elasticsearch</p></div>
+<div class="tech-version"><p>Search Engine</p></div>
+<div class="tech-desc"><p>로그/검색</p></div>
+</div>
+</div>
+</div>
+<div class="arch-layer">
+<div class="layer-label"><p>Infra</p></div>
+<div class="layer-content">
+<div class="tech-box infra">
+<div class="tech-name"><p>AWS EKS</p></div>
+<div class="tech-version"><p>Kubernetes</p></div>
+<div class="tech-desc"><p>컨테이너 오케스트레이션</p></div>
+</div>
+<div class="tech-box infra">
+<div class="tech-name"><p>AWS RDS</p></div>
+<div class="tech-version"><p>Managed DB</p></div>
+<div class="tech-desc"><p>고가용성</p></div>
+</div>
+<div class="tech-box infra">
+<div class="tech-name"><p>AWS S3</p></div>
+<div class="tech-version"><p>Object Storage</p></div>
+<div class="tech-desc"><p>파일 저장</p></div>
+</div>
+</div>
+</div>
+<div class="arch-layer">
+<div class="layer-label"><p>AI/ML</p></div>
+<div class="layer-content">
+<div class="tech-box ai">
+<div class="tech-name"><p>TensorFlow 2.15</p></div>
+<div class="tech-version"><p>Python 3.11</p></div>
+<div class="tech-desc"><p>수요예측 / 경로최적화</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="feature-row">
+<div class="feature-item">
+<div class="feature-icon"><p>☁</p></div>
+<div class="feature-title"><p>클라우드 네이티브</p></div>
+<div class="feature-desc"><p>확장성 확보</p></div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><p>🔄</p></div>
+<div class="feature-title"><p>MSA 구조</p></div>
+<div class="feature-desc"><p>독립 배포</p></div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><p>🤖</p></div>
+<div class="feature-title"><p>AI 기반</p></div>
+<div class="feature-desc"><p>지능형 최적화</p></div>
+</div>
+<div class="feature-item">
+<div class="feature-icon"><p>🔒</p></div>
+<div class="feature-title"><p>보안 강화</p></div>
+<div class="feature-desc"><p>Zero Trust</p></div>
+</div>
+</div>
+</body>
+</html>

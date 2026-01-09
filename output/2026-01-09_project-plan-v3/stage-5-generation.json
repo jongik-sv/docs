@@ -1,0 +1,2532 @@
+{
+  "session": {
+    "id": "2026-01-09_project-plan-v3",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "created_at": "2026-01-09T16:00:00+09:00",
+    "status": "completed"
+  },
+  "current_stage": 5,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트",
+      "subtitle": "수행계획서",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "emphasis": "전체 균형",
+      "slide_count": "18장",
+      "client": "(주)글로벌물류",
+      "vendor": "(주)테크솔루션"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      }
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축",
+      "purpose": "cover",
+      "key_points": [
+        "수행계획서",
+        "(주)테크솔루션",
+        "2025.01"
+      ],
+      "template_id": "deepgreen-cover-centered1",
+      "match_score": 0.95,
+      "match_reason": "중앙 정렬 표지, 배너와 제목 형식 일치",
+      "icon_decision": {
+        "need_icon": false,
+        "reason": "표지 슬라이드는 아이콘 불필요"
+      },
+      "content_bindings": {
+        "subtitle": "(주)글로벌물류 차세대 물류관리 시스템 구축 프로젝트",
+        "date": "2025.01"
+      },
+      "html_file": "slides/slide-001-cover.html",
+      "assets_generated": {
+        "icons": [],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "cover"
+        },
+        "zones": [],
+        "shapes_summary": {
+          "total_count": 14,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 6
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "gray": "#AAB7B8",
+          "primary": "#1E5128",
+          "secondary": "#4E9F3D"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 14,
+            "font_weight": 600
+          },
+          "stat_value": {
+            "font_size_pt": 14,
+            "font_weight": 600
+          },
+          "stat_label": {
+            "font_size_pt": 14,
+            "font_weight": 600
+          },
+          "toc_title": {
+            "font_size_pt": 14,
+            "font_weight": 600
+          },
+          "phase_title": {
+            "font_size_pt": 14,
+            "font_weight": 600
+          },
+          "card_title": {
+            "font_size_pt": 14,
+            "font_weight": 600
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "16pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "key_points": [
+        "1. 프로젝트 개요",
+        "2. 추진 전략 및 방법론",
+        "3. 프로젝트 조직 및 일정",
+        "4. 품질 및 위험 관리"
+      ],
+      "template_id": "deepgreen-toc-3col1",
+      "match_score": 0.9,
+      "match_reason": "목차 형식, 4개 항목을 2x2 또는 4열로 표시",
+      "icon_decision": {
+        "need_icon": false,
+        "reason": "목차는 텍스트 중심"
+      },
+      "content_bindings": {
+        "title": "목차",
+        "items": [
+          {
+            "number": "01",
+            "title": "프로젝트 개요",
+            "description": "프로젝트 정보, 배경 및 목적, 시스템 범위"
+          },
+          {
+            "number": "02",
+            "title": "추진 전략 및 방법론",
+            "description": "핵심 전략, 수행 방법론, 기술 아키텍처"
+          },
+          {
+            "number": "03",
+            "title": "프로젝트 조직 및 일정",
+            "description": "조직 구성, 투입 인력, 마스터 일정, 마일스톤"
+          },
+          {
+            "number": "04",
+            "title": "품질 및 위험 관리",
+            "description": "품질 보증, 보안 관리, 위험 대응"
+          }
+        ]
+      },
+      "html_file": "slides/slide-002-toc.html",
+      "assets_generated": {
+        "icons": [],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "toc",
+          "grid": {
+            "columns": 4,
+            "gap": "20pt"
+          }
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "28pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "58pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          },
+          {
+            "id": "toc-container",
+            "role": "content",
+            "geometry": {
+              "top": "90pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "280pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 32,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 13
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "dark_text": "#191A19",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D",
+          "accent": "#D8E9A8"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 20,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 20,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 20,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 20,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 20,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 20,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "20pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 2,
+      "title": "프로젝트 개요",
+      "purpose": "section",
+      "key_points": [
+        "01"
+      ],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드, VERSION 번호와 제목",
+      "icon_decision": {
+        "need_icon": false,
+        "reason": "섹션 구분자"
+      },
+      "content_bindings": {
+        "section_number": "SECTION. 01",
+        "section_description": "프로젝트의 기본 정보와 배경, 추진 목표 및 기대효과,시스템 구축 범위를 설명합니다."
+      },
+      "html_file": "slides/slide-003-section1.html",
+      "assets_generated": {
+        "icons": [],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "section"
+        },
+        "zones": [],
+        "shapes_summary": {
+          "total_count": 8,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 4
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "gray": "#AAB7B8",
+          "primary": "#1E5128"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "16pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 3,
+      "title": "프로젝트 정보 및 배경",
+      "purpose": "content",
+      "key_points": [
+        "프로젝트명: 스마트 물류관리 시스템 구축",
+        "발주기관: (주)글로벌물류 / 수행사: (주)테크솔루션",
+        "계약금액: 15억원 (VAT 별도)",
+        "계약기간: 2025-01-06 ~ 2025-12-31 (12개월)",
+        "배경: 연간 500만건 물류 처리, 레거시 시스템 노후화",
+        "문제점: 처리 속도 저하, 실시간 재고 파악 불가"
+      ],
+      "template_id": "basic-content-2col1",
+      "match_score": 0.85,
+      "match_reason": "2열 텍스트 레이아웃으로 정보와 배경 분리",
+      "icon_decision": {
+        "need_icon": true,
+        "reason": "프로젝트/배경 아이콘 필요",
+        "icons": [
+          "FaBuilding",
+          "FaExclamationTriangle"
+        ]
+      },
+      "content_bindings": {
+        "title": "프로젝트 정보 및 배경"
+      },
+      "html_file": "slides/slide-004-info.html",
+      "assets_generated": {
+        "icons": [
+          "FaBuilding",
+          "FaExclamationTriangle"
+        ],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "content"
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          },
+          {
+            "id": "content-area",
+            "role": "content",
+            "geometry": {
+              "top": "72pt",
+              "left": "40pt",
+              "width": "640pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 39,
+          "by_type": {
+            "container": 0,
+            "card": 16,
+            "text_box": 15
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "dark_text": "#191A19",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D",
+          "accent": "#D8E9A8"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "24pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 4,
+      "title": "추진 목표 및 기대효과",
+      "purpose": "stats",
+      "key_points": [
+        "물류 처리 효율 30% 향상",
+        "재고 정확도 99.5% 달성",
+        "운영 비용 20% 절감",
+        "3년 내 ROI 79% 달성"
+      ],
+      "template_id": "basic-stats-cards",
+      "match_score": 0.92,
+      "match_reason": "4개 KPI 통계 카드 레이아웃",
+      "icon_decision": {
+        "need_icon": true,
+        "reason": "각 KPI별 아이콘",
+        "icons": [
+          "FaChartLine",
+          "FaBoxes",
+          "FaCoins",
+          "FaChartPie"
+        ]
+      },
+      "content_bindings": {
+        "title": "추진 목표 및 기대효과",
+        "items": [
+          {
+            "icon": "📈",
+            "value": "30%",
+            "label": "물류 처리 효율",
+            "description": "AI 기반 최적화로 처리량 향상"
+          },
+          {
+            "icon": "📦",
+            "value": "99.5%",
+            "label": "재고 정확도",
+            "description": "실시간 추적으로 정확도 달성"
+          },
+          {
+            "icon": "💰",
+            "value": "20%",
+            "label": "운영 비용 절감",
+            "description": "자동화 및 프로세스 개선"
+          },
+          {
+            "icon": "📊",
+            "value": "79%",
+            "label": "3년 내 ROI",
+            "description": "투자 대비 수익률 달성"
+          }
+        ],
+        "note": {
+          "title": "산업 벤치마크 참고",
+          "content": "물류 자동화 시스템 도입 시 창고 면적 75% 감소, 피킹 인력 50% 절감, 피킹 오류 99% 감소 효과",
+          "source": "출처: 오토스토어 TEI 연구 보고서 (2024)"
+        }
+      },
+      "html_file": "slides/slide-005-goals.html",
+      "assets_generated": {
+        "icons": [
+          "FaChartLine",
+          "FaBoxes",
+          "FaCoins",
+          "FaChartPie"
+        ],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "stats",
+          "grid": {
+            "columns": 4,
+            "gap": "16pt"
+          }
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          },
+          {
+            "id": "stats-container",
+            "role": "content",
+            "geometry": {
+              "top": "72pt",
+              "left": "40pt",
+              "width": "640pt"
+            }
+          },
+          {
+            "id": "bottom-note",
+            "role": "footer_note",
+            "geometry": {
+              "left": "40pt",
+              "bottom": "40pt",
+              "width": "640pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 51,
+          "by_type": {
+            "container": 0,
+            "card": 4,
+            "text_box": 24
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "dark_text": "#191A19",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D",
+          "accent": "#D8E9A8"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "16pt"
+        },
+        "visual_properties": {
+          "balance": "symmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 5,
+      "title": "시스템 범위",
+      "purpose": "grid",
+      "key_points": [
+        "WMS (창고관리): 입출고, 재고, 피킹/패킹",
+        "TMS (배송관리): 배차, 경로최적화, 추적",
+        "OMS (주문관리): 주문접수, 할당, 정산",
+        "Dashboard: 실시간 현황, KPI, 리포트"
+      ],
+      "template_id": "basic-grid-icon6",
+      "match_score": 0.9,
+      "match_reason": "4열 아이콘 그리드로 시스템 모듈 표시",
+      "icon_decision": {
+        "need_icon": true,
+        "reason": "각 시스템별 아이콘",
+        "icons": [
+          "FaWarehouse",
+          "FaTruck",
+          "FaClipboardList",
+          "FaTachometerAlt"
+        ]
+      },
+      "content_bindings": {
+        "title": "시스템 범위",
+        "items": []
+      },
+      "html_file": "slides/slide-006-scope.html",
+      "assets_generated": {
+        "icons": [
+          "FaWarehouse",
+          "FaTruck",
+          "FaClipboardList",
+          "FaTachometerAlt"
+        ],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "grid",
+          "grid": {
+            "columns": 4,
+            "gap": "16pt"
+          }
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          },
+          {
+            "id": "grid-container",
+            "role": "content",
+            "geometry": {
+              "top": "72pt",
+              "left": "40pt",
+              "width": "640pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 51,
+          "by_type": {
+            "container": 0,
+            "card": 24,
+            "text_box": 19
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "dark_text": "#191A19",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D",
+          "accent": "#D8E9A8"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "16pt"
+        },
+        "visual_properties": {
+          "balance": "symmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 6,
+      "title": "추진 전략 및 방법론",
+      "purpose": "section",
+      "key_points": [
+        "02"
+      ],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드",
+      "icon_decision": {
+        "need_icon": false,
+        "reason": "섹션 구분자"
+      },
+      "content_bindings": {
+        "section_number": "SECTION. 02",
+        "section_description": "프로젝트의 핵심 추진 전략과 수행 방법론,기술 아키텍처를 설명합니다."
+      },
+      "html_file": "slides/slide-007-section2.html",
+      "assets_generated": {
+        "icons": [],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "section"
+        },
+        "zones": [],
+        "shapes_summary": {
+          "total_count": 8,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 4
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "gray": "#AAB7B8",
+          "primary": "#1E5128",
+          "secondary": "#4E9F3D"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "16pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 7,
+      "title": "핵심 추진 전략",
+      "purpose": "feature",
+      "key_points": [
+        "단계적 전환 전략: 모듈별 순차 전환으로 리스크 최소화",
+        "애자일 기반 개발: 2주 스프린트로 빠른 피드백",
+        "현업 밀착 협업: 주 2회 현업 리뷰",
+        "하이브리드 방법론: SI 안정성 + 애자일 유연성"
+      ],
+      "template_id": "deepgreen-feature-cards1",
+      "match_score": 0.92,
+      "match_reason": "4개 기능 카드로 전략 강조",
+      "icon_decision": {
+        "need_icon": true,
+        "reason": "전략별 아이콘",
+        "icons": [
+          "FaLayerGroup",
+          "FaSyncAlt",
+          "FaUsers",
+          "FaCogs"
+        ]
+      },
+      "content_bindings": {
+        "title": "핵심 추진 전략",
+        "items": [
+          {
+            "icon": "",
+            "title": "단계적 전환 전략",
+            "description": "Big Bang 방식이 아닌 모듈별 순차 전환으로 리스크를 최소화합니다."
+          },
+          {
+            "icon": "",
+            "title": "애자일 기반 개발",
+            "description": "2주 단위 스프린트로 빠른 피드백과 유연한 대응을 실현합니다."
+          },
+          {
+            "icon": "",
+            "title": "현업 밀착 협업",
+            "description": "주 2회 현업 리뷰를 통해 요구사항 정합성을 확보합니다."
+          },
+          {
+            "icon": "",
+            "title": "하이브리드 방법론",
+            "description": "대규모 SI 프로젝트 안정성과 애자일 유연성을 결합합니다."
+          }
+        ]
+      },
+      "html_file": "slides/slide-008-strategy.html",
+      "assets_generated": {
+        "icons": [
+          "FaLayerGroup",
+          "FaSyncAlt",
+          "FaUsers",
+          "FaCogs"
+        ],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "feature"
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 49,
+          "by_type": {
+            "container": 0,
+            "card": 20,
+            "text_box": 21
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "dark_text": "#191A19",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "14pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 8,
+      "title": "기술 아키텍처",
+      "purpose": "diagram",
+      "key_points": [
+        "Frontend: Vue.js 3, TypeScript",
+        "Backend: Spring Boot 3.2, Java 17 (MSA)",
+        "Database: PostgreSQL 16, Redis 7",
+        "Infra: AWS (EKS, RDS, S3)",
+        "AI/ML: Python, TensorFlow"
+      ],
+      "template_id": "basic-diagram-flow1",
+      "match_score": 0.85,
+      "match_reason": "계층형 아키텍처 다이어그램",
+      "icon_decision": {
+        "need_icon": true,
+        "reason": "기술 스택 아이콘",
+        "icons": [
+          "FaVuejs",
+          "FaJava",
+          "FaDatabase",
+          "FaAws",
+          "FaBrain"
+        ]
+      },
+      "content_bindings": {
+        "title": "기술 아키텍처",
+        "layers": [
+          {
+            "label": "Frontend",
+            "technologies": [
+              {
+                "name": "Vue.js 3",
+                "version": "v3.4 / TypeScript",
+                "description": "SPA 구조"
+              },
+              {
+                "name": "Vuetify 3",
+                "version": "UI Framework",
+                "description": "Material Design"
+              },
+              {
+                "name": "Pinia",
+                "version": "State Management",
+                "description": "Reactive Store"
+              }
+            ]
+          },
+          {
+            "label": "Backend",
+            "technologies": [
+              {
+                "name": "Spring Boot 3.2",
+                "version": "Java 17 / MSA",
+                "description": "마이크로서비스"
+              },
+              {
+                "name": "Spring Cloud",
+                "version": "Gateway / Config",
+                "description": "서비스 메시"
+              },
+              {
+                "name": "Kafka",
+                "version": "Event Streaming",
+                "description": "비동기 처리"
+              }
+            ]
+          },
+          {
+            "label": "Database",
+            "technologies": [
+              {
+                "name": "PostgreSQL 16",
+                "version": "RDBMS",
+                "description": "메인 DB"
+              },
+              {
+                "name": "Redis 7",
+                "version": "In-Memory Cache",
+                "description": "세션/캐시"
+              },
+              {
+                "name": "Elasticsearch",
+                "version": "Search Engine",
+                "description": "로그/검색"
+              }
+            ]
+          },
+          {
+            "label": "Infra",
+            "technologies": [
+              {
+                "name": "AWS EKS",
+                "version": "Kubernetes",
+                "description": "컨테이너 오케스트레이션"
+              },
+              {
+                "name": "AWS RDS",
+                "version": "Managed DB",
+                "description": "고가용성"
+              },
+              {
+                "name": "AWS S3",
+                "version": "Object Storage",
+                "description": "파일 저장"
+              }
+            ]
+          },
+          {
+            "label": "AI/ML",
+            "technologies": [
+              {
+                "name": "TensorFlow 2.15",
+                "version": "Python 3.11",
+                "description": "수요예측 / 경로최적화"
+              }
+            ]
+          }
+        ],
+        "features": [
+          {
+            "icon": "☁",
+            "title": "클라우드 네이티브",
+            "description": "확장성 확보"
+          },
+          {
+            "icon": "🔄",
+            "title": "MSA 구조",
+            "description": "독립 배포"
+          },
+          {
+            "icon": "🤖",
+            "title": "AI 기반",
+            "description": "지능형 최적화"
+          },
+          {
+            "icon": "🔒",
+            "title": "보안 강화",
+            "description": "Zero Trust"
+          }
+        ]
+      },
+      "html_file": "slides/slide-009-architecture.html",
+      "assets_generated": {
+        "icons": [
+          "FaVuejs",
+          "FaJava",
+          "FaDatabase",
+          "FaAws",
+          "FaBrain"
+        ],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "diagram",
+          "grid": {
+            "columns": 4,
+            "gap": "8pt"
+          }
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          },
+          {
+            "id": "arch-container",
+            "role": "content",
+            "geometry": {
+              "top": "68pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "300pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 144,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 57
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D",
+          "accent": "#D8E9A8"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "8pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 3
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 9,
+      "title": "프로젝트 조직 및 일정",
+      "purpose": "section",
+      "key_points": [
+        "03"
+      ],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드",
+      "icon_decision": {
+        "need_icon": false,
+        "reason": "섹션 구분자"
+      },
+      "content_bindings": {
+        "section_number": "SECTION. 03",
+        "section_description": "프로젝트 조직 구성과 역할 분담,투입 인력 현황 및 마스터 일정을 설명합니다."
+      },
+      "html_file": "slides/slide-010-section3.html",
+      "assets_generated": {
+        "icons": [],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "section"
+        },
+        "zones": [],
+        "shapes_summary": {
+          "total_count": 8,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 4
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "gray": "#AAB7B8",
+          "primary": "#1E5128",
+          "secondary": "#4E9F3D"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "16pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 10,
+      "title": "프로젝트 조직 구성",
+      "purpose": "hierarchy",
+      "key_points": [
+        "발주기관 PM: 정민호 부장",
+        "수행사 PM: 김철수 차장",
+        "PMO: 이영희 과장",
+        "AA: 박준형 책임",
+        "PL: 최수진 선임",
+        "QA/DBA: 한미영/오현우"
+      ],
+      "template_id": "basic-hierarchy-org-40",
+      "match_score": 0.9,
+      "match_reason": "조직도 계층 구조",
+      "icon_decision": {
+        "need_icon": true,
+        "reason": "역할별 아이콘",
+        "icons": [
+          "FaUserTie",
+          "FaUserCog"
+        ]
+      },
+      "content_bindings": {
+        "title": "프로젝트 조직 구성",
+        "roles": [
+          {
+            "name": "",
+            "position": ""
+          },
+          {
+            "name": "",
+            "position": ""
+          },
+          {
+            "name": "",
+            "position": ""
+          }
+        ]
+      },
+      "html_file": "slides/slide-011-organization.html",
+      "assets_generated": {
+        "icons": [
+          "FaUserTie",
+          "FaUserCog"
+        ],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "hierarchy"
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 73,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 28
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "dark_text": "#191A19",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D",
+          "accent": "#D8E9A8"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "12pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 3
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 11,
+      "title": "투입 인력 현황",
+      "purpose": "table",
+      "key_points": [
+        "PM 김철수 (특급) 12개월",
+        "AA 박준형 (특급) 10개월",
+        "PL 최수진 (고급) 12개월",
+        "Backend/Frontend/DBA/QA",
+        "합계: 8명 / 78MM"
+      ],
+      "template_id": "basic-table-simple5",
+      "match_score": 0.88,
+      "match_reason": "인력 현황 테이블",
+      "icon_decision": {
+        "need_icon": false,
+        "reason": "테이블은 아이콘 불필요"
+      },
+      "content_bindings": {
+        "title": "투입 인력 현황",
+        "rows": [
+          [],
+          [],
+          [],
+          [],
+          [],
+          [],
+          []
+        ]
+      },
+      "html_file": "slides/slide-012-manpower.html",
+      "assets_generated": {
+        "icons": [],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "table"
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 124,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 55
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "dark_text": "#191A19",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D",
+          "accent": "#D8E9A8"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "16pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 12,
+      "title": "마스터 일정",
+      "purpose": "timeline",
+      "key_points": [
+        "착수 (1월): 킥오프, 환경구축",
+        "분석 (2-3월): 요구사항 확정",
+        "설계 (4-5월): 아키텍처/화면/DB",
+        "개발 (6-9월): 코딩, 단위테스트",
+        "테스트 (10-11월): 통합/인수",
+        "이행 (11-12월): 오픈, 안정화"
+      ],
+      "template_id": "deepgreen-timeline1",
+      "match_score": 0.92,
+      "match_reason": "타임라인/프로세스 6단계",
+      "icon_decision": {
+        "need_icon": true,
+        "reason": "단계별 아이콘",
+        "icons": [
+          "FaRocket",
+          "FaSearch",
+          "FaDraftingCompass",
+          "FaCode",
+          "FaVial",
+          "FaCheckCircle"
+        ]
+      },
+      "content_bindings": {
+        "title": "마스터 일정",
+        "steps": []
+      },
+      "html_file": "slides/slide-013-schedule.html",
+      "assets_generated": {
+        "icons": [
+          "FaRocket",
+          "FaSearch",
+          "FaDraftingCompass",
+          "FaCode",
+          "FaVial",
+          "FaCheckCircle"
+        ],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "timeline"
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 116,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 40
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "dark_text": "#191A19",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "12pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 13,
+      "title": "주요 마일스톤",
+      "purpose": "process",
+      "key_points": [
+        "M1 착수보고 (1/10)",
+        "M2 요구사항 확정 (3/31)",
+        "M3 설계 완료 (5/31)",
+        "M4 개발 완료 (9/30)",
+        "M5 테스트 완료 (11/15)",
+        "M6 시스템 오픈 (12/1)"
+      ],
+      "template_id": "basic-process-6step1",
+      "match_score": 0.88,
+      "match_reason": "6단계 프로세스 흐름",
+      "icon_decision": {
+        "need_icon": false,
+        "reason": "프로세스 단계 번호로 충분"
+      },
+      "content_bindings": {
+        "title": "주요 마일스톤",
+        "steps": []
+      },
+      "html_file": "slides/slide-014-milestone.html",
+      "assets_generated": {
+        "icons": [],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "process"
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 81,
+          "by_type": {
+            "container": 0,
+            "card": 6,
+            "text_box": 33
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D",
+          "accent": "#D8E9A8"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "10pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 14,
+      "title": "품질 및 위험 관리",
+      "purpose": "section",
+      "key_points": [
+        "04"
+      ],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드",
+      "icon_decision": {
+        "need_icon": false,
+        "reason": "섹션 구분자"
+      },
+      "content_bindings": {
+        "section_number": "SECTION. 04",
+        "section_description": "품질 보증 활동과 보안 관리 계획,위험 요소 및 대응 방안을 설명합니다."
+      },
+      "html_file": "slides/slide-015-section4.html",
+      "assets_generated": {
+        "icons": [],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "section"
+        },
+        "zones": [],
+        "shapes_summary": {
+          "total_count": 8,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 4
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "gray": "#AAB7B8",
+          "primary": "#1E5128"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 24,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "16pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 15,
+      "title": "품질 및 보안 관리",
+      "purpose": "comparison",
+      "key_points": [
+        "품질 보증: 코드 리뷰, SonarQube, 테스트",
+        "인적 보안: 보안서약서, 교육",
+        "물리 보안: 통제구역, 장비 통제",
+        "기술 보안: OWASP, DB 암호화, DLP"
+      ],
+      "template_id": "basic-comparison-2col6",
+      "match_score": 0.88,
+      "match_reason": "2열 비교 (품질 vs 보안)",
+      "icon_decision": {
+        "need_icon": true,
+        "reason": "품질/보안 아이콘",
+        "icons": [
+          "FaShieldAlt",
+          "FaLock"
+        ]
+      },
+      "content_bindings": {
+        "title": "품질 및 보안 관리",
+        "columns": [
+          {
+            "header": "✔품질 보증 활동",
+            "items": [
+              {
+                "title": "산출물 검토",
+                "description": "단계별 말 발주 담당자 검토 및 승인"
+              },
+              {
+                "title": "코드 리뷰",
+                "description": "GitHub PR 필수, 2인 이상 승인"
+              },
+              {
+                "title": "정적 분석",
+                "description": "SonarQube 품질 게이트 적용"
+              },
+              {
+                "title": "테스트",
+                "description": "시나리오 기반 통합/인수 테스트"
+              }
+            ]
+          },
+          {
+            "header": "🔒보안 관리 계획",
+            "items": [
+              {
+                "title": "인적 보안",
+                "description": "보안서약서 징구, 보안 교육 실시 (전 인원)"
+              },
+              {
+                "title": "물리 보안",
+                "description": "통제구역 출입 관리, 반입 장비 통제"
+              },
+              {
+                "title": "기술 보안",
+                "description": "OWASP Top 10 점검, DB 암호화"
+              },
+              {
+                "title": "PC 보안",
+                "description": "백신, 화면보호기, DLP 솔루션 적용"
+              }
+            ]
+          }
+        ]
+      },
+      "html_file": "slides/slide-016-quality.html",
+      "assets_generated": {
+        "icons": [
+          "FaShieldAlt",
+          "FaLock"
+        ],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "comparison"
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          },
+          {
+            "id": "content-area",
+            "role": "content",
+            "geometry": {
+              "top": "68pt",
+              "left": "40pt",
+              "width": "640pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 74,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 29
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "dark_text": "#191A19",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D",
+          "accent": "#D8E9A8"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "20pt"
+        },
+        "visual_properties": {
+          "balance": "symmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 16,
+      "title": "위험 및 변경 관리",
+      "purpose": "grid",
+      "key_points": [
+        "요구사항 변경 (상/상): CCB 통제",
+        "일정 지연 (상/중): Critical Path 모니터링",
+        "기술적 난제 (중/중): PoC, 전문가 자문",
+        "데이터 마이그레이션 (상/중): 롤백 계획"
+      ],
+      "template_id": "basic-grid-3col-45",
+      "match_score": 0.85,
+      "match_reason": "위험 요소별 그리드 카드",
+      "icon_decision": {
+        "need_icon": true,
+        "reason": "위험 유형별 아이콘",
+        "icons": [
+          "FaExchangeAlt",
+          "FaClock",
+          "FaPuzzlePiece",
+          "FaDatabase"
+        ]
+      },
+      "content_bindings": {
+        "title": "위험 및 변경 관리",
+        "items": []
+      },
+      "html_file": "slides/slide-017-risk.html",
+      "assets_generated": {
+        "icons": [
+          "FaExchangeAlt",
+          "FaClock",
+          "FaPuzzlePiece",
+          "FaDatabase"
+        ],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "grid"
+        },
+        "zones": [
+          {
+            "id": "slide-title",
+            "role": "slide_title",
+            "geometry": {
+              "top": "24pt",
+              "left": "40pt"
+            }
+          },
+          {
+            "id": "title-line",
+            "role": "divider",
+            "geometry": {
+              "top": "52pt",
+              "left": "40pt",
+              "width": "640pt",
+              "height": "2pt"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 98,
+          "by_type": {
+            "container": 0,
+            "card": 4,
+            "text_box": 41
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "surface": "#F4F6F6",
+          "primary": "#1E5128",
+          "dark_text": "#191A19",
+          "gray": "#AAB7B8",
+          "secondary": "#4E9F3D",
+          "accent": "#D8E9A8"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 18,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "12pt"
+        },
+        "visual_properties": {
+          "balance": "symmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    },
+    {
+      "index": 17,
+      "title": "감사합니다",
+      "purpose": "closing",
+      "key_points": [
+        "(주)테크솔루션",
+        "PM 김철수",
+        "T. 02-1234-5678",
+        "E. pm@techsolution.co.kr"
+      ],
+      "template_id": "deepgreen-closing1",
+      "match_score": 0.95,
+      "match_reason": "마무리 슬라이드, 감사 인사",
+      "icon_decision": {
+        "need_icon": false,
+        "reason": "클로징은 아이콘 불필요"
+      },
+      "content_bindings": {
+        "title": "감사합니다",
+        "company": "(주)테크솔루션",
+        "contacts": [
+          {
+            "label": "담당자",
+            "value": "PM 김철수"
+          },
+          {
+            "label": "연락처",
+            "value": "02-1234-5678"
+          },
+          {
+            "label": "이메일",
+            "value": "pm@techsolution.co.kr"
+          }
+        ]
+      },
+      "html_file": "slides/slide-018-closing.html",
+      "assets_generated": {
+        "icons": [],
+        "images": []
+      },
+      "design_info": {
+        "layout": {
+          "type": "closing"
+        },
+        "zones": [
+          {
+            "id": "footer",
+            "role": "footer",
+            "geometry": {
+              "left": "0",
+              "bottom": "24pt",
+              "width": "100%"
+            }
+          }
+        ],
+        "shapes_summary": {
+          "total_count": 28,
+          "by_type": {
+            "container": 0,
+            "card": 0,
+            "text_box": 10
+          }
+        },
+        "color_tokens": {
+          "background": "#FFFFFF",
+          "primary": "#1E5128",
+          "secondary": "#4E9F3D"
+        },
+        "typography": {
+          "slide_title": {
+            "font_size_pt": 36,
+            "font_weight": 700
+          },
+          "stat_value": {
+            "font_size_pt": 36,
+            "font_weight": 700
+          },
+          "stat_label": {
+            "font_size_pt": 36,
+            "font_weight": 700
+          },
+          "toc_title": {
+            "font_size_pt": 36,
+            "font_weight": 700
+          },
+          "phase_title": {
+            "font_size_pt": 36,
+            "font_weight": 700
+          },
+          "card_title": {
+            "font_size_pt": 36,
+            "font_weight": 700
+          }
+        },
+        "spacing": {
+          "slide_margin": {
+            "left": "40pt",
+            "right": "40pt",
+            "top": "24pt",
+            "bottom": "24pt"
+          },
+          "element_gap": "40pt"
+        },
+        "visual_properties": {
+          "balance": "asymmetric",
+          "hierarchy": 2
+        }
+      },
+      "generated": true,
+      "slide_stage": 5,
+      "revision": 0,
+      "evaluation": {
+        "score": 88,
+        "passed": true,
+        "criteria": {
+          "layout_consistency": true,
+          "color_harmony": true,
+          "typography_hierarchy": true,
+          "content_completeness": true
+        }
+      }
+    }
+  ],
+  "output": {
+    "pptx_file": "스마트물류관리시스템_수행계획서.pptx",
+    "slide_count": 18,
+    "generated_at": "2026-01-09T17:01:30+09:00",
+    "theme": "deepgreen",
+    "dimensions": {
+      "width": "720pt",
+      "height": "405pt",
+      "ratio": "16:9"
+    },
+    "status": "success",
+    "errors": []
+  }
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 24pt;
+      left: 40pt;
+      color: #1E5128;
+      font-size: 18pt;
+      font-weight: 700;
+    }
+    .title-line {
+      position: absolute;
+      top: 52pt;
+      left: 40pt;
+      width: 640pt;
+      height: 2pt;
+      background: #1E5128;
+    }
+    .timeline-container {
+      position: absolute;
+      top: 76pt;
+      left: 40pt;
+      width: 640pt;
+    }
+    .timeline-header {
+      display: flex;
+      margin-bottom: 12pt;
+    }
+    .month-label {
+      flex: 1;
+      text-align: center;
+      font-size: 8pt;
+      color: #AAB7B8;
+      padding: 4pt;
+    }
+    .timeline-track {
+      position: relative;
+      height: 180pt;
+    }
+    .timeline-line {
+      position: absolute;
+      top: 10pt;
+      left: 0;
+      width: 100%;
+      height: 2pt;
+      background: #E8E8E8;
+    }
+    .phase-bar {
+      position: absolute;
+      height: 40pt;
+      border-radius: 6pt;
+      display: flex;
+      align-items: center;
+      padding: 0 10pt;
+    }
+    .phase-bar .phase-icon {
+      font-size: 16pt;
+      margin-right: 8pt;
+    }
+    .phase-bar .phase-info {
+      flex: 1;
+    }
+    .phase-bar .phase-name {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+    .phase-bar .phase-detail {
+      font-size: 8pt;
+      color: rgba(255,255,255,0.8);
+    }
+    .phase-bar .phase-weeks {
+      font-size: 9pt;
+      color: rgba(255,255,255,0.9);
+      font-weight: 600;
+    }
+    .phase-1 { background: #1E5128; top: 20pt; left: 0%; width: 8.3%; }
+    .phase-2 { background: #4E9F3D; top: 20pt; left: 8.5%; width: 16.6%; }
+    .phase-3 { background: #4E9F3D; top: 70pt; left: 25.3%; width: 16.6%; }
+    .phase-4 { background: #1E5128; top: 70pt; left: 42%; width: 33.3%; }
+    .phase-5 { background: #4E9F3D; top: 120pt; left: 75%; width: 12.5%; }
+    .phase-6 { background: #1E5128; top: 120pt; left: 87.5%; width: 12.5%; }
+    .legend-row {
+      position: absolute;
+      bottom: 24pt;
+      left: 40pt;
+      width: 640pt;
+      display: flex;
+      gap: 12pt;
+    }
+    .legend-item {
+      flex: 1;
+      background: #F4F6F6;
+      border-radius: 6pt;
+      padding: 10pt;
+      display: flex;
+      align-items: center;
+      gap: 8pt;
+    }
+    .legend-phase {
+      width: 8pt;
+      height: 24pt;
+      border-radius: 2pt;
+    }
+    .legend-phase.p1 { background: #1E5128; }
+    .legend-phase.p2 { background: #4E9F3D; }
+    .legend-text {
+      flex: 1;
+    }
+    .legend-name {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #191A19;
+    }
+    .legend-duration {
+      font-size: 8pt;
+      color: #AAB7B8;
+    }
+  </style>
+</head>
+<body>
+<div class="slide-title"><p>마스터 일정</p></div>
+<div class="title-line"></div>
+<div class="timeline-container">
+<div class="timeline-header">
+<div class="month-label"><p>1월</p></div>
+<div class="month-label"><p>2월</p></div>
+<div class="month-label"><p>3월</p></div>
+<div class="month-label"><p>4월</p></div>
+<div class="month-label"><p>5월</p></div>
+<div class="month-label"><p>6월</p></div>
+<div class="month-label"><p>7월</p></div>
+<div class="month-label"><p>8월</p></div>
+<div class="month-label"><p>9월</p></div>
+<div class="month-label"><p>10월</p></div>
+<div class="month-label"><p>11월</p></div>
+<div class="month-label"><p>12월</p></div>
+</div>
+<div class="timeline-track">
+<div class="timeline-line"></div>
+<div class="phase-bar phase-1">
+<div class="phase-info">
+<div class="phase-name"><p>착수</p></div>
+</div>
+<div class="phase-weeks"><p>4W</p></div>
+</div>
+<div class="phase-bar phase-2">
+<div class="phase-info">
+<div class="phase-name"><p>분석</p></div>
+<div class="phase-detail"><p>요구사항 확정</p></div>
+</div>
+<div class="phase-weeks"><p>8W</p></div>
+</div>
+<div class="phase-bar phase-3">
+<div class="phase-info">
+<div class="phase-name"><p>설계</p></div>
+<div class="phase-detail"><p>아키텍처/화면/DB</p></div>
+</div>
+<div class="phase-weeks"><p>8W</p></div>
+</div>
+<div class="phase-bar phase-4">
+<div class="phase-info">
+<div class="phase-name"><p>개발</p></div>
+<div class="phase-detail"><p>코딩, 단위테스트</p></div>
+</div>
+<div class="phase-weeks"><p>16W</p></div>
+</div>
+<div class="phase-bar phase-5">
+<div class="phase-info">
+<div class="phase-name"><p>테스트</p></div>
+</div>
+<div class="phase-weeks"><p>6W</p></div>
+</div>
+<div class="phase-bar phase-6">
+<div class="phase-info">
+<div class="phase-name"><p>이행</p></div>
+</div>
+<div class="phase-weeks"><p>6W</p></div>
+</div>
+</div>
+</div>
+<div class="legend-row">
+<div class="legend-item">
+<div class="legend-phase p1"></div>
+<div class="legend-text">
+<div class="legend-name"><p>착수</p></div>
+<div class="legend-duration"><p>1월 (4주)</p></div>
+</div>
+</div>
+<div class="legend-item">
+<div class="legend-phase p2"></div>
+<div class="legend-text">
+<div class="legend-name"><p>분석</p></div>
+<div class="legend-duration"><p>2-3월 (8주)</p></div>
+</div>
+</div>
+<div class="legend-item">
+<div class="legend-phase p2"></div>
+<div class="legend-text">
+<div class="legend-name"><p>설계</p></div>
+<div class="legend-duration"><p>4-5월 (8주)</p></div>
+</div>
+</div>
+<div class="legend-item">
+<div class="legend-phase p1"></div>
+<div class="legend-text">
+<div class="legend-name"><p>개발</p></div>
+<div class="legend-duration"><p>6-9월 (16주)</p></div>
+</div>
+</div>
+<div class="legend-item">
+<div class="legend-phase p2"></div>
+<div class="legend-text">
+<div class="legend-name"><p>테스트</p></div>
+<div class="legend-duration"><p>10-11월 (6주)</p></div>
+</div>
+</div>
+<div class="legend-item">
+<div class="legend-phase p1"></div>
+<div class="legend-text">
+<div class="legend-name"><p>이행</p></div>
+<div class="legend-duration"><p>11-12월 (6주)</p></div>
+</div>
+</div>
+</div>
+</body>
+</html>

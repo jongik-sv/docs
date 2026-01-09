@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 24pt;
+      left: 40pt;
+      color: #1E5128;
+      font-size: 18pt;
+      font-weight: 700;
+    }
+    .title-line {
+      position: absolute;
+      top: 52pt;
+      left: 40pt;
+      width: 640pt;
+      height: 2pt;
+      background: #1E5128;
+    }
+    .content-area {
+      position: absolute;
+      top: 72pt;
+      left: 40pt;
+      width: 640pt;
+      display: flex;
+      gap: 24pt;
+    }
+    .left-col, .right-col {
+      flex: 1;
+    }
+    .info-card {
+      background: #F4F6F6;
+      border-radius: 6pt;
+      padding: 14pt;
+      margin-bottom: 12pt;
+    }
+    .info-card.highlight {
+      background: #1E5128;
+    }
+    .info-card.highlight .card-title,
+    .info-card.highlight .card-value,
+    .info-card.highlight .card-desc {
+      color: #FFFFFF;
+    }
+    .card-icon {
+      width: 24pt;
+      height: 24pt;
+      background: #4E9F3D;
+      border-radius: 4pt;
+      margin-bottom: 8pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 12pt;
+    }
+    .card-title {
+      font-size: 9pt;
+      color: #AAB7B8;
+      margin-bottom: 4pt;
+      font-weight: 500;
+    }
+    .card-value {
+      font-size: 12pt;
+      color: #191A19;
+      font-weight: 600;
+      margin-bottom: 4pt;
+    }
+    .card-desc {
+      font-size: 9pt;
+      color: #AAB7B8;
+      line-height: 1.4;
+    }
+    .section-label {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #1E5128;
+      margin-bottom: 10pt;
+      padding-bottom: 6pt;
+      border-bottom: 1pt solid #D8E9A8;
+    }
+    .problem-list {
+      list-style: none;
+    }
+    .problem-list li {
+      font-size: 10pt;
+      color: #191A19;
+      padding: 6pt 0;
+      padding-left: 16pt;
+      position: relative;
+      line-height: 1.4;
+    }
+    .problem-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10pt;
+      width: 6pt;
+      height: 6pt;
+      background: #4E9F3D;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+<div class="slide-title"><p>프로젝트 정보 및 배경</p></div>
+<div class="title-line"></div>
+<div class="content-area">
+<div class="left-col">
+<div class="section-label"><p>프로젝트 정보</p></div>
+<div class="info-card highlight">
+<div class="card-title"><p>프로젝트명</p></div>
+<div class="card-value"><p>스마트 물류관리 시스템 구축</p></div>
+</div>
+<div class="info-card">
+<div class="card-title"><p>발주기관 / 수행사</p></div>
+<div class="card-value"><p>(주)글로벌물류 / (주)테크솔루션</p></div>
+</div>
+<div class="info-card">
+<div class="card-title"><p>계약금액</p></div>
+<div class="card-value"><p>15억원 (VAT 별도)</p></div>
+</div>
+<div class="info-card">
+<div class="card-title"><p>계약기간</p></div>
+<div class="card-value"><p>2025.01.06 ~ 2025.12.31 (12개월)</p></div>
+</div>
+</div>
+<div class="right-col">
+<div class="section-label"><p>추진 배경</p></div>
+<div class="info-card">
+<div class="card-title"><p>현황</p></div>
+<div class="card-value"><p>연간 500만건 물류 처리</p></div>
+<div class="card-desc"><p>국내 Top 5 물류기업으로 성장, 레거시 시스템 10년 이상 운영</p></div>
+</div>
+<div class="section-label" style="margin-top: 12pt;"><p>문제점</p></div>
+<ul class="problem-list">
+<li>레거시 시스템 노후화로 처리 속도 저하</li>
+<li>실시간 재고 파악 불가능</li>
+<li>타 시스템(ERP, SCM) 연동 한계</li>
+<li>급증하는 물동량 대응 역량 부족</li>
+</ul>
+</div>
+</div>
+</body>
+</html>

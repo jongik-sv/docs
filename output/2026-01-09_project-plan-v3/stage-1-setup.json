@@ -1,0 +1,41 @@
+{
+  "session": {
+    "id": "2026-01-09_project-plan-v3",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "created_at": "2026-01-09T16:00:00+09:00",
+    "status": "in_progress"
+  },
+  "current_stage": 1,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트",
+      "subtitle": "수행계획서",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "emphasis": "전체 균형",
+      "slide_count": "15-18장",
+      "client": "(주)글로벌물류",
+      "vendor": "(주)테크솔루션",
+      "date": "2025-01-03"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      },
+      "typography": {
+        "heading_font": "Arial",
+        "body_font": "Arial",
+        "korean_font": "Malgun Gothic"
+      }
+    }
+  }
+}

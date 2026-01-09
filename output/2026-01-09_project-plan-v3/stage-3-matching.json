@@ -1,0 +1,282 @@
+{
+  "session": {
+    "id": "2026-01-09_project-plan-v3",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "created_at": "2026-01-09T16:00:00+09:00",
+    "status": "in_progress"
+  },
+  "current_stage": 3,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트",
+      "subtitle": "수행계획서",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "emphasis": "전체 균형",
+      "slide_count": "18장",
+      "client": "(주)글로벌물류",
+      "vendor": "(주)테크솔루션"
+    },
+    "theme": {
+      "id": "deepgreen",
+      "name": "Deep Green",
+      "colors": {
+        "primary": "#1E5128",
+        "secondary": "#4E9F3D",
+        "accent": "#D8E9A8",
+        "background": "#FFFFFF",
+        "surface": "#F4F6F6",
+        "dark_text": "#191A19",
+        "light": "#FFFFFF",
+        "gray": "#AAB7B8"
+      }
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축",
+      "purpose": "cover",
+      "key_points": ["수행계획서", "(주)테크솔루션", "2025.01"],
+      "template_id": "deepgreen-cover-centered1",
+      "match_score": 0.95,
+      "match_reason": "중앙 정렬 표지, 배너와 제목 형식 일치",
+      "icon_decision": { "need_icon": false, "reason": "표지 슬라이드는 아이콘 불필요" }
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "key_points": ["1. 프로젝트 개요", "2. 추진 전략 및 방법론", "3. 프로젝트 조직 및 일정", "4. 품질 및 위험 관리"],
+      "template_id": "deepgreen-toc-3col1",
+      "match_score": 0.90,
+      "match_reason": "목차 형식, 4개 항목을 2x2 또는 4열로 표시",
+      "icon_decision": { "need_icon": false, "reason": "목차는 텍스트 중심" }
+    },
+    {
+      "index": 2,
+      "title": "프로젝트 개요",
+      "purpose": "section",
+      "key_points": ["01"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드, VERSION 번호와 제목",
+      "icon_decision": { "need_icon": false, "reason": "섹션 구분자" }
+    },
+    {
+      "index": 3,
+      "title": "프로젝트 정보 및 배경",
+      "purpose": "content",
+      "key_points": [
+        "프로젝트명: 스마트 물류관리 시스템 구축",
+        "발주기관: (주)글로벌물류 / 수행사: (주)테크솔루션",
+        "계약금액: 15억원 (VAT 별도)",
+        "계약기간: 2025-01-06 ~ 2025-12-31 (12개월)",
+        "배경: 연간 500만건 물류 처리, 레거시 시스템 노후화",
+        "문제점: 처리 속도 저하, 실시간 재고 파악 불가"
+      ],
+      "template_id": "basic-content-2col1",
+      "match_score": 0.85,
+      "match_reason": "2열 텍스트 레이아웃으로 정보와 배경 분리",
+      "icon_decision": { "need_icon": true, "reason": "프로젝트/배경 아이콘 필요", "icons": ["FaBuilding", "FaExclamationTriangle"] }
+    },
+    {
+      "index": 4,
+      "title": "추진 목표 및 기대효과",
+      "purpose": "stats",
+      "key_points": [
+        "물류 처리 효율 30% 향상",
+        "재고 정확도 99.5% 달성",
+        "운영 비용 20% 절감",
+        "3년 내 ROI 79% 달성"
+      ],
+      "template_id": "basic-stats-cards",
+      "match_score": 0.92,
+      "match_reason": "4개 KPI 통계 카드 레이아웃",
+      "icon_decision": { "need_icon": true, "reason": "각 KPI별 아이콘", "icons": ["FaChartLine", "FaBoxes", "FaCoins", "FaChartPie"] }
+    },
+    {
+      "index": 5,
+      "title": "시스템 범위",
+      "purpose": "grid",
+      "key_points": [
+        "WMS (창고관리): 입출고, 재고, 피킹/패킹",
+        "TMS (배송관리): 배차, 경로최적화, 추적",
+        "OMS (주문관리): 주문접수, 할당, 정산",
+        "Dashboard: 실시간 현황, KPI, 리포트"
+      ],
+      "template_id": "basic-grid-icon6",
+      "match_score": 0.90,
+      "match_reason": "4열 아이콘 그리드로 시스템 모듈 표시",
+      "icon_decision": { "need_icon": true, "reason": "각 시스템별 아이콘", "icons": ["FaWarehouse", "FaTruck", "FaClipboardList", "FaTachometerAlt"] }
+    },
+    {
+      "index": 6,
+      "title": "추진 전략 및 방법론",
+      "purpose": "section",
+      "key_points": ["02"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드",
+      "icon_decision": { "need_icon": false, "reason": "섹션 구분자" }
+    },
+    {
+      "index": 7,
+      "title": "핵심 추진 전략",
+      "purpose": "feature",
+      "key_points": [
+        "단계적 전환 전략: 모듈별 순차 전환으로 리스크 최소화",
+        "애자일 기반 개발: 2주 스프린트로 빠른 피드백",
+        "현업 밀착 협업: 주 2회 현업 리뷰",
+        "하이브리드 방법론: SI 안정성 + 애자일 유연성"
+      ],
+      "template_id": "deepgreen-feature-cards1",
+      "match_score": 0.92,
+      "match_reason": "4개 기능 카드로 전략 강조",
+      "icon_decision": { "need_icon": true, "reason": "전략별 아이콘", "icons": ["FaLayerGroup", "FaSyncAlt", "FaUsers", "FaCogs"] }
+    },
+    {
+      "index": 8,
+      "title": "기술 아키텍처",
+      "purpose": "diagram",
+      "key_points": [
+        "Frontend: Vue.js 3, TypeScript",
+        "Backend: Spring Boot 3.2, Java 17 (MSA)",
+        "Database: PostgreSQL 16, Redis 7",
+        "Infra: AWS (EKS, RDS, S3)",
+        "AI/ML: Python, TensorFlow"
+      ],
+      "template_id": "basic-diagram-flow1",
+      "match_score": 0.85,
+      "match_reason": "계층형 아키텍처 다이어그램",
+      "icon_decision": { "need_icon": true, "reason": "기술 스택 아이콘", "icons": ["FaVuejs", "FaJava", "FaDatabase", "FaAws", "FaBrain"] }
+    },
+    {
+      "index": 9,
+      "title": "프로젝트 조직 및 일정",
+      "purpose": "section",
+      "key_points": ["03"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드",
+      "icon_decision": { "need_icon": false, "reason": "섹션 구분자" }
+    },
+    {
+      "index": 10,
+      "title": "프로젝트 조직 구성",
+      "purpose": "hierarchy",
+      "key_points": [
+        "발주기관 PM: 정민호 부장",
+        "수행사 PM: 김철수 차장",
+        "PMO: 이영희 과장",
+        "AA: 박준형 책임",
+        "PL: 최수진 선임",
+        "QA/DBA: 한미영/오현우"
+      ],
+      "template_id": "basic-hierarchy-org-40",
+      "match_score": 0.90,
+      "match_reason": "조직도 계층 구조",
+      "icon_decision": { "need_icon": true, "reason": "역할별 아이콘", "icons": ["FaUserTie", "FaUserCog"] }
+    },
+    {
+      "index": 11,
+      "title": "투입 인력 현황",
+      "purpose": "table",
+      "key_points": [
+        "PM 김철수 (특급) 12개월",
+        "AA 박준형 (특급) 10개월",
+        "PL 최수진 (고급) 12개월",
+        "Backend/Frontend/DBA/QA",
+        "합계: 8명 / 78MM"
+      ],
+      "template_id": "basic-table-simple5",
+      "match_score": 0.88,
+      "match_reason": "인력 현황 테이블",
+      "icon_decision": { "need_icon": false, "reason": "테이블은 아이콘 불필요" }
+    },
+    {
+      "index": 12,
+      "title": "마스터 일정",
+      "purpose": "timeline",
+      "key_points": [
+        "착수 (1월): 킥오프, 환경구축",
+        "분석 (2-3월): 요구사항 확정",
+        "설계 (4-5월): 아키텍처/화면/DB",
+        "개발 (6-9월): 코딩, 단위테스트",
+        "테스트 (10-11월): 통합/인수",
+        "이행 (11-12월): 오픈, 안정화"
+      ],
+      "template_id": "deepgreen-timeline1",
+      "match_score": 0.92,
+      "match_reason": "타임라인/프로세스 6단계",
+      "icon_decision": { "need_icon": true, "reason": "단계별 아이콘", "icons": ["FaRocket", "FaSearch", "FaDraftingCompass", "FaCode", "FaVial", "FaCheckCircle"] }
+    },
+    {
+      "index": 13,
+      "title": "주요 마일스톤",
+      "purpose": "process",
+      "key_points": [
+        "M1 착수보고 (1/10)",
+        "M2 요구사항 확정 (3/31)",
+        "M3 설계 완료 (5/31)",
+        "M4 개발 완료 (9/30)",
+        "M5 테스트 완료 (11/15)",
+        "M6 시스템 오픈 (12/1)"
+      ],
+      "template_id": "basic-process-6step1",
+      "match_score": 0.88,
+      "match_reason": "6단계 프로세스 흐름",
+      "icon_decision": { "need_icon": false, "reason": "프로세스 단계 번호로 충분" }
+    },
+    {
+      "index": 14,
+      "title": "품질 및 위험 관리",
+      "purpose": "section",
+      "key_points": ["04"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "섹션 구분 슬라이드",
+      "icon_decision": { "need_icon": false, "reason": "섹션 구분자" }
+    },
+    {
+      "index": 15,
+      "title": "품질 및 보안 관리",
+      "purpose": "comparison",
+      "key_points": [
+        "품질 보증: 코드 리뷰, SonarQube, 테스트",
+        "인적 보안: 보안서약서, 교육",
+        "물리 보안: 통제구역, 장비 통제",
+        "기술 보안: OWASP, DB 암호화, DLP"
+      ],
+      "template_id": "basic-comparison-2col6",
+      "match_score": 0.88,
+      "match_reason": "2열 비교 (품질 vs 보안)",
+      "icon_decision": { "need_icon": true, "reason": "품질/보안 아이콘", "icons": ["FaShieldAlt", "FaLock"] }
+    },
+    {
+      "index": 16,
+      "title": "위험 및 변경 관리",
+      "purpose": "grid",
+      "key_points": [
+        "요구사항 변경 (상/상): CCB 통제",
+        "일정 지연 (상/중): Critical Path 모니터링",
+        "기술적 난제 (중/중): PoC, 전문가 자문",
+        "데이터 마이그레이션 (상/중): 롤백 계획"
+      ],
+      "template_id": "basic-grid-3col-45",
+      "match_score": 0.85,
+      "match_reason": "위험 요소별 그리드 카드",
+      "icon_decision": { "need_icon": true, "reason": "위험 유형별 아이콘", "icons": ["FaExchangeAlt", "FaClock", "FaPuzzlePiece", "FaDatabase"] }
+    },
+    {
+      "index": 17,
+      "title": "감사합니다",
+      "purpose": "closing",
+      "key_points": ["(주)테크솔루션", "PM 김철수", "T. 02-1234-5678", "E. pm@techsolution.co.kr"],
+      "template_id": "deepgreen-closing1",
+      "match_score": 0.95,
+      "match_reason": "마무리 슬라이드, 감사 인사",
+      "icon_decision": { "need_icon": false, "reason": "클로징은 아이콘 불필요" }
+    }
+  ]
+}

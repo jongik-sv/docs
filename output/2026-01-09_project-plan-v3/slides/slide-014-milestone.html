@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 24pt;
+      left: 40pt;
+      color: #1E5128;
+      font-size: 18pt;
+      font-weight: 700;
+    }
+    .title-line {
+      position: absolute;
+      top: 52pt;
+      left: 40pt;
+      width: 640pt;
+      height: 2pt;
+      background: #1E5128;
+    }
+    .milestone-container {
+      position: absolute;
+      top: 80pt;
+      left: 40pt;
+      width: 640pt;
+    }
+    .milestone-row {
+      display: flex;
+      gap: 10pt;
+    }
+    .milestone-item {
+      flex: 1;
+      position: relative;
+    }
+    .milestone-line {
+      position: absolute;
+      top: 16pt;
+      left: 50%;
+      width: 100%;
+      height: 3pt;
+      background: #D8E9A8;
+    }
+    .milestone-item:last-child .milestone-line {
+      display: none;
+    }
+    .milestone-dot {
+      width: 32pt;
+      height: 32pt;
+      background: #1E5128;
+      border-radius: 50%;
+      margin: 0 auto 10pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 11pt;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+    .milestone-item:nth-child(2) .milestone-dot,
+    .milestone-item:nth-child(4) .milestone-dot { background: #4E9F3D; }
+    .milestone-card {
+      background: #F4F6F6;
+      border-radius: 6pt;
+      padding: 12pt;
+      text-align: center;
+    }
+    .milestone-date {
+      font-size: 9pt;
+      color: #4E9F3D;
+      font-weight: 600;
+      margin-bottom: 4pt;
+    }
+    .milestone-name {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #1E5128;
+      margin-bottom: 6pt;
+    }
+    .milestone-output {
+      font-size: 8pt;
+      color: #AAB7B8;
+      line-height: 1.4;
+    }
+    .progress-bar {
+      position: absolute;
+      bottom: 50pt;
+      left: 40pt;
+      width: 640pt;
+      height: 36pt;
+      background: #F4F6F6;
+      border-radius: 18pt;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #1E5128;
+      border-radius: 18pt;
+      width: 8%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 12pt;
+    }
+    .progress-text {
+      color: #FFFFFF;
+      font-size: 10pt;
+      font-weight: 600;
+    }
+    .progress-label {
+      position: absolute;
+      bottom: 32pt;
+      left: 55pt;
+      font-size: 9pt;
+      color: #AAB7B8;
+    }
+  </style>
+</head>
+<body>
+<div class="slide-title"><p>주요 마일스톤</p></div>
+<div class="title-line"></div>
+<div class="milestone-container">
+<div class="milestone-row">
+<div class="milestone-item">
+<div class="milestone-line"></div>
+<div class="milestone-dot"><p>M1</p></div>
+<div class="milestone-card">
+<div class="milestone-date"><p>1/10</p></div>
+<div class="milestone-name"><p>착수보고</p></div>
+<div class="milestone-output"><p>수행계획서</p><p>킥오프 미팅</p></div>
+</div>
+</div>
+<div class="milestone-item">
+<div class="milestone-line"></div>
+<div class="milestone-dot"><p>M2</p></div>
+<div class="milestone-card">
+<div class="milestone-date"><p>3/31</p></div>
+<div class="milestone-name"><p>요구사항 확정</p></div>
+<div class="milestone-output"><p>요구사항정의서</p><p>현행분석서</p></div>
+</div>
+</div>
+<div class="milestone-item">
+<div class="milestone-line"></div>
+<div class="milestone-dot"><p>M3</p></div>
+<div class="milestone-card">
+<div class="milestone-date"><p>5/31</p></div>
+<div class="milestone-name"><p>설계 완료</p></div>
+<div class="milestone-output"><p>아키텍처설계서</p><p>화면/DB설계서</p></div>
+</div>
+</div>
+<div class="milestone-item">
+<div class="milestone-line"></div>
+<div class="milestone-dot"><p>M4</p></div>
+<div class="milestone-card">
+<div class="milestone-date"><p>9/30</p></div>
+<div class="milestone-name"><p>개발 완료</p></div>
+<div class="milestone-output"><p>소스코드</p><p>단위테스트결과</p></div>
+</div>
+</div>
+<div class="milestone-item">
+<div class="milestone-line"></div>
+<div class="milestone-dot"><p>M5</p></div>
+<div class="milestone-card">
+<div class="milestone-date"><p>11/15</p></div>
+<div class="milestone-name"><p>테스트 완료</p></div>
+<div class="milestone-output"><p>통합테스트결과</p><p>인수테스트결과</p></div>
+</div>
+</div>
+<div class="milestone-item">
+<div class="milestone-dot"><p>M6</p></div>
+<div class="milestone-card">
+<div class="milestone-date"><p>12/1</p></div>
+<div class="milestone-name"><p>시스템 오픈</p></div>
+<div class="milestone-output"><p>오픈보고서</p><p>운영매뉴얼</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="progress-bar">
+<div class="progress-fill">
+<p>M1</p>
+</div>
+</div>
+<div class="progress-label"><p>현재 진행: 착수 단계</p></div>
+</body>
+</html>

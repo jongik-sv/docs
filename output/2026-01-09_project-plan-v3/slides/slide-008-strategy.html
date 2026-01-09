@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: 'Malgun Gothic', Arial, sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 24pt;
+      left: 40pt;
+      color: #1E5128;
+      font-size: 18pt;
+      font-weight: 700;
+    }
+    .title-line {
+      position: absolute;
+      top: 52pt;
+      left: 40pt;
+      width: 640pt;
+      height: 2pt;
+      background: #1E5128;
+    }
+    .subtitle {
+      position: absolute;
+      top: 64pt;
+      left: 40pt;
+      font-size: 10pt;
+      color: #AAB7B8;
+    }
+    .strategy-container {
+      position: absolute;
+      top: 90pt;
+      left: 40pt;
+      width: 640pt;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14pt;
+    }
+    .strategy-card {
+      width: 306pt;
+      background: #F4F6F6;
+      border-radius: 8pt;
+      padding: 16pt;
+      display: flex;
+      gap: 12pt;
+    }
+    .card-number {
+      width: 32pt;
+      height: 32pt;
+      background: #1E5128;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 14pt;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .strategy-card:nth-child(2) .card-number { background: #4E9F3D; }
+    .strategy-card:nth-child(3) .card-number { background: #4E9F3D; }
+    .strategy-card:nth-child(4) .card-number { background: #1E5128; }
+    .card-content {
+      flex: 1;
+    }
+    .card-title {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #1E5128;
+      margin-bottom: 6pt;
+    }
+    .card-desc {
+      font-size: 9pt;
+      color: #191A19;
+      line-height: 1.5;
+    }
+    .card-highlight {
+      display: inline-block;
+      background: rgba(78,159,61,0.15);
+      color: #4E9F3D;
+      font-size: 8pt;
+      padding: 2pt 6pt;
+      border-radius: 3pt;
+      margin-top: 6pt;
+    }
+    .method-note {
+      position: absolute;
+      bottom: 24pt;
+      left: 40pt;
+      width: 640pt;
+      background: #1E5128;
+      border-radius: 6pt;
+      padding: 14pt 20pt;
+      display: flex;
+      align-items: center;
+      gap: 16pt;
+    }
+    .method-label {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+    .method-value {
+      font-size: 10pt;
+      color: rgba(255,255,255,0.9);
+      flex: 1;
+    }
+    .method-badge {
+      background: #4E9F3D;
+      color: #FFFFFF;
+      font-size: 9pt;
+      padding: 4pt 10pt;
+      border-radius: 4pt;
+    }
+  </style>
+</head>
+<body>
+<div class="slide-title"><p>핵심 추진 전략</p></div>
+<div class="title-line"></div>
+<div class="subtitle"><p>"안정적 전환"과 "혁신적 기능 구현"의 균형을 핵심 가치로 추진</p></div>
+<div class="strategy-container">
+<div class="strategy-card">
+<div class="card-number"><p>1</p></div>
+<div class="card-content">
+<div class="card-title"><p>단계적 전환 전략</p></div>
+<div class="card-desc"><p>Big Bang 방식이 아닌 모듈별 순차 전환으로 리스크를 최소화합니다.</p></div>
+<p>Risk Mitigation</p>
+</div>
+</div>
+<div class="strategy-card">
+<div class="card-number"><p>2</p></div>
+<div class="card-content">
+<div class="card-title"><p>애자일 기반 개발</p></div>
+<div class="card-desc"><p>2주 단위 스프린트로 빠른 피드백과 유연한 대응을 실현합니다.</p></div>
+<p>2-Week Sprint</p>
+</div>
+</div>
+<div class="strategy-card">
+<div class="card-number"><p>3</p></div>
+<div class="card-content">
+<div class="card-title"><p>현업 밀착 협업</p></div>
+<div class="card-desc"><p>주 2회 현업 리뷰를 통해 요구사항 정합성을 확보합니다.</p></div>
+<p>Weekly Review</p>
+</div>
+</div>
+<div class="strategy-card">
+<div class="card-number"><p>4</p></div>
+<div class="card-content">
+<div class="card-title"><p>하이브리드 방법론</p></div>
+<div class="card-desc"><p>대규모 SI 프로젝트 안정성과 애자일 유연성을 결합합니다.</p></div>
+<p>Best of Both</p>
+</div>
+</div>
+</div>
+<div class="method-note">
+<div class="method-label"><p>수행 방법론</p></div>
+<div class="method-value"><p>Agile-Waterfall 하이브리드 | 분석 → 설계 → 개발 → 테스트 → 이행</p></div>
+<div class="method-badge"><p>ISO/IEC 12207</p></div>
+</div>
+</body>
+</html>
