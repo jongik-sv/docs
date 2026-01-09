@@ -49,11 +49,13 @@
         "need_icon": false,
         "reason": "표지 슬라이드는 아이콘 불필요"
       },
+      "html_file": "slides/slide-001-cover.html",
       "content_bindings": {
-        "subtitle": "(주)글로벌물류 차세대 물류관리 시스템 구축 프로젝트",
+        "title": "스마트 물류관리 시스템 구축",
+        "subtitle": "수행계획서",
+        "vendor": "(주)테크솔루션",
         "date": "2025.01"
       },
-      "html_file": "slides/slide-001-cover.html",
       "assets_generated": {
         "icons": [],
         "images": []
@@ -76,6 +78,7 @@
         "need_icon": false,
         "reason": "목차는 텍스트 중심"
       },
+      "html_file": "slides/slide-002-toc.html",
       "content_bindings": {
         "title": "목차",
         "items": [
@@ -101,7 +104,6 @@
           }
         ]
       },
-      "html_file": "slides/slide-002-toc.html",
       "assets_generated": {
         "icons": [],
         "images": []
@@ -121,11 +123,12 @@
         "need_icon": false,
         "reason": "섹션 구분자"
       },
-      "content_bindings": {
-        "section_number": "SECTION. 01",
-        "section_description": "프로젝트의 기본 정보와 배경, 추진 목표 및 기대효과,시스템 구축 범위를 설명합니다."
-      },
       "html_file": "slides/slide-003-section1.html",
+      "content_bindings": {
+        "title": "프로젝트 개요",
+        "section_number": "01",
+        "description": "프로젝트의 기본 정보와 배경, 추진 목표 및 기대효과, 시스템 구축 범위를 설명합니다."
+      },
       "assets_generated": {
         "icons": [],
         "images": []
@@ -154,10 +157,54 @@
           "FaExclamationTriangle"
         ]
       },
-      "content_bindings": {
-        "title": "프로젝트 정보 및 배경"
-      },
       "html_file": "slides/slide-004-info.html",
+      "content_bindings": {
+        "title": "프로젝트 정보 및 배경",
+        "sections": [
+          {
+            "header": "프로젝트 정보",
+            "items": [
+              {
+                "label": "프로젝트명",
+                "value": "스마트 물류관리 시스템 구축"
+              },
+              {
+                "label": "발주기관",
+                "value": "(주)글로벌물류"
+              },
+              {
+                "label": "수행사",
+                "value": "(주)테크솔루션"
+              },
+              {
+                "label": "계약금액",
+                "value": "15억원 (VAT 별도)"
+              },
+              {
+                "label": "계약기간",
+                "value": "2025-01-06 ~ 2025-12-31 (12개월)"
+              }
+            ]
+          },
+          {
+            "header": "추진 배경",
+            "items": [
+              {
+                "label": "현황",
+                "value": "연간 500만건 물류 처리"
+              },
+              {
+                "label": "문제점",
+                "value": "레거시 시스템 노후화, 처리 속도 저하"
+              },
+              {
+                "label": "니즈",
+                "value": "실시간 재고 파악, 자동화 필요"
+              }
+            ]
+          }
+        ]
+      },
       "assets_generated": {
         "icons": [
           "FaBuilding",
@@ -189,6 +236,7 @@
           "FaChartPie"
         ]
       },
+      "html_file": "slides/slide-005-goals.html",
       "content_bindings": {
         "title": "추진 목표 및 기대효과",
         "items": [
@@ -223,7 +271,6 @@
           "source": "출처: 오토스토어 TEI 연구 보고서 (2024)"
         }
       },
-      "html_file": "slides/slide-005-goals.html",
       "assets_generated": {
         "icons": [
           "FaChartLine",
@@ -257,11 +304,28 @@
           "FaTachometerAlt"
         ]
       },
+      "html_file": "slides/slide-006-scope.html",
       "content_bindings": {
         "title": "시스템 범위",
-        "items": []
+        "scope_in": {
+          "header": "구축 범위 (In-Scope)",
+          "items": [
+            "WMS (창고관리): 입출고, 재고, 피킹/패킹",
+            "TMS (배송관리): 배차, 경로최적화, 추적",
+            "OMS (주문관리): 주문접수, 할당, 정산",
+            "Dashboard: 실시간 현황, KPI, 리포트"
+          ],
+          "note": "4개 핵심 모듈 신규 개발, 레거시 데이터 마이그레이션"
+        },
+        "scope_out": {
+          "header": "범위 외 (Out-of-Scope)",
+          "items": [
+            "ERP 연계 (인터페이스만)",
+            "회계/HR 시스템"
+          ],
+          "note": "회계/HR/ERP 시스템 (인터페이스만 개발)"
+        }
       },
-      "html_file": "slides/slide-006-scope.html",
       "assets_generated": {
         "icons": [
           "FaWarehouse",
@@ -286,11 +350,12 @@
         "need_icon": false,
         "reason": "섹션 구분자"
       },
-      "content_bindings": {
-        "section_number": "SECTION. 02",
-        "section_description": "프로젝트의 핵심 추진 전략과 수행 방법론,기술 아키텍처를 설명합니다."
-      },
       "html_file": "slides/slide-007-section2.html",
+      "content_bindings": {
+        "title": "추진 전략 및 방법론",
+        "section_number": "02",
+        "description": "프로젝트의 핵심 추진 전략과 수행 방법론, 기술 아키텍처를 설명합니다."
+      },
       "assets_generated": {
         "icons": [],
         "images": []
@@ -319,32 +384,48 @@
           "FaCogs"
         ]
       },
+      "html_file": "slides/slide-008-strategy.html",
       "content_bindings": {
         "title": "핵심 추진 전략",
         "items": [
           {
-            "icon": "",
+            "number": "01",
             "title": "단계적 전환 전략",
-            "description": "Big Bang 방식이 아닌 모듈별 순차 전환으로 리스크를 최소화합니다."
+            "description": "모듈별 순차 전환으로 리스크 최소화",
+            "features": [
+              "WMS → TMS → OMS → Dashboard 순차 오픈",
+              "각 단계별 안정화 기간 확보"
+            ]
           },
           {
-            "icon": "",
+            "number": "02",
             "title": "애자일 기반 개발",
-            "description": "2주 단위 스프린트로 빠른 피드백과 유연한 대응을 실현합니다."
+            "description": "2주 스프린트로 빠른 피드백",
+            "features": [
+              "2주 스프린트 + 데모",
+              "지속적 통합/배포 (CI/CD)"
+            ]
           },
           {
-            "icon": "",
+            "number": "03",
             "title": "현업 밀착 협업",
-            "description": "주 2회 현업 리뷰를 통해 요구사항 정합성을 확보합니다."
+            "description": "주 2회 현업 리뷰",
+            "features": [
+              "현업 테스터 조기 참여",
+              "사용자 피드백 즉시 반영"
+            ]
           },
           {
-            "icon": "",
+            "number": "04",
             "title": "하이브리드 방법론",
-            "description": "대규모 SI 프로젝트 안정성과 애자일 유연성을 결합합니다."
+            "description": "SI 안정성 + 애자일 유연성",
+            "features": [
+              "분석/설계: 워터폴",
+              "개발/테스트: 애자일"
+            ]
           }
         ]
       },
-      "html_file": "slides/slide-008-strategy.html",
       "assets_generated": {
         "icons": [
           "FaLayerGroup",
@@ -380,6 +461,7 @@
           "FaBrain"
         ]
       },
+      "html_file": "slides/slide-009-architecture.html",
       "content_bindings": {
         "title": "기술 아키텍처",
         "layers": [
@@ -474,7 +556,7 @@
             ]
           }
         ],
-        "features": [
+        "highlights": [
           {
             "icon": "☁",
             "title": "클라우드 네이티브",
@@ -497,7 +579,6 @@
           }
         ]
       },
-      "html_file": "slides/slide-009-architecture.html",
       "assets_generated": {
         "icons": [
           "FaVuejs",
@@ -523,11 +604,12 @@
         "need_icon": false,
         "reason": "섹션 구분자"
       },
-      "content_bindings": {
-        "section_number": "SECTION. 03",
-        "section_description": "프로젝트 조직 구성과 역할 분담,투입 인력 현황 및 마스터 일정을 설명합니다."
-      },
       "html_file": "slides/slide-010-section3.html",
+      "content_bindings": {
+        "title": "프로젝트 조직 및 일정",
+        "section_number": "03",
+        "description": "프로젝트 조직 구성과 역할 분담, 투입 인력 현황 및 마스터 일정을 설명합니다."
+      },
       "assets_generated": {
         "icons": [],
         "images": []
@@ -556,24 +638,61 @@
           "FaUserCog"
         ]
       },
+      "html_file": "slides/slide-011-organization.html",
       "content_bindings": {
         "title": "프로젝트 조직 구성",
-        "roles": [
-          {
-            "name": "",
-            "position": ""
+        "structure": {
+          "client": {
+            "name": "발주기관",
+            "role": "(주)글로벌물류",
+            "lead": "정민호 부장 (발주 PM)"
           },
-          {
-            "name": "",
-            "position": ""
+          "vendor_management": {
+            "name": "수행사 관리",
+            "members": [
+              {
+                "role": "PM",
+                "name": "김철수 차장",
+                "responsibility": "프로젝트 총괄"
+              },
+              {
+                "role": "PMO",
+                "name": "이영희 과장",
+                "responsibility": "일정/이슈 관리"
+              }
+            ]
           },
-          {
-            "name": "",
-            "position": ""
+          "execution": {
+            "name": "수행팀",
+            "members": [
+              {
+                "role": "AA",
+                "name": "박준형 책임",
+                "responsibility": "아키텍처 설계"
+              },
+              {
+                "role": "PL",
+                "name": "최수진 선임",
+                "responsibility": "개발 리드"
+              },
+              {
+                "role": "QA",
+                "name": "한미영 선임",
+                "responsibility": "품질 관리"
+              },
+              {
+                "role": "DBA",
+                "name": "오현우 책임",
+                "responsibility": "DB 설계/운영"
+              }
+            ]
           }
+        },
+        "communication": [
+          "주간 보고: 매주 금요일",
+          "월간 보고: 매월 마지막 주"
         ]
       },
-      "html_file": "slides/slide-011-organization.html",
       "assets_generated": {
         "icons": [
           "FaUserTie",
@@ -600,19 +719,74 @@
         "need_icon": false,
         "reason": "테이블은 아이콘 불필요"
       },
+      "html_file": "slides/slide-012-manpower.html",
       "content_bindings": {
         "title": "투입 인력 현황",
-        "rows": [
-          [],
-          [],
-          [],
-          [],
-          [],
-          [],
-          []
-        ]
+        "table": {
+          "headers": [
+            "역할",
+            "성명",
+            "등급",
+            "투입기간",
+            "담당업무"
+          ],
+          "rows": [
+            [
+              "PM",
+              "김철수",
+              "특급",
+              "12개월",
+              "프로젝트 총괄"
+            ],
+            [
+              "AA",
+              "박준형",
+              "특급",
+              "10개월",
+              "아키텍처 설계"
+            ],
+            [
+              "PL",
+              "최수진",
+              "고급",
+              "12개월",
+              "개발 리드"
+            ],
+            [
+              "Backend",
+              "개발자 2명",
+              "중급",
+              "10개월",
+              "백엔드 개발"
+            ],
+            [
+              "Frontend",
+              "개발자 1명",
+              "중급",
+              "8개월",
+              "프론트엔드 개발"
+            ],
+            [
+              "DBA",
+              "오현우",
+              "고급",
+              "6개월",
+              "DB 설계/이행"
+            ],
+            [
+              "QA",
+              "한미영",
+              "고급",
+              "4개월",
+              "테스트/품질"
+            ]
+          ]
+        },
+        "summary": {
+          "total_members": 8,
+          "total_mm": 78
+        }
       },
-      "html_file": "slides/slide-012-manpower.html",
       "assets_generated": {
         "icons": [],
         "images": []
@@ -645,11 +819,72 @@
           "FaCheckCircle"
         ]
       },
+      "html_file": "slides/slide-013-schedule.html",
       "content_bindings": {
         "title": "마스터 일정",
-        "steps": []
+        "phases": [
+          {
+            "period": "1월",
+            "title": "착수",
+            "tasks": [
+              "킥오프 미팅",
+              "환경구축",
+              "수행계획서"
+            ],
+            "progress": 100
+          },
+          {
+            "period": "2-3월",
+            "title": "분석",
+            "tasks": [
+              "요구사항 분석",
+              "현행 시스템 분석",
+              "요구사항 확정"
+            ],
+            "progress": 0
+          },
+          {
+            "period": "4-5월",
+            "title": "설계",
+            "tasks": [
+              "아키텍처 설계",
+              "화면 설계",
+              "DB 설계"
+            ],
+            "progress": 0
+          },
+          {
+            "period": "6-9월",
+            "title": "개발",
+            "tasks": [
+              "모듈별 개발",
+              "단위 테스트",
+              "코드 리뷰"
+            ],
+            "progress": 0
+          },
+          {
+            "period": "10-11월",
+            "title": "테스트",
+            "tasks": [
+              "통합 테스트",
+              "인수 테스트",
+              "성능 테스트"
+            ],
+            "progress": 0
+          },
+          {
+            "period": "11-12월",
+            "title": "이행",
+            "tasks": [
+              "데이터 이행",
+              "시스템 오픈",
+              "안정화"
+            ],
+            "progress": 0
+          }
+        ]
       },
-      "html_file": "slides/slide-013-schedule.html",
       "assets_generated": {
         "icons": [
           "FaRocket",
@@ -681,11 +916,66 @@
         "need_icon": false,
         "reason": "프로세스 단계 번호로 충분"
       },
+      "html_file": "slides/slide-014-milestone.html",
       "content_bindings": {
         "title": "주요 마일스톤",
-        "steps": []
+        "milestones": [
+          {
+            "id": "M1",
+            "date": "1/10",
+            "title": "착수보고",
+            "deliverables": [
+              "수행계획서",
+              "킥오프 미팅"
+            ]
+          },
+          {
+            "id": "M2",
+            "date": "3/31",
+            "title": "요구사항 확정",
+            "deliverables": [
+              "요구사항정의서",
+              "현행분석서"
+            ]
+          },
+          {
+            "id": "M3",
+            "date": "5/31",
+            "title": "설계 완료",
+            "deliverables": [
+              "아키텍처설계서",
+              "화면/DB설계서"
+            ]
+          },
+          {
+            "id": "M4",
+            "date": "9/30",
+            "title": "개발 완료",
+            "deliverables": [
+              "소스코드",
+              "단위테스트결과"
+            ]
+          },
+          {
+            "id": "M5",
+            "date": "11/15",
+            "title": "테스트 완료",
+            "deliverables": [
+              "통합테스트결과",
+              "인수테스트결과"
+            ]
+          },
+          {
+            "id": "M6",
+            "date": "12/1",
+            "title": "시스템 오픈",
+            "deliverables": [
+              "오픈보고서",
+              "운영매뉴얼"
+            ]
+          }
+        ]
       },
-      "html_file": "slides/slide-014-milestone.html",
       "assets_generated": {
         "icons": [],
         "images": []
@@ -705,11 +995,12 @@
         "need_icon": false,
         "reason": "섹션 구분자"
       },
-      "content_bindings": {
-        "section_number": "SECTION. 04",
-        "section_description": "품질 보증 활동과 보안 관리 계획,위험 요소 및 대응 방안을 설명합니다."
-      },
       "html_file": "slides/slide-015-section4.html",
+      "content_bindings": {
+        "title": "품질 및 위험 관리",
+        "section_number": "04",
+        "description": "품질 보증 활동과 보안 관리 계획, 위험 요소 및 대응 방안을 설명합니다."
+      },
       "assets_generated": {
         "icons": [],
         "images": []
@@ -736,54 +1027,64 @@
           "FaLock"
         ]
       },
+      "html_file": "slides/slide-016-quality.html",
       "content_bindings": {
         "title": "품질 및 보안 관리",
         "columns": [
           {
-            "header": "✔품질 보증 활동",
+            "header": "품질 보증 활동",
+            "icon": "✔",
             "items": [
               {
                 "title": "산출물 검토",
-                "description": "단계별 말 발주 담당자 검토 및 승인"
+                "description": "단계별 말 발주 담당자 검토 및 승인",
+                "badge": "PM/PL 담당"
               },
               {
                 "title": "코드 리뷰",
-                "description": "GitHub PR 필수, 2인 이상 승인"
+                "description": "GitHub PR 필수, 2인 이상 승인",
+                "badge": "개발 기간"
               },
               {
                 "title": "정적 분석",
-                "description": "SonarQube 품질 게이트 적용"
+                "description": "SonarQube 품질 게이트 적용",
+                "badge": "자동화"
               },
               {
                 "title": "테스트",
-                "description": "시나리오 기반 통합/인수 테스트"
+                "description": "시나리오 기반 통합/인수 테스트",
+                "badge": "QA/현업"
               }
             ]
           },
           {
-            "header": "🔒보안 관리 계획",
+            "header": "보안 관리 계획",
+            "icon": "🔒",
             "items": [
               {
                 "title": "인적 보안",
-                "description": "보안서약서 징구, 보안 교육 실시 (전 인원)"
+                "description": "보안서약서 징구, 보안 교육 실시 (전 인원)",
+                "icon": "👤"
               },
               {
                 "title": "물리 보안",
-                "description": "통제구역 출입 관리, 반입 장비 통제"
+                "description": "통제구역 출입 관리, 반입 장비 통제",
+                "icon": "🏢"
               },
               {
                 "title": "기술 보안",
-                "description": "OWASP Top 10 점검, DB 암호화"
+                "description": "OWASP Top 10 점검, DB 암호화",
+                "icon": "💻"
               },
               {
                 "title": "PC 보안",
-                "description": "백신, 화면보호기, DLP 솔루션 적용"
+                "description": "백신, 화면보호기, DLP 솔루션 적용",
+                "icon": "🖥"
               }
             ]
           }
         ]
       },
-      "html_file": "slides/slide-016-quality.html",
       "assets_generated": {
         "icons": [
           "FaShieldAlt",
@@ -815,11 +1116,69 @@
           "FaDatabase"
         ]
       },
+      "html_file": "slides/slide-017-risk.html",
       "content_bindings": {
         "title": "위험 및 변경 관리",
-        "items": []
+        "risks": [
+          {
+            "title": "요구사항 변경",
+            "impact": "상",
+            "probability": "상",
+            "description": "프로젝트 범위, 일정, 비용에 직접적 영향",
+            "response": "변경관리위원회(CCB) 통해 통제, 영향도 분석 필수",
+            "owner": "PM"
+          },
+          {
+            "title": "일정 지연",
+            "impact": "상",
+            "probability": "중",
+            "description": "마일스톤 미달성, 오픈 일정 지연 가능성",
+            "response": "주간 진척관리, Critical Path 집중 모니터링",
+            "owner": "PM"
+          },
+          {
+            "title": "기술적 난제",
+            "impact": "중",
+            "probability": "중",
+            "description": "MSA, AI 연동 등 신기술 적용 이슈",
+            "response": "PoC 선행, 외부 전문가 자문",
+            "owner": "AA"
+          },
+          {
+            "title": "데이터 마이그레이션",
+            "impact": "상",
+            "probability": "중",
+            "description": "레거시 데이터 정합성, 이행 오류 위험",
+            "response": "사전 검증, 롤백 계획 수립",
+            "owner": "DBA"
+          }
+        ],
+        "change_process": {
+          "title": "변경 통제 절차",
+          "steps": [
+            {
+              "number": 1,
+              "title": "변경 요청",
+              "description": "CR 접수 (Jira)"
+            },
+            {
+              "number": 2,
+              "title": "영향도 분석",
+              "description": "3일 내"
+            },
+            {
+              "number": 3,
+              "title": "CCB 심의",
+              "description": "주 1회"
+            },
+            {
+              "number": 4,
+              "title": "변경 이행",
+              "description": "산출물 현행화"
+            }
+          ]
+        }
       },
-      "html_file": "slides/slide-017-risk.html",
       "assets_generated": {
         "icons": [
           "FaExchangeAlt",
@@ -847,8 +1206,10 @@
         "need_icon": false,
         "reason": "클로징은 아이콘 불필요"
       },
+      "html_file": "slides/slide-018-closing.html",
       "content_bindings": {
         "title": "감사합니다",
+        "subtitle": "THANK YOU FOR YOUR ATTENTION",
         "company": "(주)테크솔루션",
         "contacts": [
           {
@@ -863,9 +1224,9 @@
             "label": "이메일",
             "value": "pm@techsolution.co.kr"
           }
-        ]
+        ],
+        "footer": "스마트 물류관리 시스템 구축 프로젝트 | 2025.01"
       },
-      "html_file": "slides/slide-018-closing.html",
       "assets_generated": {
         "icons": [],
         "images": []
