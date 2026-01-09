@@ -1,0 +1,285 @@
+content_template:
+  id: timeline-arrow-icon
+  name: 화살표+아이콘 타임라인
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 51
+  extracted_at: '2026-01-09T20:15:07.122403'
+  expected_prompt: "Create a general slide designed for 화살표와 아이콘을 결합한 다이나믹한 타임라인. 방향성과 단계를 명확히 표현. This layout is specifically designed for: 화살표로 표현된 동향 및 변화, 아이콘이 포함된 다이나믹한 타임라인, 단계별 진행 과정 강조. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.0
+  design_intent: 화살표와 아이콘을 결합한 다이나믹한 타임라인. 방향성과 단계를 명확히 표현
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: PlaceHolder 1
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-1
+  name: PlaceHolder 2
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-2
+  name: PlaceHolder 3
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-3
+  name: PlaceHolder 4
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-4
+  name: PlaceHolder 5
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 76.0%
+    y: 96.3%
+    cx: 3.1%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-5
+  name: PlaceHolder 6
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 63.9%
+    y: 96.3%
+    cx: 12.6%
+    cy: 2.2%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - 작성자_장선익, 장희승, 김현주
+- id: shape-6
+  name: 타원 10
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 25.2%
+    y: 57.4%
+    cx: 3.4%
+    cy: 6.0%
+  style:
+    fill:
+      type: solid
+      color: tx2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-7
+  name: 타원 11
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 36.2%
+    y: 53.5%
+    cx: 7.7%
+    cy: 13.7%
+  style:
+    fill:
+      type: solid
+      color: tx2
+  text:
+    has_text: true
+    content:
+    - '2019'
+- id: shape-8
+  name: 타원 15
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 62.5%
+    y: 53.5%
+    cx: 7.7%
+    cy: 13.7%
+  style:
+    fill:
+      type: solid
+      color: 2032
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-9
+  name: 타원 20
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 51.5%
+    y: 57.4%
+    cx: 3.4%
+    cy: 6.0%
+  style:
+    fill:
+      type: solid
+      color: tx2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-10
+  name: 타원 21
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 9.8%
+    y: 53.5%
+    cx: 7.7%
+    cy: 13.7%
+  style:
+    fill:
+      type: solid
+      color: tx2
+  text:
+    has_text: true
+    content:
+    - '2016'
+- id: shape-11
+  name: 타원 29
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 63.0%
+    y: 54.5%
+    cx: 6.6%
+    cy: 11.7%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-12
+  name: TextBox 26
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 51.9%
+    y: 26.3%
+    cx: 12.5%
+    cy: 8.2%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{소제목}}'
+    - '{{본문}}'
+- id: shape-13
+  name: TextBox 34
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 64.8%
+    y: 68.4%
+    cx: 12.5%
+    cy: 8.2%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{소제목}}'
+    - '{{본문}}'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 화살표로 표현된 동향 및 변화
+- 아이콘이 포함된 다이나믹한 타임라인
+- 단계별 진행 과정 강조
+- 성과 또는 성장 흐름
+- 세밀한 단계 표시
+keywords:
+- 타임라인
+- 화살표
+- 아이콘
+- 단계
+- 진행
+- 방향
+- 동향
+- 성과
+- 다이나믹
+expected_prompt: |
+  화살표+아이콘 타임라인 슬라이드를 만들어줘.
+  - 화살표와 아이콘을 결합한 다이나믹한 타임라인. 방향성과 단계를 명확히 표현
+  - 화살표로 표현된 동향 및 변화
+  - 아이콘이 포함된 다이나믹한 타임라인
+  - 단계별 진행 과정 강조
+thumbnail: "thumbnails/templates\timeline/timeline-arrow-icon.png"

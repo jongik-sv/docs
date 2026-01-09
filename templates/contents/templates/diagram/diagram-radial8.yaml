@@ -1,0 +1,408 @@
+content_template:
+  id: diagram-radial8
+  name: 방사형 8방향 다이어그램
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 39
+  extracted_at: '2026-01-09T20:15:07.101407'
+  expected_prompt: "Create a general slide designed for 중앙에서 8방향으로 뻗어나가는 방사형 다이어그램. 중심 개념과 연결된 주요 요소들을 시각적으로 표현. This layout is specifically designed for: 중심 개념에서 8개 방향으로 뻗어나가는 시각화, 핵심 주제와 관련 요소들의 관계 표현, 부서 조직도, 영향요인, 성공 요인 등의 다이어그램. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.5
+  design_intent: 중앙에서 8방향으로 뻗어나가는 방사형 다이어그램. 중심 개념과 연결된 주요 요소들을 시각적으로 표현
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: PlaceHolder 1
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-1
+  name: PlaceHolder 2
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-2
+  name: PlaceHolder 3
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-3
+  name: PlaceHolder 4
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-4
+  name: PlaceHolder 5
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 76.0%
+    y: 96.3%
+    cx: 3.1%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-5
+  name: PlaceHolder 6
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 63.9%
+    y: 96.3%
+    cx: 12.6%
+    cy: 2.2%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - 작성자_장선익, 장희승, 김현주
+- id: shape-6
+  name: Oval 48
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 43.7%
+    y: 35.5%
+    cx: 1.8%
+    cy: 3.2%
+  style:
+    fill:
+      type: solid
+      color: accent6
+  text:
+    has_text: true
+    content:
+    - '1'
+- id: shape-7
+  name: Oval 31
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 15.5%
+    y: 35.5%
+    cx: 14.9%
+    cy: 26.5%
+  style:
+    fill:
+      type: solid
+      color: accent6
+  text:
+    has_text: true
+    content:
+    - 'Medium '
+    - '{{소제목}}'
+- id: shape-8
+  name: Oval 29
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 22.3%
+    y: 55.2%
+    cx: 14.9%
+    cy: 26.5%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - 'Medium '
+    - '{{소제목}}'
+- id: shape-9
+  name: Oval 30
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 8.7%
+    y: 55.2%
+    cx: 14.9%
+    cy: 26.5%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - Medium
+    - '{{소제목}}'
+- id: shape-10
+  name: Oval 48
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 43.7%
+    y: 52.0%
+    cx: 1.8%
+    cy: 3.2%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '2'
+- id: shape-11
+  name: Oval 48
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 43.7%
+    y: 68.4%
+    cx: 1.8%
+    cy: 3.2%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '3'
+- id: shape-12
+  name: TextBox 25
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 46.1%
+    y: 36.0%
+    cx: 24.8%
+    cy: 2.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{소제목}}'
+- id: shape-13
+  name: TextBox 28
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 46.2%
+    y: 69.0%
+    cx: 24.6%
+    cy: 2.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{소제목}}'
+- id: shape-14
+  name: TextBox 29
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 46.2%
+    y: 39.2%
+    cx: 24.8%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+- id: shape-15
+  name: TextBox 30
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 45.4%
+    y: 55.9%
+    cx: 25.5%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+- id: shape-16
+  name: TextBox 31
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 45.4%
+    y: 72.6%
+    cx: 25.5%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+- id: shape-17
+  name: TextBox 32
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 46.2%
+    y: 52.5%
+    cx: 30.7%
+    cy: 2.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{소제목}}'
+- id: shape-18
+  name: Oval 31
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 15.5%
+    y: 35.5%
+    cx: 14.9%
+    cy: 26.5%
+  style:
+    fill:
+      type: solid
+      color: accent6
+  text:
+    has_text: true
+    content:
+    - 'Medium '
+    - '{{소제목}}'
+- id: shape-19
+  name: Oval 29
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 22.3%
+    y: 55.2%
+    cx: 14.9%
+    cy: 26.5%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - 'Medium '
+    - '{{소제목}}'
+- id: shape-20
+  name: Oval 30
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 8.7%
+    y: 55.2%
+    cx: 14.9%
+    cy: 26.5%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - Medium
+    - '{{소제목}}'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 중심 개념에서 8개 방향으로 뻗어나가는 시각화
+- 핵심 주제와 관련 요소들의 관계 표현
+- 부서 조직도, 영향요인, 성공 요인 등의 다이어그램
+- 방사형 구조의 개념 분석
+- 시스템의 중앙 허브와 연결된 모듈들 시각화
+keywords:
+- 방사형
+- 다이어그램
+- 8방향
+- 중심
+- 연결고리
+- 개념도
+- 조직
+- 허브
+- 분석
+expected_prompt: |
+  방사형 8방향 다이어그램 슬라이드를 만들어줘.
+  - 중앙에서 8방향으로 뻗어나가는 방사형 다이어그램. 중심 개념과 연결된 주요 요소들을 시각적으로 표현
+  - 중심 개념에서 8개 방향으로 뻗어나가는 시각화
+  - 핵심 주제와 관련 요소들의 관계 표현
+  - 부서 조직도, 영향요인, 성공 요인 등의 다이어그램
+thumbnail: thumbnails/diagram/diagram-radial8.png

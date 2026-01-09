@@ -1,6 +1,7 @@
 ---
 name: ppt-extract
 description: "PPT 템플릿/에셋 추출 서비스. Use when: (1) 슬라이드에서 콘텐츠/오브젝트 추출, (2) PPTX에서 문서 양식/슬라이드 마스터 추출, (3) 이미지에서 테마/스타일 추출, (4) 온라인 슬라이드 크롤링"
+user-invocable: true
 ---
 
 # PPT Template Extraction Service
@@ -52,10 +53,34 @@ C:/project/docs/templates/
 
 | 스크립트 | 용도 |
 |---------|------|
-| `scripts/template-analyzer.py` | PPTX → YAML 분석 |
+| `scripts/content-analyzer.py` | 슬라이드 콘텐츠 OOXML 완전 추출 (NEW) |
+| `scripts/template-analyzer.py` | 문서 템플릿 (slideLayouts) 분석 |
 | `scripts/style-extractor.py` | 이미지 색상 추출 |
 | `scripts/slide-crawler.py` | 온라인 슬라이드 크롤링 |
 | `scripts/image-vectorizer.py` | 이미지 → SVG 벡터화 |
+
+### Content Analyzer (콘텐츠 분석기) - v4.0 NEW
+
+슬라이드의 모든 요소(도형, 이미지, 연결선, SmartArt)를 완전히 추출합니다.
+
+**사용법:**
+```bash
+# 단일 슬라이드 분석
+python .claude/skills/ppt-extract/scripts/content-analyzer.py input.pptx --slide 11
+
+# 파일로 저장
+python .claude/skills/ppt-extract/scripts/content-analyzer.py input.pptx --slide 11 -o result.yaml
+
+# 모든 슬라이드 요약
+python .claude/skills/ppt-extract/scripts/content-analyzer.py input.pptx --all --summary
+```
+
+**추출 요소:**
+- `p:sp` - 도형 (preset, fill, stroke, effects, text)
+- `p:pic` - 이미지/SVG 아이콘
+- `p:cxnSp` - 연결선 (dash, arrow)
+- `p:grpSp` - 그룹 도형
+- `p:graphicFrame` - SmartArt/차트
 
 ### Image Vectorizer (이미지 벡터화)
 

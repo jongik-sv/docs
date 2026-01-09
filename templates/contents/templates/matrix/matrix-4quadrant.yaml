@@ -1,0 +1,437 @@
+content_template:
+  id: matrix-4quadrant
+  name: 4분면 매트릭스+중앙원
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 42
+  extracted_at: '2026-01-09T20:15:07.109534'
+  expected_prompt: "Create a general slide designed for 4개의 사분면으로 나뉜 매트릭스에 중앙 원을 포함. 중요도×긴급도 등의 2축 분석에 활용. This layout is specifically designed for: 2×2 매트릭스 분석 (중요도-긴급도, 우선순위), 중앙 핵심 개념과 4개 영역의 관계 표현, 의사결정 매트릭스. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.0
+  design_intent: 4개의 사분면으로 나뉜 매트릭스에 중앙 원을 포함. 중요도×긴급도 등의 2축 분석에 활용
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: PlaceHolder 1
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-1
+  name: PlaceHolder 2
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-2
+  name: PlaceHolder 3
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-3
+  name: PlaceHolder 4
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-4
+  name: PlaceHolder 5
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 76.0%
+    y: 96.3%
+    cx: 3.1%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-5
+  name: PlaceHolder 6
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 63.9%
+    y: 96.3%
+    cx: 12.6%
+    cy: 2.2%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - 작성자_장선익, 장희승, 김현주
+- id: shape-6
+  name: Oval 8
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 25.4%
+    y: 27.1%
+    cx: 30.5%
+    cy: 52.5%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-7
+  name: Oval 9
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 28.8%
+    y: 33.0%
+    cx: 23.6%
+    cy: 40.7%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-8
+  name: Oval 10
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 32.5%
+    y: 39.5%
+    cx: 16.1%
+    cy: 27.7%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-9
+  name: Oval 11
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 36.2%
+    y: 45.8%
+    cx: 8.8%
+    cy: 15.1%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-10
+  name: Rectangle 12
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 36.7%
+    y: 33.5%
+    cx: 7.9%
+    cy: 6.2%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트입력
+- id: shape-11
+  name: Rectangle 21
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 36.5%
+    y: 50.5%
+    cx: 8.3%
+    cy: 6.2%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트입력
+- id: shape-12
+  name: Rectangle 22
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 36.4%
+    y: 39.9%
+    cx: 8.3%
+    cy: 6.1%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트입력
+- id: shape-13
+  name: Rectangle 23
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 35.5%
+    y: 27.0%
+    cx: 10.2%
+    cy: 6.1%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트입력
+- id: shape-14
+  name: Rectangle 6
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.9%
+    y: 82.1%
+    cx: 67.4%
+    cy: 7.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+    - '{{본문}}'
+- id: shape-15
+  name: Line 13
+  type: line
+  shape_source: ooxml
+  geometry:
+    x: 23.5%
+    y: 62.7%
+    cx: 3.8%
+    cy: 5.5%
+  style:
+    fill:
+      type: solid
+      color: 757575
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-16
+  name: Line 14
+  type: line
+  shape_source: ooxml
+  geometry:
+    x: 49.8%
+    y: 58.5%
+    cx: 7.7%
+    cy: 8.8%
+  style:
+    fill:
+      type: solid
+      color: 757575
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-17
+  name: Rectangle 16
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 57.5%
+    y: 60.2%
+    cx: 17.3%
+    cy: 13.3%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+- id: shape-18
+  name: Line 17
+  type: line
+  shape_source: ooxml
+  geometry:
+    x: 23.8%
+    y: 35.8%
+    cx: 13.5%
+    cy: 13.8%
+  style:
+    fill:
+      type: solid
+      color: 757575
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-19
+  name: Line 18
+  type: line
+  shape_source: ooxml
+  geometry:
+    x: 46.1%
+    y: 35.8%
+    cx: 11.4%
+    cy: 13.2%
+  style:
+    fill:
+      type: solid
+      color: 757575
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-20
+  name: Rectangle 15
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.5%
+    y: 60.2%
+    cx: 17.3%
+    cy: 13.3%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+- id: shape-21
+  name: Rectangle 19
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.5%
+    y: 27.0%
+    cx: 17.3%
+    cy: 13.9%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+- id: shape-22
+  name: Rectangle 20
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 57.5%
+    y: 27.0%
+    cx: 17.3%
+    cy: 14.0%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 2×2 매트릭스 분석 (중요도-긴급도, 우선순위)
+- 중앙 핵심 개념과 4개 영역의 관계 표현
+- 의사결정 매트릭스
+- 포지셔닝 맵
+- 4가지 유형 분류 및 분석
+keywords:
+- 매트릭스
+- 4사분면
+- 2×2
+- 분석
+- 매핑
+- 우선순위
+- 포지셔닝
+- 분류
+- 평가
+expected_prompt: |
+  4분면 매트릭스+중앙원 슬라이드를 만들어줘.
+  - 4개의 사분면으로 나뉜 매트릭스에 중앙 원을 포함. 중요도×긴급도 등의 2축 분석에 활용
+  - 2×2 매트릭스 분석 (중요도-긴급도, 우선순위)
+  - 중앙 핵심 개념과 4개 영역의 관계 표현
+  - 의사결정 매트릭스
+thumbnail: thumbnails/matrix/matrix-4quadrant.png

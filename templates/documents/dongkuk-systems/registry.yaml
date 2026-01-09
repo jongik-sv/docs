@@ -6,5 +6,5 @@ templates:
   name: 기본양식
   file: 기본양식.yaml
   type: general
-  description: 동국시스템즈 기본 문서 양식
+  description: 동국시스템즈 범용 기본 템플릿
   created: '2026-01-09'

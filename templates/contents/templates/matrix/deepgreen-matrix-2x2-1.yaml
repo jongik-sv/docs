@@ -1,0 +1,60 @@
+id: deepgreen-matrix-2x2-1
+name: 딥그린 2x2 매트릭스
+category: matrix
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 10
+design_intent: matrix-2x2
+extraction_mode: content_only
+
+layout:
+  type: grid
+  columns: 2
+  rows: 1
+
+zones:
+  - id: title-area
+    type: placeholder
+    geometry: {x: 5%, y: 5%, cx: 40%, cy: 8%}
+    placeholder_type: TITLE
+
+  - id: matrix-area
+    type: container
+    geometry: {x: 5%, y: 18%, cx: 45%, cy: 75%}
+    object_desc: "2x2 매트릭스, 4개 사분면, 녹색 그라데이션 색상"
+    children:
+      - id: quadrant-1
+        object_desc: "좌상단 사분면, 진한 녹색"
+      - id: quadrant-2
+        object_desc: "우상단 사분면, 중간 녹색"
+      - id: quadrant-3
+        object_desc: "좌하단 사분면, 연한 녹색"
+      - id: quadrant-4
+        object_desc: "우하단 사분면, 회색 녹색"
+
+  - id: description-area
+    type: placeholder
+    geometry: {x: 52%, y: 18%, cx: 43%, cy: 75%}
+    placeholder_type: BODY
+    object_desc: "제목과 상세 설명 텍스트 영역"
+
+thumbnail: thumbnails/matrix/deepgreen-matrix-2x2-1.png
+
+use_for:
+  - SWOT 분석
+  - 2x2 매트릭스
+  - 사분면 분류
+
+keywords:
+  - 매트릭스
+  - 2x2
+  - 사분면
+  - SWOT
+  - 분석
+
+expected_prompt: |
+  2x2 매트릭스 슬라이드를 만들어줘.
+  - 좌측에 4개 사분면 매트릭스
+  - 각 사분면에 레이블
+  - 우측에 상세 설명 텍스트
+  - 녹색 그라데이션 색상

@@ -1,0 +1,96 @@
+category: timeline
+name: 타임라인
+description: 시간순 진행 레이아웃
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: timeline-arrow-icon
+  name: 화살표+아이콘 타임라인
+  file: templates/timeline/timeline-arrow-icon.yaml
+  thumbnail: thumbnails/timeline/timeline-arrow-icon.png
+  source_slide_index: 51
+  description: 화살표+아이콘 타임라인 슬라이드.
+  match_keywords:
+  - 화살표로 표현된 동향 및 변화
+  - 아이콘이 포함된 다이나믹한 타임라인
+  - 단계별 진행 과정 강조
+  - 성과 또는 성장 흐름
+  - 세밀한 단계 표시
+  - 타임라인
+  - 화살표
+  - 아이콘
+  - 단계
+  - 진행
+  - 방향
+  - 동향
+  - 성과
+  - 다이나믹
+  expected_prompt: '화살표+아이콘 타임라인 슬라이드를 만들어줘.
+
+    - 화살표와 아이콘을 결합한 다이나믹한 타임라인. 방향성과 단계를 명확히 표현
+
+    - 화살표로 표현된 동향 및 변화
+
+    - 아이콘이 포함된 다이나믹한 타임라인
+
+    - 단계별 진행 과정 강조'
+- id: timeline-circle
+  name: 원형 강조 타임라인
+  file: templates/timeline/timeline-circle.yaml
+  thumbnail: thumbnails/timeline/timeline-circle.png
+  source_slide_index: 50
+  description: 원형 강조 타임라인 슬라이드.
+  match_keywords:
+  - 원형 노드로 강조된 각 단계 표현
+  - 이벤트 기반 타임라인
+  - 성장 단계의 시각화
+  - 중요 전환점 강조
+  - 순환적 진행 과정
+  - 타임라인
+  - 원형
+  - 노드
+  - 강조
+  - 이벤트
+  - 단계
+  - 성장
+  - 전환점
+  - 시각화
+  expected_prompt: '원형 강조 타임라인 슬라이드를 만들어줘.
+
+    - 원형 노드와 연결선으로 구성된 타임라인. 특정 이벤트나 단계를 강조하는 디자인
+
+    - 원형 노드로 강조된 각 단계 표현
+
+    - 이벤트 기반 타임라인
+
+    - 성장 단계의 시각화'
+- id: timeline-horizontal
+  name: 수평 타임라인
+  file: templates/timeline/timeline-horizontal.yaml
+  thumbnail: thumbnails/timeline/timeline-horizontal.png
+  source_slide_index: 49
+  description: 수평 타임라인 슬라이드.
+  match_keywords:
+  - 프로젝트 일정 및 마일스톤 표시
+  - 역사적 사건 또는 발전 과정
+  - 제품 개발 로드맵
+  - 시간대별 진행 단계
+  - 수평적 프로세스 플로우
+  - 타임라인
+  - 수평
+  - 일정
+  - 마일스톤
+  - 진행
+  - 단계
+  - 시간
+  - 로드맵
+  - 히스토리
+  expected_prompt: '수평 타임라인 슬라이드를 만들어줘.
+
+    - 좌에서 우로 진행하는 수평적 타임라인. 시간 순서에 따른 단계별 진행 과정 표현
+
+    - 프로젝트 일정 및 마일스톤 표시
+
+    - 역사적 사건 또는 발전 과정
+
+    - 제품 개발 로드맵'

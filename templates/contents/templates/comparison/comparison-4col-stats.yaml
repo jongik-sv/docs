@@ -1,0 +1,491 @@
+content_template:
+  id: comparison-4col-stats
+  name: 4열 색상 블록 통계
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 27
+  extracted_at: '2026-01-09T15:42:00'
+  expected_prompt: "Create a general slide designed for 4개의 색상이 다른 블록 - 각 블록에 제목, 설명, 퍼센트값이 포함된 비교 레이아웃. This layout is specifically designed for: 4가지 항목을 색상 블록으로 비교할 때, 통계 정보와 함께 상세 설명을 표시, 컬러풀한 비교표 만들기. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.5
+  design_intent: 4개의 색상이 다른 블록 - 각 블록에 제목, 설명, 퍼센트값이 포함된 비교 레이아웃
+  visual_balance: symmetric
+  information_density: high
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Block 1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 6.8%
+    y: 31.3%
+    cx: 16.9%
+    cy: 28.6%
+    original_aspect_ratio: 0.791
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-1
+  name: Title 1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 9.1%
+    y: 42.7%
+    cx: 12.5%
+    cy: 4.4%
+    original_aspect_ratio: 3.852
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목1}}'
+      font_size: 13.0
+    alignment: center
+    font_weight: bold
+    font_color: dark_text
+- id: shape-2
+  name: Content 1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 9.1%
+    y: 46.6%
+    cx: 12.5%
+    cy: 4.2%
+    original_aspect_ratio: 3.852
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문1}}'
+      font_size: 11.0
+    alignment: center
+    font_color: dark_text
+- id: shape-3
+  name: Block 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 23.7%
+    y: 31.3%
+    cx: 16.9%
+    cy: 28.6%
+    original_aspect_ratio: 0.791
+  style:
+    fill:
+      type: solid
+      color: secondary
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-4
+  name: Title 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 26.1%
+    y: 42.7%
+    cx: 12.5%
+    cy: 4.4%
+    original_aspect_ratio: 3.852
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목2}}'
+      font_size: 13.0
+    alignment: center
+    font_weight: bold
+    font_color: light
+- id: shape-5
+  name: Content 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 26.1%
+    y: 46.6%
+    cx: 12.5%
+    cy: 4.2%
+    original_aspect_ratio: 3.852
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문2}}'
+      font_size: 11.0
+    alignment: center
+    font_color: light
+- id: shape-6
+  name: Percent 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 23.9%
+    y: 62.6%
+    cx: 10.7%
+    cy: 10.2%
+    original_aspect_ratio: 1.484
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{퍼센트2}}'
+      font_size: 16.0
+    alignment: center
+    font_weight: bold
+    font_color: secondary
+- id: shape-7
+  name: Block 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 40.7%
+    y: 31.3%
+    cx: 16.9%
+    cy: 28.6%
+    original_aspect_ratio: 0.791
+  style:
+    fill:
+      type: solid
+      color: surface
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-8
+  name: Title 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 43.0%
+    y: 42.7%
+    cx: 12.5%
+    cy: 4.4%
+    original_aspect_ratio: 3.852
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목3}}'
+      font_size: 13.0
+    alignment: center
+    font_weight: bold
+    font_color: dark_text
+- id: shape-9
+  name: Content 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 43.0%
+    y: 46.6%
+    cx: 12.5%
+    cy: 4.2%
+    original_aspect_ratio: 3.852
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문3}}'
+      font_size: 11.0
+    alignment: center
+    font_color: dark_text
+- id: shape-10
+  name: Percent 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 47.3%
+    y: 62.6%
+    cx: 10.7%
+    cy: 10.2%
+    original_aspect_ratio: 1.484
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{퍼센트3}}'
+      font_size: 16.0
+    alignment: center
+    font_weight: bold
+    font_color: primary
+- id: shape-11
+  name: Block 4
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 57.6%
+    y: 31.3%
+    cx: 16.9%
+    cy: 28.6%
+    original_aspect_ratio: 0.791
+  style:
+    fill:
+      type: solid
+      color: dark_text
+      opacity: 0.7
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-12
+  name: Title 4
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 60.0%
+    y: 42.7%
+    cx: 12.5%
+    cy: 4.4%
+    original_aspect_ratio: 3.852
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목4}}'
+      font_size: 13.0
+    alignment: center
+    font_weight: bold
+    font_color: dark_text
+- id: shape-13
+  name: Content 4
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 60.0%
+    y: 46.6%
+    cx: 12.5%
+    cy: 4.2%
+    original_aspect_ratio: 3.852
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문4}}'
+      font_size: 11.0
+    alignment: center
+    font_color: light
+- id: shape-14
+  name: Bottom Section Left
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 6.8%
+    y: 74.6%
+    cx: 30.9%
+    cy: 15.7%
+    original_aspect_ratio: 2.428
+  style:
+    fill:
+      type: solid
+      color: dark_text
+      opacity: 0.5
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-15
+  name: Bottom Title Left
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 6.8%
+    y: 77.5%
+    cx: 30.8%
+    cy: 4.4%
+    original_aspect_ratio: 9.091
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{하단제목좌}}'
+      font_size: 11.0
+    alignment: center
+    font_color: dark_text
+- id: shape-16
+  name: Bottom Content Left
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 6.8%
+    y: 80.7%
+    cx: 30.8%
+    cy: 7.7%
+    original_aspect_ratio: 5.403
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{하단본문좌}}'
+      font_size: 10.0
+    alignment: left
+    font_color: dark_text
+- id: shape-17
+  name: Bottom Section Right
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 43.7%
+    y: 74.6%
+    cx: 30.9%
+    cy: 15.7%
+    original_aspect_ratio: 2.428
+  style:
+    fill:
+      type: solid
+      color: dark_text
+      opacity: 0.8
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-18
+  name: Bottom Title Right
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 43.7%
+    y: 77.5%
+    cx: 30.8%
+    cy: 4.4%
+    original_aspect_ratio: 9.091
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{하단제목우}}'
+      font_size: 11.0
+    alignment: center
+    font_color: light
+- id: shape-19
+  name: Bottom Content Right
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 43.7%
+    y: 80.7%
+    cx: 30.8%
+    cy: 7.7%
+    original_aspect_ratio: 5.403
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{하단본문우}}'
+      font_size: 10.0
+    alignment: left
+    font_color: light
+gaps:
+  global:
+    column_gap: 3%
+    row_gap: 4%
+content_schema:
+  columns: 4
+  rows: 2
+  repeating_units:
+  - id: top_column
+    fields:
+    - name: title
+      type: text
+      description: 상단 열의 제목
+    - name: content
+      type: text
+      description: 상단 열의 본문
+  - id: bottom_section
+    fields:
+    - name: title
+      type: text
+      description: 하단 섹션 제목
+    - name: content
+      type: text
+      description: 하단 섹션 본문
+use_for:
+- 4가지 항목을 색상 블록으로 비교할 때
+- 통계 정보와 함께 상세 설명을 표시
+- 컬러풀한 비교표 만들기
+- 상단 4열 + 하단 2열 구조의 정보 표시
+- 통계 퍼센트값과 텍스트 설명을 함께 표현
+keywords:
+- 4열
+- 색상
+- 블록
+- 비교
+- 통계
+- 퍼센트
+- 카드
+expected_prompt: |
+  4열 색상 블록 통계 슬라이드를 만들어줘.
+  - 4개의 색상이 다른 블록 - 각 블록에 제목, 설명, 퍼센트값이 포함된 비교 레이아웃
+  - 4가지 항목을 색상 블록으로 비교할 때
+  - 통계 정보와 함께 상세 설명을 표시
+  - 컬러풀한 비교표 만들기
+thumbnail: thumbnails/comparison/comparison-4col-stats.yaml

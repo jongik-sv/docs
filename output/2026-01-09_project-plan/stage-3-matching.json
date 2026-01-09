@@ -1,0 +1,213 @@
+{
+  "session": {
+    "id": "2026-01-09_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "created_at": "2026-01-09T00:00:00Z",
+    "status": "in_progress"
+  },
+  "current_stage": 3,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트",
+      "subtitle": "수행계획서",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "slide_count": 18
+    },
+    "theme": {
+      "id": "deepgreen-clean",
+      "colors": {
+        "primary": "#153325",
+        "secondary": "#22523B",
+        "accent": "#479374",
+        "background": "#FFFFFF",
+        "surface": "#A1BFB4",
+        "dark_text": "#153325",
+        "light": "#FFFFFF",
+        "gray": "#859C80"
+      }
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축",
+      "purpose": "cover",
+      "key_points": ["프로젝트명", "수행사", "발주기관", "계약기간"],
+      "template_id": "deepgreen-cover-centered1",
+      "match_score": 0.95,
+      "match_reason": "딥그린 테마 표지 템플릿 - 중앙 정렬 레이아웃",
+      "icon_decision": { "needs_icon": false, "reason": "표지 슬라이드는 아이콘 불필요" }
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "key_points": ["프로젝트 개요", "추진 전략", "조직 및 일정", "품질/위험 관리"],
+      "template_id": "deepgreen-toc-3col1",
+      "match_score": 0.95,
+      "match_reason": "딥그린 3열 목차 템플릿",
+      "icon_decision": { "needs_icon": false, "reason": "목차 슬라이드는 아이콘 불필요" }
+    },
+    {
+      "index": 2,
+      "title": "1. 프로젝트 개요",
+      "purpose": "section",
+      "key_points": ["섹션 구분자"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "딥그린 번호 섹션 템플릿",
+      "icon_decision": { "needs_icon": false, "reason": "섹션 구분자는 아이콘 불필요" }
+    },
+    {
+      "index": 3,
+      "title": "프로젝트 정보",
+      "purpose": "content",
+      "key_points": ["프로젝트명", "계약금액: 15억원", "계약기간: 12개월", "발주/수행사"],
+      "template_id": "content-stack1",
+      "match_score": 0.85,
+      "match_reason": "2행 세로 레이아웃 - 상단 프로젝트 정보, 하단 계약 정보",
+      "icon_decision": { "needs_icon": false, "reason": "정보 나열 슬라이드 - 아이콘 불필요" }
+    },
+    {
+      "index": 4,
+      "title": "배경 및 목적",
+      "purpose": "content",
+      "key_points": ["현황/문제점", "추진 목표", "기대효과"],
+      "template_id": "content-stack2",
+      "match_score": 0.90,
+      "match_reason": "3행 세로 레이아웃 - 현황/목표/기대효과 3가지 섹션",
+      "icon_decision": { "needs_icon": true, "reason": "3개 섹션에 아이콘 추가로 시각적 구분", "suggested_icons": ["FiAlertCircle", "FiTarget", "FiTrendingUp"] }
+    },
+    {
+      "index": 5,
+      "title": "프로젝트 범위",
+      "purpose": "grid",
+      "key_points": ["업무범위", "시스템범위"],
+      "template_id": "grid-2col1",
+      "match_score": 0.90,
+      "match_reason": "2열 레이아웃 - 좌측 업무범위, 우측 시스템범위",
+      "icon_decision": { "needs_icon": true, "reason": "각 범위 영역에 아이콘 추가", "suggested_icons": ["FiClipboard", "FiServer"] }
+    },
+    {
+      "index": 6,
+      "title": "2. 추진 전략 및 방법론",
+      "purpose": "section",
+      "key_points": ["섹션 구분자"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "딥그린 번호 섹션 템플릿",
+      "icon_decision": { "needs_icon": false, "reason": "섹션 구분자는 아이콘 불필요" }
+    },
+    {
+      "index": 7,
+      "title": "핵심 추진 전략",
+      "purpose": "grid",
+      "key_points": ["단계적 전환", "애자일 개발", "현업 밀착"],
+      "template_id": "deepgreen-grid-3col-icon1",
+      "match_score": 0.92,
+      "match_reason": "딥그린 3열 아이콘 그리드 - 3가지 전략",
+      "icon_decision": { "needs_icon": true, "reason": "3가지 전략에 아이콘 필수", "suggested_icons": ["FiLayers", "FiRepeat", "FiUsers"] }
+    },
+    {
+      "index": 8,
+      "title": "수행 방법론",
+      "purpose": "process",
+      "key_points": ["분석", "설계", "개발", "테스트", "이행", "안정화"],
+      "template_id": "process-linear1",
+      "match_score": 0.90,
+      "match_reason": "6단계 프로세스 - 분석→설계→개발→테스트→이행→안정화",
+      "icon_decision": { "needs_icon": false, "reason": "프로세스 템플릿은 숫자 표시로 충분" }
+    },
+    {
+      "index": 9,
+      "title": "기술 아키텍처",
+      "purpose": "grid",
+      "key_points": ["Frontend", "Backend", "Database", "Infra/AI"],
+      "template_id": "grid-4col1",
+      "match_score": 0.88,
+      "match_reason": "4열 그리드 - 4개 기술 영역",
+      "icon_decision": { "needs_icon": true, "reason": "기술 영역별 아이콘 추가", "suggested_icons": ["FiMonitor", "FiServer", "FiDatabase", "FiCloud"] }
+    },
+    {
+      "index": 10,
+      "title": "3. 조직 및 일정",
+      "purpose": "section",
+      "key_points": ["섹션 구분자"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "딥그린 번호 섹션 템플릿",
+      "icon_decision": { "needs_icon": false, "reason": "섹션 구분자는 아이콘 불필요" }
+    },
+    {
+      "index": 11,
+      "title": "프로젝트 조직",
+      "purpose": "hierarchy",
+      "key_points": ["발주PM", "수행PM", "AA/PL/DBA/QA"],
+      "template_id": "hierarchy-3col",
+      "match_score": 0.85,
+      "match_reason": "3열 조직도 - 발주기관/수행사/지원조직",
+      "icon_decision": { "needs_icon": true, "reason": "역할별 아이콘", "suggested_icons": ["FiUser", "FiUsers", "FiUserCheck"] }
+    },
+    {
+      "index": 12,
+      "title": "마스터 일정",
+      "purpose": "timeline",
+      "key_points": ["착수", "분석", "설계", "개발", "테스트", "이행"],
+      "template_id": "timeline-horizontal",
+      "match_score": 0.92,
+      "match_reason": "수평 타임라인 - 6단계 일정",
+      "icon_decision": { "needs_icon": false, "reason": "타임라인 템플릿은 시각적 요소 충분" }
+    },
+    {
+      "index": 13,
+      "title": "주요 마일스톤",
+      "purpose": "timeline",
+      "key_points": ["M1 착수보고", "M2 요구사항", "M3 설계", "M4 개발", "M5 테스트", "M6 오픈"],
+      "template_id": "timeline-circle",
+      "match_score": 0.90,
+      "match_reason": "원형 강조 타임라인 - 6개 마일스톤",
+      "icon_decision": { "needs_icon": false, "reason": "원형 노드가 시각적 역할 수행" }
+    },
+    {
+      "index": 14,
+      "title": "4. 품질 및 위험 관리",
+      "purpose": "section",
+      "key_points": ["섹션 구분자"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "딥그린 번호 섹션 템플릿",
+      "icon_decision": { "needs_icon": false, "reason": "섹션 구분자는 아이콘 불필요" }
+    },
+    {
+      "index": 15,
+      "title": "품질/보안 관리",
+      "purpose": "grid",
+      "key_points": ["품질 보증", "보안 관리"],
+      "template_id": "grid-2col1",
+      "match_score": 0.88,
+      "match_reason": "2열 레이아웃 - 좌측 품질, 우측 보안",
+      "icon_decision": { "needs_icon": true, "reason": "품질/보안 영역 아이콘", "suggested_icons": ["FiCheckCircle", "FiShield"] }
+    },
+    {
+      "index": 16,
+      "title": "위험 관리",
+      "purpose": "table",
+      "key_points": ["요구사항 변경", "일정 지연", "기술 난제", "인력 이탈", "데이터 마이그레이션"],
+      "template_id": "deepgreen-table-4col1",
+      "match_score": 0.90,
+      "match_reason": "딥그린 4열 테이블 - 위험/영향도/대응/담당",
+      "icon_decision": { "needs_icon": false, "reason": "테이블 형식은 아이콘 불필요" }
+    },
+    {
+      "index": 17,
+      "title": "감사합니다",
+      "purpose": "closing",
+      "key_points": ["Thank You", "연락처"],
+      "template_id": "custom-closing",
+      "match_score": 0.80,
+      "match_reason": "직접 디자인 - closing 템플릿 없음",
+      "icon_decision": { "needs_icon": false, "reason": "클로징 슬라이드는 심플하게" }
+    }
+  ]
+}

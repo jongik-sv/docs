@@ -2,6 +2,7 @@
 name: ppt-gen
 description: "AI-powered PPT generation service. Use when: (1) Creating presentations from Markdown/JSON content, (2) Using templates to generate branded presentations, (3) Modifying or editing existing presentations, (4) Analyzing PPT structure. For template/style extraction, use ppt-extract skill."
 license: Proprietary. LICENSE.txt has complete terms
+user-invocable: true
 ---
 
 # PPT Generation Service
@@ -21,7 +22,7 @@ AI 기반 PPT 자동 생성 서비스. 콘텐츠를 입력받아 전문가 수�
 
 > **추출 기능**: 콘텐츠/문서/스타일 추출은 **ppt-extract** 스킬을 사용하세요.
 
-## ⚠️ 필수 실행 규칙 (v5.8 - MUST READ)
+## ⚠️ 필수 실행 규칙 (v5.9 - MUST READ)
 
 **PPT 생성 시작 전 반드시 다음 단계를 수행해야 합니다. 건너뛰면 안 됩니다!**
 
@@ -49,13 +50,16 @@ AI 기반 PPT 자동 생성 서비스. 콘텐츠를 입력받아 전문가 수�
 | 실무자 | 20-30분 | 15-20장 |
 | 혼합 | 20-30분 | 15-20장 |
 
-### Stage별 필수 호출 스크립트
+### Stage별 필수 호출 스크립트 (v5.9)
 
 | Stage | 필수 호출 | 저장 필드 |
 |-------|----------|----------|
 | 3 | `icon-decision.js` → `analyzeIconNeed()` | `icon_decision` |
+| 4 | **`html-templates.js` → `renderTemplate()`** (YAML 우선) | `html_file`, `content_bindings` |
 | 4 | `icon-resolver.js` → `resolveIcons()`, `insertIconsToHtml()` | `assets_generated.icons` |
-| 5 | `design-evaluator.js` → `evaluate()` | `design_info`, `evaluation` |
+| 5 | `design-evaluator.js` → `evaluate()` (70점 기준, 최대 3회 재시도) | `design_info`, `evaluation`, `attempt_history` |
+
+**v5.9 핵심 변경**: Stage 4에서 `renderTemplate()`은 **템플릿 YAML을 우선 로드**하여 shapes/geometry를 HTML로 변환합니다.
 
 ### 품질 합격 기준 (PASS CRITERIA)
 
@@ -84,7 +88,7 @@ AI 기반 PPT 자동 생성 서비스. 콘텐츠를 입력받아 전문가 수�
 
 ---
 
-## 5단계 파이프라인 (v5.8)
+## 5단계 파이프라인 (v5.9)
 
 PPT 생성은 5단계 파이프라인으로 진행됩니다:
 
@@ -97,8 +101,12 @@ PPT 생성은 5단계 파이프라인으로 진행됩니다:
 | 1 | Setup | 사전 질문 + 테마 선택 | `setup.presentation`, `setup.theme` |
 | 2 | Outline | 슬라이드별 콘텐츠 | `title`, `purpose`, `key_points` |
 | 3 | Matching | 템플릿 매칭 + **아이콘 결정** | `template_id`, `match_score`, `icon_decision` |
-| 4 | Content | **아이콘 생성** + HTML 생성 | `html_file`, `content_bindings`, `assets_generated` |
-| 5 | Generation | PPTX 변환 + **디자인 평가** | `generated`, `design_info`, `evaluation`, `slide_stage`, `revision` |
+| 4 | Content | **YAML 템플릿 렌더링** + 아이콘 생성 | `html_file`, `content_bindings`, `assets_generated` |
+| 5 | Generation | **디자인 평가 (70점 기준, 최대 3회)** + PPTX 변환 | `generated`, `design_info`, `evaluation`, `attempt_history` |
+
+**v5.9 핵심 변경**:
+- Stage 4: `renderTemplate()`가 **템플릿 YAML을 우선 로드**하여 shapes/geometry를 HTML로 변환
+- Stage 5: 디자인 평가 70점 미만 시 **템플릿 재매칭 → HTML 재생성 → 재평가** (최대 3회)
 
 ### 슬라이드별 플랫 구조
 
@@ -350,10 +358,93 @@ A user may ask you to create, edit, or analyze the contents of a .pptx file. A .
 ### 필수 프로세스
 
 1. **슬라이드 목록 작성**: 콘텐츠 분석 → 슬라이드 유형/키워드 정리
-2. **registry.yaml 검색**: 각 슬라이드별 매칭 템플릿 찾기
+2. **분리형 registry 검색**: 각 슬라이드별 매칭 템플릿 찾기 (v4.1 분리형)
 3. **매칭 결과 테이블 작성**: 어떤 템플릿을 사용할지 명시 (필수 출력물)
 4. **템플릿 YAML 로드**: 매칭된 템플릿의 `shapes[]` 구조 참조
 5. **HTML 생성**: 템플릿 geometry/style을 HTML로 변환
+
+### Registry 구조 (v4.1 분리형)
+
+```
+templates/contents/
+├── registry.yaml              # 마스터 (인덱스): 카테고리 목록만
+├── registry-chart.yaml        # 차트 카테고리 템플릿
+├── registry-comparison.yaml   # 비교 카테고리 템플릿
+├── registry-grid.yaml         # 그리드 카테고리 템플릿
+└── ... (13개 카테고리)
+```
+
+### 템플릿 매칭 알고리즘 (v4.1 검색 메타데이터 활용)
+
+**검색 프로세스**:
+```
+1. 사용자 쿼리에서 카테고리 힌트 추출 (예: "비교" → comparison)
+2. 힌트가 있으면: registry-{category}.yaml만 읽기 (토큰 효율적)
+3. 힌트가 없으면: registry.yaml(인덱스) → 각 카테고리 순회
+4. 3단계 매칭 알고리즘 실행
+```
+
+#### 3단계 매칭 알고리즘
+
+| 단계 | 필드 | 매칭 방식 | 점수 |
+|------|------|----------|------|
+| **1단계** | `match_keywords` | 키워드 직접 매칭 | 일치 수 / 전체 키워드 수 |
+| **2단계** | `expected_prompt` | 의미적 유사도 매칭 | 구조 유사성 비교 |
+| **3단계** | `description` | 설명 텍스트 매칭 | 보조 점수 |
+
+**1단계: match_keywords 매칭** (Primary)
+```python
+def match_keywords(query: str, template: dict) -> float:
+    """사용자 쿼리와 match_keywords 배열 비교"""
+    query_tokens = tokenize(query)  # ["비교", "2열", "장단점"]
+    keywords = template['match_keywords']  # ["비교", "장단점", "vs", "대조", "좌우", "2열"]
+
+    matched = set(query_tokens) & set(keywords)
+    return len(matched) / len(query_tokens)  # 0.0 ~ 1.0
+```
+
+**2단계: expected_prompt 매칭** (Semantic)
+```python
+def match_expected_prompt(query: str, template: dict) -> float:
+    """사용자 요청과 expected_prompt 구조 비교"""
+    expected = template['expected_prompt']
+
+    # 구조적 요소 추출
+    query_elements = extract_elements(query)   # {"열": 2, "형태": "비교", "요소": "불릿"}
+    expected_elements = extract_elements(expected)
+
+    # 요소 일치도 계산
+    return calculate_similarity(query_elements, expected_elements)
+```
+
+**3단계: 최종 점수 계산**
+```python
+def calculate_match_score(query: str, template: dict) -> float:
+    """최종 매칭 점수"""
+    keyword_score = match_keywords(query, template) * 0.6    # 60%
+    prompt_score = match_expected_prompt(query, template) * 0.3  # 30%
+    desc_score = match_description(query, template) * 0.1    # 10%
+
+    return keyword_score + prompt_score + desc_score
+```
+
+#### 매칭 예시
+
+```markdown
+사용자 요청: "장단점을 좌우로 비교하는 슬라이드"
+
+| 템플릿 ID | match_keywords 일치 | expected_prompt 유사도 | 최종 점수 |
+|----------|-------------------|----------------------|----------|
+| comparison-2col1 | ["비교", "장단점", "좌우"] = 1.0 | 구조 일치 = 0.9 | **0.87** ✓ |
+| comparison-4col-stats | ["비교"] = 0.33 | 구조 불일치 = 0.2 | 0.26 |
+```
+
+**카테고리별 registry 필드**:
+- `description`: 템플릿 설명 (1줄) - 보조 매칭용
+- `match_keywords`: 검색 키워드 배열 (use_for + keywords + prompt_keywords 통합) - **Primary**
+- `expected_prompt`: 예상 사용자 프롬프트 - **Semantic 매칭용**
+
+**동기화**: 개별 템플릿 YAML이 원본. `sync_registry.py` 스크립트로 자동 생성
 
 ### 유연한 템플릿 활용
 
@@ -376,12 +467,12 @@ A user may ask you to create, edit, or analyze the contents of a .pptx file. A .
 
 ### 직접 디자인 허용 조건
 
-- registry.yaml을 검색했으나 **매칭되는 템플릿이 없는 경우만**
+- 분리형 registry를 검색했으나 **매칭되는 템플릿이 없는 경우만**
 - 매칭 결과 테이블에 ❌ 표시된 슬라이드만 직접 디자인
 
 ### 금지 사항
 
-- registry.yaml 검색 없이 직접 디자인 시작
+- 분리형 registry 검색 없이 직접 디자인 시작
 - 매칭 가능한 템플릿이 있는데 직접 디자인
 - **스크린캡처 방식으로 PPT 생성 절대 금지**: 슬라이드를 1920x1080 이미지로 변환해서 삽입하면 안 됨. 반드시 `html2pptx.js`로 개별 요소 변환
 
@@ -567,6 +658,6 @@ Required dependencies (should already be installed):
 ### 보존 대상 (삭제 금지)
 
 - `templates/` 하위 모든 파일
-- `registry.yaml` 파일들
+- `registry*.yaml` 파일들 (마스터 + 카테고리별)
 - 사용자가 명시적으로 요청한 최종 출력물
 - 기존 스킬 스크립트 (`scripts/` 내 기본 파일)

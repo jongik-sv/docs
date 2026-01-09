@@ -1,0 +1,74 @@
+id: deepgreen-process-3col1
+name: 딥그린 3열 원형 프로세스
+category: process
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 14
+design_intent: process-linear
+extraction_mode: content_only
+
+layout:
+  type: grid
+  columns: 3
+  column_gap: 5%
+
+zones:
+  - id: title-area
+    type: placeholder
+    geometry: {x: 5%, y: 5%, cx: 40%, cy: 8%}
+    placeholder_type: TITLE
+
+  - id: step-1
+    type: container
+    geometry: {x: 5%, y: 20%, cx: 28%, cy: 75%}
+    object_desc: "큰 원형 배경(연한 녹색), 중앙에 아이콘(헤드셋)"
+    children:
+      - id: circle-1
+        object_desc: "큰 원, 연한 녹색 배경"
+      - id: icon-1
+        object_desc: "헤드셋/상담 아이콘"
+      - id: title-1
+        placeholder_type: BODY
+      - id: desc-1
+        placeholder_type: BODY
+
+  - id: arrow-1
+    type: container
+    geometry: {x: 33%, y: 45%, cx: 5%, cy: 5%}
+    object_desc: "점선 화살표, 우측 방향"
+
+  - id: step-2
+    type: container
+    geometry: {x: 38%, y: 20%, cx: 28%, cy: 75%}
+    object_desc: "큰 원형 배경(중간 녹색), 연결 아이콘"
+
+  - id: arrow-2
+    type: container
+    geometry: {x: 66%, y: 45%, cx: 5%, cy: 5%}
+    object_desc: "점선 화살표, 우측 방향"
+
+  - id: step-3
+    type: container
+    geometry: {x: 71%, y: 20%, cx: 28%, cy: 75%}
+    object_desc: "큰 원형 배경(회색), 엘리베이터 아이콘"
+
+thumbnail: thumbnails/process/deepgreen-process-3col1.png
+
+use_for:
+  - 3단계 프로세스
+  - 워크플로우
+  - 서비스 흐름
+
+keywords:
+  - 프로세스
+  - 3단계
+  - 원형
+  - 아이콘
+  - 흐름
+
+expected_prompt: |
+  3단계 프로세스 슬라이드를 만들어줘.
+  - 3개 큰 원형 아이콘
+  - 각 단계 간 점선 화살표 연결
+  - 아이콘 아래에 제목과 설명
+  - 가로 흐름 레이아웃

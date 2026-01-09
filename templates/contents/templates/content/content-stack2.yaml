@@ -1,0 +1,185 @@
+content_template:
+  id: content-stack2
+  name: 3행 세로 레이아웃
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 7
+  extracted_at: '2026-01-09T19:37:33.363397'
+  expected_prompt: "Create a general slide designed for content-stack2. This layout is specifically designed for: 3가지 항목 설명, 목록, 단계 설명. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: content-stack2
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Shape 0
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 6.5%
+    y: 22.8%
+    cx: 13.9%
+    cy: 19.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌0.7in 상1.7in'
+- id: shape-1
+  name: Shape 1
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 22.4%
+    y: 22.7%
+    cx: 73.4%
+    cy: 12.7%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌2.4in 상1.7in'
+- id: shape-2
+  name: Shape 2
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 6.5%
+    y: 47.2%
+    cx: 13.9%
+    cy: 19.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌0.7in 상3.5in'
+- id: shape-3
+  name: Shape 3
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 22.4%
+    y: 47.2%
+    cx: 73.4%
+    cy: 12.7%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌2.4in 상3.5in'
+- id: shape-4
+  name: Shape 4
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 6.5%
+    y: 72.1%
+    cx: 13.9%
+    cy: 19.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌0.7in 상5.4in'
+- id: shape-5
+  name: Shape 5
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 22.4%
+    y: 72.1%
+    cx: 73.4%
+    cy: 12.7%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌2.4in 상5.4in'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 3가지 항목 설명
+- 목록
+- 단계 설명
+- 좌측 라벨 + 우측 내용
+keywords:
+- content
+- 세로
+- 3행
+expected_prompt: |
+  3행 세로 레이아웃 슬라이드를 만들어줘.
+  - 좌측에 라벨/중제목, 우측에 내용 배치
+  - 3개의 행으로 구성
+  - 각 행: 좌측 중제목 + 우측 소제목/본문
+  - 3가지 항목을 순서대로 설명
+prompt_keywords:
+- 3행
+- 세로
+- 목록
+- 라벨
+- 3가지
+- 단계
+- 순서
+- list
+thumbnail: thumbnails/content-stack2.png

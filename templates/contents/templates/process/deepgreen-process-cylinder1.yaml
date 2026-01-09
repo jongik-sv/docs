@@ -1,0 +1,95 @@
+id: deepgreen-process-cylinder1
+name: 딥그린 실린더 프로세스
+category: process
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 12
+design_intent: process-vertical
+extraction_mode: content_only
+
+layout:
+  type: grid
+  columns: 2
+
+zones:
+  - id: title-area
+    type: placeholder
+    geometry: {x: 5%, y: 5%, cx: 40%, cy: 8%}
+    placeholder_type: TITLE
+
+  - id: cylinder-column
+    type: container
+    geometry: {x: 5%, y: 20%, cx: 35%, cy: 75%}
+    shape_source: ooxml
+    ooxml_shapes:
+      - id: cylinder-1
+        preset: flowChartMagneticDisk
+        fill: "#479374"
+        stroke: accent5-lumMod50
+        position: {x: "859741", y: "2147767"}
+        size: {cx: "2746546", cy: "1072392"}
+      - id: cylinder-2
+        preset: flowChartMagneticDisk
+        fill: "#83A99B"
+        stroke: accent5-lumMod50
+        position: {x: "859741", y: "3529155"}
+        size: {cx: "2746546", cy: "1072392"}
+      - id: cylinder-3
+        preset: flowChartMagneticDisk
+        fill: "#C4D6D0"
+        stroke: accent5-lumMod50
+        position: {x: "859741", y: "4910543"}
+        size: {cx: "2746546", cy: "1072392"}
+    ooxml_fragment: |
+      <a:prstGeom prst="flowChartMagneticDisk">
+        <a:avLst/>
+      </a:prstGeom>
+      <a:ln>
+        <a:solidFill>
+          <a:schemeClr val="accent5">
+            <a:lumMod val="50000"/>
+          </a:schemeClr>
+        </a:solidFill>
+      </a:ln>
+    object_desc: |
+      3개 실린더 세로 배치:
+      - 상단: 진한 녹색 실린더 (#479374)
+      - 중단: 중간 녹색 실린더 (#83A99B)
+      - 하단: 연한 녹색 실린더 (#C4D6D0)
+      - 점선 화살표로 연결
+
+  - id: desc-column
+    type: container
+    geometry: {x: 45%, y: 20%, cx: 50%, cy: 75%}
+    children:
+      - id: desc-1
+        geometry: {x: 0%, y: 0%, cx: 100%, cy: 30%}
+        placeholder_type: BODY
+        object_desc: "녹색 테두리 박스, 설명 텍스트"
+      - id: desc-2
+        geometry: {x: 0%, y: 35%, cx: 100%, cy: 30%}
+        placeholder_type: BODY
+      - id: desc-3
+        geometry: {x: 0%, y: 70%, cx: 100%, cy: 30%}
+        placeholder_type: BODY
+
+thumbnail: thumbnails/process/deepgreen-process-cylinder1.png
+
+use_for:
+  - 3단계 프로세스
+  - 데이터 흐름
+  - 파이프라인
+
+keywords:
+  - 프로세스
+  - 실린더
+  - 3단계
+  - 흐름
+  - 파이프라인
+
+expected_prompt: |
+  3단계 프로세스 슬라이드를 만들어줘.
+  - 좌측에 3개 실린더 (세로 배치)
+  - 실린더 간 점선 화살표 연결
+  - 우측에 각 단계별 설명 박스
+  - 녹색 그라데이션

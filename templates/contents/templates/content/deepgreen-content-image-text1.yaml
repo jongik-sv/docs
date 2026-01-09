@@ -1,0 +1,62 @@
+id: deepgreen-content-image-text1
+name: 딥그린 이미지+텍스트
+category: content
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 16
+design_intent: content-image-text
+extraction_mode: content_only
+
+layout:
+  type: grid
+  columns: 2
+  column_gap: 3%
+
+zones:
+  - id: title-area
+    type: placeholder
+    geometry: {x: 5%, y: 5%, cx: 40%, cy: 8%}
+    placeholder_type: TITLE
+
+  - id: image-area
+    type: placeholder
+    geometry: {x: 5%, y: 18%, cx: 40%, cy: 75%}
+    placeholder_type: IMAGE
+    object_desc: "이미지 영역, 콘서트 사진 (손하트, 풍선)"
+
+  - id: text-area
+    type: container
+    geometry: {x: 48%, y: 18%, cx: 47%, cy: 75%}
+    children:
+      - id: content-title
+        geometry: {x: 0%, y: 0%, cx: 100%, cy: 10%}
+        placeholder_type: SUBTITLE
+      - id: content-body-1
+        geometry: {x: 0%, y: 12%, cx: 100%, cy: 40%}
+        placeholder_type: BODY
+        object_desc: "본문 텍스트 블록 1"
+      - id: content-body-2
+        geometry: {x: 0%, y: 55%, cx: 100%, cy: 40%}
+        placeholder_type: BODY
+        object_desc: "본문 텍스트 블록 2"
+
+thumbnail: thumbnails/content/deepgreen-content-image-text1.png
+
+use_for:
+  - 이미지+설명
+  - 사례 소개
+  - 스토리텔링
+
+keywords:
+  - 콘텐츠
+  - 이미지
+  - 텍스트
+  - 2열
+  - 설명
+
+expected_prompt: |
+  이미지+텍스트 슬라이드를 만들어줘.
+  - 좌측에 큰 이미지
+  - 우측에 제목과 본문 텍스트
+  - 2열 레이아웃
+  - 여러 문단의 설명

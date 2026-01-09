@@ -1,0 +1,528 @@
+content_template:
+  id: table-4col-numbered
+  name: 4열 번호 목록 테이블
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 30
+  extracted_at: '2026-01-09T15:42:00'
+  expected_prompt: "Create a general slide designed for 번호가 매겨진 4열의 테이블 구조 - 순차적 항목 리스트 표현. This layout is specifically designed for: 순차적으로 번호가 매겨진 항목 목록 표시, 4개 열의 데이터를 구조화된 테이블로 표현, 비교 분석 데이터를 표 형태로 정렬. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.5
+  design_intent: 번호가 매겨진 4열의 테이블 구조 - 순차적 항목 리스트 표현
+  visual_balance: symmetric
+  information_density: high
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Header Number
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 5.0%
+    y: 30.0%
+    cx: 8.0%
+    cy: 5.0%
+    original_aspect_ratio: 2.0
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: No.
+      font_size: 12.0
+    alignment: center
+    font_weight: bold
+    font_color: light
+- id: shape-1
+  name: Header Col 1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 13.0%
+    y: 30.0%
+    cx: 22.0%
+    cy: 5.0%
+    original_aspect_ratio: 5.5
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{헤더1}}'
+      font_size: 12.0
+    alignment: center
+    font_weight: bold
+    font_color: light
+- id: shape-2
+  name: Header Col 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 35.0%
+    y: 30.0%
+    cx: 22.0%
+    cy: 5.0%
+    original_aspect_ratio: 5.5
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{헤더2}}'
+      font_size: 12.0
+    alignment: center
+    font_weight: bold
+    font_color: light
+- id: shape-3
+  name: Header Col 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 57.0%
+    y: 30.0%
+    cx: 22.0%
+    cy: 5.0%
+    original_aspect_ratio: 5.5
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{헤더3}}'
+      font_size: 12.0
+    alignment: center
+    font_weight: bold
+    font_color: light
+- id: shape-4
+  name: Header Col 4
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 79.0%
+    y: 30.0%
+    cx: 16.0%
+    cy: 5.0%
+    original_aspect_ratio: 4.0
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{헤더4}}'
+      font_size: 12.0
+    alignment: center
+    font_weight: bold
+    font_color: light
+- id: shape-5
+  name: Row1 Number
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 5.0%
+    y: 35.0%
+    cx: 8.0%
+    cy: 8.0%
+    original_aspect_ratio: 1.0
+  style:
+    fill:
+      type: solid
+      color: surface
+      opacity: 0.5
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '1'
+      font_size: 14.0
+    alignment: center
+    font_weight: bold
+    font_color: primary
+- id: shape-6
+  name: Row1 Col1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 13.0%
+    y: 35.0%
+    cx: 22.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터1_1}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-7
+  name: Row1 Col2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 35.0%
+    y: 35.0%
+    cx: 22.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터1_2}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-8
+  name: Row1 Col3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 57.0%
+    y: 35.0%
+    cx: 22.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터1_3}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-9
+  name: Row1 Col4
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 79.0%
+    y: 35.0%
+    cx: 16.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.0
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터1_4}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-10
+  name: Row2 Number
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 5.0%
+    y: 43.0%
+    cx: 8.0%
+    cy: 8.0%
+    original_aspect_ratio: 1.0
+  style:
+    fill:
+      type: solid
+      color: surface
+      opacity: 0.5
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '2'
+      font_size: 14.0
+    alignment: center
+    font_weight: bold
+    font_color: primary
+- id: shape-11
+  name: Row2 Col1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 13.0%
+    y: 43.0%
+    cx: 22.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터2_1}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-12
+  name: Row2 Col2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 35.0%
+    y: 43.0%
+    cx: 22.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터2_2}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-13
+  name: Row2 Col3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 57.0%
+    y: 43.0%
+    cx: 22.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터2_3}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-14
+  name: Row2 Col4
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 79.0%
+    y: 43.0%
+    cx: 16.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.0
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터2_4}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-15
+  name: Row3 Number
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 5.0%
+    y: 51.0%
+    cx: 8.0%
+    cy: 8.0%
+    original_aspect_ratio: 1.0
+  style:
+    fill:
+      type: solid
+      color: surface
+      opacity: 0.5
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '3'
+      font_size: 14.0
+    alignment: center
+    font_weight: bold
+    font_color: primary
+- id: shape-16
+  name: Row3 Col1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 13.0%
+    y: 51.0%
+    cx: 22.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터3_1}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-17
+  name: Row3 Col2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 35.0%
+    y: 51.0%
+    cx: 22.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터3_2}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-18
+  name: Row3 Col3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 57.0%
+    y: 51.0%
+    cx: 22.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터3_3}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-19
+  name: Row3 Col4
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 79.0%
+    y: 51.0%
+    cx: 16.0%
+    cy: 8.0%
+    original_aspect_ratio: 2.0
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{데이터3_4}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+gaps:
+  global:
+    column_gap: 2%
+    row_gap: 1%
+content_schema:
+  columns: 4
+  rows: 3
+  repeating_units:
+  - id: table_row
+    fields:
+    - name: number
+      type: number
+      description: 행 번호
+    - name: col1
+      type: text
+      description: 첫 번째 열 데이터
+    - name: col2
+      type: text
+      description: 두 번째 열 데이터
+    - name: col3
+      type: text
+      description: 세 번째 열 데이터
+    - name: col4
+      type: text
+      description: 네 번째 열 데이터
+use_for:
+- 순차적으로 번호가 매겨진 항목 목록 표시
+- 4개 열의 데이터를 구조화된 테이블로 표현
+- 비교 분석 데이터를 표 형태로 정렬
+- 단계별 프로세스나 체크리스트 표시
+- 정보성 높은 데이터 테이블 구성
+keywords:
+- 테이블
+- 4열
+- 번호
+- 목록
+- 데이터
+- 구조
+- 비교
+expected_prompt: |
+  4열 번호 목록 테이블 슬라이드를 만들어줘.
+  - 번호가 매겨진 4열의 테이블 구조 - 순차적 항목 리스트 표현
+  - 순차적으로 번호가 매겨진 항목 목록 표시
+  - 4개 열의 데이터를 구조화된 테이블로 표현
+  - 비교 분석 데이터를 표 형태로 정렬
+thumbnail: thumbnails/table/table-4col-numbered.png

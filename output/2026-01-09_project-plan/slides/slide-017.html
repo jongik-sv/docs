@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    p { font: inherit; color: inherit; line-height: inherit; text-align: inherit; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 32px;
+      left: 48px;
+      font-size: 20pt;
+      font-weight: 700;
+      color: #153325;
+    }
+    .title-bar {
+      position: absolute;
+      top: 65px;
+      left: 48px;
+      width: 28px;
+      height: 4px;
+      background: #153325;
+    }
+    .table-container {
+      position: absolute;
+      top: 85px;
+      left: 48px;
+      right: 48px;
+    }
+    .table-header {
+      display: flex;
+      background: #22523B;
+      color: white;
+      border-radius: 8px 8px 0 0;
+    }
+    .table-header div {
+      padding: 12px 8px;
+      font-size: 10pt;
+      font-weight: 600;
+      text-align: center;
+    }
+    .col-risk { width: 25%; }
+    .col-impact { width: 12%; }
+    .col-prob { width: 12%; }
+    .col-response { width: 38%; }
+    .col-owner { width: 13%; }
+    .table-body {
+      background: #F8FAF9;
+      border-radius: 0 0 8px 8px;
+    }
+    .table-row {
+      display: flex;
+      border-bottom: 1px solid #E8EFEC;
+    }
+    .table-row:last-child {
+      border-bottom: none;
+    }
+    .table-row div {
+      padding: 10px 8px;
+      font-size: 9pt;
+      color: #153325;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .table-row .col-risk {
+      justify-content: flex-start;
+      font-weight: 500;
+    }
+    .table-row .col-response {
+      justify-content: flex-start;
+      text-align: left;
+    }
+    .impact-high {
+      background: #FECACA;
+      color: #991B1B;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 8pt;
+    }
+    .impact-mid {
+      background: #FED7AA;
+      color: #9A3412;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 8pt;
+    }
+    .prob-high {
+      background: #FECACA;
+      color: #991B1B;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 8pt;
+    }
+    .prob-mid {
+      background: #FED7AA;
+      color: #9A3412;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 8pt;
+    }
+    .prob-low {
+      background: #D1FAE5;
+      color: #065F46;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 8pt;
+    }
+    .footer {
+      position: absolute;
+      bottom: 12px;
+      right: 20px;
+      font-size: 8pt;
+      color: #859C80;
+    }
+    .page-num {
+      position: absolute;
+      bottom: 12px;
+      left: 48px;
+      font-size: 8pt;
+      color: #859C80;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-title"><p>위험 관리</p></div>
+  <div class="title-bar"></div>
+  <div class="table-container">
+    <div class="table-header">
+      <div class="col-risk"><p>위험 요소</p></div>
+      <div class="col-impact"><p>영향도</p></div>
+      <div class="col-prob"><p>발생확률</p></div>
+      <div class="col-response"><p>대응 방안</p></div>
+      <div class="col-owner"><p>담당</p></div>
+    </div>
+    <div class="table-body">
+      <div class="table-row">
+        <div class="col-risk"><p>요구사항 변경</p></div>
+        <div class="col-impact"><span class="impact-high">상</span></div>
+        <div class="col-prob"><span class="prob-high">상</span></div>
+        <div class="col-response"><p>변경관리위원회(CCB) 통해 통제, 영향도 분석 필수</p></div>
+        <div class="col-owner"><p>PM</p></div>
+      </div>
+      <div class="table-row">
+        <div class="col-risk"><p>일정 지연</p></div>
+        <div class="col-impact"><span class="impact-high">상</span></div>
+        <div class="col-prob"><span class="prob-mid">중</span></div>
+        <div class="col-response"><p>주간 진척관리, Critical Path 집중 모니터링</p></div>
+        <div class="col-owner"><p>PM</p></div>
+      </div>
+      <div class="table-row">
+        <div class="col-risk"><p>기술적 난제</p></div>
+        <div class="col-impact"><span class="impact-mid">중</span></div>
+        <div class="col-prob"><span class="prob-mid">중</span></div>
+        <div class="col-response"><p>PoC 선행, 외부 전문가 자문</p></div>
+        <div class="col-owner"><p>AA</p></div>
+      </div>
+      <div class="table-row">
+        <div class="col-risk"><p>인력 이탈</p></div>
+        <div class="col-impact"><span class="impact-high">상</span></div>
+        <div class="col-prob"><span class="prob-low">하</span></div>
+        <div class="col-response"><p>대체 인력 풀 확보, 기술 문서화 강화</p></div>
+        <div class="col-owner"><p>PM</p></div>
+      </div>
+      <div class="table-row">
+        <div class="col-risk"><p>데이터 마이그레이션</p></div>
+        <div class="col-impact"><span class="impact-high">상</span></div>
+        <div class="col-prob"><span class="prob-mid">중</span></div>
+        <div class="col-response"><p>사전 검증, 롤백 계획 수립</p></div>
+        <div class="col-owner"><p>DBA</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num"><p>17</p></div>
+  <div class="footer"><p>스마트 물류관리 시스템 구축</p></div>
+</body>
+</html>

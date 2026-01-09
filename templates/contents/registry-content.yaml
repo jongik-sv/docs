@@ -1,0 +1,131 @@
+category: content
+name: 콘텐츠
+description: 일반 텍스트 레이아웃
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: content-2col-banner
+  name: 2열 리스트+하단 배너
+  file: templates/content/content-2col-banner.yaml
+  thumbnail: thumbnails/content/content-2col-banner.png
+  source_slide_index: 33
+  description: 2열 리스트+하단 배너 슬라이드.
+  match_keywords:
+  - 장점과 단점을 대비하여 표시할 때
+  - 두 가지 관점의 정보를 비교하는 슬라이드
+  - 대칭적 2열 구조의 콘텐츠
+  - 상단 배너와 하단 강조 배너가 필요할 때
+  - 주요 메시지를 배너로 강조하면서 상세 정보 표시
+  - 2열
+  - 대비
+  - 배너
+  - 강조
+  - 비교
+  - 콘텐츠
+  - 리스트
+  expected_prompt: '2열 리스트+하단 배너 슬라이드를 만들어줘.
+
+    - 좌우 2열로 대비되는 정보를 표시하고 하단에 배너형 강조 콘텐츠를 배치
+
+    - 장점과 단점을 대비하여 표시할 때
+
+    - 두 가지 관점의 정보를 비교하는 슬라이드
+
+    - 대칭적 2열 구조의 콘텐츠'
+- id: content-stack1
+  name: 2행 세로 레이아웃
+  file: templates/content/content-stack1.yaml
+  thumbnail: thumbnails/content/content-stack1.png
+  source_slide_index: 0
+  description: 2행 세로 레이아웃 슬라이드.
+  match_keywords:
+  - 세로
+  - 스택
+  - 2행
+  - 상하
+  - 요약
+  - 개요
+  - 2가지
+  - vertical
+  - 2가지 항목 설명
+  - 상하 분할
+  - content
+  expected_prompt: '2행 세로 레이아웃 슬라이드를 만들어줘.
+
+    - 상단에 첫 번째 섹션 (중제목 + 소제목/본문)
+
+    - 하단에 두 번째 섹션 (중제목 + 소제목/본문)
+
+    - 전체 너비 사용하여 상하로 배치
+
+    - 2가지 항목을 비교하거나 순서대로 설명'
+- id: content-stack2
+  name: 3행 세로 레이아웃
+  file: templates/content/content-stack2.yaml
+  thumbnail: thumbnails/content/content-stack2.png
+  source_slide_index: 7
+  description: 3행 세로 레이아웃 슬라이드.
+  match_keywords:
+  - 3행
+  - 세로
+  - 목록
+  - 라벨
+  - 3가지
+  - 단계
+  - 순서
+  - list
+  - 3가지 항목 설명
+  - 단계 설명
+  - 좌측 라벨 + 우측 내용
+  - content
+  expected_prompt: '3행 세로 레이아웃 슬라이드를 만들어줘.
+
+    - 좌측에 라벨/중제목, 우측에 내용 배치
+
+    - 3개의 행으로 구성
+
+    - 각 행: 좌측 중제목 + 우측 소제목/본문
+
+    - 3가지 항목을 순서대로 설명'
+- id: deepgreen-content-image-text1
+  name: 딥그린 이미지+텍스트
+  file: templates/content/deepgreen-content-image-text1.yaml
+  thumbnail: thumbnails/content/deepgreen-content-image-text1.png
+  source_slide_index: 16
+  description: 좌측 이미지, 우측 텍스트 2열 레이아웃.
+  match_keywords:
+  - content
+  - 콘텐츠
+  - 이미지
+  - 텍스트
+  - 2열
+  - 딥그린
+  - 설명
+  - 사례
+  expected_prompt: |
+    이미지+텍스트 슬라이드를 만들어줘.
+    - 좌측에 큰 이미지
+    - 우측에 제목과 본문
+    - 2열 레이아웃
+    - 딥그린 스타일
+- id: deepgreen-content-cta1
+  name: 딥그린 CTA 콘텐츠
+  file: templates/content/deepgreen-content-cta1.yaml
+  thumbnail: thumbnails/content/deepgreen-content-cta1.png
+  source_slide_index: 17
+  description: 도트 패턴 장식과 핵심 메시지가 있는 CTA 슬라이드.
+  match_keywords:
+  - content
+  - 콘텐츠
+  - CTA
+  - 도트
+  - 패턴
+  - 딥그린
+  - 요약
+  - 핵심
+  expected_prompt: |
+    CTA 콘텐츠 슬라이드를 만들어줘.
+    - 좌측에 도트 패턴 장식
+    - 우측에 2개 핵심 메시지
+    - 라벨 + 본문 구조
+    - 딥그린 스타일

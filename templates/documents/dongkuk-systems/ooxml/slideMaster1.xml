@@ -45,7 +45,7 @@
           <a:graphicData uri="http://schemas.openxmlformats.org/presentationml/2006/ole">
             <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
               <mc:Choice xmlns:v="urn:schemas-microsoft-com:vml" Requires="v">
-                <p:oleObj spid="_x0000_s176185" name="think-cell 슬라이드" r:id="rId9" imgW="381" imgH="381" progId="TCLayout.ActiveDocument.1">
+                <p:oleObj spid="_x0000_s176187" name="think-cell 슬라이드" r:id="rId9" imgW="381" imgH="381" progId="TCLayout.ActiveDocument.1">
                   <p:embed/>
                 </p:oleObj>
               </mc:Choice>

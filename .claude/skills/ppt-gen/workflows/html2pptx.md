@@ -71,19 +71,86 @@ if (slide.icon_decision?.needs_icons) {
 
 **아이콘 생성 결과**: `output/{session-id}/icons/*.png`
 
-### Stage 5: 디자인 정보 및 평가 (MANDATORY)
+### Stage 5: 디자인 평가 및 PPTX 변환 (MANDATORY)
 
-**PPTX 변환 후 각 슬라이드에 다음을 기록합니다.**
+**Stage 5는 3단계로 진행됩니다: 평가 → 재시도 루프 → PPTX 변환**
 
 ```javascript
-// 필수 기록
-await session.updateSlide(slide.index, {
-  generated: true,
-  slide_stage: 5,
-  revision: 0,
-  design_info: extractDesignInfo(htmlContent, slide),
-  evaluation: evaluateDesign(htmlContent, slide, template)
-});
+// Stage 5: 전체 흐름
+const evaluator = require('./scripts/design-evaluator');
+const rematcher = require('./scripts/template-rematcher');
+const html2pptx = require('./scripts/html2pptx');
+
+const MAX_ATTEMPTS = 3;
+
+for (const slide of slides) {
+  let attempt = 1;
+  let passed = false;
+  const attemptHistory = [];
+
+  while (!passed && attempt <= MAX_ATTEMPTS) {
+    // Step 1: HTML 읽기
+    const htmlContent = await fs.readFile(slide.html_file, 'utf-8');
+
+    // Step 2: 디자인 평가 (70점 합격 기준)
+    const evaluation = await evaluator.evaluate({
+      html: htmlContent,
+      slide: slide,
+      template: await loadTemplate(slide.template_id),
+      theme: theme
+    });
+
+    attemptHistory.push({
+      attempt,
+      template_id: slide.template_id,
+      score: evaluation.score,
+      passed: evaluation.passed,
+      issues: evaluation.issues,
+      timestamp: new Date().toISOString()
+    });
+
+    if (evaluation.passed) {
+      passed = true;
+      break;
+    }
+
+    // Step 3: 불합격 시 재매칭
+    if (attempt < MAX_ATTEMPTS) {
+      const failedTemplates = attemptHistory.map(h => h.template_id);
+      const alternative = rematcher.selectAlternative(slide, failedTemplates, registry);
+
+      if (alternative) {
+        slide.template_id = alternative.id;
+        // Stage 4로 롤백하여 HTML 재생성
+        const newHtml = await renderTemplate(alternative.id, slide.content_bindings, theme);
+        await fs.writeFile(slide.html_file, newHtml);
+      }
+    }
+
+    attempt++;
+  }
+
+  // Step 4: 최종 결과 저장
+  await session.updateSlide(slide.index, {
+    generated: true,
+    slide_stage: 5,
+    revision: attemptHistory.length - 1,
+    design_info: extractDesignInfo(htmlContent, slide),
+    evaluation: {
+      attempt_number: attempt,
+      current_score: attemptHistory[attemptHistory.length - 1].score,
+      passed: passed,
+      selected_reason: passed ? 'passed' : 'best_of_3'
+    },
+    attempt_history: attemptHistory
+  });
+}
+
+// Step 5: PPTX 변환
+await html2pptx.convert(outputDir + '/slides', outputDir + '/output.pptx');
+
+// Step 6: stage-5-generation.json 저장 (MANDATORY)
+await session.saveStage(5);
 ```
 
 ### 품질 합격 기준 (PASS CRITERIA)
@@ -497,86 +564,321 @@ style:
 | ... | ... | ... | ... |
 ```
 
-#### Step 0.2: 레지스트리 로드 및 매칭
+#### Step 0.2: 분리형 레지스트리 로드 및 매칭 (v4.1)
 
+> **v4.1 Update**: 레지스트리가 카테고리별로 분리되었습니다. 토큰 효율적 검색을 위해 필요한 카테고리만 로드합니다.
+
+**검색 프로세스**:
 ```
+1. 사용자 쿼리에서 카테고리 힌트 추출
+2. 카테고리 힌트 있음: registry-{category}.yaml만 로드
+3. 카테고리 힌트 없음: registry.yaml(인덱스) → 관련 카테고리 순회
+4. 3단계 매칭 알고리즘 실행
+```
+
+**카테고리 힌트 추출 예시**:
+| 사용자 요청 | 힌트 | 로드 파일 |
+|-----------|------|----------|
+| "비교 슬라이드" | comparison | registry-comparison.yaml |
+| "프로세스 다이어그램" | process | registry-process.yaml |
+| "타임라인" | timeline | registry-timeline.yaml |
+| "4열 그리드" | grid | registry-grid.yaml |
+| "일반 콘텐츠" | (없음) | registry.yaml → 전체 순회 |
+
+**레지스트리 로드**:
+```
+# 카테고리 힌트가 있는 경우 (효율적)
+Read C:/project/docs/templates/contents/registry-comparison.yaml
+
+# 힌트가 없는 경우 (인덱스 먼저)
 Read C:/project/docs/templates/contents/registry.yaml
 ```
 
-> **v3.0**: 템플릿 경로가 `C:/project/docs/templates/`로 변경되었습니다.
+---
 
-**매칭 알고리즘** (우선순위 순서):
+### 3단계 매칭 알고리즘 (v4.1 검색 메타데이터 활용)
 
-1. **use_for 매칭**: 배열에 키워드 포함 여부 (가장 정확)
-   - 예: "A vs B 비교" → `use_for: ["A vs B 비교"]` 매칭
-2. **prompt_keywords 매칭** (NEW): 사용자 프롬프트에서 키워드 추출하여 매칭
-   - 예: "4개 기능 아이콘 그리드" → `prompt_keywords: ["4열", "아이콘", "그리드"]` 매칭
-   - 매칭 점수 = 일치 키워드 수 / 전체 키워드 수
-3. **expected_prompt 유사도 매칭** (NEW): 의미적 유사도 비교
-   - 사용자 요청과 `expected_prompt` 텍스트 비교
-   - 슬라이드 요소(아이콘, 열, 그리드 등) 언급 시 가중치
-4. **category 매칭**: 대분류 일치
-   - 예: cover, toc, comparison, timeline, process, stat-cards
-5. **design_intent 매칭**: 세부 레이아웃 일치
-   - 예: cover-centered, toc-3col, stats-dotgrid, matrix-2x2
-6. **keywords 매칭**: 유사 키워드 검색
+각 템플릿의 검색 메타데이터를 활용하여 3단계로 매칭합니다:
 
-**프롬프트 기반 매칭 예시**:
+| 단계 | 필드 | 가중치 | 설명 |
+|------|------|--------|------|
+| **1단계** | `match_keywords` | 60% | 키워드 직접 매칭 (Primary) |
+| **2단계** | `expected_prompt` | 30% | 의미적 구조 유사도 (Semantic) |
+| **3단계** | `description` | 10% | 설명 텍스트 매칭 (Fallback) |
 
-```markdown
-사용자 요청: "4개의 핵심 기능을 아이콘과 함께 보여주는 슬라이드"
+#### 1단계: match_keywords 매칭 (Primary - 60%)
 
-매칭 분석:
-| 템플릿 ID | prompt_keywords | 매칭 키워드 | 점수 |
-|----------|-----------------|------------|------|
-| deepgreen-grid4col1 | ["기능", "4열", "아이콘", "그리드"] | 기능, 아이콘, 4 | 0.75 |
-| feature-grid1 | ["기능", "특징", "그리드", "아이콘"] | 기능, 아이콘 | 0.50 |
-| deepgreen-stats1 | ["통계", "퍼센트", "KPI"] | - | 0.00 |
+```python
+def match_keywords(query: str, template: dict) -> float:
+    """사용자 쿼리 토큰과 match_keywords 배열 비교"""
+    query_tokens = tokenize(query)  # ["비교", "장단점", "좌우"]
+    keywords = template['match_keywords']  # ["비교", "장단점", "vs", "대조", "좌우", "2열"]
 
-→ deepgreen-grid4col1 선택 (최고 점수)
+    matched = set(query_tokens) & set(keywords)
+    return len(matched) / len(query_tokens)  # 0.0 ~ 1.0
+```
+
+**match_keywords 필드 구성** (ppt-extract에서 자동 생성):
+- `use_for`: 사용 용도 (3-5개)
+- `keywords`: 검색 키워드 (5-10개)
+- `prompt_keywords`: 프롬프트 매칭 키워드 (5-10개)
+→ 모두 통합하여 `match_keywords` 배열로 저장
+
+#### 2단계: expected_prompt 매칭 (Semantic - 30%)
+
+```python
+def match_expected_prompt(query: str, template: dict) -> float:
+    """사용자 요청과 expected_prompt의 구조적 유사성 비교"""
+    expected = template['expected_prompt']
+
+    # 구조적 요소 추출
+    query_elements = extract_structural_elements(query)
+    # 예: {"열수": 2, "형태": "비교", "요소": ["불릿", "텍스트"]}
+
+    expected_elements = extract_structural_elements(expected)
+    # 예: {"열수": 2, "형태": "비교", "요소": ["불릿", "리스트"]}
+
+    return calculate_structural_similarity(query_elements, expected_elements)
 ```
 
 **expected_prompt 참조 예시**:
-
 ```yaml
-# deepgreen-grid4col1의 expected_prompt
+# comparison-2col1의 expected_prompt
 expected_prompt: |
-  기능 소개 슬라이드를 만들어줘.
-  - 4개의 카드를 가로로 균등 배치
-  - 각 카드: 상단에 라운드 배경 아이콘
-  - 아이콘 아래에 제목 텍스트
-  - 제목 아래에 설명 텍스트
-  - 균등한 간격의 그리드 레이아웃
+  2열 불릿 비교 슬라이드를 만들어줘.
+  - 좌우 2열로 배치된 비교 레이아웃
+  - 각 열에 중제목 + 불릿 포인트 리스트
+  - 하단에 요약 또는 결론 텍스트 박스
 
-# 사용자 요청과 비교하여 구조적 유사성 확인
+# 사용자 요청: "장단점을 좌우로 비교하는 슬라이드"
+# → 구조 유사: 2열, 비교, 좌우 ✓
+```
+
+#### 3단계: 최종 점수 계산
+
+```python
+def calculate_match_score(query: str, template: dict) -> float:
+    """가중 평균으로 최종 매칭 점수 계산"""
+    keyword_score = match_keywords(query, template) * 0.6    # 60%
+    prompt_score = match_expected_prompt(query, template) * 0.3  # 30%
+    desc_score = fuzzy_match(query, template['description']) * 0.1  # 10%
+
+    return keyword_score + prompt_score + desc_score
+```
+
+---
+
+### 매칭 예시 (v4.1)
+
+**사용자 요청**: "장단점을 좌우로 비교하는 슬라이드"
+
+**Step 1: 카테고리 힌트 추출**
+- 힌트: "비교" → `comparison`
+- 로드: `registry-comparison.yaml`
+
+**Step 2: 매칭 분석**
+
+| 템플릿 ID | match_keywords 매칭 | expected_prompt 유사도 | 최종 점수 |
+|----------|-------------------|----------------------|----------|
+| comparison-2col1 | ["비교", "장단점", "좌우"] = 1.0 × 0.6 | 구조 일치 = 0.9 × 0.3 | **0.87** ✓ |
+| comparison-4col-stats | ["비교"] = 0.33 × 0.6 | 구조 불일치 = 0.2 × 0.3 | 0.26 |
+
+**Step 3: 선택**
+→ `comparison-2col1` 선택 (최고 점수 0.87)
+
+---
+
+### 매칭 결과 기록 필드
+
+Stage 3 JSON에 다음 필드를 기록합니다:
+
+```json
+{
+  "template_id": "comparison-2col1",
+  "match_score": 0.87,
+  "match_reason": "match_keywords 3/3 일치, expected_prompt 구조 유사",
+  "match_details": {
+    "keyword_score": 0.6,
+    "prompt_score": 0.27,
+    "category_hint": "comparison"
+  }
+}
 ```
 
 #### Step 0.3: 매칭 결과 테이블 작성 (필수)
 
-**반드시** 매칭 결과를 테이블로 정리합니다:
+**반드시** 매칭 결과를 테이블로 정리합니다 (v4.1 형식):
 
 ```markdown
-| # | 슬라이드 | 매칭 템플릿 | 매칭 근거 |
-|---|---------|-----------|----------|
-| 1 | 표지 | deepgreen-cover1 | use_for: ["표지"] |
-| 2 | 목차 | deepgreen-toc1 | category: toc |
-| 3 | 섹션 구분 | deepgreen-section1 | category: section |
-| 4 | 기대효과 (30%, 99%) | deepgreen-stats1 | use_for: ["퍼센트", "지표"] |
-| 5 | 3가지 전략 | deepgreen-grid4col1 | design_intent: grid-4col-icon |
-| 6 | 프로세스 | deepgreen-process1 | category: process |
-| 7 | 일정 | timeline1 | use_for: ["일정", "마일스톤"] |
-| 8 | 비교표 | ❌ 없음 | - |
+| # | 슬라이드 | 카테고리 | 매칭 템플릿 | 점수 | 매칭 근거 |
+|---|---------|---------|-----------|------|----------|
+| 1 | 표지 | - | cover-centered1 | 0.95 | category 힌트 |
+| 2 | 목차 | - | toc-simple1 | 0.90 | category 힌트 |
+| 3 | 섹션 구분 | - | section-number1 | 0.88 | category 힌트 |
+| 4 | 기대효과 (30%, 99%) | stats | stats-donut-2col | 0.85 | match_keywords: 퍼센트, 통계 |
+| 5 | 3가지 전략 | grid | grid-3col1 | 0.82 | match_keywords: 3열, 그리드 |
+| 6 | 프로세스 | process | process-linear1 | 0.88 | match_keywords: 프로세스, 단계 |
+| 7 | 일정 | timeline | timeline-horizontal | 0.91 | match_keywords: 타임라인, 일정 |
+| 8 | 비교표 | comparison | ❌ 없음 | - | 직접 디자인 필요 |
 ```
 
-#### Step 0.4: 템플릿 YAML 로드 및 HTML 생성
+**매칭 근거 표기법**:
+- `category 힌트`: cover, toc, section, closing 등 명확한 카테고리
+- `match_keywords: [키워드들]`: 1단계 키워드 매칭으로 선택
+- `expected_prompt 유사`: 2단계 의미적 유사도로 선택
+- `❌ 없음`: 모든 템플릿 점수 0.5 미만, 직접 디자인 필요
+
+#### Step 0.4: 템플릿 YAML 기반 HTML 생성 (v6.0 - Option C 하이브리드)
+
+**Stage 4에서 템플릿 YAML의 완전성에 따라 렌더링 방식을 선택합니다.**
+
+> **상세 설계 문서**: `.claude/skills/ppt-gen/docs/yaml-rendering-design.md`
+
+##### 0.4.1 shapes 완전성 체크
+
+템플릿 YAML을 로드한 후 shapes 배열의 완전성을 판단합니다:
+
+| 조건 | 판정 | 렌더링 방식 |
+|------|------|------------|
+| shapes 있음 + `{{placeholder}}` 형식 | ✅ 완전 | 스크립트 `renderFromYaml()` |
+| shapes 있음 + 하드코딩 텍스트 | ⚠️ 불완전 | LLM이 geometry 참고하여 직접 디자인 |
+| shapes 없음 | ❌ 없음 | LLM이 design_intent 기반 직접 디자인 |
+| 차트/복잡한 다이어그램 | 🎨 커스텀 | LLM 직접 디자인 |
+
+**완전성 판단 예시**:
+```yaml
+# ✅ 완전한 shapes (스크립트 렌더링)
+shapes:
+- geometry: { x: 10%, y: 20%, cx: 30%, cy: 15% }
+  text:
+    placeholders:
+    - text: '{{title}}'      # placeholder 형식 ✓
+    - text: '{{subtitle}}'   # placeholder 형식 ✓
+
+# ⚠️ 불완전한 shapes (LLM 직접 디자인, geometry 참고)
+shapes:
+- geometry: { x: 10%, y: 20%, cx: 30%, cy: 15% }
+  text: "하드코딩된 샘플 텍스트"  # placeholder 없음 ✗
+```
+
+##### 0.4.2 렌더링 워크플로우
+
+```
+template YAML 로드
+       │
+       ▼
+┌──────────────────┐
+│ shapes 완전성    │
+│ 체크             │
+└──────┬───────────┘
+       │
+   ┌───┴───────────────┐
+   │                   │
+   ▼                   ▼
+┌────────┐         ┌────────┐
+│ 완전   │         │ 불완전 │
+└───┬────┘         └───┬────┘
+    │                  │
+    ▼                  ▼
+┌────────────────┐ ┌────────────────┐
+│ renderFromYaml │ │ LLM 직접 디자인 │
+│ (스크립트)     │ │ (geometry 참고) │
+└────────────────┘ └────────────────┘
+```
+
+##### 0.4.3 스크립트 렌더링 (shapes 완전 시)
+
+```javascript
+const { renderTemplate, loadTemplate } = require('./scripts/html-templates');
+
+// shapes가 완전한 경우
+const template = await loadTemplate(templateId);
+if (isShapesComplete(template)) {
+  const html = await renderTemplate(templateId, data, theme);
+  // ...
+}
+```
+
+##### 0.4.4 LLM 직접 디자인 (shapes 불완전 시)
+
+shapes가 불완전하거나 없는 경우, LLM이 직접 HTML을 작성합니다.
+
+**geometry 참고 규칙** (720pt × 405pt 캔버스):
+```
+left   = x%  × 7.2   (pt)
+top    = y%  × 4.05  (pt)
+width  = cx% × 7.2   (pt)
+height = cy% × 4.05  (pt)
+```
+
+**LLM 디자인 시 준수사항**:
+1. 템플릿 YAML의 geometry가 있으면 대략적인 위치/크기 참고
+2. `design_intent` 필드의 스타일 의도 반영
+3. 테마 색상 토큰 적용 (primary, secondary, accent 등)
+4. 캔버스 크기 720pt × 405pt 준수
+
+**예시** (불완전한 shapes를 참고한 LLM 디자인):
+```yaml
+# 템플릿 YAML (불완전)
+shapes:
+- geometry: { x: 10%, y: 20%, cx: 80%, cy: 60% }
+  text: "샘플 텍스트"
+```
+
+```html
+<!-- LLM이 geometry 참고하여 생성한 HTML -->
+<div style="position: absolute; left: 72pt; top: 81pt; width: 576pt; height: 243pt;">
+  <p>실제 콘텐츠</p>
+</div>
+```
+
+##### 0.4.5 Stage 4 데이터 저장
+
+```javascript
+for (const slide of slides) {
+  const template = await loadTemplate(slide.template_id);
+  let html;
+  let renderMethod;
+
+  if (isShapesComplete(template)) {
+    // 스크립트 렌더링
+    html = await renderTemplate(slide.template_id, data, theme);
+    renderMethod = 'yaml_script';
+  } else {
+    // LLM 직접 디자인 (geometry 참고)
+    html = await generateHtmlWithLLM(slide, template, theme);
+    renderMethod = 'llm_design';
+  }
+
+  // HTML 파일 저장
+  const htmlPath = `slides/slide-${String(slide.index + 1).padStart(3, '0')}.html`;
+  await fs.writeFile(path.join(outputDir, htmlPath), html);
+
+  // Stage 4 데이터 저장
+  await session.updateSlide(slide.index, {
+    html_file: htmlPath,
+    content_bindings: data,
+    render_method: renderMethod,  // 렌더링 방식 기록
+    assets_generated: { icons: [], images: [] }
+  });
+}
+
+// stage-4-content.json 저장 (MANDATORY)
+await session.saveStage(4);
+```
+
+**렌더링 우선순위** (Option C 하이브리드):
+1. shapes 완전 → `renderFromYaml()` 스크립트 호출
+2. shapes 불완전 → LLM이 geometry 참고하여 직접 디자인
+3. shapes 없음 → LLM이 design_intent 기반 직접 디자인
 
 **매칭된 템플릿이 있는 경우**:
 
-1. `templates/contents/templates/{id}.yaml` 읽기
+1. `templates/contents/templates/{category}/{id}.yaml` 자동 로드
 2. `shapes[]` 구조에서 **shape_source 타입 확인** (v3.1)
 3. shape_source 타입별 처리 (아래 참조)
-4. % 단위를 pt로 변환 (720pt x 405pt 기준)
-5. HTML/CSS로 변환 또는 OOXML 직접 삽입
+4. % 단위를 pt로 자동 변환 (720pt x 405pt 기준)
+5. HTML 자동 생성
 
 ---
 

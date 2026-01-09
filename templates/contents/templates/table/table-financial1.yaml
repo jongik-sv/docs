@@ -1,0 +1,96 @@
+content_template:
+  id: table-financial1
+  name: 재무제표 테이블
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 17
+  extracted_at: '2026-01-09T19:37:33.365557'
+  expected_prompt: "재무제표 슬라이드를 만들어줘. 자산/부채 항목별 연도 비교 테이블 레이아웃.\nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: table-financial1
+  visual_balance: symmetric
+  information_density: high
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Shape 0
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 36.7%
+    y: 21.9%
+    cx: 12.6%
+    cy: 3.5%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '(단위: 억원)'
+      font_size: 10.0
+  description:
+    text: 'text-box, 위치: 좌4.0in 상1.6in'
+- id: shape-1
+  name: Shape 1
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 83.3%
+    y: 21.9%
+    cx: 12.6%
+    cy: 3.5%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '(단위: 억원)'
+      font_size: 10.0
+  description:
+    text: 'text-box, 위치: 좌9.0in 상1.6in'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 재무제표
+- 자산/부채 비교
+- 연도별 재무 데이터
+- 손익계산서
+- 재무현황
+keywords:
+- financial
+- 재무
+- 자산
+- 부채
+- 손익
+- balance sheet
+- YoY
+- 연도비교
+expected_prompt: |
+  재무제표 슬라이드를 만들어줘.
+  - 자산/부채 항목별 연도 비교
+  - YoY 변화량 표시
+  - 좌측 차트 + 테이블, 우측 상세 테이블
+  - 억원 단위 재무 데이터
+prompt_keywords:
+- 재무제표
+- 자산
+- 부채
+- 손익
+- 재무현황
+- financial
+- balance sheet
+- 연도별
+- YoY
+thumbnail: thumbnails/table/table-financial1.png

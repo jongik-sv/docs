@@ -1,0 +1,330 @@
+content_template:
+  id: grid-4col-circle
+  name: 4열 원형 상단 카드
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 24
+  extracted_at: '2026-01-09T15:42:00'
+  expected_prompt: "Create a general slide designed for 4열 그리드 레이아웃 - 각 열의 상단에 원형 도형, 중앙에 제목, 하단에 텍스트 콘텐츠. This layout is specifically designed for: 4개 항목의 동등한 정보를 카드 형태로 표시, 원형 아이콘으로 시작하는 4단계 프로세스, 4가지 제품, 서비스, 특성 소개. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.5
+  design_intent: 4열 그리드 레이아웃 - 각 열의 상단에 원형 도형, 중앙에 제목, 하단에 텍스트 콘텐츠
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Circle 1
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 10.1%
+    y: 30.8%
+    cx: 12.4%
+    cy: 22.0%
+    original_aspect_ratio: 0.818
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 0.8
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-1
+  name: Title 1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 12.1%
+    y: 40.2%
+    cx: 8.5%
+    cy: 4.5%
+    original_aspect_ratio: 2.795
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목1}}'
+      font_size: 13.0
+    alignment: center
+    font_weight: bold
+    font_color: dark_text
+- id: shape-2
+  name: Content 1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 8.8%
+    y: 56.0%
+    cx: 15.1%
+    cy: 32.5%
+    original_aspect_ratio: 0.632
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목1}}'
+      font_size: 12.0
+    - text: '{{본문1}}'
+      font_size: 10.0
+    - text: '{{본문2}}'
+      font_size: 10.0
+    alignment: left
+    font_color: dark_text
+- id: shape-3
+  name: Circle 2
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 26.3%
+    y: 30.8%
+    cx: 12.4%
+    cy: 22.0%
+    original_aspect_ratio: 0.818
+  style:
+    fill:
+      type: solid
+      color: secondary
+      opacity: 0.8
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-4
+  name: Title 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 28.2%
+    y: 40.2%
+    cx: 8.5%
+    cy: 4.5%
+    original_aspect_ratio: 2.795
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목2}}'
+      font_size: 13.0
+    alignment: center
+    font_weight: bold
+    font_color: dark_text
+- id: shape-5
+  name: Content 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 24.9%
+    y: 56.0%
+    cx: 15.1%
+    cy: 32.5%
+    original_aspect_ratio: 0.632
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목2}}'
+      font_size: 12.0
+    - text: '{{본문1}}'
+      font_size: 10.0
+    - text: '{{본문2}}'
+      font_size: 10.0
+    alignment: left
+    font_color: dark_text
+- id: shape-6
+  name: Circle 3
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 42.4%
+    y: 30.8%
+    cx: 12.4%
+    cy: 22.0%
+    original_aspect_ratio: 0.818
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 0.8
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-7
+  name: Title 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 44.4%
+    y: 40.2%
+    cx: 8.5%
+    cy: 4.5%
+    original_aspect_ratio: 2.795
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목3}}'
+      font_size: 13.0
+    alignment: center
+    font_weight: bold
+    font_color: dark_text
+- id: shape-8
+  name: Content 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 41.1%
+    y: 56.0%
+    cx: 15.1%
+    cy: 32.5%
+    original_aspect_ratio: 0.632
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목3}}'
+      font_size: 12.0
+    - text: '{{본문1}}'
+      font_size: 10.0
+    - text: '{{본문2}}'
+      font_size: 10.0
+    alignment: left
+    font_color: dark_text
+- id: shape-9
+  name: Circle 4
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 58.5%
+    y: 30.8%
+    cx: 12.4%
+    cy: 22.0%
+    original_aspect_ratio: 0.818
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 0.8
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-10
+  name: Title 4
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 60.5%
+    y: 40.2%
+    cx: 8.5%
+    cy: 4.5%
+    original_aspect_ratio: 2.795
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목4}}'
+      font_size: 13.0
+    alignment: center
+    font_weight: bold
+    font_color: dark_text
+- id: shape-11
+  name: Content 4
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 57.2%
+    y: 56.0%
+    cx: 15.1%
+    cy: 32.5%
+    original_aspect_ratio: 0.632
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목4}}'
+      font_size: 12.0
+    - text: '{{본문1}}'
+      font_size: 10.0
+    - text: '{{본문2}}'
+      font_size: 10.0
+    alignment: left
+    font_color: dark_text
+gaps:
+  global:
+    column_gap: 3%
+    row_gap: 6%
+content_schema:
+  columns: 4
+  rows: 3
+  repeating_units:
+  - id: column
+    fields:
+    - name: title
+      type: text
+      description: 열의 제목
+    - name: subtitle
+      type: text
+      description: 열의 소제목
+    - name: items
+      type: text_array
+      description: 최대 2개의 본문 항목
+use_for:
+- 4개 항목의 동등한 정보를 카드 형태로 표시
+- 원형 아이콘으로 시작하는 4단계 프로세스
+- 4가지 제품, 서비스, 특성 소개
+- 균형잡힌 4열 비교 레이아웃
+- 컬러풀한 원형이 필요한 카드 그리드
+keywords:
+- 4열
+- 그리드
+- 카드
+- 원형
+- 4단계
+- 비교
+- 균형
+expected_prompt: |
+  4열 원형 상단 카드 슬라이드를 만들어줘.
+  - 4열 그리드 레이아웃 - 각 열의 상단에 원형 도형, 중앙에 제목, 하단에 텍스트 콘텐츠
+  - 4개 항목의 동등한 정보를 카드 형태로 표시
+  - 원형 아이콘으로 시작하는 4단계 프로세스
+  - 4가지 제품, 서비스, 특성 소개
+thumbnail: thumbnails/grid/grid-4col-circle.png

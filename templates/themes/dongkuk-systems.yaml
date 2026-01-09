@@ -1,0 +1,111 @@
+# 동국시스템즈 테마
+# 출처: 동국시스템즈 기본양식.pptx
+# 추출일: 2026-01-09
+
+id: dongkuk-systems
+name: 동국시스템즈
+description: 동국제강 그룹 공식 컬러 팔레트. 네이비 블루와 동국 레드를 중심으로 한 프로페셔널한 기업 테마.
+source: 동국시스템즈 기본양식.pptx
+
+# 색상 팔레트
+colors:
+  # 주요 색상 (Primary Palette)
+  primary: "#002452"          # 네이비 블루 - 제목, 강조 텍스트
+  secondary: "#C51F2A"        # 동국 레드 - 포인트 색상
+  accent: "#4B6580"           # 청회색 - 서브 악센트
+
+  # 배경/표면 색상
+  background: "#FFFFFF"       # 흰색 배경
+  surface: "#B7D0D4"          # 연한 민트 - 카드 배경, 섹션
+  surface_light: "#E8F0F2"    # 더 연한 민트 - 호버, 선택 상태
+
+  # 텍스트 색상
+  dark_text: "#262626"        # 본문 텍스트
+  light_text: "#FFFFFF"       # 밝은 배경 위 텍스트
+  muted_text: "#757575"       # 보조 텍스트, 캡션
+
+  # 추가 악센트
+  highlight: "#D55633"        # 오렌지 하이라이트
+  success: "#4B6580"          # 청회색 (긍정)
+  warning: "#E9B86E"          # 골드 (주의)
+  error: "#C51F2A"            # 동국 레드 (오류)
+
+  # 그라데이션 지원 색상
+  gradient_start: "#002452"
+  gradient_end: "#4B6580"
+
+  # 그레이 스케일
+  gray: "#B6B6B6"
+  gray_dark: "#757575"
+  gray_light: "#E0E0E0"
+
+# 폰트 설정
+typography:
+  heading:
+    family: "본고딕 Medium"
+    fallback: "Noto Sans KR, 맑은 고딕, sans-serif"
+    weight: 500
+    sizes:
+      h1: 40pt
+      h2: 28pt
+      h3: 20pt
+
+  body:
+    family: "본고딕 Normal"
+    fallback: "Noto Sans KR, 맑은 고딕, sans-serif"
+    weight: 400
+    size: 12pt
+    line_height: 1.5
+
+  caption:
+    family: "본고딕 Normal"
+    size: 10pt
+    weight: 400
+
+# 레이아웃 설정
+layout:
+  slide_size:
+    width: 780pt    # 9906000 EMU (10.83")
+    height: 540pt   # 6858000 EMU (7.5")
+    aspect_ratio: "4:3"
+
+  margins:
+    top: 3%
+    bottom: 4%
+    left: 3%
+    right: 3%
+
+  spacing:
+    section_gap: 20pt
+    element_gap: 10pt
+
+# 도형 스타일
+shapes:
+  rounded_radius: 4px
+  shadow: subtle
+  border_width: 1
+
+# 디자인 토큰 매핑 (콘텐츠 템플릿과 연동)
+design_tokens:
+  primary: "#002452"
+  secondary: "#C51F2A"
+  accent: "#4B6580"
+  background: "#FFFFFF"
+  surface: "#B7D0D4"
+  dark_text: "#262626"
+  light: "#FFFFFF"
+  gray: "#B6B6B6"
+
+# 추천 사용처
+recommended_for:
+  - 기업 제안서
+  - 사업 보고서
+  - 경영 발표
+  - IR 자료
+  - 내부 회의 자료
+
+# 관련 문서 템플릿
+document_templates:
+  - group: dongkuk-systems
+    templates:
+      - 기본양식

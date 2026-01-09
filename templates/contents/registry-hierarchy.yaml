@@ -1,0 +1,56 @@
+category: hierarchy
+name: 계층
+description: 계층 구조 레이아웃
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: hierarchy-3col
+  name: 3열 조직도
+  file: templates/hierarchy/hierarchy-3col.yaml
+  thumbnail: thumbnails/hierarchy/hierarchy-3col.png
+  source_slide_index: 62
+  description: 3열 조직도 슬라이드.
+  match_keywords:
+  - 3열 조직도 콘텐츠 표현
+  - 멀티컬럼 레이아웃 구성
+  - 정보 비교 및 대조
+  - 프로세스 단계 표시
+  - 시각적 계층 구조 표현
+  - hierarchy
+  - hierarchy-3col
+  - 레이아웃
+  - 템플릿
+  - 콘텐츠
+  - 디자인
+  expected_prompt: '3열 조직도 슬라이드를 만들어줘.
+
+    - 3열 조직도 콘텐츠 표현
+
+    - 멀티컬럼 레이아웃 구성
+
+    - 정보 비교 및 대조'
+- id: hierarchy-org-chart
+  name: CEO 조직도
+  file: templates/hierarchy/hierarchy-org-chart.yaml
+  thumbnail: thumbnails/hierarchy/hierarchy-org-chart.png
+  source_slide_index: 63
+  description: CEO 조직도 슬라이드.
+  match_keywords:
+  - CEO 조직도 콘텐츠 표현
+  - 멀티컬럼 레이아웃 구성
+  - 정보 비교 및 대조
+  - 프로세스 단계 표시
+  - 시각적 계층 구조 표현
+  - hierarchy
+  - hierarchy-org-chart
+  - 레이아웃
+  - 템플릿
+  - 콘텐츠
+  - 디자인
+  expected_prompt: 'CEO 조직도 슬라이드를 만들어줘.
+
+    - CEO 조직도 콘텐츠 표현
+
+    - 멀티컬럼 레이아웃 구성
+
+    - 정보 비교 및 대조'

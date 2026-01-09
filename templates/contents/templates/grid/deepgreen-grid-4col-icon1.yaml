@@ -1,0 +1,72 @@
+id: deepgreen-grid-4col-icon1
+name: 딥그린 4열 아이콘 그리드
+category: grid
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 7
+design_intent: grid-4col
+extraction_mode: content_only
+
+layout:
+  type: grid
+  columns: 4
+  column_gap: 3%
+
+zones:
+  - id: title-area
+    type: placeholder
+    geometry: {x: 5%, y: 5%, cx: 40%, cy: 8%}
+    placeholder_type: TITLE
+
+  - id: icon-card-1
+    type: container
+    geometry: {x: 5%, y: 22%, cx: 21%, cy: 70%}
+    children:
+      - id: icon-circle-1
+        object_desc: "큰 원형 배경, 연한 녹색, 안에 차트 아이콘"
+      - id: card-title-1
+        placeholder_type: BODY
+      - id: card-desc-1
+        placeholder_type: BODY
+
+  - id: icon-card-2
+    type: container
+    geometry: {x: 28%, y: 22%, cx: 21%, cy: 70%}
+    children:
+      - id: icon-circle-2
+        object_desc: "큰 원형 배경, 안에 성장 그래프 아이콘"
+
+  - id: icon-card-3
+    type: container
+    geometry: {x: 51%, y: 22%, cx: 21%, cy: 70%}
+    children:
+      - id: icon-circle-3
+        object_desc: "큰 원형 배경, 안에 체크리스트 아이콘"
+
+  - id: icon-card-4
+    type: container
+    geometry: {x: 74%, y: 22%, cx: 21%, cy: 70%}
+    children:
+      - id: icon-circle-4
+        object_desc: "큰 원형 배경, 안에 팀/사람 아이콘"
+
+thumbnail: thumbnails/grid/deepgreen-grid-4col-icon1.png
+
+use_for:
+  - 기능 소개
+  - 서비스 특징
+  - 팀 역량
+
+keywords:
+  - 그리드
+  - 4열
+  - 아이콘
+  - 기능
+  - 특징
+
+expected_prompt: |
+  기능 소개 슬라이드를 만들어줘.
+  - 4개 카드를 가로로 균등 배치
+  - 각 카드: 상단에 큰 원형 아이콘
+  - 아이콘 아래에 제목과 설명
+  - 깔끔한 4열 그리드

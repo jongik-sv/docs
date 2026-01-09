@@ -1,0 +1,163 @@
+{
+  "session": {
+    "id": "2026-01-09_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "created_at": "2026-01-09T00:00:00Z",
+    "status": "in_progress"
+  },
+  "current_stage": 2,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트",
+      "subtitle": "수행계획서",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "slide_count": 17,
+      "emphasis": "전체 균형",
+      "client": "(주)글로벌물류",
+      "vendor": "(주)테크솔루션"
+    },
+    "theme": {
+      "id": "deepgreen-clean",
+      "name": "깔끔이 딥그린",
+      "colors": {
+        "primary": "#153325",
+        "secondary": "#22523B",
+        "accent": "#479374",
+        "background": "#FFFFFF",
+        "surface": "#A1BFB4",
+        "dark_text": "#153325",
+        "light": "#FFFFFF",
+        "gray": "#859C80"
+      }
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축",
+      "purpose": "cover",
+      "key_points": ["프로젝트명", "수행사: (주)테크솔루션", "발주기관: (주)글로벌물류", "2025-01-06 ~ 2025-12-31"],
+      "speaker_notes": "착수보고회 프레젠테이션 시작"
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "key_points": ["프로젝트 개요", "추진 전략", "조직 및 일정", "품질/위험 관리"],
+      "speaker_notes": "전체 발표 구성 안내"
+    },
+    {
+      "index": 2,
+      "title": "1. 프로젝트 개요",
+      "purpose": "section",
+      "key_points": ["섹션 구분자"],
+      "speaker_notes": "첫 번째 섹션 시작"
+    },
+    {
+      "index": 3,
+      "title": "프로젝트 정보",
+      "purpose": "content",
+      "key_points": ["프로젝트명: 스마트 물류관리 시스템 구축", "계약금액: 15억원", "계약기간: 2025-01-06 ~ 2025-12-31 (12개월)", "발주기관/수행사 정보"],
+      "speaker_notes": "프로젝트 기본 정보 소개"
+    },
+    {
+      "index": 4,
+      "title": "배경 및 목적",
+      "purpose": "content",
+      "key_points": ["현황: 10년 이상 레거시 시스템 노후화", "목표: AI 기반 물류 최적화, 실시간 추적", "기대효과: 효율 30%↑, 재고정확도 99.5%, 비용 20%↓"],
+      "speaker_notes": "프로젝트 추진 배경과 기대효과 설명"
+    },
+    {
+      "index": 5,
+      "title": "프로젝트 범위",
+      "purpose": "grid",
+      "key_points": ["업무범위: 입출고/재고/배송/정산", "시스템범위: WMS, TMS, OMS, Dashboard", "제외범위: 회계/HR/기존ERP (인터페이스만)"],
+      "speaker_notes": "프로젝트 범위 명확화"
+    },
+    {
+      "index": 6,
+      "title": "2. 추진 전략 및 방법론",
+      "purpose": "section",
+      "key_points": ["섹션 구분자"],
+      "speaker_notes": "두 번째 섹션 시작"
+    },
+    {
+      "index": 7,
+      "title": "핵심 추진 전략",
+      "purpose": "grid",
+      "key_points": ["단계적 전환: 모듈별 순차 전환으로 리스크 최소화", "애자일 개발: 2주 스프린트, 빠른 피드백", "현업 밀착: 주 2회 현업 리뷰"],
+      "speaker_notes": "3가지 핵심 전략 설명"
+    },
+    {
+      "index": 8,
+      "title": "수행 방법론",
+      "purpose": "process",
+      "key_points": ["Agile-Waterfall 하이브리드", "분석→설계→개발→테스트→이행", "단계별 주요 산출물"],
+      "speaker_notes": "방법론 및 단계별 활동 설명"
+    },
+    {
+      "index": 9,
+      "title": "기술 아키텍처",
+      "purpose": "grid",
+      "key_points": ["Frontend: Vue.js 3, TypeScript", "Backend: Spring Boot, Java 17, MSA", "Database: PostgreSQL 16, Redis 7", "Infra: AWS (EKS, RDS, S3)", "AI/ML: Python, TensorFlow"],
+      "speaker_notes": "기술 스택 상세 설명"
+    },
+    {
+      "index": 10,
+      "title": "3. 조직 및 일정",
+      "purpose": "section",
+      "key_points": ["섹션 구분자"],
+      "speaker_notes": "세 번째 섹션 시작"
+    },
+    {
+      "index": 11,
+      "title": "프로젝트 조직",
+      "purpose": "hierarchy",
+      "key_points": ["발주기관 PM: 정민호 부장", "수행사 PM: 김철수 차장", "AA/PL/DBA/QA 역할", "총 8명, 78MM"],
+      "speaker_notes": "프로젝트 조직 구성 및 R&R"
+    },
+    {
+      "index": 12,
+      "title": "마스터 일정",
+      "purpose": "timeline",
+      "key_points": ["착수: 1월 (4주)", "분석: 2-3월 (8주)", "설계: 4-5월 (8주)", "개발: 6-9월 (16주)", "테스트: 10-11월 (6주)", "이행: 11-12월 (6주)"],
+      "speaker_notes": "전체 프로젝트 일정 설명"
+    },
+    {
+      "index": 13,
+      "title": "주요 마일스톤",
+      "purpose": "timeline",
+      "key_points": ["M1 착수보고 (1/10)", "M2 요구사항확정 (3/31)", "M3 설계완료 (5/31)", "M4 개발완료 (9/30)", "M5 테스트완료 (11/15)", "M6 오픈 (12/01)"],
+      "speaker_notes": "6대 마일스톤 점검 포인트"
+    },
+    {
+      "index": 14,
+      "title": "4. 품질 및 위험 관리",
+      "purpose": "section",
+      "key_points": ["섹션 구분자"],
+      "speaker_notes": "네 번째 섹션 시작"
+    },
+    {
+      "index": 15,
+      "title": "품질/보안 관리",
+      "purpose": "grid",
+      "key_points": ["품질: 산출물 검토, 코드 리뷰, 정적 분석", "보안: 인적/물리/기술/PC 보안", "테스트: 시나리오 기반 통합/인수 테스트"],
+      "speaker_notes": "품질 보증 활동 및 보안 관리 계획"
+    },
+    {
+      "index": 16,
+      "title": "위험 관리",
+      "purpose": "table",
+      "key_points": ["요구사항 변경: CCB 통제", "일정 지연: 주간 진척관리", "기술적 난제: PoC 선행", "인력 이탈: 대체 인력 풀", "데이터 마이그레이션: 사전 검증"],
+      "speaker_notes": "주요 위험요소 및 대응방안"
+    },
+    {
+      "index": 17,
+      "title": "감사합니다",
+      "purpose": "closing",
+      "key_points": ["수행사 연락처", "프로젝트 성공적 완수 다짐"],
+      "speaker_notes": "마무리 인사"
+    }
+  ]
+}

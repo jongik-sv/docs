@@ -1,0 +1,135 @@
+content_template:
+  id: content-stack1
+  name: 2행 세로 레이아웃
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 0
+  extracted_at: '2026-01-09T19:37:33.360639'
+  expected_prompt: "Create a general slide designed for content-stack1. This layout is specifically designed for: 요약, 개요, 2가지 항목 설명. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: content-stack1
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Shape 0
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 5.0%
+    y: 24.4%
+    cx: 22.8%
+    cy: 4.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌0.5in 상1.8in'
+- id: shape-1
+  name: Shape 1
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 5.0%
+    y: 30.4%
+    cx: 90.1%
+    cy: 23.7%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌0.5in 상2.3in'
+- id: shape-2
+  name: Shape 2
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 5.0%
+    y: 59.5%
+    cx: 22.8%
+    cy: 4.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌0.5in 상4.5in'
+- id: shape-3
+  name: Shape 3
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 5.0%
+    y: 65.3%
+    cx: 90.1%
+    cy: 23.7%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌0.5in 상4.9in'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 요약
+- 개요
+- 2가지 항목 설명
+- 상하 분할
+keywords:
+- content
+- 세로
+- 스택
+expected_prompt: |
+  2행 세로 레이아웃 슬라이드를 만들어줘.
+  - 상단에 첫 번째 섹션 (중제목 + 소제목/본문)
+  - 하단에 두 번째 섹션 (중제목 + 소제목/본문)
+  - 전체 너비 사용하여 상하로 배치
+  - 2가지 항목을 비교하거나 순서대로 설명
+prompt_keywords:
+- 세로
+- 스택
+- 2행
+- 상하
+- 요약
+- 개요
+- 2가지
+- vertical
+thumbnail: thumbnails/content-stack1.png

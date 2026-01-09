@@ -1,0 +1,251 @@
+content_template:
+  id: grid-3col2
+  name: 3열 확장 레이아웃
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 22
+  extracted_at: '2026-01-09T19:37:33.368116'
+  expected_prompt: "Create a general slide designed for grid-3col2. This layout is specifically designed for: 서비스 소개, 기능 설명, 확장 레이아웃. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: grid-3col2
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Shape 0
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 45.1%
+    y: 32.5%
+    cx: 10.6%
+    cy: 5.6%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌4.9in 상2.4in'
+- id: shape-1
+  name: Shape 1
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 46.9%
+    y: 36.7%
+    cx: 7.0%
+    cy: 4.5%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌5.1in 상2.8in'
+- id: shape-2
+  name: Shape 2
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 24.2%
+    y: 48.3%
+    cx: 9.5%
+    cy: 5.1%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+  description:
+    text: 'text-box, 위치: 좌2.6in 상3.6in'
+- id: shape-3
+  name: Shape 3
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 25.4%
+    y: 52.7%
+    cx: 7.0%
+    cy: 10.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌2.8in 상4.0in'
+- id: shape-4
+  name: Shape 4
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 45.4%
+    y: 48.3%
+    cx: 9.5%
+    cy: 5.1%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+  description:
+    text: 'text-box, 위치: 좌4.9in 상3.6in'
+- id: shape-5
+  name: Shape 5
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 46.7%
+    y: 52.7%
+    cx: 7.0%
+    cy: 10.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌5.1in 상4.0in'
+- id: shape-6
+  name: Shape 6
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 66.8%
+    y: 48.3%
+    cx: 9.5%
+    cy: 5.1%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+  description:
+    text: 'text-box, 위치: 좌7.2in 상3.6in'
+- id: shape-7
+  name: Shape 7
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 68.0%
+    y: 52.7%
+    cx: 7.0%
+    cy: 10.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌7.4in 상4.0in'
+- id: shape-8
+  name: Shape 8
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 46.9%
+    y: 71.9%
+    cx: 7.0%
+    cy: 10.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌5.1in 상5.4in'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 서비스 소개
+- 기능 설명
+- 확장 레이아웃
+- 상세 정보
+keywords:
+- grid
+- 3열
+- 확장
+expected_prompt: |
+  3열 확장 레이아웃 슬라이드를 만들어줘.
+  - 3개의 열로 구성
+  - 각 열에 중제목 + 상세 본문
+  - 2행 구조로 더 많은 정보 포함
+  - 서비스/기능의 상세 설명에 적합
+prompt_keywords:
+- 3열
+- 확장
+- 상세
+- 서비스
+- 기능
+- 설명
+- detail
+thumbnail: thumbnails/grid-3col2.png

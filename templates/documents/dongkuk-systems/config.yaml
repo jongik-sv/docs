@@ -3,7 +3,7 @@
 
 group:
   id: dongkuk-systems
-  name: dongkuk-systems
+  name: 동국시스템즈
 theme:
   name: ''
   colors:
@@ -22,4 +22,4 @@ theme:
     body: 본고딕 Normal
 companies:
 - id: default
-  name: dongkuk-systems (기본)
+  name: 동국시스템즈 (기본)

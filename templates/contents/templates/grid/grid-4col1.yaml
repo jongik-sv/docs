@@ -1,0 +1,399 @@
+content_template:
+  id: grid-4col1
+  name: 4열 기본 레이아웃
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 14
+  extracted_at: '2026-01-09T19:37:33.364924'
+  expected_prompt: "Create a general slide designed for grid-4col1. This layout is specifically designed for: 4가지 항목, 특징 나열, 서비스 소개. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: grid-4col1
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Shape 0
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 5.9%
+    y: 26.7%
+    cx: 19.8%
+    cy: 7.7%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌0.6in 상2.0in'
+- id: shape-1
+  name: Shape 1
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 28.5%
+    y: 26.7%
+    cx: 19.8%
+    cy: 7.7%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌3.1in 상2.0in'
+- id: shape-2
+  name: Shape 2
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 51.3%
+    y: 26.7%
+    cx: 19.8%
+    cy: 7.7%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌5.5in 상2.0in'
+- id: shape-3
+  name: Shape 3
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 74.0%
+    y: 26.7%
+    cx: 19.8%
+    cy: 7.7%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌8.0in 상2.0in'
+- id: shape-4
+  name: Shape 4
+  type: bullet-list
+  shape_source: description
+  geometry:
+    x: 5.9%
+    y: 34.4%
+    cx: 19.8%
+    cy: 52.5%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+  description:
+    text: 'bullet-list, 위치: 좌0.6in 상2.6in'
+- id: shape-5
+  name: Shape 5
+  type: bullet-list
+  shape_source: description
+  geometry:
+    x: 28.5%
+    y: 34.4%
+    cx: 19.8%
+    cy: 52.5%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+  description:
+    text: 'bullet-list, 위치: 좌3.1in 상2.6in'
+- id: shape-6
+  name: Shape 6
+  type: bullet-list
+  shape_source: description
+  geometry:
+    x: 51.3%
+    y: 34.4%
+    cx: 19.8%
+    cy: 52.5%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+  description:
+    text: 'bullet-list, 위치: 좌5.5in 상2.6in'
+- id: shape-7
+  name: Shape 7
+  type: bullet-list
+  shape_source: description
+  geometry:
+    x: 74.0%
+    y: 34.4%
+    cx: 19.8%
+    cy: 52.5%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+  description:
+    text: 'bullet-list, 위치: 좌8.0in 상2.6in'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 4가지 항목
+- 특징 나열
+- 서비스 소개
+- 기능 설명
+keywords:
+- grid
+- 4열
+- 불릿
+expected_prompt: |
+  4열 레이아웃 슬라이드를 만들어줘.
+  - 4개의 열로 균등 배치
+  - 각 열에 중제목 + 불릿 포인트 리스트
+  - 대칭적인 그리드 구조
+  - 4가지 항목/특징/서비스를 나란히 설명
+prompt_keywords:
+- 4열
+- 그리드
+- 불릿
+- 특징
+- 서비스
+- 4가지
+- 카드
+- four column
+thumbnail: thumbnails/grid-4col1.png

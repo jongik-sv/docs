@@ -613,7 +613,8 @@ async function extractSlideData(page) {
       }
 
       // Extract placeholder elements (for charts, etc.)
-      if (el.className && el.className.includes('placeholder')) {
+      const classNameStr = typeof el.className === 'string' ? el.className : (el.className.baseVal || '');
+      if (classNameStr && classNameStr.includes('placeholder')) {
         const rect = el.getBoundingClientRect();
         if (rect.width === 0 || rect.height === 0) {
           errors.push(

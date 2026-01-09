@@ -1,0 +1,143 @@
+content_template:
+  id: grid-2col1
+  name: 2열 기본 레이아웃
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 1
+  extracted_at: '2026-01-09T19:37:33.361387'
+  expected_prompt: "Create a general slide designed for grid-2col1. This layout is specifically designed for: 비교, 양면 설명, 좌우 배치. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: grid-2col1
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Shape 0
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 4.8%
+    y: 25.7%
+    cx: 24.7%
+    cy: 4.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌0.5in 상1.9in'
+- id: shape-1
+  name: Shape 1
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 51.8%
+    y: 25.7%
+    cx: 24.7%
+    cy: 4.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌5.6in 상1.9in'
+- id: shape-2
+  name: Shape 2
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 4.8%
+    y: 34.0%
+    cx: 42.2%
+    cy: 58.0%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌0.5in 상2.5in'
+- id: shape-3
+  name: Shape 3
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 51.8%
+    y: 34.0%
+    cx: 42.2%
+    cy: 58.0%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌5.6in 상2.5in'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 비교
+- 양면 설명
+- 좌우 배치
+- 2가지 주제
+keywords:
+- grid
+- 2열
+- 좌우
+expected_prompt: |
+  2열 레이아웃 슬라이드를 만들어줘.
+  - 좌우 2열로 균등 배치
+  - 각 열에 중제목 + 소제목/본문
+  - 대칭적인 구조
+  - 두 가지 항목을 나란히 비교하거나 설명
+prompt_keywords:
+- 2열
+- 좌우
+- 비교
+- 양면
+- 나란히
+- 대칭
+- two column
+- side by side
+thumbnail: thumbnails/grid-2col1.png

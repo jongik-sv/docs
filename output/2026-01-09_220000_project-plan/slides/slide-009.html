@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt; height: 405pt;
+      font-family: 'Malgun Gothic', sans-serif;
+      background: #FFFFFF;
+      padding: 36pt 48pt;
+      position: relative;
+    }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28pt; }
+    .title { font-size: 24pt; font-weight: 700; color: #153325; }
+    .page-num { font-size: 12pt; color: #859C80; }
+    .grid { display: flex; gap: 24pt; }
+    .card { flex: 1; background: #F8FAF9; border-radius: 12pt; padding: 24pt 20pt; position: relative; }
+    .card-number {
+      position: absolute; top: -12pt; left: 20pt;
+      width: 36pt; height: 36pt; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16pt; font-weight: 700; color: #FFFFFF;
+    }
+    .card:nth-child(1) .card-number { background: #479374; }
+    .card:nth-child(2) .card-number { background: #22523B; }
+    .card:nth-child(3) .card-number { background: #153325; }
+    .card-icon {
+      width: 48pt; height: 48pt; margin-bottom: 16pt;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card-icon svg { width: 40pt; height: 40pt; }
+    .card:nth-child(1) .card-icon svg { fill: #479374; }
+    .card:nth-child(2) .card-icon svg { fill: #22523B; }
+    .card:nth-child(3) .card-icon svg { fill: #153325; }
+    .card-title { font-size: 16pt; font-weight: 700; color: #153325; margin-bottom: 10pt; }
+    .card-desc { font-size: 12pt; color: #4B5563; line-height: 1.6; }
+    .accent-line { position: absolute; bottom: 0; left: 0; width: 100%; height: 4pt; background: #479374; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <p class="title">핵심 추진 전략</p>
+    <p class="page-num">09</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <p class="card-number">1</p>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+      </div>
+      <p class="card-title">단계적 전환</p>
+      <p class="card-desc">Big Bang 방식이 아닌<br>모듈별 순차 전환으로<br>리스크 최소화</p>
+    </div>
+    <div class="card">
+      <p class="card-number">2</p>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2.5c-3.5 0-6.35 2.55-6.92 5.88C3.3 9.83 2 12.46 2 15.5c0 2.49 1.51 4.63 3.66 5.55.42.16.88-.09.97-.53l.18-.84c.06-.29-.1-.6-.36-.73-1.02-.54-1.72-1.6-1.72-2.83 0-1.63 1.16-2.99 2.7-3.3l.64-.13c.27-.06.45-.31.45-.58L8.5 9.5c0-2.21 1.79-4 4-4s4 1.79 4 4l-.02 2.61c0 .27.18.52.45.58l.64.13c1.54.31 2.7 1.67 2.7 3.3 0 1.23-.7 2.29-1.72 2.83-.26.13-.42.44-.36.73l.18.84c.08.44.55.69.97.53C21.49 20.13 23 17.99 23 15.5c0-3.04-1.3-5.67-3.08-7.12-.57-3.33-3.42-5.88-6.92-5.88z"/></svg>
+      </div>
+      <p class="card-title">애자일 개발</p>
+      <p class="card-desc">2주 단위 스프린트로<br>빠른 피드백과<br>유연한 대응</p>
+    </div>
+    <div class="card">
+      <p class="card-number">3</p>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      </div>
+      <p class="card-title">현업 밀착</p>
+      <p class="card-desc">주 2회 현업 리뷰를 통한<br>요구사항 정합성 확보</p>
+    </div>
+  </div>
+  <div class="accent-line"></div>
+</body>
+</html>

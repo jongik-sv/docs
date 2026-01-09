@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt; height: 405pt;
+      font-family: 'Malgun Gothic', sans-serif;
+      background: #FFFFFF;
+      padding: 32pt 48pt;
+      position: relative;
+    }
+    .header {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-bottom: 16pt;
+    }
+    .title { font-size: 24pt; font-weight: 700; color: #153325; }
+    .page-num { font-size: 12pt; color: #859C80; }
+    .subtitle {
+      font-size: 12pt; color: #859C80;
+      margin-bottom: 16pt;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14pt;
+    }
+    .step {
+      background: #F8FAF9;
+      border-radius: 8pt;
+      padding: 14pt;
+      position: relative;
+    }
+    .step-number {
+      font-size: 26pt; font-weight: 700;
+      margin-bottom: 6pt;
+    }
+    .step:nth-child(1) .step-number { color: #479374; }
+    .step:nth-child(2) .step-number { color: #43A375; }
+    .step:nth-child(3) .step-number { color: #22523B; }
+    .step:nth-child(4) .step-number { color: #67B7B5; }
+    .step:nth-child(5) .step-number { color: #153325; }
+    .step:nth-child(6) .step-number { color: #859C80; }
+    .step-title {
+      font-size: 13pt; font-weight: 600;
+      color: #153325; margin-bottom: 4pt;
+    }
+    .step-duration {
+      font-size: 10pt; color: #479374;
+      margin-bottom: 3pt;
+    }
+    .step-output {
+      font-size: 9pt; color: #6B7280;
+    }
+    .accent-line {
+      position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 4pt;
+      background: #479374;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <p class="title">수행 방법론</p>
+    <p class="page-num">10</p>
+  </div>
+  <p class="subtitle">Agile-Waterfall 하이브리드 방법론</p>
+  <div class="process-grid">
+    <div class="step">
+      <p class="step-number">01</p>
+      <p class="step-title">분석</p>
+      <p class="step-duration">8주 (2-3월)</p>
+      <p class="step-output">요구사항정의서, 현행분석서</p>
+    </div>
+    <div class="step">
+      <p class="step-number">02</p>
+      <p class="step-title">설계</p>
+      <p class="step-duration">8주 (4-5월)</p>
+      <p class="step-output">아키텍처/화면/DB 설계서</p>
+    </div>
+    <div class="step">
+      <p class="step-number">03</p>
+      <p class="step-title">개발</p>
+      <p class="step-duration">16주 (6-9월)</p>
+      <p class="step-output">소스코드, 단위테스트결과서</p>
+    </div>
+    <div class="step">
+      <p class="step-number">04</p>
+      <p class="step-title">테스트</p>
+      <p class="step-duration">6주 (10-11월)</p>
+      <p class="step-output">통합/성능/인수 테스트결과서</p>
+    </div>
+    <div class="step">
+      <p class="step-number">05</p>
+      <p class="step-title">이행</p>
+      <p class="step-duration">4주 (11월)</p>
+      <p class="step-output">이행계획서, 운영자매뉴얼</p>
+    </div>
+    <div class="step">
+      <p class="step-number">06</p>
+      <p class="step-title">안정화</p>
+      <p class="step-duration">4주 (12월)</p>
+      <p class="step-output">완료보고서</p>
+    </div>
+  </div>
+  <div class="accent-line"></div>
+</body>
+</html>

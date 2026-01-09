@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt; height: 405pt;
+      font-family: 'Malgun Gothic', sans-serif;
+      background: #FFFFFF;
+      padding: 36pt 48pt;
+      position: relative;
+    }
+    .header {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-bottom: 24pt;
+    }
+    .title { font-size: 24pt; font-weight: 700; color: #153325; }
+    .page-num { font-size: 12pt; color: #859C80; }
+    .timeline-container {
+      position: relative;
+      padding-top: 20pt;
+    }
+    .timeline-bar {
+      position: absolute;
+      top: 55pt; left: 40pt; right: 40pt;
+      height: 4pt;
+      background: #22523B;
+      border-radius: 2pt;
+    }
+    .phases {
+      display: flex; justify-content: space-between;
+      padding: 0 20pt;
+    }
+    .phase {
+      text-align: center;
+      position: relative;
+      width: 90pt;
+    }
+    .phase-dot {
+      width: 16pt; height: 16pt;
+      border-radius: 50%;
+      margin: 0 auto 10pt;
+      border: 3pt solid #FFFFFF;
+      box-shadow: 0 0 0 2pt;
+    }
+    .phase:nth-child(1) .phase-dot { background: #479374; box-shadow-color: #479374; }
+    .phase:nth-child(2) .phase-dot { background: #43A375; box-shadow-color: #43A375; }
+    .phase:nth-child(3) .phase-dot { background: #22523B; box-shadow-color: #22523B; }
+    .phase:nth-child(4) .phase-dot { background: #67B7B5; box-shadow-color: #67B7B5; }
+    .phase:nth-child(5) .phase-dot { background: #153325; box-shadow-color: #153325; }
+    .phase:nth-child(6) .phase-dot { background: #859C80; box-shadow-color: #859C80; }
+    .phase-period {
+      font-size: 11pt; color: #859C80;
+      margin-bottom: 4pt;
+    }
+    .phase-name {
+      font-size: 14pt; font-weight: 600;
+      color: #153325; margin-bottom: 4pt;
+    }
+    .phase-weeks {
+      font-size: 10pt; color: #479374;
+    }
+    .accent-line {
+      position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 4pt;
+      background: #479374;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <p class="title">마스터 일정</p>
+    <p class="page-num">14</p>
+  </div>
+  <div class="timeline-container">
+    <div class="timeline-bar"></div>
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-period">1월</p>
+        <p class="phase-name">착수</p>
+        <p class="phase-weeks">4주</p>
+      </div>
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-period">2-3월</p>
+        <p class="phase-name">분석</p>
+        <p class="phase-weeks">8주</p>
+      </div>
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-period">4-5월</p>
+        <p class="phase-name">설계</p>
+        <p class="phase-weeks">8주</p>
+      </div>
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-period">6-9월</p>
+        <p class="phase-name">개발</p>
+        <p class="phase-weeks">16주</p>
+      </div>
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-period">10-11월</p>
+        <p class="phase-name">테스트</p>
+        <p class="phase-weeks">6주</p>
+      </div>
+      <div class="phase">
+        <div class="phase-dot"></div>
+        <p class="phase-period">12월</p>
+        <p class="phase-name">이행</p>
+        <p class="phase-weeks">6주</p>
+      </div>
+    </div>
+  </div>
+  <div class="accent-line"></div>
+</body>
+</html>

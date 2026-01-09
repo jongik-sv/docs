@@ -1,0 +1,49 @@
+category: toc
+name: toc
+description: ''
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: toc-list1
+  name: 목차 리스트 (5항목)
+  file: templates/toc/toc-list1.yaml
+  thumbnail: thumbnails/toc/toc-list1.png
+  source_slide_index: 1
+  description: 번호가 붙은 5개 목차 항목과 하이라이트 바가 있는 리스트형 목차.
+  match_keywords:
+  - toc
+  - 목차
+  - 차례
+  - contents
+  - 리스트
+  - 번호
+  - 항목
+  - 아젠다
+  - 순서
+  expected_prompt: |
+    목차 슬라이드를 만들어줘.
+    - "Contents" 제목
+    - 오른쪽에 세로 그라데이션 장식 바
+    - 번호가 붙은 5개 목차 항목
+    - 각 항목에 제목과 페이지 범위
+    - 현재 항목을 하이라이트 바로 강조
+- id: deepgreen-toc-3col1
+  name: 딥그린 3열 목차
+  file: templates/toc/deepgreen-toc-3col1.yaml
+  thumbnail: thumbnails/toc/deepgreen-toc-3col1.png
+  source_slide_index: 2
+  description: 3열로 배치된 번호 목차와 세부 항목 리스트.
+  match_keywords:
+  - toc
+  - 목차
+  - 3열
+  - 딥그린
+  - 아젠다
+  - 순서
+  - contents
+  expected_prompt: |
+    목차 슬라이드를 만들어줘.
+    - 3개 섹션으로 구분
+    - 각 섹션에 번호(01, 02, 03)와 제목
+    - 각 섹션 아래에 세부 항목 리스트
+    - 깔끔한 3열 레이아웃

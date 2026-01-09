@@ -1,0 +1,151 @@
+category: process
+name: 프로세스
+description: 단계별 프로세스 레이아웃
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: process-3col-flow
+  name: 3열 프로세스 플로우
+  file: templates/process/process-3col-flow.yaml
+  thumbnail: thumbnails/process/process-3col-flow.png
+  source_slide_index: 57
+  description: 3열 프로세스 플로우 슬라이드.
+  match_keywords:
+  - 3열 프로세스 플로우 콘텐츠 표현
+  - 멀티컬럼 레이아웃 구성
+  - 정보 비교 및 대조
+  - 프로세스 단계 표시
+  - 시각적 계층 구조 표현
+  - process
+  - process-3col-flow
+  - 레이아웃
+  - 템플릿
+  - 콘텐츠
+  - 디자인
+  expected_prompt: '3열 프로세스 플로우 슬라이드를 만들어줘.
+
+    - 3열 프로세스 플로우 콘텐츠 표현
+
+    - 멀티컬럼 레이아웃 구성
+
+    - 정보 비교 및 대조'
+- id: process-linear1
+  name: 프로세스 기본
+  file: templates/process/process-linear1.yaml
+  thumbnail: thumbnails/process/process-linear1.png
+  source_slide_index: 8
+  description: 6단계 프로세스 슬라이드.
+  match_keywords:
+  - 프로세스
+  - 단계
+  - 6단계
+  - 순서
+  - workflow
+  - step
+  - 진행
+  - 흐름
+  - 6단계 프로세스
+  - 순차 진행
+  - 단계별 설명
+  - 워크플로우
+  - process
+  expected_prompt: '6단계 프로세스 슬라이드를 만들어줘.
+
+    - 01~06 번호가 붙은 6개 단계
+
+    - 각 단계에 소제목 + 설명 텍스트
+
+    - 2열 × 3행 그리드 형태로 배치
+
+    - 순차적인 진행 과정을 표현'
+- id: process-linear2
+  name: 3열 프로세스
+  file: templates/process/process-linear2.yaml
+  thumbnail: thumbnails/process/process-linear2.png
+  source_slide_index: 21
+  description: 3단계 프로세스 슬라이드.
+  match_keywords:
+  - 프로세스
+  - 3단계
+  - 다이어그램
+  - 흐름
+  - 순서
+  - workflow
+  - three step
+  - 단계별
+  - 3단계 프로세스
+  - 다이어그램 프로세스
+  - 단계별 설명
+  - 순차 진행
+  - process
+  expected_prompt: '3단계 프로세스 슬라이드를 만들어줘.
+
+    - 01, 02, 03 큰 번호로 3단계 표시
+
+    - 각 단계에 다이어그램 라벨 + 설명 텍스트
+
+    - 3열 수평 배치
+
+    - 시각적으로 강조된 단계 번호'
+- id: deepgreen-process-6cards1
+  name: 딥그린 6칸 프로세스 카드
+  file: templates/process/deepgreen-process-6cards1.yaml
+  thumbnail: thumbnails/process/deepgreen-process-6cards1.png
+  source_slide_index: 5
+  description: 2x3 그리드 형태의 6단계 프로세스 카드.
+  match_keywords:
+  - process
+  - 프로세스
+  - 6단계
+  - 카드
+  - 그리드
+  - 2x3
+  - 딥그린
+  - 번호
+  expected_prompt: |
+    6단계 프로세스 슬라이드를 만들어줘.
+    - 01~06 번호가 붙은 6개 카드
+    - 2열 x 3행 그리드 배치
+    - 각 카드에 제목과 설명
+    - 딥그린 스타일
+- id: deepgreen-process-cylinder1
+  name: 딥그린 실린더 프로세스
+  file: templates/process/deepgreen-process-cylinder1.yaml
+  thumbnail: thumbnails/process/deepgreen-process-cylinder1.png
+  source_slide_index: 12
+  description: 3단계 실린더 형태의 프로세스 다이어그램.
+  match_keywords:
+  - process
+  - 프로세스
+  - 실린더
+  - cylinder
+  - 3단계
+  - 딥그린
+  - 다이어그램
+  - 단계
+  expected_prompt: |
+    실린더 프로세스 슬라이드를 만들어줘.
+    - 3개의 실린더 형태 도형
+    - 각 실린더에 단계명
+    - 상세 설명 리스트
+    - 딥그린 스타일
+- id: deepgreen-process-3col1
+  name: 딥그린 3열 원형 프로세스
+  file: templates/process/deepgreen-process-3col1.yaml
+  thumbnail: thumbnails/process/deepgreen-process-3col1.png
+  source_slide_index: 14
+  description: 3열 원형 아이콘이 있는 프로세스 레이아웃.
+  match_keywords:
+  - process
+  - 프로세스
+  - 3열
+  - 원형
+  - 아이콘
+  - 딥그린
+  - 단계
+  expected_prompt: |
+    3열 프로세스 슬라이드를 만들어줘.
+    - 상단에 원형 아이콘 3개
+    - 각 열에 제목과 설명
+    - 3단계 프로세스 표현
+    - 딥그린 스타일

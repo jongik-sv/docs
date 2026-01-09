@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="320" height="180">
+  <rect width="100%" height="100%" fill="#F2F2F7" />
+  <rect x="130.56" y="338.04" width="324.47999999999996" height="308.88000000000005" fill="#FF2D55" rx="8" />
+  <rect x="174.72" y="461.16" width="240.0" height="47.52" fill="none" rx="8" />
+  <text x="294.72" y="490.92" font-family="Arial" font-size="19.5" fill="#1C1C1E" text-anchor="middle" font-weight="bold">{{제목1}}</text>
+  <rect x="174.72" y="503.28000000000003" width="240.0" height="45.36" fill="none" rx="8" />
+  <text x="294.72" y="531.96" font-family="Arial" font-size="16.5" fill="#1C1C1E" text-anchor="middle" font-weight="bold">{{본문1}}</text>
+  <rect x="455.03999999999996" y="338.04" width="324.47999999999996" height="308.88000000000005" fill="#5856D6" rx="8" />
+  <rect x="501.12" y="461.16" width="240.0" height="47.52" fill="none" rx="8" />
+  <text x="621.12" y="490.92" font-family="Arial" font-size="19.5" fill="#FFFFFF" text-anchor="middle" font-weight="bold">{{제목2}}</text>
+  <rect x="501.12" y="503.28000000000003" width="240.0" height="45.36" fill="none" rx="8" />
+  <text x="621.12" y="531.96" font-family="Arial" font-size="16.5" fill="#FFFFFF" text-anchor="middle" font-weight="bold">{{본문2}}</text>
+  <rect x="458.88" y="676.08" width="205.44" height="110.16" fill="none" rx="8" />
+  <text x="561.6" y="737.1600000000001" font-family="Arial" font-size="24.0" fill="#5856D6" text-anchor="middle" font-weight="bold">{{퍼센트2}}</text>
+  <rect x="781.44" y="338.04" width="324.47999999999996" height="308.88000000000005" fill="#E5E5EA" rx="8" />
+  <rect x="825.6" y="461.16" width="240.0" height="47.52" fill="none" rx="8" />
+  <text x="945.6" y="490.92" font-family="Arial" font-size="19.5" fill="#1C1C1E" text-anchor="middle" font-weight="bold">{{제목3}}</text>
+  <rect x="825.6" y="503.28000000000003" width="240.0" height="45.36" fill="none" rx="8" />
+  <text x="945.6" y="531.96" font-family="Arial" font-size="16.5" fill="#1C1C1E" text-anchor="middle" font-weight="bold">{{본문3}}</text>
+  <rect x="908.16" y="676.08" width="205.44" height="110.16" fill="none" rx="8" />
+  <text x="1010.88" y="737.1600000000001" font-family="Arial" font-size="24.0" fill="#007AFF" text-anchor="middle" font-weight="bold">{{퍼센트3}}</text>
+  <rect x="1105.92" y="338.04" width="324.47999999999996" height="308.88000000000005" fill="#1C1C1E" fill-opacity="0.7" rx="8" />
+  <rect x="1152.0" y="461.16" width="240.0" height="47.52" fill="none" rx="8" />
+  <text x="1272.0" y="490.92" font-family="Arial" font-size="19.5" fill="#1C1C1E" text-anchor="middle" font-weight="bold">{{제목4}}</text>
+  <rect x="1152.0" y="503.28000000000003" width="240.0" height="45.36" fill="none" rx="8" />
+  <text x="1272.0" y="531.96" font-family="Arial" font-size="16.5" fill="#FFFFFF" text-anchor="middle" font-weight="bold">{{본문4}}</text>
+  <rect x="130.56" y="805.68" width="593.28" height="169.56" fill="#1C1C1E" fill-opacity="0.5" rx="8" />
+  <rect x="130.56" y="837.0" width="591.36" height="47.52" fill="none" rx="8" />
+  <text x="426.24" y="866.76" font-family="Arial" font-size="16.5" fill="#1C1C1E" text-anchor="middle" font-weight="bold">{{하단제목좌}}</text>
+  <rect x="130.56" y="871.5600000000001" width="591.36" height="83.16" fill="none" rx="8" />
+  <text x="426.24" y="919.1400000000001" font-family="Arial" font-size="15.0" fill="#1C1C1E" text-anchor="middle" font-weight="bold">{{하단본문좌}}</text>
+  <rect x="839.0400000000001" y="805.68" width="593.28" height="169.56" fill="#1C1C1E" fill-opacity="0.8" rx="8" />
+  <rect x="839.0400000000001" y="837.0" width="591.36" height="47.52" fill="none" rx="8" />
+  <text x="1134.72" y="866.76" font-family="Arial" font-size="16.5" fill="#FFFFFF" text-anchor="middle" font-weight="bold">{{하단제목우}}</text>
+  <rect x="839.0400000000001" y="871.5600000000001" width="591.36" height="83.16" fill="none" rx="8" />
+  <text x="1134.72" y="919.1400000000001" font-family="Arial" font-size="15.0" fill="#FFFFFF" text-anchor="middle" font-weight="bold">{{하단본문우}}</text>
+</svg>

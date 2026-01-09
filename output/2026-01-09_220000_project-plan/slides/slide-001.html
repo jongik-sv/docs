@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt; height: 405pt;
+      font-family: 'Malgun Gothic', sans-serif;
+      background: #153325;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      position: relative;
+    }
+    .accent-bar {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 8pt;
+      background: #479374;
+    }
+    .main-title {
+      font-size: 36pt; font-weight: 700;
+      text-align: center; margin-bottom: 12pt;
+      letter-spacing: -0.5pt; color: #FFFFFF;
+    }
+    .subtitle {
+      font-size: 20pt; font-weight: 400;
+      color: #A1BFB4; margin-bottom: 40pt;
+      text-align: center;
+    }
+    .info-box {
+      display: flex; gap: 40pt;
+    }
+    .info-item { text-align: center; }
+    .info-label { font-size: 10pt; margin-bottom: 4pt; color: rgba(161,191,180,0.8); }
+    .info-value { font-size: 13pt; color: #FFFFFF; }
+    .bottom-bar { position: absolute; bottom: 24pt; }
+    .bottom-bar p { font-size: 10pt; color: #859C80; }
+  </style>
+</head>
+<body>
+  <div class="accent-bar"></div>
+  <p class="main-title">스마트 물류관리 시스템 구축</p>
+  <p class="subtitle">수행계획서</p>
+  <div class="info-box">
+    <div class="info-item">
+      <p class="info-label">발주기관</p>
+      <p class="info-value">(주)글로벌물류</p>
+    </div>
+    <div class="info-item">
+      <p class="info-label">수행사</p>
+      <p class="info-value">(주)테크솔루션</p>
+    </div>
+    <div class="info-item">
+      <p class="info-label">착수일</p>
+      <p class="info-value">2025-01-06</p>
+    </div>
+  </div>
+  <div class="bottom-bar"><p>PRJ-2025-001 | 착수보고회</p></div>
+</body>
+</html>

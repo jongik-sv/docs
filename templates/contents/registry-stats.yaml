@@ -1,0 +1,82 @@
+category: stats
+name: 통계
+description: 통계/수치 레이아웃
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: stats-country
+  name: 국기와 함께하는 통계 카드
+  file: templates/stats/stats-country.yaml
+  thumbnail: thumbnails/stats/stats-country.png
+  source_slide_index: 26
+  description: 국기와 함께하는 통계 카드 슬라이드.
+  match_keywords:
+  - 국가별 통계나 비율을 시각화할 때
+  - 여러 항목의 퍼센트를 비교하는 슬라이드
+  - 국기와 함께 국가 정보를 표시
+  - 3개 열의 통계 정보 표현
+  - 칼라풀한 통계 카드 레이아웃
+  - 통계
+  - 퍼센트
+  - 비율
+  - 국기
+  - 카드
+  - 3행
+  - 비교
+  expected_prompt: '국기와 함께하는 통계 카드 슬라이드를 만들어줘.
+
+    - 3행의 통계 카드 - 각 행의 좌측에 국기 이미지, 중앙에 설명 텍스트, 우측에 퍼센트값
+
+    - 국가별 통계나 비율을 시각화할 때
+
+    - 여러 항목의 퍼센트를 비교하는 슬라이드
+
+    - 국기와 함께 국가 정보를 표시'
+- id: stats-donut-2col
+  name: 2열 도넛 퍼센트
+  file: templates/stats/stats-donut-2col.yaml
+  thumbnail: thumbnails/stats/stats-donut-2col.png
+  source_slide_index: 70
+  description: 2열 도넛 퍼센트 슬라이드.
+  match_keywords:
+  - 2열 도넛 퍼센트 콘텐츠 표현
+  - 멀티컬럼 레이아웃 구성
+  - 정보 비교 및 대조
+  - 프로세스 단계 표시
+  - 시각적 계층 구조 표현
+  - stats
+  - stats-donut-2col
+  - 레이아웃
+  - 템플릿
+  - 콘텐츠
+  - 디자인
+  expected_prompt: '2열 도넛 퍼센트 슬라이드를 만들어줘.
+
+    - 2열 도넛 퍼센트 콘텐츠 표현
+
+    - 멀티컬럼 레이아웃 구성
+
+    - 정보 비교 및 대조'
+- id: deepgreen-stats-dotgrid1
+  name: 딥그린 도트그리드 퍼센트
+  file: templates/stats/deepgreen-stats-dotgrid1.yaml
+  thumbnail: thumbnails/stats/deepgreen-stats-dotgrid1.png
+  source_slide_index: 6
+  description: 도트 그리드 패턴과 퍼센트 통계 3열 레이아웃.
+  match_keywords:
+  - stats
+  - 통계
+  - 퍼센트
+  - percent
+  - 도트
+  - 그리드
+  - 딥그린
+  - 수치
+  - 3열
+  expected_prompt: |
+    통계 슬라이드를 만들어줘.
+    - 3열 레이아웃
+    - 각 열에 도트 그리드 패턴
+    - 큰 퍼센트 숫자
+    - 설명 텍스트
+    - 딥그린 스타일

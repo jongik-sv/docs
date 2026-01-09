@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    p { font: inherit; color: inherit; line-height: inherit; text-align: inherit; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 32px;
+      left: 48px;
+      font-size: 20pt;
+      font-weight: 700;
+      color: #153325;
+    }
+    .title-bar {
+      position: absolute;
+      top: 65px;
+      left: 48px;
+      width: 28px;
+      height: 4px;
+      background: #153325;
+    }
+    .milestone-container {
+      position: absolute;
+      top: 100px;
+      left: 48px;
+      right: 48px;
+    }
+    .milestone-line {
+      position: absolute;
+      top: 45px;
+      left: 40px;
+      right: 40px;
+      height: 4px;
+      background: #A1BFB4;
+    }
+    .milestone-items {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+    .milestone-item {
+      text-align: center;
+      width: 90px;
+    }
+    .milestone-circle {
+      width: 48px;
+      height: 48px;
+      background: #22523B;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14pt;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+    }
+    .milestone-title {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #153325;
+      margin-bottom: 4px;
+    }
+    .milestone-date {
+      font-size: 9pt;
+      color: #22523B;
+      margin-bottom: 8px;
+    }
+    .milestone-output {
+      font-size: 8pt;
+      color: #859C80;
+      background: #F8FAF9;
+      padding: 6px 8px;
+      border-radius: 4px;
+    }
+    .legend {
+      position: absolute;
+      bottom: 55px;
+      left: 48px;
+      right: 48px;
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 9pt;
+      color: #666;
+    }
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot-complete { background: #22523B; }
+    .dot-progress { background: #67B7B5; }
+    .dot-planned { background: #A1BFB4; }
+    .footer {
+      position: absolute;
+      bottom: 12px;
+      right: 20px;
+      font-size: 8pt;
+      color: #859C80;
+    }
+    .page-num {
+      position: absolute;
+      bottom: 12px;
+      left: 48px;
+      font-size: 8pt;
+      color: #859C80;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-title"><p>주요 마일스톤</p></div>
+  <div class="title-bar"></div>
+  <div class="milestone-container">
+    <div class="milestone-line"></div>
+    <div class="milestone-items">
+      <div class="milestone-item">
+        <div class="milestone-circle"><p>M1</p></div>
+        <div class="milestone-title"><p>착수보고</p></div>
+        <div class="milestone-date"><p>2025-01-10</p></div>
+        <div class="milestone-output"><p>수행계획서</p></div>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-circle"><p>M2</p></div>
+        <div class="milestone-title"><p>요구사항 확정</p></div>
+        <div class="milestone-date"><p>2025-03-31</p></div>
+        <div class="milestone-output"><p>요구사항정의서</p></div>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-circle"><p>M3</p></div>
+        <div class="milestone-title"><p>설계 완료</p></div>
+        <div class="milestone-date"><p>2025-05-31</p></div>
+        <div class="milestone-output"><p>설계서 일체</p></div>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-circle"><p>M4</p></div>
+        <div class="milestone-title"><p>개발 완료</p></div>
+        <div class="milestone-date"><p>2025-09-30</p></div>
+        <div class="milestone-output"><p>소스코드</p></div>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-circle"><p>M5</p></div>
+        <div class="milestone-title"><p>테스트 완료</p></div>
+        <div class="milestone-date"><p>2025-11-15</p></div>
+        <div class="milestone-output"><p>테스트결과서</p></div>
+      </div>
+      <div class="milestone-item">
+        <div class="milestone-circle"><p>M6</p></div>
+        <div class="milestone-title"><p>시스템 오픈</p></div>
+        <div class="milestone-date"><p>2025-12-01</p></div>
+        <div class="milestone-output"><p>오픈보고서</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot dot-complete"></div><p>완료</p></div>
+    <div class="legend-item"><div class="legend-dot dot-progress"></div><p>진행중</p></div>
+    <div class="legend-item"><div class="legend-dot dot-planned"></div><p>예정</p></div>
+  </div>
+  <div class="page-num"><p>14</p></div>
+  <div class="footer"><p>스마트 물류관리 시스템 구축</p></div>
+</body>
+</html>

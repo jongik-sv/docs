@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    p { font: inherit; color: inherit; line-height: inherit; text-align: inherit; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 32px;
+      left: 48px;
+      font-size: 20pt;
+      font-weight: 700;
+      color: #153325;
+    }
+    .slide-subtitle {
+      position: absolute;
+      top: 60px;
+      left: 48px;
+      font-size: 11pt;
+      color: #859C80;
+    }
+    .title-bar {
+      position: absolute;
+      top: 75px;
+      left: 48px;
+      width: 28px;
+      height: 4px;
+      background: #153325;
+    }
+    .title-line {
+      position: absolute;
+      top: 77px;
+      left: 80px;
+      width: 200px;
+      height: 1px;
+      background: #A1BFB4;
+    }
+    .strategy-container {
+      position: absolute;
+      top: 105px;
+      left: 48px;
+      right: 48px;
+      display: flex;
+      gap: 20px;
+    }
+    .strategy-card {
+      flex: 1;
+      text-align: center;
+    }
+    .strategy-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .circle-1 { background: #67B7B5; }
+    .circle-2 { background: #D0D5AF; }
+    .circle-3 { background: #99C7BF; }
+    .strategy-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 8px;
+    }
+    .strategy-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: white;
+    }
+    .strategy-num {
+      font-size: 14pt;
+      font-weight: 700;
+      color: white;
+    }
+    .strategy-title {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #153325;
+      margin-bottom: 10px;
+    }
+    .strategy-desc {
+      font-size: 10pt;
+      color: #153325;
+      line-height: 1.6;
+      padding: 0 8px;
+    }
+    .connector {
+      position: absolute;
+      top: 175px;
+      height: 2px;
+      background: #A1BFB4;
+    }
+    .conn-1 { left: 215px; width: 55px; }
+    .conn-2 { left: 440px; width: 55px; }
+    .footer {
+      position: absolute;
+      bottom: 12px;
+      right: 20px;
+      font-size: 8pt;
+      color: #859C80;
+    }
+    .page-num {
+      position: absolute;
+      bottom: 12px;
+      left: 48px;
+      font-size: 8pt;
+      color: #859C80;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-title"><p>핵심 추진 전략</p></div>
+  <div class="slide-subtitle"><p>"안정적 전환"과 "혁신적 기능 구현"의 균형</p></div>
+  <div class="title-bar"></div>
+  <div class="title-line"></div>
+  <div class="connector conn-1"></div>
+  <div class="connector conn-2"></div>
+  <div class="strategy-container">
+    <div class="strategy-card">
+      <div class="strategy-circle circle-1">
+        <div class="strategy-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <div class="strategy-num"><p>01</p></div>
+      </div>
+      <div class="strategy-title"><p>단계적 전환 전략</p></div>
+      <div class="strategy-desc"><p>Big Bang 방식이 아닌<br>모듈별 순차 전환으로<br>리스크 최소화</p></div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-circle circle-2">
+        <div class="strategy-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+        </div>
+        <div class="strategy-num"><p>02</p></div>
+      </div>
+      <div class="strategy-title"><p>애자일 기반 개발</p></div>
+      <div class="strategy-desc"><p>2주 단위 스프린트로<br>빠른 피드백과<br>유연한 대응</p></div>
+    </div>
+    <div class="strategy-card">
+      <div class="strategy-circle circle-3">
+        <div class="strategy-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div class="strategy-num"><p>03</p></div>
+      </div>
+      <div class="strategy-title"><p>현업 밀착 협업</p></div>
+      <div class="strategy-desc"><p>주 2회 현업 리뷰를 통한<br>요구사항 정합성 확보</p></div>
+    </div>
+  </div>
+  <div class="page-num"><p>8</p></div>
+  <div class="footer"><p>스마트 물류관리 시스템 구축</p></div>
+</body>
+</html>

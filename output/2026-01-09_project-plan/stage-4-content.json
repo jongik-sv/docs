@@ -1,0 +1,48 @@
+{
+  "session": {
+    "id": "2026-01-09_project-plan",
+    "title": "스마트 물류관리 시스템 구축 프로젝트 수행계획서",
+    "created_at": "2026-01-09T00:00:00Z",
+    "status": "in_progress"
+  },
+  "current_stage": 4,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트",
+      "subtitle": "수행계획서",
+      "audience": "혼합 (경영진+실무자)",
+      "duration": "20-30분",
+      "slide_count": 18
+    },
+    "theme": {
+      "id": "deepgreen-clean",
+      "colors": {
+        "primary": "#153325",
+        "secondary": "#22523B",
+        "accent": "#479374",
+        "background": "#FFFFFF",
+        "surface": "#A1BFB4"
+      }
+    }
+  },
+  "slides": [
+    {"index": 0, "title": "표지", "purpose": "cover", "template_id": "deepgreen-cover-centered1", "html_file": "slides/slide-001.html", "content_bindings": {"title": "스마트 물류관리 시스템 구축", "subtitle": "프로젝트 수행계획서", "client": "(주)글로벌물류", "vendor": "(주)테크솔루션", "date": "2025-01-06"}},
+    {"index": 1, "title": "목차", "purpose": "toc", "template_id": "deepgreen-toc-3col1", "html_file": "slides/slide-002.html", "content_bindings": {"items": ["프로젝트 개요", "추진 전략", "조직 및 일정", "관리 계획"]}},
+    {"index": 2, "title": "섹션1: 프로젝트 개요", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-003.html", "content_bindings": {"section_number": "01", "section_title": "프로젝트 개요"}},
+    {"index": 3, "title": "프로젝트 정보", "purpose": "content", "template_id": "content-stack1", "html_file": "slides/slide-004.html", "content_bindings": {"project_name": "스마트 물류관리 시스템 구축", "contract_amount": "15억원", "duration": "12개월", "client": "(주)글로벌물류", "vendor": "(주)테크솔루션"}},
+    {"index": 4, "title": "배경 및 목적", "purpose": "content", "template_id": "content-stack2", "html_file": "slides/slide-005.html", "content_bindings": {"current_state": "레거시 시스템 노후화", "goals": "AI 기반 물류 최적화", "effects": ["30% 효율 향상", "99.5% 재고 정확도", "20% 비용 절감"]}},
+    {"index": 5, "title": "프로젝트 범위", "purpose": "grid", "template_id": "grid-2col1", "html_file": "slides/slide-006.html", "content_bindings": {"business_scope": ["입출고 관리", "재고 관리", "배송 추적", "정산 시스템"], "system_scope": ["WMS", "TMS", "OMS", "Dashboard"]}},
+    {"index": 6, "title": "섹션2: 추진 전략", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-007.html", "content_bindings": {"section_number": "02", "section_title": "추진 전략 및 방법론"}},
+    {"index": 7, "title": "핵심 추진 전략", "purpose": "grid", "template_id": "deepgreen-grid-3col-icon1", "html_file": "slides/slide-008.html", "content_bindings": {"strategies": [{"title": "단계적 전환", "desc": "모듈별 순차 전환"}, {"title": "애자일 개발", "desc": "2주 스프린트"}, {"title": "현업 밀착", "desc": "주 2회 리뷰"}]}},
+    {"index": 8, "title": "수행 방법론", "purpose": "process", "template_id": "process-linear1", "html_file": "slides/slide-009.html", "content_bindings": {"phases": ["착수 4주", "분석 8주", "설계 8주", "개발 16주", "테스트 6주", "이행 6주"]}},
+    {"index": 9, "title": "기술 아키텍처", "purpose": "grid", "template_id": "grid-4col1", "html_file": "slides/slide-010.html", "content_bindings": {"tech_stack": [{"area": "Frontend", "tech": "Vue.js 3"}, {"area": "Backend", "tech": "Spring Boot"}, {"area": "Database", "tech": "PostgreSQL"}, {"area": "Infra", "tech": "AWS"}, {"area": "AI", "tech": "TensorFlow"}]}},
+    {"index": 10, "title": "섹션3: 조직 및 일정", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-011.html", "content_bindings": {"section_number": "03", "section_title": "조직 및 일정"}},
+    {"index": 11, "title": "프로젝트 조직", "purpose": "hierarchy", "template_id": "hierarchy-3col", "html_file": "slides/slide-012.html", "content_bindings": {"total_members": 8, "total_mm": 78, "roles": ["PM", "AA", "PL", "DBA", "QA"]}},
+    {"index": 12, "title": "마스터 일정", "purpose": "timeline", "template_id": "timeline-horizontal", "html_file": "slides/slide-013.html", "content_bindings": {"phases": ["착수", "분석", "설계", "개발", "테스트", "이행"]}},
+    {"index": 13, "title": "주요 마일스톤", "purpose": "timeline", "template_id": "timeline-circle", "html_file": "slides/slide-014.html", "content_bindings": {"milestones": ["M1 착수보고", "M2 요구사항", "M3 설계", "M4 개발", "M5 테스트", "M6 오픈"]}},
+    {"index": 14, "title": "섹션4: 품질/위험 관리", "purpose": "section", "template_id": "deepgreen-section-number1", "html_file": "slides/slide-015.html", "content_bindings": {"section_number": "04", "section_title": "품질 및 위험 관리"}},
+    {"index": 15, "title": "품질/보안 관리", "purpose": "grid", "template_id": "grid-2col1", "html_file": "slides/slide-016.html", "content_bindings": {"quality": ["산출물 검토", "코드 리뷰", "정적 분석"], "security": ["인적 보안", "물리 보안", "기술 보안"]}},
+    {"index": 16, "title": "위험 관리", "purpose": "table", "template_id": "deepgreen-table-4col1", "html_file": "slides/slide-017.html", "content_bindings": {"risks": [{"name": "요구사항 변경", "impact": "상", "response": "CCB 통제"}, {"name": "일정 지연", "impact": "상", "response": "주간 진척관리"}]}},
+    {"index": 17, "title": "감사합니다", "purpose": "closing", "template_id": "custom-closing", "html_file": "slides/slide-018.html", "content_bindings": {"message": "THANK YOU", "contact": "김철수 차장"}}
+  ]
+}

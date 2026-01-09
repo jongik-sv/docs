@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt; height: 405pt;
+      font-family: 'Malgun Gothic', sans-serif;
+      background: #FFFFFF;
+      padding: 36pt 48pt;
+      position: relative;
+    }
+    .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24pt; }
+    .title { font-size: 24pt; font-weight: 700; color: #153325; }
+    .page-num { font-size: 12pt; color: #859C80; }
+    .grid { display: flex; gap: 16pt; }
+    .card {
+      flex: 1; background: #F8FAF9; border-radius: 8pt;
+      padding: 20pt 16pt; text-align: center; border-bottom: 4pt solid #479374;
+    }
+    .card:nth-child(2) { border-bottom-color: #22523B; }
+    .card:nth-child(3) { border-bottom-color: #67B7B5; }
+    .card:nth-child(4) { border-bottom-color: #153325; }
+    .card-icon {
+      width: 56pt; height: 56pt; background: #153325; border-radius: 12pt;
+      margin: 0 auto 14pt; display: flex; align-items: center; justify-content: center;
+    }
+    .card-icon svg { width: 28pt; height: 28pt; fill: #FFFFFF; }
+    .card-title { font-size: 18pt; font-weight: 700; color: #153325; margin-bottom: 4pt; }
+    .card-subtitle { font-size: 11pt; color: #859C80; margin-bottom: 12pt; }
+    .card-desc { font-size: 11pt; color: #4B5563; line-height: 1.5; }
+    .accent-line { position: absolute; bottom: 0; left: 0; width: 100%; height: 4pt; background: #479374; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <p class="title">시스템 구성</p>
+    <p class="page-num">07</p>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 21V7L12 3 2 7v14h5v-9h10v9h5zm-11-2H9v2h2v-2zm2-3h-2v2h2v-2zm2 3h-2v2h2v-2z"/></svg>
+      </div>
+      <p class="card-title">WMS</p>
+      <p class="card-subtitle">창고관리시스템</p>
+      <p class="card-desc">입출고, 재고관리<br>피킹/패킹 최적화</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+      </div>
+      <p class="card-title">TMS</p>
+      <p class="card-subtitle">배송관리시스템</p>
+      <p class="card-desc">배차, 경로최적화<br>실시간 추적</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H5v-2h7v2zm0-4H5v-2h7v2zm0-4H5V7h7v2zm5 8h-3V7h3v10z"/></svg>
+      </div>
+      <p class="card-title">OMS</p>
+      <p class="card-subtitle">주문관리시스템</p>
+      <p class="card-desc">주문접수, 할당<br>정산 자동화</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+      </div>
+      <p class="card-title">Dashboard</p>
+      <p class="card-subtitle">통합모니터링</p>
+      <p class="card-desc">실시간 현황, KPI<br>리포트 자동생성</p>
+    </div>
+  </div>
+  <div class="accent-line"></div>
+</body>
+</html>

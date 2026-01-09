@@ -1,0 +1,223 @@
+category: grid
+name: 그리드
+description: 다열 그리드 레이아웃
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: grid-2col1
+  name: 2열 기본 레이아웃
+  file: templates/grid/grid-2col1.yaml
+  thumbnail: thumbnails/grid/grid-2col1.png
+  source_slide_index: 1
+  description: 2열 레이아웃 슬라이드.
+  match_keywords:
+  - 2열
+  - 좌우
+  - 비교
+  - 양면
+  - 나란히
+  - 대칭
+  - two column
+  - side by side
+  - 양면 설명
+  - 좌우 배치
+  - 2가지 주제
+  - grid
+  expected_prompt: '2열 레이아웃 슬라이드를 만들어줘.
+
+    - 좌우 2열로 균등 배치
+
+    - 각 열에 중제목 + 소제목/본문
+
+    - 대칭적인 구조
+
+    - 두 가지 항목을 나란히 비교하거나 설명'
+- id: grid-3col1
+  name: 3열 기본 레이아웃
+  file: templates/grid/grid-3col1.yaml
+  thumbnail: thumbnails/grid/grid-3col1.png
+  source_slide_index: 3
+  description: 3열 레이아웃 슬라이드.
+  match_keywords:
+  - 3열
+  - 그리드
+  - 카드
+  - 특징
+  - 서비스
+  - 3가지
+  - three column
+  - 3가지 항목
+  - 특징 소개
+  - 카드 레이아웃
+  - 서비스 비교
+  - grid
+  expected_prompt: '3열 레이아웃 슬라이드를 만들어줘.
+
+    - 3개의 열로 균등 배치
+
+    - 각 열에 중제목 + 소제목/본문 3세트
+
+    - 대칭적인 구조
+
+    - 3가지 항목/특징을 나란히 설명'
+- id: grid-3col2
+  name: 3열 확장 레이아웃
+  file: templates/grid/grid-3col2.yaml
+  thumbnail: thumbnails/grid/grid-3col2.png
+  source_slide_index: 22
+  description: 3열 확장 레이아웃 슬라이드.
+  match_keywords:
+  - 3열
+  - 확장
+  - 상세
+  - 서비스
+  - 기능
+  - 설명
+  - detail
+  - 서비스 소개
+  - 기능 설명
+  - 확장 레이아웃
+  - 상세 정보
+  - grid
+  expected_prompt: '3열 확장 레이아웃 슬라이드를 만들어줘.
+
+    - 3개의 열로 구성
+
+    - 각 열에 중제목 + 상세 본문
+
+    - 2행 구조로 더 많은 정보 포함
+
+    - 서비스/기능의 상세 설명에 적합'
+- id: grid-4col-circle
+  name: 4열 원형 상단 카드
+  file: templates/grid/grid-4col-circle.yaml
+  thumbnail: thumbnails/grid/grid-4col-circle.png
+  source_slide_index: 24
+  description: 4열 원형 상단 카드 슬라이드.
+  match_keywords:
+  - 4개 항목의 동등한 정보를 카드 형태로 표시
+  - 원형 아이콘으로 시작하는 4단계 프로세스
+  - 4가지 제품, 서비스, 특성 소개
+  - 균형잡힌 4열 비교 레이아웃
+  - 컬러풀한 원형이 필요한 카드 그리드
+  - 4열
+  - 그리드
+  - 카드
+  - 원형
+  - 4단계
+  - 비교
+  - 균형
+  expected_prompt: '4열 원형 상단 카드 슬라이드를 만들어줘.
+
+    - 4열 그리드 레이아웃 - 각 열의 상단에 원형 도형, 중앙에 제목, 하단에 텍스트 콘텐츠
+
+    - 4개 항목의 동등한 정보를 카드 형태로 표시
+
+    - 원형 아이콘으로 시작하는 4단계 프로세스
+
+    - 4가지 제품, 서비스, 특성 소개'
+- id: grid-4col1
+  name: 4열 기본 레이아웃
+  file: templates/grid/grid-4col1.yaml
+  thumbnail: thumbnails/grid/grid-4col1.png
+  source_slide_index: 14
+  description: 4열 레이아웃 슬라이드.
+  match_keywords:
+  - 4열
+  - 그리드
+  - 불릿
+  - 특징
+  - 서비스
+  - 4가지
+  - 카드
+  - four column
+  - 4가지 항목
+  - 특징 나열
+  - 서비스 소개
+  - 기능 설명
+  - grid
+  expected_prompt: '4열 레이아웃 슬라이드를 만들어줘.
+
+    - 4개의 열로 균등 배치
+
+    - 각 열에 중제목 + 불릿 포인트 리스트
+
+    - 대칭적인 그리드 구조
+
+    - 4가지 항목/특징/서비스를 나란히 설명'
+- id: grid-4col2
+  name: 4열 복합 레이아웃
+  file: templates/grid/grid-4col2.yaml
+  thumbnail: thumbnails/grid/grid-4col2.png
+  source_slide_index: 19
+  description: 4열 복합 레이아웃 슬라이드.
+  match_keywords:
+  - 4열
+  - 복합
+  - 대시보드
+  - 통계
+  - KPI
+  - 카드
+  - dashboard
+  - 통계 카드
+  - KPI 표시
+  - 복합 정보
+  - grid
+  expected_prompt: '4열 복합 레이아웃 슬라이드를 만들어줘.
+
+    - 상단에 전체 너비 제목
+
+    - 4개의 열로 하단 구성
+
+    - 대시보드나 KPI 표시에 적합
+
+    - 복합적인 정보를 한눈에 표시'
+- id: grid-arch3
+  name: 3열 아치형 텍스트 레이아웃
+  file: templates/grid/grid-arch3.yaml
+  thumbnail: thumbnails/grid/grid-arch3.png
+  source_slide_index: 9
+  description: 3열 아치형 텍스트 레이아웃 슬라이드.
+  match_keywords:
+  - 3열로 정보를 동등하게 분류하여 비교하는 슬라이드
+  - 계층적 구조를 가진 3가지 주제를 시각화할 때
+  - 아치형 배경으로 각 섹션을 구분하는 디자인
+  - 대칭적 레이아웃이 필요한 3항목 비교
+  - 텍스트 중심의 정보 전달이 필요할 때
+  - 3열
+  - 아치형
+  - 텍스트 레이아웃
+  - 대칭
+  - 계층구조
+  - 비교
+  - 구분
+  expected_prompt: '3열 아치형 텍스트 레이아웃 슬라이드를 만들어줘.
+
+    - 3열 아치형 텍스트 레이아웃 - 각 열의 상단에 곡선형 아치 도형, 하단에 텍스트 콘텐츠
+
+    - 3열로 정보를 동등하게 분류하여 비교하는 슬라이드
+
+    - 계층적 구조를 가진 3가지 주제를 시각화할 때
+
+    - 아치형 배경으로 각 섹션을 구분하는 디자인'
+- id: deepgreen-grid-4col-icon1
+  name: 딥그린 4열 원형 아이콘 그리드
+  file: templates/grid/deepgreen-grid-4col-icon1.yaml
+  thumbnail: thumbnails/grid/deepgreen-grid-4col-icon1.png
+  source_slide_index: 7
+  description: 4열 원형 아이콘이 있는 그리드 레이아웃.
+  match_keywords:
+  - grid
+  - 그리드
+  - 4열
+  - 아이콘
+  - 원형
+  - 딥그린
+  - 카드
+  - 특징
+  expected_prompt: |
+    4열 아이콘 그리드 슬라이드를 만들어줘.
+    - 4개 열로 균등 배치
+    - 각 열 상단에 원형 아이콘
+    - 제목과 설명 텍스트
+    - 딥그린 스타일

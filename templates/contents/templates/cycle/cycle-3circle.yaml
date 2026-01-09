@@ -1,0 +1,243 @@
+content_template:
+  id: cycle-3circle
+  name: 3개 원형 연결 사이클
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 23
+  extracted_at: '2026-01-09T15:42:00'
+  expected_prompt: "Create a general slide designed for 3개의 원형 노드가 연결선으로 연결된 사이클 다이어그램 - 프로세스 순환, 반복 구조 표현. This layout is specifically designed for: 3단계 순환 프로세스나 사이클 표현, 삼각형 구조의 반복적 관계 시각화, 3가지 요소의 순환 구조를 보여줄 때. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.0
+  design_intent: 3개의 원형 노드가 연결선으로 연결된 사이클 다이어그램 - 프로세스 순환, 반복 구조 표현
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Circle Left
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 8.2%
+    y: 43.8%
+    cx: 8.6%
+    cy: 5.6%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{단계1}}'
+      font_size: 12.0
+    alignment: center
+    font_color: light
+- id: shape-1
+  name: Text Left
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 6.3%
+    y: 49.0%
+    cx: 12.2%
+    cy: 10.9%
+    original_aspect_ratio: 1.993
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{설명1}}'
+      font_size: 11.0
+    alignment: center
+    font_color: dark_text
+- id: shape-2
+  name: Circle Bottom
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 36.3%
+    y: 68.4%
+    cx: 8.6%
+    cy: 5.6%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: solid
+      color: secondary
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{단계2}}'
+      font_size: 12.0
+    alignment: center
+    font_color: light
+- id: shape-3
+  name: Text Bottom
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 34.1%
+    y: 73.5%
+    cx: 13.0%
+    cy: 10.9%
+    original_aspect_ratio: 2.129
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{설명2}}'
+      font_size: 11.0
+    alignment: center
+    font_color: dark_text
+- id: shape-4
+  name: Circle Right
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 64.2%
+    y: 43.5%
+    cx: 8.6%
+    cy: 5.6%
+    original_aspect_ratio: 2.75
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{단계3}}'
+      font_size: 12.0
+    alignment: center
+    font_color: light
+- id: shape-5
+  name: Text Right
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 62.4%
+    y: 49.2%
+    cx: 12.2%
+    cy: 10.9%
+    original_aspect_ratio: 1.992
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{설명3}}'
+      font_size: 11.0
+    alignment: center
+    font_color: dark_text
+- id: shape-6
+  name: Connector1
+  type: line
+  shape_source: ooxml
+  geometry:
+    x: 26.2%
+    y: 45.9%
+    cx: 6.2%
+    cy: 11.1%
+    original_aspect_ratio: 1.0
+  style:
+    stroke:
+      type: solid
+      color: primary
+      width: 2
+  text:
+    has_text: false
+- id: shape-7
+  name: Connector2
+  type: line
+  shape_source: ooxml
+  geometry:
+    x: 38.1%
+    y: 45.9%
+    cx: 6.2%
+    cy: 11.1%
+    original_aspect_ratio: 1.0
+  style:
+    stroke:
+      type: solid
+      color: secondary
+      width: 2
+  text:
+    has_text: false
+- id: shape-8
+  name: Connector3
+  type: line
+  shape_source: ooxml
+  geometry:
+    x: 49.9%
+    y: 45.9%
+    cx: 6.2%
+    cy: 11.1%
+    original_aspect_ratio: 1.0
+  style:
+    stroke:
+      type: solid
+      color: accent
+      width: 2
+  text:
+    has_text: false
+gaps:
+  global:
+    column_gap: 8%
+    row_gap: 6%
+content_schema:
+  nodes: 3
+  repeating_units:
+  - id: cycle_node
+    fields:
+    - name: title
+      type: text
+      description: 노드 제목 (단계명)
+    - name: description
+      type: text
+      description: 노드 설명
+use_for:
+- 3단계 순환 프로세스나 사이클 표현
+- 삼각형 구조의 반복적 관계 시각화
+- 3가지 요소의 순환 구조를 보여줄 때
+- 다이어그램 기반의 프로세스 플로우
+- 균형잡힌 3개 항목의 상호 관계
+keywords:
+- 3단계
+- 사이클
+- 순환
+- 원형
+- 연결
+- 프로세스
+- 관계도
+expected_prompt: |
+  3개 원형 연결 사이클 슬라이드를 만들어줘.
+  - 3개의 원형 노드가 연결선으로 연결된 사이클 다이어그램 - 프로세스 순환, 반복 구조 표현
+  - 3단계 순환 프로세스나 사이클 표현
+  - 삼각형 구조의 반복적 관계 시각화
+  - 3가지 요소의 순환 구조를 보여줄 때
+thumbnail: thumbnails/cycle/cycle-3circle.png

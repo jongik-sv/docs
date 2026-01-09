@@ -1,224 +1,57 @@
-# 막대 차트 콘텐츠 템플릿
-# 개선: 2026-01-09 - LLM 가이드 및 OOXML Export 섹션 추가
+id: deepgreen-chart-bar1
+name: 딥그린 막대 차트
+category: chart
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 4
+design_intent: stats-chart
+extraction_mode: content_only
 
-content_template:
-  id: deepgreen-chart-bar1
-  name: chart-bar
-  version: '3.0'
-  source: 깔끔이 딥그린.pptx
-  source_slide_index: 4
-  extracted_at: '2026-01-08T23:29:15.278381'
+layout:
+  type: freeform
 
-# =============================================================================
-# LLM 가이드 - 콘텐츠 생성 시 참조
-# =============================================================================
+zones:
+  - id: title-area
+    type: placeholder
+    geometry: {x: 5%, y: 5%, cx: 40%, cy: 8%}
+    placeholder_type: TITLE
 
-llm_guide:
-  description: |
-    막대 차트를 중심으로 한 데이터 시각화 슬라이드.
-    상단에 제목/부제목, 하단에 대형 차트 영역.
-    데이터 비교, 추이, 진행률 표시에 적합.
+  - id: subtitle-area
+    type: placeholder
+    geometry: {x: 5%, y: 12%, cx: 40%, cy: 5%}
+    placeholder_type: SUBTITLE
 
-  best_for:
-    - 수치 데이터 비교
-    - 카테고리별 성과 표시
-    - 진행률/달성률 시각화
-    - 기간별 추이 (분기별, 월별)
+  - id: progress-bar
+    type: container
+    geometry: {x: 5%, y: 18%, cx: 45%, cy: 2%}
+    object_desc: "프로그레스 바, 녹색+회색 2단계"
 
-  avoid_for:
-    - 텍스트 중심 설명
-    - 복잡한 다이어그램
-    - 비정량적 정보
-
-  element_count:
-    chart_series: 1-3
-    categories: 3-8
-
-  # 데이터 바인딩 포인트
-  data_slots:
-    - slot_id: title
-      type: text
-      purpose: 슬라이드 제목
-      constraints:
-        max_chars: 30
-        max_lines: 1
-      example: 분기별 매출 현황
-
-    - slot_id: subtitle
-      type: text
-      purpose: 슬라이드 부제목/설명
-      constraints:
-        max_chars: 50
-        max_lines: 1
-        allow_empty: true
-      example: 2024년 1~3분기 실적
-
-    - slot_id: chart_data
-      type: chart
-      chart_type: bar
-      schema:
-        categories:
-          type: array
-          purpose: X축 카테고리 (분기, 항목명 등)
-          example: ["1분기", "2분기", "3분기"]
-        series:
-          type: array
-          items:
-            - field: name
-              type: text
-              purpose: 시리즈 이름
-              example: 매출
-            - field: values
-              type: array
-              purpose: 데이터 값
-              example: [1200, 1500, 1800]
-            - field: color
-              type: color_token
-              purpose: 시리즈 색상
-              example: primary
-
-  # 색상 토큰
-  style_tokens:
-    bar_primary: primary
-    bar_secondary: secondary
-    bar_accent: accent
-    text_title: primary
-    axis_color: gray
-    gridline_color: light
-
-# =============================================================================
-# OOXML Export 정의 - PPTX 변환 시 사용
-# =============================================================================
-
-ooxml_export:
-  type: chart
-  subtype: bar_chart
-
-  # 차트 영역
-  chart_area:
-    position:
-      x_pct: 8.39
-      y_pct: 18.81
-      w_pct: 83.23
-      h_pct: 74.11
-
-  # 차트 OOXML 구조
-  chart_config:
-    type: c:barChart
-    bar_dir: bar  # bar (수평) 또는 col (수직)
-    grouping: clustered  # clustered, stacked, percentStacked
-
-    # 카테고리 축 (X축)
-    cat_axis:
-      position: bottom
-      delete_labels: false
-      tick_marks: none
-      font_size_pt: 10
-      font_color_token: axis_color
-
-    # 값 축 (Y축)
-    val_axis:
-      position: left
-      delete_labels: false
-      major_gridlines: true
-      gridline_color_token: gridline_color
-      font_size_pt: 10
-      font_color_token: axis_color
-
-    # 범례
-    legend:
-      position: bottom
-      overlay: false
-
-    # 데이터 레이블
-    data_labels:
-      show_value: true
-      position: outside_end
-      font_size_pt: 9
-
-  # 슬라이드 헤더
-  header:
-    - type: textbox
-      role: slide_title
-      position:
-        x_pct: 2.73
-        y_pct: 3.0
-        w_pct: 41.31
-        h_pct: 7.29
-      text_binding: title
-      style:
-        font_size_pt: 20
-        font_color_token: text_title
-        alignment: left
-
-    - type: textbox
-      role: slide_subtitle
-      position:
-        x_pct: 2.88
-        y_pct: 10.0
-        w_pct: 41.31
-        h_pct: 5.05
-      text_binding: subtitle
-      style:
-        font_size_pt: 12
-        font_color_token: text_title
-        alignment: left
-
-# =============================================================================
-# 기존 추출 데이터 (참조용)
-# =============================================================================
-
-design_meta:
-  quality_score: 8.5
-  design_intent: chart-bar
-  design_intents: [chart-bar]
-  visual_balance: symmetric
-  information_density: medium
-
-canvas:
-  reference_width: 1920
-  reference_height: 1080
-  aspect_ratio: '16:9'
-
-background:
-  type: solid
-  color: background
-
-shapes:
-  - id: shape-7
-    name: TextBox 6
-    type: text_box (17)
-    semantic_role: slide_subtitle
-    geometry: {x: 2.88%, y: 0%, cx: 41.31%, cy: 5.05%}
-    text:
-      has_text: true
-      alignment: left
-      font_size_pt: 12.0
-      font_color: '#22523B'
-      sample_text: 간략한 설명을 적어주세요.
-    z_index: 0
-
-  - id: shape-50
-    name: TextBox 49
-    type: text_box (17)
-    semantic_role: slide_title
-    geometry: {x: 2.73%, y: 0%, cx: 41.31%, cy: 7.29%}
-    text:
-      has_text: true
-      alignment: left
-      font_size_pt: 20.0
-      font_color: '#22523B'
-      sample_text: 제목을 입력해 주세요.
-    z_index: 1
-
-  - id: shape-9
-    name: 차트 8
-    type: chart (3)
-    semantic_role: main_chart
-    geometry: {x: 8.39%, y: 18.81%, cx: 83.23%, cy: 74.11%}
-    z_index: 2
+  - id: chart-area
+    type: placeholder
+    geometry: {x: 10%, y: 30%, cx: 80%, cy: 65%}
+    placeholder_type: CHART
+    object_hint:
+      category: chart
+      semantic: "3계열 그룹화 막대 차트"
+      style: grouped-bar
 
 thumbnail: thumbnails/chart/deepgreen-chart-bar1.png
-keywords: [chart-bar, chart, bar, data, visualization]
-expected_prompt: 막대 차트로 데이터를 시각화하는 슬라이드를 만들어줘.
-prompt_keywords: [차트, 막대, 바, 데이터, 비교]
+
+use_for:
+  - 성과 비교
+  - 분기별 데이터
+  - KPI 시각화
+
+keywords:
+  - 차트
+  - 막대
+  - 그래프
+  - 비교
+  - 데이터
+
+expected_prompt: |
+  막대 차트 슬라이드를 만들어줘.
+  - 상단에 제목과 부제목
+  - 3계열 그룹화 막대 차트
+  - 4개 카테고리 (항목 1~4)
+  - 녹색 계열 색상

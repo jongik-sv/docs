@@ -3,7 +3,8 @@
 단일 슬라이드 또는 다중 슬라이드의 레이아웃 패턴을 추출하여 재사용 가능한 콘텐츠 템플릿으로 저장합니다.
 
 > **버전 히스토리**
-> - **v3.1 (NEW)**: shape_source 선택적 추출, OOXML 보존, extraction_mode, Object 분리
+> - **v4.0 (NEW)**: content-analyzer.py 스크립트 추가 - 완전한 OOXML 추출
+> - v3.1: shape_source 선택적 추출, OOXML 보존, extraction_mode, Object 분리
 > - v3.0: 템플릿 스킬 분리, 프로젝트 루트 저장
 >
 > 컨텐츠는 테마 독립적이며, 디자인 토큰 기반으로 작성됩니다.
@@ -19,8 +20,91 @@
 ## Pre-requisites
 
 1. 원본 PPTX 파일 확인
-2. 추출 대상 슬라이드 인덱스 확인 (0-based)
+2. 추출 대상 슬라이드 인덱스 확인 (1-based for script, 0-based for manual)
 3. 카테고리 결정 후 해당 폴더 내 기존 파일 확인 (번호 충돌 방지)
+
+---
+
+## Quick Start: content-analyzer.py (v4.0 NEW)
+
+**권장 방식**: 스크립트로 OOXML 완전 추출 후 YAML 템플릿 생성
+
+### 기본 사용법
+
+```bash
+# 단일 슬라이드 분석 (1-based index)
+python .claude/skills/ppt-extract/scripts/content-analyzer.py input.pptx --slide 11
+
+# 결과를 파일로 저장
+python .claude/skills/ppt-extract/scripts/content-analyzer.py input.pptx --slide 11 --output result.yaml
+
+# 모든 슬라이드 요약
+python .claude/skills/ppt-extract/scripts/content-analyzer.py input.pptx --all --summary
+
+# 모든 슬라이드 상세 분석
+python .claude/skills/ppt-extract/scripts/content-analyzer.py input.pptx --all --output all-slides.yaml
+```
+
+### 추출 정보
+
+스크립트가 추출하는 요소:
+
+| 요소 | OOXML 태그 | 추출 정보 |
+|------|------------|-----------|
+| 일반 도형 | `p:sp` | preset, fill, stroke, effects, text |
+| 이미지/아이콘 | `p:pic` | embed_rId, SVG 참조, descr |
+| 연결선 | `p:cxnSp` | stroke, dash, head/tail arrow |
+| 그룹 | `p:grpSp` | children (재귀) |
+| SmartArt/차트 | `p:graphicFrame` | diagram_refs, chart_rId |
+
+### 출력 예시
+
+```yaml
+slide_num: 11
+elements:
+- type: shape
+  id: '2'
+  name: 육각형 1
+  geometry:
+    x_emu: 690345
+    y_emu: 3417546
+    x_pct: 5.66
+    y_pct: 49.83
+    cx_pct: 20.41
+    cy_pct: 31.27
+  preset: hexagon
+  fill:
+    type: solid
+    color: '#DCF0EF'
+  effects:
+  - type: outerShadow
+    blur: '50800'
+    dist: '38100'
+
+- type: picture
+  name: 그래픽 9
+  descr: 블로그 단색으로 채워진
+  is_svg: true
+  svg_target:
+    target: ../media/image11.svg
+
+summary:
+  total_elements: 20
+  shapes: 15
+  pictures: 5
+  connectors: 0
+  groups: 0
+  graphic_frames: 0
+```
+
+### 워크플로우 통합
+
+1. **스크립트로 분석**: `content-analyzer.py --slide N`
+2. **결과 확인**: shapes, pictures, connectors 수 확인
+3. **YAML 템플릿 작성**: 스크립트 출력을 기반으로 `zones:` 구조 작성
+4. **ooxml_shapes 복사**: 스크립트 출력의 geometry, fill, stroke 정보 활용
+
+---
 
 ## 경로 구조 (v3.0)
 
@@ -981,11 +1065,43 @@ spatial_relationships: []
 
 groups: []
 
-thumbnail: thumbnails/{design_intent}{번호}.png  # REQUIRED
+thumbnail: thumbnails/{category}/{design_intent}{번호}.png  # REQUIRED
 
-use_for: []
-keywords: []
+# ============================================
+# 검색 메타데이터 (REQUIRED - 절대 누락 금지!)
+# ============================================
+use_for:                              # REQUIRED: 사용 용도 (3-5개)
+  - "용도 1"
+  - "용도 2"
+  - "용도 3"
+
+keywords:                             # REQUIRED: 검색 키워드 (5-10개)
+  - "키워드1"
+  - "키워드2"
+  - "키워드3"
+
+expected_prompt: |                    # REQUIRED: 사용자 요청 프롬프트 예시
+  {슬라이드 유형} 슬라이드를 만들어줘.
+  - {요소1 설명}
+  - {요소2 설명}
+  - {레이아웃 특징}
+
+prompt_keywords:                      # REQUIRED: 프롬프트 매칭 키워드 (5-10개)
+  - "프롬프트키워드1"
+  - "프롬프트키워드2"
+  - "프롬프트키워드3"
 ```
+
+**검색 메타데이터 필수 항목 (CRITICAL)**:
+
+| 필드 | 설명 | 예시 |
+|------|------|------|
+| `use_for` | 템플릿 사용 용도 (3-5개) | "프로세스 설명", "단계별 안내" |
+| `keywords` | 검색용 키워드 (5-10개) | "프로세스", "단계", "흐름" |
+| `expected_prompt` | 사용자가 요청할 법한 프롬프트 | "3단계 프로세스 슬라이드 만들어줘" |
+| `prompt_keywords` | 프롬프트 매칭 키워드 (5-10개) | "프로세스", "단계", "순서" |
+
+**⚠️ 이 필드들이 없으면 LLM이 템플릿을 검색할 수 없습니다!**
 
 ---
 
@@ -1243,9 +1359,18 @@ test -f templates/contents/thumbnails/{design_intent}{번호}.png && echo "Thumb
 
 ---
 
-### Phase 4: Registry Update (레지스트리 업데이트)
+### Phase 4: Registry Update (레지스트리 업데이트) - v4.1 분리형
 
-`templates/contents/registry.yaml`에 새 템플릿 추가:
+**v4.1 분리형 registry 구조**:
+```
+templates/contents/
+├── registry.yaml              # 마스터 (인덱스): 카테고리 목록만
+├── registry-{category}.yaml   # 카테고리별 템플릿 목록 × 13
+```
+
+#### 4.1 카테고리별 registry 업데이트
+
+`templates/contents/registry-{category}.yaml`에 새 템플릿 추가:
 
 ```yaml
 templates:
@@ -1253,31 +1378,51 @@ templates:
 
   - id: {design_intent}{번호}
     name: {한글 이름}
-    file: templates/{design_intent}{번호}.yaml
-    thumbnail: thumbnails/{design_intent}{번호}.png
-    category: {대분류}
-    design_intent: {design_intent}
-    description: "{설명}"
-    use_for: ["용도1", "용도2"]
-    # NEW: 프롬프트 역추론 결과 (Step 2.6에서 생성)
+    file: templates/{category}/{design_intent}{번호}.yaml
+    thumbnail: thumbnails/{category}/{design_intent}{번호}.png
+    source_slide_index: {N}
+    # 검색 메타데이터 (압축 통합)
+    description: "{expected_prompt 첫 문장}"
+    match_keywords:  # use_for + keywords + prompt_keywords 통합 (중복 제거)
+      - {keyword1}
+      - {keyword2}
+      - {keyword3}
     expected_prompt: |
       {슬라이드 유형} 슬라이드를 만들어줘.
       - {요소1 설명}
       - {요소2 설명}
       - {레이아웃 특징}
-    prompt_keywords: ["{키워드1}", "{키워드2}", "{키워드3}"]
 ```
+
+#### 4.2 마스터 registry 업데이트
+
+`templates/contents/registry.yaml`의 해당 카테고리 count 증가:
+
+```yaml
+categories:
+  {category}:
+    count: {N+1}  # 기존 값 + 1
+```
+
+#### 4.3 자동화 (권장)
+
+수동 업데이트 대신 `sync_registry.py` 스크립트 실행:
+
+```bash
+python .claude/skills/ppt-gen/scripts/sync_registry.py
+```
+
+이 스크립트는 개별 템플릿 YAML에서 메타데이터를 추출하여 분리형 registry를 자동 생성합니다.
+
+**match_keywords 생성 규칙**:
+- `prompt_keywords` + `use_for` + `keywords` 통합
+- 중복 제거, 순서 유지
+- 5-10개 키워드 권장
 
 **expected_prompt 작성 가이드**:
 - 사용자가 자연어로 요청할 법한 문장으로 작성
 - 슬라이드의 주요 구성요소를 순서대로 설명
 - 레이아웃 특징(대칭, 그리드, 흐름 등) 포함
-
-**prompt_keywords 작성 가이드**:
-- 5-7개 키워드 권장
-- 한글/영어 혼용 가능
-- category, design_intent에서 파생된 키워드 포함
-- 사용자가 검색할 법한 단어 포함
 
 ---
 

@@ -1,0 +1,248 @@
+content_template:
+  id: content-2col-banner
+  name: 2열 리스트+하단 배너
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 33
+  extracted_at: '2026-01-09T15:42:00'
+  expected_prompt: "Create a general slide designed for 좌우 2열로 대비되는 정보를 표시하고 하단에 배너형 강조 콘텐츠를 배치. This layout is specifically designed for: 장점과 단점을 대비하여 표시할 때, 두 가지 관점의 정보를 비교하는 슬라이드, 대칭적 2열 구조의 콘텐츠. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.0
+  design_intent: 좌우 2열로 대비되는 정보를 표시하고 하단에 배너형 강조 콘텐츠를 배치
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Top Banner
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 6.6%
+    y: 24.1%
+    cx: 67.7%
+    cy: 7.4%
+    original_aspect_ratio: 12.023
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 0.1
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{상단배너}}'
+      font_size: 12.0
+    alignment: center
+    font_color: dark_text
+- id: shape-1
+  name: Label Left
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 8.2%
+    y: 32.9%
+    cx: 4.2%
+    cy: 42.7%
+    original_aspect_ratio: 0.145
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 0.8
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{라벨좌}}'
+      font_size: 11.0
+    alignment: center
+    font_weight: bold
+    font_color: light
+- id: shape-2
+  name: Content Box Left
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 12.4%
+    y: 32.9%
+    cx: 28.0%
+    cy: 42.7%
+    original_aspect_ratio: 0.917
+  style:
+    fill:
+      type: solid
+      color: surface
+      opacity: 0.5
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-3
+  name: Content Left
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 13.1%
+    y: 35.7%
+    cx: 26.5%
+    cy: 44.5%
+    original_aspect_ratio: 0.876
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문좌1}}'
+      font_size: 11.0
+    - text: '{{본문좌2}}'
+      font_size: 11.0
+    - text: '{{본문좌3}}'
+      font_size: 11.0
+    - text: '{{본문좌4}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-4
+  name: Label Right
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 69.0%
+    y: 32.9%
+    cx: 4.2%
+    cy: 42.7%
+    original_aspect_ratio: 0.145
+  style:
+    fill:
+      type: solid
+      color: secondary
+      opacity: 0.8
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{라벨우}}'
+      font_size: 11.0
+    alignment: center
+    font_weight: bold
+    font_color: light
+- id: shape-5
+  name: Content Box Right
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 40.9%
+    y: 32.9%
+    cx: 28.0%
+    cy: 42.7%
+    original_aspect_ratio: 0.917
+  style:
+    fill:
+      type: solid
+      color: surface
+      opacity: 0.5
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-6
+  name: Content Right
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 41.7%
+    y: 35.7%
+    cx: 26.5%
+    cy: 44.5%
+    original_aspect_ratio: 0.876
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문우1}}'
+      font_size: 11.0
+    - text: '{{본문우2}}'
+      font_size: 11.0
+    - text: '{{본문우3}}'
+      font_size: 11.0
+    - text: '{{본문우4}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-7
+  name: Bottom Banner
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 8.2%
+    y: 80.7%
+    cx: 64.9%
+    cy: 7.7%
+    original_aspect_ratio: 11.611
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 0.8
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{하단배너}}'
+      font_size: 12.0
+    alignment: center
+    font_weight: bold
+    font_color: light
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+content_schema:
+  columns: 2
+  rows: 3
+  repeating_units:
+  - id: content_column
+    fields:
+    - name: label
+      type: text
+      description: 열의 라벨 (장점/단점 등)
+    - name: items
+      type: text_array
+      description: 최대 4개의 콘텐츠 항목
+use_for:
+- 장점과 단점을 대비하여 표시할 때
+- 두 가지 관점의 정보를 비교하는 슬라이드
+- 대칭적 2열 구조의 콘텐츠
+- 상단 배너와 하단 강조 배너가 필요할 때
+- 주요 메시지를 배너로 강조하면서 상세 정보 표시
+keywords:
+- 2열
+- 대비
+- 배너
+- 강조
+- 비교
+- 콘텐츠
+- 리스트
+expected_prompt: |
+  2열 리스트+하단 배너 슬라이드를 만들어줘.
+  - 좌우 2열로 대비되는 정보를 표시하고 하단에 배너형 강조 콘텐츠를 배치
+  - 장점과 단점을 대비하여 표시할 때
+  - 두 가지 관점의 정보를 비교하는 슬라이드
+  - 대칭적 2열 구조의 콘텐츠
+thumbnail: thumbnails/content/content-2col-banner.png

@@ -1,0 +1,71 @@
+id: deepgreen-stats-dotgrid1
+name: 딥그린 도트그리드 통계
+category: stats
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 6
+design_intent: stats-dotgrid
+extraction_mode: content_only
+
+layout:
+  type: grid
+  columns: 3
+  column_gap: 5%
+
+zones:
+  - id: title-area
+    type: placeholder
+    geometry: {x: 5%, y: 5%, cx: 40%, cy: 8%}
+    placeholder_type: TITLE
+
+  - id: stat-1
+    type: container
+    geometry: {x: 5%, y: 20%, cx: 28%, cy: 75%}
+    children:
+      - id: percent-1
+        object_desc: "56% 큰 숫자, 녹색"
+      - id: dotgrid-1
+        object_desc: "8x8 도트그리드, 56% 채움 (녹색+회색)"
+      - id: label-1
+        placeholder_type: BODY
+      - id: desc-1
+        placeholder_type: BODY
+
+  - id: stat-2
+    type: container
+    geometry: {x: 36%, y: 20%, cx: 28%, cy: 75%}
+    children:
+      - id: percent-2
+        object_desc: "29% 큰 숫자"
+      - id: dotgrid-2
+        object_desc: "8x8 도트그리드, 29% 채움"
+
+  - id: stat-3
+    type: container
+    geometry: {x: 67%, y: 20%, cx: 28%, cy: 75%}
+    children:
+      - id: percent-3
+        object_desc: "63% 큰 숫자"
+      - id: dotgrid-3
+        object_desc: "8x8 도트그리드, 63% 채움"
+
+thumbnail: thumbnails/stats/deepgreen-stats-dotgrid1.png
+
+use_for:
+  - 퍼센트 시각화
+  - KPI 대시보드
+  - 비율 비교
+
+keywords:
+  - 통계
+  - 퍼센트
+  - 도트
+  - KPI
+  - 비율
+
+expected_prompt: |
+  통계 슬라이드를 만들어줘.
+  - 3개 퍼센트 지표
+  - 각 지표를 도트그리드로 시각화
+  - 퍼센트 숫자와 설명 텍스트
+  - 3열 균등 배치

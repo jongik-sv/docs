@@ -1,0 +1,97 @@
+# 깔끔이 딥그린 테마
+# 출처: 깔끔이 딥그린.pptx (연두언니 PPT)
+# 추출일: 2026-01-09
+
+id: deepgreen-clean
+name: 깔끔이 딥그린
+description: 자연스럽고 깔끔한 딥그린 컬러 팔레트. 친환경, 헬스케어, 교육 분야에 적합.
+source: 깔끔이 딥그린.pptx
+
+# 색상 팔레트
+colors:
+  # 주요 색상 (Primary Palette)
+  primary: "#153325"        # 다크 그린 - 제목, 강조 텍스트
+  secondary: "#22523B"      # 미디엄 다크 그린 - 부제목, 배경 악센트
+  accent: "#479374"         # 민트 그린 - 버튼, 하이라이트
+
+  # 배경/표면 색상
+  background: "#FFFFFF"     # 흰색 배경
+  surface: "#A1BFB4"        # 연한 그린 - 카드 배경, 섹션
+  surface_light: "#C4D6D0"  # 더 연한 그린 - 호버, 선택 상태
+
+  # 텍스트 색상
+  dark_text: "#153325"      # 본문 텍스트
+  light_text: "#FFFFFF"     # 밝은 배경 위 텍스트
+  muted_text: "#859C80"     # 보조 텍스트, 캡션
+
+  # 추가 악센트
+  highlight: "#67B7B5"      # 청록색 하이라이트
+  success: "#43A375"        # 성공/긍정 색상
+
+  # 그라데이션 지원 색상
+  gradient_start: "#153325"
+  gradient_end: "#479374"
+
+# 폰트 설정
+typography:
+  heading:
+    family: "카페24 써라운드"    # 원본 PPT에서 사용된 폰트
+    fallback: "맑은 고딕, Malgun Gothic, sans-serif"
+    weight: 700
+    sizes:
+      h1: 44pt
+      h2: 32pt
+      h3: 24pt
+
+  body:
+    family: "맑은 고딕"
+    fallback: "Malgun Gothic, sans-serif"
+    weight: 400
+    size: 14pt
+    line_height: 1.6
+
+  caption:
+    family: "맑은 고딕"
+    size: 11pt
+    weight: 300
+
+# 레이아웃 설정
+layout:
+  slide_size:
+    width: 720pt  # 12192000 EMU
+    height: 405pt # 6858000 EMU
+
+  margins:
+    top: 5%
+    bottom: 8%
+    left: 5%
+    right: 5%
+
+  spacing:
+    section_gap: 24pt
+    element_gap: 12pt
+
+# 도형 스타일
+shapes:
+  rounded_radius: 8px
+  shadow: none              # 깔끔한 플랫 디자인
+  border_width: 0
+
+# 디자인 토큰 매핑 (콘텐츠 템플릿과 연동)
+design_tokens:
+  primary: "#153325"
+  secondary: "#22523B"
+  accent: "#479374"
+  background: "#FFFFFF"
+  surface: "#A1BFB4"
+  dark_text: "#153325"
+  light: "#FFFFFF"
+  gray: "#859C80"
+
+# 추천 사용처
+recommended_for:
+  - 친환경/ESG 보고서
+  - 헬스케어/웰니스
+  - 교육/연구 발표
+  - 자연/농업 관련
+  - 지속가능성 프로젝트

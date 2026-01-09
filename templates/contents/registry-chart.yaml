@@ -1,0 +1,103 @@
+category: chart
+name: 차트
+description: 차트/그래프 레이아웃
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: chart-gantt-monthly
+  name: 월별 간트 차트
+  file: templates/chart/chart-gantt-monthly.yaml
+  thumbnail: thumbnails/chart/chart-gantt-monthly.png
+  source_slide_index: 72
+  description: 월별 간트 차트 슬라이드.
+  match_keywords:
+  - 월별 간트 차트 콘텐츠 표현
+  - 멀티컬럼 레이아웃 구성
+  - 정보 비교 및 대조
+  - 프로세스 단계 표시
+  - 시각적 계층 구조 표현
+  - chart
+  - chart-gantt-monthly
+  - 레이아웃
+  - 템플릿
+  - 콘텐츠
+  - 디자인
+  expected_prompt: '월별 간트 차트 슬라이드를 만들어줘.
+
+    - 월별 간트 차트 콘텐츠 표현
+
+    - 멀티컬럼 레이아웃 구성
+
+    - 정보 비교 및 대조'
+- id: chart-gantt-quarterly
+  name: 분기별 간트 차트
+  file: templates/chart/chart-gantt-quarterly.yaml
+  thumbnail: thumbnails/chart/chart-gantt-quarterly.png
+  source_slide_index: 73
+  description: 분기별 간트 차트 슬라이드.
+  match_keywords:
+  - 분기별 간트 차트 콘텐츠 표현
+  - 멀티컬럼 레이아웃 구성
+  - 정보 비교 및 대조
+  - 프로세스 단계 표시
+  - 시각적 계층 구조 표현
+  - chart
+  - chart-gantt-quarterly
+  - 레이아웃
+  - 템플릿
+  - 콘텐츠
+  - 디자인
+  expected_prompt: '분기별 간트 차트 슬라이드를 만들어줘.
+
+    - 분기별 간트 차트 콘텐츠 표현
+
+    - 멀티컬럼 레이아웃 구성
+
+    - 정보 비교 및 대조'
+- id: chart-stair-growth
+  name: 계단형 성장 차트
+  file: templates/chart/chart-stair-growth.yaml
+  thumbnail: thumbnails/chart/chart-stair-growth.png
+  source_slide_index: 55
+  description: 계단형 성장 차트 슬라이드.
+  match_keywords:
+  - 계단형 성장 차트 콘텐츠 표현
+  - 멀티컬럼 레이아웃 구성
+  - 정보 비교 및 대조
+  - 프로세스 단계 표시
+  - 시각적 계층 구조 표현
+  - chart
+  - chart-stair-growth
+  - 레이아웃
+  - 템플릿
+  - 콘텐츠
+  - 디자인
+  expected_prompt: '계단형 성장 차트 슬라이드를 만들어줘.
+
+    - 계단형 성장 차트 콘텐츠 표현
+
+    - 멀티컬럼 레이아웃 구성
+
+    - 정보 비교 및 대조'
+- id: deepgreen-chart-bar1
+  name: 딥그린 막대 차트
+  file: templates/chart/deepgreen-chart-bar1.yaml
+  thumbnail: thumbnails/chart/deepgreen-chart-bar1.png
+  source_slide_index: 4
+  description: 3계열 그룹화 막대 차트와 표가 있는 슬라이드.
+  match_keywords:
+  - chart
+  - 차트
+  - 막대
+  - bar
+  - 그래프
+  - 비교
+  - 딥그린
+  - 테이블
+  - 데이터
+  expected_prompt: |
+    막대 차트 슬라이드를 만들어줘.
+    - 3계열 그룹화 막대 차트
+    - 하단에 데이터 테이블
+    - 범례 표시
+    - 깔끔한 딥그린 스타일

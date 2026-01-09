@@ -1,0 +1,52 @@
+category: cover
+name: cover
+description: ''
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: cover-simple1
+  name: 심플 표지 (대각선 K)
+  file: templates/cover/cover-simple1.yaml
+  thumbnail: thumbnails/cover/cover-simple1.png
+  source_slide_index: 0
+  description: 상단 그라데이션 바와 대각선 K 배경이 있는 심플한 표지.
+  match_keywords:
+  - cover
+  - 표지
+  - 커버
+  - 타이틀
+  - 심플
+  - 깔끔
+  - 기업
+  - 비즈니스
+  - 대각선
+  - 제안서
+  - 보고서
+  expected_prompt: |
+    표지 슬라이드를 만들어줘.
+    - 상단에 그라데이션 장식 바
+    - 오른쪽에 대각선 배경 도형
+    - 왼쪽에 큰 제목
+    - 제목 아래 부서명과 날짜
+    - 하단에 회사 로고
+- id: deepgreen-cover-centered1
+  name: 딥그린 중앙 정렬 표지
+  file: templates/cover/deepgreen-cover-centered1.yaml
+  thumbnail: thumbnails/cover/deepgreen-cover-centered1.png
+  source_slide_index: 1
+  description: 상단 녹색 배너와 중앙 정렬된 제목이 있는 깔끔한 표지.
+  match_keywords:
+  - cover
+  - 표지
+  - 커버
+  - 딥그린
+  - 중앙정렬
+  - 녹색
+  - 깔끔
+  - 발표
+  expected_prompt: |
+    표지 슬라이드를 만들어줘.
+    - 상단에 녹색 라운드 배너
+    - 중앙에 큰 제목과 부제목
+    - 구분선 아래에 발표자 정보
+    - 깔끔한 중앙 정렬

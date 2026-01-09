@@ -1,0 +1,93 @@
+id: deepgreen-cycle-5step1
+name: 딥그린 5단계 순환
+category: cycle
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 15
+design_intent: cycle-circular
+extraction_mode: content_only
+
+layout:
+  type: radial
+  center: {x: 50%, y: 50%}
+
+zones:
+  - id: title-area
+    type: placeholder
+    geometry: {x: 5%, y: 5%, cx: 40%, cy: 8%}
+    placeholder_type: TITLE
+
+  - id: cycle-diagram
+    type: placeholder
+    geometry: {x: 25%, y: 20%, cx: 50%, cy: 70%}
+    placeholder_type: DIAGRAM
+    shape_source: smartart
+    object_hint:
+      category: cycle
+      semantic: "5단계 순환 다이어그램, 원형 배치"
+      element_count: 5
+      style: circular
+    smartart_info:
+      type: cycle
+      layout: radial
+      color_scheme: deepgreen
+      note: "SmartArt 다이어그램 참조 - 외부 diagram 리소스 필요"
+    object_desc: |
+      5개 라운드 사각형이 원형으로 배치:
+      - 상단 중앙: 진한 녹색 (타이틀)
+      - 좌상단: 회색 (타이틀)
+      - 우상단: 회색 (타이틀)
+      - 좌하단: 녹색 (타이틀)
+      - 우하단: 녹색 (타이틀)
+      - 원형 화살표로 순환 연결
+      - 4방향에 설명 텍스트
+    ooxml_reference: |
+      <!-- SmartArt Diagram Reference -->
+      <p:graphicFrame>
+        <a:graphic>
+          <a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/diagram">
+            <dgm:relIds r:dm="rId2" r:lo="rId3" r:qs="rId4" r:cs="rId5"/>
+          </a:graphicData>
+        </a:graphic>
+      </p:graphicFrame>
+
+  - id: desc-left
+    type: placeholder
+    geometry: {x: 2%, y: 35%, cx: 20%, cy: 30%}
+    placeholder_type: BODY
+
+  - id: desc-right
+    type: placeholder
+    geometry: {x: 78%, y: 35%, cx: 20%, cy: 30%}
+    placeholder_type: BODY
+
+  - id: desc-bottom-left
+    type: placeholder
+    geometry: {x: 2%, y: 70%, cx: 20%, cy: 25%}
+    placeholder_type: BODY
+
+  - id: desc-bottom-right
+    type: placeholder
+    geometry: {x: 78%, y: 70%, cx: 20%, cy: 25%}
+    placeholder_type: BODY
+
+thumbnail: thumbnails/cycle/deepgreen-cycle-5step1.png
+
+use_for:
+  - 순환 프로세스
+  - PDCA 사이클
+  - 반복 워크플로우
+
+keywords:
+  - 사이클
+  - 순환
+  - 5단계
+  - 원형
+  - 반복
+
+expected_prompt: |
+  5단계 순환 다이어그램 슬라이드를 만들어줘.
+  - 중앙에 5개 단계가 원형으로 배치
+  - 원형 화살표로 순환 표현
+  - 4방향에 각 단계 설명 텍스트
+  - 녹색/회색 색상 조합

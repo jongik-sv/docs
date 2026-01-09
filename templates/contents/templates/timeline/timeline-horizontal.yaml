@@ -1,0 +1,1128 @@
+content_template:
+  id: timeline-horizontal
+  name: 수평 타임라인
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 49
+  extracted_at: '2026-01-09T20:15:07.117906'
+  expected_prompt: "Create a general slide designed for 좌에서 우로 진행하는 수평적 타임라인. 시간 순서에 따른 단계별 진행 과정 표현. This layout is specifically designed for: 프로젝트 일정 및 마일스톤 표시, 역사적 사건 또는 발전 과정, 제품 개발 로드맵. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.5
+  design_intent: 좌에서 우로 진행하는 수평적 타임라인. 시간 순서에 따른 단계별 진행 과정 표현
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: PlaceHolder 1
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-1
+  name: PlaceHolder 2
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-2
+  name: PlaceHolder 3
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-3
+  name: PlaceHolder 4
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: dk2
+  text:
+    has_text: true
+    content:
+    - '텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 '
+- id: shape-4
+  name: PlaceHolder 5
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 76.0%
+    y: 96.3%
+    cx: 3.1%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-5
+  name: PlaceHolder 6
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 63.9%
+    y: 96.3%
+    cx: 12.6%
+    cy: 2.2%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - 작성자_장선익, 장희승, 김현주
+- id: shape-6
+  name: 모서리가 둥근 직사각형 77
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 7.8%
+    y: 39.5%
+    cx: 65.5%
+    cy: 26.2%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-7
+  name: 타원 79
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 22.8%
+    y: 48.0%
+    cx: 5.1%
+    cy: 9.1%
+  style:
+    fill:
+      type: solid
+      color: bg2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-8
+  name: 타원 80
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 38.0%
+    y: 48.0%
+    cx: 5.1%
+    cy: 9.1%
+  style:
+    fill:
+      type: solid
+      color: bg2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-9
+  name: 타원 81
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 53.3%
+    y: 48.0%
+    cx: 5.1%
+    cy: 9.1%
+  style:
+    fill:
+      type: solid
+      color: bg2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-10
+  name: 타원 82
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 11.8%
+    y: 41.6%
+    cx: 12.4%
+    cy: 22.0%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - 텍스트입력
+- id: shape-11
+  name: 타원 83
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 26.9%
+    y: 41.6%
+    cx: 12.4%
+    cy: 22.0%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-12
+  name: 타원 84
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 41.9%
+    y: 41.6%
+    cx: 12.4%
+    cy: 22.0%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - 텍스트입력
+- id: shape-13
+  name: 타원 85
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 57.0%
+    y: 41.6%
+    cx: 12.4%
+    cy: 22.0%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - 텍스트입력
+- id: shape-14
+  name: 직사각형 102
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 16.0%
+    y: 33.3%
+    cx: 4.1%
+    cy: 4.9%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '01'
+- id: shape-15
+  name: 직사각형 103
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 31.1%
+    y: 33.3%
+    cx: 4.1%
+    cy: 4.9%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '02'
+- id: shape-16
+  name: 직사각형 104
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 46.1%
+    y: 33.3%
+    cx: 4.1%
+    cy: 4.9%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '03'
+- id: shape-17
+  name: 직사각형 105
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 61.2%
+    y: 33.3%
+    cx: 4.1%
+    cy: 4.9%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '04'
+- id: shape-18
+  name: 직사각형 107
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 13.0%
+    y: 68.2%
+    cx: 10.0%
+    cy: 4.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력
+- id: shape-19
+  name: 직사각형 108
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 11.9%
+    y: 72.6%
+    cx: 12.6%
+    cy: 12.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+    - '{{본문}}'
+    - '{{본문}}'
+    - '{{본문}}'
+- id: shape-20
+  name: 직사각형 110
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 28.1%
+    y: 68.2%
+    cx: 10.0%
+    cy: 4.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력
+- id: shape-21
+  name: 직사각형 111
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 26.9%
+    y: 72.6%
+    cx: 12.6%
+    cy: 12.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+    - '{{본문}}'
+    - '{{본문}}'
+    - '{{본문}}'
+- id: shape-22
+  name: 직사각형 113
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 43.2%
+    y: 68.2%
+    cx: 10.0%
+    cy: 4.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력
+- id: shape-23
+  name: 직사각형 114
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 42.0%
+    y: 72.6%
+    cx: 12.6%
+    cy: 12.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+    - '{{본문}}'
+    - '{{본문}}'
+    - '{{본문}}'
+- id: shape-24
+  name: 직사각형 116
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 58.2%
+    y: 68.2%
+    cx: 10.0%
+    cy: 4.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력
+- id: shape-25
+  name: 직사각형 117
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 56.9%
+    y: 72.6%
+    cx: 12.6%
+    cy: 12.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+    - '{{본문}}'
+    - '{{본문}}'
+    - '{{본문}}'
+- id: shape-26
+  name: AutoShape 116
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 30.9%
+    y: 48.8%
+    cx: 4.2%
+    cy: 6.8%
+  style:
+    fill:
+      type: solid
+      color: 161516
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-27
+  name: Freeform 118
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.0%
+    y: 53.8%
+    cx: 0.3%
+    cy: 0.6%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-28
+  name: Freeform 119
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.1%
+    y: 50.2%
+    cx: 3.8%
+    cy: 0.5%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-29
+  name: Freeform 120
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.2%
+    y: 50.9%
+    cx: 3.6%
+    cy: 2.6%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-30
+  name: Freeform 121
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.3%
+    y: 53.7%
+    cx: 0.7%
+    cy: 0.8%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-31
+  name: Freeform 122
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.8%
+    y: 53.7%
+    cx: 0.8%
+    cy: 1.4%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-32
+  name: Freeform 123
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 32.0%
+    y: 54.1%
+    cx: 0.3%
+    cy: 0.6%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-33
+  name: Freeform 124
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 32.4%
+    y: 53.7%
+    cx: 1.1%
+    cy: 0.8%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-34
+  name: Freeform 125
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 34.0%
+    y: 53.7%
+    cx: 0.8%
+    cy: 0.8%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-35
+  name: Freeform 126
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 33.4%
+    y: 53.7%
+    cx: 0.8%
+    cy: 1.4%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-36
+  name: Freeform 127
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 33.6%
+    y: 54.1%
+    cx: 0.3%
+    cy: 0.6%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-37
+  name: Freeform 128
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 32.6%
+    y: 54.6%
+    cx: 0.7%
+    cy: 0.4%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-38
+  name: Freeform 129
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 30.9%
+    y: 55.1%
+    cx: 4.2%
+    cy: 0.1%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-39
+  name: Freeform 130
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 34.8%
+    y: 53.8%
+    cx: 0.3%
+    cy: 0.6%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-40
+  name: Freeform 131
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.0%
+    y: 55.3%
+    cx: 4.1%
+    cy: 0.2%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-41
+  name: Freeform 132
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 32.3%
+    y: 48.8%
+    cx: 2.2%
+    cy: 1.2%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-42
+  name: Freeform 133
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.3%
+    y: 49.3%
+    cx: 1.8%
+    cy: 0.8%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-43
+  name: 타원 79
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 22.8%
+    y: 48.0%
+    cx: 5.1%
+    cy: 9.1%
+  style:
+    fill:
+      type: solid
+      color: bg2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-44
+  name: 타원 80
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 38.0%
+    y: 48.0%
+    cx: 5.1%
+    cy: 9.1%
+  style:
+    fill:
+      type: solid
+      color: bg2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-45
+  name: 타원 81
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 53.3%
+    y: 48.0%
+    cx: 5.1%
+    cy: 9.1%
+  style:
+    fill:
+      type: solid
+      color: bg2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-46
+  name: AutoShape 116
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 30.9%
+    y: 48.8%
+    cx: 4.2%
+    cy: 6.8%
+  style:
+    fill:
+      type: solid
+      color: 161516
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-47
+  name: Freeform 118
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.0%
+    y: 53.8%
+    cx: 0.3%
+    cy: 0.6%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-48
+  name: Freeform 119
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.1%
+    y: 50.2%
+    cx: 3.8%
+    cy: 0.5%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-49
+  name: Freeform 120
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.2%
+    y: 50.9%
+    cx: 3.6%
+    cy: 2.6%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-50
+  name: Freeform 121
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.3%
+    y: 53.7%
+    cx: 0.7%
+    cy: 0.8%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-51
+  name: Freeform 122
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.8%
+    y: 53.7%
+    cx: 0.8%
+    cy: 1.4%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-52
+  name: Freeform 123
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 32.0%
+    y: 54.1%
+    cx: 0.3%
+    cy: 0.6%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-53
+  name: Freeform 124
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 32.4%
+    y: 53.7%
+    cx: 1.1%
+    cy: 0.8%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-54
+  name: Freeform 125
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 34.0%
+    y: 53.7%
+    cx: 0.8%
+    cy: 0.8%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-55
+  name: Freeform 126
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 33.4%
+    y: 53.7%
+    cx: 0.8%
+    cy: 1.4%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-56
+  name: Freeform 127
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 33.6%
+    y: 54.1%
+    cx: 0.3%
+    cy: 0.6%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-57
+  name: Freeform 128
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 32.6%
+    y: 54.6%
+    cx: 0.7%
+    cy: 0.4%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-58
+  name: Freeform 129
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 30.9%
+    y: 55.1%
+    cx: 4.2%
+    cy: 0.1%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-59
+  name: Freeform 130
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 34.8%
+    y: 53.8%
+    cx: 0.3%
+    cy: 0.6%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-60
+  name: Freeform 131
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.0%
+    y: 55.3%
+    cx: 4.1%
+    cy: 0.2%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-61
+  name: Freeform 132
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 32.3%
+    y: 48.8%
+    cx: 2.2%
+    cy: 1.2%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-62
+  name: Freeform 133
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.3%
+    y: 49.3%
+    cx: 1.8%
+    cy: 0.8%
+  style:
+    fill:
+      type: solid
+      color: bg1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 프로젝트 일정 및 마일스톤 표시
+- 역사적 사건 또는 발전 과정
+- 제품 개발 로드맵
+- 시간대별 진행 단계
+- 수평적 프로세스 플로우
+keywords:
+- 타임라인
+- 수평
+- 일정
+- 마일스톤
+- 진행
+- 단계
+- 시간
+- 로드맵
+- 히스토리
+expected_prompt: |
+  수평 타임라인 슬라이드를 만들어줘.
+  - 좌에서 우로 진행하는 수평적 타임라인. 시간 순서에 따른 단계별 진행 과정 표현
+  - 프로젝트 일정 및 마일스톤 표시
+  - 역사적 사건 또는 발전 과정
+  - 제품 개발 로드맵
+thumbnail: "thumbnails/templates\timeline/timeline-horizontal.png"

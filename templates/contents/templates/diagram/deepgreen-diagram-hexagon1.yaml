@@ -1,0 +1,86 @@
+id: deepgreen-diagram-hexagon1
+name: 딥그린 육각형 다이어그램
+category: diagram
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 11
+design_intent: diagram-hexagon
+extraction_mode: content_only
+
+layout:
+  type: freeform
+
+zones:
+  - id: title-area
+    type: placeholder
+    geometry: {x: 5%, y: 5%, cx: 40%, cy: 8%}
+    placeholder_type: TITLE
+
+  - id: hexagon-diagram
+    type: placeholder
+    geometry: {x: 10%, y: 20%, cx: 80%, cy: 75%}
+    placeholder_type: DIAGRAM
+    shape_source: ooxml
+    object_hint:
+      category: diagram
+      semantic: "7개 육각형, 허니콤 패턴, 아이콘 포함"
+      element_count: 7
+      style: honeycomb
+    ooxml_shapes:
+      - id: hexagon-1
+        preset: hexagon
+        fill: "#DCF0EF"
+        position: {x: "690345", y: "3417546"}
+        size: {cx: "2487780", cy: "2144639"}
+        effect: outerShadow
+      - id: hexagon-2
+        preset: hexagon
+        fill: "#83A99B"
+        position: {x: "2768045", y: "2181275"}
+        size: {cx: "2487780", cy: "2144639"}
+        effect: outerShadow
+      - id: hexagon-3
+        preset: hexagon
+        fill: "#A1BFB4"
+        position: {x: "4860985", y: "3417546"}
+        size: {cx: "2487780", cy: "2144639"}
+        effect: outerShadow
+    ooxml_fragment: |
+      <a:prstGeom prst="hexagon">
+        <a:avLst/>
+      </a:prstGeom>
+      <a:effectLst>
+        <a:outerShdw blurRad="50800" dist="38100" dir="2700000" algn="tl" rotWithShape="0">
+          <a:prstClr val="black">
+            <a:alpha val="40000"/>
+          </a:prstClr>
+        </a:outerShdw>
+      </a:effectLst>
+    object_desc: |
+      7개 육각형 배치:
+      - 상단 행: 3개 (건물, 악수, 시간 아이콘)
+      - 중단 행: 2개 (문서, 아이디어 아이콘)
+      - 하단: 2개 (텍스트 레이블)
+      - 녹색 계열 그라데이션
+      - 각 육각형에 아이콘과 텍스트
+
+thumbnail: thumbnails/diagram/deepgreen-diagram-hexagon1.png
+
+use_for:
+  - 허니콤 다이어그램
+  - 연결된 개념
+  - 기능 맵
+
+keywords:
+  - 육각형
+  - 허니콤
+  - 다이어그램
+  - 아이콘
+  - 연결
+
+expected_prompt: |
+  육각형 다이어그램 슬라이드를 만들어줘.
+  - 7개 육각형을 허니콤 패턴으로 배치
+  - 각 육각형에 아이콘과 레이블
+  - 녹색 계열 그라데이션
+  - 상단 3개, 중단 2개, 하단 2개 배치

@@ -1,0 +1,323 @@
+content_template:
+  id: process-linear1
+  name: 프로세스 기본
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 8
+  extracted_at: '2026-01-09T19:37:33.364171'
+  expected_prompt: "Create a general slide designed for process-linear1. This layout is specifically designed for: 6단계 프로세스, 순차 진행, 단계별 설명. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: process-linear1
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Shape 0
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 11.4%
+    y: 36.3%
+    cx: 8.5%
+    cy: 12.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '01'
+      font_size: 18.0
+  description:
+    text: 'text-box, 위치: 좌1.2in 상2.7in'
+- id: shape-1
+  name: Shape 1
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 22.6%
+    y: 36.7%
+    cx: 20.9%
+    cy: 11.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌2.5in 상2.8in'
+- id: shape-2
+  name: Shape 2
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 56.0%
+    y: 72.1%
+    cx: 8.5%
+    cy: 12.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '06'
+      font_size: 18.0
+  description:
+    text: 'text-box, 위치: 좌6.1in 상5.4in'
+- id: shape-3
+  name: Shape 3
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 67.7%
+    y: 72.7%
+    cx: 20.9%
+    cy: 11.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌7.3in 상5.5in'
+- id: shape-4
+  name: Shape 4
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 56.0%
+    y: 36.3%
+    cx: 8.5%
+    cy: 12.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '02'
+      font_size: 18.0
+  description:
+    text: 'text-box, 위치: 좌6.1in 상2.7in'
+- id: shape-5
+  name: Shape 5
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 67.7%
+    y: 36.7%
+    cx: 20.9%
+    cy: 11.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌7.3in 상2.8in'
+- id: shape-6
+  name: Shape 6
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 11.4%
+    y: 53.7%
+    cx: 8.5%
+    cy: 12.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '03'
+      font_size: 18.0
+  description:
+    text: 'text-box, 위치: 좌1.2in 상4.0in'
+- id: shape-7
+  name: Shape 7
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 22.6%
+    y: 54.3%
+    cx: 20.9%
+    cy: 11.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌2.5in 상4.1in'
+- id: shape-8
+  name: Shape 8
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 56.0%
+    y: 53.7%
+    cx: 8.5%
+    cy: 12.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '04'
+      font_size: 18.0
+  description:
+    text: 'text-box, 위치: 좌6.1in 상4.0in'
+- id: shape-9
+  name: Shape 9
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 67.7%
+    y: 54.3%
+    cx: 20.9%
+    cy: 11.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌7.3in 상4.1in'
+- id: shape-10
+  name: Shape 10
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 11.4%
+    y: 72.1%
+    cx: 8.5%
+    cy: 12.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '05'
+      font_size: 18.0
+  description:
+    text: 'text-box, 위치: 좌1.2in 상5.4in'
+- id: shape-11
+  name: Shape 11
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 22.6%
+    y: 72.7%
+    cx: 20.9%
+    cy: 11.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌2.5in 상5.5in'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 6단계 프로세스
+- 순차 진행
+- 단계별 설명
+- 워크플로우
+keywords:
+- process
+- 6단계
+- 순서
+expected_prompt: |
+  6단계 프로세스 슬라이드를 만들어줘.
+  - 01~06 번호가 붙은 6개 단계
+  - 각 단계에 소제목 + 설명 텍스트
+  - 2열 × 3행 그리드 형태로 배치
+  - 순차적인 진행 과정을 표현
+prompt_keywords:
+- 프로세스
+- 단계
+- 6단계
+- 순서
+- workflow
+- step
+- 진행
+- 흐름
+thumbnail: thumbnails/process-linear1.png

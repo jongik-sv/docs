@@ -1,0 +1,223 @@
+content_template:
+  id: matrix-2x21
+  name: 2x2 매트릭스
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 29
+  extracted_at: '2026-01-09T19:37:33.368780'
+  expected_prompt: "Create a general slide designed for matrix-2x21. This layout is specifically designed for: 2x2 매트릭스, 4분면 분석, 카테고리 분류. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: matrix-2x21
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Shape 0
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 13.3%
+    y: 68.7%
+    cx: 36.3%
+    cy: 5.1%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: 철근 부문
+      font_size: 14.0
+  description:
+    text: 'text-box, 위치: 좌1.4in 상5.2in'
+- id: shape-1
+  name: Shape 1
+  type: bullet-list
+  shape_source: description
+  geometry:
+    x: 13.3%
+    y: 72.5%
+    cx: 36.3%
+    cy: 17.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요
+      font_size: 12.0
+      bullet: true
+      level: 0
+  description:
+    text: 'bullet-list, 위치: 좌1.4in 상5.4in'
+- id: shape-2
+  name: Shape 2
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 114.2%
+    y: 68.7%
+    cx: 36.3%
+    cy: 5.1%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: 냉연 부문
+      font_size: 14.0
+  description:
+    text: 'text-box, 위치: 좌12.4in 상5.2in'
+- id: shape-3
+  name: Shape 3
+  type: bullet-list
+  shape_source: description
+  geometry:
+    x: 114.2%
+    y: 72.5%
+    cx: 36.3%
+    cy: 17.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요
+      font_size: 12.0
+      bullet: true
+      level: 0
+  description:
+    text: 'bullet-list, 위치: 좌12.4in 상5.4in'
+- id: shape-4
+  name: Shape 4
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 13.3%
+    y: 134.8%
+    cx: 36.3%
+    cy: 5.1%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: 후판 부문
+      font_size: 14.0
+  description:
+    text: 'text-box, 위치: 좌1.4in 상10.1in'
+- id: shape-5
+  name: Shape 5
+  type: bullet-list
+  shape_source: description
+  geometry:
+    x: 13.3%
+    y: 138.7%
+    cx: 36.3%
+    cy: 17.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요
+      font_size: 12.0
+      bullet: true
+      level: 0
+  description:
+    text: 'bullet-list, 위치: 좌1.4in 상10.4in'
+- id: shape-6
+  name: Shape 6
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 114.2%
+    y: 134.8%
+    cx: 36.3%
+    cy: 5.1%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: 형강 부문
+      font_size: 14.0
+  description:
+    text: 'text-box, 위치: 좌12.4in 상10.1in'
+- id: shape-7
+  name: Shape 7
+  type: bullet-list
+  shape_source: description
+  geometry:
+    x: 114.2%
+    y: 138.7%
+    cx: 36.3%
+    cy: 17.3%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요 텍스트를 입력하세요
+      font_size: 12.0
+      bullet: true
+      level: 0
+  description:
+    text: 'bullet-list, 위치: 좌12.4in 상10.4in'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 2x2 매트릭스
+- 4분면 분석
+- 카테고리 분류
+- 사업 영역
+keywords:
+- matrix
+- 2x2
+- 4분면
+expected_prompt: |
+  2x2 매트릭스 슬라이드를 만들어줘.
+  - 4개 영역(분면)으로 구성
+  - 각 영역에 제목 + 불릿 리스트
+  - 2행 × 2열 그리드 형태
+  - 사업 영역/카테고리 분류에 적합
+prompt_keywords:
+- 매트릭스
+- 2x2
+- 4분면
+- 분류
+- 영역
+- quadrant
+- matrix
+- 카테고리
+thumbnail: thumbnails/matrix-2x21.png

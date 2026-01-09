@@ -1,0 +1,242 @@
+content_template:
+  id: process-linear2
+  name: 3열 프로세스
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 21
+  extracted_at: '2026-01-09T19:37:33.367536'
+  expected_prompt: "Create a general slide designed for process-linear2. This layout is specifically designed for: 3단계 프로세스, 다이어그램 프로세스, 단계별 설명. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: process-linear2
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Shape 0
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 2.6%
+    y: 25.9%
+    cx: 17.5%
+    cy: 24.8%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '01'
+      font_size: 88.0
+  description:
+    text: 'text-box, 위치: 좌0.3in 상1.9in'
+- id: shape-1
+  name: Shape 1
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 33.7%
+    y: 26.1%
+    cx: 17.5%
+    cy: 24.8%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '02'
+      font_size: 88.0
+  description:
+    text: 'text-box, 위치: 좌3.6in 상2.0in'
+- id: shape-2
+  name: Shape 2
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 64.7%
+    y: 26.1%
+    cx: 17.5%
+    cy: 24.8%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '03'
+      font_size: 88.0
+  description:
+    text: 'text-box, 위치: 좌7.0in 상2.0in'
+- id: shape-3
+  name: Shape 3
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 11.8%
+    y: 49.9%
+    cx: 14.4%
+    cy: 5.6%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{다이어그램}}'
+      font_size: 16.0
+  description:
+    text: 'text-box, 위치: 좌1.3in 상3.7in'
+- id: shape-4
+  name: Shape 4
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 42.9%
+    y: 49.9%
+    cx: 14.4%
+    cy: 5.6%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{다이어그램}}'
+      font_size: 16.0
+  description:
+    text: 'text-box, 위치: 좌4.6in 상3.7in'
+- id: shape-5
+  name: Shape 5
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 73.9%
+    y: 49.9%
+    cx: 14.4%
+    cy: 5.6%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{다이어그램}}'
+      font_size: 16.0
+  description:
+    text: 'text-box, 위치: 좌8.0in 상3.7in'
+- id: shape-6
+  name: Shape 6
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 5.5%
+    y: 73.6%
+    cx: 26.9%
+    cy: 10.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌0.6in 상5.5in'
+- id: shape-7
+  name: Shape 7
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 36.6%
+    y: 73.6%
+    cx: 26.9%
+    cy: 10.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌4.0in 상5.5in'
+- id: shape-8
+  name: Shape 8
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 67.6%
+    y: 73.6%
+    cx: 26.9%
+    cy: 10.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문}}'
+      font_size: 12.0
+    - text: '{{본문}}'
+      font_size: 12.0
+  description:
+    text: 'text-box, 위치: 좌7.3in 상5.5in'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 3단계 프로세스
+- 다이어그램 프로세스
+- 단계별 설명
+- 순차 진행
+keywords:
+- process
+- 3단계
+- 다이어그램
+expected_prompt: |
+  3단계 프로세스 슬라이드를 만들어줘.
+  - 01, 02, 03 큰 번호로 3단계 표시
+  - 각 단계에 다이어그램 라벨 + 설명 텍스트
+  - 3열 수평 배치
+  - 시각적으로 강조된 단계 번호
+prompt_keywords:
+- 프로세스
+- 3단계
+- 다이어그램
+- 흐름
+- 순서
+- workflow
+- three step
+- 단계별
+thumbnail: thumbnails/process-linear2.png

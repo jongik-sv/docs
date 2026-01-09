@@ -1,0 +1,88 @@
+category: diagram
+name: 다이어그램
+description: 관계도/구조도 레이아웃
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: diagram-porter5forces
+  name: Porter 5 Forces 분석
+  file: templates/diagram/diagram-porter5forces.yaml
+  thumbnail: thumbnails/diagram/diagram-porter5forces.png
+  source_slide_index: 43
+  description: Porter 5 Forces 분석 슬라이드.
+  match_keywords:
+  - 산업 구조 분석 및 경쟁 환경 평가
+  - 공급업체 협상력, 구매자 협상력, 신규진입 위협, 대체재 위협, 경쟁사 분석
+  - 시장 전략 수립
+  - 비즈니스 환경 진단
+  - 전략적 포지셔닝 분석
+  - Porter
+  - 5Forces
+  - 경쟁
+  - 산업분석
+  - 전략
+  - 환경분석
+  - 공급업체
+  - 구매자
+  - 진입위협
+  - 대체재
+  expected_prompt: 'Porter 5 Forces 분석 슬라이드를 만들어줘.
+
+    - Porter의 5가지 경쟁 요인을 시각화한 다이어그램. 산업 구조 분석에 활용
+
+    - 산업 구조 분석 및 경쟁 환경 평가
+
+    - 공급업체 협상력, 구매자 협상력, 신규진입 위협, 대체재 위협, 경쟁사 분석
+
+    - 시장 전략 수립'
+- id: diagram-radial8
+  name: 방사형 8방향 다이어그램
+  file: templates/diagram/diagram-radial8.yaml
+  thumbnail: thumbnails/diagram/diagram-radial8.png
+  source_slide_index: 39
+  description: 방사형 8방향 다이어그램 슬라이드.
+  match_keywords:
+  - 중심 개념에서 8개 방향으로 뻗어나가는 시각화
+  - 핵심 주제와 관련 요소들의 관계 표현
+  - 부서 조직도, 영향요인, 성공 요인 등의 다이어그램
+  - 방사형 구조의 개념 분석
+  - 시스템의 중앙 허브와 연결된 모듈들 시각화
+  - 방사형
+  - 다이어그램
+  - 8방향
+  - 중심
+  - 연결고리
+  - 개념도
+  - 조직
+  - 허브
+  - 분석
+  expected_prompt: '방사형 8방향 다이어그램 슬라이드를 만들어줘.
+
+    - 중앙에서 8방향으로 뻗어나가는 방사형 다이어그램. 중심 개념과 연결된 주요 요소들을 시각적으로 표현
+
+    - 중심 개념에서 8개 방향으로 뻗어나가는 시각화
+
+    - 핵심 주제와 관련 요소들의 관계 표현
+
+    - 부서 조직도, 영향요인, 성공 요인 등의 다이어그램'
+- id: deepgreen-diagram-hexagon1
+  name: 딥그린 육각형 다이어그램
+  file: templates/diagram/deepgreen-diagram-hexagon1.yaml
+  thumbnail: thumbnails/diagram/deepgreen-diagram-hexagon1.png
+  source_slide_index: 11
+  description: 7개 육각형 벌집 구조 다이어그램.
+  match_keywords:
+  - diagram
+  - 다이어그램
+  - 육각형
+  - hexagon
+  - 벌집
+  - 딥그린
+  - 연결
+  - 구조
+  expected_prompt: |
+    육각형 다이어그램 슬라이드를 만들어줘.
+    - 중앙 육각형 + 6개 주변 육각형
+    - 벌집 구조 배치
+    - 각 육각형에 텍스트
+    - 딥그린 스타일

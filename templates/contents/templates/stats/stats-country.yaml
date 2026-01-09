@@ -1,0 +1,378 @@
+content_template:
+  id: stats-country
+  name: 국기와 함께하는 통계 카드
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 26
+  extracted_at: '2026-01-09T15:42:00'
+  expected_prompt: "Create a general slide designed for 3행의 통계 카드 - 각 행의 좌측에 국기 이미지, 중앙에 설명 텍스트, 우측에 퍼센트값. This layout is specifically designed for: 국가별 통계나 비율을 시각화할 때, 여러 항목의 퍼센트를 비교하는 슬라이드, 국기와 함께 국가 정보를 표시. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.0
+  design_intent: 3행의 통계 카드 - 각 행의 좌측에 국기 이미지, 중앙에 설명 텍스트, 우측에 퍼센트값
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Card Background 1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 6.1%
+    y: 26.3%
+    cx: 69.2%
+    cy: 18.0%
+    original_aspect_ratio: 5.311
+  style:
+    fill:
+      type: solid
+      color: surface
+      opacity: 0.8
+    stroke:
+      type: none
+    rounded_corners: 4
+  text:
+    has_text: false
+- id: shape-1
+  name: Flag Icon 1
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 7.1%
+    y: 27.5%
+    cx: 8.8%
+    cy: 15.6%
+    original_aspect_ratio: 0.744
+  style:
+    fill:
+      type: solid
+      color: primary
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-2
+  name: Description 1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 26.6%
+    y: 29.9%
+    cx: 37.0%
+    cy: 10.9%
+    original_aspect_ratio: 4.735
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{설명1}}'
+      font_size: 12.0
+    alignment: left
+    font_color: dark_text
+- id: shape-3
+  name: Percent 1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 67.7%
+    y: 32.0%
+    cx: 5.3%
+    cy: 6.6%
+    original_aspect_ratio: 1.192
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{퍼센트1}}'
+      font_size: 14.0
+    alignment: right
+    font_weight: bold
+    font_color: primary
+- id: shape-4
+  name: Percent Left 1
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 16.7%
+    y: 34.6%
+    cx: 8.0%
+    cy: 6.1%
+    original_aspect_ratio: 1.795
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{퍼센트좌1}}'
+      font_size: 12.0
+    alignment: center
+    font_color: secondary
+- id: shape-5
+  name: Card Background 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 6.2%
+    y: 48.4%
+    cx: 69.1%
+    cy: 18.0%
+    original_aspect_ratio: 5.307
+  style:
+    fill:
+      type: solid
+      color: surface
+      opacity: 0.8
+    stroke:
+      type: none
+    rounded_corners: 4
+  text:
+    has_text: false
+- id: shape-6
+  name: Flag Icon 2
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 7.1%
+    y: 49.6%
+    cx: 8.8%
+    cy: 15.6%
+    original_aspect_ratio: 0.744
+  style:
+    fill:
+      type: solid
+      color: secondary
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-7
+  name: Description 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 26.6%
+    y: 51.9%
+    cx: 37.0%
+    cy: 10.9%
+    original_aspect_ratio: 4.735
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{설명2}}'
+      font_size: 12.0
+    alignment: left
+    font_color: dark_text
+- id: shape-8
+  name: Percent 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 67.7%
+    y: 54.1%
+    cx: 5.3%
+    cy: 6.6%
+    original_aspect_ratio: 1.192
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{퍼센트2}}'
+      font_size: 14.0
+    alignment: right
+    font_weight: bold
+    font_color: secondary
+- id: shape-9
+  name: Percent Left 2
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 16.7%
+    y: 56.7%
+    cx: 8.0%
+    cy: 6.1%
+    original_aspect_ratio: 1.795
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{퍼센트좌2}}'
+      font_size: 12.0
+    alignment: center
+    font_color: primary
+- id: shape-10
+  name: Card Background 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 6.2%
+    y: 70.2%
+    cx: 69.1%
+    cy: 18.0%
+    original_aspect_ratio: 5.307
+  style:
+    fill:
+      type: solid
+      color: surface
+      opacity: 0.8
+    stroke:
+      type: none
+    rounded_corners: 4
+  text:
+    has_text: false
+- id: shape-11
+  name: Flag Icon 3
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 7.1%
+    y: 71.4%
+    cx: 8.8%
+    cy: 15.6%
+    original_aspect_ratio: 0.744
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 1.0
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-12
+  name: Description 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 26.6%
+    y: 73.7%
+    cx: 37.0%
+    cy: 10.9%
+    original_aspect_ratio: 4.735
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{설명3}}'
+      font_size: 12.0
+    alignment: left
+    font_color: dark_text
+- id: shape-13
+  name: Percent 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 67.7%
+    y: 75.9%
+    cx: 5.3%
+    cy: 6.6%
+    original_aspect_ratio: 1.192
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{퍼센트3}}'
+      font_size: 14.0
+    alignment: right
+    font_weight: bold
+    font_color: accent
+- id: shape-14
+  name: Percent Left 3
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 16.7%
+    y: 78.5%
+    cx: 8.0%
+    cy: 6.1%
+    original_aspect_ratio: 1.795
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{퍼센트좌3}}'
+      font_size: 12.0
+    alignment: center
+    font_color: accent
+gaps:
+  global:
+    row_gap: 3%
+    column_gap: 4%
+content_schema:
+  rows: 3
+  repeating_units:
+  - id: stat_row
+    fields:
+    - name: flag_icon
+      type: color
+      description: 국기 아이콘 배경색
+    - name: description
+      type: text
+      description: 설명 텍스트
+    - name: percent_value
+      type: text
+      description: 우측 퍼센트값
+    - name: percent_left
+      type: text
+      description: 좌측 퍼센트값
+use_for:
+- 국가별 통계나 비율을 시각화할 때
+- 여러 항목의 퍼센트를 비교하는 슬라이드
+- 국기와 함께 국가 정보를 표시
+- 3개 열의 통계 정보 표현
+- 칼라풀한 통계 카드 레이아웃
+keywords:
+- 통계
+- 퍼센트
+- 비율
+- 국기
+- 카드
+- 3행
+- 비교
+expected_prompt: |
+  국기와 함께하는 통계 카드 슬라이드를 만들어줘.
+  - 3행의 통계 카드 - 각 행의 좌측에 국기 이미지, 중앙에 설명 텍스트, 우측에 퍼센트값
+  - 국가별 통계나 비율을 시각화할 때
+  - 여러 항목의 퍼센트를 비교하는 슬라이드
+  - 국기와 함께 국가 정보를 표시
+thumbnail: thumbnails/stats/stats-country.png

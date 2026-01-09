@@ -1,0 +1,157 @@
+content_template:
+  id: process-3col-flow
+  name: 3열 프로세스 플로우
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 57
+  extracted_at: '2026-01-09T20:15:41.407412'
+  expected_prompt: "Create a general slide designed for process. This layout is specifically designed for: 3열 프로세스 플로우 콘텐츠 표현, 멀티컬럼 레이아웃 구성, 정보 비교 및 대조. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: process
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Header Box
+  type: textbox
+  shape_source: description
+  geometry:
+    x: 5%
+    y: 15%
+    cx: 90%
+    cy: 8%
+    rotation: 0
+    original_aspect_ratio: 11.25
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+    shadow:
+      enabled: false
+    rounded_corners: 0
+  text:
+    has_text: true
+    alignment: center
+    font_size_ratio: 0.015
+    original_font_size_pt: 16
+    font_weight: bold
+    font_color: dark_text
+- id: shape-1
+  name: Content Box 1
+  type: rectangle
+  shape_source: description
+  geometry:
+    x: 5%
+    y: 25%
+    cx: 28%
+    cy: 60%
+    rotation: 0
+    original_aspect_ratio: 0.467
+  style:
+    fill:
+      type: solid
+      color: background
+      opacity: 1.0
+    stroke:
+      type: solid
+      color: '#e0e0e0'
+      width: 1pt
+    shadow:
+      enabled: false
+    rounded_corners: 0
+  text:
+    has_text: true
+    alignment: left
+    font_size_ratio: 0.011
+    original_font_size_pt: 12
+    font_weight: normal
+    font_color: dark_text
+- id: shape-2
+  name: Content Box 2
+  type: rectangle
+  shape_source: description
+  geometry:
+    x: 36%
+    y: 25%
+    cx: 28%
+    cy: 60%
+    rotation: 0
+    original_aspect_ratio: 0.467
+  style:
+    fill:
+      type: solid
+      color: background
+      opacity: 1.0
+    stroke:
+      type: solid
+      color: '#e0e0e0'
+      width: 1pt
+    shadow:
+      enabled: false
+    rounded_corners: 0
+  text:
+    has_text: true
+    alignment: left
+    font_size_ratio: 0.011
+    original_font_size_pt: 12
+    font_weight: normal
+    font_color: dark_text
+- id: shape-3
+  name: Content Box 3
+  type: rectangle
+  shape_source: description
+  geometry:
+    x: 67%
+    y: 25%
+    cx: 28%
+    cy: 60%
+    rotation: 0
+    original_aspect_ratio: 0.467
+  style:
+    fill:
+      type: solid
+      color: background
+      opacity: 1.0
+    stroke:
+      type: solid
+      color: '#e0e0e0'
+      width: 1pt
+    shadow:
+      enabled: false
+    rounded_corners: 0
+  text:
+    has_text: true
+    alignment: left
+    font_size_ratio: 0.011
+    original_font_size_pt: 12
+    font_weight: normal
+    font_color: dark_text
+gaps:
+  global:
+    column_gap: 3%
+    row_gap: 3%
+use_for:
+- 3열 프로세스 플로우 콘텐츠 표현
+- 멀티컬럼 레이아웃 구성
+- 정보 비교 및 대조
+- 프로세스 단계 표시
+- 시각적 계층 구조 표현
+keywords:
+- process
+- process-3col-flow
+- 레이아웃
+- 템플릿
+- 콘텐츠
+- 디자인
+expected_prompt: |
+  3열 프로세스 플로우 슬라이드를 만들어줘.
+  - 3열 프로세스 플로우 콘텐츠 표현
+  - 멀티컬럼 레이아웃 구성
+  - 정보 비교 및 대조
+thumbnail: thumbnails/process/process-3col-flow.png

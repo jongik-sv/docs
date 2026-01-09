@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    p { font: inherit; color: inherit; line-height: inherit; text-align: inherit; }
+    body {
+      width: 720pt;
+      height: 405pt;
+      font-family: '맑은 고딕', 'Malgun Gothic', sans-serif;
+      background: #FFFFFF;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-title {
+      position: absolute;
+      top: 32px;
+      left: 48px;
+      font-size: 20pt;
+      font-weight: 700;
+      color: #153325;
+    }
+    .title-bar {
+      position: absolute;
+      top: 65px;
+      left: 48px;
+      width: 28px;
+      height: 4px;
+      background: #153325;
+    }
+    .timeline-container {
+      position: absolute;
+      top: 95px;
+      left: 48px;
+      right: 48px;
+    }
+    .timeline-bar {
+      height: 8px;
+      background: linear-gradient(90deg, #22523B 0%, #479374 50%, #67B7B5 100%);
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    .timeline-items {
+      display: flex;
+      justify-content: space-between;
+    }
+    .timeline-item {
+      flex: 1;
+      text-align: center;
+      position: relative;
+    }
+    .timeline-dot {
+      width: 16px;
+      height: 16px;
+      background: #22523B;
+      border: 3px solid white;
+      border-radius: 50%;
+      margin: -32px auto 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .timeline-phase {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #153325;
+      margin-bottom: 4px;
+    }
+    .timeline-period {
+      font-size: 9pt;
+      color: #22523B;
+      margin-bottom: 8px;
+    }
+    .timeline-detail {
+      background: #F8FAF9;
+      border-radius: 8px;
+      padding: 12px;
+      margin: 0 4px;
+      min-height: 120px;
+    }
+    .timeline-weeks {
+      font-size: 16pt;
+      font-weight: 700;
+      color: #22523B;
+      margin-bottom: 8px;
+    }
+    .timeline-weeks span {
+      font-size: 9pt;
+      font-weight: 400;
+    }
+    .timeline-tasks {
+      font-size: 8pt;
+      color: #666;
+      line-height: 1.5;
+      text-align: left;
+    }
+    .footer {
+      position: absolute;
+      bottom: 12px;
+      right: 20px;
+      font-size: 8pt;
+      color: #859C80;
+    }
+    .page-num {
+      position: absolute;
+      bottom: 12px;
+      left: 48px;
+      font-size: 8pt;
+      color: #859C80;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-title"><p>마스터 일정</p></div>
+  <div class="title-bar"></div>
+  <div class="timeline-container">
+    <div class="timeline-bar"></div>
+    <div class="timeline-items">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><p>착수</p></div>
+        <div class="timeline-period"><p>1월</p></div>
+        <div class="timeline-detail">
+          <div class="timeline-weeks">4<span>주</span></div>
+          <div class="timeline-tasks"><p>· 킥오프<br>· 환경구축<br>· 표준정의</p></div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><p>분석</p></div>
+        <div class="timeline-period"><p>2-3월</p></div>
+        <div class="timeline-detail">
+          <div class="timeline-weeks">8<span>주</span></div>
+          <div class="timeline-tasks"><p>· 요구사항 정의<br>· 현행 분석<br>· AS-IS 분석</p></div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><p>설계</p></div>
+        <div class="timeline-period"><p>4-5월</p></div>
+        <div class="timeline-detail">
+          <div class="timeline-weeks">8<span>주</span></div>
+          <div class="timeline-tasks"><p>· 아키텍처 설계<br>· UI/UX 설계<br>· DB 설계</p></div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><p>개발</p></div>
+        <div class="timeline-period"><p>6-9월</p></div>
+        <div class="timeline-detail">
+          <div class="timeline-weeks">16<span>주</span></div>
+          <div class="timeline-tasks"><p>· 기능 구현<br>· 단위 테스트<br>· 통합 개발</p></div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><p>테스트</p></div>
+        <div class="timeline-period"><p>10-11월</p></div>
+        <div class="timeline-detail">
+          <div class="timeline-weeks">6<span>주</span></div>
+          <div class="timeline-tasks"><p>· 통합 테스트<br>· 성능 테스트<br>· 인수 테스트</p></div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase"><p>이행</p></div>
+        <div class="timeline-period"><p>11-12월</p></div>
+        <div class="timeline-detail">
+          <div class="timeline-weeks">6<span>주</span></div>
+          <div class="timeline-tasks"><p>· 시스템 오픈<br>· 운영 이관<br>· 안정화</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-num"><p>13</p></div>
+  <div class="footer"><p>스마트 물류관리 시스템 구축</p></div>
+</body>
+</html>

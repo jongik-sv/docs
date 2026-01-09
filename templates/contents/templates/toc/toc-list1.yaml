@@ -1,0 +1,309 @@
+# TOC List 콘텐츠 템플릿 v2.0
+# 원본: 동국시스템즈 기본양식.pptx:1
+
+content_template:
+  id: toc-list1
+  name: "목차 리스트 (5항목)"
+  version: "2.0"
+  source: "동국시스템즈 기본양식.pptx"
+  source_slide_index: 1
+  extracted_at: "2026-01-09T00:00:00Z"
+
+design_meta:
+  quality_score: 8.5
+  design_intent: toc-list
+  design_intents:
+    - toc-list
+    - toc-numbered
+  visual_balance: asymmetric
+  information_density: medium
+  extraction_mode: full
+
+canvas:
+  reference_width: 9906000  # EMU
+  reference_height: 6858000  # EMU
+  aspect_ratio: "16:9"
+
+shapes:
+  # 오른쪽 세로 그라데이션 바 (이미지)
+  - id: "right-gradient-bar"
+    name: "오른쪽 그라데이션 바"
+    shape_source: description
+    type: picture
+    z_index: 0
+    geometry:
+      x: 77.9%
+      y: 0%
+      cx: 22.1%
+      cy: 100%
+      original_aspect_ratio: 0.32
+    image:
+      purpose: decoration
+      fit: cover
+      description: "세로 그라데이션 바, 위에서 아래로 청회색 그라데이션"
+    description:
+      text: "오른쪽 전체 높이의 세로 그라데이션 장식 바"
+
+  # "Contents" 제목
+  - id: "contents-title"
+    name: "Contents 제목"
+    shape_source: description
+    type: textbox
+    z_index: 1
+    geometry:
+      x: 9.0%
+      y: 24.5%
+      cx: 33.7%
+      cy: 4.8%
+      original_aspect_ratio: 10.15
+    text:
+      has_text: true
+      content: "Contents"
+      placeholder_type: TITLE
+      alignment: left
+      font_size_ratio: 0.026
+      original_font_size_pt: 28
+      font_weight: bold
+      font_family: "본고딕 Bold"
+      font_color: primary  # #002452
+
+  # 하이라이트 바 (활성 항목 표시)
+  - id: "highlight-bar"
+    name: "활성 항목 하이라이트"
+    shape_source: ooxml
+    type: rounded-rectangle
+    z_index: 2
+    geometry:
+      x: 9.9%
+      y: 34.8%
+      cx: 67.0%
+      cy: 6.6%
+      original_aspect_ratio: 14.72
+    style:
+      fill:
+        type: gradient
+        direction: diagonal
+        stops:
+          - position: 0%
+            color: accent  # #4B6580 (30% shade)
+          - position: 50%
+            color: accent  # #4B6580 (67.5% shade)
+          - position: 100%
+            color: accent  # #4B6580 (100% shade)
+      stroke:
+        type: none
+      rounded_corners: 50%
+    ooxml:
+      fragment: |
+        <p:sp>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="983081" y="2388121"/>
+              <a:ext cx="6641131" cy="451345"/>
+            </a:xfrm>
+            <a:prstGeom prst="roundRect">
+              <a:avLst><a:gd name="adj" fmla="val 50000"/></a:avLst>
+            </a:prstGeom>
+            <a:gradFill flip="none" rotWithShape="1">
+              <a:gsLst>
+                <a:gs pos="0">
+                  <a:schemeClr val="accent2">
+                    <a:lumMod val="75000"/>
+                    <a:shade val="30000"/>
+                    <a:satMod val="115000"/>
+                  </a:schemeClr>
+                </a:gs>
+                <a:gs pos="50000">
+                  <a:schemeClr val="accent2">
+                    <a:lumMod val="75000"/>
+                    <a:shade val="67500"/>
+                    <a:satMod val="115000"/>
+                  </a:schemeClr>
+                </a:gs>
+                <a:gs pos="100000">
+                  <a:schemeClr val="accent2">
+                    <a:lumMod val="75000"/>
+                    <a:shade val="100000"/>
+                    <a:satMod val="115000"/>
+                  </a:schemeClr>
+                </a:gs>
+              </a:gsLst>
+              <a:lin ang="2700000" scaled="1"/>
+            </a:gradFill>
+            <a:ln><a:noFill/></a:ln>
+          </p:spPr>
+        </p:sp>
+      emu:
+        x: 983081
+        y: 2388121
+        cx: 6641131
+        cy: 451345
+      colors:
+        fill: ["#4B6580"]
+
+  # 목차 번호 열 (01-05)
+  - id: "toc-numbers"
+    name: "목차 번호"
+    shape_source: description
+    type: textbox
+    z_index: 3
+    geometry:
+      x: 8.7%
+      y: 33.2%
+      cx: 6.4%
+      cy: 47.3%
+      original_aspect_ratio: 0.19
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: right
+      font_size_ratio: 0.015
+      original_font_size_pt: 16
+      font_weight: medium
+      font_family: "본고딕 Medium"
+      font_color: gray  # bg2
+      line_spacing: 200%
+    content_structure:
+      type: numbered_list
+      items: ["01", "02", "03", "04", "05"]
+      first_item_color: light  # 활성 항목은 흰색
+    description:
+      text: "세로로 배열된 목차 번호 01-05, 첫 번째 항목은 흰색(활성)"
+
+  # 목차 제목 열
+  - id: "toc-titles"
+    name: "목차 제목"
+    shape_source: description
+    type: textbox
+    z_index: 4
+    geometry:
+      x: 15.2%
+      y: 33.2%
+      cx: 34.8%
+      cy: 47.3%
+      original_aspect_ratio: 1.06
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: left
+      font_size_ratio: 0.015
+      original_font_size_pt: 16
+      font_weight: medium
+      font_family: "본고딕 Medium"
+      font_color: gray  # bg2
+      line_spacing: 200%
+    content_structure:
+      type: list
+      items: 5
+      first_item_color: light  # 활성 항목은 흰색
+    description:
+      text: "목차 항목 제목들, 세로로 5개 배열, 첫 번째 항목은 흰색(활성)"
+
+  # 페이지 범위 열
+  - id: "toc-pages"
+    name: "페이지 범위"
+    shape_source: description
+    type: textbox
+    z_index: 5
+    geometry:
+      x: 68.4%
+      y: 33.3%
+      cx: 11.2%
+      cy: 45.6%
+      original_aspect_ratio: 0.36
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: left
+      font_size_ratio: 0.015
+      original_font_size_pt: 16
+      font_weight: medium
+      font_family: "본고딕 Medium"
+      font_color: gray  # bg2
+      line_spacing: 200%
+    content_structure:
+      type: list
+      format: "pp – pp"
+      items: 5
+      first_item_color: light  # 활성 항목은 흰색
+    description:
+      text: "각 목차 항목의 페이지 범위, 01–05 형식"
+
+  # 하단 로고
+  - id: "logo"
+    name: "회사 로고"
+    shape_source: description
+    type: picture
+    z_index: 6
+    geometry:
+      x: 2.7%
+      y: 95.9%
+      cx: 12.3%
+      cy: 2.6%
+      original_aspect_ratio: 6.71
+    image:
+      purpose: logo
+      fit: contain
+      description: "회사 로고 이미지, 하단 왼쪽에 위치"
+
+gaps:
+  global:
+    column_gap: 2%
+    row_gap: 0%
+  between_shapes: []
+
+spatial_relationships:
+  - type: horizontal_align
+    shapes: ["toc-numbers", "toc-titles", "toc-pages"]
+    alignment: top
+  - type: overlay
+    shapes: ["highlight-bar", "toc-numbers", "toc-titles", "toc-pages"]
+    note: "하이라이트 바가 첫 번째 목차 항목 위치에 배치"
+
+groups:
+  - id: "toc-items"
+    name: "목차 항목 그룹"
+    shapes: ["toc-numbers", "toc-titles", "toc-pages"]
+
+thumbnail: thumbnails/toc/toc-list1.png
+
+# ============================================
+# 검색 메타데이터
+# ============================================
+use_for:
+  - "목차 페이지"
+  - "차례 슬라이드"
+  - "콘텐츠 개요"
+  - "발표 구성"
+  - "아젠다"
+
+keywords:
+  - "목차"
+  - "차례"
+  - "contents"
+  - "리스트"
+  - "번호"
+  - "항목"
+  - "페이지"
+  - "아젠다"
+  - "순서"
+
+expected_prompt: |
+  목차 슬라이드를 만들어줘.
+  - "Contents" 제목
+  - 오른쪽에 세로 그라데이션 장식 바
+  - 번호가 붙은 5개 목차 항목
+  - 각 항목에 제목과 페이지 범위
+  - 현재 항목을 하이라이트 바로 강조
+  - 하단에 회사 로고
+
+prompt_keywords:
+  - "목차"
+  - "차례"
+  - "contents"
+  - "아젠다"
+  - "순서"
+  - "번호"
+  - "리스트"
+  - "5개"
+  - "항목"

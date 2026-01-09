@@ -40,7 +40,7 @@
           <a:graphicData uri="http://schemas.openxmlformats.org/presentationml/2006/ole">
             <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
               <mc:Choice xmlns:v="urn:schemas-microsoft-com:vml" Requires="v">
-                <p:oleObj spid="_x0000_s185399" name="think-cell 슬라이드" r:id="rId5" imgW="395" imgH="394" progId="TCLayout.ActiveDocument.1">
+                <p:oleObj spid="_x0000_s185401" name="think-cell 슬라이드" r:id="rId5" imgW="395" imgH="394" progId="TCLayout.ActiveDocument.1">
                   <p:embed/>
                 </p:oleObj>
               </mc:Choice>
@@ -225,11 +225,7 @@
             <a:pPr lvl="1"/>
             <a:r>
               <a:rPr lang="ko-KR" altLang="en-US" dirty="0" smtClean="0"/>
-              <a:t>둘째 </a:t>
-            </a:r>
-            <a:r>
-              <a:rPr lang="ko-KR" altLang="en-US" dirty="0" smtClean="0"/>
-              <a:t>수준</a:t>
+              <a:t>둘째 수준</a:t>
             </a:r>
           </a:p>
           <a:p>

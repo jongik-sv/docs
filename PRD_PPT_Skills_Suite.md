@@ -445,41 +445,72 @@ style_hints:
 
 **경로**: `templates/contents/`
 
-**레지스트리**: `registry.yaml`
-```yaml
-version: "4.0"
-default_theme: deepgreen
+**레지스트리 (v4.1 분리형)**:
 
+```
+templates/contents/
+├── registry.yaml              # 마스터 (인덱스): 카테고리 목록 + 통계
+├── registry-chart.yaml        # 차트 카테고리 템플릿
+├── registry-closing.yaml      # 마무리 카테고리 템플릿
+├── registry-comparison.yaml   # 비교 카테고리 템플릿
+├── registry-content.yaml      # 콘텐츠 카테고리 템플릿
+├── registry-cycle.yaml        # 사이클 카테고리 템플릿
+├── registry-diagram.yaml      # 다이어그램 카테고리 템플릿
+├── registry-grid.yaml         # 그리드 카테고리 템플릿
+├── registry-hierarchy.yaml    # 계층 카테고리 템플릿
+├── registry-matrix.yaml       # 매트릭스 카테고리 템플릿
+├── registry-process.yaml      # 프로세스 카테고리 템플릿
+├── registry-stats.yaml        # 통계 카테고리 템플릿
+├── registry-table.yaml        # 테이블 카테고리 템플릿
+└── registry-timeline.yaml     # 타임라인 카테고리 템플릿
+```
+
+**마스터 registry.yaml**:
+```yaml
+version: "4.1"
+type: index
 categories:
-  - id: cover      # 표지
-  - id: toc        # 목차
-  - id: section    # 섹션 구분
-  - id: comparison # 비교/대조
-  - id: process    # 프로세스
-  - id: chart      # 차트
-  - id: stats      # 통계
-  - id: grid       # 그리드
-  - id: diagram    # 다이어그램
-  - id: timeline   # 타임라인
-  - id: content    # 일반 콘텐츠
-  - id: quote      # 인용문
-  - id: closing    # 마무리
-  - id: cycle      # 순환
-  - id: matrix     # 매트릭스
-  - id: feature    # 기능
-  - id: flow       # 플로우
-  - id: table      # 테이블
+  chart:
+    name: 차트
+    description: 차트/그래프 레이아웃
+    file: registry-chart.yaml
+    count: 3
+  comparison:
+    name: 비교
+    description: 비교 레이아웃
+    file: registry-comparison.yaml
+    count: 2
+  # ... 13개 카테고리
+stats:
+  total_templates: 28
+  total_categories: 12
+```
+
+**카테고리별 registry-{category}.yaml**:
+```yaml
+category: comparison
+name: 비교
+description: 비교 레이아웃
+version: "4.1"
 
 templates:
-  - id: cover-centered1
-    name: "표지 (중앙 정렬)"
-    file: templates/cover/cover-centered1.yaml
-    thumbnail: thumbnails/cover/cover-centered1.png
-    category: cover
-    design_intent: cover-centered
-    use_for: [표지, 타이틀]
-    prompt_keywords: [표지, 타이틀, 중앙정렬]
+  - id: comparison-2col1
+    name: 2열 불릿 비교
+    file: templates/comparison/comparison-2col1.yaml
+    thumbnail: thumbnails/comparison/comparison-2col1.png
+    source_slide_index: 2
+    # 검색 메타데이터
+    description: "좌우 2열 대칭 구조로 두 항목 비교"
+    match_keywords: [비교, 장단점, vs, 대조, 좌우, 2열, comparison]
+    expected_prompt: |
+      비교 슬라이드를 만들어줘.
+      - 좌우 2열로 배치
+      - 각 열에 중제목 + 불릿 포인트 리스트
 ```
+
+**동기화 스크립트**: `.claude/skills/ppt-gen/scripts/sync_registry.py`
+- 개별 템플릿 YAML → 분리형 registry 자동 생성
+- 사용: `python sync_registry.py [--dry-run] [--test "검색어"]`
 
 **템플릿 파일 구조 (v4.0)**:
 ```yaml
@@ -692,7 +723,8 @@ industry_styles:
 | 파일 | 역할 | 읽기 스킬 | 쓰기 스킬 |
 |------|------|----------|----------|
 | `themes/*.yaml` | 테마 정의 (색상, 폰트) | 전체 | ppt-extract |
-| `contents/registry.yaml` | 콘텐츠 템플릿 인덱스 | 전체 | ppt-extract, ppt-manager |
+| `contents/registry.yaml` | 콘텐츠 템플릿 마스터 인덱스 (v4.1) | 전체 | sync_registry.py |
+| `contents/registry-{category}.yaml` | 카테고리별 템플릿 레지스트리 (v4.1) | 전체 | sync_registry.py |
 | `contents/templates/**/*.yaml` | 슬라이드 레이아웃 패턴 | ppt-create, ppt-design | ppt-extract |
 | `contents/objects/registry.yaml` | 오브젝트 레지스트리 (NEW) | ppt-create | ppt-extract |
 | `contents/objects/**/*.yaml` | 오브젝트 정의 (NEW) | ppt-create | ppt-extract |
@@ -1086,8 +1118,9 @@ PPT 생성 시 **필수** 준수 프로세스:
 1. 슬라이드 목록 작성
    └─ 콘텐츠 분석 → 슬라이드 유형/키워드 정리
 
-2. registry.yaml 검색
-   └─ 각 슬라이드별 매칭 템플릿 찾기
+2. 분리형 registry 검색 (v4.1)
+   └─ registry.yaml(마스터) → registry-{category}.yaml 순회
+   └─ 카테고리 힌트 있으면 해당 registry만 검색 (토큰 효율)
 
 3. 매칭 결과 테이블 작성 (필수 출력물)
    ┌─────────┬──────────────┬─────────────────┐
@@ -1105,13 +1138,13 @@ PPT 생성 시 **필수** 준수 프로세스:
    └─ 템플릿 geometry/style → HTML 변환
 ```
 
-**금지사항**: registry.yaml 검색 없이 직접 디자인 (매칭 불가 시에만 허용)
+**금지사항**: 분리형 registry 검색 없이 직접 디자인 (매칭 불가 시에만 허용)
 
 ---
 
 ## 10. 스크립트 목록 및 배분
 
-### 전체 스크립트 (13개, 6,783줄)
+### 전체 스크립트 (14개)
 
 | 스크립트 | 줄수 | 배분 스킬 | 역할 |
 |---------|------|----------|------|
@@ -1126,6 +1159,7 @@ PPT 생성 시 **필수** 준수 프로세스:
 | style-extractor.py | 383 | ppt-extract | 색상 추출 |
 | image-prompt-generator.js | 289 | ppt-image | 이미지 프롬프트 생성 |
 | rearrange.py | 231 | ppt-create | 슬라이드 재배열 |
+| **sync_registry.py** | 220 | ppt-gen | 분리형 registry 동기화 (v4.1) |
 | rasterize-icon.js | 172 | ppt-image | SVG 래스터화 |
 | icon-decision.js | 280 | ppt-gen | 아이콘 필요성 자동 판단 |
 | icon-resolver.js | 200 | ppt-gen | 아이콘 생성/삽입 |
@@ -1891,5 +1925,8 @@ needs_icons = 총점 ≥ 0.5
     - extract_theme_ooxml()
     - (extract_theme_rels() 추가)
 
-- [ ] **P4 (LOW): 레지스트리 매니저 추상화**
-  - [ ] `shared/registry.py` - RegistryManager 클래스 (선택적, 미착수)
+- [x] **P4 (LOW): 레지스트리 매니저** ✅ 완료 (v4.1)
+  - [x] `ppt-gen/scripts/sync_registry.py` - 분리형 registry 동기화 스크립트
+    - 개별 템플릿 YAML → 카테고리별 registry 자동 생성
+    - 마스터 registry.yaml 인덱스 업데이트
+    - 검색 메타데이터 통합 (match_keywords, description, expected_prompt)

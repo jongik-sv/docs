@@ -1,0 +1,25 @@
+category: section
+name: section
+description: ''
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: deepgreen-section-version2
+  name: 딥그린 섹션 구분자
+  file: templates/section/deepgreen-section-version2.yaml
+  thumbnail: thumbnails/section/deepgreen-section-version2.png
+  source_slide_index: 8
+  description: VERSION 형식의 섹션 구분자.
+  match_keywords:
+  - section
+  - 섹션
+  - 구분자
+  - VERSION
+  - 챕터
+  - 파트
+  - 중간제목
+  expected_prompt: |
+    섹션 구분 슬라이드를 만들어줘.
+    - VERSION 형식의 섹션 번호
+    - 구분선 아래에 섹션 제목
+    - 미니멀한 중앙 정렬

@@ -1,0 +1,271 @@
+content_template:
+  id: grid-arch3
+  name: 3열 아치형 텍스트 레이아웃
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 9
+  extracted_at: '2026-01-09T15:42:00'
+  expected_prompt: "Create a general slide designed for 3열 아치형 텍스트 레이아웃 - 각 열의 상단에 곡선형 아치 도형, 하단에 텍스트 콘텐츠. This layout is specifically designed for: 3열로 정보를 동등하게 분류하여 비교하는 슬라이드, 계층적 구조를 가진 3가지 주제를 시각화할 때, 아치형 배경으로 각 섹션을 구분하는 디자인. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.5
+  design_intent: 3열 아치형 텍스트 레이아웃 - 각 열의 상단에 곡선형 아치 도형, 하단에 텍스트 콘텐츠
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Arch Left
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 7.3%
+    y: 31.4%
+    cx: 18.2%
+    cy: 16.1%
+    original_aspect_ratio: 1.127
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 0.1
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-1
+  name: Title Left
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 12.0%
+    y: 40.0%
+    cx: 8.6%
+    cy: 4.9%
+    original_aspect_ratio: 1.735
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목1}}'
+      font_size: 14.0
+    font_weight: bold
+    font_color: dark_text
+- id: shape-2
+  name: Content Left
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 6.3%
+    y: 48.6%
+    cx: 20.0%
+    cy: 33.5%
+    original_aspect_ratio: 0.597
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목1}}'
+      font_size: 13.0
+    - text: '{{본문1}}'
+      font_size: 11.0
+    - text: '{{본문2}}'
+      font_size: 11.0
+    - text: '{{본문3}}'
+      font_size: 11.0
+    - text: '{{본문4}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-3
+  name: Arch Center
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 31.1%
+    y: 31.4%
+    cx: 18.2%
+    cy: 16.1%
+    original_aspect_ratio: 1.127
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 0.1
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-4
+  name: Title Center
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 35.8%
+    y: 40.0%
+    cx: 8.6%
+    cy: 4.9%
+    original_aspect_ratio: 1.735
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목2}}'
+      font_size: 14.0
+    font_weight: bold
+    font_color: dark_text
+- id: shape-5
+  name: Content Center
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 30.1%
+    y: 48.6%
+    cx: 20.0%
+    cy: 33.5%
+    original_aspect_ratio: 0.597
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목2}}'
+      font_size: 13.0
+    - text: '{{본문1}}'
+      font_size: 11.0
+    - text: '{{본문2}}'
+      font_size: 11.0
+    - text: '{{본문3}}'
+      font_size: 11.0
+    - text: '{{본문4}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+- id: shape-6
+  name: Arch Right
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 55.3%
+    y: 31.4%
+    cx: 18.2%
+    cy: 16.1%
+    original_aspect_ratio: 1.127
+  style:
+    fill:
+      type: solid
+      color: accent
+      opacity: 0.1
+    stroke:
+      type: none
+  text:
+    has_text: false
+- id: shape-7
+  name: Title Right
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 60.1%
+    y: 40.0%
+    cx: 8.6%
+    cy: 4.9%
+    original_aspect_ratio: 1.735
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{제목3}}'
+      font_size: 14.0
+    font_weight: bold
+    font_color: dark_text
+- id: shape-8
+  name: Content Right
+  type: rect
+  shape_source: ooxml
+  geometry:
+    x: 54.4%
+    y: 48.5%
+    cx: 20.0%
+    cy: 33.5%
+    original_aspect_ratio: 0.597
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목3}}'
+      font_size: 13.0
+    - text: '{{본문1}}'
+      font_size: 11.0
+    - text: '{{본문2}}'
+      font_size: 11.0
+    - text: '{{본문3}}'
+      font_size: 11.0
+    - text: '{{본문4}}'
+      font_size: 11.0
+    alignment: left
+    font_color: dark_text
+gaps:
+  global:
+    column_gap: 5%
+    row_gap: 4%
+content_schema:
+  columns: 3
+  rows: 2
+  repeating_units:
+  - id: column
+    fields:
+    - name: title
+      type: text
+      description: 열의 제목
+    - name: subtitle
+      type: text
+      description: 열의 소제목
+    - name: items
+      type: text_array
+      description: 최대 4개의 본문 항목
+use_for:
+- 3열로 정보를 동등하게 분류하여 비교하는 슬라이드
+- 계층적 구조를 가진 3가지 주제를 시각화할 때
+- 아치형 배경으로 각 섹션을 구분하는 디자인
+- 대칭적 레이아웃이 필요한 3항목 비교
+- 텍스트 중심의 정보 전달이 필요할 때
+keywords:
+- 3열
+- 아치형
+- 텍스트 레이아웃
+- 대칭
+- 계층구조
+- 비교
+- 구분
+expected_prompt: |
+  3열 아치형 텍스트 레이아웃 슬라이드를 만들어줘.
+  - 3열 아치형 텍스트 레이아웃 - 각 열의 상단에 곡선형 아치 도형, 하단에 텍스트 콘텐츠
+  - 3열로 정보를 동등하게 분류하여 비교하는 슬라이드
+  - 계층적 구조를 가진 3가지 주제를 시각화할 때
+  - 아치형 배경으로 각 섹션을 구분하는 디자인
+thumbnail: thumbnails/grid/grid-arch3.png

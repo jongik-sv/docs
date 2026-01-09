@@ -1,0 +1,53 @@
+id: deepgreen-section-version2
+name: 딥그린 섹션 구분자 V2
+category: section
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 8
+design_intent: section-number
+extraction_mode: full
+
+layout:
+  type: freeform
+
+zones:
+  - id: version-label
+    type: placeholder
+    geometry: {x: 25%, y: 30%, cx: 50%, cy: 15%}
+    placeholder_type: TITLE
+    object_desc: "VERSION. 02 텍스트, 대형 세리프 폰트"
+
+  - id: divider-line
+    type: container
+    geometry: {x: 20%, y: 45%, cx: 60%, cy: 2%}
+    object_desc: "가로 구분선, 양 끝에 원형 장식"
+
+  - id: section-title
+    type: placeholder
+    geometry: {x: 20%, y: 50%, cx: 60%, cy: 10%}
+    placeholder_type: SUBTITLE
+
+  - id: section-desc
+    type: placeholder
+    geometry: {x: 15%, y: 62%, cx: 70%, cy: 15%}
+    placeholder_type: BODY
+
+thumbnail: thumbnails/section/deepgreen-section-version2.png
+
+use_for:
+  - 섹션 구분
+  - 챕터 시작
+  - 두번째 파트
+
+keywords:
+  - 섹션
+  - 구분자
+  - VERSION
+  - 02
+  - 파트2
+
+expected_prompt: |
+  두번째 섹션 구분 슬라이드를 만들어줘.
+  - 중앙에 VERSION 02 형식의 섹션 번호
+  - 구분선 아래에 섹션 제목
+  - 미니멀한 중앙 정렬

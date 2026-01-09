@@ -1,7 +1,0 @@
-# 동국그룹 문서 양식 목록
-templates:
-  - id: 제안서1
-    name: 제안서 (기본)
-    file: 제안서1.yaml
-    type: proposal
-    description: "표지 + 목차 + 본문(불릿) + 자유영역 + 넓은본문 구성"

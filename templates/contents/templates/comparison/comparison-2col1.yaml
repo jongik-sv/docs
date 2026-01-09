@@ -1,0 +1,244 @@
+content_template:
+  id: comparison-2col1
+  name: 2열 불릿 비교
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 2
+  extracted_at: '2026-01-09T19:37:33.362072'
+  expected_prompt: "Create a general slide designed for comparison-2col1. This layout is specifically designed for: 비교, 장단점, 좌우 대조. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 7.0
+  design_intent: comparison-2col1
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: Shape 0
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 6.5%
+    y: 22.3%
+    cx: 37.7%
+    cy: 4.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌0.7in 상1.7in'
+- id: shape-1
+  name: Shape 1
+  type: bullet-list
+  shape_source: description
+  geometry:
+    x: 6.5%
+    y: 28.1%
+    cx: 37.7%
+    cy: 46.8%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+  description:
+    text: 'bullet-list, 위치: 좌0.7in 상2.1in'
+- id: shape-2
+  name: Shape 2
+  type: header-box
+  shape_source: description
+  geometry:
+    x: 56.0%
+    y: 22.3%
+    cx: 37.7%
+    cy: 4.9%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{중제목}}'
+      font_size: 16.0
+  description:
+    text: 'header-box, 위치: 좌6.1in 상1.7in'
+- id: shape-3
+  name: Shape 3
+  type: bullet-list
+  shape_source: description
+  geometry:
+    x: 56.0%
+    y: 28.1%
+    cx: 37.7%
+    cy: 46.8%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{소제목}}'
+      font_size: 14.0
+      bullet: true
+      level: 1
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+    - text: '{{본문}}'
+      font_size: 12.0
+      bullet: true
+      level: 2
+  description:
+    text: 'bullet-list, 위치: 좌6.1in 상2.1in'
+- id: shape-4
+  name: Shape 4
+  type: text-box
+  shape_source: description
+  geometry:
+    x: 20.0%
+    y: 80.7%
+    cx: 60.0%
+    cy: 7.7%
+  style:
+    fill:
+      type: none
+    stroke:
+      type: none
+  text:
+    has_text: true
+    placeholders:
+    - text: '{{본문}}'
+      font_size: 16.0
+  description:
+    text: 'text-box, 위치: 좌2.2in 상6.0in'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 비교
+- 장단점
+- 좌우 대조
+- 2열 비교
+keywords:
+- comparison
+- 2열
+- 불릿
+expected_prompt: |
+  비교 슬라이드를 만들어줘.
+  - 좌우 2열로 배치
+  - 각 열에 중제목 + 불릿 포인트 리스트
+  - 하단에 요약/결론 텍스트 박스
+  - 대칭적인 구조로 두 항목 비교
+prompt_keywords:
+- 비교
+- 장단점
+- vs
+- 대조
+- 좌우
+- 2열
+- comparison
+- pros cons
+thumbnail: thumbnails/comparison-2col1.png

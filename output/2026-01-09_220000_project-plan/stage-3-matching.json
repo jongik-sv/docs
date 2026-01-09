@@ -1,0 +1,284 @@
+{
+  "session": {
+    "id": "2026-01-09_project-plan",
+    "title": "스마트 물류관리 시스템 구축 수행계획서",
+    "status": "in_progress",
+    "created_at": "2026-01-09T14:30:00+09:00",
+    "source_file": "project-plan.md"
+  },
+  "current_stage": 3,
+  "setup": {
+    "presentation": {
+      "title": "스마트 물류관리 시스템 구축 프로젝트",
+      "subtitle": "수행계획서",
+      "audience": "혼합 (경영진+실무)",
+      "duration": "20-30분",
+      "slide_count": 17
+    },
+    "theme": {
+      "id": "deepgreen-clean",
+      "colors": {
+        "primary": "#153325",
+        "secondary": "#22523B",
+        "accent": "#479374",
+        "background": "#FFFFFF",
+        "surface": "#A1BFB4",
+        "dark_text": "#153325",
+        "light_text": "#FFFFFF"
+      }
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title": "스마트 물류관리 시스템 구축",
+      "purpose": "cover",
+      "key_points": ["프로젝트명", "수행계획서", "수행사: (주)테크솔루션", "2025-01-06"],
+      "template_id": "deepgreen-cover-centered1",
+      "match_score": 0.95,
+      "match_reason": "딥그린 테마 표지, 중앙 정렬 스타일",
+      "layout": "cover-centered",
+      "icon_decision": {"needs_icon": false, "reason": "표지 슬라이드는 아이콘 불필요"}
+    },
+    {
+      "index": 1,
+      "title": "목차",
+      "purpose": "toc",
+      "key_points": ["1. 프로젝트 개요", "2. 시스템 범위", "3. 추진 전략", "4. 프로젝트 관리", "5. 협조 요청"],
+      "template_id": "deepgreen-toc-3col1",
+      "match_score": 0.95,
+      "match_reason": "딥그린 3열 목차 레이아웃",
+      "layout": "toc-3col",
+      "icon_decision": {"needs_icon": false, "reason": "목차는 텍스트 중심"}
+    },
+    {
+      "index": 2,
+      "title": "프로젝트 개요",
+      "purpose": "grid",
+      "key_points": [
+        {"label": "발주기관", "value": "(주)글로벌물류"},
+        {"label": "수행사", "value": "(주)테크솔루션"},
+        {"label": "계약금액", "value": "15억원"},
+        {"label": "계약기간", "value": "12개월"}
+      ],
+      "template_id": "grid-4col1",
+      "match_score": 0.90,
+      "match_reason": "4가지 기본 정보를 4열 그리드로 표현",
+      "layout": "grid-4col",
+      "icon_decision": {"needs_icon": true, "icons": ["building", "briefcase", "dollar-sign", "calendar"], "reason": "정보 카테고리별 아이콘으로 가독성 향상"}
+    },
+    {
+      "index": 3,
+      "title": "추진 배경 및 목표",
+      "purpose": "comparison",
+      "key_points": [
+        {"column": "현황 (AS-IS)", "items": ["10년 이상 레거시", "처리 속도 저하", "실시간 파악 불가"]},
+        {"column": "목표 (TO-BE)", "items": ["AI 기반 최적화", "실시간 추적", "클라우드 확장성"]}
+      ],
+      "template_id": "comparison-2col1",
+      "match_score": 0.95,
+      "match_reason": "좌우 2열 비교 레이아웃, 불릿 포인트",
+      "layout": "comparison-2col",
+      "icon_decision": {"needs_icon": false, "reason": "비교 레이아웃은 텍스트 대비가 핵심"}
+    },
+    {
+      "index": 4,
+      "title": "기대 효과",
+      "purpose": "stats",
+      "key_points": [
+        {"value": "30%", "label": "물류 처리 효율 향상"},
+        {"value": "99.5%", "label": "재고 정확도 달성"},
+        {"value": "20%", "label": "운영 비용 절감"}
+      ],
+      "template_id": "deepgreen-stats-percent1",
+      "match_score": 0.95,
+      "match_reason": "퍼센트 통계 3개를 강조하는 레이아웃",
+      "layout": "stats-percent",
+      "icon_decision": {"needs_icon": false, "reason": "통계 슬라이드는 숫자가 주인공"}
+    },
+    {
+      "index": 5,
+      "title": "시스템 범위",
+      "purpose": "section",
+      "key_points": ["01", "시스템 범위"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "번호가 있는 섹션 구분자",
+      "layout": "section-number",
+      "icon_decision": {"needs_icon": false, "reason": "섹션 구분자는 아이콘 불필요"}
+    },
+    {
+      "index": 6,
+      "title": "시스템 구성",
+      "purpose": "grid",
+      "key_points": [
+        {"icon": "warehouse", "title": "WMS", "description": "입출고, 재고, 피킹/패킹"},
+        {"icon": "truck", "title": "TMS", "description": "배차, 경로최적화, 추적"},
+        {"icon": "clipboard", "title": "OMS", "description": "주문접수, 할당, 정산"},
+        {"icon": "chart", "title": "Dashboard", "description": "실시간 현황, KPI"}
+      ],
+      "template_id": "deepgreen-grid-4col-icon1",
+      "match_score": 0.95,
+      "match_reason": "4개 시스템을 아이콘+설명으로 표현",
+      "layout": "grid-4col-icon",
+      "icon_decision": {"needs_icon": true, "icons": ["FaWarehouse", "FaTruck", "FaClipboardList", "FaChartLine"], "reason": "각 시스템을 시각적으로 구분"}
+    },
+    {
+      "index": 7,
+      "title": "추진 전략",
+      "purpose": "section",
+      "key_points": ["02", "추진 전략"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "번호가 있는 섹션 구분자",
+      "layout": "section-number",
+      "icon_decision": {"needs_icon": false, "reason": "섹션 구분자는 아이콘 불필요"}
+    },
+    {
+      "index": 8,
+      "title": "핵심 추진 전략",
+      "purpose": "grid",
+      "key_points": [
+        {"number": "1", "title": "단계적 전환", "description": "모듈별 순차 전환으로 리스크 최소화"},
+        {"number": "2", "title": "애자일 개발", "description": "2주 스프린트로 빠른 피드백"},
+        {"number": "3", "title": "현업 밀착", "description": "주 2회 리뷰로 정합성 확보"}
+      ],
+      "template_id": "deepgreen-grid-3col-icon1",
+      "match_score": 0.90,
+      "match_reason": "3가지 전략을 아이콘+설명으로 표현",
+      "layout": "grid-3col-icon",
+      "icon_decision": {"needs_icon": true, "icons": ["FaLayerGroup", "FaRocket", "FaUsers"], "reason": "전략별 시각적 구분"}
+    },
+    {
+      "index": 9,
+      "title": "수행 방법론",
+      "purpose": "process",
+      "key_points": [
+        {"step": "01", "title": "분석", "output": "요구사항정의서"},
+        {"step": "02", "title": "설계", "output": "설계서 일체"},
+        {"step": "03", "title": "개발", "output": "소스코드"},
+        {"step": "04", "title": "테스트", "output": "테스트결과서"},
+        {"step": "05", "title": "이행", "output": "운영매뉴얼"},
+        {"step": "06", "title": "안정화", "output": "완료보고서"}
+      ],
+      "template_id": "process-linear1",
+      "match_score": 0.95,
+      "match_reason": "6단계 프로세스 표현",
+      "layout": "process-6step",
+      "icon_decision": {"needs_icon": false, "reason": "프로세스는 번호가 핵심"}
+    },
+    {
+      "index": 10,
+      "title": "기술 아키텍처",
+      "purpose": "grid",
+      "key_points": [
+        {"category": "Frontend", "tech": "Vue.js 3, TypeScript"},
+        {"category": "Backend", "tech": "Spring Boot, Java 17"},
+        {"category": "Database", "tech": "PostgreSQL, Redis"},
+        {"category": "Infra", "tech": "AWS (EKS, RDS, S3)"},
+        {"category": "AI/ML", "tech": "Python, TensorFlow"}
+      ],
+      "template_id": "grid-3col2",
+      "match_score": 0.85,
+      "match_reason": "5개 기술영역을 3열 구조로 표현",
+      "layout": "grid-3col-extended",
+      "icon_decision": {"needs_icon": true, "icons": ["FaVuejs", "FaJava", "FaDatabase", "FaAws", "FaBrain"], "reason": "기술스택 시각화"}
+    },
+    {
+      "index": 11,
+      "title": "프로젝트 관리",
+      "purpose": "section",
+      "key_points": ["03", "프로젝트 관리"],
+      "template_id": "deepgreen-section-number1",
+      "match_score": 0.95,
+      "match_reason": "번호가 있는 섹션 구분자",
+      "layout": "section-number",
+      "icon_decision": {"needs_icon": false, "reason": "섹션 구분자는 아이콘 불필요"}
+    },
+    {
+      "index": 12,
+      "title": "프로젝트 조직",
+      "purpose": "hierarchy",
+      "key_points": [
+        {"role": "발주기관 PM", "name": "정민호 부장"},
+        {"role": "수행사 PM", "name": "김철수 차장"},
+        {"role": "PMO", "name": "이영희 과장"},
+        {"role": "AA", "name": "박준형 책임"},
+        {"role": "개발 리더", "name": "최수진 선임"},
+        {"role": "QA", "name": "한미영 대리"}
+      ],
+      "template_id": "hierarchy-3col",
+      "match_score": 0.90,
+      "match_reason": "프로젝트 조직을 3열 계층으로 표현",
+      "layout": "hierarchy-3col",
+      "icon_decision": {"needs_icon": true, "icons": ["FaUserTie", "FaUserCog", "FaUserShield"], "reason": "역할별 시각적 구분"}
+    },
+    {
+      "index": 13,
+      "title": "마스터 일정",
+      "purpose": "timeline",
+      "key_points": [
+        {"period": "1월", "phase": "착수"},
+        {"period": "2-3월", "phase": "분석"},
+        {"period": "4-5월", "phase": "설계"},
+        {"period": "6-9월", "phase": "개발"},
+        {"period": "10-11월", "phase": "테스트"},
+        {"period": "12월", "phase": "이행"}
+      ],
+      "template_id": "timeline-horizontal",
+      "match_score": 0.95,
+      "match_reason": "수평 타임라인으로 12개월 일정 표현",
+      "layout": "timeline-horizontal",
+      "icon_decision": {"needs_icon": false, "reason": "타임라인은 날짜/기간이 핵심"}
+    },
+    {
+      "index": 14,
+      "title": "주요 마일스톤",
+      "purpose": "timeline",
+      "key_points": [
+        {"date": "01/10", "milestone": "M1 착수보고"},
+        {"date": "03/31", "milestone": "M2 요구사항 확정"},
+        {"date": "05/31", "milestone": "M3 설계 완료"},
+        {"date": "09/30", "milestone": "M4 개발 완료"},
+        {"date": "11/15", "milestone": "M5 테스트 완료"},
+        {"date": "12/01", "milestone": "M6 시스템 오픈"}
+      ],
+      "template_id": "timeline-circle",
+      "match_score": 0.90,
+      "match_reason": "원형 노드로 6개 마일스톤 강조",
+      "layout": "timeline-circle",
+      "icon_decision": {"needs_icon": false, "reason": "마일스톤은 날짜가 핵심"}
+    },
+    {
+      "index": 15,
+      "title": "품질/보안/위험 관리",
+      "purpose": "grid",
+      "key_points": [
+        {"title": "품질 관리", "items": ["코드 리뷰", "정적 분석", "시나리오 테스트"]},
+        {"title": "보안 관리", "items": ["보안서약서", "OWASP 점검", "DB 암호화"]},
+        {"title": "위험 관리", "items": ["CCB 운영", "주간 진척관리", "대체 인력 풀"]}
+      ],
+      "template_id": "deepgreen-grid-3col-icon1",
+      "match_score": 0.90,
+      "match_reason": "3가지 관리영역을 아이콘+리스트로 표현",
+      "layout": "grid-3col-icon",
+      "icon_decision": {"needs_icon": true, "icons": ["FaCheckCircle", "FaShieldAlt", "FaExclamationTriangle"], "reason": "관리영역별 시각적 구분"}
+    },
+    {
+      "index": 16,
+      "title": "협조 요청 사항",
+      "purpose": "content",
+      "key_points": [
+        {"category": "환경", "request": "프로젝트 룸 10석, VPN, 출입증"},
+        {"category": "데이터", "request": "테스트 샘플 데이터"},
+        {"category": "인프라", "request": "AWS 계정 및 권한"},
+        {"category": "참여", "request": "인터뷰, UAT 지원"}
+      ],
+      "template_id": "deepgreen-content-cta1",
+      "match_score": 0.85,
+      "match_reason": "협조요청 + 감사 메시지 CTA",
+      "layout": "content-cta",
+      "icon_decision": {"needs_icon": false, "reason": "마지막 슬라이드는 텍스트 중심"}
+    }
+  ]
+}

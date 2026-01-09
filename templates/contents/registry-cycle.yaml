@@ -1,0 +1,85 @@
+category: cycle
+name: 사이클
+description: 순환 구조 레이아웃
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: cycle-3circle
+  name: 3개 원형 연결 사이클
+  file: templates/cycle/cycle-3circle.yaml
+  thumbnail: thumbnails/cycle/cycle-3circle.png
+  source_slide_index: 23
+  description: 3개 원형 연결 사이클 슬라이드.
+  match_keywords:
+  - 3단계 순환 프로세스나 사이클 표현
+  - 삼각형 구조의 반복적 관계 시각화
+  - 3가지 요소의 순환 구조를 보여줄 때
+  - 다이어그램 기반의 프로세스 플로우
+  - 균형잡힌 3개 항목의 상호 관계
+  - 3단계
+  - 사이클
+  - 순환
+  - 원형
+  - 연결
+  - 프로세스
+  - 관계도
+  expected_prompt: '3개 원형 연결 사이클 슬라이드를 만들어줘.
+
+    - 3개의 원형 노드가 연결선으로 연결된 사이클 다이어그램 - 프로세스 순환, 반복 구조 표현
+
+    - 3단계 순환 프로세스나 사이클 표현
+
+    - 삼각형 구조의 반복적 관계 시각화
+
+    - 3가지 요소의 순환 구조를 보여줄 때'
+- id: cycle-4quadrant
+  name: 4분할 원형 사이클
+  file: templates/cycle/cycle-4quadrant.yaml
+  thumbnail: thumbnails/cycle/cycle-4quadrant.png
+  source_slide_index: 40
+  description: 4분할 원형 사이클 슬라이드.
+  match_keywords:
+  - 순환적 프로세스의 4단계 표현
+  - 4개 사분면의 매트릭스 구조
+  - 원형으로 연결된 개념들의 사이클
+  - 계절, 단계별 순환 구조
+  - PDCA 사이클 등 반복적 프로세스 시각화
+  - 사이클
+  - 4분할
+  - 원형
+  - 순환
+  - 사분면
+  - 프로세스
+  - 반복
+  - 연속
+  - PDCA
+  expected_prompt: '4분할 원형 사이클 슬라이드를 만들어줘.
+
+    - 4개의 사분면으로 나뉜 원형 다이어그램. 순환적 관계 또는 연속적 프로세스를 표현
+
+    - 순환적 프로세스의 4단계 표현
+
+    - 4개 사분면의 매트릭스 구조
+
+    - 원형으로 연결된 개념들의 사이클'
+- id: deepgreen-cycle-5step1
+  name: 딥그린 5단계 순환 사이클
+  file: templates/cycle/deepgreen-cycle-5step1.yaml
+  thumbnail: thumbnails/cycle/deepgreen-cycle-5step1.png
+  source_slide_index: 15
+  description: 5단계 원형 순환 다이어그램.
+  match_keywords:
+  - cycle
+  - 사이클
+  - 5단계
+  - 순환
+  - 원형
+  - 딥그린
+  - 반복
+  - 프로세스
+  expected_prompt: |
+    5단계 순환 사이클 슬라이드를 만들어줘.
+    - 5개 단계가 원형으로 배치
+    - 화살표로 순환 표현
+    - 각 단계에 번호와 제목
+    - 딥그린 스타일

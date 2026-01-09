@@ -1,0 +1,74 @@
+id: deepgreen-process-6cards1
+name: 딥그린 6칸 프로세스 카드
+category: process
+version: "4.0"
+source: 깔끔이 딥그린.pptx
+source_slide_index: 5
+design_intent: process-grid
+extraction_mode: content_only
+
+layout:
+  type: grid
+  columns: 3
+  rows: 2
+  column_gap: 3%
+  row_gap: 5%
+
+zones:
+  - id: title-area
+    type: placeholder
+    geometry: {x: 5%, y: 5%, cx: 40%, cy: 8%}
+    placeholder_type: TITLE
+
+  - id: card-1
+    type: container
+    geometry: {x: 5%, y: 22%, cx: 28%, cy: 35%}
+    object_desc: "라운드 카드, 좌측 상단에 원형 번호(1), 우측에 녹색 세로바"
+    children:
+      - placeholder_type: BODY
+
+  - id: card-2
+    type: container
+    geometry: {x: 36%, y: 22%, cx: 28%, cy: 35%}
+    object_desc: "라운드 카드, 우측 하단에 원형 번호(2)"
+
+  - id: card-3
+    type: container
+    geometry: {x: 67%, y: 22%, cx: 28%, cy: 35%}
+    object_desc: "라운드 카드, 좌측 상단에 원형 번호(3)"
+
+  - id: card-4
+    type: container
+    geometry: {x: 5%, y: 60%, cx: 28%, cy: 35%}
+    object_desc: "라운드 카드, 우측 하단에 원형 번호(4)"
+
+  - id: card-5
+    type: container
+    geometry: {x: 36%, y: 60%, cx: 28%, cy: 35%}
+    object_desc: "라운드 카드, 좌측 상단에 원형 번호(5)"
+
+  - id: card-6
+    type: container
+    geometry: {x: 67%, y: 60%, cx: 28%, cy: 35%}
+    object_desc: "라운드 카드, 우측 하단에 원형 번호(6)"
+
+thumbnail: thumbnails/process/deepgreen-process-6cards1.png
+
+use_for:
+  - 6단계 프로세스
+  - 기능 소개
+  - 서비스 설명
+
+keywords:
+  - 프로세스
+  - 6단계
+  - 카드
+  - 그리드
+  - 단계별
+
+expected_prompt: |
+  6단계 프로세스 슬라이드를 만들어줘.
+  - 2x3 그리드 레이아웃
+  - 각 카드에 번호(1-6)와 설명
+  - 라운드 카드 스타일
+  - 번호 위치가 교대로 배치

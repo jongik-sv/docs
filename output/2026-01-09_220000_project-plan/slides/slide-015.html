@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt; height: 405pt;
+      font-family: 'Malgun Gothic', sans-serif;
+      background: #FFFFFF;
+      padding: 36pt 48pt;
+      position: relative;
+    }
+    .header {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-bottom: 24pt;
+    }
+    .title { font-size: 24pt; font-weight: 700; color: #153325; }
+    .page-num { font-size: 12pt; color: #859C80; }
+    .milestones {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16pt;
+    }
+    .milestone {
+      background: #F8FAF9;
+      border-radius: 8pt;
+      padding: 16pt;
+      display: flex;
+      align-items: flex-start;
+      gap: 12pt;
+    }
+    .m-circle {
+      width: 40pt; height: 40pt;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12pt; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .m-circle p { color: #FFFFFF; }
+    .milestone:nth-child(1) .m-circle { background: #479374; }
+    .milestone:nth-child(2) .m-circle { background: #43A375; }
+    .milestone:nth-child(3) .m-circle { background: #22523B; }
+    .milestone:nth-child(4) .m-circle { background: #67B7B5; }
+    .milestone:nth-child(5) .m-circle { background: #153325; }
+    .milestone:nth-child(6) .m-circle { background: #859C80; }
+    .m-content { flex: 1; }
+    .m-date {
+      font-size: 11pt; color: #859C80;
+      margin-bottom: 4pt;
+    }
+    .m-name {
+      font-size: 13pt; font-weight: 600;
+      color: #153325; margin-bottom: 4pt;
+    }
+    .m-output {
+      font-size: 10pt; color: #6B7280;
+    }
+    .accent-line {
+      position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 4pt;
+      background: #479374;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <p class="title">주요 마일스톤</p>
+    <p class="page-num">15</p>
+  </div>
+  <div class="milestones">
+    <div class="milestone">
+      <div class="m-circle"><p>M1</p></div>
+      <div class="m-content">
+        <p class="m-date">01/10</p>
+        <p class="m-name">착수보고</p>
+        <p class="m-output">수행계획서</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="m-circle"><p>M2</p></div>
+      <div class="m-content">
+        <p class="m-date">03/31</p>
+        <p class="m-name">요구사항 확정</p>
+        <p class="m-output">요구사항정의서</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="m-circle"><p>M3</p></div>
+      <div class="m-content">
+        <p class="m-date">05/31</p>
+        <p class="m-name">설계 완료</p>
+        <p class="m-output">설계서 일체</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="m-circle"><p>M4</p></div>
+      <div class="m-content">
+        <p class="m-date">09/30</p>
+        <p class="m-name">개발 완료</p>
+        <p class="m-output">소스코드</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="m-circle"><p>M5</p></div>
+      <div class="m-content">
+        <p class="m-date">11/15</p>
+        <p class="m-name">테스트 완료</p>
+        <p class="m-output">테스트결과서</p>
+      </div>
+    </div>
+    <div class="milestone">
+      <div class="m-circle"><p>M6</p></div>
+      <div class="m-content">
+        <p class="m-date">12/01</p>
+        <p class="m-name">시스템 오픈</p>
+        <p class="m-output">오픈보고서</p>
+      </div>
+    </div>
+  </div>
+  <div class="accent-line"></div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+# Cover Simple 콘텐츠 템플릿 v2.0
+# 원본: 동국시스템즈 기본양식.pptx:0
+
+content_template:
+  id: cover-simple1
+  name: "심플 표지 (대각선 K)"
+  version: "2.0"
+  source: "동국시스템즈 기본양식.pptx"
+  source_slide_index: 0
+  extracted_at: "2026-01-09T00:00:00Z"
+
+design_meta:
+  quality_score: 8.0
+  design_intent: cover-simple
+  design_intents:
+    - cover-simple
+    - cover-branded
+  visual_balance: asymmetric
+  information_density: low
+  extraction_mode: full
+
+canvas:
+  reference_width: 9906000  # EMU
+  reference_height: 6858000  # EMU
+  aspect_ratio: "16:9"
+
+shapes:
+  # 상단 그라데이션 바 (빨강→남색)
+  - id: "top-gradient-bar"
+    name: "상단 그라데이션 바"
+    shape_source: ooxml
+    type: rectangle
+    z_index: 1
+    geometry:
+      x: 0%
+      y: 0%
+      cx: 100%
+      cy: 0.5%
+      original_aspect_ratio: 275.17
+    style:
+      fill:
+        type: gradient
+        direction: horizontal
+        stops:
+          - position: 0%
+            color: accent_red  # #C51F2A
+          - position: 38%
+            color: primary     # #002452
+      stroke:
+        type: none
+    ooxml:
+      fragment: |
+        <p:sp>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="0" y="-2874"/>
+              <a:ext cx="9906000" cy="36000"/>
+            </a:xfrm>
+            <a:prstGeom prst="rect"><a:avLst/></a:prstGeom>
+            <a:gradFill>
+              <a:gsLst>
+                <a:gs pos="38000"><a:srgbClr val="002452"/></a:gs>
+                <a:gs pos="0"><a:srgbClr val="C51F2A"/></a:gs>
+              </a:gsLst>
+              <a:lin ang="10800000" scaled="0"/>
+            </a:gradFill>
+            <a:ln><a:noFill/></a:ln>
+          </p:spPr>
+        </p:sp>
+      emu:
+        x: 0
+        y: -2874
+        cx: 9906000
+        cy: 36000
+      colors:
+        fill: ["#C51F2A", "#002452"]
+
+  # 대각선 K 도형 그룹 (배경)
+  - id: "diagonal-k-group"
+    name: "대각선 K 배경 도형"
+    shape_source: ooxml
+    type: group
+    z_index: 0
+    geometry:
+      x: 66.7%
+      y: 0%
+      cx: 33.3%
+      cy: 91.5%
+      original_aspect_ratio: 0.53
+    style:
+      fill:
+        type: solid
+        color: primary
+        opacity: 0.05
+    description:
+      text: "대각선 K 형태의 장식 도형, 오른쪽에 배치, 5% 투명도"
+      hints:
+        shape_type: custom_diagonal
+        fill_token: primary
+        opacity: 0.05
+
+  # 제목 텍스트
+  - id: "title-text"
+    name: "제목"
+    shape_source: description
+    type: textbox
+    z_index: 2
+    geometry:
+      x: 4.5%
+      y: 33.2%
+      cx: 54.5%
+      cy: 16.1%
+      original_aspect_ratio: 4.88
+    text:
+      has_text: true
+      placeholder_type: TITLE
+      alignment: left
+      vertical_alignment: middle
+      font_size_ratio: 0.044
+      original_font_size_pt: 48
+      font_weight: bold
+      font_family: "본고딕 Bold"
+      font_color: dark_text
+    description:
+      text: "왼쪽 정렬된 큰 제목 텍스트, 본고딕 Bold, 다크 텍스트 색상"
+
+  # 서브타이틀 (부서명 | 날짜)
+  - id: "subtitle-text"
+    name: "서브타이틀"
+    shape_source: description
+    type: textbox
+    z_index: 3
+    geometry:
+      x: 4.5%
+      y: 53.5%
+      cx: 54.2%
+      cy: 3.6%
+      original_aspect_ratio: 21.57
+    text:
+      has_text: true
+      placeholder_type: BODY
+      alignment: left
+      font_size_ratio: 0.013
+      original_font_size_pt: 14
+      font_weight: medium
+      font_family: "본고딕 Medium"
+      font_color: dark_text
+    description:
+      text: "서브타이틀 영역, 부서명과 날짜를 파이프(|)로 구분"
+
+  # 하단 로고
+  - id: "logo"
+    name: "회사 로고"
+    shape_source: description
+    type: picture
+    z_index: 4
+    geometry:
+      x: 2.7%
+      y: 95.9%
+      cx: 12.3%
+      cy: 2.6%
+      original_aspect_ratio: 6.71
+    image:
+      purpose: logo
+      fit: contain
+      description: "회사 로고 이미지, 하단 왼쪽에 위치"
+
+gaps:
+  global:
+    column_gap: 0%
+    row_gap: 0%
+  between_shapes: []
+
+spatial_relationships:
+  - type: vertical_stack
+    shapes: ["top-gradient-bar", "title-text", "subtitle-text"]
+  - type: bottom_aligned
+    shapes: ["logo"]
+
+groups: []
+
+thumbnail: thumbnails/cover/cover-simple1.png
+
+# ============================================
+# 검색 메타데이터
+# ============================================
+use_for:
+  - "프레젠테이션 표지"
+  - "제안서 표지"
+  - "보고서 첫 페이지"
+  - "회사 소개 표지"
+  - "프로젝트 표지"
+
+keywords:
+  - "표지"
+  - "커버"
+  - "타이틀"
+  - "심플"
+  - "깔끔"
+  - "기업"
+  - "비즈니스"
+  - "대각선"
+  - "로고"
+
+expected_prompt: |
+  표지 슬라이드를 만들어줘.
+  - 상단에 그라데이션 장식 바
+  - 오른쪽에 대각선 배경 도형
+  - 왼쪽에 큰 제목
+  - 제목 아래 부서명과 날짜
+  - 하단에 회사 로고
+  - 심플하고 깔끔한 레이아웃
+
+prompt_keywords:
+  - "표지"
+  - "커버"
+  - "타이틀"
+  - "제목"
+  - "심플"
+  - "깔끔"
+  - "첫 페이지"
+  - "제안서"
+  - "보고서"

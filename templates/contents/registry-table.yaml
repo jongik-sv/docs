@@ -1,0 +1,82 @@
+category: table
+name: 테이블
+description: 표 형식 레이아웃
+version: '4.1'
+updated_at: '2026-01-09'
+templates:
+- id: table-4col-numbered
+  name: 4열 번호 목록 테이블
+  file: templates/table/table-4col-numbered.yaml
+  thumbnail: thumbnails/table/table-4col-numbered.png
+  source_slide_index: 30
+  description: 4열 번호 목록 테이블 슬라이드.
+  match_keywords:
+  - 순차적으로 번호가 매겨진 항목 목록 표시
+  - 4개 열의 데이터를 구조화된 테이블로 표현
+  - 비교 분석 데이터를 표 형태로 정렬
+  - 단계별 프로세스나 체크리스트 표시
+  - 정보성 높은 데이터 테이블 구성
+  - 테이블
+  - 4열
+  - 번호
+  - 목록
+  - 데이터
+  - 구조
+  - 비교
+  expected_prompt: '4열 번호 목록 테이블 슬라이드를 만들어줘.
+
+    - 번호가 매겨진 4열의 테이블 구조 - 순차적 항목 리스트 표현
+
+    - 순차적으로 번호가 매겨진 항목 목록 표시
+
+    - 4개 열의 데이터를 구조화된 테이블로 표현
+
+    - 비교 분석 데이터를 표 형태로 정렬'
+- id: table-financial1
+  name: 재무제표 테이블
+  file: templates/table/table-financial1.yaml
+  thumbnail: thumbnails/table/table-financial1.png
+  source_slide_index: 17
+  description: 자산/부채 항목별 연도 비교 재무제표 슬라이드.
+  match_keywords:
+  - 재무제표
+  - 자산
+  - 부채
+  - 손익
+  - 재무현황
+  - financial
+  - balance sheet
+  - 연도별
+  - YoY
+  - 자산총계
+  - 부채총계
+  - 유동자산
+  - 비유동자산
+  expected_prompt: '재무제표 슬라이드를 만들어줘.
+
+    - 자산/부채 항목별 연도 비교
+
+    - YoY 변화량 표시
+
+    - 억원 단위 재무 데이터'
+- id: deepgreen-table-4col1
+  name: 딥그린 4열 번호 카드 테이블
+  file: templates/table/deepgreen-table-4col1.yaml
+  thumbnail: thumbnails/table/deepgreen-table-4col1.png
+  source_slide_index: 9
+  description: 4열 번호 카드가 있는 테이블 형태 레이아웃.
+  match_keywords:
+  - table
+  - 테이블
+  - 4열
+  - 번호
+  - 카드
+  - 딥그린
+  - 목록
+  - 리스트
+  expected_prompt: |
+    4열 테이블 슬라이드를 만들어줘.
+    - 4열 카드 형태
+    - 각 카드에 번호(01~04)
+    - 제목과 불릿 리스트
+    - 딥그린 스타일

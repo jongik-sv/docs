@@ -1,0 +1,597 @@
+content_template:
+  id: timeline-circle
+  name: 원형 강조 타임라인
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 50
+  extracted_at: '2026-01-09T20:15:07.120820'
+  expected_prompt: "Create a general slide designed for 원형 노드와 연결선으로 구성된 타임라인. 특정 이벤트나 단계를 강조하는 디자인. This layout is specifically designed for: 원형 노드로 강조된 각 단계 표현, 이벤트 기반 타임라인, 성장 단계의 시각화. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.0
+  design_intent: 원형 노드와 연결선으로 구성된 타임라인. 특정 이벤트나 단계를 강조하는 디자인
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: PlaceHolder 1
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-1
+  name: PlaceHolder 2
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-2
+  name: PlaceHolder 3
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-3
+  name: PlaceHolder 4
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-4
+  name: PlaceHolder 5
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 76.0%
+    y: 96.3%
+    cx: 3.1%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-5
+  name: PlaceHolder 6
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 63.9%
+    y: 96.3%
+    cx: 12.6%
+    cy: 2.2%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - 작성자_장선익, 장희승, 김현주
+- id: shape-6
+  name: TextBox 59
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 11.3%
+    y: 51.1%
+    cx: 12.5%
+    cy: 11.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{소제목}}'
+    - '{{본문}}'
+    - '{{본문}}'
+- id: shape-7
+  name: Oval 5
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 62.9%
+    y: 38.3%
+    cx: 8.0%
+    cy: 14.2%
+  style:
+    fill:
+      type: solid
+      color: ffffff
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-8
+  name: Oval 6
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 63.8%
+    y: 39.9%
+    cx: 6.2%
+    cy: 11.0%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-9
+  name: Oval 17
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 53.7%
+    y: 43.2%
+    cx: 2.4%
+    cy: 4.2%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-10
+  name: Oval 18
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 54.3%
+    y: 44.3%
+    cx: 1.2%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: accent1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-11
+  name: TextBox 52
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 50.7%
+    y: 35.1%
+    cx: 8.4%
+    cy: 5.7%
+  style:
+    fill:
+      type: solid
+      color: d55633
+  text:
+    has_text: true
+    content:
+    - '2019'
+- id: shape-12
+  name: TextBox 53
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 39.0%
+    y: 35.6%
+    cx: 6.7%
+    cy: 4.9%
+  style:
+    fill:
+      type: solid
+      color: dk2
+  text:
+    has_text: true
+    content:
+    - '2018'
+- id: shape-13
+  name: TextBox 54
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 26.1%
+    y: 35.6%
+    cx: 6.7%
+    cy: 4.9%
+  style:
+    fill:
+      type: solid
+      color: dk2
+  text:
+    has_text: true
+    content:
+    - '2017'
+- id: shape-14
+  name: TextBox 55
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 13.2%
+    y: 35.6%
+    cx: 6.7%
+    cy: 4.9%
+  style:
+    fill:
+      type: solid
+      color: dk2
+  text:
+    has_text: true
+    content:
+    - '2016'
+- id: shape-15
+  name: Oval 17
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 41.1%
+    y: 43.2%
+    cx: 2.4%
+    cy: 4.2%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-16
+  name: Oval 18
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 41.7%
+    y: 44.3%
+    cx: 1.2%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: accent1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-17
+  name: Oval 17
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 28.3%
+    y: 43.2%
+    cx: 2.4%
+    cy: 4.2%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-18
+  name: Oval 18
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 28.9%
+    y: 44.3%
+    cx: 1.2%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: accent1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-19
+  name: Oval 17
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 15.4%
+    y: 43.2%
+    cx: 2.4%
+    cy: 4.2%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-20
+  name: Oval 18
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 16.0%
+    y: 44.3%
+    cx: 1.2%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: accent1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-21
+  name: TextBox 45
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 23.9%
+    y: 51.1%
+    cx: 12.5%
+    cy: 11.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{소제목}}'
+    - '{{본문}}'
+    - '{{본문}}'
+- id: shape-22
+  name: TextBox 46
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 36.6%
+    y: 51.1%
+    cx: 12.5%
+    cy: 11.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{소제목}}'
+    - '{{본문}}'
+    - '{{본문}}'
+- id: shape-23
+  name: TextBox 47
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 49.2%
+    y: 51.1%
+    cx: 12.5%
+    cy: 11.4%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{소제목}}'
+    - '{{본문}}'
+    - '{{본문}}'
+- id: shape-24
+  name: Oval 17
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 53.7%
+    y: 43.2%
+    cx: 2.4%
+    cy: 4.2%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-25
+  name: Oval 18
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 54.3%
+    y: 44.3%
+    cx: 1.2%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: accent1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-26
+  name: Oval 17
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 41.1%
+    y: 43.2%
+    cx: 2.4%
+    cy: 4.2%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-27
+  name: Oval 18
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 41.7%
+    y: 44.3%
+    cx: 1.2%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: accent1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-28
+  name: Oval 17
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 28.3%
+    y: 43.2%
+    cx: 2.4%
+    cy: 4.2%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-29
+  name: Oval 18
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 28.9%
+    y: 44.3%
+    cx: 1.2%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: accent1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-30
+  name: Oval 17
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 15.4%
+    y: 43.2%
+    cx: 2.4%
+    cy: 4.2%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-31
+  name: Oval 18
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 16.0%
+    y: 44.3%
+    cx: 1.2%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: accent1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 원형 노드로 강조된 각 단계 표현
+- 이벤트 기반 타임라인
+- 성장 단계의 시각화
+- 중요 전환점 강조
+- 순환적 진행 과정
+keywords:
+- 타임라인
+- 원형
+- 노드
+- 강조
+- 이벤트
+- 단계
+- 성장
+- 전환점
+- 시각화
+expected_prompt: |
+  원형 강조 타임라인 슬라이드를 만들어줘.
+  - 원형 노드와 연결선으로 구성된 타임라인. 특정 이벤트나 단계를 강조하는 디자인
+  - 원형 노드로 강조된 각 단계 표현
+  - 이벤트 기반 타임라인
+  - 성장 단계의 시각화
+thumbnail: "thumbnails/templates\timeline/timeline-circle.png"

@@ -1,0 +1,1286 @@
+content_template:
+  id: cycle-4quadrant
+  name: 4분할 원형 사이클
+  version: '4.0'
+  source: PPT기본양식_병합_수정(선별).pptx
+  source_slide_index: 40
+  extracted_at: '2026-01-09T20:15:07.106919'
+  expected_prompt: "Create a general slide designed for 4개의 사분면으로 나뉜 원형 다이어그램. 순환적 관계 또는 연속적 프로세스를 표현. This layout is specifically designed for: 순환적 프로세스의 4단계 표현, 4개 사분면의 매트릭스 구조, 원형으로 연결된 개념들의 사이클. \nEnsure a clean, professional aesthetic with precise alignment. Use a balanced color scheme that highlights key information while maintaining readability."
+design_meta:
+  quality_score: 8.5
+  design_intent: 4개의 사분면으로 나뉜 원형 다이어그램. 순환적 관계 또는 연속적 프로세스를 표현
+  visual_balance: symmetric
+  information_density: medium
+canvas:
+  reference_width: 1920
+  reference_height: 1080
+  aspect_ratio: '16:9'
+shapes:
+- id: shape-0
+  name: PlaceHolder 1
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-1
+  name: PlaceHolder 2
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-2
+  name: PlaceHolder 3
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 8.4%
+    cx: 76.7%
+    cy: 10.3%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-3
+  name: PlaceHolder 4
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 2.2%
+    y: 2.5%
+    cx: 50.6%
+    cy: 5.4%
+  style:
+    fill:
+      type: solid
+      color: 0
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-4
+  name: PlaceHolder 5
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 76.0%
+    y: 96.3%
+    cx: 3.1%
+    cy: 2.1%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-5
+  name: PlaceHolder 6
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 63.9%
+    y: 96.3%
+    cx: 12.6%
+    cy: 2.2%
+  style:
+    fill:
+      type: solid
+      color: b6b6b6
+  text:
+    has_text: true
+    content:
+    - 작성자_장선익, 장희승, 김현주
+- id: shape-6
+  name: Oval 2
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 35.2%
+    y: 46.8%
+    cx: 10.9%
+    cy: 19.4%
+  style:
+    fill:
+      type: solid
+      color: ffffff
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-7
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 35.9%
+    y: 40.4%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-8
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.7%
+    y: 46.8%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-9
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.4%
+    y: 57.0%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-10
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 35.3%
+    y: 64.2%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-11
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 40.7%
+    y: 64.7%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: e6e6e6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-12
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 44.9%
+    y: 58.3%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-13
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 45.2%
+    y: 48.5%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-14
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 41.5%
+    y: 41.0%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-15
+  name: Oval 14
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 38.1%
+    y: 32.8%
+    cx: 3.6%
+    cy: 6.4%
+  style:
+    fill:
+      type: solid
+      color: e6e6e6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-16
+  name: Oval 15
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 30.1%
+    y: 39.6%
+    cx: 3.6%
+    cy: 6.4%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-17
+  name: Oval 16
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 27.3%
+    y: 55.0%
+    cx: 3.6%
+    cy: 6.4%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-18
+  name: Oval 17
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 31.3%
+    y: 68.3%
+    cx: 3.6%
+    cy: 6.4%
+  style:
+    fill:
+      type: solid
+      color: accent6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-19
+  name: Oval 18
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 39.1%
+    y: 73.7%
+    cx: 4.6%
+    cy: 8.2%
+  style:
+    fill:
+      type: solid
+      color: e6e6e6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-20
+  name: Oval 19
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 47.5%
+    y: 67.4%
+    cx: 3.6%
+    cy: 6.4%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-21
+  name: Oval 20
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 50.4%
+    y: 52.4%
+    cx: 3.6%
+    cy: 6.4%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-22
+  name: Oval 21
+  type: oval
+  shape_source: ooxml
+  geometry:
+    x: 46.6%
+    y: 38.4%
+    cx: 3.6%
+    cy: 6.4%
+  style:
+    fill:
+      type: solid
+      color: accent6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-23
+  name: TextBox 138
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 36.1%
+    y: 57.3%
+    cx: 9.2%
+    cy: 4.9%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '{{본문}}'
+- id: shape-24
+  name: Rectangle 16
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 38.8%
+    y: 51.7%
+    cx: 3.7%
+    cy: 4.3%
+  style:
+    fill:
+      type: solid
+      color: 524e52
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-25
+  name: Parallelogram 30
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 32.2%
+    y: 70.0%
+    cx: 1.8%
+    cy: 3.1%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-26
+  name: Isosceles Triangle 8
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 51.3%
+    y: 53.8%
+    cx: 1.7%
+    cy: 3.6%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-27
+  name: Oval 7
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 48.4%
+    y: 69.0%
+    cx: 1.8%
+    cy: 3.2%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-28
+  name: Round Same Side Corner Rectangle 11
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.0%
+    y: 41.3%
+    cx: 2.0%
+    cy: 3.0%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-29
+  name: Rounded Rectangle 27
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 38.9%
+    y: 34.7%
+    cx: 1.7%
+    cy: 2.4%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-30
+  name: Donut 24
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 40.4%
+    y: 76.0%
+    cx: 2.0%
+    cy: 3.5%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-31
+  name: Oval 21
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 28.1%
+    y: 56.5%
+    cx: 1.9%
+    cy: 3.4%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-32
+  name: Rounded Rectangle 7
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 47.5%
+    y: 40.2%
+    cx: 1.8%
+    cy: 2.8%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-33
+  name: TextBox 149
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 50.6%
+    y: 39.4%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '텍스트를 입력하세요 '
+- id: shape-34
+  name: TextBox 150
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 50.6%
+    y: 36.2%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-35
+  name: TextBox 161
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.5%
+    y: 73.1%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - Text
+- id: shape-36
+  name: TextBox 162
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.5%
+    y: 70.3%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - Contents Title
+- id: shape-37
+  name: TextBox 164
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 3.1%
+    y: 56.6%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력하세요
+- id: shape-38
+  name: TextBox 165
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 3.1%
+    y: 53.4%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-39
+  name: TextBox 62
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.1%
+    y: 40.7%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력하세요
+- id: shape-40
+  name: TextBox 63
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.1%
+    y: 37.4%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-41
+  name: TextBox 65
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 27.8%
+    y: 27.2%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력하세요
+- id: shape-42
+  name: TextBox 66
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 27.8%
+    y: 23.9%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-43
+  name: TextBox 68
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 54.1%
+    y: 55.0%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '텍스트를 입력하세요 '
+- id: shape-44
+  name: TextBox 69
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 54.1%
+    y: 51.7%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-45
+  name: TextBox 71
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 51.5%
+    y: 70.2%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '텍스트를 입력하세요 '
+- id: shape-46
+  name: TextBox 72
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 51.5%
+    y: 66.9%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-47
+  name: TextBox 77
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 29.3%
+    y: 86.7%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력하세요
+- id: shape-48
+  name: TextBox 78
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 29.3%
+    y: 83.4%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-49
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 35.9%
+    y: 40.4%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: tx1
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-50
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.7%
+    y: 46.8%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-51
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 31.4%
+    y: 57.0%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-52
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 35.3%
+    y: 64.2%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-53
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 40.7%
+    y: 64.7%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: e6e6e6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-54
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 44.9%
+    y: 58.3%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent3
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-55
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 45.2%
+    y: 48.5%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent2
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-56
+  name: Rectangle 15
+  type: shape
+  shape_source: ooxml
+  geometry:
+    x: 41.5%
+    y: 41.0%
+    cx: 4.7%
+    cy: 8.0%
+  style:
+    fill:
+      type: solid
+      color: accent6
+  text:
+    has_text: true
+    content:
+    - '{{placeholder}}'
+- id: shape-57
+  name: TextBox 149
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 50.6%
+    y: 39.4%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '텍스트를 입력하세요 '
+- id: shape-58
+  name: TextBox 150
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 50.6%
+    y: 36.2%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-59
+  name: TextBox 161
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.5%
+    y: 73.1%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - Text
+- id: shape-60
+  name: TextBox 162
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.5%
+    y: 70.3%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - Contents Title
+- id: shape-61
+  name: TextBox 164
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 3.1%
+    y: 56.6%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력하세요
+- id: shape-62
+  name: TextBox 165
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 3.1%
+    y: 53.4%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-63
+  name: TextBox 62
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.1%
+    y: 40.7%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력하세요
+- id: shape-64
+  name: TextBox 63
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 6.1%
+    y: 37.4%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-65
+  name: TextBox 65
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 27.8%
+    y: 27.2%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력하세요
+- id: shape-66
+  name: TextBox 66
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 27.8%
+    y: 23.9%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-67
+  name: TextBox 68
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 54.1%
+    y: 55.0%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '텍스트를 입력하세요 '
+- id: shape-68
+  name: TextBox 69
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 54.1%
+    y: 51.7%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-69
+  name: TextBox 71
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 51.5%
+    y: 70.2%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - '텍스트를 입력하세요 '
+- id: shape-70
+  name: TextBox 72
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 51.5%
+    y: 66.9%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+- id: shape-71
+  name: TextBox 77
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 29.3%
+    y: 86.7%
+    cx: 24.3%
+    cy: 4.5%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트를 입력하세요
+- id: shape-72
+  name: TextBox 78
+  type: rectangle
+  shape_source: ooxml
+  geometry:
+    x: 29.3%
+    y: 83.4%
+    cx: 24.3%
+    cy: 5.0%
+  style:
+    fill:
+      type: solid
+      color: 262626
+  text:
+    has_text: true
+    content:
+    - 텍스트 입력
+gaps:
+  global:
+    column_gap: 4%
+    row_gap: 3%
+use_for:
+- 순환적 프로세스의 4단계 표현
+- 4개 사분면의 매트릭스 구조
+- 원형으로 연결된 개념들의 사이클
+- 계절, 단계별 순환 구조
+- PDCA 사이클 등 반복적 프로세스 시각화
+keywords:
+- 사이클
+- 4분할
+- 원형
+- 순환
+- 사분면
+- 프로세스
+- 반복
+- 연속
+- PDCA
+expected_prompt: |
+  4분할 원형 사이클 슬라이드를 만들어줘.
+  - 4개의 사분면으로 나뉜 원형 다이어그램. 순환적 관계 또는 연속적 프로세스를 표현
+  - 순환적 프로세스의 4단계 표현
+  - 4개 사분면의 매트릭스 구조
+  - 원형으로 연결된 개념들의 사이클
+thumbnail: thumbnails/cycle/cycle-4quadrant.png

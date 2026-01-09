@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 720pt; height: 405pt;
+      font-family: 'Malgun Gothic', sans-serif;
+      background: #FFFFFF;
+      padding: 36pt 48pt;
+      position: relative;
+    }
+    .header {
+      display: flex; justify-content: space-between;
+      align-items: center; margin-bottom: 16pt;
+    }
+    .title { font-size: 24pt; font-weight: 700; color: #153325; }
+    .page-num { font-size: 12pt; color: #859C80; }
+    .subtitle {
+      font-size: 12pt; color: #859C80;
+      margin-bottom: 14pt;
+    }
+    .org-chart {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 10pt;
+    }
+    .top-row {
+      display: flex; gap: 48pt;
+    }
+    .org-card {
+      background: #F8FAF9;
+      border-radius: 8pt;
+      padding: 10pt 18pt;
+      text-align: center;
+      min-width: 130pt;
+      border-top: 4pt solid #153325;
+    }
+    .org-card.client { border-top-color: #479374; }
+    .org-card.vendor { border-top-color: #22523B; }
+    .role {
+      font-size: 10pt; color: #859C80;
+      margin-bottom: 4pt;
+    }
+    .name {
+      font-size: 13pt; font-weight: 600;
+      color: #153325;
+    }
+    .resp {
+      font-size: 10pt; color: #6B7280;
+      margin-top: 4pt;
+    }
+    .connector {
+      width: 2pt; height: 12pt;
+      background: #A1BFB4;
+    }
+    .bottom-row {
+      display: flex; gap: 14pt;
+    }
+    .bottom-card {
+      background: #F8FAF9;
+      border-radius: 6pt;
+      padding: 8pt 14pt;
+      text-align: center;
+      min-width: 90pt;
+      border-left: 3pt solid #A1BFB4;
+    }
+    .summary {
+      margin-top: 12pt;
+      padding: 10pt 18pt;
+      background: #153325;
+      border-radius: 8pt;
+      font-size: 11pt;
+      text-align: center;
+    }
+    .summary p { color: #FFFFFF; }
+    .accent-line {
+      position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 4pt;
+      background: #479374;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <p class="title">프로젝트 조직</p>
+    <p class="page-num">13</p>
+  </div>
+  <p class="subtitle">총 8명, 78MM 투입</p>
+  <div class="org-chart">
+    <div class="top-row">
+      <div class="org-card client">
+        <p class="role">발주기관 PM</p>
+        <p class="name">정민호 부장</p>
+        <p class="resp">프로젝트 총괄</p>
+      </div>
+      <div class="org-card vendor">
+        <p class="role">수행사 PM</p>
+        <p class="name">김철수 차장</p>
+        <p class="resp">수행 총괄</p>
+      </div>
+    </div>
+    <div class="connector"></div>
+    <div class="bottom-row">
+      <div class="bottom-card">
+        <p class="role">PMO</p>
+        <p class="name">이영희 과장</p>
+      </div>
+      <div class="bottom-card">
+        <p class="role">AA</p>
+        <p class="name">박준형 책임</p>
+      </div>
+      <div class="bottom-card">
+        <p class="role">개발 리더</p>
+        <p class="name">최수진 선임</p>
+      </div>
+      <div class="bottom-card">
+        <p class="role">DBA</p>
+        <p class="name">오현우 대리</p>
+      </div>
+      <div class="bottom-card">
+        <p class="role">QA</p>
+        <p class="name">한미영 대리</p>
+      </div>
+    </div>
+  </div>
+  <div class="summary"><p>PM 1명 (특급) + AA 1명 (특급) + PL 1명 (고급) + 개발 3명 + DBA 1명 + QA 1명</p></div>
+  <div class="accent-line"></div>
+</body>
+</html>

@@ -36,7 +36,7 @@
           <a:graphicData uri="http://schemas.openxmlformats.org/presentationml/2006/ole">
             <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
               <mc:Choice xmlns:v="urn:schemas-microsoft-com:vml" Requires="v">
-                <p:oleObj spid="_x0000_s205833" name="think-cell 슬라이드" r:id="rId5" imgW="395" imgH="394" progId="TCLayout.ActiveDocument.1">
+                <p:oleObj spid="_x0000_s205835" name="think-cell 슬라이드" r:id="rId5" imgW="395" imgH="394" progId="TCLayout.ActiveDocument.1">
                   <p:embed/>
                 </p:oleObj>
               </mc:Choice>
@@ -461,36 +461,6 @@
           </a:prstGeom>
         </p:spPr>
       </p:pic>
-      <p:sp>
-        <p:nvSpPr>
-          <p:cNvPr id="3" name="내용 개체 틀 2"/>
-          <p:cNvSpPr>
-            <a:spLocks noGrp="1"/>
-          </p:cNvSpPr>
-          <p:nvPr>
-            <p:ph sz="quarter" idx="20"/>
-          </p:nvPr>
-        </p:nvSpPr>
-        <p:spPr>
-          <a:xfrm>
-            <a:off x="270064" y="1514007"/>
-            <a:ext cx="9357889" cy="4916956"/>
-          </a:xfrm>
-        </p:spPr>
-        <p:txBody>
-          <a:bodyPr/>
-          <a:lstStyle>
-            <a:lvl1pPr marL="0" indent="0">
-              <a:buNone/>
-              <a:defRPr/>
-            </a:lvl1pPr>
-          </a:lstStyle>
-          <a:p>
-            <a:pPr lvl="0"/>
-            <a:endParaRPr lang="ko-KR" altLang="en-US" dirty="0"/>
-          </a:p>
-        </p:txBody>
-      </p:sp>
     </p:spTree>
     <p:extLst>
       <p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}">
